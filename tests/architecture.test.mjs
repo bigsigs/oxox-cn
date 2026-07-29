@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { readFile, readdir } from "node:fs/promises";
 import { test } from "node:test";
 
 const root = new URL("../", import.meta.url);
@@ -121,6 +121,12 @@ test("built homepage keeps company search first and surfaces the latest monthly 
   assert.match(home, /href="\/articles\/"/);
   assert.match(ranking, /href="\/articles\/"/);
   assert.ok(home.indexOf('class="company-search"') < home.indexOf("LATEST REPORT / 最新月报"));
+});
+
+test("homepage hero contains its rotating decorative orbit without page overflow", async () => {
+  const cssFiles = (await readdir(new URL("dist/_astro/", root))).filter((name) => name.endsWith(".css"));
+  const css = (await Promise.all(cssFiles.map((name) => read(`dist/_astro/${name}`)))).join("\n");
+  assert.match(css, /\.hero\{[^}]*overflow:\s*clip/s);
 });
 
 test("hero removes the issue number and keeps orbit dots above the copy", async () => {
