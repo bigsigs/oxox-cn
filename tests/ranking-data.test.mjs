@@ -21,11 +21,11 @@ test("2026 Jan-Jun cumulative ranking keeps every source row", async () => {
 
 test("company registry uses stable IDs and records source-name conflicts", async () => {
   const companies = await loadJson("public/data/yueqing-export-ranking/companies.json");
-  assert.equal(companies.length, 3281);
+  assert.equal(companies.length, 3431);
   assert.equal(companies[0].company_id, "YQ000001");
   assert.equal(companies[0].company_name, "浙江正泰电器股份有限公司");
   assert.equal(new Set(companies.map((item) => item.company_id)).size, companies.length);
-  assert.equal(companies.filter((item) => item.needs_review).length, 2);
+  assert.equal(companies.filter((item) => item.needs_review).length, 3);
 });
 
 test("period manifest exposes the latest period and confirmed history", async () => {
@@ -33,7 +33,7 @@ test("period manifest exposes the latest period and confirmed history", async ()
   assert.equal(manifest.latest, "2026-ytd-06");
   assert.deepEqual(
     manifest.periods.map((period) => period.id),
-    ["2026-ytd-06", "2026-ytd-05", "2026-ytd-04", "2026-ytd-03", "2026-ytd-02", "2025-ytd-06"],
+    ["2026-ytd-06", "2026-ytd-05", "2026-ytd-04", "2026-ytd-03", "2026-ytd-02", "2025-ytd-12", "2025-ytd-06"],
   );
 });
 
@@ -59,14 +59,14 @@ test("cross-period aliases reuse stable company IDs without forced fuzzy matches
   const priorChint = previous.records.find((record) => record.company_name === "浙江正泰电器股份有限公司");
   const currentChint = current.records.find((record) => record.company_name === "浙江正泰电器股份有限公司");
 
-  assert.equal(companies.length, 3281);
+  assert.equal(companies.length, 3431);
   assert.equal(priorChint.company_id, currentChint.company_id);
   assert.ok(byName.get("浙江恒裕智能家具有限公司").aliases.includes("浙江恒裕智能家居有限公司"));
   assert.ok(byName.has("温州上陶进出口有限公司"));
 });
 
 test("one period never collapses two different source names into one company ID", async () => {
-  for (const file of ["2025-ytd-06.json", "2026-ytd-02.json", "2026-ytd-03.json", "2026-ytd-04.json", "2026-ytd-05.json", "2026-ytd-06.json"]) {
+  for (const file of ["2025-ytd-06.json", "2025-ytd-12.json", "2026-ytd-02.json", "2026-ytd-03.json", "2026-ytd-04.json", "2026-ytd-05.json", "2026-ytd-06.json"]) {
     const data = await loadJson(`public/data/yueqing-export-ranking/${file}`);
     const namesById = new Map();
     data.records.forEach((record) => {
@@ -102,7 +102,7 @@ test("April aliases reuse IDs while uncertain names remain separate companies", 
   const aliased = april.records.find((record) => record.company_name === "乐清市点火电力电子科技有限公司");
   const uncertain = april.records.find((record) => record.company_name === "浙江三思电气有限公司");
 
-  assert.equal(companies.length, 3281);
+  assert.equal(companies.length, 3431);
   assert.equal(mayById.get(aliased.company_id).company_name, "乐清市点火力电子科技有限公司");
   assert.notEqual(
     uncertain.company_id,
@@ -133,7 +133,7 @@ test("March aliases reuse IDs while uncertain names remain separate companies", 
   const aliased = march.records.find((record) => record.company_name === "神奇电磁集团有限公司");
   const uncertain = march.records.find((record) => record.company_name === "乐清市鑫众进出口有限公司");
 
-  assert.equal(companies.length, 3281);
+  assert.equal(companies.length, 3431);
   assert.equal(aprilById.get(aliased.company_id).company_name, "神奇电碳集团有限公司");
   assert.notEqual(
     uncertain.company_id,
@@ -173,6 +173,67 @@ test("2025 clear aliases reuse IDs while uncertain names remain separate", async
     uncertain.company_id,
     data2026.records.find((record) => record.company_name === "浙江恩威电气有限公司").company_id,
   );
+});
+
+test("2025 full-year cumulative export ranking applies all confirmed rank bands", async () => {
+  const data = await loadJson("public/data/yueqing-export-ranking/2025-ytd-12.json");
+  assert.deepEqual(data.period, {
+    id: "2025-ytd-12",
+    label: "2025年1—12月",
+    type: "year_to_date",
+    as_of: "2025-12-31",
+    metric: "exports",
+  });
+  assert.equal(data.records.length, 2992);
+  assert.deepEqual(
+    data.records.map((item) => item.rank),
+    Array.from({ length: 2992 }, (_, index) => index + 1),
+  );
+  assert.deepEqual(
+    data.bands.map(({ label, count }) => ({ label, count })),
+    [
+      { label: "1300-28000万美元", count: 56 },
+      { label: "1000-1300万美元", count: 24 },
+      { label: "800-1000万美元", count: 29 },
+      { label: "560-800万美元", count: 62 },
+      { label: "400-560万美元", count: 62 },
+      { label: "300-400万美元", count: 68 },
+      { label: "240-300万美元", count: 68 },
+      { label: "200-240万美元", count: 60 },
+      { label: "170-200万美元", count: 55 },
+      { label: "140-170万美元", count: 62 },
+      { label: "120-140万美元", count: 69 },
+      { label: "100-120万美元", count: 59 },
+      { label: "100-110万美元", count: 22 },
+      { label: "100万美元以下", count: 2296 },
+    ],
+  );
+  assert.equal(data.records.find((item) => item.rank === 56).band_label, "1300-28000万美元");
+  assert.equal(data.records.find((item) => item.rank === 57).band_label, "1000-1300万美元");
+  assert.equal(data.records.find((item) => item.rank === 80).band_label, "1000-1300万美元");
+  assert.equal(data.records.find((item) => item.rank === 81).band_label, "800-1000万美元");
+  assert.equal(data.records.find((item) => item.rank === 696).band_label, "100-110万美元");
+  assert.equal(data.records.find((item) => item.rank === 697).band_label, "100万美元以下");
+  assert.equal(data.records.at(-1).company_name, "温州市乐淳电子科技有限公司");
+  assert.equal(data.records.filter((item) => item.source_duplicate).length, 6);
+  assert.match(data.source_note, /累计排名与出口额区间/);
+  assert.doesNotMatch(data.source_note, /进出口额/);
+});
+
+test("2025 full-year clear OCR aliases reuse stable IDs", async () => {
+  const fullYear = await loadJson("public/data/yueqing-export-ranking/2025-ytd-12.json");
+  const firstHalf = await loadJson("public/data/yueqing-export-ranking/2025-ytd-06.json");
+  const firstHalfById = new Map(firstHalf.records.map((record) => [record.company_id, record]));
+  const aliases = [
+    ["亚兰电气(浙江)有限公司", "亚杜兰电气（浙江）有限公司"],
+    ["乐清市凯发电制造有限公司", "乐清市凯发电气制造有限公司"],
+    ["浙江立电表仪器有限公司", "浙江登立电表仪器有限公司"],
+  ];
+
+  for (const [source, expected] of aliases) {
+    const record = fullYear.records.find((item) => item.company_name === source);
+    assert.equal(firstHalfById.get(record.company_id).company_name, expected);
+  }
 });
 
 test("2026 Jan-Feb cumulative export ranking applies the confirmed rank bands", async () => {
