@@ -47,6 +47,8 @@ test("Yueqing SEO observatory is an OXOX-native data page", async () => {
   assert.match(page, /\.pagination > button\s*\{[^}]*width:\s*104px/s);
   assert.match(page, /\.pagination > button:first-child\s*\{[^}]*justify-self:\s*start/s);
   assert.match(page, /\.pagination > button:last-child\s*\{[^}]*justify-self:\s*end/s);
+  assert.match(page, /rel="nofollow noopener noreferrer"/);
+  assert.match(page, /domain\.rel = "nofollow noopener noreferrer"/);
   assert.match(page, /import seoCompanies from "\.\.\/\.\.\/data\/seo-companies\.js"/);
   assert.doesNotMatch(page, /from ["']react["']/);
 });

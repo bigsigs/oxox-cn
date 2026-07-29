@@ -973,7 +973,7 @@ const changeText = (value: number | null) => {
                 </span>
                 <span class="company-name">
                   <strong>{company.brand}</strong>
-                  <a href={`https://${company.domain}`} target="_blank" rel="noopener noreferrer">{company.domain}</a>
+                  <a href={`https://${company.domain}`} target="_blank" rel="nofollow noopener noreferrer">{company.domain}</a>
                 </span>
               </div>
               <div class="metric-cell">
@@ -1121,7 +1121,7 @@ const changeText = (value: number | null) => {
       const domain = document.createElement("a");
       domain.href = `https://${company.domain}`;
       domain.target = "_blank";
-      domain.rel = "noopener noreferrer";
+      domain.rel = "nofollow noopener noreferrer";
       domain.textContent = company.domain;
       companyName.append(brand, domain);
       companyCell.append(rankNumber, avatar, companyName);
