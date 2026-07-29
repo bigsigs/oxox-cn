@@ -274,7 +274,7 @@ import Wordmark from "../../components/Wordmark.astro";
     }
     th:first-child { width: 110px; }
     th:nth-child(3) { width: 200px; }
-    th:last-child { width: 170px; }
+    th:nth-child(4), th:nth-child(5) { width: 150px; }
     td { padding: 17px 18px; border-bottom: 1px solid var(--line); font-size: 13px; }
     tbody tr { cursor: pointer; transition: color .18s ease, background .18s ease; }
     tbody tr:hover, tbody tr:focus-within { color: white; background: var(--green); }
@@ -483,6 +483,8 @@ import Wordmark from "../../components/Wordmark.astro";
       .search-wrap { grid-column: auto; }
       .controls select { min-width: 0; }
       th:nth-child(3), td:nth-child(3), th:nth-child(4), td:nth-child(4) { display: none; }
+      #yearChangeHeading { font-size: 0; }
+      #yearChangeHeading::after { content: "同比"; font-size: 10px; }
       th:first-child { width: 72px; }
       th, td { padding: 15px 12px; }
       .pagination { justify-content: flex-start; padding: 15px; overflow-x: auto; }
@@ -574,6 +576,7 @@ import Wordmark from "../../components/Wordmark.astro";
               <th>企业名称</th>
               <th id="bandHeading">累计出口额区间</th>
               <th id="rankChangeHeading">较 1—5 月</th>
+              <th id="yearChangeHeading">较去年同期</th>
             </tr>
           </thead>
           <tbody id="rankingTableBody"></tbody>
@@ -583,7 +586,7 @@ import Wordmark from "../../components/Wordmark.astro";
 
       <aside class="data-note">
         <b>数据说明</b>
-        <span>已收录 <strong>2026年1—6月累计出口额排名</strong>、<strong>2026年1—5月累计出口额排名</strong>、<strong>2026年1—4月累计出口额排名</strong>、<strong>2026年1—3月累计出口额排名</strong>、<strong>2026年1—2月累计出口额排名</strong>与<strong>2025年1—6月累计出口额排名</strong>，均不是单月排名。源数据只提供出口额区间或经确认的排名区间边界，因此页面不会估算或展示虚构的精确金额；原始区间缺失处明确标记为“区间未提供”。</span>
+        <span>已收录 <strong>2026年1—6月累计出口额排名</strong>、<strong>2026年1—5月累计出口额排名</strong>、<strong>2026年1—4月累计出口额排名</strong>、<strong>2026年1—3月累计出口额排名</strong>、<strong>2026年1—2月累计出口额排名</strong>与<strong>2025年1—6月累计出口额排名</strong>，均不是单月排名。源数据只提供出口额区间或经确认的排名区间边界，因此页面不会估算或展示虚构的精确金额；“较去年同期”仅比较累计排名，不推算出口额增速；原始区间缺失处明确标记为“区间未提供”。</span>
       </aside>
     </section>
   </main>
@@ -624,12 +627,12 @@ import Wordmark from "../../components/Wordmark.astro";
     } from "../../lib/ranking-core.js";
 
     const PERIODS = [
-      { id: "2026-ytd-06", label: "2026年1—6月", shortLabel: "1—6 月", metricLabel: "出口额", file: "2026-ytd-06.json", previous: "2026-ytd-05" },
-      { id: "2026-ytd-05", label: "2026年1—5月", shortLabel: "1—5 月", metricLabel: "出口额", file: "2026-ytd-05.json", previous: "2026-ytd-04" },
-      { id: "2026-ytd-04", label: "2026年1—4月", shortLabel: "1—4 月", metricLabel: "出口额", file: "2026-ytd-04.json", previous: "2026-ytd-03" },
-      { id: "2026-ytd-03", label: "2026年1—3月", shortLabel: "1—3 月", metricLabel: "出口额", file: "2026-ytd-03.json", previous: "2026-ytd-02" },
-      { id: "2026-ytd-02", label: "2026年1—2月", shortLabel: "1—2 月", metricLabel: "出口额", file: "2026-ytd-02.json", previous: null },
-      { id: "2025-ytd-06", label: "2025年1—6月", shortLabel: "2025 年 1—6 月", metricLabel: "出口额", file: "2025-ytd-06.json", previous: null },
+      { id: "2026-ytd-06", label: "2026年1—6月", shortLabel: "1—6 月", metricLabel: "出口额", file: "2026-ytd-06.json", previous: "2026-ytd-05", yearAgo: "2025-ytd-06" },
+      { id: "2026-ytd-05", label: "2026年1—5月", shortLabel: "1—5 月", metricLabel: "出口额", file: "2026-ytd-05.json", previous: "2026-ytd-04", yearAgo: null },
+      { id: "2026-ytd-04", label: "2026年1—4月", shortLabel: "1—4 月", metricLabel: "出口额", file: "2026-ytd-04.json", previous: "2026-ytd-03", yearAgo: null },
+      { id: "2026-ytd-03", label: "2026年1—3月", shortLabel: "1—3 月", metricLabel: "出口额", file: "2026-ytd-03.json", previous: "2026-ytd-02", yearAgo: null },
+      { id: "2026-ytd-02", label: "2026年1—2月", shortLabel: "1—2 月", metricLabel: "出口额", file: "2026-ytd-02.json", previous: null, yearAgo: null },
+      { id: "2025-ytd-06", label: "2025年1—6月", shortLabel: "2025 年 1—6 月", metricLabel: "出口额", file: "2025-ytd-06.json", previous: null, yearAgo: null },
     ];
     const state = {
       datasets: new Map(),
@@ -637,6 +640,7 @@ import Wordmark from "../../components/Wordmark.astro";
       records: [],
       bands: [],
       previousIndex: new Map(),
+      yearAgoIndex: new Map(),
       query: "",
       band: "all",
       top: 0,
@@ -675,6 +679,18 @@ import Wordmark from "../../components/Wordmark.astro";
       return '<span class="rank-change new">新进榜</span>';
     }
 
+    function renderYearChange(record) {
+      if (!PERIODS.find((period) => period.id === state.periodId)?.yearAgo) {
+        return '<span class="rank-change pending">待导入去年同期</span>';
+      }
+      const change = describeRankChange(record, state.yearAgoIndex);
+      if (change.type === "up") return `<span class="rank-change up">↑ ${change.delta}</span>`;
+      if (change.type === "down") return `<span class="rank-change down">↓ ${change.delta}</span>`;
+      if (change.type === "flat") return '<span class="rank-change flat">— 持平</span>';
+      if (change.type === "review") return '<span class="rank-change review">待核对</span>';
+      return '<span class="rank-change new">去年未收录</span>';
+    }
+
     function render() {
       const filtered = filterRanking(state.records, state);
       const result = paginateRanking(filtered, state.page, state.pageSize);
@@ -693,9 +709,10 @@ import Wordmark from "../../components/Wordmark.astro";
             </td>
             <td><span class="band-pill">${escapeHtml(record.band_label)}</span></td>
             <td>${renderRankChange(record)}</td>
+            <td>${renderYearChange(record)}</td>
           </tr>
         `).join("")
-        : '<tr><td class="empty-row" colspan="4">没有找到匹配的企业，请换个关键词试试。</td></tr>';
+        : '<tr><td class="empty-row" colspan="5">没有找到匹配的企业，请换个关键词试试。</td></tr>';
 
       const pages = getPageWindow(result.page, result.pageCount);
       pagination.innerHTML = `
@@ -718,6 +735,9 @@ import Wordmark from "../../components/Wordmark.astro";
       state.bands = dataset.bands;
       state.previousIndex = period.previous
         ? buildPeriodIndex(state.datasets.get(period.previous)?.records || [])
+        : new Map();
+      state.yearAgoIndex = period.yearAgo
+        ? buildPeriodIndex(state.datasets.get(period.yearAgo)?.records || [])
         : new Map();
       state.band = "all";
       state.page = 1;
@@ -850,7 +870,7 @@ import Wordmark from "../../components/Wordmark.astro";
       })
       .catch(() => {
         summary.textContent = "排名数据载入失败，请刷新页面重试。";
-        tableBody.innerHTML = '<tr><td class="empty-row" colspan="4">暂时无法读取数据。</td></tr>';
+        tableBody.innerHTML = '<tr><td class="empty-row" colspan="5">暂时无法读取数据。</td></tr>';
       });
   </script>
 </body>

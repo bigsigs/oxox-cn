@@ -59,6 +59,10 @@ test("ranking page labels the source as Jan-Jun cumulative data", async () => {
   assert.match(page, /data-period-id="2025-ytd-06"/);
   assert.match(page, /id="periodSelect"/);
   assert.match(page, /function renderRankChange/);
+  assert.match(page, /id="yearChangeHeading">较去年同期/);
+  assert.match(page, /function renderYearChange/);
+  assert.match(page, /去年未收录/);
+  assert.match(page, /待导入去年同期/);
   assert.match(page, /2026年1—5月累计出口额排名/);
   assert.match(page, /2026年1—4月累计出口额排名/);
   assert.match(page, /2026年1—3月累计出口额排名/);
@@ -114,6 +118,8 @@ test("the production build preserves the current routes and UI hooks", async () 
       'id="rankingSearch"',
       'id="rankingTableBody"',
       'id="companyDrawer"',
+      'id="yearChangeHeading"',
+      "较去年同期",
       "已收录 2026 年 1—5 月、1—4 月、1—3 月、1—2 月及 2025 年 1—6 月历史数据",
       'data-period-id="2026-ytd-05"',
       'data-period-id="2026-ytd-04"',
