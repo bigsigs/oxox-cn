@@ -659,6 +659,7 @@ import Wordmark from "../../components/Wordmark.astro";
     const drawer = document.querySelector("#companyDrawer");
     const backdrop = document.querySelector("#drawerBackdrop");
     const closeButton = document.querySelector("#drawerClose");
+    const initialQuery = new URLSearchParams(location.search).get("q")?.trim() || "";
     let lastFocused = null;
 
     const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (character) => ({
@@ -866,6 +867,10 @@ import Wordmark from "../../components/Wordmark.astro";
     }))
       .then((datasets) => {
         state.datasets = new Map(datasets);
+        if (initialQuery) {
+          search.value = initialQuery;
+          state.query = initialQuery;
+        }
         setPeriod("2026-ytd-06");
         const companyId = new URLSearchParams(location.hash.slice(1)).get("company");
         if (companyId) openCompany(companyId);
