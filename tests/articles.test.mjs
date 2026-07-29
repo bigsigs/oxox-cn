@@ -30,14 +30,37 @@ test("January-June report preserves its confirmed data contract", async () => {
   assert.match(html, /乐清市 2026 年 1—6 月外贸情况分析/);
   assert.match(html, /核心看点/);
   for (const heading of sectionHeadings) assert.ok(html.includes(heading), heading);
-  assert.equal((html.match(/<table/g) || []).length, 3);
+  assert.match(html, /href="#analysis"/);
+  assert.match(html, /href="#full-data"/);
+  assert.match(html, /完整数据/);
+  assert.equal((html.match(/<table/g) || []).length, 7);
   assert.match(html, /2026 年 1—6 月主要出口贸易国（地区）情况表/);
   assert.match(html, /1—6 月出口额/);
-  assert.match(html, /180\.9 亿元/);
-  assert.match(html, /175\.9 亿元/);
+  assert.match(html, /180\.86 亿元/);
+  assert.match(html, /175\.92 亿元/);
   assert.match(html, /122\.66 亿元/);
   assert.match(html, /203 个国家（地区）/);
   assert.doesNotMatch(html, /数据来源|整理：|作者：/);
+});
+
+test("January-June report publishes the complete corrected data appendix", async () => {
+  const html = await read("dist/articles/yueqing-foreign-trade-2026-h1/index.html");
+
+  assert.match(html, /2026 年 1—6 月主要出口商品情况表/);
+  assert.match(html, /蓄电池/);
+  assert.match(html, /8,666\.85/);
+  assert.match(html, /\+150\.24/);
+  assert.match(html, /2026 年 1—6 月主要进口商品情况表/);
+  assert.match(html, /静止式变流器/);
+  assert.match(html, /玻璃及其制品/);
+  assert.match(html, /2026 年 1—6 月镇（街道）进出口总额情况表/);
+  assert.match(html, /2026 年 1—6 月镇（街道）出口总额情况表/);
+  assert.match(html, /1,808,650/);
+  assert.match(html, /1,759,225/);
+  assert.match(html, /2026 年 1—6 月温州各县（市、区）进出口情况表/);
+  assert.match(html, /海洋经济发展示范区/);
+  assert.match(html, /1,507\.55/);
+  assert.match(html, /全市合计按当期全市统计口径统一/);
 });
 
 test("January-May report preserves its intentionally mixed country-table label", async () => {
