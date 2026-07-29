@@ -5,6 +5,15 @@ import { test } from "node:test";
 const root = new URL("../", import.meta.url);
 const loadJson = async (path) => JSON.parse(await readFile(new URL(path, root), "utf8"));
 
+test("homepage summary source matches the latest ranking manifest", async () => {
+  const manifest = await loadJson("public/data/yueqing-export-ranking/periods.json");
+  const latest = await loadJson("public/data/yueqing-export-ranking/2026-ytd-06.json");
+  assert.equal(manifest.latest, latest.period.id);
+  assert.equal(latest.records.length, 3180);
+  assert.equal(latest.bands.length, 11);
+  assert.equal(manifest.periods.length, 7);
+});
+
 test("2026 Jan-Jun cumulative ranking keeps every source row", async () => {
   const data = await loadJson("public/data/yueqing-export-ranking/2026-ytd-06.json");
   assert.equal(data.period.id, "2026-ytd-06");

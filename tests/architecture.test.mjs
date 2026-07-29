@@ -42,10 +42,24 @@ test("tool catalogue content comes from one shared data source", async () => {
 
   const home = await read("src/pages/index.astro");
   assert.match(home, /import tools from "\.\.\/data\/tools\.js"/);
-  assert.match(home, /define:vars=\{\{ tools \}\}/);
+  assert.match(home, /const liveTools = tools\.filter/);
 });
 
-test("ranking page labels the source as Jan-Jun cumulative data", async () => {
+test("homepage makes Yueqing export company search the primary action", async () => {
+  const home = await read("src/pages/index.astro");
+  assert.match(home, /乐清出口数据/);
+  assert.match(home, /查询乐清企业/);
+  assert.match(home, /出口排名/);
+  assert.match(home, /action="\/yueqing-export-ranking\/"/);
+  assert.match(home, /name="q"/);
+  assert.match(home, /3,180/);
+  assert.match(home, /11 个出口额区间/);
+  assert.match(home, /已收录 7 个周期/);
+  assert.match(home, /辅助工具/);
+  assert.doesNotMatch(home, /进出口额/);
+});
+
+test("ranking page labels the source as Jan-Jun cumulative data and hydrates homepage queries", async () => {
   const page = await read("src/pages/yueqing-export-ranking/index.astro");
   assert.match(page, /2026年1—6月累计出口额排名/);
   assert.match(page, /id="rankingSearch"/);
@@ -70,19 +84,19 @@ test("ranking page labels the source as Jan-Jun cumulative data", async () => {
   assert.match(page, /2026年1—2月累计出口额排名/);
   assert.match(page, /2025年1—6月累计出口额排名/);
   assert.match(page, /2025年1—12月累计出口额排名/);
+  assert.match(page, /new URLSearchParams\(location\.search\)\.get\("q"\)/);
+  assert.match(page, /search\.value = initialQuery/);
   assert.doesNotMatch(page, /进出口额/);
   assert.doesNotMatch(page, /2026年6月出口额排名/);
 });
 
-test("tool cards switch the green active state on hover and keyboard focus", async () => {
+test("homepage keeps utility tools secondary to the export data experience", async () => {
   const home = await read("src/pages/index.astro");
-
-  assert.match(home, /\.tool-card\.active-card/);
-  assert.match(home, /data-default-active/);
-  assert.match(home, /function setActiveCard\(card\)/);
-  assert.match(home, /card\.addEventListener\("pointerenter"/);
-  assert.match(home, /card\.addEventListener\("focusin"/);
-  assert.match(home, /grid\.addEventListener\("pointerleave"/);
+  assert.match(home, /id="auxiliary-tools"/);
+  assert.match(home, /商品图尺寸处理/);
+  assert.match(home, /WebP 转换与重命名/);
+  assert.doesNotMatch(home, /data-filter=/);
+  assert.doesNotMatch(home, /外贸邮件润色/);
 });
 
 test("hero removes the issue number and keeps orbit dots above the copy", async () => {
@@ -97,8 +111,13 @@ test("hero removes the issue number and keeps orbit dots above the copy", async 
 test("the production build preserves the current routes and UI hooks", async () => {
   const expectations = {
     "dist/index.html": [
-      "让外贸工作",
-      'id="toolGrid"',
+      "查询乐清企业",
+      'name="q"',
+      'action="/yueqing-export-ranking/"',
+      "3,180 条排名记录",
+      "11 个出口额区间",
+      "已收录 7 个周期",
+      'id="auxiliary-tools"',
       'class="footer-mark"',
       "product-image-resizer/",
       "webp-converter/",
@@ -135,6 +154,7 @@ test("the production build preserves the current routes and UI hooks", async () 
       "2026年1—2月累计出口额排名",
       "2025年1—6月累计出口额排名",
       "2025年1—12月累计出口额排名",
+      'new URLSearchParams(location.search).get("q")',
     ],
   };
 
