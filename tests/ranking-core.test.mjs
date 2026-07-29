@@ -7,6 +7,7 @@ const {
   buildPeriodIndex,
   describeRankChange,
   filterRanking,
+  suggestCompanies,
   paginateRanking,
   getPageWindow,
   getCompanyRecords,
@@ -62,6 +63,29 @@ test("pinyin search matches full pinyin, spaces, initials, and Chinese homophone
     filterRanking(records, { query: "ce shi", searchIndex }).map((item) => item.rank),
     [2],
   );
+});
+
+test("homepage suggestions use the latest records, rank order, and unique companies", () => {
+  assert.equal(typeof suggestCompanies, "function");
+  const latestRecords = [
+    { rank: 40, company_id: "YQ000040", company_name: "乐清正泰太阳能科技有限公司" },
+    { rank: 1, company_id: "YQ000001", company_name: "浙江正泰电器股份有限公司" },
+    { rank: 13, company_id: "YQ000013", company_name: "浙江正泰仪器仪表有限责任公司" },
+    { rank: 99, company_id: "YQ000001", company_name: "浙江正泰电器股份有限公司" },
+    { rank: 120, company_id: "YQ000120", company_name: "浙江测试电气有限公司" },
+  ];
+  const searchIndex = rankingCore.buildCompanySearchIndex(latestRecords);
+
+  assert.deepEqual(
+    suggestCompanies(latestRecords, "zhengtai", { searchIndex, limit: 2 })
+      .map(({ company_id, rank }) => ({ company_id, rank })),
+    [
+      { company_id: "YQ000001", rank: 1 },
+      { company_id: "YQ000013", rank: 13 },
+    ],
+  );
+  assert.deepEqual(suggestCompanies(latestRecords, "", { searchIndex }), []);
+  assert.deepEqual(suggestCompanies(latestRecords, "不存在", { searchIndex }), []);
 });
 
 test("paginateRanking clamps pages and returns useful metadata", () => {

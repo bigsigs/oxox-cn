@@ -52,6 +52,12 @@ test("homepage makes Yueqing export company search the primary action", async ()
   assert.match(home, /出口排名/);
   assert.match(home, /action="\/yueqing-export-ranking\/"/);
   assert.match(home, /name="q"/);
+  assert.match(home, /id="companySuggestions"/);
+  assert.match(home, /role="listbox"/);
+  assert.match(home, /aria-autocomplete="list"/);
+  assert.match(home, /2026-ytd-06\.json/);
+  assert.match(home, /suggestCompanies/);
+  assert.match(home, /\.company-search:focus-within\s*\{[^}]*z-index:\s*10/s);
   assert.match(home, /latestRanking\.records\.length/);
   assert.match(home, /latestRanking\.bands\.length/);
   assert.match(home, /periods\.periods\.length/);
@@ -147,6 +153,8 @@ test("the production build preserves the current routes and UI hooks", async () 
       "查询乐清企业",
       'name="q"',
       'action="/yueqing-export-ranking/"',
+      'id="companySuggestions"',
+      'aria-autocomplete="list"',
       "3,180 条排名记录",
       "11 个出口额区间",
       "已收录 9 个周期",

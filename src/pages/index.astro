@@ -279,8 +279,14 @@ const capabilities = [
     }
 
     .company-search:focus-within {
+      z-index: 10;
       box-shadow: 11px 11px 0 var(--yellow);
       transform: translate(-2px, -2px);
+    }
+
+    .search-field {
+      position: relative;
+      min-width: 0;
     }
 
     .search-icon {
@@ -313,6 +319,68 @@ const capabilities = [
       background: var(--orange);
       font-weight: 800;
       transition: color .2s ease, background .2s ease;
+    }
+
+    .company-suggestions {
+      position: absolute;
+      top: calc(100% + 2px);
+      right: -2px;
+      left: -2px;
+      z-index: 30;
+      max-height: 344px;
+      margin: 0;
+      padding: 0;
+      overflow-y: auto;
+      border: 2px solid var(--green);
+      border-top: 0;
+      background: var(--paper-light);
+      box-shadow: 8px 8px 0 rgba(24, 32, 29, .12);
+      list-style: none;
+    }
+
+    .company-suggestions[hidden] { display: none; }
+
+    .company-suggestion {
+      border-top: 1px solid var(--line);
+    }
+
+    .company-suggestion:first-child { border-top: 0; }
+
+    .company-suggestion a {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 18px;
+      min-height: 56px;
+      padding: 12px 18px;
+      transition: color .16s ease, background .16s ease;
+    }
+
+    .company-suggestion strong {
+      overflow: hidden;
+      font-size: 13px;
+      font-weight: 700;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .company-suggestion span {
+      color: var(--green);
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .company-suggestion[aria-selected="true"] a,
+    .company-suggestion a:hover {
+      color: white;
+      background: var(--green);
+    }
+
+    .company-suggestion[aria-selected="true"] span,
+    .company-suggestion a:hover span {
+      color: var(--yellow);
     }
 
     .company-search button:hover,
@@ -1030,10 +1098,13 @@ const capabilities = [
         <p class="eyebrow">YUEQING EXPORT DATA / 乐清出口数据</p>
         <h1>查询乐清企业<br><span class="accent">出口排名</span></h1>
         <p class="hero-intro"><strong>查询累计出口排名、出口额区间及历史名次变化。</strong> 数据按累计周期整理，不推算未经来源确认的精确出口额。</p>
-        <form class="company-search" action="/yueqing-export-ranking/" method="get">
-          <label class="sr-only" for="companyQuery">输入企业名称、拼音或企业编号</label>
-          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg>
-          <input id="companyQuery" name="q" type="search" placeholder="例如：浙江正泰或 zhengtai" autocomplete="off" required>
+        <form class="company-search" id="companySearchForm" action="/yueqing-export-ranking/" method="get">
+          <div class="search-field">
+            <label class="sr-only" for="companyQuery">输入企业名称、拼音或企业编号</label>
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg>
+            <input id="companyQuery" name="q" type="search" placeholder="例如：浙江正泰或 zhengtai" autocomplete="off" role="combobox" aria-autocomplete="list" aria-controls="companySuggestions" aria-expanded="false" required>
+            <ul class="company-suggestions" id="companySuggestions" role="listbox" aria-label="最新周期企业联想" hidden></ul>
+          </div>
           <button type="submit">查询企业</button>
         </form>
         <p class="search-hint">支持企业名称、拼音或企业编号，例如 zhengtai、ZJZTDQ 或 YQ000001</p>
@@ -1167,5 +1238,136 @@ const capabilities = [
       数据持续整理，工具作为辅助。
     </div>
   </footer>
+
+  <script>
+    import { buildCompanySearchIndex, suggestCompanies } from "../lib/ranking-core.js";
+
+    type SuggestionRecord = {
+      rank: number;
+      company_id: string;
+      company_name: string;
+    };
+
+    const input = document.querySelector<HTMLInputElement>("#companyQuery");
+    const suggestionsBox = document.querySelector<HTMLUListElement>("#companySuggestions");
+    if (!input || !suggestionsBox) throw new Error("Company autocomplete controls are missing");
+    const latestDataUrl = "/data/yueqing-export-ranking/2026-ytd-06.json";
+    let latestRecords: SuggestionRecord[] | null = null;
+    let searchIndex: Map<string, string> | null = null;
+    let loadingPromise: Promise<SuggestionRecord[]> | null = null;
+    let activeIndex = -1;
+
+    const closeSuggestions = () => {
+      suggestionsBox.hidden = true;
+      suggestionsBox.replaceChildren();
+      input.setAttribute("aria-expanded", "false");
+      input.removeAttribute("aria-activedescendant");
+      activeIndex = -1;
+    };
+
+    const loadLatestRecords = async () => {
+      if (latestRecords) return latestRecords;
+      if (!loadingPromise) {
+        input.setAttribute("aria-busy", "true");
+        loadingPromise = fetch(latestDataUrl)
+          .then((response) => {
+            if (!response.ok) throw new Error(`Latest ranking request failed: ${response.status}`);
+            return response.json();
+          })
+          .then((data) => {
+            latestRecords = Array.isArray(data.records) ? data.records : [];
+            searchIndex = buildCompanySearchIndex(latestRecords);
+            return latestRecords;
+          })
+          .catch(() => {
+            latestRecords = [];
+            searchIndex = new Map();
+            return latestRecords;
+          })
+          .finally(() => input.removeAttribute("aria-busy"));
+      }
+      return loadingPromise;
+    };
+
+    const setActiveSuggestion = (nextIndex: number) => {
+      const options = [...suggestionsBox.querySelectorAll<HTMLElement>('[role="option"]')];
+      if (!options.length) return;
+      activeIndex = (nextIndex + options.length) % options.length;
+      options.forEach((option, index) => {
+        option.setAttribute("aria-selected", String(index === activeIndex));
+      });
+      const active = options[activeIndex];
+      input.setAttribute("aria-activedescendant", active.id);
+      active.scrollIntoView({ block: "nearest" });
+    };
+
+    const renderSuggestions = async () => {
+      const query = input.value.trim();
+      if (!query) {
+        closeSuggestions();
+        return;
+      }
+
+      const records = await loadLatestRecords();
+      if (query !== input.value.trim()) return;
+      const matches = suggestCompanies(records, query, {
+        searchIndex: searchIndex || new Map(),
+        limit: 6,
+      });
+      if (!matches.length) {
+        closeSuggestions();
+        return;
+      }
+
+      const fragment = document.createDocumentFragment();
+      matches.forEach((record: SuggestionRecord, index: number) => {
+        const option = document.createElement("li");
+        const link = document.createElement("a");
+        const name = document.createElement("strong");
+        const rank = document.createElement("span");
+        option.className = "company-suggestion";
+        option.id = `company-suggestion-${index}`;
+        option.setAttribute("role", "option");
+        option.setAttribute("aria-selected", "false");
+        link.href = `/yueqing-export-ranking/?q=${encodeURIComponent(record.company_name)}`;
+        link.tabIndex = -1;
+        name.textContent = record.company_name;
+        rank.textContent = `第 ${record.rank} 名`;
+        link.append(name, rank);
+        option.append(link);
+        fragment.append(option);
+      });
+      suggestionsBox.replaceChildren(fragment);
+      suggestionsBox.hidden = false;
+      input.setAttribute("aria-expanded", "true");
+      activeIndex = -1;
+    };
+
+    input.addEventListener("input", renderSuggestions);
+    input.addEventListener("focus", () => {
+      if (input.value.trim()) renderSuggestions();
+    });
+    input.addEventListener("keydown", (event: KeyboardEvent) => {
+      if (suggestionsBox.hidden) return;
+      const options = [...suggestionsBox.querySelectorAll<HTMLElement>('[role="option"]')];
+      if (event.key === "ArrowDown") {
+        event.preventDefault();
+        setActiveSuggestion(activeIndex + 1);
+      } else if (event.key === "ArrowUp") {
+        event.preventDefault();
+        setActiveSuggestion(activeIndex - 1);
+      } else if (event.key === "Escape") {
+        closeSuggestions();
+      } else if (event.key === "Enter" && activeIndex >= 0) {
+        event.preventDefault();
+        options[activeIndex].querySelector<HTMLAnchorElement>("a")?.click();
+      }
+    });
+    document.addEventListener("pointerdown", (event: PointerEvent) => {
+      if (!(event.target instanceof Element) || !event.target.closest("#companySearchForm")) {
+        closeSuggestions();
+      }
+    });
+  </script>
 </body>
 </html>

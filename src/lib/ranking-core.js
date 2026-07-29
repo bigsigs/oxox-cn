@@ -53,6 +53,48 @@ export function filterRanking(records, filters = {}) {
   });
 }
 
+export function suggestCompanies(records, query, options = {}) {
+  const queryTokens = getSearchTokens(query);
+  if (!queryTokens.length) return [];
+
+  const searchIndex = options.searchIndex instanceof Map
+    ? options.searchIndex
+    : buildCompanySearchIndex(records);
+  const limit = Math.max(1, Number(options.limit) || 6);
+  const candidates = records.map((record) => {
+    const name = compact(record.company_name);
+    const companyId = compact(record.company_id);
+    const indexed = searchIndex.get(record.company_id) || "";
+    const matches = queryTokens.some((token) => (
+      name.includes(token)
+      || companyId.includes(token)
+      || indexed.includes(token)
+    ));
+    if (!matches) return null;
+
+    const score = Math.min(...queryTokens.map((token) => {
+      if (name === token) return 0;
+      if (name.startsWith(token)) return 1;
+      if (name.includes(token)) return 2;
+      if (companyId.startsWith(token)) return 3;
+      return 4;
+    }));
+    return { record, score };
+  }).filter(Boolean).sort((left, right) => (
+    left.score - right.score || left.record.rank - right.record.rank
+  ));
+
+  const seen = new Set();
+  const suggestions = [];
+  for (const candidate of candidates) {
+    if (seen.has(candidate.record.company_id)) continue;
+    seen.add(candidate.record.company_id);
+    suggestions.push(candidate.record);
+    if (suggestions.length === limit) break;
+  }
+  return suggestions;
+}
+
 export function paginateRanking(records, requestedPage = 1, pageSize = 50) {
   const size = Math.max(1, Number(pageSize) || 50);
   const pageCount = Math.max(1, Math.ceil(records.length / size));
