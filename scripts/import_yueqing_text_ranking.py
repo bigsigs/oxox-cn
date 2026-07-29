@@ -12,6 +12,7 @@ from pathlib import Path
 HEADER = re.compile(r"^(\d+)-(\d+)名\s+\(累计出口：(.+?)\)$")
 RANKED = re.compile(r"^(\d+)\.\s*(.+)$")
 CSV_ROW = re.compile(r"^\s*(\d+)\s*[，,]\s*(.*?)\s*[，,]\s*(.+?)\s*$")
+TSV_ROW = re.compile(r"^\s*(\d+)\t([^\t]+)(?:\t(.*))?$")
 RANGE = re.compile(r"^(\d+(?:\.\d+)?)\s*-\s*(\d+(?:\.\d+)?)万美元$")
 
 
@@ -29,17 +30,48 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--period-id", default="2026-ytd-05")
     parser.add_argument("--period-label", default="2026年1—5月")
     parser.add_argument("--as-of", default="2026-05-31")
+    parser.add_argument("--metric", choices=["exports"], default="exports")
+    parser.add_argument("--drop-source-row", action="append", default=[])
+    parser.add_argument(
+        "--unknown-band-range",
+        action="append",
+        default=[],
+        help="Inclusive rank range whose source band is unavailable, for example 28-101",
+    )
     return parser.parse_args()
 
 
-def parse_sources(paths: list[Path]) -> list[dict]:
+def parse_rank_range(value: str) -> tuple[int, int]:
+    start, separator, end = value.partition("-")
+    if not separator or not start.isdigit() or not end.isdigit():
+        raise ValueError(f"Invalid rank range: {value}")
+    return int(start), int(end)
+
+
+def parse_sources(
+    paths: list[Path],
+    *,
+    drop_source_rows: set[str] | None = None,
+    unknown_band_ranges: list[tuple[int, int]] | None = None,
+) -> list[dict]:
     records = []
     inferred_rank = None
     band_label = None
+    drop_source_rows = drop_source_rows or set()
+    unknown_band_ranges = unknown_band_ranges or []
     for path in paths:
         for source_line, raw in enumerate(path.read_text(encoding="utf-8").splitlines(), start=1):
             line = raw.strip()
-            if not line or line.startswith("2026年") or line.startswith("注："):
+            source_key = f"{path.parent.name}/{path.name}:{source_line}"
+            if source_key in drop_source_rows:
+                continue
+            if (
+                not line
+                or line.startswith("2026年")
+                or line.startswith("注：")
+                or line.startswith("序号")
+                or line.startswith("根据您提供")
+            ):
                 continue
             header = HEADER.fullmatch(line)
             if header:
@@ -47,11 +79,28 @@ def parse_sources(paths: list[Path]) -> list[dict]:
                 inferred_rank = int(start)
                 band_label = raw_label.replace("区间", "").replace("或未明确", "")
                 continue
-            csv_row = CSV_ROW.fullmatch(line)
-            if csv_row:
-                rank = int(csv_row.group(1))
-                company_name = csv_row.group(2).strip()
-                band_label = csv_row.group(3).strip()
+            delimited_row = CSV_ROW.fullmatch(line)
+            tsv_row = TSV_ROW.fullmatch(raw)
+            if delimited_row:
+                rank = int(delimited_row.group(1))
+                company_name = delimited_row.group(2).strip()
+                band_label = delimited_row.group(3).strip()
+                row_band_label = band_label
+                inferred_rank = rank + 1
+            elif tsv_row:
+                rank = int(tsv_row.group(1))
+                company_name = tsv_row.group(2).strip()
+                provided_band = (tsv_row.group(3) or "").strip()
+                is_unknown = any(start <= rank <= end for start, end in unknown_band_ranges)
+                if is_unknown:
+                    row_band_label = "区间未提供"
+                elif provided_band:
+                    band_label = provided_band
+                    row_band_label = band_label
+                elif band_label:
+                    row_band_label = band_label
+                else:
+                    raise ValueError(f"Missing band before {path}:{source_line}")
                 inferred_rank = rank + 1
             else:
                 ranked = RANKED.fullmatch(line)
@@ -61,13 +110,14 @@ def parse_sources(paths: list[Path]) -> list[dict]:
                     rank, company_name = inferred_rank, line
                 else:
                     raise ValueError(f"Unclassified line {path}:{source_line}: {line}")
-            if band_label is None:
+                row_band_label = band_label
+            if row_band_label is None:
                 raise ValueError(f"Missing band header before {path}:{source_line}")
             records.append(
                 {
                     "rank": rank,
                     "company_name": company_name,
-                    "band_label": band_label,
+                    "band_label": row_band_label,
                     "source_file": f"{path.parent.name}/{path.name}",
                     "source_line": source_line,
                 }
@@ -104,7 +154,11 @@ def write_json(path: Path, value: object) -> None:
 
 def main() -> None:
     args = parse_args()
-    records = parse_sources(args.sources)
+    records = parse_sources(
+        args.sources,
+        drop_source_rows=set(args.drop_source_row),
+        unknown_band_ranges=[parse_rank_range(value) for value in args.unknown_band_range],
+    )
     companies = json.loads(args.companies.read_text(encoding="utf-8"))
     current_period = json.loads(args.current_period.read_text(encoding="utf-8"))
     explicit_aliases = json.loads(args.aliases.read_text(encoding="utf-8"))
@@ -178,6 +232,7 @@ def main() -> None:
         "label": args.period_label,
         "type": "year_to_date",
         "as_of": args.as_of,
+        "metric": args.metric,
     }
     data = {
         "period": period,

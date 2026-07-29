@@ -511,7 +511,7 @@ import Wordmark from "../../components/Wordmark.astro";
       <div>
         <p class="eyebrow">Yueqing export index / 2026</p>
         <h1>乐清企业<br><em>出口排名</em></h1>
-        <p class="hero-note">按企业名称快速查询累计出口排名和出口额区间。当前为 <strong>2026年1—6月累计出口额排名</strong>，已收录 1—5 月、1—4 月和 1—3 月累计排名，可查看企业名次升降和连续历史。</p>
+        <p class="hero-note">按企业名称快速查询累计排名和金额区间。当前为 <strong>2026年1—6月累计出口额排名</strong>，已收录 2026 年 1—5 月、1—4 月、1—3 月及 2025 年 1—6 月历史数据，可查看企业名次变化和跨年记录。</p>
       </div>
       <div class="period-card">
         <small>LATEST PERIOD / 最新周期</small>
@@ -522,9 +522,9 @@ import Wordmark from "../../components/Wordmark.astro";
 
     <section class="stats shell" aria-label="数据概览">
       <div class="stat"><b id="statRecords">3,180</b><span>当前周期记录</span></div>
-      <div class="stat"><b>3,188</b><span>跨期企业档案</span></div>
-      <div class="stat"><b id="statBands">11</b><span>当前出口额区间</span></div>
-      <div class="stat stat-note"><b>区间数据</b><span>不推算精确出口额</span></div>
+      <div class="stat"><b>3,277</b><span>跨期企业档案</span></div>
+      <div class="stat"><b id="statBands">11</b><span id="statBandLabel">当前出口额区间</span></div>
+      <div class="stat stat-note"><b>区间数据</b><span id="statMetricNote">不推算精确出口额</span></div>
     </section>
 
     <section class="ranking-section shell">
@@ -540,6 +540,7 @@ import Wordmark from "../../components/Wordmark.astro";
             <option value="2026-ytd-05" data-period-id="2026-ytd-05">2026年1—5月</option>
             <option value="2026-ytd-04" data-period-id="2026-ytd-04">2026年1—4月</option>
             <option value="2026-ytd-03" data-period-id="2026-ytd-03">2026年1—3月</option>
+            <option value="2025-ytd-06" data-period-id="2025-ytd-06">2025年1—6月</option>
           </select>
         </label>
       </div>
@@ -570,7 +571,7 @@ import Wordmark from "../../components/Wordmark.astro";
             <tr>
               <th>当前排名</th>
               <th>企业名称</th>
-              <th>累计出口额区间</th>
+              <th id="bandHeading">累计出口额区间</th>
               <th id="rankChangeHeading">较 1—5 月</th>
             </tr>
           </thead>
@@ -581,7 +582,7 @@ import Wordmark from "../../components/Wordmark.astro";
 
       <aside class="data-note">
         <b>数据说明</b>
-        <span>已收录 <strong>2026年1—6月累计出口额排名</strong>、<strong>2026年1—5月累计出口额排名</strong>、<strong>2026年1—4月累计出口额排名</strong>与<strong>2026年1—3月累计出口额排名</strong>，均不是单月排名。源数据只提供出口额区间，因此页面不会估算或展示虚构的精确金额；名次变化以同一企业稳定编号进行比较。</span>
+        <span>已收录 <strong>2026年1—6月累计出口额排名</strong>、<strong>2026年1—5月累计出口额排名</strong>、<strong>2026年1—4月累计出口额排名</strong>、<strong>2026年1—3月累计出口额排名</strong>与<strong>2025年1—6月累计出口额排名</strong>，均不是单月排名。源数据只提供出口额区间，因此页面不会估算或展示虚构的精确金额；原始区间缺失处明确标记为“区间未提供”。</span>
       </aside>
     </section>
   </main>
@@ -601,7 +602,7 @@ import Wordmark from "../../components/Wordmark.astro";
     <div class="drawer-company-id" id="drawerCompanyId"></div>
     <div class="drawer-rank">
       <div><small id="drawerPeriodLabel">累计排名</small><strong id="drawerRank"></strong></div>
-      <div><small>累计出口额区间</small><strong id="drawerBand"></strong></div>
+      <div><small id="drawerBandLabel">累计出口额区间</small><strong id="drawerBand"></strong></div>
     </div>
     <div class="history">
       <h4>RANKING HISTORY / 排名历史</h4>
@@ -622,10 +623,11 @@ import Wordmark from "../../components/Wordmark.astro";
     } from "../../lib/ranking-core.js";
 
     const PERIODS = [
-      { id: "2026-ytd-06", label: "2026年1—6月", shortLabel: "1—6 月", file: "2026-ytd-06.json", previous: "2026-ytd-05" },
-      { id: "2026-ytd-05", label: "2026年1—5月", shortLabel: "1—5 月", file: "2026-ytd-05.json", previous: "2026-ytd-04" },
-      { id: "2026-ytd-04", label: "2026年1—4月", shortLabel: "1—4 月", file: "2026-ytd-04.json", previous: "2026-ytd-03" },
-      { id: "2026-ytd-03", label: "2026年1—3月", shortLabel: "1—3 月", file: "2026-ytd-03.json", previous: null },
+      { id: "2026-ytd-06", label: "2026年1—6月", shortLabel: "1—6 月", metricLabel: "出口额", file: "2026-ytd-06.json", previous: "2026-ytd-05" },
+      { id: "2026-ytd-05", label: "2026年1—5月", shortLabel: "1—5 月", metricLabel: "出口额", file: "2026-ytd-05.json", previous: "2026-ytd-04" },
+      { id: "2026-ytd-04", label: "2026年1—4月", shortLabel: "1—4 月", metricLabel: "出口额", file: "2026-ytd-04.json", previous: "2026-ytd-03" },
+      { id: "2026-ytd-03", label: "2026年1—3月", shortLabel: "1—3 月", metricLabel: "出口额", file: "2026-ytd-03.json", previous: null },
+      { id: "2025-ytd-06", label: "2025年1—6月", shortLabel: "2025 年 1—6 月", metricLabel: "出口额", file: "2025-ytd-06.json", previous: null },
     ];
     const state = {
       datasets: new Map(),
@@ -718,11 +720,15 @@ import Wordmark from "../../components/Wordmark.astro";
       state.band = "all";
       state.page = 1;
       bandFilter.innerHTML = `
-        <option value="all">全部出口额区间</option>
+        <option value="all">全部${period.metricLabel}区间</option>
         ${dataset.bands.map((band) => `<option value="${escapeHtml(band.id)}">${escapeHtml(band.label)}（${band.count}）</option>`).join("")}
       `;
       document.querySelector("#statRecords").textContent = dataset.records.length.toLocaleString("zh-CN");
       document.querySelector("#statBands").textContent = dataset.bands.length;
+      document.querySelector("#statBandLabel").textContent = `当前${period.metricLabel}区间`;
+      document.querySelector("#statMetricNote").textContent = `不推算精确${period.metricLabel}`;
+      document.querySelector("#bandHeading").textContent = `累计${period.metricLabel}区间`;
+      bandFilter.setAttribute("aria-label", `筛选${period.metricLabel}区间`);
       const previousPeriod = PERIODS.find((item) => item.id === period.previous);
       document.querySelector("#rankChangeHeading").textContent = previousPeriod
         ? `较 ${previousPeriod.shortLabel}`
@@ -747,11 +753,12 @@ import Wordmark from "../../components/Wordmark.astro";
       document.querySelector("#drawerRank").textContent = `NO. ${current.rank}`;
       document.querySelector("#drawerBand").textContent = current.band_label;
       document.querySelector("#drawerPeriodLabel").textContent = `${displayPeriod.label}累计排名`;
+      document.querySelector("#drawerBandLabel").textContent = `累计${displayPeriod.metricLabel}区间`;
       document.querySelector("#drawerCurrentRecords").innerHTML = periodHistory.flatMap(({ period, records }) =>
         records.map((record) => `
           <div class="history-item">
             <i class="history-dot"></i>
-            <span>${period.label}${records.length > 1 ? " · 来源待核对" : ""}<small class="company-id">${escapeHtml(record.band_label)}</small></span>
+            <span>${period.label}${records.length > 1 ? " · 来源待核对" : ""}<small class="company-id">${period.metricLabel}：${escapeHtml(record.band_label)}</small></span>
             <strong>第 ${record.rank} 名</strong>
           </div>
         `)
