@@ -111,6 +111,18 @@ test("homepage keeps utility tools secondary to the export data experience", asy
   assert.doesNotMatch(home, /外贸邮件润色/);
 });
 
+test("built homepage keeps company search first and surfaces the latest monthly report", async () => {
+  const home = await read("dist/index.html");
+  const ranking = await read("dist/yueqing-export-ranking/index.html");
+
+  assert.match(home, /LATEST REPORT \/ 最新月报/);
+  assert.match(home, /乐清市 2026 年 1—6 月外贸情况分析/);
+  assert.match(home, /href="\/articles\/yueqing-foreign-trade-2026-h1\/"/);
+  assert.match(home, /href="\/articles\/"/);
+  assert.match(ranking, /href="\/articles\/"/);
+  assert.ok(home.indexOf('class="company-search"') < home.indexOf("LATEST REPORT / 最新月报"));
+});
+
 test("hero removes the issue number and keeps orbit dots above the copy", async () => {
   const home = await read("src/pages/index.astro");
 

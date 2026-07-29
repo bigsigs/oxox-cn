@@ -94,6 +94,8 @@ import Wordmark from "../../components/Wordmark.astro";
       transition: transform .2s ease, box-shadow .2s ease;
     }
     .back-link:hover { transform: translateY(-2px); box-shadow: 4px 4px 0 var(--yellow); }
+    .header-actions { display: flex; align-items: center; gap: 10px; }
+    .back-link.secondary { border-color: var(--line); background: transparent; }
 
     .hero {
       display: grid;
@@ -469,7 +471,9 @@ import Wordmark from "../../components/Wordmark.astro";
       .site-header { height: 76px; }
       .wordmark { width: 105px; }
       .brand-label { display: none; }
-      .back-link span { display: none; }
+      .header-actions { gap: 6px; }
+      .back-link { gap: 5px; padding: 8px 10px; font-size: 10px; }
+      .back-link.secondary svg { display: none; }
       .hero { gap: 42px; padding: 48px 0; }
       h1 { font-size: clamp(44px, 13vw, 64px); }
       .stats { grid-template-columns: 1fr 1fr; }
@@ -500,12 +504,18 @@ import Wordmark from "../../components/Wordmark.astro";
   <header class="site-header shell">
     <a class="brand" href="/" aria-label="OXOX 首页">
       <Wordmark />
-      <span class="brand-label">外贸小工具</span>
+      <span class="brand-label">乐清出口数据</span>
     </a>
-    <a class="back-link" href="/">
-      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M13 8H3m4-4L3 8l4 4"/></svg>
-      <span>返回工具箱</span>
-    </a>
+    <nav class="header-actions" aria-label="页面导航">
+      <a class="back-link secondary" href="/articles/">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7"><path d="m5 3 6 5-6 5"/></svg>
+        <span>数据解读</span>
+      </a>
+      <a class="back-link" href="/">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M13 8H3m4-4L3 8l4 4"/></svg>
+        <span>首页</span>
+      </a>
+    </nav>
   </header>
 
   <main>
