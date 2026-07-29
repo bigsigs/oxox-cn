@@ -975,6 +975,21 @@ const capabilities = [
       line-height: 1.8;
     }
 
+    .footer-copy a {
+      display: inline-block;
+      margin-top: 8px;
+      border-bottom: 1px solid currentColor;
+      color: var(--ink);
+      font-weight: 700;
+      letter-spacing: .08em;
+      transition: color .2s ease;
+    }
+
+    .footer-copy a:hover,
+    .footer-copy a:focus-visible {
+      color: var(--green);
+    }
+
     @keyframes reveal { from { opacity: 0; } to { opacity: 1; } }
     @keyframes rise { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
     @keyframes spin { to { transform: rotate(360deg); } }
@@ -1105,7 +1120,6 @@ const capabilities = [
     <nav class="header-nav" aria-label="主要导航">
       <a href="/yueqing-export-ranking/">出口排名</a>
       <a href="/articles/">数据解读</a>
-      <a href="#data-capabilities">数据说明</a>
       <a class="nav-cta" href="#auxiliary-tools">辅助工具 <span aria-hidden="true">↓</span></a>
     </nav>
   </header>
@@ -1253,7 +1267,8 @@ const capabilities = [
     <div class="footer-copy">
       <strong>OXOX.CN · 乐清出口数据</strong><br>
       累计出口排名、出口额区间与历史名次变化。<br>
-      数据持续整理，工具作为辅助。
+      数据持续整理，工具作为辅助。<br>
+      <a href="https://si.gs/" target="_blank" rel="noopener noreferrer">Design by SIGS</a>
     </div>
   </footer>
 

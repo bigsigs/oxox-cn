@@ -68,6 +68,24 @@ test("homepage makes Yueqing export company search the primary action", async ()
   assert.doesNotMatch(home, /进出口额/);
 });
 
+test("homepage header omits the data explanation shortcut while keeping the section", async () => {
+  const home = await read("src/pages/index.astro");
+  const headerNav = home.match(/<nav class="header-nav"[\s\S]*?<\/nav>/)?.[0];
+
+  assert.ok(headerNav);
+  assert.doesNotMatch(headerNav, /数据说明/);
+  assert.doesNotMatch(headerNav, /#data-capabilities/);
+  assert.match(home, /<section class="capabilities" id="data-capabilities">/);
+});
+
+test("homepage footer credits SIGS with a secure external link", async () => {
+  const home = await read("src/pages/index.astro");
+  const footer = home.match(/<footer class="shell">[\s\S]*?<\/footer>/)?.[0];
+
+  assert.ok(footer);
+  assert.match(footer, /<a href="https:\/\/si\.gs\/"[^>]*>Design by SIGS<\/a>/);
+});
+
 test("ranking page labels the source as Jan-Jun cumulative data and hydrates homepage queries", async () => {
   const page = await read("src/pages/yueqing-export-ranking/index.astro");
   assert.match(page, /2026年1—6月累计出口额排名/);
