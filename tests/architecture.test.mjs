@@ -58,6 +58,9 @@ test("homepage makes Yueqing export company search the primary action", async ()
   assert.match(home, /2026-ytd-06\.json/);
   assert.match(home, /suggestCompanies/);
   assert.match(home, /\.company-search:focus-within\s*\{[^}]*z-index:\s*10/s);
+  assert.match(home, /\.company-suggestions\s*\{[^}]*position:\s*fixed/s);
+  assert.match(home, /document\.body\.append\(suggestionsBox\)/);
+  assert.match(home, /suggestionsBox\.contains\(event\.target\)/);
   assert.match(home, /latestRanking\.records\.length/);
   assert.match(home, /latestRanking\.bands\.length/);
   assert.match(home, /periods\.periods\.length/);

@@ -322,11 +322,8 @@ const capabilities = [
     }
 
     .company-suggestions {
-      position: absolute;
-      top: calc(100% + 2px);
-      right: -2px;
-      left: -2px;
-      z-index: 30;
+      position: fixed;
+      z-index: 100;
       max-height: 344px;
       margin: 0;
       padding: 0;
@@ -1251,6 +1248,7 @@ const capabilities = [
     const input = document.querySelector<HTMLInputElement>("#companyQuery");
     const suggestionsBox = document.querySelector<HTMLUListElement>("#companySuggestions");
     if (!input || !suggestionsBox) throw new Error("Company autocomplete controls are missing");
+    document.body.append(suggestionsBox);
     const latestDataUrl = "/data/yueqing-export-ranking/2026-ytd-06.json";
     let latestRecords: SuggestionRecord[] | null = null;
     let searchIndex: Map<string, string> | null = null;
@@ -1263,6 +1261,18 @@ const capabilities = [
       input.setAttribute("aria-expanded", "false");
       input.removeAttribute("aria-activedescendant");
       activeIndex = -1;
+    };
+
+    const positionSuggestions = () => {
+      if (suggestionsBox.hidden) return;
+      const field = input.closest<HTMLElement>(".search-field");
+      if (!field) return;
+      const rect = field.getBoundingClientRect();
+      const availableHeight = Math.max(112, window.innerHeight - rect.bottom - 16);
+      suggestionsBox.style.top = `${rect.bottom}px`;
+      suggestionsBox.style.left = `${rect.left}px`;
+      suggestionsBox.style.width = `${rect.width}px`;
+      suggestionsBox.style.maxHeight = `${Math.min(344, availableHeight)}px`;
     };
 
     const loadLatestRecords = async () => {
@@ -1339,6 +1349,7 @@ const capabilities = [
       });
       suggestionsBox.replaceChildren(fragment);
       suggestionsBox.hidden = false;
+      positionSuggestions();
       input.setAttribute("aria-expanded", "true");
       activeIndex = -1;
     };
@@ -1364,10 +1375,18 @@ const capabilities = [
       }
     });
     document.addEventListener("pointerdown", (event: PointerEvent) => {
-      if (!(event.target instanceof Element) || !event.target.closest("#companySearchForm")) {
+      if (
+        !(event.target instanceof Element)
+        || (
+          !event.target.closest("#companySearchForm")
+          && !suggestionsBox.contains(event.target)
+        )
+      ) {
         closeSuggestions();
       }
     });
+    window.addEventListener("resize", positionSuggestions);
+    document.addEventListener("scroll", positionSuggestions, { capture: true, passive: true });
   </script>
 </body>
 </html>
