@@ -71,7 +71,31 @@
       gap: 14px;
     }
 
-    .wordmark { width: 126px; height: auto; }
+    .wordmark {
+      --dot-travel: 10px;
+      width: 126px;
+      height: auto;
+      overflow: visible;
+    }
+
+    .wordmark .logo-dot,
+    .footer-mark .logo-dot {
+      transform-box: fill-box;
+      transform-origin: center;
+      will-change: transform;
+    }
+
+    .brand:hover .dot-warm,
+    .brand:focus-visible .dot-warm,
+    .footer-mark:hover .dot-warm {
+      animation: dotOrbitClockwise .9s cubic-bezier(.45, 0, .2, 1);
+    }
+
+    .brand:hover .dot-green,
+    .brand:focus-visible .dot-green,
+    .footer-mark:hover .dot-green {
+      animation: dotOrbitCounter .9s .06s cubic-bezier(.45, 0, .2, 1);
+    }
     .brand-label {
       padding-left: 14px;
       border-left: 1px solid var(--line);
@@ -532,7 +556,12 @@
       border-top: 1px solid var(--line);
     }
 
-    .footer-mark { width: min(360px, 80vw); }
+    .footer-mark {
+      --dot-travel: 22px;
+      width: min(360px, 80vw);
+      overflow: visible;
+      cursor: default;
+    }
     .footer-copy { text-align: right; color: var(--muted); font-size: 11px; line-height: 1.8; }
     .empty-state { grid-column: 1 / -1; padding: 60px; border: 1px dashed var(--line); text-align: center; color: var(--muted); }
 
@@ -541,6 +570,22 @@
     @keyframes cardIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
     @keyframes spin { to { transform: rotate(360deg); } }
     @keyframes pulse { 50% { opacity: .25; transform: scale(.7); } }
+    @keyframes dotOrbitClockwise {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      12% { transform: translate(var(--dot-travel), 0) scale(.86); }
+      34% { transform: translate(0, var(--dot-travel)) scale(1); }
+      56% { transform: translate(calc(var(--dot-travel) * -1), 0) scale(.86); }
+      78% { transform: translate(0, calc(var(--dot-travel) * -1)) scale(1); }
+      92% { transform: translate(calc(var(--dot-travel) * .45), 0) scale(.92); }
+    }
+    @keyframes dotOrbitCounter {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      12% { transform: translate(calc(var(--dot-travel) * -1), 0) scale(.86); }
+      34% { transform: translate(0, calc(var(--dot-travel) * -1)) scale(1); }
+      56% { transform: translate(var(--dot-travel), 0) scale(.86); }
+      78% { transform: translate(0, var(--dot-travel)) scale(1); }
+      92% { transform: translate(calc(var(--dot-travel) * -.45), 0) scale(.92); }
+    }
 
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
@@ -601,8 +646,8 @@
           <circle cx="127" cy="30" r="20"/>
           <path d="M158 10 190 50M190 10 158 50"/>
         </g>
-        <circle cx="27" cy="30" r="5" fill="#ff5c35"/>
-        <circle cx="127" cy="30" r="5" fill="#0b634b"/>
+        <circle class="logo-dot dot-warm" cx="27" cy="30" r="5" fill="#ff5c35"/>
+        <circle class="logo-dot dot-green" cx="127" cy="30" r="5" fill="#0b634b"/>
       </svg>
       <span class="brand-label">外贸小工具</span>
     </a>
@@ -680,8 +725,8 @@
         <circle cx="127" cy="30" r="20"/>
         <path d="M158 10 190 50M190 10 158 50"/>
       </g>
-      <circle cx="27" cy="30" r="5" fill="#ff5c35"/>
-      <circle cx="127" cy="30" r="5" fill="#0b634b"/>
+      <circle class="logo-dot dot-warm" cx="27" cy="30" r="5" fill="#ff5c35"/>
+      <circle class="logo-dot dot-green" cx="127" cy="30" r="5" fill="#0b634b"/>
     </svg>
     <div class="footer-copy">
       <div>OXOX.CN · 外贸人的轻量工具箱</div>
