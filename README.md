@@ -44,3 +44,10 @@ npm run build
 
 导入文本排名时使用 `scripts/import_yueqing_text_ranking.py`。文字识别造成的企业名称差异必须先人工确认，再登记到
 `scripts/yueqing-company-aliases.json`；导入器不会自动模糊合并企业。
+
+## 乐清 SEO 观察台
+
+SEO 观察台位于 `/yueqing-seo/`，当前快照数据保存在
+`src/data/seo-companies.js`，筛选、排序、汇总和分页逻辑位于
+`src/lib/seo-ranking-core.js`。自然流量、关键词、反向链接及 AI
+可见度属于第三方估算指标，只用于相对排名与趋势观察。

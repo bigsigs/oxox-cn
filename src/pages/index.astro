@@ -1041,7 +1041,8 @@ const capabilities = [
       .wordmark { width: 105px; }
       .brand-label { display: none; }
       .header-nav { gap: 9px; }
-      .header-nav > a:not(.nav-cta) { display: none; }
+      .header-nav > a:not(.nav-cta):not(.seo-nav-link) { display: none; }
+      .seo-nav-link { font-size: 11px; }
       .nav-cta { padding: 9px 13px; font-size: 12px; }
       .hero { gap: 28px; padding: 52px 0 46px; }
       .hero-copy { align-self: start; }
@@ -1119,6 +1120,7 @@ const capabilities = [
     </a>
     <nav class="header-nav" aria-label="主要导航">
       <a href="/yueqing-export-ranking/">出口排名</a>
+      <a class="seo-nav-link" href="/yueqing-seo/">SEO 观察</a>
       <a href="/articles/">数据解读</a>
       <a class="nav-cta" href="#auxiliary-tools">辅助工具 <span aria-hidden="true">↓</span></a>
     </nav>

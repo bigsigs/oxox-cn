@@ -25,6 +25,14 @@ const tools = [
     icon: "ranking",
   },
   {
+    title: "乐清 SEO 观察台",
+    description: "观察乐清电气企业自然流量、关键词、链接资产与 AI 品牌曝光的相对表现。",
+    category: "data",
+    url: "yueqing-seo/",
+    status: "live",
+    icon: "ranking",
+  },
+  {
     title: "外贸邮件润色",
     description: "让英文邮件更自然、专业，也更符合真实商务沟通语气。",
     category: "copy",

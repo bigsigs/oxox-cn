@@ -11,12 +11,32 @@ test("Astro owns all existing public routes", async () => {
     "src/pages/product-image-resizer/index.astro",
     "src/pages/webp-converter/index.astro",
     "src/pages/yueqing-export-ranking/index.astro",
+    "src/pages/yueqing-seo/index.astro",
   ];
 
   for (const route of routes) {
     const source = await read(route);
     assert.match(source, /<!doctype html>/i);
   }
+});
+
+test("Yueqing SEO observatory is an OXOX-native data page", async () => {
+  const [home, page] = await Promise.all([
+    read("src/pages/index.astro"),
+    read("src/pages/yueqing-seo/index.astro"),
+  ]);
+
+  assert.match(home, /href="\/yueqing-seo\/"/);
+  assert.match(page, /<Wordmark/);
+  assert.match(page, /乐清 SEO 观察台/);
+  assert.match(page, /YUEQING SEARCH INTELLIGENCE/);
+  assert.match(page, /id="seoSearch"/);
+  assert.match(page, /id="seoFilter"/);
+  assert.match(page, /id="seoSort"/);
+  assert.match(page, /id="seoRows"/);
+  assert.match(page, /第三方估算数据/);
+  assert.match(page, /import seoCompanies from "\.\.\/\.\.\/data\/seo-companies\.js"/);
+  assert.doesNotMatch(page, /from ["']react["']/);
 });
 
 test("the shared OXOX wordmark is used by every page", async () => {
@@ -39,6 +59,7 @@ test("tool catalogue content comes from one shared data source", async () => {
   assert.match(catalogue, /商品图尺寸处理/);
   assert.match(catalogue, /WebP 转换与重命名/);
   assert.match(catalogue, /乐清出口排名/);
+  assert.match(catalogue, /乐清 SEO 观察台/);
 
   const home = await read("src/pages/index.astro");
   assert.match(home, /import tools from "\.\.\/data\/tools\.js"/);
@@ -233,6 +254,16 @@ test("the production build preserves the current routes and UI hooks", async () 
       "2025年1—10月累计出口额排名",
       "2025年1—11月累计出口额排名",
       "2025年1—12月累计出口额排名",
+    ],
+    "dist/yueqing-seo/index.html": [
+      "乐清 SEO 观察台",
+      "YUEQING SEARCH INTELLIGENCE",
+      'id="seoSearch"',
+      'id="seoFilter"',
+      'id="seoSort"',
+      'id="seoRows"',
+      "第三方估算数据",
+      "Design by SIGS",
     ],
   };
 
