@@ -141,6 +141,17 @@ test("homepage hero contains its rotating decorative orbit without page overflow
   assert.match(css, /\.hero\{[^}]*overflow:\s*clip/s);
 });
 
+test("mobile homepage search prevents input zoom and follows the visual keyboard viewport", async () => {
+  const home = await read("src/pages/index.astro");
+
+  assert.match(home, /@media \(max-width:\s*760px\)[\s\S]*?\.company-search input\s*\{[^}]*font-size:\s*16px/s);
+  assert.match(home, /window\.visualViewport/);
+  assert.match(home, /visualViewport\?\.addEventListener\("resize",\s*positionSuggestions\)/);
+  assert.match(home, /document\.body\.classList\.add\("search-focused"\)/);
+  assert.match(home, /searchForm\.scrollIntoView\(\{\s*behavior:\s*"smooth",\s*block:\s*"start"\s*\}\)/);
+  assert.match(home, /body\.search-focused\s+\.hero-art\s*\{[^}]*animation:\s*none/s);
+});
+
 test("hero removes the issue number and keeps orbit dots above the copy", async () => {
   const home = await read("src/pages/index.astro");
 
