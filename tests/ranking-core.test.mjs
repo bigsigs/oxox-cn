@@ -1,0 +1,56 @@
+import assert from "node:assert/strict";
+import { test } from "node:test";
+
+import {
+  filterRanking,
+  paginateRanking,
+  getPageWindow,
+  getCompanyRecords,
+} from "../src/lib/ranking-core.js";
+
+const records = [
+  { rank: 1, company_id: "YQ000001", company_name: "浙江正泰电器股份有限公司", band_id: "b01" },
+  { rank: 2, company_id: "YQ000002", company_name: "乐清测试有限公司", band_id: "b01" },
+  { rank: 120, company_id: "YQ000003", company_name: "温州示例电气有限公司", band_id: "b02" },
+  { rank: 501, company_id: "YQ000004", company_name: "浙江贸易有限公司", band_id: "b03" },
+];
+
+test("filterRanking combines company, band, and top-rank filters", () => {
+  assert.deepEqual(
+    filterRanking(records, { query: "正泰" }).map((item) => item.rank),
+    [1],
+  );
+  assert.deepEqual(
+    filterRanking(records, { band: "b01", top: 100 }).map((item) => item.rank),
+    [1, 2],
+  );
+  assert.deepEqual(
+    filterRanking(records, { query: "浙江", top: 500 }).map((item) => item.rank),
+    [1],
+  );
+});
+
+test("paginateRanking clamps pages and returns useful metadata", () => {
+  const result = paginateRanking(Array.from({ length: 121 }, (_, index) => index + 1), 99, 50);
+  assert.equal(result.page, 3);
+  assert.equal(result.pageCount, 3);
+  assert.equal(result.start, 101);
+  assert.equal(result.end, 121);
+  assert.equal(result.items.length, 21);
+});
+
+test("getPageWindow keeps pagination compact", () => {
+  assert.deepEqual(getPageWindow(1, 3), [1, 2, 3]);
+  assert.deepEqual(getPageWindow(6, 12), [1, "…", 4, 5, 6, 7, 8, "…", 12]);
+});
+
+test("getCompanyRecords preserves duplicate source rows for review", () => {
+  const duplicated = [
+    ...records,
+    { rank: 99, company_id: "YQ000002", company_name: "乐清测试有限公司", band_id: "b09" },
+  ];
+  assert.deepEqual(
+    getCompanyRecords(duplicated, "YQ000002").map((item) => item.rank),
+    [2, 99],
+  );
+});

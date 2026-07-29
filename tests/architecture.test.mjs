@@ -10,6 +10,7 @@ test("Astro owns all existing public routes", async () => {
     "src/pages/index.astro",
     "src/pages/product-image-resizer/index.astro",
     "src/pages/webp-converter/index.astro",
+    "src/pages/yueqing-export-ranking/index.astro",
   ];
 
   for (const route of routes) {
@@ -27,6 +28,7 @@ test("the shared OXOX wordmark is used by every page", async () => {
     "src/pages/index.astro",
     "src/pages/product-image-resizer/index.astro",
     "src/pages/webp-converter/index.astro",
+    "src/pages/yueqing-export-ranking/index.astro",
   ]) {
     assert.match(await read(route), /<Wordmark/);
   }
@@ -36,10 +38,21 @@ test("tool catalogue content comes from one shared data source", async () => {
   const catalogue = await read("src/data/tools.js");
   assert.match(catalogue, /商品图尺寸处理/);
   assert.match(catalogue, /WebP 转换与重命名/);
+  assert.match(catalogue, /乐清出口排名/);
 
   const home = await read("src/pages/index.astro");
   assert.match(home, /import tools from "\.\.\/data\/tools\.js"/);
   assert.match(home, /define:vars=\{\{ tools \}\}/);
+});
+
+test("ranking page labels the source as Jan-Jun cumulative data", async () => {
+  const page = await read("src/pages/yueqing-export-ranking/index.astro");
+  assert.match(page, /2026年1—6月累计出口额排名/);
+  assert.match(page, /id="rankingSearch"/);
+  assert.match(page, /id="rankingTableBody"/);
+  assert.match(page, /id="companyDrawer"/);
+  assert.match(page, /待导入 1—5 月数据/);
+  assert.doesNotMatch(page, /2026年6月出口额排名/);
 });
 
 test("tool cards switch the green active state on hover and keyboard focus", async () => {
@@ -82,6 +95,13 @@ test("the production build preserves the current routes and UI hooks", async () 
       'id="dropZone"',
       'id="nameTemplate"',
       'src="/webp-converter/app.js"',
+    ],
+    "dist/yueqing-export-ranking/index.html": [
+      "2026年1—6月累计出口额排名",
+      'id="rankingSearch"',
+      'id="rankingTableBody"',
+      'id="companyDrawer"',
+      "待导入 1—5 月数据",
     ],
   };
 

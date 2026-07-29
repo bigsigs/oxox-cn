@@ -17,6 +17,14 @@ const tools = [
     icon: "convert",
   },
   {
+    title: "乐清出口排名",
+    description: "查询乐清企业累计出口排名与出口额区间，后续数据将在同一企业档案中持续更新。",
+    category: "data",
+    url: "yueqing-export-ranking/",
+    status: "live",
+    icon: "ranking",
+  },
+  {
     title: "外贸邮件润色",
     description: "让英文邮件更自然、专业，也更符合真实商务沟通语气。",
     category: "copy",

@@ -1,0 +1,772 @@
+---
+import Wordmark from "../../components/Wordmark.astro";
+---
+
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="乐清企业出口额累计排名查询，当前收录 2026 年 1—6 月排名与出口额区间。">
+  <meta name="theme-color" content="#f2f0e8">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2318201d'/%3E%3Ccircle cx='32' cy='32' r='18' fill='none' stroke='%23f5d451' stroke-width='7'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%23ff5c35'/%3E%3C/svg%3E">
+  <title>乐清出口排名｜2026年1—6月累计出口额｜OXOX</title>
+  <style is:global>
+    :root {
+      --paper: #f2f0e8;
+      --paper-light: #faf9f4;
+      --ink: #18201d;
+      --muted: #68716c;
+      --green: #0b634b;
+      --green-dark: #064636;
+      --orange: #ff5c35;
+      --yellow: #f5d451;
+      --line: rgba(24, 32, 29, .16);
+      --shadow: 0 24px 70px rgba(24, 32, 29, .12);
+      --serif: "Iowan Old Style", "Baskerville", "Songti SC", "STSong", serif;
+      --sans: "Avenir Next", "PingFang SC", "Hiragino Sans GB", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { background: var(--paper); scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--ink);
+      font-family: var(--sans);
+      background:
+        linear-gradient(90deg, transparent 49.9%, rgba(24,32,29,.035) 50%, transparent 50.1%),
+        radial-gradient(circle at 9% 0%, rgba(255,255,255,.95), transparent 30rem),
+        var(--paper);
+      background-size: 56px 100%, auto, auto;
+    }
+
+    body.drawer-open { overflow: hidden; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select { color: inherit; font: inherit; }
+    button { cursor: pointer; }
+    svg { display: block; }
+    [hidden] { display: none !important; }
+    .shell { width: min(1240px, calc(100% - 48px)); margin: 0 auto; }
+    .noise {
+      position: fixed;
+      inset: 0;
+      z-index: 20;
+      opacity: .03;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
+    }
+
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 92px;
+      border-bottom: 1px solid var(--line);
+    }
+    .brand { display: inline-flex; align-items: center; gap: 14px; }
+    .wordmark { --dot-travel: 10px; width: 126px; overflow: visible; }
+    .wordmark .logo-dot {
+      transform-box: fill-box;
+      transform-origin: center;
+      will-change: transform;
+    }
+    .brand:hover .dot-warm { animation: dotOrbitClockwise .9s cubic-bezier(.45,0,.2,1); }
+    .brand:hover .dot-green { animation: dotOrbitCounter .9s .06s cubic-bezier(.45,0,.2,1); }
+    .brand-label {
+      padding-left: 14px;
+      border-left: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 650;
+      letter-spacing: .12em;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 10px 15px;
+      border: 1px solid var(--ink);
+      border-radius: 999px;
+      background: var(--paper-light);
+      font-size: 12px;
+      font-weight: 700;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .back-link:hover { transform: translateY(-2px); box-shadow: 4px 4px 0 var(--yellow); }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr);
+      gap: 60px;
+      padding: 72px 0 56px;
+      border-bottom: 1px solid var(--line);
+    }
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 24px;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 7px;
+      border-radius: 100px;
+      background: var(--orange);
+    }
+    h1 {
+      max-width: 850px;
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(50px, 6.5vw, 88px);
+      font-weight: 400;
+      letter-spacing: -.065em;
+      line-height: .96;
+    }
+    h1 em { color: var(--green); font-weight: 400; }
+    .hero-note {
+      max-width: 680px;
+      margin: 30px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.85;
+    }
+    .period-card {
+      align-self: end;
+      padding: 28px;
+      border: 1px solid var(--ink);
+      background: var(--yellow);
+      box-shadow: 11px 11px 0 var(--green);
+      transform: rotate(1.5deg);
+    }
+    .period-card small {
+      display: block;
+      margin-bottom: 28px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .18em;
+    }
+    .period-card strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 400;
+      letter-spacing: -.04em;
+      line-height: 1;
+    }
+    .period-card span { display: block; margin-top: 14px; font-size: 12px; }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .stat { min-height: 122px; padding: 26px; border-left: 1px solid var(--line); }
+    .stat b {
+      display: block;
+      font-family: var(--serif);
+      font-size: 34px;
+      font-weight: 400;
+      letter-spacing: -.04em;
+    }
+    .stat span { display: block; margin-top: 6px; color: var(--muted); font-size: 11px; }
+    .stat-note b { color: var(--orange); font-size: 23px; line-height: 1.4; }
+
+    .ranking-section { padding: 72px 0 110px; }
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 32px;
+    }
+    .section-kicker {
+      margin: 0 0 10px;
+      color: var(--orange);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    h2 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(38px, 4.4vw, 60px);
+      font-weight: 400;
+      letter-spacing: -.05em;
+    }
+    .period-select {
+      min-width: 210px;
+      padding: 12px 38px 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 0;
+      background: var(--paper-light);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .controls {
+      display: grid;
+      grid-template-columns: minmax(250px, 1fr) auto auto;
+      gap: 12px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      background: rgba(250,249,244,.74);
+    }
+    .search-wrap { position: relative; }
+    .search-wrap svg {
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      width: 18px;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+    .search-wrap input, .controls select {
+      width: 100%;
+      min-height: 46px;
+      border: 1px solid var(--line);
+      border-radius: 0;
+      background: white;
+    }
+    .search-wrap input { padding: 0 44px; }
+    .search-wrap input:focus, .controls select:focus { outline: 2px solid var(--green); outline-offset: 1px; }
+    .controls select { min-width: 180px; padding: 0 36px 0 13px; font-size: 12px; }
+
+    .result-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 54px;
+      padding: 0 16px;
+      border: 1px solid var(--line);
+      border-top: 0;
+      color: var(--muted);
+      font-size: 11px;
+    }
+    .result-bar b { color: var(--ink); }
+    .clear-btn {
+      border: 0;
+      background: transparent;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 750;
+    }
+
+    .table-wrap { overflow-x: auto; border: 1px solid var(--ink); border-top: 0; background: var(--paper-light); }
+    table { width: 100%; border-collapse: collapse; }
+    th {
+      padding: 15px 18px;
+      border-bottom: 1px solid var(--ink);
+      background: var(--ink);
+      color: rgba(255,255,255,.66);
+      text-align: left;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .12em;
+    }
+    th:first-child { width: 110px; }
+    th:nth-child(3) { width: 200px; }
+    th:last-child { width: 170px; }
+    td { padding: 17px 18px; border-bottom: 1px solid var(--line); font-size: 13px; }
+    tbody tr { cursor: pointer; transition: color .18s ease, background .18s ease; }
+    tbody tr:hover, tbody tr:focus-within { color: white; background: var(--green); }
+    tbody tr:last-child td { border-bottom: 0; }
+    .rank-number { font-family: var(--serif); font-size: 22px; }
+    .company-button {
+      width: 100%;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      text-align: left;
+      font-weight: 700;
+    }
+    .company-id { display: block; margin-top: 5px; color: currentColor; font-size: 9px; letter-spacing: .1em; opacity: .54; }
+    .band-pill {
+      display: inline-flex;
+      padding: 6px 9px;
+      border: 1px solid currentColor;
+      border-radius: 100px;
+      white-space: nowrap;
+      font-size: 10px;
+      font-weight: 700;
+    }
+    .pending-change { color: var(--muted); font-size: 11px; }
+    tr:hover .pending-change { color: rgba(255,255,255,.72); }
+    .empty-row { height: 180px; color: var(--muted); text-align: center; cursor: default; }
+
+    .pagination {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      min-height: 80px;
+      border: 1px solid var(--line);
+      border-top: 0;
+      background: rgba(250,249,244,.5);
+    }
+    .page-btn {
+      display: grid;
+      place-items: center;
+      min-width: 36px;
+      height: 36px;
+      padding: 0 10px;
+      border: 1px solid transparent;
+      background: transparent;
+      font-size: 11px;
+    }
+    .page-btn:hover:not(:disabled), .page-btn.active { color: white; background: var(--green); }
+    .page-btn:disabled { cursor: default; opacity: .34; }
+    .page-gap { padding: 0 4px; color: var(--muted); }
+
+    .data-note {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 17px;
+      margin-top: 24px;
+      padding: 20px;
+      border-left: 4px solid var(--orange);
+      background: rgba(255,255,255,.48);
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+    .data-note b { color: var(--ink); }
+
+    .drawer-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 40;
+      background: rgba(24,32,29,.52);
+      backdrop-filter: blur(3px);
+      opacity: 0;
+      transition: opacity .25s ease;
+    }
+    .drawer-backdrop.open { opacity: 1; }
+    .drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 41;
+      width: min(520px, 100%);
+      height: 100dvh;
+      padding: 34px;
+      overflow-y: auto;
+      background: var(--paper-light);
+      box-shadow: -24px 0 70px rgba(24,32,29,.2);
+      transform: translateX(100%);
+      transition: transform .3s cubic-bezier(.2,.8,.2,1);
+    }
+    .drawer.open { transform: none; }
+    .drawer-top { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .drawer-label { color: var(--orange); font-size: 10px; font-weight: 800; letter-spacing: .17em; }
+    .drawer-close {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--ink);
+      border-radius: 50%;
+      background: transparent;
+      font-size: 20px;
+    }
+    .drawer h3 {
+      margin: 62px 0 12px;
+      font-family: var(--serif);
+      font-size: clamp(36px, 6vw, 52px);
+      font-weight: 400;
+      letter-spacing: -.05em;
+      line-height: 1.08;
+    }
+    .drawer-company-id { color: var(--muted); font-size: 10px; letter-spacing: .14em; }
+    .drawer-rank {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-top: 38px;
+      border: 1px solid var(--ink);
+    }
+    .drawer-rank > div { padding: 22px; }
+    .drawer-rank > div + div { border-left: 1px solid var(--ink); background: var(--yellow); }
+    .drawer-rank small { display: block; margin-bottom: 10px; color: var(--muted); font-size: 10px; }
+    .drawer-rank strong { font-family: var(--serif); font-size: 30px; font-weight: 400; }
+    .history { margin-top: 42px; }
+    .history h4 { margin: 0 0 18px; font-size: 11px; letter-spacing: .13em; }
+    .history-item {
+      position: relative;
+      display: grid;
+      grid-template-columns: 16px 1fr auto;
+      gap: 12px;
+      align-items: center;
+      padding: 16px 0;
+      border-top: 1px solid var(--line);
+      font-size: 12px;
+    }
+    .history-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 5px rgba(11,99,75,.12); }
+    .history-item strong { font-family: var(--serif); font-size: 20px; font-weight: 400; }
+    .future-history { color: var(--muted); }
+    .future-history .history-dot { background: transparent; border: 1px solid var(--muted); box-shadow: none; }
+    .review-note {
+      margin-top: 28px;
+      padding: 16px;
+      border: 1px solid var(--orange);
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      padding: 42px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    @keyframes dotOrbitClockwise {
+      0%,100% { transform: translate(0,0); }
+      25% { transform: translate(var(--dot-travel),0); }
+      50% { transform: translate(0,var(--dot-travel)); }
+      75% { transform: translate(calc(var(--dot-travel) * -1),0); }
+    }
+    @keyframes dotOrbitCounter {
+      0%,100% { transform: translate(0,0); }
+      25% { transform: translate(calc(var(--dot-travel) * -1),0); }
+      50% { transform: translate(0,calc(var(--dot-travel) * -1)); }
+      75% { transform: translate(var(--dot-travel),0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *,*::before,*::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+    @media (max-width: 840px) {
+      .hero { grid-template-columns: 1fr; }
+      .period-card { max-width: 390px; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .controls { grid-template-columns: 1fr 1fr; }
+      .search-wrap { grid-column: 1 / -1; }
+    }
+    @media (max-width: 640px) {
+      .shell { width: min(100% - 28px, 520px); }
+      .site-header { height: 76px; }
+      .wordmark { width: 105px; }
+      .brand-label { display: none; }
+      .back-link span { display: none; }
+      .hero { gap: 42px; padding: 48px 0; }
+      h1 { font-size: clamp(44px, 13vw, 64px); }
+      .stats { grid-template-columns: 1fr 1fr; }
+      .stat { min-height: 108px; padding: 20px 15px; }
+      .stat b { font-size: 27px; }
+      .stat-note b { font-size: 17px; }
+      .ranking-section { padding: 58px 0 76px; }
+      .section-head { align-items: start; flex-direction: column; }
+      .period-select { width: 100%; }
+      .controls { grid-template-columns: 1fr; }
+      .search-wrap { grid-column: auto; }
+      .controls select { min-width: 0; }
+      th:nth-child(3), td:nth-child(3), th:nth-child(4), td:nth-child(4) { display: none; }
+      th:first-child { width: 72px; }
+      th, td { padding: 15px 12px; }
+      .pagination { justify-content: flex-start; padding: 15px; overflow-x: auto; }
+      .drawer { padding: 26px 22px; }
+      .drawer-rank { grid-template-columns: 1fr; }
+      .drawer-rank > div + div { border-top: 1px solid var(--ink); border-left: 0; }
+      footer { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header shell">
+    <a class="brand" href="/" aria-label="OXOX 首页">
+      <Wordmark />
+      <span class="brand-label">外贸小工具</span>
+    </a>
+    <a class="back-link" href="/">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M13 8H3m4-4L3 8l4 4"/></svg>
+      <span>返回工具箱</span>
+    </a>
+  </header>
+
+  <main>
+    <section class="hero shell">
+      <div>
+        <p class="eyebrow">Yueqing export index / 2026</p>
+        <h1>乐清企业<br><em>出口排名</em></h1>
+        <p class="hero-note">按企业名称快速查询累计出口排名和出口额区间。当前为 <strong>2026年1—6月累计出口额排名</strong>，后续月份数据会在同一企业档案内形成历史对比。</p>
+      </div>
+      <div class="period-card">
+        <small>LATEST PERIOD / 最新周期</small>
+        <strong>2026<br>JAN—JUN</strong>
+        <span>1—6 月累计 · 非 6 月单月</span>
+      </div>
+    </section>
+
+    <section class="stats shell" aria-label="数据概览">
+      <div class="stat"><b>3,180</b><span>排名记录</span></div>
+      <div class="stat"><b>3,178</b><span>企业档案</span></div>
+      <div class="stat"><b>11</b><span>出口额区间</span></div>
+      <div class="stat stat-note"><b>区间数据</b><span>不推算精确出口额</span></div>
+    </section>
+
+    <section class="ranking-section shell">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">Ranking database</p>
+          <h2>查找企业排名</h2>
+        </div>
+        <label>
+          <span class="section-kicker">数据周期</span>
+          <select class="period-select" id="periodSelect" aria-label="选择数据周期">
+            <option value="2026-ytd-06">2026年1—6月（最新）</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="controls">
+        <label class="search-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg>
+          <input id="rankingSearch" type="search" placeholder="输入企业名称或企业编号" autocomplete="off">
+        </label>
+        <select id="bandFilter" aria-label="筛选出口额区间">
+          <option value="all">全部出口额区间</option>
+        </select>
+        <select id="topFilter" aria-label="筛选排名范围">
+          <option value="0">全部排名</option>
+          <option value="100">Top 100</option>
+          <option value="500">Top 500</option>
+        </select>
+      </div>
+
+      <div class="result-bar">
+        <span id="resultSummary" aria-live="polite">正在载入排名数据…</span>
+        <button class="clear-btn" id="clearFilters" type="button">清除筛选</button>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>当前排名</th>
+              <th>企业名称</th>
+              <th>累计出口额区间</th>
+              <th>较上期</th>
+            </tr>
+          </thead>
+          <tbody id="rankingTableBody"></tbody>
+        </table>
+      </div>
+      <nav class="pagination" id="pagination" aria-label="排名分页"></nav>
+
+      <aside class="data-note">
+        <b>数据说明</b>
+        <span>本页展示的是 2026 年 1—6 月累计排名，不是 6 月单月排名。源表只提供出口额区间，因此页面不会估算或展示虚构的精确金额。后续导入 1—5 月数据后，将增加名次升降和历史轨迹。</span>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="shell">
+    <span>OXOX.CN · 乐清出口排名</span>
+    <span>数据周期：2026年1—6月累计</span>
+  </footer>
+
+  <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+  <aside class="drawer" id="companyDrawer" aria-hidden="true" aria-labelledby="drawerCompanyName" role="dialog" inert>
+    <div class="drawer-top">
+      <span class="drawer-label">COMPANY PROFILE / 企业档案</span>
+      <button class="drawer-close" id="drawerClose" type="button" aria-label="关闭企业详情">×</button>
+    </div>
+    <h3 id="drawerCompanyName"></h3>
+    <div class="drawer-company-id" id="drawerCompanyId"></div>
+    <div class="drawer-rank">
+      <div><small>2026年1—6月累计排名</small><strong id="drawerRank"></strong></div>
+      <div><small>累计出口额区间</small><strong id="drawerBand"></strong></div>
+    </div>
+    <div class="history">
+      <h4>RANKING HISTORY / 排名历史</h4>
+      <div id="drawerCurrentRecords"></div>
+      <div class="history-item future-history">
+        <i class="history-dot"></i>
+        <span>2026年1—5月</span>
+        <span>待导入 1—5 月数据</span>
+      </div>
+    </div>
+    <div class="review-note" id="reviewNote" hidden>源表中该企业名称在同一周期出现多次，当前完整保留原始记录，等待核对企业主体。</div>
+  </aside>
+
+  <script>
+    // @ts-nocheck
+    import {
+      filterRanking,
+      paginateRanking,
+      getPageWindow,
+      getCompanyRecords,
+    } from "../../lib/ranking-core.js";
+
+    const DATA_URL = "/data/yueqing-export-ranking/2026-ytd-06.json";
+    const state = { records: [], bands: [], query: "", band: "all", top: 0, page: 1, pageSize: 50 };
+    const search = document.querySelector("#rankingSearch");
+    const bandFilter = document.querySelector("#bandFilter");
+    const topFilter = document.querySelector("#topFilter");
+    const tableBody = document.querySelector("#rankingTableBody");
+    const summary = document.querySelector("#resultSummary");
+    const pagination = document.querySelector("#pagination");
+    const drawer = document.querySelector("#companyDrawer");
+    const backdrop = document.querySelector("#drawerBackdrop");
+    const closeButton = document.querySelector("#drawerClose");
+    let lastFocused = null;
+
+    const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (character) => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#039;",
+    })[character]);
+
+    function render() {
+      const filtered = filterRanking(state.records, state);
+      const result = paginateRanking(filtered, state.page, state.pageSize);
+      state.page = result.page;
+      summary.innerHTML = `共找到 <b>${result.total.toLocaleString("zh-CN")}</b> 条记录，当前显示 ${result.start}—${result.end}`;
+
+      tableBody.innerHTML = result.items.length
+        ? result.items.map((record) => `
+          <tr data-company-id="${escapeHtml(record.company_id)}">
+            <td><span class="rank-number">${record.rank}</span></td>
+            <td>
+              <button class="company-button" type="button" data-company-id="${escapeHtml(record.company_id)}">
+                ${escapeHtml(record.company_name)}
+                <small class="company-id">${escapeHtml(record.company_id)}</small>
+              </button>
+            </td>
+            <td><span class="band-pill">${escapeHtml(record.band_label)}</span></td>
+            <td><span class="pending-change">待导入上期数据</span></td>
+          </tr>
+        `).join("")
+        : '<tr><td class="empty-row" colspan="4">没有找到匹配的企业，请换个关键词试试。</td></tr>';
+
+      const pages = getPageWindow(result.page, result.pageCount);
+      pagination.innerHTML = `
+        <button class="page-btn" type="button" data-page="${result.page - 1}" ${result.page === 1 ? "disabled" : ""}>上一页</button>
+        ${pages.map((page) => page === "…"
+          ? '<span class="page-gap">…</span>'
+          : `<button class="page-btn ${page === result.page ? "active" : ""}" type="button" data-page="${page}" ${page === result.page ? 'aria-current="page"' : ""}>${page}</button>`
+        ).join("")}
+        <button class="page-btn" type="button" data-page="${result.page + 1}" ${result.page === result.pageCount ? "disabled" : ""}>下一页</button>
+      `;
+    }
+
+    function openCompany(companyId, trigger = null) {
+      const companyRecords = getCompanyRecords(state.records, companyId);
+      if (!companyRecords.length) return;
+      const current = companyRecords[0];
+      lastFocused = trigger || document.activeElement;
+      document.querySelector("#drawerCompanyName").textContent = current.company_name;
+      document.querySelector("#drawerCompanyId").textContent = `企业编号 / ${current.company_id}`;
+      document.querySelector("#drawerRank").textContent = `NO. ${current.rank}`;
+      document.querySelector("#drawerBand").textContent = current.band_label;
+      document.querySelector("#drawerCurrentRecords").innerHTML = companyRecords.map((record) => `
+        <div class="history-item">
+          <i class="history-dot"></i>
+          <span>2026年1—6月${companyRecords.length > 1 ? ` · 源表第 ${record.source_row} 行` : ""}</span>
+          <strong>第 ${record.rank} 名</strong>
+        </div>
+      `).join("");
+      document.querySelector("#reviewNote").hidden = !companyRecords.some((record) => record.source_duplicate);
+
+      backdrop.hidden = false;
+      drawer.inert = false;
+      drawer.setAttribute("aria-hidden", "false");
+      document.body.classList.add("drawer-open");
+      requestAnimationFrame(() => {
+        backdrop.classList.add("open");
+        drawer.classList.add("open");
+        closeButton.focus();
+      });
+      history.replaceState(null, "", `${location.pathname}#company=${companyId}`);
+    }
+
+    function closeDrawer() {
+      drawer.classList.remove("open");
+      backdrop.classList.remove("open");
+      drawer.setAttribute("aria-hidden", "true");
+      drawer.inert = true;
+      document.body.classList.remove("drawer-open");
+      history.replaceState(null, "", location.pathname);
+      window.setTimeout(() => { backdrop.hidden = true; }, 260);
+      lastFocused?.focus();
+    }
+
+    function resetPageAndRender() {
+      state.page = 1;
+      render();
+    }
+
+    search.addEventListener("input", () => {
+      state.query = search.value;
+      resetPageAndRender();
+    });
+    bandFilter.addEventListener("change", () => {
+      state.band = bandFilter.value;
+      resetPageAndRender();
+    });
+    topFilter.addEventListener("change", () => {
+      state.top = Number(topFilter.value);
+      resetPageAndRender();
+    });
+    document.querySelector("#clearFilters").addEventListener("click", () => {
+      search.value = "";
+      bandFilter.value = "all";
+      topFilter.value = "0";
+      Object.assign(state, { query: "", band: "all", top: 0, page: 1 });
+      render();
+      search.focus();
+    });
+    tableBody.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-company-id]");
+      if (button) openCompany(button.dataset.companyId, button);
+    });
+    pagination.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-page]");
+      if (!button || button.disabled) return;
+      state.page = Number(button.dataset.page);
+      render();
+      document.querySelector(".table-wrap").scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+    closeButton.addEventListener("click", closeDrawer);
+    backdrop.addEventListener("click", closeDrawer);
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && drawer.classList.contains("open")) closeDrawer();
+    });
+
+    fetch(DATA_URL)
+      .then((response) => {
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return response.json();
+      })
+      .then((data) => {
+        state.records = data.records;
+        state.bands = data.bands;
+        bandFilter.insertAdjacentHTML(
+          "beforeend",
+          data.bands.map((band) => `<option value="${escapeHtml(band.id)}">${escapeHtml(band.label)}（${band.count}）</option>`).join(""),
+        );
+        render();
+        const companyId = new URLSearchParams(location.hash.slice(1)).get("company");
+        if (companyId) openCompany(companyId);
+      })
+      .catch(() => {
+        summary.textContent = "排名数据载入失败，请刷新页面重试。";
+        tableBody.innerHTML = '<tr><td class="empty-row" colspan="4">暂时无法读取数据。</td></tr>';
+      });
+  </script>
+</body>
+</html>
