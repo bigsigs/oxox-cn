@@ -11,10 +11,11 @@ const palette = ["#ff5c35", "#f5d451", "#0b634b", "#5f94c9", "#c8789b", "#8588c7
 const companies = seoCompanies.map((company, index) => ({
   ...company,
   accent: palette[index % palette.length],
+  icon: `/company-icons/${company.domain}.png`,
   initials: company.brand.replace(/[^A-Z0-9]/g, "").slice(0, 2) || "YQ",
 }));
 const summary = summarizeSeoCompanies(companies);
-const initialCompanies = filterSeoCompanies(companies, { sortBy: "traffic" }).slice(0, 12);
+const initialCompanies = filterSeoCompanies(companies, { sortBy: "traffic" }).slice(0, 20);
 const leaders = filterSeoCompanies(companies, { sortBy: "traffic" }).slice(0, 3);
 const formatNumber = (value: number | null) => {
   if (value === null) return "N/A";
@@ -176,9 +177,9 @@ const changeText = (value: number | null) => {
       display: grid;
       grid-template-columns: minmax(0, 1.15fr) minmax(360px, .85fr);
       gap: clamp(48px, 7vw, 108px);
-      align-items: end;
-      min-height: 530px;
-      padding: 78px 0 70px;
+      align-items: center;
+      min-height: 440px;
+      padding: 44px 0 58px;
       border-bottom: 1px solid var(--line);
       overflow: clip;
     }
@@ -206,27 +207,26 @@ const changeText = (value: number | null) => {
     h1 {
       max-width: 850px;
       margin: 0;
-      font: 400 clamp(60px, 7vw, 105px) / .88 var(--serif);
-      letter-spacing: -.075em;
+      font: 650 clamp(58px, 6.7vw, 98px) / .91 var(--serif);
+      letter-spacing: -.065em;
     }
 
-    h1 em {
+    h1 .title-accent {
       position: relative;
+      display: inline-block;
       color: var(--green);
-      font-weight: 400;
+      font-style: normal;
     }
 
-    h1 em::after {
+    h1 .title-accent::after {
       content: "";
       position: absolute;
-      z-index: -1;
-      right: -.06em;
-      bottom: .02em;
-      left: .02em;
-      height: .11em;
-      border-radius: 50%;
-      background: var(--orange);
-      transform: rotate(-2deg);
+      right: -.14em;
+      bottom: -.08em;
+      left: .03em;
+      height: .075em;
+      border-radius: 99px;
+      background: var(--yellow);
     }
 
     .hero-intro {
@@ -549,15 +549,32 @@ const changeText = (value: number | null) => {
     }
 
     .company-avatar {
+      position: relative;
       display: grid;
       place-items: center;
       width: 44px;
       height: 44px;
       border: 1px solid var(--ink);
       border-radius: 50%;
-      background: var(--accent);
+      overflow: hidden;
+      background: white;
       font-size: 12px;
       font-weight: 900;
+    }
+
+    .company-avatar > span {
+      color: var(--ink);
+      opacity: .42;
+    }
+
+    .company-avatar img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      padding: 6px;
+      object-fit: contain;
+      background: white;
     }
 
     .company-name { min-width: 0; }
@@ -655,6 +672,11 @@ const changeText = (value: number | null) => {
       margin-top: 23px;
     }
 
+    .pagination > button {
+      width: 104px;
+    }
+
+    .pagination > button:first-child { justify-self: start; }
     .pagination > button:last-child { justify-self: end; }
     .page-numbers { display: flex; gap: 5px; }
 
@@ -772,7 +794,7 @@ const changeText = (value: number | null) => {
       .brand-label { display: none; }
       .header-nav { gap: 15px; font-size: 11px; }
       .header-nav a:not([aria-current="page"]) { display: none; }
-      .hero { gap: 42px; padding: 52px 0 57px; }
+      .hero { gap: 36px; padding: 34px 0 48px; }
       h1 { font-size: clamp(52px, 16vw, 75px); }
       .hero-intro { font-size: 13px; }
       .pulse-card { padding: 25px 22px; box-shadow: 9px 9px 0 var(--yellow); }
@@ -858,7 +880,7 @@ const changeText = (value: number | null) => {
     <section class="hero shell">
       <div>
         <p class="eyebrow">YUEQING SEARCH INTELLIGENCE / 乐清搜索情报</p>
-        <h1>乐清 SEO<br><em>观察台</em></h1>
+        <h1>乐清 SEO<br><span class="title-accent">观察台</span></h1>
         <p class="hero-intro">
           聚焦乐清电气企业的<strong>自然流量、关键词、链接资产与 AI 品牌曝光</strong>。
           以域名为观察对象，用统一快照比较相对位置和增长信号。
@@ -945,7 +967,10 @@ const changeText = (value: number | null) => {
             <article class="company-row" style={`--accent:${company.accent}`}>
               <div class="company-cell">
                 <span class="rank-number">{String(index + 1).padStart(2, "0")}</span>
-                <span class="company-avatar">{company.initials}</span>
+                <span class="company-avatar">
+                  <span>{company.initials}</span>
+                  <img src={company.icon} alt="" loading="lazy">
+                </span>
                 <span class="company-name">
                   <strong>{company.brand}</strong>
                   <a href={`https://${company.domain}`} target="_blank" rel="noopener noreferrer">{company.domain}</a>
@@ -990,8 +1015,8 @@ const changeText = (value: number | null) => {
           <strong>比较趋势，不虚构精确结论</strong>
         </div>
         <p>
-          自然流量、关键词、反向链接及 AI 可见度属于第三方估算数据，仅用于观察相对排名和变化趋势。
-          当前快照日期为 {snapshotDate}，不同工具的统计口径可能存在差异。
+          数据来源为 Semrush，属于第三方估算数据，不代表企业真实流量，也不构成精准结论。
+          精确数据需由企业自行登录 Google Search Console（GSC）查询；当前快照日期为 {snapshotDate}。
         </p>
       </aside>
     </section>
@@ -1017,6 +1042,7 @@ const changeText = (value: number | null) => {
     const companies = seoCompanies.map((company, index) => ({
       ...company,
       accent: palette[index % palette.length],
+      icon: `/company-icons/${company.domain}.png`,
       initials: company.brand.replace(/[^A-Z0-9]/g, "").slice(0, 2) || "YQ",
     }));
     const search = document.querySelector<HTMLInputElement>("#seoSearch");
@@ -1031,7 +1057,7 @@ const changeText = (value: number | null) => {
       throw new Error("SEO ranking controls are missing");
     }
 
-    const pageSize = 12;
+    const pageSize = 20;
     let activeFilter = "all";
     let activePage = 1;
 
@@ -1081,7 +1107,13 @@ const changeText = (value: number | null) => {
       rankNumber.textContent = String(rank).padStart(2, "0");
       const avatar = document.createElement("span");
       avatar.className = "company-avatar";
-      avatar.textContent = company.initials;
+      const initials = document.createElement("span");
+      initials.textContent = company.initials;
+      const icon = document.createElement("img");
+      icon.src = `/company-icons/${company.domain}.png`;
+      icon.alt = "";
+      icon.loading = "lazy";
+      avatar.append(initials, icon);
       const companyName = document.createElement("span");
       companyName.className = "company-name";
       const brand = document.createElement("strong");

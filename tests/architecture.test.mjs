@@ -34,7 +34,19 @@ test("Yueqing SEO observatory is an OXOX-native data page", async () => {
   assert.match(page, /id="seoFilter"/);
   assert.match(page, /id="seoSort"/);
   assert.match(page, /id="seoRows"/);
+  assert.match(page, /Semrush/);
+  assert.match(page, /Google Search Console/);
   assert.match(page, /第三方估算数据/);
+  assert.match(page, /不代表企业真实流量/);
+  assert.match(page, /const pageSize = 20/);
+  assert.match(page, /\/company-icons\/\$\{company\.domain\}\.png/);
+  assert.doesNotMatch(page, /<em>观察台<\/em>/);
+  assert.match(page, /<span class="title-accent">观察台<\/span>/);
+  assert.match(page, /h1\s*\{[^}]*font:\s*650/s);
+  assert.match(page, /\.hero\s*\{[^}]*min-height:\s*440px[^}]*padding:\s*44px 0 58px/s);
+  assert.match(page, /\.pagination > button\s*\{[^}]*width:\s*104px/s);
+  assert.match(page, /\.pagination > button:first-child\s*\{[^}]*justify-self:\s*start/s);
+  assert.match(page, /\.pagination > button:last-child\s*\{[^}]*justify-self:\s*end/s);
   assert.match(page, /import seoCompanies from "\.\.\/\.\.\/data\/seo-companies\.js"/);
   assert.doesNotMatch(page, /from ["']react["']/);
 });
@@ -263,6 +275,8 @@ test("the production build preserves the current routes and UI hooks", async () 
       'id="seoSort"',
       'id="seoRows"',
       "第三方估算数据",
+      "Semrush",
+      "Google Search Console",
       "Design by SIGS",
     ],
   };

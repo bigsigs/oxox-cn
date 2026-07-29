@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { access } from "node:fs/promises";
 import test from "node:test";
 
 import seoCompanies from "../src/data/seo-companies.js";
@@ -19,5 +20,17 @@ test("SEO snapshot records the metrics required by the observatory", () => {
     assert.ok(company.aiVisibility === null || typeof company.aiVisibility === "number");
     assert.ok(company.backlinks === null || typeof company.backlinks === "number");
     assert.ok(company.backlinksChange === null || typeof company.backlinksChange === "number");
+  }
+});
+
+test("SEO snapshot uses the prepared company names and local icons", async () => {
+  assert.equal(seoCompanies.find((company) => company.domain === "grlgroup.com")?.brand, "GRL Electric");
+  assert.equal(
+    seoCompanies.find((company) => company.domain === "chayo.tech")?.brand,
+    "Changyou Technology (Zhejiang) Co., Ltd.",
+  );
+
+  for (const company of seoCompanies) {
+    await access(new URL(`../public/company-icons/${company.domain}.png`, import.meta.url));
   }
 });
