@@ -511,7 +511,7 @@ import Wordmark from "../../components/Wordmark.astro";
       <div>
         <p class="eyebrow">Yueqing export index / 2026</p>
         <h1>乐清企业<br><em>出口排名</em></h1>
-        <p class="hero-note">按企业名称快速查询累计排名和金额区间。当前为 <strong>2026年1—6月累计出口额排名</strong>，已收录 2026 年 1—5 月、1—4 月、1—3 月及 2025 年 1—6 月历史数据，可查看企业名次变化和跨年记录。</p>
+        <p class="hero-note">按企业名称快速查询累计排名和金额区间。当前为 <strong>2026年1—6月累计出口额排名</strong>，已收录 2026 年 1—5 月、1—4 月、1—3 月、1—2 月及 2025 年 1—6 月历史数据，可查看企业名次变化和跨年记录。</p>
       </div>
       <div class="period-card">
         <small>LATEST PERIOD / 最新周期</small>
@@ -522,7 +522,7 @@ import Wordmark from "../../components/Wordmark.astro";
 
     <section class="stats shell" aria-label="数据概览">
       <div class="stat"><b id="statRecords">3,180</b><span>当前周期记录</span></div>
-      <div class="stat"><b>3,277</b><span>跨期企业档案</span></div>
+      <div class="stat"><b>3,281</b><span>跨期企业档案</span></div>
       <div class="stat"><b id="statBands">11</b><span id="statBandLabel">当前出口额区间</span></div>
       <div class="stat stat-note"><b>区间数据</b><span id="statMetricNote">不推算精确出口额</span></div>
     </section>
@@ -540,6 +540,7 @@ import Wordmark from "../../components/Wordmark.astro";
             <option value="2026-ytd-05" data-period-id="2026-ytd-05">2026年1—5月</option>
             <option value="2026-ytd-04" data-period-id="2026-ytd-04">2026年1—4月</option>
             <option value="2026-ytd-03" data-period-id="2026-ytd-03">2026年1—3月</option>
+            <option value="2026-ytd-02" data-period-id="2026-ytd-02">2026年1—2月</option>
             <option value="2025-ytd-06" data-period-id="2025-ytd-06">2025年1—6月</option>
           </select>
         </label>
@@ -582,7 +583,7 @@ import Wordmark from "../../components/Wordmark.astro";
 
       <aside class="data-note">
         <b>数据说明</b>
-        <span>已收录 <strong>2026年1—6月累计出口额排名</strong>、<strong>2026年1—5月累计出口额排名</strong>、<strong>2026年1—4月累计出口额排名</strong>、<strong>2026年1—3月累计出口额排名</strong>与<strong>2025年1—6月累计出口额排名</strong>，均不是单月排名。源数据只提供出口额区间，因此页面不会估算或展示虚构的精确金额；原始区间缺失处明确标记为“区间未提供”。</span>
+        <span>已收录 <strong>2026年1—6月累计出口额排名</strong>、<strong>2026年1—5月累计出口额排名</strong>、<strong>2026年1—4月累计出口额排名</strong>、<strong>2026年1—3月累计出口额排名</strong>、<strong>2026年1—2月累计出口额排名</strong>与<strong>2025年1—6月累计出口额排名</strong>，均不是单月排名。源数据只提供出口额区间或经确认的排名区间边界，因此页面不会估算或展示虚构的精确金额；原始区间缺失处明确标记为“区间未提供”。</span>
       </aside>
     </section>
   </main>
@@ -626,7 +627,8 @@ import Wordmark from "../../components/Wordmark.astro";
       { id: "2026-ytd-06", label: "2026年1—6月", shortLabel: "1—6 月", metricLabel: "出口额", file: "2026-ytd-06.json", previous: "2026-ytd-05" },
       { id: "2026-ytd-05", label: "2026年1—5月", shortLabel: "1—5 月", metricLabel: "出口额", file: "2026-ytd-05.json", previous: "2026-ytd-04" },
       { id: "2026-ytd-04", label: "2026年1—4月", shortLabel: "1—4 月", metricLabel: "出口额", file: "2026-ytd-04.json", previous: "2026-ytd-03" },
-      { id: "2026-ytd-03", label: "2026年1—3月", shortLabel: "1—3 月", metricLabel: "出口额", file: "2026-ytd-03.json", previous: null },
+      { id: "2026-ytd-03", label: "2026年1—3月", shortLabel: "1—3 月", metricLabel: "出口额", file: "2026-ytd-03.json", previous: "2026-ytd-02" },
+      { id: "2026-ytd-02", label: "2026年1—2月", shortLabel: "1—2 月", metricLabel: "出口额", file: "2026-ytd-02.json", previous: null },
       { id: "2025-ytd-06", label: "2025年1—6月", shortLabel: "2025 年 1—6 月", metricLabel: "出口额", file: "2025-ytd-06.json", previous: null },
     ];
     const state = {

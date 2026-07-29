@@ -11,7 +11,7 @@ from pathlib import Path
 
 HEADER = re.compile(r"^(\d+)-(\d+)名\s+\(累计出口：(.+?)\)$")
 RANKED = re.compile(r"^(\d+)\.\s*(.+)$")
-CSV_ROW = re.compile(r"^\s*(\d+)\s*[，,]\s*(.*?)\s*[，,]\s*(.+?)\s*$")
+CSV_ROW = re.compile(r"^\s*(\d+)\s*[，,]\s*(.*?)\s*[，,]\s*(.*?)\s*$")
 TSV_ROW = re.compile(r"^\s*(\d+)\t([^\t]+)(?:\t(.*))?$")
 RANGE = re.compile(r"^(\d+(?:\.\d+)?)\s*-\s*(\d+(?:\.\d+)?)万美元$")
 
@@ -38,6 +38,12 @@ def parse_args() -> argparse.Namespace:
         default=[],
         help="Inclusive rank range whose source band is unavailable, for example 28-101",
     )
+    parser.add_argument(
+        "--band-range",
+        action="append",
+        default=[],
+        help="Confirmed inclusive rank band, for example 1-52=270-5500万美元",
+    )
     return parser.parse_args()
 
 
@@ -48,17 +54,27 @@ def parse_rank_range(value: str) -> tuple[int, int]:
     return int(start), int(end)
 
 
+def parse_band_range(value: str) -> tuple[int, int, str]:
+    rank_range, separator, label = value.partition("=")
+    if not separator or not label.strip():
+        raise ValueError(f"Invalid band range: {value}")
+    start, end = parse_rank_range(rank_range)
+    return start, end, label.strip()
+
+
 def parse_sources(
     paths: list[Path],
     *,
     drop_source_rows: set[str] | None = None,
     unknown_band_ranges: list[tuple[int, int]] | None = None,
+    forced_band_ranges: list[tuple[int, int, str]] | None = None,
 ) -> list[dict]:
     records = []
     inferred_rank = None
     band_label = None
     drop_source_rows = drop_source_rows or set()
     unknown_band_ranges = unknown_band_ranges or []
+    forced_band_ranges = forced_band_ranges or []
     for path in paths:
         for source_line, raw in enumerate(path.read_text(encoding="utf-8").splitlines(), start=1):
             line = raw.strip()
@@ -79,20 +95,44 @@ def parse_sources(
                 inferred_rank = int(start)
                 band_label = raw_label.replace("区间", "").replace("或未明确", "")
                 continue
+            forced_band = next(
+                (
+                    label
+                    for start, end, label in forced_band_ranges
+                    if start <= int(line.split("，", 1)[0].split(",", 1)[0].strip()) <= end
+                ),
+                None,
+            ) if re.match(r"^\d+\s*[，,]", line) else None
             delimited_row = CSV_ROW.fullmatch(line)
             tsv_row = TSV_ROW.fullmatch(raw)
             if delimited_row:
                 rank = int(delimited_row.group(1))
                 company_name = delimited_row.group(2).strip()
-                band_label = delimited_row.group(3).strip()
-                row_band_label = band_label
+                provided_band = delimited_row.group(3).strip()
+                if forced_band and provided_band and forced_band != provided_band:
+                    raise ValueError(
+                        f"Source band conflicts with confirmed band at {path}:{source_line}"
+                    )
+                if forced_band:
+                    row_band_label = forced_band
+                elif provided_band:
+                    band_label = provided_band
+                    row_band_label = band_label
+                else:
+                    row_band_label = band_label
                 inferred_rank = rank + 1
             elif tsv_row:
                 rank = int(tsv_row.group(1))
                 company_name = tsv_row.group(2).strip()
                 provided_band = (tsv_row.group(3) or "").strip()
                 is_unknown = any(start <= rank <= end for start, end in unknown_band_ranges)
-                if is_unknown:
+                if forced_band and provided_band and forced_band != provided_band:
+                    raise ValueError(
+                        f"Source band conflicts with confirmed band at {path}:{source_line}"
+                    )
+                if forced_band:
+                    row_band_label = forced_band
+                elif is_unknown:
                     row_band_label = "区间未提供"
                 elif provided_band:
                     band_label = provided_band
@@ -110,7 +150,7 @@ def parse_sources(
                     rank, company_name = inferred_rank, line
                 else:
                     raise ValueError(f"Unclassified line {path}:{source_line}: {line}")
-                row_band_label = band_label
+                row_band_label = forced_band or band_label
             if row_band_label is None:
                 raise ValueError(f"Missing band header before {path}:{source_line}")
             records.append(
@@ -158,6 +198,7 @@ def main() -> None:
         args.sources,
         drop_source_rows=set(args.drop_source_row),
         unknown_band_ranges=[parse_rank_range(value) for value in args.unknown_band_range],
+        forced_band_ranges=[parse_band_range(value) for value in args.band_range],
     )
     companies = json.loads(args.companies.read_text(encoding="utf-8"))
     current_period = json.loads(args.current_period.read_text(encoding="utf-8"))
