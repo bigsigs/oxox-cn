@@ -215,19 +215,9 @@ import tools from "../data/tools.js";
     }
 
     .hero-intro {
-      display: grid;
-      grid-template-columns: 80px minmax(0, 460px);
-      gap: 22px;
-      align-items: start;
-      margin-top: 44px;
+      max-width: 460px;
+      margin: 44px 0 0 102px;
       animation: rise .8s .28s ease both;
-    }
-
-    .hero-no {
-      padding-top: 5px;
-      border-top: 1px solid var(--ink);
-      font: 700 11px/1.4 var(--sans);
-      letter-spacing: .12em;
     }
 
     .hero-intro p {
@@ -241,6 +231,7 @@ import tools from "../data/tools.js";
 
     .hero-art {
       position: relative;
+      z-index: 3;
       display: grid;
       place-items: center;
       min-height: 400px;
@@ -259,6 +250,7 @@ import tools from "../data/tools.js";
     .orbit::before, .orbit::after {
       content: "";
       position: absolute;
+      z-index: 4;
       border-radius: 50%;
     }
 
@@ -624,7 +616,7 @@ import tools from "../data/tools.js";
       .nav-cta { padding: 9px 13px; font-size: 12px; }
       .hero { min-height: auto; padding: 52px 0 42px; }
       h1 { font-size: clamp(54px, 19vw, 78px); }
-      .hero-intro { grid-template-columns: 42px 1fr; gap: 15px; margin-top: 36px; }
+      .hero-intro { margin: 36px 0 0; }
       .hero-intro p { font-size: 14px; }
       .hero-art { min-height: 320px; }
       .stamp { width: 180px; }
@@ -673,7 +665,6 @@ import tools from "../data/tools.js";
         <p class="eyebrow">Tools for global sellers</p>
         <h1>让外贸工作<br>少一点<span class="accent">重复</span></h1>
         <div class="hero-intro">
-          <span class="hero-no">NO.<br>001</span>
           <p><strong>OXOX 外贸小工具</strong>，把图片处理、文本优化和日常计算，做成打开就能用的小工具。无需注册，不绕弯子。</p>
         </div>
       </div>

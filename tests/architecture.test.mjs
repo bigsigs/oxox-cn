@@ -53,6 +53,15 @@ test("tool cards switch the green active state on hover and keyboard focus", asy
   assert.match(home, /grid\.addEventListener\("pointerleave"/);
 });
 
+test("hero removes the issue number and keeps orbit dots above the copy", async () => {
+  const home = await read("src/pages/index.astro");
+
+  assert.doesNotMatch(home, /class="hero-no"/);
+  assert.doesNotMatch(home, /NO\.<br>001/);
+  assert.match(home, /\.hero-art\s*\{[^}]*z-index:\s*3/s);
+  assert.match(home, /\.orbit::before,\s*\.orbit::after\s*\{[^}]*z-index:\s*4/s);
+});
+
 test("the production build preserves the current routes and UI hooks", async () => {
   const expectations = {
     "dist/index.html": [
