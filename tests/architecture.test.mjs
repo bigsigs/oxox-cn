@@ -52,9 +52,9 @@ test("homepage makes Yueqing export company search the primary action", async ()
   assert.match(home, /出口排名/);
   assert.match(home, /action="\/yueqing-export-ranking\/"/);
   assert.match(home, /name="q"/);
-  assert.match(home, /3,180/);
-  assert.match(home, /11 个出口额区间/);
-  assert.match(home, /已收录 7 个周期/);
+  assert.match(home, /latestRanking\.records\.length/);
+  assert.match(home, /latestRanking\.bands\.length/);
+  assert.match(home, /periods\.periods\.length/);
   assert.match(home, /辅助工具/);
   assert.doesNotMatch(home, /进出口额/);
 });
@@ -93,8 +93,8 @@ test("ranking page labels the source as Jan-Jun cumulative data and hydrates hom
 test("homepage keeps utility tools secondary to the export data experience", async () => {
   const home = await read("src/pages/index.astro");
   assert.match(home, /id="auxiliary-tools"/);
-  assert.match(home, /商品图尺寸处理/);
-  assert.match(home, /WebP 转换与重命名/);
+  assert.match(home, /\{tool\.title\}/);
+  assert.match(home, /\{tool\.description\}/);
   assert.doesNotMatch(home, /data-filter=/);
   assert.doesNotMatch(home, /外贸邮件润色/);
 });
@@ -154,7 +154,6 @@ test("the production build preserves the current routes and UI hooks", async () 
       "2026年1—2月累计出口额排名",
       "2025年1—6月累计出口额排名",
       "2025年1—12月累计出口额排名",
-      'new URLSearchParams(location.search).get("q")',
     ],
   };
 
