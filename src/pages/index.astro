@@ -388,12 +388,20 @@ import tools from "../data/tools.js";
       border-radius: 2px;
       background: rgba(250, 249, 244, .72);
       overflow: hidden;
-      transition: transform .28s ease, box-shadow .28s ease, background .28s ease;
+      transition:
+        transform .28s ease,
+        box-shadow .28s ease,
+        color .28s ease,
+        background .28s ease,
+        border-color .28s ease;
       animation: cardIn .5s ease both;
     }
 
     .tool-card.featured {
       grid-column: span 8;
+    }
+
+    .tool-card.active-card {
       color: white;
       background: var(--green);
       border-color: var(--green);
@@ -404,7 +412,7 @@ import tools from "../data/tools.js";
       box-shadow: var(--shadow);
     }
 
-    .tool-card.featured:hover { background: var(--green-dark); }
+    .tool-card.active-card:hover { background: var(--green-dark); }
 
     .card-top {
       display: flex;
@@ -734,6 +742,31 @@ import tools from "../data/tools.js";
     const arrowIcon = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 16 16 4M7 4h9v9"/></svg>';
     const grid = document.querySelector("#toolGrid");
     const filterButtons = document.querySelectorAll(".filter-btn");
+    let defaultActiveCard = null;
+
+    function setActiveCard(card) {
+      if (!card) return;
+
+      grid.querySelectorAll(".tool-card").forEach(item => {
+        item.classList.toggle("active-card", item === card);
+      });
+    }
+
+    function bindCardActivation() {
+      const cards = [...grid.querySelectorAll(".tool-card")];
+      defaultActiveCard = cards.find(card => card.dataset.defaultActive === "true") || cards[0];
+      setActiveCard(defaultActiveCard);
+
+      cards.forEach(card => {
+        card.addEventListener("pointerenter", () => setActiveCard(card));
+        card.addEventListener("focusin", () => setActiveCard(card));
+      });
+    }
+
+    grid.addEventListener("pointerleave", () => setActiveCard(defaultActiveCard));
+    grid.addEventListener("focusout", event => {
+      if (!grid.contains(event.relatedTarget)) setActiveCard(defaultActiveCard);
+    });
 
     function renderTools(filter = "all") {
       const visible = tools.filter(tool => filter === "all" || tool.category === filter);
@@ -749,10 +782,10 @@ import tools from "../data/tools.js";
         const tag = live ? "a" : "article";
         const attrs = live
           ? `href="${tool.url}" target="_blank" rel="noopener noreferrer" aria-label="打开${tool.title}"`
-          : "";
+          : 'tabindex="0"';
 
         return `
-          <${tag} class="tool-card ${live ? "live" : "planned"} ${tool.featured ? "featured" : ""}" ${attrs} style="animation-delay:${index * 60}ms">
+          <${tag} class="tool-card ${live ? "live" : "planned"} ${tool.featured ? "featured" : ""}" data-default-active="${tool.featured ? "true" : "false"}" ${attrs} style="animation-delay:${index * 60}ms">
             <div class="card-top">
               <span class="tool-index">TOOL / ${number}</span>
               <span class="tool-status">${live ? "立即使用" : "即将上线"}</span>
@@ -764,6 +797,8 @@ import tools from "../data/tools.js";
           </${tag}>
         `;
       }).join("");
+
+      bindCardActivation();
     }
 
     filterButtons.forEach(button => {

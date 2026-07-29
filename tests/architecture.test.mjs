@@ -42,6 +42,17 @@ test("tool catalogue content comes from one shared data source", async () => {
   assert.match(home, /define:vars=\{\{ tools \}\}/);
 });
 
+test("tool cards switch the green active state on hover and keyboard focus", async () => {
+  const home = await read("src/pages/index.astro");
+
+  assert.match(home, /\.tool-card\.active-card/);
+  assert.match(home, /data-default-active/);
+  assert.match(home, /function setActiveCard\(card\)/);
+  assert.match(home, /card\.addEventListener\("pointerenter"/);
+  assert.match(home, /card\.addEventListener\("focusin"/);
+  assert.match(home, /grid\.addEventListener\("pointerleave"/);
+});
+
 test("the production build preserves the current routes and UI hooks", async () => {
   const expectations = {
     "dist/index.html": [
