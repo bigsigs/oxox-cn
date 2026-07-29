@@ -44,6 +44,11 @@ def parse_args() -> argparse.Namespace:
         default=[],
         help="Confirmed inclusive rank band, for example 1-52=270-5500万美元",
     )
+    parser.add_argument(
+        "--prefer-forced-bands",
+        action="store_true",
+        help="Use confirmed --band-range values when a pasted row contains a conflicting band.",
+    )
     return parser.parse_args()
 
 
@@ -68,6 +73,7 @@ def parse_sources(
     drop_source_rows: set[str] | None = None,
     unknown_band_ranges: list[tuple[int, int]] | None = None,
     forced_band_ranges: list[tuple[int, int, str]] | None = None,
+    prefer_forced_bands: bool = False,
 ) -> list[dict]:
     records = []
     inferred_rank = None
@@ -83,7 +89,8 @@ def parse_sources(
                 continue
             if (
                 not line
-                or line.startswith("2026年")
+                or re.match(r"^\d{4}年.*排名", line)
+                or re.match(r"^\d+\s*-\s*\d+", line)
                 or line.startswith("注：")
                 or line.startswith("序号")
                 or line.startswith("根据您提供")
@@ -109,7 +116,12 @@ def parse_sources(
                 rank = int(delimited_row.group(1))
                 company_name = delimited_row.group(2).strip()
                 provided_band = delimited_row.group(3).strip()
-                if forced_band and provided_band and forced_band != provided_band:
+                if (
+                    forced_band
+                    and provided_band
+                    and forced_band != provided_band
+                    and not prefer_forced_bands
+                ):
                     raise ValueError(
                         f"Source band conflicts with confirmed band at {path}:{source_line}"
                     )
@@ -126,7 +138,12 @@ def parse_sources(
                 company_name = tsv_row.group(2).strip()
                 provided_band = (tsv_row.group(3) or "").strip()
                 is_unknown = any(start <= rank <= end for start, end in unknown_band_ranges)
-                if forced_band and provided_band and forced_band != provided_band:
+                if (
+                    forced_band
+                    and provided_band
+                    and forced_band != provided_band
+                    and not prefer_forced_bands
+                ):
                     raise ValueError(
                         f"Source band conflicts with confirmed band at {path}:{source_line}"
                     )
@@ -199,6 +216,7 @@ def main() -> None:
         drop_source_rows=set(args.drop_source_row),
         unknown_band_ranges=[parse_rank_range(value) for value in args.unknown_band_range],
         forced_band_ranges=[parse_band_range(value) for value in args.band_range],
+        prefer_forced_bands=args.prefer_forced_bands,
     )
     companies = json.loads(args.companies.read_text(encoding="utf-8"))
     current_period = json.loads(args.current_period.read_text(encoding="utf-8"))
