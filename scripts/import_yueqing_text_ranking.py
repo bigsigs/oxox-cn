@@ -11,6 +11,7 @@ from pathlib import Path
 
 HEADER = re.compile(r"^(\d+)-(\d+)名\s+\(累计出口：(.+?)\)$")
 RANKED = re.compile(r"^(\d+)\.\s*(.+)$")
+CSV_ROW = re.compile(r"^\s*(\d+)\s*[，,]\s*(.*?)\s*[，,]\s*(.+?)\s*$")
 RANGE = re.compile(r"^(\d+(?:\.\d+)?)\s*-\s*(\d+(?:\.\d+)?)万美元$")
 
 
@@ -46,13 +47,20 @@ def parse_sources(paths: list[Path]) -> list[dict]:
                 inferred_rank = int(start)
                 band_label = raw_label.replace("区间", "").replace("或未明确", "")
                 continue
-            ranked = RANKED.fullmatch(line)
-            if ranked:
-                rank, company_name = int(ranked.group(1)), ranked.group(2)
-            elif inferred_rank is not None:
-                rank, company_name = inferred_rank, line
+            csv_row = CSV_ROW.fullmatch(line)
+            if csv_row:
+                rank = int(csv_row.group(1))
+                company_name = csv_row.group(2).strip()
+                band_label = csv_row.group(3).strip()
+                inferred_rank = rank + 1
             else:
-                raise ValueError(f"Unclassified line {path}:{source_line}: {line}")
+                ranked = RANKED.fullmatch(line)
+                if ranked:
+                    rank, company_name = int(ranked.group(1)), ranked.group(2)
+                elif inferred_rank is not None:
+                    rank, company_name = inferred_rank, line
+                else:
+                    raise ValueError(f"Unclassified line {path}:{source_line}: {line}")
             if band_label is None:
                 raise ValueError(f"Missing band header before {path}:{source_line}")
             records.append(
@@ -60,7 +68,7 @@ def parse_sources(paths: list[Path]) -> list[dict]:
                     "rank": rank,
                     "company_name": company_name,
                     "band_label": band_label,
-                    "source_file": path.name,
+                    "source_file": f"{path.parent.name}/{path.name}",
                     "source_line": source_line,
                 }
             )
@@ -177,23 +185,28 @@ def main() -> None:
         "bands": bands,
         "records": output_records,
     }
-    current_meta = {
-        **current_period["period"],
-        "file": f"{current_period['period']['id']}.json",
-        "record_count": len(current_period["records"]),
-    }
-    write_json(args.output / "companies.json", companies)
-    write_json(args.output / f"{args.period_id}.json", data)
-    write_json(
-        args.output / "periods.json",
-        {
+    manifest_path = args.output / "periods.json"
+    if manifest_path.exists():
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    else:
+        manifest = {
             "latest": current_period["period"]["id"],
             "periods": [
-                current_meta,
-                {**period, "file": f"{args.period_id}.json", "record_count": len(output_records)},
+                {
+                    **current_period["period"],
+                    "file": f"{current_period['period']['id']}.json",
+                    "record_count": len(current_period["records"]),
+                }
             ],
-        },
-    )
+        }
+    period_meta = {**period, "file": f"{args.period_id}.json", "record_count": len(output_records)}
+    manifest["periods"] = [
+        item for item in manifest["periods"] if item["id"] != args.period_id
+    ] + [period_meta]
+    manifest["periods"].sort(key=lambda item: item["as_of"], reverse=True)
+    write_json(args.output / "companies.json", companies)
+    write_json(args.output / f"{args.period_id}.json", data)
+    write_json(manifest_path, manifest)
     print(
         f"Imported {len(output_records)} rows; registry now has {len(companies)} companies; "
         f"{sum(bool(company['aliases']) for company in companies)} companies have aliases"
