@@ -102,15 +102,17 @@ def parse_sources(
                 inferred_rank = int(start)
                 band_label = raw_label.replace("区间", "").replace("或未明确", "")
                 continue
+            delimited_line = line[1:].lstrip() if line.startswith(("，", ",")) else line
+            rank_prefix = re.match(r"^\s*(\d+)\s*[，,]", delimited_line)
             forced_band = next(
                 (
                     label
                     for start, end, label in forced_band_ranges
-                    if start <= int(line.split("，", 1)[0].split(",", 1)[0].strip()) <= end
+                    if start <= int(rank_prefix.group(1)) <= end
                 ),
                 None,
-            ) if re.match(r"^\d+\s*[，,]", line) else None
-            delimited_row = CSV_ROW.fullmatch(line)
+            ) if rank_prefix else None
+            delimited_row = CSV_ROW.fullmatch(delimited_line)
             tsv_row = TSV_ROW.fullmatch(raw)
             if delimited_row:
                 rank = int(delimited_row.group(1))

@@ -10,7 +10,7 @@ import re
 from collections import Counter
 from pathlib import Path
 
-ROW = re.compile(r"^\s*(\d+)\s*[，,]\s*(.*?)\s*[，,]?\s*$")
+ROW = re.compile(r"^\s*(\d+)\s*[，,]\s*(.*?)\s*[，,]\s*(.*?)\s*$")
 
 
 def parse_args() -> argparse.Namespace:
@@ -34,7 +34,10 @@ def main() -> None:
     bands = [parse_band(value) for value in args.band_range]
     rows = []
     for source_line, raw in enumerate(args.source.read_text(encoding="utf-8").splitlines(), start=1):
-        match = ROW.fullmatch(raw)
+        line = raw.strip()
+        if line.startswith(("，", ",")):
+            line = line[1:].lstrip()
+        match = ROW.fullmatch(line)
         if not match:
             continue
         rank = int(match.group(1))
