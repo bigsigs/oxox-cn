@@ -934,12 +934,12 @@ const capabilities = [
         <h1>查询乐清企业<br><span class="accent">出口排名</span></h1>
         <p class="hero-intro"><strong>查询累计出口排名、出口额区间及历史名次变化。</strong> 数据按累计周期整理，不推算未经来源确认的精确出口额。</p>
         <form class="company-search" action="/yueqing-export-ranking/" method="get">
-          <label class="sr-only" for="companyQuery">输入企业名称或企业编号</label>
+          <label class="sr-only" for="companyQuery">输入企业名称、拼音或企业编号</label>
           <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg>
-          <input id="companyQuery" name="q" type="search" placeholder="例如：浙江正泰电器股份有限公司" autocomplete="off" required>
+          <input id="companyQuery" name="q" type="search" placeholder="例如：浙江正泰或 zhengtai" autocomplete="off" required>
           <button type="submit">查询企业</button>
         </form>
-        <p class="search-hint">支持企业名称或企业编号，例如 YQ000001</p>
+        <p class="search-hint">支持企业名称、拼音或企业编号，例如 zhengtai、ZJZTDQ 或 YQ000001</p>
       </div>
 
       <div class="hero-art" aria-label="最新排名周期数据">

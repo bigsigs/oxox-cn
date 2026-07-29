@@ -90,6 +90,18 @@ test("ranking page labels the source as Jan-Jun cumulative data and hydrates hom
   assert.doesNotMatch(page, /2026年6月出口额排名/);
 });
 
+test("ranking search exposes pinyin support and uses the requested change colors", async () => {
+  const page = await read("src/pages/yueqing-export-ranking/index.astro");
+  const home = await read("src/pages/index.astro");
+
+  assert.match(page, /输入企业名称、拼音或企业编号/);
+  assert.match(home, /支持企业名称、拼音或企业编号/);
+  assert.match(page, /\.rank-change\.up\s*\{\s*color:\s*var\(--orange\);\s*\}/);
+  assert.match(page, /\.rank-change\.down\s*\{\s*color:\s*var\(--green\);\s*\}/);
+  assert.match(page, /buildCompanySearchIndex/);
+  assert.match(page, /companies\.json/);
+});
+
 test("homepage keeps utility tools secondary to the export data experience", async () => {
   const home = await read("src/pages/index.astro");
   assert.match(home, /id="auxiliary-tools"/);

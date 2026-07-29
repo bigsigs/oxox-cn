@@ -306,8 +306,8 @@ import Wordmark from "../../components/Wordmark.astro";
       font-weight: 750;
       white-space: nowrap;
     }
-    .rank-change.up { color: var(--green); }
-    .rank-change.down { color: var(--orange); }
+    .rank-change.up { color: var(--orange); }
+    .rank-change.down { color: var(--green); }
     .rank-change.flat, .rank-change.pending, .rank-change.review { color: var(--muted); }
     .rank-change.new { padding: 5px 8px; border-radius: 99px; color: var(--ink); background: var(--yellow); }
     tr:hover .rank-change:not(.new) { color: rgba(255,255,255,.82); }
@@ -552,7 +552,7 @@ import Wordmark from "../../components/Wordmark.astro";
       <div class="controls">
         <label class="search-wrap">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg>
-          <input id="rankingSearch" type="search" placeholder="输入企业名称或企业编号" autocomplete="off">
+          <input id="rankingSearch" type="search" placeholder="输入企业名称、拼音或企业编号" autocomplete="off">
         </label>
         <select id="bandFilter" aria-label="筛选出口额区间">
           <option value="all">全部出口额区间</option>
@@ -620,6 +620,7 @@ import Wordmark from "../../components/Wordmark.astro";
     // @ts-nocheck
     import {
       buildPeriodIndex,
+      buildCompanySearchIndex,
       describeRankChange,
       filterRanking,
       paginateRanking,
@@ -643,6 +644,7 @@ import Wordmark from "../../components/Wordmark.astro";
       bands: [],
       previousIndex: new Map(),
       yearAgoIndex: new Map(),
+      searchIndex: new Map(),
       query: "",
       band: "all",
       top: 0,
@@ -860,13 +862,21 @@ import Wordmark from "../../components/Wordmark.astro";
       if (event.key === "Escape" && drawer.classList.contains("open")) closeDrawer();
     });
 
-    Promise.all(PERIODS.map(async (period) => {
+    const datasetsPromise = Promise.all(PERIODS.map(async (period) => {
       const response = await fetch(`/data/yueqing-export-ranking/${period.file}`);
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       return [period.id, await response.json()];
-    }))
-      .then((datasets) => {
+    }));
+    const companiesPromise = fetch("/data/yueqing-export-ranking/companies.json")
+      .then((response) => {
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return response.json();
+      });
+
+    Promise.all([datasetsPromise, companiesPromise])
+      .then(([datasets, companies]) => {
         state.datasets = new Map(datasets);
+        state.searchIndex = buildCompanySearchIndex(companies);
         if (initialQuery) {
           search.value = initialQuery;
           state.query = initialQuery;

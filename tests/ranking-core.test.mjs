@@ -1,14 +1,16 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 
-import {
+import * as rankingCore from "../src/lib/ranking-core.js";
+
+const {
   buildPeriodIndex,
   describeRankChange,
   filterRanking,
   paginateRanking,
   getPageWindow,
   getCompanyRecords,
-} from "../src/lib/ranking-core.js";
+} = rankingCore;
 
 const records = [
   { rank: 1, company_id: "YQ000001", company_name: "浙江正泰电器股份有限公司", band_id: "b01" },
@@ -29,6 +31,36 @@ test("filterRanking combines company, band, and top-rank filters", () => {
   assert.deepEqual(
     filterRanking(records, { query: "浙江", top: 500 }).map((item) => item.rank),
     [1],
+  );
+});
+
+test("pinyin search matches full pinyin, spaces, initials, and Chinese homophones", () => {
+  assert.equal(typeof rankingCore.buildCompanySearchIndex, "function");
+
+  const searchIndex = rankingCore.buildCompanySearchIndex([
+    {
+      company_id: "YQ000001",
+      company_name: "浙江正泰电器股份有限公司",
+      aliases: [],
+    },
+    {
+      company_id: "YQ000002",
+      company_name: "乐清测试有限公司",
+      aliases: ["乐清测式有限公司"],
+    },
+  ]);
+
+  for (const query of ["zhengtai", "zheng tai", "ZHENGTAI", "zjztdq", "浙江政泰"]) {
+    assert.deepEqual(
+      filterRanking(records, { query, searchIndex }).map((item) => item.rank),
+      [1],
+      query,
+    );
+  }
+
+  assert.deepEqual(
+    filterRanking(records, { query: "ce shi", searchIndex }).map((item) => item.rank),
+    [2],
   );
 });
 
