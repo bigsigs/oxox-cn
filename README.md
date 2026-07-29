@@ -37,6 +37,7 @@ npm run build
 - `2026-ytd-06.json`：2026 年 1—6 月累计排名
 - `2026-ytd-05.json`：2026 年 1—5 月累计排名
 - `2026-ytd-04.json`：2026 年 1—4 月累计排名
+- `2026-ytd-03.json`：2026 年 1—3 月累计排名
 
 导入文本排名时使用 `scripts/import_yueqing_text_ranking.py`。文字识别造成的企业名称差异必须先人工确认，再登记到
 `scripts/yueqing-company-aliases.json`；导入器不会自动模糊合并企业。

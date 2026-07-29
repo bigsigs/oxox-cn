@@ -51,13 +51,15 @@ test("ranking page labels the source as Jan-Jun cumulative data", async () => {
   assert.match(page, /id="rankingSearch"/);
   assert.match(page, /id="rankingTableBody"/);
   assert.match(page, /id="companyDrawer"/);
-  assert.match(page, /已收录 1—5 月和 1—4 月累计排名/);
+  assert.match(page, /已收录 1—5 月、1—4 月和 1—3 月累计排名/);
   assert.match(page, /data-period-id="2026-ytd-05"/);
   assert.match(page, /data-period-id="2026-ytd-04"/);
+  assert.match(page, /data-period-id="2026-ytd-03"/);
   assert.match(page, /id="periodSelect"/);
   assert.match(page, /function renderRankChange/);
   assert.match(page, /2026年1—5月累计出口额排名/);
   assert.match(page, /2026年1—4月累计出口额排名/);
+  assert.match(page, /2026年1—3月累计出口额排名/);
   assert.doesNotMatch(page, /2026年6月出口额排名/);
 });
 
@@ -107,11 +109,13 @@ test("the production build preserves the current routes and UI hooks", async () 
       'id="rankingSearch"',
       'id="rankingTableBody"',
       'id="companyDrawer"',
-      "已收录 1—5 月和 1—4 月累计排名",
+      "已收录 1—5 月、1—4 月和 1—3 月累计排名",
       'data-period-id="2026-ytd-05"',
       'data-period-id="2026-ytd-04"',
+      'data-period-id="2026-ytd-03"',
       "2026年1—5月累计出口额排名",
       "2026年1—4月累计出口额排名",
+      "2026年1—3月累计出口额排名",
     ],
   };
 
