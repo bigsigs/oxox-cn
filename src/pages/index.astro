@@ -1,3 +1,8 @@
+---
+import Wordmark from "../components/Wordmark.astro";
+import tools from "../data/tools.js";
+---
+
 <!doctype html>
 <html lang="zh-CN">
 <head>
@@ -7,7 +12,7 @@
   <meta name="theme-color" content="#f2f0e8">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2318201d'/%3E%3Ccircle cx='32' cy='32' r='18' fill='none' stroke='%23f5d451' stroke-width='7'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%23ff5c35'/%3E%3C/svg%3E">
   <title>OXOX 外贸小工具｜让外贸工作少一点重复</title>
-  <style>
+  <style is:global>
     :root {
       --paper: #f2f0e8;
       --paper-light: #faf9f4;
@@ -639,16 +644,7 @@
 
   <header class="site-header shell">
     <a class="brand" href="/" aria-label="OXOX 首页">
-      <svg class="wordmark" viewBox="0 0 194 60" role="img" aria-label="OXOX">
-        <g fill="none" stroke="currentColor" stroke-width="8">
-          <circle cx="27" cy="30" r="20"/>
-          <path d="M58 10 94 50M94 10 58 50"/>
-          <circle cx="127" cy="30" r="20"/>
-          <path d="M158 10 190 50M190 10 158 50"/>
-        </g>
-        <circle class="logo-dot dot-warm" cx="27" cy="30" r="5" fill="#ff5c35"/>
-        <circle class="logo-dot dot-green" cx="127" cy="30" r="5" fill="#0b634b"/>
-      </svg>
+      <Wordmark />
       <span class="brand-label">外贸小工具</span>
     </a>
     <nav class="header-nav" aria-label="主导航">
@@ -718,71 +714,15 @@
   </main>
 
   <footer class="shell">
-    <svg class="footer-mark" viewBox="0 0 194 60" aria-label="OXOX">
-      <g fill="none" stroke="currentColor" stroke-width="8">
-        <circle cx="27" cy="30" r="20"/>
-        <path d="M58 10 94 50M94 10 58 50"/>
-        <circle cx="127" cy="30" r="20"/>
-        <path d="M158 10 190 50M190 10 158 50"/>
-      </g>
-      <circle class="logo-dot dot-warm" cx="27" cy="30" r="5" fill="#ff5c35"/>
-      <circle class="logo-dot dot-green" cx="127" cy="30" r="5" fill="#0b634b"/>
-    </svg>
+    <Wordmark class="footer-mark" />
     <div class="footer-copy">
       <div>OXOX.CN · 外贸人的轻量工具箱</div>
       <div>© <span id="year"></span> OXOX. MADE WITH CARE.</div>
     </div>
   </footer>
 
-  <script>
-    /*
-     * 新增工具：复制一个对象，修改 title、description、category、url 和 status 即可。
-     * status 使用 "live" 表示已上线；"planned" 表示规划中。
-     */
-    const tools = [
-      {
-        title: "商品图尺寸处理",
-        description: "批量统一商品图尺寸、留白与背景，浏览器本地处理，图片无需上传服务器。",
-        category: "image",
-        url: "product-image-resizer/",
-        status: "live",
-        featured: true,
-        icon: "image"
-      },
-      {
-        title: "WebP 转换与重命名",
-        description: "单张或批量转换 WebP，压缩体积、统一命名，并支持 ZIP 一键打包下载。",
-        category: "image",
-        url: "webp-converter/",
-        status: "live",
-        icon: "convert"
-      },
-      {
-        title: "外贸邮件润色",
-        description: "让英文邮件更自然、专业，也更符合真实商务沟通语气。",
-        category: "copy",
-        url: "",
-        status: "planned",
-        icon: "mail"
-      },
-      {
-        title: "FOB 利润计算器",
-        description: "快速拆解采购、物流、平台与汇率成本，看清每一单的真实利润。",
-        category: "calculate",
-        url: "",
-        status: "planned",
-        icon: "calculate"
-      },
-      {
-        title: "产品标题优化",
-        description: "整理产品卖点与关键词，生成更清楚、更适合海外买家的标题。",
-        category: "copy",
-        url: "",
-        status: "planned",
-        icon: "text"
-      }
-    ];
-
+  <script is:inline define:vars={{ tools }}>
+    // @ts-nocheck
     const icons = {
       image: '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="5" y="5" width="22" height="22" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="m7 24 7-7 4 4 3-3 5 5"/></svg>',
       mail: '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="7" width="24" height="18" rx="2"/><path d="m5 9 11 9L27 9"/></svg>',

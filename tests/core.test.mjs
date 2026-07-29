@@ -8,7 +8,7 @@ import {
   formatBytes,
   normalizeQuality,
   sanitizeStem
-} from "../core.js";
+} from "../public/webp-converter/core.js";
 
 test("sanitizeStem keeps useful Unicode while removing unsafe filename characters", () => {
   assert.equal(sanitizeStem("  产品 主图_01?.jpg  "), "产品-主图-01.jpg");

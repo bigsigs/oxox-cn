@@ -1,0 +1,72 @@
+import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
+import { test } from "node:test";
+
+const root = new URL("../", import.meta.url);
+const read = (path) => readFile(new URL(path, root), "utf8");
+
+test("Astro owns all existing public routes", async () => {
+  const routes = [
+    "src/pages/index.astro",
+    "src/pages/product-image-resizer/index.astro",
+    "src/pages/webp-converter/index.astro",
+  ];
+
+  for (const route of routes) {
+    const source = await read(route);
+    assert.match(source, /<!doctype html>/i);
+  }
+});
+
+test("the shared OXOX wordmark is used by every page", async () => {
+  const component = await read("src/components/Wordmark.astro");
+  assert.match(component, /class="logo-dot dot-warm"/);
+  assert.match(component, /class="logo-dot dot-green"/);
+
+  for (const route of [
+    "src/pages/index.astro",
+    "src/pages/product-image-resizer/index.astro",
+    "src/pages/webp-converter/index.astro",
+  ]) {
+    assert.match(await read(route), /<Wordmark/);
+  }
+});
+
+test("tool catalogue content comes from one shared data source", async () => {
+  const catalogue = await read("src/data/tools.js");
+  assert.match(catalogue, /商品图尺寸处理/);
+  assert.match(catalogue, /WebP 转换与重命名/);
+
+  const home = await read("src/pages/index.astro");
+  assert.match(home, /import tools from "\.\.\/data\/tools\.js"/);
+  assert.match(home, /define:vars=\{\{ tools \}\}/);
+});
+
+test("the production build preserves the current routes and UI hooks", async () => {
+  const expectations = {
+    "dist/index.html": [
+      "让外贸工作",
+      'id="toolGrid"',
+      'class="footer-mark"',
+      "product-image-resizer/",
+      "webp-converter/",
+    ],
+    "dist/product-image-resizer/index.html": [
+      "商品图尺寸处理",
+      'id="dropZone"',
+      'id="editModal"',
+      "全部导出 WebP",
+    ],
+    "dist/webp-converter/index.html": [
+      "WebP 转换与重命名",
+      'id="dropZone"',
+      'id="nameTemplate"',
+      'src="/webp-converter/app.js"',
+    ],
+  };
+
+  for (const [path, needles] of Object.entries(expectations)) {
+    const html = await read(path);
+    for (const needle of needles) assert.ok(html.includes(needle), `${path} is missing ${needle}`);
+  }
+});

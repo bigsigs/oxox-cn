@@ -2,9 +2,16 @@
 
 [oxox.cn](https://oxox.cn/) 的独立导航首页，用于汇总 OXOX 旗下的外贸小工具。
 
+## 本地开发
+
+```sh
+npm install
+npm run dev
+```
+
 ## 添加新工具
 
-编辑 `index.html` 底部的 `tools` 数组，复制一个工具对象并修改：
+编辑 `src/data/tools.js`，复制一个工具对象并修改：
 
 - `title`：工具名称
 - `description`：一句话说明
@@ -13,4 +20,9 @@
 - `status`：已上线使用 `live`，预告使用 `planned`
 - `icon`：对应 `icons` 对象中的图标名称
 
-这是一个无构建依赖的纯静态站点，直接打开 `index.html` 即可预览。
+页面由 Astro 构建为纯静态 HTML，并通过 GitHub Actions 发布到 GitHub Pages。
+
+```sh
+npm test
+npm run build
+```

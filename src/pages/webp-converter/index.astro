@@ -1,3 +1,7 @@
+---
+import Wordmark from "../../components/Wordmark.astro";
+---
+
 <!doctype html>
 <html lang="zh-CN">
 <head>
@@ -7,7 +11,7 @@
   <meta name="theme-color" content="#f2f0e8">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2318201d'/%3E%3Ccircle cx='32' cy='32' r='18' fill='none' stroke='%23f5d451' stroke-width='7'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%23ff5c35'/%3E%3C/svg%3E">
   <title>WebP 转换与重命名｜OXOX 外贸小工具</title>
-  <style>
+  <style is:global>
     :root {
       --paper: #f2f0e8;
       --paper-light: #faf9f4;
@@ -607,16 +611,7 @@
   <div class="shell">
     <header class="site-header">
       <a class="brand" href="../" aria-label="返回 OXOX 工具首页">
-        <svg class="wordmark" viewBox="0 0 194 60" role="img" aria-label="OXOX">
-          <g fill="none" stroke="currentColor" stroke-width="8">
-            <circle cx="27" cy="30" r="20"/>
-            <path d="M58 10 94 50M94 10 58 50"/>
-            <circle cx="127" cy="30" r="20"/>
-            <path d="M158 10 190 50M190 10 158 50"/>
-          </g>
-          <circle class="logo-dot dot-warm" cx="27" cy="30" r="5" fill="#ff5c35"/>
-          <circle class="logo-dot dot-green" cx="127" cy="30" r="5" fill="#0b634b"/>
-        </svg>
+        <Wordmark />
         <span class="brand-label">外贸小工具</span>
       </a>
       <a class="back-home" href="../">
@@ -681,7 +676,7 @@
             <div class="field wide">
               <label for="nameTemplate">命名模板</label>
               <input id="nameTemplate" value="{name}-{index:02}" autocomplete="off">
-              <p class="template-help">{name} {index:02} {width} {height} {date}</p>
+              <p class="template-help">{"{name} {index:02} {width} {height} {date}"}</p>
             </div>
           </div>
 
@@ -758,6 +753,6 @@
     </main>
   </div>
 
-  <script type="module" src="./app.js"></script>
+  <script is:inline type="module" src="/webp-converter/app.js"></script>
 </body>
 </html>
