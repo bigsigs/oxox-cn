@@ -54,3 +54,24 @@ export function getCompanyRecords(records, companyId) {
     .filter((record) => record.company_id === companyId)
     .sort((a, b) => a.rank - b.rank);
 }
+
+export function buildPeriodIndex(records) {
+  const index = new Map();
+  records.forEach((record) => {
+    const matches = index.get(record.company_id) || [];
+    matches.push(record);
+    index.set(record.company_id, matches);
+  });
+  return index;
+}
+
+export function describeRankChange(record, previousIndex) {
+  const previous = previousIndex.get(record.company_id) || [];
+  if (!previous.length) return { type: "new", delta: null, previousRank: null };
+  if (previous.length > 1) return { type: "review", delta: null, previousRank: null };
+
+  const previousRank = previous[0].rank;
+  const delta = previousRank - record.rank;
+  if (delta === 0) return { type: "flat", delta: 0, previousRank };
+  return { type: delta > 0 ? "up" : "down", delta: Math.abs(delta), previousRank };
+}

@@ -298,8 +298,19 @@ import Wordmark from "../../components/Wordmark.astro";
       font-size: 10px;
       font-weight: 700;
     }
-    .pending-change { color: var(--muted); font-size: 11px; }
-    tr:hover .pending-change { color: rgba(255,255,255,.72); }
+    .rank-change {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      font-weight: 750;
+      white-space: nowrap;
+    }
+    .rank-change.up { color: var(--green); }
+    .rank-change.down { color: var(--orange); }
+    .rank-change.flat, .rank-change.pending, .rank-change.review { color: var(--muted); }
+    .rank-change.new { padding: 5px 8px; border-radius: 99px; color: var(--ink); background: var(--yellow); }
+    tr:hover .rank-change:not(.new) { color: rgba(255,255,255,.82); }
     .empty-row { height: 180px; color: var(--muted); text-align: center; cursor: default; }
 
     .pagination {
@@ -500,7 +511,7 @@ import Wordmark from "../../components/Wordmark.astro";
       <div>
         <p class="eyebrow">Yueqing export index / 2026</p>
         <h1>乐清企业<br><em>出口排名</em></h1>
-        <p class="hero-note">按企业名称快速查询累计出口排名和出口额区间。当前为 <strong>2026年1—6月累计出口额排名</strong>，后续月份数据会在同一企业档案内形成历史对比。</p>
+        <p class="hero-note">按企业名称快速查询累计出口排名和出口额区间。当前为 <strong>2026年1—6月累计出口额排名</strong>，已收录 1—5 月累计排名，可查看企业名次升降和两期历史。</p>
       </div>
       <div class="period-card">
         <small>LATEST PERIOD / 最新周期</small>
@@ -510,9 +521,9 @@ import Wordmark from "../../components/Wordmark.astro";
     </section>
 
     <section class="stats shell" aria-label="数据概览">
-      <div class="stat"><b>3,180</b><span>排名记录</span></div>
-      <div class="stat"><b>3,178</b><span>企业档案</span></div>
-      <div class="stat"><b>11</b><span>出口额区间</span></div>
+      <div class="stat"><b id="statRecords">3,180</b><span>当前周期记录</span></div>
+      <div class="stat"><b>3,180</b><span>跨期企业档案</span></div>
+      <div class="stat"><b id="statBands">11</b><span>当前出口额区间</span></div>
       <div class="stat stat-note"><b>区间数据</b><span>不推算精确出口额</span></div>
     </section>
 
@@ -525,7 +536,8 @@ import Wordmark from "../../components/Wordmark.astro";
         <label>
           <span class="section-kicker">数据周期</span>
           <select class="period-select" id="periodSelect" aria-label="选择数据周期">
-            <option value="2026-ytd-06">2026年1—6月（最新）</option>
+            <option value="2026-ytd-06" data-period-id="2026-ytd-06">2026年1—6月（最新）</option>
+            <option value="2026-ytd-05" data-period-id="2026-ytd-05">2026年1—5月</option>
           </select>
         </label>
       </div>
@@ -557,7 +569,7 @@ import Wordmark from "../../components/Wordmark.astro";
               <th>当前排名</th>
               <th>企业名称</th>
               <th>累计出口额区间</th>
-              <th>较上期</th>
+              <th id="rankChangeHeading">较 1—5 月</th>
             </tr>
           </thead>
           <tbody id="rankingTableBody"></tbody>
@@ -567,14 +579,14 @@ import Wordmark from "../../components/Wordmark.astro";
 
       <aside class="data-note">
         <b>数据说明</b>
-        <span>本页展示的是 2026 年 1—6 月累计排名，不是 6 月单月排名。源表只提供出口额区间，因此页面不会估算或展示虚构的精确金额。后续导入 1—5 月数据后，将增加名次升降和历史轨迹。</span>
+        <span>已收录 <strong>2026年1—6月累计出口额排名</strong>与<strong>2026年1—5月累计出口额排名</strong>，均不是单月排名。源数据只提供出口额区间，因此页面不会估算或展示虚构的精确金额；名次变化以同一企业稳定编号进行比较。</span>
       </aside>
     </section>
   </main>
 
   <footer class="shell">
     <span>OXOX.CN · 乐清出口排名</span>
-    <span>数据周期：2026年1—6月累计</span>
+    <span id="footerPeriod">数据周期：2026年1—6月累计</span>
   </footer>
 
   <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
@@ -586,17 +598,12 @@ import Wordmark from "../../components/Wordmark.astro";
     <h3 id="drawerCompanyName"></h3>
     <div class="drawer-company-id" id="drawerCompanyId"></div>
     <div class="drawer-rank">
-      <div><small>2026年1—6月累计排名</small><strong id="drawerRank"></strong></div>
+      <div><small id="drawerPeriodLabel">累计排名</small><strong id="drawerRank"></strong></div>
       <div><small>累计出口额区间</small><strong id="drawerBand"></strong></div>
     </div>
     <div class="history">
       <h4>RANKING HISTORY / 排名历史</h4>
       <div id="drawerCurrentRecords"></div>
-      <div class="history-item future-history">
-        <i class="history-dot"></i>
-        <span>2026年1—5月</span>
-        <span>待导入 1—5 月数据</span>
-      </div>
     </div>
     <div class="review-note" id="reviewNote" hidden>源表中该企业名称在同一周期出现多次，当前完整保留原始记录，等待核对企业主体。</div>
   </aside>
@@ -604,17 +611,34 @@ import Wordmark from "../../components/Wordmark.astro";
   <script>
     // @ts-nocheck
     import {
+      buildPeriodIndex,
+      describeRankChange,
       filterRanking,
       paginateRanking,
       getPageWindow,
       getCompanyRecords,
     } from "../../lib/ranking-core.js";
 
-    const DATA_URL = "/data/yueqing-export-ranking/2026-ytd-06.json";
-    const state = { records: [], bands: [], query: "", band: "all", top: 0, page: 1, pageSize: 50 };
+    const PERIODS = [
+      { id: "2026-ytd-06", label: "2026年1—6月", shortLabel: "1—6 月", file: "2026-ytd-06.json", previous: "2026-ytd-05" },
+      { id: "2026-ytd-05", label: "2026年1—5月", shortLabel: "1—5 月", file: "2026-ytd-05.json", previous: null },
+    ];
+    const state = {
+      datasets: new Map(),
+      periodId: "2026-ytd-06",
+      records: [],
+      bands: [],
+      previousIndex: new Map(),
+      query: "",
+      band: "all",
+      top: 0,
+      page: 1,
+      pageSize: 50,
+    };
     const search = document.querySelector("#rankingSearch");
     const bandFilter = document.querySelector("#bandFilter");
     const topFilter = document.querySelector("#topFilter");
+    const periodSelect = document.querySelector("#periodSelect");
     const tableBody = document.querySelector("#rankingTableBody");
     const summary = document.querySelector("#resultSummary");
     const pagination = document.querySelector("#pagination");
@@ -630,6 +654,18 @@ import Wordmark from "../../components/Wordmark.astro";
       '"': "&quot;",
       "'": "&#039;",
     })[character]);
+
+    function renderRankChange(record) {
+      if (!PERIODS.find((period) => period.id === state.periodId)?.previous) {
+        return '<span class="rank-change pending">待导入更早数据</span>';
+      }
+      const change = describeRankChange(record, state.previousIndex);
+      if (change.type === "up") return `<span class="rank-change up">↑ ${change.delta}</span>`;
+      if (change.type === "down") return `<span class="rank-change down">↓ ${change.delta}</span>`;
+      if (change.type === "flat") return '<span class="rank-change flat">— 持平</span>';
+      if (change.type === "review") return '<span class="rank-change review">待核对</span>';
+      return '<span class="rank-change new">新进榜</span>';
+    }
 
     function render() {
       const filtered = filterRanking(state.records, state);
@@ -648,7 +684,7 @@ import Wordmark from "../../components/Wordmark.astro";
               </button>
             </td>
             <td><span class="band-pill">${escapeHtml(record.band_label)}</span></td>
-            <td><span class="pending-change">待导入上期数据</span></td>
+            <td>${renderRankChange(record)}</td>
           </tr>
         `).join("")
         : '<tr><td class="empty-row" colspan="4">没有找到匹配的企业，请换个关键词试试。</td></tr>';
@@ -664,23 +700,58 @@ import Wordmark from "../../components/Wordmark.astro";
       `;
     }
 
+    function setPeriod(periodId) {
+      const period = PERIODS.find((item) => item.id === periodId);
+      const dataset = state.datasets.get(periodId);
+      if (!period || !dataset) return;
+
+      state.periodId = periodId;
+      state.records = dataset.records;
+      state.bands = dataset.bands;
+      state.previousIndex = period.previous
+        ? buildPeriodIndex(state.datasets.get(period.previous)?.records || [])
+        : new Map();
+      state.band = "all";
+      state.page = 1;
+      bandFilter.innerHTML = `
+        <option value="all">全部出口额区间</option>
+        ${dataset.bands.map((band) => `<option value="${escapeHtml(band.id)}">${escapeHtml(band.label)}（${band.count}）</option>`).join("")}
+      `;
+      document.querySelector("#statRecords").textContent = dataset.records.length.toLocaleString("zh-CN");
+      document.querySelector("#statBands").textContent = dataset.bands.length;
+      document.querySelector("#rankChangeHeading").textContent = period.previous ? "较 1—5 月" : "较更早期";
+      document.querySelector("#footerPeriod").textContent = `数据周期：${period.label}累计`;
+      render();
+    }
+
     function openCompany(companyId, trigger = null) {
-      const companyRecords = getCompanyRecords(state.records, companyId);
-      if (!companyRecords.length) return;
-      const current = companyRecords[0];
+      const selectedRecords = getCompanyRecords(state.records, companyId);
+      const periodHistory = PERIODS.map((period) => ({
+        period,
+        records: getCompanyRecords(state.datasets.get(period.id)?.records || [], companyId),
+      })).filter((entry) => entry.records.length);
+      if (!periodHistory.length) return;
+      const current = selectedRecords[0] || periodHistory[0].records[0];
+      const selectedPeriod = PERIODS.find((period) => period.id === state.periodId);
+      const displayPeriod = selectedRecords.length ? selectedPeriod : periodHistory[0].period;
       lastFocused = trigger || document.activeElement;
       document.querySelector("#drawerCompanyName").textContent = current.company_name;
       document.querySelector("#drawerCompanyId").textContent = `企业编号 / ${current.company_id}`;
       document.querySelector("#drawerRank").textContent = `NO. ${current.rank}`;
       document.querySelector("#drawerBand").textContent = current.band_label;
-      document.querySelector("#drawerCurrentRecords").innerHTML = companyRecords.map((record) => `
-        <div class="history-item">
-          <i class="history-dot"></i>
-          <span>2026年1—6月${companyRecords.length > 1 ? ` · 源表第 ${record.source_row} 行` : ""}</span>
-          <strong>第 ${record.rank} 名</strong>
-        </div>
-      `).join("");
-      document.querySelector("#reviewNote").hidden = !companyRecords.some((record) => record.source_duplicate);
+      document.querySelector("#drawerPeriodLabel").textContent = `${displayPeriod.label}累计排名`;
+      document.querySelector("#drawerCurrentRecords").innerHTML = periodHistory.flatMap(({ period, records }) =>
+        records.map((record) => `
+          <div class="history-item">
+            <i class="history-dot"></i>
+            <span>${period.label}${records.length > 1 ? " · 来源待核对" : ""}<small class="company-id">${escapeHtml(record.band_label)}</small></span>
+            <strong>第 ${record.rank} 名</strong>
+          </div>
+        `)
+      ).join("");
+      document.querySelector("#reviewNote").hidden = !periodHistory.some(({ records }) =>
+        records.some((record) => record.source_duplicate)
+      );
 
       backdrop.hidden = false;
       drawer.inert = false;
@@ -722,6 +793,9 @@ import Wordmark from "../../components/Wordmark.astro";
       state.top = Number(topFilter.value);
       resetPageAndRender();
     });
+    periodSelect.addEventListener("change", () => {
+      setPeriod(periodSelect.value);
+    });
     document.querySelector("#clearFilters").addEventListener("click", () => {
       search.value = "";
       bandFilter.value = "all";
@@ -747,19 +821,14 @@ import Wordmark from "../../components/Wordmark.astro";
       if (event.key === "Escape" && drawer.classList.contains("open")) closeDrawer();
     });
 
-    fetch(DATA_URL)
-      .then((response) => {
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        return response.json();
-      })
-      .then((data) => {
-        state.records = data.records;
-        state.bands = data.bands;
-        bandFilter.insertAdjacentHTML(
-          "beforeend",
-          data.bands.map((band) => `<option value="${escapeHtml(band.id)}">${escapeHtml(band.label)}（${band.count}）</option>`).join(""),
-        );
-        render();
+    Promise.all(PERIODS.map(async (period) => {
+      const response = await fetch(`/data/yueqing-export-ranking/${period.file}`);
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return [period.id, await response.json()];
+    }))
+      .then((datasets) => {
+        state.datasets = new Map(datasets);
+        setPeriod("2026-ytd-06");
         const companyId = new URLSearchParams(location.hash.slice(1)).get("company");
         if (companyId) openCompany(companyId);
       })
