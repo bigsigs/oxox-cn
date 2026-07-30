@@ -412,6 +412,62 @@ const companyCount = new Intl.NumberFormat("en-US").format(companies.length);
     .drawer-rank > div + div { border-left: 1px solid var(--ink); background: var(--yellow); }
     .drawer-rank small { display: block; margin-bottom: 10px; color: var(--muted); font-size: 10px; }
     .drawer-rank strong { font-family: var(--serif); font-size: 30px; font-weight: 400; }
+    .company-links {
+      margin-top: 16px;
+      border: 1px solid var(--ink);
+      background: var(--paper-light);
+    }
+    .company-links-heading {
+      margin: 0;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: .14em;
+    }
+    .company-external-link {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: center;
+      min-height: 72px;
+      padding: 15px 16px;
+      transition: color .2s ease, background-color .2s ease;
+    }
+    .company-external-link + .company-external-link { border-top: 1px solid var(--line); }
+    .company-external-link:hover,
+    .company-external-link:focus-visible {
+      color: var(--paper-light);
+      background: var(--green);
+      outline: none;
+    }
+    .company-link-label {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .company-link-domain {
+      display: block;
+      overflow: hidden;
+      color: var(--muted);
+      font-size: 10px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      transition: color .2s ease;
+    }
+    .company-external-link:hover .company-link-domain,
+    .company-external-link:focus-visible .company-link-domain { color: rgba(250,249,244,.72); }
+    .company-link-arrow {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border: 1px solid currentColor;
+      border-radius: 50%;
+      font-size: 16px;
+    }
     .history { margin-top: 42px; }
     .history h4 { margin: 0 0 18px; font-size: 11px; letter-spacing: .13em; }
     .history-item {
@@ -624,6 +680,10 @@ const companyCount = new Intl.NumberFormat("en-US").format(companies.length);
       <div><small id="drawerPeriodLabel">累计排名</small><strong id="drawerRank"></strong></div>
       <div><small id="drawerBandLabel">累计出口额区间</small><strong id="drawerBand"></strong></div>
     </div>
+    <section class="company-links" id="companyLinks" aria-labelledby="companyLinksHeading" hidden>
+      <h4 class="company-links-heading" id="companyLinksHeading">ONLINE PRESENCE / 企业线上入口</h4>
+      <div id="companyLinksList"></div>
+    </section>
     <div class="history">
       <h4>RANKING HISTORY / 排名历史</h4>
       <div id="drawerCurrentRecords"></div>
@@ -662,6 +722,7 @@ const companyCount = new Intl.NumberFormat("en-US").format(companies.length);
       previousIndex: new Map(),
       yearAgoIndex: new Map(),
       searchIndex: new Map(),
+      companyProfiles: {},
       query: "",
       band: "all",
       top: 0,
@@ -688,6 +749,40 @@ const companyCount = new Intl.NumberFormat("en-US").format(companies.length);
       '"': "&quot;",
       "'": "&#039;",
     })[character]);
+
+    function getSafeExternalUrl(value) {
+      try {
+        const url = new URL(value);
+        return url.protocol === "https:" ? url.href : null;
+      } catch {
+        return null;
+      }
+    }
+
+    function renderCompanyLinks(companyId) {
+      const links = (state.companyProfiles[companyId]?.links || [])
+        .map((link) => ({ ...link, safeUrl: getSafeExternalUrl(link.url) }))
+        .filter((link) => link.safeUrl);
+      const section = document.querySelector("#companyLinks");
+      const list = document.querySelector("#companyLinksList");
+
+      section.hidden = links.length === 0;
+      list.innerHTML = links.map((link) => `
+        <a
+          class="company-external-link"
+          href="${escapeHtml(link.safeUrl)}"
+          target="_blank"
+          rel="nofollow noopener noreferrer"
+          aria-label="访问${escapeHtml(link.label)}：${escapeHtml(link.domain)}（新窗口打开）"
+        >
+          <span>
+            <b class="company-link-label">${escapeHtml(link.label)}</b>
+            <small class="company-link-domain">${escapeHtml(link.domain)}</small>
+          </span>
+          <span class="company-link-arrow" aria-hidden="true">↗</span>
+        </a>
+      `).join("");
+    }
 
     function renderRankChange(record) {
       if (!PERIODS.find((period) => period.id === state.periodId)?.previous) {
@@ -798,6 +893,7 @@ const companyCount = new Intl.NumberFormat("en-US").format(companies.length);
       document.querySelector("#drawerBand").textContent = current.band_label;
       document.querySelector("#drawerPeriodLabel").textContent = `${displayPeriod.label}累计排名`;
       document.querySelector("#drawerBandLabel").textContent = `累计${displayPeriod.metricLabel}区间`;
+      renderCompanyLinks(companyId);
       document.querySelector("#drawerCurrentRecords").innerHTML = periodHistory.flatMap(({ period, records }) =>
         records.map((record) => `
           <div class="history-item">
@@ -889,11 +985,17 @@ const companyCount = new Intl.NumberFormat("en-US").format(companies.length);
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         return response.json();
       });
+    const companyProfilesPromise = fetch("/data/yueqing-export-ranking/company-profiles.json")
+      .then((response) => {
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return response.json();
+      });
 
-    Promise.all([datasetsPromise, companiesPromise])
-      .then(([datasets, companies]) => {
+    Promise.all([datasetsPromise, companiesPromise, companyProfilesPromise])
+      .then(([datasets, companies, companyProfiles]) => {
         state.datasets = new Map(datasets);
         state.searchIndex = buildCompanySearchIndex(companies);
+        state.companyProfiles = companyProfiles;
         if (initialQuery) {
           search.value = initialQuery;
           state.query = initialQuery;

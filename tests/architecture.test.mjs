@@ -151,8 +151,42 @@ test("ranking page labels the source as Jan-Jun cumulative data and hydrates hom
   assert.match(page, /2025年1—12月累计出口额排名/);
   assert.match(page, /new URLSearchParams\(location\.search\)\.get\("q"\)/);
   assert.match(page, /search\.value = initialQuery/);
+  assert.match(page, /id="companyLinks"/);
+  assert.match(page, /company-profiles\.json/);
+  assert.match(page, /rel="nofollow noopener noreferrer"/);
   assert.doesNotMatch(page, /进出口额/);
   assert.doesNotMatch(page, /2026年6月出口额排名/);
+});
+
+test("curated company profiles keep external links separate from generated ranking data", async () => {
+  const [profilesSource, companiesSource] = await Promise.all([
+    read("public/data/yueqing-export-ranking/company-profiles.json"),
+    read("public/data/yueqing-export-ranking/companies.json"),
+  ]);
+  const profiles = JSON.parse(profilesSource);
+  const companies = JSON.parse(companiesSource);
+  const company = companies.find((item) => item.company_name === "乐清市名格思进出口有限公司");
+
+  assert.equal(company?.company_id, "YQ000080");
+  assert.deepEqual(profiles.YQ000080.links[0], {
+    type: "alibaba_store",
+    label: "阿里巴巴国际站",
+    url: "https://mggsdtie.en.alibaba.com/",
+    domain: "mggsdtie.en.alibaba.com",
+    source: "user_provided",
+    added_at: "2026-07-30",
+  });
+
+  const kinkong = companies.find((item) => item.company_name === "乐清市千工电器有限公司");
+  assert.equal(kinkong?.company_id, "YQ000130");
+  assert.deepEqual(profiles.YQ000130.links[0], {
+    type: "official_website",
+    label: "官方网站",
+    url: "https://www.kinkong.com/",
+    domain: "kinkong.com",
+    source: "user_provided",
+    added_at: "2026-07-30",
+  });
 });
 
 test("ranking search exposes pinyin support and uses the requested change colors", async () => {

@@ -1,0 +1,26 @@
+{
+  "YQ000080": {
+    "links": [
+      {
+        "type": "alibaba_store",
+        "label": "阿里巴巴国际站",
+        "url": "https://mggsdtie.en.alibaba.com/",
+        "domain": "mggsdtie.en.alibaba.com",
+        "source": "user_provided",
+        "added_at": "2026-07-30"
+      }
+    ]
+  },
+  "YQ000130": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.kinkong.com/",
+        "domain": "kinkong.com",
+        "source": "user_provided",
+        "added_at": "2026-07-30"
+      }
+    ]
+  }
+}
