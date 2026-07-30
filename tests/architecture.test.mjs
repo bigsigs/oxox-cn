@@ -168,6 +168,7 @@ test("curated company profiles keep external links separate from generated ranki
   const chint = companies.find((item) => item.company_name === "浙江正泰电器股份有限公司");
   const beny = companies.find((item) => item.company_name === "浙江奔一新能源有限公司");
   const kripal = companies.find((item) => item.company_name === "浙江科瑞普电气有限公司");
+  const vecas = companies.find((item) => item.company_name === "温州华嘉电器有限公司");
   const geya = companies.find((item) => item.company_name === "浙江格亚电气有限公司");
   const geyaTrading = companies.find((item) => item.company_name === "温州格亚贸易有限公司");
   const company = companies.find((item) => item.company_name === "乐清市名格思进出口有限公司");
@@ -178,6 +179,8 @@ test("curated company profiles keep external links separate from generated ranki
   assert.equal(profiles.YQ000011.links[0].url, "https://www.beny.com/");
   assert.equal(kripal?.company_id, "YQ000019");
   assert.equal(profiles.YQ000019.links[0].url, "https://www.kripal.net/");
+  assert.equal(vecas?.company_id, "YQ000025");
+  assert.equal(profiles.YQ000025.links[0].url, "https://www.vecas.cn/cn/index.html");
   assert.equal(geya?.company_id, "YQ000102");
   assert.equal(profiles.YQ000102.links[0].url, "https://www.geya.net/");
   assert.equal(geyaTrading?.company_id, "YQ000651");
