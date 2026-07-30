@@ -386,6 +386,61 @@ const capabilities = [
       background: var(--green);
     }
 
+    .full-ranking-cta {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: center;
+      max-width: 760px;
+      min-height: 92px;
+      margin-top: 18px;
+      padding: 17px 22px;
+      border: 1px solid var(--green-dark);
+      color: white;
+      background: var(--green);
+      box-shadow: 8px 8px 0 var(--yellow);
+      animation: rise .8s .39s ease both;
+      transition: color .2s ease, background .2s ease, box-shadow .2s ease, transform .2s ease;
+    }
+
+    .full-ranking-cta small {
+      display: block;
+      margin-bottom: 7px;
+      color: rgba(255,255,255,.7);
+      font-size: 9px;
+      font-weight: 850;
+      letter-spacing: .15em;
+    }
+
+    .full-ranking-cta strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: clamp(24px, 2.2vw, 32px);
+      font-weight: 400;
+      letter-spacing: -.035em;
+      line-height: 1.08;
+    }
+
+    .full-ranking-cta > span:last-child {
+      font-family: var(--serif);
+      font-size: 34px;
+      transition: transform .2s ease;
+    }
+
+    .full-ranking-cta:hover,
+    .full-ranking-cta:focus-visible {
+      color: var(--ink);
+      background: var(--yellow);
+      box-shadow: 10px 10px 0 var(--orange);
+      outline: 0;
+      transform: translate(-2px, -2px);
+    }
+
+    .full-ranking-cta:hover small,
+    .full-ranking-cta:focus-visible small { color: rgba(24,32,29,.62); }
+    .full-ranking-cta:hover > span:last-child,
+    .full-ranking-cta:focus-visible > span:last-child { transform: translateX(7px); }
+
     .search-hint {
       display: flex;
       align-items: center;
@@ -505,19 +560,27 @@ const capabilities = [
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-top: 15px;
-      padding: 14px 16px;
+      gap: 14px;
+      min-height: 58px;
+      margin-top: 17px;
+      padding: 14px 17px;
+      border: 1px solid white;
       color: white;
-      background: var(--ink);
-      font-size: 12px;
-      font-weight: 750;
-      transition: color .2s ease, background .2s ease;
+      background: var(--orange);
+      box-shadow: 6px 6px 0 rgba(24,32,29,.13);
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1.35;
+      transition: color .2s ease, background .2s ease, box-shadow .2s ease, transform .2s ease;
     }
 
     .period-link:hover,
     .period-link:focus-visible {
       color: var(--yellow);
       background: var(--green);
+      box-shadow: 8px 8px 0 rgba(24,32,29,.18);
+      outline: 0;
+      transform: translate(-2px, -2px);
     }
 
     .data-strip {
@@ -1056,18 +1119,28 @@ const capabilities = [
       .search-icon { top: 31px; }
       .company-search input { min-height: 62px; padding-right: 16px; font-size: 16px; }
       .company-search button { min-height: 53px; }
+      .full-ranking-cta {
+        min-height: 84px;
+        margin-top: 15px;
+        padding: 15px 17px;
+        box-shadow: 6px 6px 0 var(--yellow);
+      }
+      .full-ranking-cta strong { font-size: clamp(21px, 6vw, 27px); }
+      .full-ranking-cta > span:last-child { font-size: 29px; }
       .hero-art { min-height: 350px; }
       .orbit { width: min(86vw, 330px); }
       .period-card { width: min(90%, 340px); padding: 25px; }
       .eyebrow,
       h1,
       .hero-intro,
+      .full-ranking-cta,
       .hero-art {
         transition: opacity .2s ease, filter .2s ease;
       }
       body.search-focused .eyebrow,
       body.search-focused h1,
       body.search-focused .hero-intro,
+      body.search-focused .full-ranking-cta,
       body.search-focused .hero-art {
         animation: none;
         opacity: .18;
@@ -1141,6 +1214,13 @@ const capabilities = [
           </div>
           <button type="submit">查询企业</button>
         </form>
+        <a class="full-ranking-cta" href="/yueqing-export-ranking/">
+          <span>
+            <small>FULL RANKING / 完整榜单</small>
+            <strong>查看全部 {formatNumber(latestRanking.records.length)} 家企业完整排名</strong>
+          </span>
+          <span aria-hidden="true">→</span>
+        </a>
         <p class="search-hint">支持企业名称、拼音或企业编号，例如 zhengtai、ZJZTDQ 或 YQ000001</p>
       </div>
 
@@ -1153,7 +1233,7 @@ const capabilities = [
           <div class="period-stat"><span>排名记录</span><b>{formatNumber(latestRanking.records.length)}</b></div>
           <div class="period-stat"><span>出口额区间</span><b>{latestRanking.bands.length}</b></div>
           <div class="period-stat"><span>累计周期</span><b>{periods.periods.length}</b></div>
-          <a class="period-link" href="/yueqing-export-ranking/"><span>查看完整排名</span><span aria-hidden="true">→</span></a>
+          <a class="period-link" href="/yueqing-export-ranking/"><span>查看 {latestRanking.period.label}完整排名</span><span aria-hidden="true">→</span></a>
         </article>
       </div>
     </section>

@@ -104,6 +104,10 @@ test("homepage makes Yueqing export company search the primary action", async ()
   assert.match(home, /latestRanking\.records\.length/);
   assert.match(home, /latestRanking\.bands\.length/);
   assert.match(home, /periods\.periods\.length/);
+  assert.match(home, /class="full-ranking-cta"/);
+  assert.match(home, /FULL RANKING \/ 完整榜单/);
+  assert.match(home, /查看全部 \{formatNumber\(latestRanking\.records\.length\)\} 家企业完整排名/);
+  assert.match(home, /查看 \{latestRanking\.period\.label\}完整排名/);
   assert.match(home, /辅助工具/);
   assert.doesNotMatch(home, /进出口额/);
 });
