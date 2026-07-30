@@ -154,6 +154,7 @@ test("ranking page labels the source as Jan-Jun cumulative data and hydrates hom
   assert.match(page, /id="companyLinks"/);
   assert.match(page, /company-profiles\.json/);
   assert.match(page, /rel="nofollow noopener noreferrer"/);
+  assert.match(page, /\["https:", "http:"\]\.includes\(url\.protocol\)/);
   assert.doesNotMatch(page, /进出口额/);
   assert.doesNotMatch(page, /2026年6月出口额排名/);
 });
@@ -169,6 +170,8 @@ test("curated company profiles keep external links separate from generated ranki
   const beny = companies.find((item) => item.company_name === "浙江奔一新能源有限公司");
   const kripal = companies.find((item) => item.company_name === "浙江科瑞普电气有限公司");
   const vecas = companies.find((item) => item.company_name === "温州华嘉电器有限公司");
+  const tycotiu = companies.find((item) => item.company_name === "浙江泰科天唯电气有限公司");
+  const lsp = companies.find((item) => item.company_name === "温州猎雷电气有限公司");
   const geya = companies.find((item) => item.company_name === "浙江格亚电气有限公司");
   const geyaTrading = companies.find((item) => item.company_name === "温州格亚贸易有限公司");
   const company = companies.find((item) => item.company_name === "乐清市名格思进出口有限公司");
@@ -181,6 +184,10 @@ test("curated company profiles keep external links separate from generated ranki
   assert.equal(profiles.YQ000019.links[0].url, "https://www.kripal.net/");
   assert.equal(vecas?.company_id, "YQ000025");
   assert.equal(profiles.YQ000025.links[0].url, "https://www.vecas.cn/cn/index.html");
+  assert.equal(tycotiu?.company_id, "YQ000052");
+  assert.equal(profiles.YQ000052.links[0].url, "http://www.chtaike.com.cn/");
+  assert.equal(lsp?.company_id, "YQ000454");
+  assert.equal(profiles.YQ000454.links[0].url, "https://lsp.global/");
   assert.equal(geya?.company_id, "YQ000102");
   assert.equal(profiles.YQ000102.links[0].url, "https://www.geya.net/");
   assert.equal(geyaTrading?.company_id, "YQ000651");

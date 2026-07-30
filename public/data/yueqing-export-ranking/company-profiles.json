@@ -47,6 +47,18 @@
       }
     ]
   },
+  "YQ000052": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "http://www.chtaike.com.cn/",
+        "domain": "chtaike.com.cn",
+        "source": "user_provided",
+        "added_at": "2026-07-30"
+      }
+    ]
+  },
   "YQ000080": {
     "links": [
       {
@@ -78,6 +90,18 @@
         "label": "官方网站",
         "url": "https://www.kinkong.com/",
         "domain": "kinkong.com",
+        "source": "user_provided",
+        "added_at": "2026-07-30"
+      }
+    ]
+  },
+  "YQ000454": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://lsp.global/",
+        "domain": "lsp.global",
         "source": "user_provided",
         "added_at": "2026-07-30"
       }
