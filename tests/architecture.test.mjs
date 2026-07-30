@@ -27,6 +27,8 @@ test("Yueqing SEO observatory is an OXOX-native data page", async () => {
   ]);
 
   assert.match(home, /href="\/yueqing-seo\/"/);
+  assert.match(home, /href="\/yueqing-seo\/">SEO 榜单<\/a>/);
+  assert.match(page, /href="\/yueqing-seo\/" aria-current="page">SEO 榜单<\/a>/);
   assert.match(page, /<Wordmark/);
   assert.match(page, /乐清 SEO 观察台/);
   assert.match(page, /YUEQING SEARCH INTELLIGENCE/);
