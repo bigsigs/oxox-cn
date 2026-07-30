@@ -38,10 +38,10 @@ const changeText = (value: number | null) => {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="乐清电气企业自然流量、关键词、反向链接与 AI 品牌曝光观察台，提供企业搜索、指标筛选和相对排名。">
+  <meta name="description" content="乐清电气企业 SEO 榜单，比较自然流量、关键词、反向链接与 AI 品牌曝光，支持企业搜索、指标筛选和相对排名。">
   <meta name="theme-color" content="#f2f0e8">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2318201d'/%3E%3Ccircle cx='32' cy='32' r='18' fill='none' stroke='%23f5d451' stroke-width='7'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%23ff5c35'/%3E%3C/svg%3E">
-  <title>乐清 SEO 观察台｜乐清企业搜索表现｜OXOX</title>
+  <title>乐清 SEO 榜单｜乐清企业搜索表现｜OXOX</title>
   <style is:global>
     :root {
       --paper: #f2f0e8;
@@ -241,11 +241,10 @@ const changeText = (value: number | null) => {
 
     .pulse-card {
       position: relative;
-      padding: 30px;
+      padding: 28px 28px 0;
       color: white;
       background: var(--green-dark);
       box-shadow: 13px 13px 0 var(--yellow);
-      transform: rotate(1.2deg);
     }
 
     .pulse-card::before {
@@ -265,7 +264,7 @@ const changeText = (value: number | null) => {
       align-items: end;
       justify-content: space-between;
       gap: 20px;
-      padding-bottom: 21px;
+      padding-bottom: 20px;
       border-bottom: 1px solid rgba(255,255,255,.22);
     }
 
@@ -281,44 +280,111 @@ const changeText = (value: number | null) => {
       letter-spacing: -.06em;
     }
 
-    .leader-list {
+    .pulse-total {
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      gap: 8px;
+    }
+
+    .pulse-total small {
+      color: rgba(255,255,255,.55);
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: .12em;
+    }
+
+    .leader-stairs {
       display: grid;
-      gap: 21px;
-      margin-top: 24px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: end;
+      min-height: 245px;
+      margin-top: 22px;
     }
 
-    .leader-row {
-      display: grid;
-      grid-template-columns: 35px 1fr auto;
-      align-items: center;
-      gap: 12px;
+    .leader-step {
+      display: flex;
+      min-width: 0;
+      height: var(--step-height);
+      flex-direction: column;
+      padding: 16px 14px 15px;
+      color: var(--ink);
+      background: var(--step-color);
+      border-right: 1px solid var(--green-dark);
+      transition: transform .22s ease;
     }
 
-    .leader-row small {
-      color: var(--yellow);
-      font: 700 10px/1 var(--mono);
+    .leader-step:last-child { border-right: 0; }
+    .leader-step:hover { transform: translateY(-7px); }
+
+    .leader-rank {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 8px;
     }
 
-    .leader-row div { min-width: 0; }
-    .leader-row span {
+    .leader-rank strong {
+      font: 500 clamp(30px, 3.5vw, 45px)/.8 var(--serif);
+      letter-spacing: -.07em;
+    }
+
+    .leader-icon {
+      width: 38px;
+      height: 38px;
+      flex: 0 0 auto;
+      object-fit: contain;
+      border: 1px solid rgba(24,32,29,.18);
+      border-radius: 9px;
+      background: white;
+    }
+
+    .leader-company {
+      min-width: 0;
+      margin-top: auto;
+    }
+
+    .leader-company b {
+      display: -webkit-box;
+      overflow: hidden;
+      font-size: 10px;
+      font-weight: 800;
+      line-height: 1.35;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+    }
+
+    .leader-company small {
       display: block;
       overflow: hidden;
-      font-size: 11px;
-      font-weight: 750;
+      margin-top: 5px;
+      color: rgba(24,32,29,.58);
+      font: 700 8px/1.2 var(--mono);
       text-overflow: ellipsis;
       white-space: nowrap;
     }
 
-    .leader-row i {
-      display: block;
-      width: var(--share);
-      height: 5px;
-      margin-top: 8px;
-      background: var(--accent);
+    .leader-traffic {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 5px;
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(24,32,29,.24);
     }
 
-    .leader-row b {
-      font: 500 20px/1 var(--serif);
+    .leader-traffic span {
+      font: 500 clamp(20px, 2.4vw, 29px)/1 var(--serif);
+      letter-spacing: -.05em;
+      white-space: nowrap;
+    }
+
+    .leader-traffic small {
+      color: rgba(24,32,29,.58);
+      font-size: 7px;
+      font-weight: 800;
+      letter-spacing: .08em;
     }
 
     .summary-strip {
@@ -797,8 +863,13 @@ const changeText = (value: number | null) => {
       .hero { gap: 36px; padding: 34px 0 48px; }
       h1 { font-size: clamp(52px, 16vw, 75px); }
       .hero-intro { font-size: 13px; }
-      .pulse-card { padding: 25px 22px; box-shadow: 9px 9px 0 var(--yellow); }
+      .pulse-card { padding: 23px 18px 0; box-shadow: 9px 9px 0 var(--yellow); }
       .pulse-head strong { font-size: 38px; }
+      .leader-stairs { min-height: 220px; }
+      .leader-step { padding: 13px 10px 12px; }
+      .leader-icon { width: 32px; height: 32px; }
+      .leader-company b { font-size: 9px; }
+      .leader-traffic small { display: none; }
       .summary-strip { grid-template-columns: 1fr 1fr; }
       .summary-label { grid-column: 1 / -1; }
       .summary-strip > * { min-height: 116px; padding: 19px; }
@@ -880,7 +951,7 @@ const changeText = (value: number | null) => {
     <section class="hero shell">
       <div>
         <p class="eyebrow">YUEQING SEARCH INTELLIGENCE / 乐清搜索情报</p>
-        <h1>乐清 SEO<br><span class="title-accent">观察台</span></h1>
+        <h1>乐清 SEO<br><span class="title-accent">榜单</span></h1>
         <p class="hero-intro">
           聚焦乐清电气企业的<strong>自然流量、关键词、链接资产与 AI 品牌曝光</strong>。
           以域名为观察对象，用统一快照比较相对位置和增长信号。
@@ -889,19 +960,31 @@ const changeText = (value: number | null) => {
 
       <aside class="pulse-card" aria-label="自然流量领先站点">
         <div class="pulse-head">
-          <span>SEARCH PULSE / 搜索脉搏</span>
-          <strong>{formatNumber(summary.traffic)}</strong>
+          <span>TRAFFIC TOP 3 / 自然流量前三</span>
+          <div class="pulse-total">
+            <strong>{formatNumber(summary.traffic)}</strong>
+            <small>监测站点总流量</small>
+          </div>
         </div>
-        <div class="leader-list">
+        <div class="leader-stairs">
           {leaders.map((company, index) => (
-            <div class="leader-row">
-              <small>{String(index + 1).padStart(2, "0")}</small>
-              <div>
-                <span>{company.brand} · {company.domain}</span>
-                <i style={`--share:${Math.max(8, company.traffic / leaders[0].traffic * 100)}%;--accent:${company.accent}`}></i>
+            <article
+              class="leader-step"
+              style={`--step-height:${245 - index * 40}px;--step-color:${index === 0 ? "var(--yellow)" : index === 1 ? "var(--paper-light)" : "var(--orange)"}`}
+            >
+              <div class="leader-rank">
+                <strong>{String(index + 1).padStart(2, "0")}</strong>
+                <img class="leader-icon" src={company.icon} alt="" width="38" height="38">
               </div>
-              <b>{formatNumber(company.traffic)}</b>
-            </div>
+              <div class="leader-company">
+                <b>{company.brand}</b>
+                <small>{company.domain}</small>
+              </div>
+              <div class="leader-traffic">
+                <span>{formatNumber(company.traffic)}</span>
+                <small>TRAFFIC</small>
+              </div>
+            </article>
           ))}
         </div>
       </aside>
@@ -1025,7 +1108,7 @@ const changeText = (value: number | null) => {
   <footer class="shell">
     <Wordmark class="footer-mark" />
     <div class="footer-copy">
-      <strong>OXOX.CN · 乐清 SEO 观察台</strong><br>
+      <strong>OXOX.CN · 乐清 SEO 榜单</strong><br>
       企业搜索表现、AI 品牌曝光与增长信号。<br>
       <a href="https://si.gs/" target="_blank" rel="noopener noreferrer">Design by SIGS</a>
     </div>

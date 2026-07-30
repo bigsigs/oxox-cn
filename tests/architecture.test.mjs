@@ -30,7 +30,7 @@ test("Yueqing SEO observatory is an OXOX-native data page", async () => {
   assert.match(home, /href="\/yueqing-seo\/">SEO 榜单<\/a>/);
   assert.match(page, /href="\/yueqing-seo\/" aria-current="page">SEO 榜单<\/a>/);
   assert.match(page, /<Wordmark/);
-  assert.match(page, /乐清 SEO 观察台/);
+  assert.match(page, /乐清 SEO 榜单/);
   assert.match(page, /YUEQING SEARCH INTELLIGENCE/);
   assert.match(page, /id="seoSearch"/);
   assert.match(page, /id="seoFilter"/);
@@ -43,7 +43,10 @@ test("Yueqing SEO observatory is an OXOX-native data page", async () => {
   assert.match(page, /const pageSize = 20/);
   assert.match(page, /\/company-icons\/\$\{company\.domain\}\.png/);
   assert.doesNotMatch(page, /<em>观察台<\/em>/);
-  assert.match(page, /<span class="title-accent">观察台<\/span>/);
+  assert.match(page, /<span class="title-accent">榜单<\/span>/);
+  assert.match(page, /class="leader-stairs"/);
+  assert.match(page, /class="leader-icon"/);
+  assert.match(page, /company\.icon/);
   assert.match(page, /h1\s*\{[^}]*font:\s*650/s);
   assert.match(page, /\.hero\s*\{[^}]*min-height:\s*440px[^}]*padding:\s*44px 0 58px/s);
   assert.match(page, /\.pagination > button\s*\{[^}]*width:\s*104px/s);
@@ -75,7 +78,7 @@ test("tool catalogue content comes from one shared data source", async () => {
   assert.match(catalogue, /商品图尺寸处理/);
   assert.match(catalogue, /WebP 转换与重命名/);
   assert.match(catalogue, /乐清出口排名/);
-  assert.match(catalogue, /乐清 SEO 观察台/);
+  assert.match(catalogue, /乐清 SEO 榜单/);
 
   const home = await read("src/pages/index.astro");
   assert.match(home, /import tools from "\.\.\/data\/tools\.js"/);
@@ -331,7 +334,7 @@ test("the production build preserves the current routes and UI hooks", async () 
       "2025年1—12月累计出口额排名",
     ],
     "dist/yueqing-seo/index.html": [
-      "乐清 SEO 观察台",
+      "乐清 SEO 榜单",
       "YUEQING SEARCH INTELLIGENCE",
       'id="seoSearch"',
       'id="seoFilter"',
