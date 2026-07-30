@@ -1,4 +1,28 @@
 {
+  "YQ000001": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.chintglobal.com/",
+        "domain": "chintglobal.com",
+        "source": "user_provided",
+        "added_at": "2026-07-30"
+      }
+    ]
+  },
+  "YQ000011": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.beny.com/",
+        "domain": "beny.com",
+        "source": "user_provided",
+        "added_at": "2026-07-30"
+      }
+    ]
+  },
   "YQ000080": {
     "links": [
       {
@@ -6,6 +30,18 @@
         "label": "阿里巴巴国际站",
         "url": "https://mggsdtie.en.alibaba.com/",
         "domain": "mggsdtie.en.alibaba.com",
+        "source": "user_provided",
+        "added_at": "2026-07-30"
+      }
+    ]
+  },
+  "YQ000102": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.geya.net/",
+        "domain": "geya.net",
         "source": "user_provided",
         "added_at": "2026-07-30"
       }
