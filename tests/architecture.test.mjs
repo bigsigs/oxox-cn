@@ -168,6 +168,7 @@ test("curated company profiles keep external links separate from generated ranki
   const chint = companies.find((item) => item.company_name === "浙江正泰电器股份有限公司");
   const beny = companies.find((item) => item.company_name === "浙江奔一新能源有限公司");
   const geya = companies.find((item) => item.company_name === "浙江格亚电气有限公司");
+  const geyaTrading = companies.find((item) => item.company_name === "温州格亚贸易有限公司");
   const company = companies.find((item) => item.company_name === "乐清市名格思进出口有限公司");
 
   assert.equal(chint?.company_id, "YQ000001");
@@ -176,6 +177,8 @@ test("curated company profiles keep external links separate from generated ranki
   assert.equal(profiles.YQ000011.links[0].url, "https://www.beny.com/");
   assert.equal(geya?.company_id, "YQ000102");
   assert.equal(profiles.YQ000102.links[0].url, "https://www.geya.net/");
+  assert.equal(geyaTrading?.company_id, "YQ000651");
+  assert.equal(profiles.YQ000651.links[0].url, "https://www.geya.net/");
   assert.equal(company?.company_id, "YQ000080");
   assert.deepEqual(profiles.YQ000080.links[0], {
     type: "alibaba_store",

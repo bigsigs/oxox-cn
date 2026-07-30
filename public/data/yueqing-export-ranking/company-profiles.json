@@ -58,5 +58,17 @@
         "added_at": "2026-07-30"
       }
     ]
+  },
+  "YQ000651": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.geya.net/",
+        "domain": "geya.net",
+        "source": "user_provided",
+        "added_at": "2026-07-30"
+      }
+    ]
   }
 }
