@@ -23,6 +23,18 @@
       }
     ]
   },
+  "YQ000019": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.kripal.net/",
+        "domain": "kripal.net",
+        "source": "user_provided",
+        "added_at": "2026-07-30"
+      }
+    ]
+  },
   "YQ000080": {
     "links": [
       {
