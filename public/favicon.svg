@@ -1,14 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <title>OXOX</title>
-  <rect width="64" height="64" rx="16" fill="#18201d"/>
-  <g fill="none" stroke="#0b634b" stroke-linecap="round" stroke-linejoin="round" stroke-width="5">
-    <circle cx="22" cy="25" r="11"/>
-    <path d="m33 14 17 17M50 14 33 31"/>
-  </g>
-  <circle cx="22" cy="25" r="3.2" fill="#0b634b"/>
-  <g fill="none" stroke="#ff5c35" stroke-linecap="round" stroke-linejoin="round" stroke-width="5">
-    <circle cx="29" cy="32" r="11"/>
-    <path d="m40 21 17 17M57 21 40 38"/>
-  </g>
-  <circle cx="29" cy="32" r="3.2" fill="#ff5c35"/>
+  <rect width="64" height="64" fill="#fff"/>
+  <circle cx="32" cy="32" r="21" fill="none" stroke="#18201d" stroke-linecap="round" stroke-width="7"/>
+  <circle cx="32" cy="32" r="5.5" fill="#ff5c35"/>
 </svg>
