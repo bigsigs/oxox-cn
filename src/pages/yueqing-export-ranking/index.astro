@@ -3,6 +3,28 @@ import Wordmark from "../../components/Wordmark.astro";
 import companies from "../../../public/data/yueqing-export-ranking/companies.json";
 
 const companyCount = new Intl.NumberFormat("en-US").format(companies.length);
+const datasetSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Dataset",
+      "@id": "https://oxox.cn/yueqing-export-ranking/#dataset",
+      name: "乐清企业累计出口排名数据",
+      url: "https://oxox.cn/yueqing-export-ranking/",
+      description: "乐清企业累计出口排名、出口额区间和历史名次变化查询。",
+      temporalCoverage: "2025-06-30/2026-06-30",
+      variableMeasured: ["累计出口排名", "累计出口额区间"],
+      creator: { "@type": "Organization", name: "OXOX 乐清出口数据", url: "https://oxox.cn/" },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "首页", item: "https://oxox.cn/" },
+        { "@type": "ListItem", position: 2, name: "乐清出口排名", item: "https://oxox.cn/yueqing-export-ranking/" },
+      ],
+    },
+  ],
+};
 ---
 
 <!doctype html>
@@ -12,8 +34,10 @@ const companyCount = new Intl.NumberFormat("en-US").format(companies.length);
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="乐清企业出口额累计排名查询，当前收录 2026 年 1—6 月排名与出口额区间。">
   <meta name="theme-color" content="#f2f0e8">
+  <link rel="canonical" href="https://oxox.cn/yueqing-export-ranking/">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2318201d'/%3E%3Ccircle cx='32' cy='32' r='18' fill='none' stroke='%23f5d451' stroke-width='7'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%23ff5c35'/%3E%3C/svg%3E">
   <title>乐清出口排名｜2026年1—6月累计出口额｜OXOX</title>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(datasetSchema).replace(/</g, "\\u003c")}></script>
   <style is:global>
     :root {
       --paper: #f2f0e8;
@@ -484,6 +508,42 @@ const companyCount = new Intl.NumberFormat("en-US").format(companies.length);
     .history-item strong { font-family: var(--serif); font-size: 20px; font-weight: 400; }
     .future-history { color: var(--muted); }
     .future-history .history-dot { background: transparent; border: 1px solid var(--muted); box-shadow: none; }
+    .drawer-profile-link {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 20px;
+      align-items: center;
+      margin-top: 30px;
+      padding: 17px 18px;
+      border: 1px solid var(--green-dark);
+      color: white;
+      background: var(--green);
+      box-shadow: 6px 6px 0 var(--yellow);
+      transition: color .2s ease, background .2s ease, box-shadow .2s ease, transform .2s ease;
+    }
+    .drawer-profile-link small,
+    .drawer-profile-link strong { display: block; }
+    .drawer-profile-link small {
+      margin-bottom: 6px;
+      color: rgba(255,255,255,.64);
+      font-size: 8px;
+      font-weight: 850;
+      letter-spacing: .16em;
+    }
+    .drawer-profile-link strong { font-family: var(--serif); font-size: 22px; font-weight: 400; }
+    .drawer-profile-arrow { font-family: var(--serif); font-size: 27px; transition: transform .2s ease; }
+    .drawer-profile-link:hover,
+    .drawer-profile-link:focus-visible {
+      color: var(--ink);
+      background: var(--yellow);
+      box-shadow: 8px 8px 0 var(--orange);
+      outline: 0;
+      transform: translate(-2px, -2px);
+    }
+    .drawer-profile-link:hover small,
+    .drawer-profile-link:focus-visible small { color: rgba(24,32,29,.58); }
+    .drawer-profile-link:hover .drawer-profile-arrow,
+    .drawer-profile-link:focus-visible .drawer-profile-arrow { transform: translateX(5px); }
     .review-note {
       margin-top: 28px;
       padding: 16px;
@@ -688,6 +748,13 @@ const companyCount = new Intl.NumberFormat("en-US").format(companies.length);
       <h4>RANKING HISTORY / 排名历史</h4>
       <div id="drawerCurrentRecords"></div>
     </div>
+    <a class="drawer-profile-link" id="drawerProfileLink" href="/yueqing-export-ranking/">
+      <span>
+        <small>FULL COMPANY PAGE / 完整页面</small>
+        <strong>查看完整企业档案</strong>
+      </span>
+      <span class="drawer-profile-arrow" aria-hidden="true">→</span>
+    </a>
     <div class="review-note" id="reviewNote" hidden>源表中该企业名称在同一周期出现多次，当前完整保留原始记录，等待核对企业主体。</div>
   </aside>
 
@@ -739,6 +806,7 @@ const companyCount = new Intl.NumberFormat("en-US").format(companies.length);
     const drawer = document.querySelector("#companyDrawer");
     const backdrop = document.querySelector("#drawerBackdrop");
     const closeButton = document.querySelector("#drawerClose");
+    const profileLink = document.querySelector("#drawerProfileLink");
     const initialQuery = new URLSearchParams(location.search).get("q")?.trim() || "";
     let lastFocused = null;
 
@@ -819,10 +887,10 @@ const companyCount = new Intl.NumberFormat("en-US").format(companies.length);
           <tr data-company-id="${escapeHtml(record.company_id)}">
             <td><span class="rank-number">${record.rank}</span></td>
             <td>
-              <button class="company-button" type="button" data-company-id="${escapeHtml(record.company_id)}">
+              <a class="company-button" href="/yueqing-export-ranking/company/${escapeHtml(record.company_id)}/" data-company-id="${escapeHtml(record.company_id)}">
                 ${escapeHtml(record.company_name)}
                 <small class="company-id">${escapeHtml(record.company_id)}</small>
-              </button>
+              </a>
             </td>
             <td><span class="band-pill">${escapeHtml(record.band_label)}</span></td>
             <td>${renderRankChange(record)}</td>
@@ -893,6 +961,8 @@ const companyCount = new Intl.NumberFormat("en-US").format(companies.length);
       document.querySelector("#drawerBand").textContent = current.band_label;
       document.querySelector("#drawerPeriodLabel").textContent = `${displayPeriod.label}累计排名`;
       document.querySelector("#drawerBandLabel").textContent = `累计${displayPeriod.metricLabel}区间`;
+      profileLink.href = `/yueqing-export-ranking/company/${companyId}/`;
+      profileLink.setAttribute("aria-label", `查看${current.company_name}完整企业档案`);
       renderCompanyLinks(companyId);
       document.querySelector("#drawerCurrentRecords").innerHTML = periodHistory.flatMap(({ period, records }) =>
         records.map((record) => `
@@ -959,8 +1029,10 @@ const companyCount = new Intl.NumberFormat("en-US").format(companies.length);
       search.focus();
     });
     tableBody.addEventListener("click", (event) => {
-      const button = event.target.closest("[data-company-id]");
-      if (button) openCompany(button.dataset.companyId, button);
+      const link = event.target.closest("[data-company-id]");
+      if (!link || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      openCompany(link.dataset.companyId, link);
     });
     pagination.addEventListener("click", (event) => {
       const button = event.target.closest("[data-page]");
@@ -1002,7 +1074,9 @@ const companyCount = new Intl.NumberFormat("en-US").format(companies.length);
         }
         setPeriod("2026-ytd-06");
         const companyId = new URLSearchParams(location.hash.slice(1)).get("company");
-        if (companyId) openCompany(companyId);
+        if (companyId && state.searchIndex.has(companyId)) {
+          location.replace(`/yueqing-export-ranking/company/${companyId}/`);
+        }
       })
       .catch(() => {
         summary.textContent = "排名数据载入失败，请刷新页面重试。";

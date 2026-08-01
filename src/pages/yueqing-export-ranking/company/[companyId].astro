@@ -1,0 +1,460 @@
+---
+import Wordmark from "../../../components/Wordmark.astro";
+import companies from "../../../../public/data/yueqing-export-ranking/companies.json";
+import profiles from "../../../../public/data/yueqing-export-ranking/company-profiles.json";
+import periods from "../../../../public/data/yueqing-export-ranking/periods.json";
+import data2026Ytd06 from "../../../../public/data/yueqing-export-ranking/2026-ytd-06.json";
+import data2026Ytd05 from "../../../../public/data/yueqing-export-ranking/2026-ytd-05.json";
+import data2026Ytd04 from "../../../../public/data/yueqing-export-ranking/2026-ytd-04.json";
+import data2026Ytd03 from "../../../../public/data/yueqing-export-ranking/2026-ytd-03.json";
+import data2026Ytd02 from "../../../../public/data/yueqing-export-ranking/2026-ytd-02.json";
+import data2025Ytd12 from "../../../../public/data/yueqing-export-ranking/2025-ytd-12.json";
+import data2025Ytd11 from "../../../../public/data/yueqing-export-ranking/2025-ytd-11.json";
+import data2025Ytd10 from "../../../../public/data/yueqing-export-ranking/2025-ytd-10.json";
+import data2025Ytd06 from "../../../../public/data/yueqing-export-ranking/2025-ytd-06.json";
+
+type SourceRecord = {
+  company_id: string;
+  rank: number;
+  band_label: string;
+  source_duplicate?: boolean;
+};
+type RankingDataset = { records: SourceRecord[] };
+type CompanyLink = { type: string; label: string; url: string; domain: string };
+type CompanyProfile = { links?: CompanyLink[] };
+type CompanyHistory = {
+  periodId: string;
+  periodLabel: string;
+  asOf: string;
+  rank: number;
+  bandLabel: string;
+  sourceDuplicate?: boolean;
+};
+
+export async function getStaticPaths() {
+  const datasets = new Map<string, RankingDataset>([
+    ["2026-ytd-06", data2026Ytd06],
+    ["2026-ytd-05", data2026Ytd05],
+    ["2026-ytd-04", data2026Ytd04],
+    ["2026-ytd-03", data2026Ytd03],
+    ["2026-ytd-02", data2026Ytd02],
+    ["2025-ytd-12", data2025Ytd12],
+    ["2025-ytd-11", data2025Ytd11],
+    ["2025-ytd-10", data2025Ytd10],
+    ["2025-ytd-06", data2025Ytd06],
+  ]);
+  const companyProfiles = profiles as Record<string, CompanyProfile>;
+  const histories = new Map();
+
+  for (const period of periods.periods) {
+    const dataset = datasets.get(period.id);
+    for (const record of dataset?.records || []) {
+      const history = histories.get(record.company_id) || [];
+      history.push({
+        periodId: period.id,
+        periodLabel: period.label,
+        asOf: period.as_of,
+        rank: record.rank,
+        bandLabel: record.band_label,
+        sourceDuplicate: record.source_duplicate,
+      });
+      histories.set(record.company_id, history);
+    }
+  }
+
+  return companies.map((company) => ({
+    params: { companyId: company.company_id },
+    props: {
+      company,
+      history: histories.get(company.company_id) || [],
+      profile: companyProfiles[company.company_id] || null,
+    },
+  }));
+}
+
+const { company, history, profile } = Astro.props as {
+  company: { company_id: string; company_name: string; aliases: string[]; needs_review: boolean };
+  history: CompanyHistory[];
+  profile: CompanyProfile | null;
+};
+const latest = history[0];
+const previous = history[1];
+const canonical = new URL(`/yueqing-export-ranking/company/${company.company_id}/`, Astro.site);
+const title = `${company.company_name}出口排名与历史数据｜OXOX`;
+const description = latest
+  ? `${company.company_name}乐清出口排名查询：${latest.periodLabel}累计排名第${latest.rank}名，累计出口额区间为${latest.bandLabel}，并提供历史排名变化。`
+  : `${company.company_name}出口排名与历史数据档案。`;
+const validLinks = (profile?.links || []).filter((link) => {
+  try {
+    return ["http:", "https:"].includes(new URL(link.url).protocol);
+  } catch {
+    return false;
+  }
+});
+const rankDelta = latest && previous ? previous.rank - latest.rank : null;
+const rankState = rankDelta === null ? "pending" : rankDelta > 0 ? "up" : rankDelta < 0 ? "down" : "flat";
+const rankCopy = rankDelta === null
+  ? "暂无相邻周期"
+  : rankDelta > 0
+    ? `较上期上升 ${rankDelta} 名`
+    : rankDelta < 0
+      ? `较上期下降 ${Math.abs(rankDelta)} 名`
+      : "较上期持平";
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": canonical.href,
+      url: canonical.href,
+      name: title,
+      description,
+      inLanguage: "zh-CN",
+      mainEntity: { "@id": `${canonical.href}#dataset` },
+    },
+    {
+      "@type": "Dataset",
+      "@id": `${canonical.href}#dataset`,
+      name: `${company.company_name}累计出口排名历史数据`,
+      description,
+      temporalCoverage: history.length ? `${history.at(-1).asOf}/${history[0].asOf}` : undefined,
+      variableMeasured: ["累计出口排名", "累计出口额区间"],
+      creator: { "@type": "Organization", name: "OXOX 乐清出口数据", url: "https://oxox.cn/" },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "首页", item: "https://oxox.cn/" },
+        { "@type": "ListItem", position: 2, name: "乐清出口排名", item: "https://oxox.cn/yueqing-export-ranking/" },
+        { "@type": "ListItem", position: 3, name: company.company_name, item: canonical.href },
+      ],
+    },
+  ],
+};
+---
+
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content={description}>
+  <meta name="theme-color" content="#f2f0e8">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2318201d'/%3E%3Ccircle cx='32' cy='32' r='18' fill='none' stroke='%23f5d451' stroke-width='7'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%23ff5c35'/%3E%3C/svg%3E">
+  <link rel="canonical" href={canonical}>
+  <title>{title}</title>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(schema).replace(/</g, "\\u003c")} />
+  <style is:global>
+    :root {
+      --paper: #f2f0e8;
+      --paper-light: #faf9f4;
+      --ink: #18201d;
+      --muted: #68716c;
+      --green: #0b634b;
+      --green-dark: #064636;
+      --orange: #ff5c35;
+      --yellow: #f5d451;
+      --line: rgba(24, 32, 29, .16);
+      --serif: "Iowan Old Style", "Baskerville", "Songti SC", "STSong", serif;
+      --sans: "Avenir Next", "PingFang SC", "Hiragino Sans GB", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { background: var(--paper); }
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--ink);
+      font-family: var(--sans);
+      background:
+        linear-gradient(90deg, transparent 49.9%, rgba(24,32,29,.035) 50%, transparent 50.1%),
+        radial-gradient(circle at 8% 0%, rgba(255,255,255,.96), transparent 31rem),
+        var(--paper);
+      background-size: 56px 100%, auto, auto;
+    }
+    a { color: inherit; text-decoration: none; }
+    .shell { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 92px;
+      border-bottom: 1px solid var(--line);
+    }
+    .brand { display: inline-flex; align-items: center; gap: 14px; }
+    .wordmark { --dot-travel: 10px; width: 126px; overflow: visible; }
+    .brand-label {
+      padding-left: 14px;
+      border-left: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 650;
+      letter-spacing: .12em;
+    }
+    .header-nav { display: flex; align-items: center; gap: 10px; }
+    .header-nav a {
+      padding: 10px 15px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 750;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .header-nav a:hover { transform: translateY(-2px); box-shadow: 4px 4px 0 var(--yellow); }
+    .breadcrumb {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 24px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .breadcrumb a:hover { color: var(--green); }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(300px, .7fr);
+      gap: 70px;
+      align-items: end;
+      padding: 62px 0 58px;
+    }
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 20px;
+      color: var(--green);
+      font-size: 10px;
+      font-weight: 850;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 28px; height: 7px; border-radius: 999px; background: var(--orange); }
+    h1 {
+      max-width: 780px;
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(48px, 6.1vw, 82px);
+      font-weight: 400;
+      letter-spacing: -.06em;
+      line-height: 1.03;
+    }
+    .company-code {
+      display: inline-flex;
+      margin-top: 24px;
+      padding: 7px 11px;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      background: rgba(255,255,255,.45);
+      font-size: 11px;
+      font-weight: 750;
+      letter-spacing: .12em;
+    }
+    .hero-copy { max-width: 720px; margin: 24px 0 0; color: var(--muted); font-size: 14px; line-height: 1.85; }
+    .rank-ticket {
+      position: relative;
+      padding: 27px;
+      border: 1px solid var(--ink);
+      background: var(--yellow);
+      box-shadow: 11px 11px 0 var(--green);
+      transform: rotate(1.2deg);
+    }
+    .rank-ticket small { display: block; font-size: 9px; font-weight: 850; letter-spacing: .16em; }
+    .rank-ticket strong {
+      display: block;
+      margin: 25px 0 10px;
+      font-family: var(--serif);
+      font-size: clamp(46px, 5vw, 68px);
+      font-weight: 400;
+      letter-spacing: -.05em;
+      line-height: .9;
+    }
+    .rank-ticket b { font-family: var(--serif); font-size: 24px; font-weight: 400; }
+    .rank-ticket .rank-change { margin-top: 25px; padding-top: 13px; border-top: 1px solid rgba(24,32,29,.22); font-size: 12px; font-weight: 800; }
+    .rank-change.up { color: var(--orange); }
+    .rank-change.down { color: var(--green); }
+    .rank-change.flat, .rank-change.pending { color: var(--muted); }
+    .summary {
+      display: grid;
+      grid-template-columns: 1fr 1.45fr 1fr;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .summary-item { min-height: 118px; padding: 25px; border-right: 1px solid var(--line); }
+    .summary-item:first-child { border-left: 1px solid var(--line); }
+    .summary-item span { display: block; margin-bottom: 12px; color: var(--muted); font-size: 11px; }
+    .summary-item strong { display: block; font-family: var(--serif); font-size: clamp(24px, 2.5vw, 34px); font-weight: 400; line-height: 1.15; }
+    .content-grid { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(280px, .65fr); gap: 28px; padding: 64px 0 84px; }
+    .panel { border: 1px solid var(--line); background: rgba(250,249,244,.66); }
+    .panel-head { display: flex; justify-content: space-between; gap: 24px; align-items: end; padding: 25px 28px; border-bottom: 1px solid var(--line); }
+    .panel-kicker { margin: 0 0 7px; color: var(--orange); font-size: 9px; font-weight: 850; letter-spacing: .17em; text-transform: uppercase; }
+    h2 { margin: 0; font-family: var(--serif); font-size: 34px; font-weight: 400; letter-spacing: -.035em; }
+    .panel-count { color: var(--muted); font-size: 11px; }
+    .history-row {
+      display: grid;
+      grid-template-columns: minmax(150px, .9fr) 90px minmax(150px, 1fr);
+      align-items: center;
+      min-height: 78px;
+      padding: 16px 28px;
+      border-bottom: 1px solid var(--line);
+    }
+    .history-row:last-child { border-bottom: 0; }
+    .history-period strong { display: block; font-size: 14px; }
+    .history-period small { display: block; margin-top: 4px; color: var(--muted); font-size: 10px; }
+    .history-rank { color: var(--green); font-family: var(--serif); font-size: 25px; }
+    .history-band { justify-self: start; padding: 7px 10px; border-radius: 999px; color: var(--green-dark); background: rgba(11,99,75,.08); font-size: 11px; font-weight: 750; }
+    .sidebar { display: grid; gap: 20px; align-content: start; }
+    .note-card { padding: 25px; border: 1px solid var(--line); }
+    .note-card.dark { color: white; background: var(--green-dark); }
+    .note-card h2 { font-size: 27px; }
+    .note-card p { margin: 15px 0 0; color: var(--muted); font-size: 13px; line-height: 1.75; }
+    .note-card.dark p { color: rgba(255,255,255,.66); }
+    .external-links { display: grid; gap: 9px; margin-top: 18px; }
+    .external-link {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: center;
+      padding: 14px;
+      border: 1px solid rgba(255,255,255,.2);
+      background: rgba(255,255,255,.06);
+    }
+    .external-link b, .external-link small { display: block; }
+    .external-link b { font-size: 12px; }
+    .external-link small { margin-top: 4px; color: rgba(255,255,255,.55); font-size: 10px; }
+    .external-link:hover { color: var(--yellow); border-color: var(--yellow); }
+    .back-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 19px 20px;
+      color: white;
+      background: var(--orange);
+      box-shadow: 6px 6px 0 var(--yellow);
+      font-size: 13px;
+      font-weight: 800;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .back-cta:hover { transform: translate(-2px,-2px); box-shadow: 9px 9px 0 var(--yellow); }
+    footer { display: flex; justify-content: space-between; gap: 20px; padding: 25px 0 34px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; }
+
+    @media (max-width: 780px) {
+      .shell { width: min(100% - 28px, 1180px); }
+      .site-header { min-height: 76px; }
+      .wordmark { width: 104px; }
+      .brand-label, .header-nav a:first-child { display: none; }
+      .breadcrumb { padding-top: 18px; }
+      .hero { grid-template-columns: 1fr; gap: 42px; padding: 42px 0 52px; }
+      h1 { font-size: clamp(42px, 13vw, 58px); }
+      .rank-ticket { width: calc(100% - 12px); }
+      .summary { grid-template-columns: 1fr; }
+      .summary-item { min-height: 94px; border-left: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+      .summary-item:last-child { border-bottom: 0; }
+      .content-grid { grid-template-columns: 1fr; padding: 44px 0 64px; }
+      .panel-head { align-items: start; flex-direction: column; }
+      .history-row { grid-template-columns: 1fr auto; gap: 12px; padding: 18px; }
+      .history-band { grid-column: 1 / -1; }
+      footer { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header shell">
+    <a class="brand" href="/" aria-label="OXOX 乐清出口数据首页">
+      <Wordmark />
+      <span class="brand-label">乐清出口数据</span>
+    </a>
+    <nav class="header-nav" aria-label="主要导航">
+      <a href="/articles/">数据解读</a>
+      <a href="/yueqing-export-ranking/">出口排名</a>
+    </nav>
+  </header>
+
+  <main>
+    <nav class="breadcrumb shell" aria-label="面包屑">
+      <a href="/">首页</a><span>/</span>
+      <a href="/yueqing-export-ranking/">乐清出口排名</a><span>/</span>
+      <span aria-current="page">{company.company_name}</span>
+    </nav>
+
+    <section class="hero shell">
+      <div>
+        <p class="eyebrow">Company export profile / 企业出口档案</p>
+        <h1>{company.company_name}</h1>
+        <span class="company-code">企业编号 / {company.company_id}</span>
+        <p class="hero-copy">查询该企业在已收录累计周期中的出口排名、出口额区间和名次变化。数据来自已整理的乐清企业出口排名资料，不推算未经来源确认的精确出口金额。</p>
+      </div>
+      {latest && (
+        <aside class="rank-ticket" aria-label="最新累计排名">
+          <small>{latest.periodLabel}累计排名</small>
+          <strong>NO. {latest.rank}</strong>
+          <b>{latest.bandLabel}</b>
+          <div class={`rank-change ${rankState}`}>{rankCopy}</div>
+        </aside>
+      )}
+    </section>
+
+    <section class="summary shell" aria-label="企业出口数据摘要">
+      <div class="summary-item"><span>最新收录周期</span><strong>{latest?.periodLabel || "暂无数据"}</strong></div>
+      <div class="summary-item"><span>累计出口额区间</span><strong>{latest?.bandLabel || "区间未提供"}</strong></div>
+      <div class="summary-item"><span>已收录历史周期</span><strong>{history.length} 个周期</strong></div>
+    </section>
+
+    <section class="content-grid shell">
+      <article class="panel">
+        <header class="panel-head">
+          <div>
+            <p class="panel-kicker">RANKING HISTORY / 排名历史</p>
+            <h2>累计出口排名变化</h2>
+          </div>
+          <span class="panel-count">共 {history.length} 条已确认记录</span>
+        </header>
+        <div>
+          {history.map((record) => (
+            <div class="history-row">
+              <div class="history-period">
+                <strong>{record.periodLabel}</strong>
+                <small>截至 {record.asOf}</small>
+              </div>
+              <strong class="history-rank">#{record.rank}</strong>
+              <span class="history-band">{record.bandLabel}</span>
+            </div>
+          ))}
+        </div>
+      </article>
+
+      <aside class="sidebar">
+        <section class="note-card">
+          <p class="panel-kicker">ABOUT THE DATA / 数据说明</p>
+          <h2>排名是累计周期，不是单月数据</h2>
+          <p>金额仅展示源资料提供的区间。企业名称和主体信息如发生变化，将通过稳定企业编号继续连接历史记录。</p>
+        </section>
+
+        {validLinks.length > 0 && (
+          <section class="note-card dark">
+            <p class="panel-kicker">ONLINE PRESENCE / 企业线上入口</p>
+            <h2>企业网站</h2>
+            <div class="external-links">
+              {validLinks.map((link) => (
+                <a class="external-link" href={link.url} target="_blank" rel="nofollow noopener noreferrer">
+                  <span><b>{link.label}</b><small>{link.domain}</small></span><span aria-hidden="true">↗</span>
+                </a>
+              ))}
+            </div>
+          </section>
+        )}
+
+        <a class="back-cta" href={`/yueqing-export-ranking/?q=${encodeURIComponent(company.company_name)}`}>
+          <span>返回完整排名查询</span><span aria-hidden="true">→</span>
+        </a>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="shell">
+    <span>OXOX.CN · 乐清出口数据</span>
+    <span>{company.company_name} · {company.company_id}</span>
+  </footer>
+</body>
+</html>

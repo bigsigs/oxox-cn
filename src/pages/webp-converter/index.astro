@@ -1,5 +1,16 @@
 ---
 import Wordmark from "../../components/Wordmark.astro";
+
+const appSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "WebP 转换与重命名",
+  url: "https://oxox.cn/webp-converter/",
+  description: "单张或批量转换 WebP、压缩图片体积并统一文件名，所有处理均在浏览器本地完成。",
+  applicationCategory: "UtilitiesApplication",
+  operatingSystem: "Web",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "CNY" },
+};
 ---
 
 <!doctype html>
@@ -9,8 +20,10 @@ import Wordmark from "../../components/Wordmark.astro";
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="OXOX WebP 转换与重命名：单张或批量转换图片、压缩体积、统一文件名，所有处理均在浏览器本地完成。">
   <meta name="theme-color" content="#f2f0e8">
+  <link rel="canonical" href="https://oxox.cn/webp-converter/">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2318201d'/%3E%3Ccircle cx='32' cy='32' r='18' fill='none' stroke='%23f5d451' stroke-width='7'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%23ff5c35'/%3E%3C/svg%3E">
   <title>WebP 转换与重命名｜OXOX 外贸小工具</title>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(appSchema).replace(/</g, "\\u003c")}></script>
   <style is:global>
     :root {
       --paper: #f2f0e8;

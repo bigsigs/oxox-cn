@@ -20,6 +20,30 @@ test("Astro owns all existing public routes", async () => {
   }
 });
 
+test("every primary indexable route declares a canonical URL and matching structured data", async () => {
+  const routes = [
+    "src/pages/index.astro",
+    "src/pages/articles/index.astro",
+    "src/pages/product-image-resizer/index.astro",
+    "src/pages/webp-converter/index.astro",
+    "src/pages/yueqing-export-ranking/index.astro",
+    "src/pages/yueqing-seo/index.astro",
+  ];
+
+  for (const route of routes) {
+    const source = await read(route);
+    assert.match(source, /rel="canonical"/, `${route} should declare a canonical URL`);
+    assert.match(source, /application\/ld\+json/, `${route} should publish JSON-LD`);
+  }
+
+  assert.match(await read("src/pages/index.astro"), /"@type": "WebSite"/);
+  assert.match(await read("src/pages/yueqing-export-ranking/index.astro"), /"@type": "Dataset"/);
+  assert.match(await read("src/pages/yueqing-seo/index.astro"), /"@type": "Dataset"/);
+  assert.match(await read("src/pages/product-image-resizer/index.astro"), /"@type": "SoftwareApplication"/);
+  assert.match(await read("src/pages/webp-converter/index.astro"), /"@type": "SoftwareApplication"/);
+  assert.match(await read("src/pages/articles/index.astro"), /"@type": "CollectionPage"/);
+});
+
 test("Yueqing SEO observatory is an OXOX-native data page", async () => {
   const [home, page] = await Promise.all([
     read("src/pages/index.astro"),
@@ -166,6 +190,38 @@ test("ranking page labels the source as Jan-Jun cumulative data and hydrates hom
   assert.match(page, /\["https:", "http:"\]\.includes\(url\.protocol\)/);
   assert.doesNotMatch(page, /进出口额/);
   assert.doesNotMatch(page, /2026年6月出口额排名/);
+});
+
+test("company ranking profiles have crawlable static URLs and unique SEO content", async () => {
+  const [rankingPage, companyPage, sitemapPage, robots] = await Promise.all([
+    read("src/pages/yueqing-export-ranking/index.astro"),
+    read("src/pages/yueqing-export-ranking/company/[companyId].astro"),
+    read("src/pages/sitemap.xml.js"),
+    read("public/robots.txt"),
+  ]);
+
+  assert.match(rankingPage, /href="\/yueqing-export-ranking\/company\/\$\{escapeHtml\(record\.company_id\)\}\//);
+  assert.match(rankingPage, /event\.preventDefault\(\)/);
+  assert.match(rankingPage, /location\.replace\(`\/yueqing-export-ranking\/company\/\$\{companyId\}\//);
+  assert.match(rankingPage, /id="drawerProfileLink"/);
+  assert.match(rankingPage, /查看完整企业档案/);
+  assert.match(rankingPage, /profileLink\.href = `\/yueqing-export-ranking\/company\/\$\{companyId\}\//);
+  assert.match(companyPage, /export async function getStaticPaths/);
+  assert.match(companyPage, /companies\.map/);
+  assert.match(companyPage, /rel="canonical"/);
+  assert.match(companyPage, /rel="icon"/);
+  assert.match(companyPage, /application\/ld\+json/);
+  assert.match(companyPage, /RANKING HISTORY \/ 排名历史/);
+  assert.match(companyPage, /rel="nofollow noopener noreferrer"/);
+  assert.match(sitemapPage, /yueqing-export-ranking\/company/);
+  assert.match(robots, /Sitemap: https:\/\/oxox\.cn\/sitemap\.xml/);
+
+  const builtCompany = await read("dist/yueqing-export-ranking/company/YQ003159/index.html");
+  assert.match(builtCompany, /<title>浙江佳博科技股份有限公司出口排名与历史数据｜OXOX<\/title>/);
+  assert.match(builtCompany, /<link rel="canonical" href="https:\/\/oxox\.cn\/yueqing-export-ranking\/company\/YQ003159\/">/);
+  assert.match(builtCompany, /2026年1—6月累计排名/);
+  assert.match(builtCompany, /NO\. 3161/);
+  assert.match(builtCompany, /2025年1—6月/);
 });
 
 test("curated company profiles keep external links separate from generated ranking data", async () => {
