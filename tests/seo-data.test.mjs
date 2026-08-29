@@ -4,9 +4,20 @@ import test from "node:test";
 
 import seoCompanies from "../src/data/seo-companies.js";
 
+test("SEO page identifies the current Semrush snapshot", async () => {
+  const page = await import("node:fs/promises").then(({ readFile }) =>
+    readFile(new URL("../src/pages/yueqing-seo/index.astro", import.meta.url), "utf8"),
+  );
+  assert.match(page, /const snapshotDate = "2026-08-29"/);
+  assert.match(page, /数据来源为 Semrush/);
+});
+
 test("SEO snapshot preserves every monitored domain exactly once", () => {
-  assert.equal(seoCompanies.length, 41);
-  assert.equal(new Set(seoCompanies.map((company) => company.domain)).size, 41);
+  assert.equal(seoCompanies.length, 44);
+  assert.equal(new Set(seoCompanies.map((company) => company.domain)).size, 44);
+  assert.ok(!seoCompanies.some((company) => company.domain === "industrialmonitordirect.com"));
+  assert.ok(seoCompanies.every((company) => company.aiVisibility > 0));
+  assert.ok(seoCompanies.every((company) => company.mentions > 0));
 });
 
 test("SEO snapshot records the metrics required by the observatory", () => {
@@ -29,6 +40,9 @@ test("SEO snapshot uses the prepared company names and local icons", async () =>
     seoCompanies.find((company) => company.domain === "chayo.tech")?.brand,
     "Changyou Technology (Zhejiang) Co., Ltd.",
   );
+  assert.equal(seoCompanies.find((company) => company.domain === "chintglobal.com")?.mentions, 745);
+  assert.equal(seoCompanies.find((company) => company.domain === "viox.com")?.traffic, 47000);
+  assert.equal(seoCompanies.find((company) => company.domain === "tools.viox.com")?.backlinks, null);
 
   for (const company of seoCompanies) {
     await access(new URL(`../public/company-icons/${company.domain}.png`, import.meta.url));

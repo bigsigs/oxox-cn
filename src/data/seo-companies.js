@@ -1,4 +1,6 @@
-const seoCompanies = [
+import currentSeoCompanies from "./seo-companies-2026-08.js";
+
+const previousSeoCompanies = [
   { brand: "GRL Electric", company_name: "GRL Electric", domain: "grlgroup.com", aiVisibility: 14, mentions: 7, traffic: 3018, trafficChange: 12.99, keywords: 3770, keywordsChange: 9.62, backlinks: 18000, backlinksChange: -28.54 },
   { brand: "Delixi Electric Co., Ltd.", company_name: "德力西电气销售有限公司", domain: "delixi-electric.com", aiVisibility: 19, mentions: 177, traffic: 2760, trafficChange: -20.67, keywords: 1050, keywordsChange: 22.66, backlinks: 2740000, backlinksChange: 0.11 },
   { brand: "TENGEN Electric Co., Ltd.", company_name: "天正电气股份有限公司", domain: "tengenglobal.com", aiVisibility: 22, mentions: 246, traffic: 309, trafficChange: -55.41, keywords: 124, keywordsChange: -6.06, backlinks: 6281, backlinksChange: 20.72 },
@@ -42,4 +44,5 @@ const seoCompanies = [
   { brand: "HUYU Electric Group Co., Ltd.", company_name: "HUYU Electric Group Co., Ltd.", domain: "huyuelectric.com", aiVisibility: 14, mentions: 25, traffic: 4780, trafficChange: 318.56, keywords: 5917, keywordsChange: 142.2, backlinks: 875, backlinksChange: 13.34 },
 ];
 
-export default seoCompanies;
+export { previousSeoCompanies };
+export default currentSeoCompanies;
