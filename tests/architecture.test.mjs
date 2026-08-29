@@ -351,6 +351,15 @@ test("hero removes the issue number and keeps orbit dots above the copy", async 
   assert.match(home, /\.orbit::before,\s*\.orbit::after\s*\{[^}]*z-index:\s*4/s);
 });
 
+test("homepage period card keeps rotated content inside the hero at medium widths", async () => {
+  const home = await read("src/pages/index.astro");
+
+  assert.match(home, /\.period-card strong\s*\{[^}]*white-space:\s*normal/s);
+  assert.match(home, /@media \(min-width:\s*961px\) and \(max-width:\s*1180px\)/);
+  assert.match(home, /\.period-card\s*\{[^}]*width:\s*min\(calc\(100% - 28px\),\s*340px\)[^}]*transform:\s*translateX\(-10px\)/s);
+  assert.match(home, /\.period-stat b\s*\{[^}]*min-width:\s*0[^}]*text-align:\s*right/s);
+});
+
 test("the production build preserves the current routes and UI hooks", async () => {
   const expectations = {
     "dist/index.html": [

@@ -561,7 +561,8 @@ const siteSchema = {
       font-weight: 400;
       letter-spacing: -.05em;
       line-height: 1;
-      white-space: nowrap;
+      white-space: normal;
+      text-wrap: balance;
     }
 
     .period-stat {
@@ -577,9 +578,12 @@ const siteSchema = {
     .period-stat:last-of-type { border-bottom: 0; }
 
     .period-stat b {
+      min-width: 0;
       font-family: var(--serif);
       font-size: 23px;
       font-weight: 400;
+      text-align: right;
+      overflow-wrap: anywhere;
     }
 
     .period-link {
@@ -1105,6 +1109,17 @@ const siteSchema = {
         animation-duration: .01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: .01ms !important;
+      }
+    }
+
+    @media (min-width: 961px) and (max-width: 1180px) {
+      .period-card {
+        width: min(calc(100% - 28px), 340px);
+        transform: translateX(-10px);
+      }
+
+      .period-card:hover {
+        transform: translateX(-10px) translateY(-4px);
       }
     }
 
