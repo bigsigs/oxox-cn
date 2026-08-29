@@ -146,6 +146,21 @@ test("homepage header omits the data explanation shortcut while keeping the sect
   assert.match(home, /<section class="capabilities" id="data-capabilities">/);
 });
 
+test("site navigation labels the article center as foreign trade monthly reports", async () => {
+  const pages = await Promise.all([
+    read("src/pages/index.astro"),
+    read("src/pages/articles/index.astro"),
+    read("src/layouts/ArticleLayout.astro"),
+    read("src/pages/yueqing-seo/index.astro"),
+    read("src/pages/yueqing-export-ranking/index.astro"),
+    read("src/pages/yueqing-export-ranking/company/[companyId].astro"),
+  ]);
+
+  for (const page of pages) {
+    assert.match(page, /href="\/articles\/"[\s\S]{0,300}?外贸月报/);
+  }
+});
+
 test("homepage footer credits SIGS with a secure external link", async () => {
   const home = await read("src/pages/index.astro");
   const footer = home.match(/<footer class="shell">[\s\S]*?<\/footer>/)?.[0];
