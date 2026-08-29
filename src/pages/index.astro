@@ -3,7 +3,7 @@ import Wordmark from "../components/Wordmark.astro";
 import { getCollection, type CollectionEntry } from "astro:content";
 import tools from "../data/tools.js";
 import periods from "../../public/data/yueqing-export-ranking/periods.json";
-import latestRanking from "../../public/data/yueqing-export-ranking/2026-ytd-06-exact.json";
+import latestRanking from "../../public/data/yueqing-export-ranking/2026-ytd-07.json";
 
 const topRecords = latestRanking.records.slice(0, 3);
 const latestReport = (await getCollection("articles", ({ data }) => !data.draft))
@@ -1245,7 +1245,7 @@ const siteSchema = {
       <div class="hero-copy">
         <p class="eyebrow">YUEQING EXPORT DATA / 乐清出口数据</p>
         <h1>查询乐清企业<br><span class="accent">出口排名</span></h1>
-        <p class="hero-intro"><strong>查询累计出口排名、精准出口额及历史名次变化。</strong> 最新周期采用源表精准数值，历史周期保留原始区间口径。</p>
+        <p class="hero-intro"><strong>查询累计出口排名、出口额区间及历史名次变化。</strong> 最新 1—7 月按来源区间展示，1—6 月另有精准数值榜单。</p>
         <form class="company-search" id="companySearchForm" action="/yueqing-export-ranking/" method="get">
           <div class="search-field">
             <label class="sr-only" for="companyQuery">输入企业名称、拼音或企业编号</label>
@@ -1266,13 +1266,13 @@ const siteSchema = {
       </div>
 
       <div class="hero-art" aria-label="最新排名周期数据">
-        <p class="sr-only">{formatNumber(latestRanking.records.length)} 条排名记录，精准出口额单位为万美元，已收录 {periods.periods.length} 个周期。</p>
+        <p class="sr-only">{formatNumber(latestRanking.records.length)} 条排名记录，{latestRanking.bands.length} 个出口额区间，已收录 {periods.periods.length} 个周期。</p>
         <div class="orbit" aria-hidden="true"></div>
         <article class="period-card">
           <small>LATEST PERIOD / 最新周期</small>
           <strong>{latestRanking.period.label}</strong>
           <div class="period-stat"><span>排名记录</span><b>{formatNumber(latestRanking.records.length)}</b></div>
-          <div class="period-stat"><span>数据口径</span><b>精准数值</b></div>
+          <div class="period-stat"><span>出口额区间</span><b>{latestRanking.bands.length}</b></div>
           <div class="period-stat"><span>累计周期</span><b>{periods.periods.length}</b></div>
           <a class="period-link" href="/yueqing-export-ranking/"><span>查看 {latestRanking.period.label}完整排名</span><span aria-hidden="true">→</span></a>
         </article>
@@ -1283,7 +1283,7 @@ const siteSchema = {
       <div class="data-label"><i aria-hidden="true"></i> CONFIRMED DATA</div>
       <div class="data-value"><span>最新周期</span><b>{latestRanking.period.label}</b></div>
       <div class="data-value"><span>排名记录</span><b>{formatNumber(latestRanking.records.length)}</b></div>
-      <div class="data-value"><span>金额单位</span><b>万美元</b></div>
+      <div class="data-value"><span>出口额区间</span><b>{latestRanking.bands.length}</b></div>
       <a class="data-strip-link" href="/yueqing-export-ranking/"><span>进入数据库</span><span aria-hidden="true">↗</span></a>
     </section>
 
@@ -1299,13 +1299,13 @@ const siteSchema = {
       <div class="ranking-preview">
         <div class="ranking-list">
           <div class="ranking-head" aria-hidden="true">
-            <span>排名</span><span>企业名称</span><span>累计出口额（万美元）</span><span></span>
+            <span>排名</span><span>企业名称</span><span>累计出口额区间</span><span></span>
           </div>
           {topRecords.map((record) => (
             <a class="ranking-row" href={`/yueqing-export-ranking/?q=${encodeURIComponent(record.company_name)}`}>
               <b>{String(record.rank).padStart(2, "0")}</b>
               <span class="ranking-company">{record.company_name}<small>{record.company_id}</small></span>
-              <em>{record.amount_label}</em>
+              <em>{record.band_label}</em>
               <span class="ranking-arrow" aria-hidden="true">↗</span>
             </a>
           ))}
@@ -1313,8 +1313,8 @@ const siteSchema = {
         <aside class="ranking-note">
           <div>
             <small>ABOUT THE DATA / 数据说明</small>
-            <strong>精准数值与区间数据分开呈现</strong>
-            <p>最新榜单直接展示源表中的累计出口额，单位为万美元；旧榜单仍按原始区间口径保留。</p>
+            <strong>只展示来源确认的排名与金额口径</strong>
+            <p>最新 1—7 月榜单展示原始出口额区间；1—6 月精准数值及其他历史区间数据可在完整榜单切换。</p>
           </div>
           <div class="note-mark" aria-hidden="true"></div>
         </aside>
@@ -1389,7 +1389,7 @@ const siteSchema = {
     <Wordmark class="footer-mark" />
     <div class="footer-copy">
       <strong>OXOX.CN · 乐清出口数据</strong><br>
-      累计出口排名、精准出口额与历史名次变化。<br>
+      累计出口排名、出口额区间与历史名次变化。<br>
       数据持续整理，工具作为辅助。<br>
       <a href="https://si.gs/" target="_blank" rel="noopener noreferrer">Design by SIGS</a>
     </div>
@@ -1409,7 +1409,7 @@ const siteSchema = {
     const searchForm = document.querySelector<HTMLFormElement>("#companySearchForm");
     if (!input || !suggestionsBox || !searchForm) throw new Error("Company autocomplete controls are missing");
     document.body.append(suggestionsBox);
-    const latestDataUrl = "/data/yueqing-export-ranking/2026-ytd-06-exact.json";
+    const latestDataUrl = "/data/yueqing-export-ranking/2026-ytd-07.json";
     let latestRecords: SuggestionRecord[] | null = null;
     let searchIndex: Map<string, string> | null = null;
     let loadingPromise: Promise<SuggestionRecord[]> | null = null;

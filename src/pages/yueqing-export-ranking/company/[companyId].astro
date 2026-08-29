@@ -3,6 +3,7 @@ import Wordmark from "../../../components/Wordmark.astro";
 import companies from "../../../../public/data/yueqing-export-ranking/companies.json";
 import profiles from "../../../../public/data/yueqing-export-ranking/company-profiles.json";
 import periods from "../../../../public/data/yueqing-export-ranking/periods.json";
+import data2026Ytd07 from "../../../../public/data/yueqing-export-ranking/2026-ytd-07.json";
 import data2026Ytd06Exact from "../../../../public/data/yueqing-export-ranking/2026-ytd-06-exact.json";
 import data2026Ytd06 from "../../../../public/data/yueqing-export-ranking/2026-ytd-06.json";
 import data2026Ytd05 from "../../../../public/data/yueqing-export-ranking/2026-ytd-05.json";
@@ -55,6 +56,7 @@ type CompanyHistory = {
 
 export async function getStaticPaths() {
   const datasets = new Map<string, RankingDataset>([
+    ["2026-ytd-07", data2026Ytd07],
     ["2026-ytd-06-exact", data2026Ytd06Exact],
     ["2026-ytd-06", data2026Ytd06],
     ["2026-ytd-05", data2026Ytd05],
@@ -454,7 +456,7 @@ const schema = {
         <p class="eyebrow">Company export profile / 企业出口档案</p>
         <h1>{company.company_name}</h1>
         <span class="company-code">企业编号 / {company.company_id}</span>
-        <p class="hero-copy">查询该企业在已收录累计周期中的出口排名、精准出口额、历史区间与名次变化。精准数值按源表原值展示，历史区间不作金额推算。</p>
+        <p class="hero-copy">查询该企业在已收录累计周期中的出口排名、出口额区间、精准出口额与名次变化。区间和精准数值均按对应源表口径展示。</p>
       </div>
       {latest && (
         <aside class="rank-ticket" aria-label="最新累计排名">

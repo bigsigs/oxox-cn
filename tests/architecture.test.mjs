@@ -119,7 +119,7 @@ test("homepage makes Yueqing export company search the primary action", async ()
   assert.match(home, /id="companySuggestions"/);
   assert.match(home, /role="listbox"/);
   assert.match(home, /aria-autocomplete="list"/);
-  assert.match(home, /2026-ytd-06-exact\.json/);
+  assert.match(home, /2026-ytd-07\.json/);
   assert.match(home, /suggestCompanies/);
   assert.match(home, /\.company-search:focus-within\s*\{[^}]*z-index:\s*10/s);
   assert.match(home, /\.company-suggestions\s*\{[^}]*position:\s*fixed/s);
@@ -154,8 +154,10 @@ test("homepage footer credits SIGS with a secure external link", async () => {
   assert.match(footer, /<a href="https:\/\/si\.gs\/"[^>]*>Design by SIGS<\/a>/);
 });
 
-test("ranking page labels the source as Jan-Jun cumulative data and hydrates homepage queries", async () => {
+test("ranking page labels the source as Jan-Jul cumulative data and hydrates homepage queries", async () => {
   const page = await read("src/pages/yueqing-export-ranking/index.astro");
+  assert.match(page, /data-period-id="2026-ytd-07"/);
+  assert.match(page, /2026年1—7月/);
   assert.match(page, /data-period-id="2026-ytd-06-exact"/);
   assert.match(page, /2026年1—6月（精准数值）/);
   assert.match(page, /amount_label/);
@@ -224,8 +226,9 @@ test("company ranking profiles have crawlable static URLs and unique SEO content
   const builtCompany = await read("dist/yueqing-export-ranking/company/YQ003159/index.html");
   assert.match(builtCompany, /<title>浙江佳博科技股份有限公司出口排名与历史数据｜OXOX<\/title>/);
   assert.match(builtCompany, /<link rel="canonical" href="https:\/\/oxox\.cn\/yueqing-export-ranking\/company\/YQ003159\/">/);
-  assert.match(builtCompany, /2026年1—6月（精准数值）累计排名/);
+  assert.match(builtCompany, /2026年1—7月累计排名/);
   assert.match(builtCompany, /NO\. 3276/);
+  assert.match(builtCompany, /100万美元以下/);
   assert.match(builtCompany, /（0 万美元）/);
   assert.match(builtCompany, /2025年1—6月/);
 });
@@ -368,9 +371,9 @@ test("the production build preserves the current routes and UI hooks", async () 
       'action="/yueqing-export-ranking/"',
       'id="companySuggestions"',
       'aria-autocomplete="list"',
-      "3,290 条排名记录",
-      "精准出口额单位为万美元",
-      "已收录 10 个周期",
+      "3,291 条排名记录",
+      "12 个出口额区间",
+      "已收录 11 个周期",
       'id="auxiliary-tools"',
       'class="footer-mark"',
       "product-image-resizer/",
@@ -389,11 +392,12 @@ test("the production build preserves the current routes and UI hooks", async () 
       'src="/webp-converter/app.js"',
     ],
     "dist/yueqing-export-ranking/index.html": [
+      "2026年1—7月累计出口额排名",
       "2026年1—6月累计出口额排名",
       'id="rankingSearch"',
       'id="rankingTableBody"',
       'id="companyDrawer"',
-      "3,720",
+      "3,742",
       "跨期企业档案",
       'id="yearChangeHeading"',
       "较去年同期",

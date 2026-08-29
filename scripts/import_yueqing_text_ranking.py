@@ -33,6 +33,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--metric", choices=["exports"], default="exports")
     parser.add_argument("--drop-source-row", action="append", default=[])
     parser.add_argument(
+        "--implicit-start-rank",
+        type=int,
+        help="Rank assigned to the first unnumbered source row; later unnumbered rows increment from it.",
+    )
+    parser.add_argument(
         "--unknown-band-range",
         action="append",
         default=[],
@@ -74,6 +79,7 @@ def parse_sources(
     unknown_band_ranges: list[tuple[int, int]] | None = None,
     forced_band_ranges: list[tuple[int, int, str]] | None = None,
     prefer_forced_bands: bool = False,
+    implicit_start_rank: int | None = None,
 ) -> list[dict]:
     records = []
     inferred_rank = None
@@ -167,8 +173,18 @@ def parse_sources(
                     rank, company_name = int(ranked.group(1)), ranked.group(2)
                 elif inferred_rank is not None:
                     rank, company_name = inferred_rank, line
+                elif implicit_start_rank is not None and not records:
+                    rank, company_name = implicit_start_rank, line
                 else:
                     raise ValueError(f"Unclassified line {path}:{source_line}: {line}")
+                forced_band = next(
+                    (
+                        label
+                        for start, end, label in forced_band_ranges
+                        if start <= rank <= end
+                    ),
+                    None,
+                )
                 row_band_label = forced_band or band_label
             if row_band_label is None:
                 raise ValueError(f"Missing band header before {path}:{source_line}")
@@ -219,6 +235,7 @@ def main() -> None:
         unknown_band_ranges=[parse_rank_range(value) for value in args.unknown_band_range],
         forced_band_ranges=[parse_band_range(value) for value in args.band_range],
         prefer_forced_bands=args.prefer_forced_bands,
+        implicit_start_rank=args.implicit_start_rank,
     )
     companies = json.loads(args.companies.read_text(encoding="utf-8"))
     current_period = json.loads(args.current_period.read_text(encoding="utf-8"))
@@ -320,6 +337,7 @@ def main() -> None:
         item for item in manifest["periods"] if item["id"] != args.period_id
     ] + [period_meta]
     manifest["periods"].sort(key=lambda item: item["as_of"], reverse=True)
+    manifest["latest"] = manifest["periods"][0]["id"]
     write_json(args.output / "companies.json", companies)
     write_json(args.output / f"{args.period_id}.json", data)
     write_json(manifest_path, manifest)
