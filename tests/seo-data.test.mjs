@@ -13,9 +13,10 @@ test("SEO page identifies the current Semrush snapshot", async () => {
 });
 
 test("SEO snapshot preserves every monitored domain exactly once", () => {
-  assert.equal(seoCompanies.length, 44);
-  assert.equal(new Set(seoCompanies.map((company) => company.domain)).size, 44);
+  assert.equal(seoCompanies.length, 43);
+  assert.equal(new Set(seoCompanies.map((company) => company.domain)).size, 43);
   assert.ok(!seoCompanies.some((company) => company.domain === "industrialmonitordirect.com"));
+  assert.ok(!seoCompanies.some((company) => company.domain === "electricaltechnology.org"));
   assert.ok(seoCompanies.every((company) => company.aiVisibility > 0));
   assert.ok(seoCompanies.every((company) => company.mentions > 0));
 });
