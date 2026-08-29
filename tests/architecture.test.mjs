@@ -119,14 +119,14 @@ test("homepage makes Yueqing export company search the primary action", async ()
   assert.match(home, /id="companySuggestions"/);
   assert.match(home, /role="listbox"/);
   assert.match(home, /aria-autocomplete="list"/);
-  assert.match(home, /2026-ytd-06\.json/);
+  assert.match(home, /2026-ytd-06-exact\.json/);
   assert.match(home, /suggestCompanies/);
   assert.match(home, /\.company-search:focus-within\s*\{[^}]*z-index:\s*10/s);
   assert.match(home, /\.company-suggestions\s*\{[^}]*position:\s*fixed/s);
   assert.match(home, /document\.body\.append\(suggestionsBox\)/);
   assert.match(home, /suggestionsBox\.contains\(event\.target\)/);
   assert.match(home, /latestRanking\.records\.length/);
-  assert.match(home, /latestRanking\.bands\.length/);
+  assert.match(home, /精准数值/);
   assert.match(home, /periods\.periods\.length/);
   assert.match(home, /class="full-ranking-cta"/);
   assert.match(home, /FULL RANKING \/ 完整榜单/);
@@ -156,6 +156,11 @@ test("homepage footer credits SIGS with a secure external link", async () => {
 
 test("ranking page labels the source as Jan-Jun cumulative data and hydrates homepage queries", async () => {
   const page = await read("src/pages/yueqing-export-ranking/index.astro");
+  assert.match(page, /data-period-id="2026-ytd-06-exact"/);
+  assert.match(page, /2026年1—6月（精准数值）/);
+  assert.match(page, /amount_label/);
+  assert.match(page, /单位：万美元/);
+  assert.match(page, /源表未提供第 16 名/);
   assert.match(page, /2026年1—6月累计出口额排名/);
   assert.match(page, /id="rankingSearch"/);
   assert.match(page, /id="rankingTableBody"/);
@@ -219,8 +224,9 @@ test("company ranking profiles have crawlable static URLs and unique SEO content
   const builtCompany = await read("dist/yueqing-export-ranking/company/YQ003159/index.html");
   assert.match(builtCompany, /<title>浙江佳博科技股份有限公司出口排名与历史数据｜OXOX<\/title>/);
   assert.match(builtCompany, /<link rel="canonical" href="https:\/\/oxox\.cn\/yueqing-export-ranking\/company\/YQ003159\/">/);
-  assert.match(builtCompany, /2026年1—6月累计排名/);
-  assert.match(builtCompany, /NO\. 3161/);
+  assert.match(builtCompany, /2026年1—6月（精准数值）累计排名/);
+  assert.match(builtCompany, /NO\. 3276/);
+  assert.match(builtCompany, /（0 万美元）/);
   assert.match(builtCompany, /2025年1—6月/);
 });
 
@@ -277,6 +283,13 @@ test("curated company profiles keep external links separate from generated ranki
     source: "user_provided",
     added_at: "2026-07-30",
   });
+
+  assert.equal(profiles.YQ000008.details.legal_name, "方大控股有限公司");
+  assert.equal(profiles.YQ000008.details.registered_on, "1997-03-24");
+  assert.equal(profiles.YQ000008.details.unified_social_credit_code, "91330382716178867Y");
+  assert.equal(profiles.YQ000008.details.legal_representative, "林昌方");
+  assert.equal(profiles.YQ000008.details.registered_address, "乐清市芙蓉镇工业区");
+  assert.equal(profiles.YQ000008.links[0].url, "https://www.fangdatools.com/");
 });
 
 test("ranking search exposes pinyin support and uses the requested change colors", async () => {
@@ -346,9 +359,9 @@ test("the production build preserves the current routes and UI hooks", async () 
       'action="/yueqing-export-ranking/"',
       'id="companySuggestions"',
       'aria-autocomplete="list"',
-      "3,180 条排名记录",
-      "11 个出口额区间",
-      "已收录 9 个周期",
+      "3,290 条排名记录",
+      "精准出口额单位为万美元",
+      "已收录 10 个周期",
       'id="auxiliary-tools"',
       'class="footer-mark"',
       "product-image-resizer/",
@@ -371,7 +384,7 @@ test("the production build preserves the current routes and UI hooks", async () 
       'id="rankingSearch"',
       'id="rankingTableBody"',
       'id="companyDrawer"',
-      "3,643",
+      "3,720",
       "跨期企业档案",
       'id="yearChangeHeading"',
       "较去年同期",

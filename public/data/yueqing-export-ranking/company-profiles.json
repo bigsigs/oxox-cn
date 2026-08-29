@@ -1,4 +1,55 @@
 {
+  "YQ000008": {
+    "details": {
+      "legal_name": "方大控股有限公司",
+      "founding_claim": "1987年（企业官网自述）",
+      "registered_on": "1997-03-24",
+      "unified_social_credit_code": "91330382716178867Y",
+      "legal_representative": "林昌方",
+      "registered_capital": "1.27亿元人民币",
+      "status": "存续",
+      "company_type": "有限责任公司（自然人投资或控股）",
+      "registered_address": "乐清市芙蓉镇工业区",
+      "operating_address": "乐清湾港区电子信息产业园",
+      "registration_authority": "乐清市市场监督管理局",
+      "industry": "C332 金属工具制造",
+      "source_note": "公开资料核验样例；登记日期与地址应以最新官方登记信息为准。",
+      "checked_at": "2026-08-02",
+      "confidence": "mixed",
+      "sources": [
+        {
+          "label": "企业官网介绍",
+          "url": "https://www.fangdatools.com/about.html"
+        },
+        {
+          "label": "企业官网核查报告",
+          "url": "https://www.fangdatools.com/upload/file/20250605/17491109316990263.pdf"
+        },
+        {
+          "label": "公开工商信息镜像",
+          "url": "https://www.chachazhan.com/company/01HDBYC0TGYWADV6BCNKMMEJXE"
+        }
+      ]
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.fangdatools.com/",
+        "domain": "fangdatools.com",
+        "source": "company_website",
+        "added_at": "2026-08-02"
+      },
+      {
+        "type": "official_website_alt",
+        "label": "官网备用域名",
+        "url": "https://cn.fangda-tools.com/",
+        "domain": "cn.fangda-tools.com",
+        "source": "company_website",
+        "added_at": "2026-08-02"
+      }
+    ]
+  },
   "YQ000001": {
     "links": [
       {

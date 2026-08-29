@@ -11,9 +11,9 @@ const datasetSchema = {
       "@id": "https://oxox.cn/yueqing-export-ranking/#dataset",
       name: "乐清企业累计出口排名数据",
       url: "https://oxox.cn/yueqing-export-ranking/",
-      description: "乐清企业累计出口排名、出口额区间和历史名次变化查询。",
+      description: "乐清企业累计出口排名、精准累计出口额、出口额区间和历史名次变化查询。",
       temporalCoverage: "2025-06-30/2026-06-30",
-      variableMeasured: ["累计出口排名", "累计出口额区间"],
+      variableMeasured: ["累计出口排名", "精准累计出口额", "累计出口额区间"],
       creator: { "@type": "Organization", name: "OXOX 乐清出口数据", url: "https://oxox.cn/" },
     },
     {
@@ -32,7 +32,7 @@ const datasetSchema = {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="乐清企业出口额累计排名查询，当前收录 2026 年 1—6 月排名与出口额区间。">
+  <meta name="description" content="乐清企业出口额累计排名查询，当前收录 2026 年 1—6 月精准出口额（单位：万美元）及历史区间数据。">
   <meta name="theme-color" content="#f2f0e8">
   <link rel="canonical" href="https://oxox.cn/yueqing-export-ranking/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -642,7 +642,7 @@ const datasetSchema = {
       <div>
         <p class="eyebrow">Yueqing export index / 2026</p>
         <h1>乐清企业<br><em>出口排名</em></h1>
-        <p class="hero-note">按企业名称快速查询累计排名和金额区间。当前为 <strong>2026年1—6月累计出口额排名</strong>，已收录 2026 年 1—5 月、1—4 月、1—3 月、1—2 月及 2025 年全年、1—11 月、1—10 月、1—6 月历史数据，可查看企业名次变化和跨年记录。</p>
+        <p class="hero-note">按企业名称快速查询累计排名和出口额。当前新增 <strong>2026年1—6月精准累计出口额排名</strong>（单位：万美元），原 1—6 月区间榜单独立保留；已收录 2026 年 1—5 月、1—4 月、1—3 月、1—2 月及 2025 年全年、1—11 月、1—10 月、1—6 月历史数据。</p>
       </div>
       <div class="period-card">
         <small>LATEST PERIOD / 最新周期</small>
@@ -652,10 +652,10 @@ const datasetSchema = {
     </section>
 
     <section class="stats shell" aria-label="数据概览">
-      <div class="stat"><b id="statRecords">3,180</b><span>当前周期记录</span></div>
+      <div class="stat"><b id="statRecords">3,290</b><span>当前周期记录</span></div>
       <div class="stat"><b>{companyCount}</b><span>跨期企业档案</span></div>
-      <div class="stat"><b id="statBands">11</b><span id="statBandLabel">当前出口额区间</span></div>
-      <div class="stat stat-note"><b>区间数据</b><span id="statMetricNote">不推算精确出口额</span></div>
+      <div class="stat"><b id="statBands">万美元</b><span id="statBandLabel">精准数值单位</span></div>
+      <div class="stat stat-note"><b id="statPrecision">精准数值</b><span id="statMetricNote">按源表原值展示</span></div>
     </section>
 
     <section class="ranking-section shell">
@@ -667,7 +667,8 @@ const datasetSchema = {
         <label>
           <span class="section-kicker">数据周期</span>
           <select class="period-select" id="periodSelect" aria-label="选择数据周期">
-            <option value="2026-ytd-06" data-period-id="2026-ytd-06">2026年1—6月（最新）</option>
+            <option value="2026-ytd-06-exact" data-period-id="2026-ytd-06-exact">2026年1—6月（精准数值 · 最新）</option>
+            <option value="2026-ytd-06" data-period-id="2026-ytd-06">2026年1—6月（区间数据）</option>
             <option value="2026-ytd-05" data-period-id="2026-ytd-05">2026年1—5月</option>
             <option value="2026-ytd-04" data-period-id="2026-ytd-04">2026年1—4月</option>
             <option value="2026-ytd-03" data-period-id="2026-ytd-03">2026年1—3月</option>
@@ -718,7 +719,7 @@ const datasetSchema = {
 
       <aside class="data-note">
         <b>数据说明</b>
-        <span>已收录 <strong>2026年1—6月累计出口额排名</strong>、<strong>2026年1—5月累计出口额排名</strong>、<strong>2026年1—4月累计出口额排名</strong>、<strong>2026年1—3月累计出口额排名</strong>、<strong>2026年1—2月累计出口额排名</strong>、<strong>2025年1—12月累计出口额排名</strong>、<strong>2025年1—11月累计出口额排名</strong>、<strong>2025年1—10月累计出口额排名</strong>与<strong>2025年1—6月累计出口额排名</strong>，均不是单月排名。源数据只提供出口额区间或经确认的排名区间边界，因此页面不会估算或展示虚构的精确金额；“较去年同期”仅比较累计排名，不推算出口额增速；原始区间缺失处明确标记为“区间未提供”。</span>
+        <span>新增 <strong>2026年1—6月精准累计出口额排名</strong>，金额按源表原值展示，单位：万美元；源表未提供第 16 名，页面不补号。原有 <strong>2026年1—6月累计出口额排名（区间数据）</strong>及 <strong>2026年1—5月累计出口额排名</strong>、<strong>2026年1—4月累计出口额排名</strong>、<strong>2026年1—3月累计出口额排名</strong>、<strong>2026年1—2月累计出口额排名</strong>、<strong>2025年1—12月累计出口额排名</strong>、<strong>2025年1—11月累计出口额排名</strong>、<strong>2025年1—10月累计出口额排名</strong>与<strong>2025年1—6月累计出口额排名</strong>继续独立保留。区间榜单不会估算精确金额；“较去年同期”仅比较累计排名，不推算出口额增速。</span>
       </aside>
     </section>
   </main>
@@ -771,7 +772,8 @@ const datasetSchema = {
     } from "../../lib/ranking-core.js";
 
     const PERIODS = [
-      { id: "2026-ytd-06", label: "2026年1—6月", shortLabel: "1—6 月", metricLabel: "出口额", file: "2026-ytd-06.json", previous: "2026-ytd-05", yearAgo: "2025-ytd-06" },
+      { id: "2026-ytd-06-exact", label: "2026年1—6月（精准数值）", shortLabel: "1—6 月精准", metricLabel: "出口额", file: "2026-ytd-06-exact.json", previous: "2026-ytd-05", yearAgo: "2025-ytd-06", precision: "exact" },
+      { id: "2026-ytd-06", label: "2026年1—6月（区间数据）", shortLabel: "1—6 月区间", metricLabel: "出口额", file: "2026-ytd-06.json", previous: "2026-ytd-05", yearAgo: "2025-ytd-06", precision: "range" },
       { id: "2026-ytd-05", label: "2026年1—5月", shortLabel: "1—5 月", metricLabel: "出口额", file: "2026-ytd-05.json", previous: "2026-ytd-04", yearAgo: null },
       { id: "2026-ytd-04", label: "2026年1—4月", shortLabel: "1—4 月", metricLabel: "出口额", file: "2026-ytd-04.json", previous: "2026-ytd-03", yearAgo: null },
       { id: "2026-ytd-03", label: "2026年1—3月", shortLabel: "1—3 月", metricLabel: "出口额", file: "2026-ytd-03.json", previous: "2026-ytd-02", yearAgo: null },
@@ -783,7 +785,7 @@ const datasetSchema = {
     ];
     const state = {
       datasets: new Map(),
-      periodId: "2026-ytd-06",
+      periodId: "2026-ytd-06-exact",
       records: [],
       bands: [],
       previousIndex: new Map(),
@@ -892,7 +894,7 @@ const datasetSchema = {
                 <small class="company-id">${escapeHtml(record.company_id)}</small>
               </a>
             </td>
-            <td><span class="band-pill">${escapeHtml(record.band_label)}</span></td>
+            <td><span class="band-pill">${escapeHtml(record.amount_label || record.band_label)}</span></td>
             <td>${renderRankChange(record)}</td>
             <td>${renderYearChange(record)}</td>
           </tr>
@@ -926,15 +928,17 @@ const datasetSchema = {
         : new Map();
       state.band = "all";
       state.page = 1;
-      bandFilter.innerHTML = `
-        <option value="all">全部${period.metricLabel}区间</option>
-        ${dataset.bands.map((band) => `<option value="${escapeHtml(band.id)}">${escapeHtml(band.label)}（${band.count}）</option>`).join("")}
-      `;
+      const isExact = period.precision === "exact";
+      bandFilter.innerHTML = isExact
+        ? '<option value="all">精准数值无需区间筛选</option>'
+        : `<option value="all">全部${period.metricLabel}区间</option>${dataset.bands.map((band) => `<option value="${escapeHtml(band.id)}">${escapeHtml(band.label)}（${band.count}）</option>`).join("")}`;
+      bandFilter.disabled = isExact;
       document.querySelector("#statRecords").textContent = dataset.records.length.toLocaleString("zh-CN");
-      document.querySelector("#statBands").textContent = dataset.bands.length;
-      document.querySelector("#statBandLabel").textContent = `当前${period.metricLabel}区间`;
-      document.querySelector("#statMetricNote").textContent = `不推算精确${period.metricLabel}`;
-      document.querySelector("#bandHeading").textContent = `累计${period.metricLabel}区间`;
+      document.querySelector("#statBands").textContent = isExact ? "万美元" : dataset.bands.length;
+      document.querySelector("#statBandLabel").textContent = isExact ? "精准数值单位" : `当前${period.metricLabel}区间`;
+      document.querySelector("#statPrecision").textContent = isExact ? "精准数值" : "区间数据";
+      document.querySelector("#statMetricNote").textContent = isExact ? "按源表原值展示" : `不推算精确${period.metricLabel}`;
+      document.querySelector("#bandHeading").textContent = isExact ? `累计${period.metricLabel}（万美元）` : `累计${period.metricLabel}区间`;
       bandFilter.setAttribute("aria-label", `筛选${period.metricLabel}区间`);
       const previousPeriod = PERIODS.find((item) => item.id === period.previous);
       document.querySelector("#rankChangeHeading").textContent = previousPeriod
@@ -958,9 +962,9 @@ const datasetSchema = {
       document.querySelector("#drawerCompanyName").textContent = current.company_name;
       document.querySelector("#drawerCompanyId").textContent = `企业编号 / ${current.company_id}`;
       document.querySelector("#drawerRank").textContent = `NO. ${current.rank}`;
-      document.querySelector("#drawerBand").textContent = current.band_label;
+      document.querySelector("#drawerBand").textContent = current.amount_label || current.band_label;
       document.querySelector("#drawerPeriodLabel").textContent = `${displayPeriod.label}累计排名`;
-      document.querySelector("#drawerBandLabel").textContent = `累计${displayPeriod.metricLabel}区间`;
+      document.querySelector("#drawerBandLabel").textContent = displayPeriod.precision === "exact" ? `累计${displayPeriod.metricLabel}（万美元）` : `累计${displayPeriod.metricLabel}区间`;
       profileLink.href = `/yueqing-export-ranking/company/${companyId}/`;
       profileLink.setAttribute("aria-label", `查看${current.company_name}完整企业档案`);
       renderCompanyLinks(companyId);
@@ -968,7 +972,7 @@ const datasetSchema = {
         records.map((record) => `
           <div class="history-item">
             <i class="history-dot"></i>
-            <span>${period.label}${records.length > 1 ? " · 来源待核对" : ""}<small class="company-id">${period.metricLabel}：${escapeHtml(record.band_label)}</small></span>
+            <span>${period.label}${records.length > 1 ? " · 来源待核对" : ""}<small class="company-id">${period.metricLabel}：${escapeHtml(record.amount_label || record.band_label)}</small></span>
             <strong>第 ${record.rank} 名</strong>
           </div>
         `)
@@ -1072,7 +1076,7 @@ const datasetSchema = {
           search.value = initialQuery;
           state.query = initialQuery;
         }
-        setPeriod("2026-ytd-06");
+        setPeriod("2026-ytd-06-exact");
         const companyId = new URLSearchParams(location.hash.slice(1)).get("company");
         if (companyId && state.searchIndex.has(companyId)) {
           location.replace(`/yueqing-export-ranking/company/${companyId}/`);
