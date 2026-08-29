@@ -321,8 +321,8 @@ test("built homepage keeps company search first and surfaces the latest monthly 
   const ranking = await read("dist/yueqing-export-ranking/index.html");
 
   assert.match(home, /LATEST REPORT \/ 最新月报/);
-  assert.match(home, /乐清市 2026 年 1—6 月外贸情况分析/);
-  assert.match(home, /href="\/articles\/yueqing-foreign-trade-2026-h1\/"/);
+  assert.match(home, /乐清市 2026 年 1—7 月外贸情况分析/);
+  assert.match(home, /href="\/articles\/yueqing-foreign-trade-2026-jan-jul\/"/);
   assert.match(home, /href="\/articles\/"/);
   assert.match(ranking, /href="\/articles\/"/);
   assert.ok(home.indexOf('class="company-search"') < home.indexOf("LATEST REPORT / 最新月报"));
