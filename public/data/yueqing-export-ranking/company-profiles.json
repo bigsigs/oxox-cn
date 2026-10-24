@@ -1069,12 +1069,26 @@
         {
           "label": "企业公开资料",
           "url": "https://www.growsmilingly.cn/bl/latest/cantonfair/dtl/2040a51d9ad1b0f9dee5441f61db7999.html"
+        },
+        {
+          "label": "CNC Electric 官网",
+          "url": "https://www.cncele.com/"
         }
       ],
       "checked_at": "2026-10-24",
       "legal_name": "浙江长城贸易有限公司",
       "registered_capital": "1000万元人民币"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "https://www.cncele.com/",
+        "domain": "cncele.com",
+        "source": "user_confirmed",
+        "added_at": "2026-10-24"
+      }
+    ]
   },
   "YQ000019": {
     "links": [
@@ -3671,12 +3685,27 @@
         {
           "label": "监管或企业公告",
           "url": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web1828/site/attach/0/b4e414b8237c4b23b375cd6c9e54c11b.pdf"
+        },
+        {
+          "label": "三科新能源官网",
+          "url": "https://skkne-sz.com/"
         }
       ],
       "checked_at": "2026-10-24",
       "legal_name": "浙江三科新能源有限公司",
-      "contact_address": "浙江省温州市乐清市"
-    }
+      "contact_address": "浙江省温州市乐清市",
+      "website_product_note": "官网展示电动高尔夫球车、电动滑板车和电动自行车；主营产品资料按工商口径独立保留。"
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "https://skkne-sz.com/",
+        "domain": "skkne-sz.com",
+        "source": "user_confirmed",
+        "added_at": "2026-10-24"
+      }
+    ]
   },
   "YQ000068": {
     "details": {
@@ -13096,7 +13125,8 @@
         }
       ],
       "checked_at": "2026-10-24",
-      "legal_name": "恒一电气集团有限公司"
+      "legal_name": "恒一电气集团有限公司",
+      "brand_name": "恒一电气"
     }
   },
   "YQ000393": {
@@ -66741,11 +66771,25 @@
         {
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-1fb65d50a15322e1dbf90e5046f60416.html"
+        },
+        {
+          "label": "CQC Qicheng Electrical Equipment 官网",
+          "url": "https://www.cn-cqc.com/"
         }
       ],
       "checked_at": "2026-10-24",
       "legal_name": "温州奇诚配电电器有限公司"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "https://www.cn-cqc.com/",
+        "domain": "cn-cqc.com",
+        "source": "user_confirmed",
+        "added_at": "2026-10-24"
+      }
+    ]
   },
   "YQ002843": {
     "details": {
@@ -68827,11 +68871,25 @@
         {
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-ba409dbe5a40a4a6f22b122a26837107.html"
+        },
+        {
+          "label": "浙江珠城科技股份有限公司官网",
+          "url": "https://www.zuch.cn/"
         }
       ],
       "checked_at": "2026-10-24",
       "legal_name": "浙江珠城科技股份有限公司"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "https://www.zuch.cn/",
+        "domain": "zuch.cn",
+        "source": "user_provided_site_identity_matched",
+        "added_at": "2026-10-24"
+      }
+    ]
   },
   "YQ002915": {
     "links": [
@@ -80131,6 +80189,27 @@
       ],
       "checked_at": "2026-10-24",
       "legal_name": "温州长远自动化设备有限公司"
+    }
+  },
+  "YQ000327": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "https://cnkuangya.com/",
+        "domain": "cnkuangya.com",
+        "source": "user_confirmed",
+        "added_at": "2026-10-24"
+      }
+    ],
+    "details": {
+      "sources": [
+        {
+          "label": "KUANGYA 官网",
+          "url": "https://cnkuangya.com/"
+        }
+      ],
+      "checked_at": "2026-10-24"
     }
   }
 }

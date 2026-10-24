@@ -273,6 +273,52 @@ test("verified company icons use a website curated for the same company", async 
   }
 });
 
+test("newly confirmed official websites publish on the exact matched companies", async () => {
+  const [profiles, icons, companies] = await Promise.all([
+    readJson(`${dataPath}company-profiles.json`),
+    readJson("src/data/verified-company-icons.json"),
+    readJson(`${dataPath}companies.json`),
+  ]);
+  const companyNames = new Map(companies.map((company) => [company.company_id, company.company_name]));
+  const confirmed = {
+    YQ000018: ["浙江长城贸易有限公司", "https://www.cncele.com/"],
+    YQ002842: ["温州奇诚配电电器有限公司", "https://www.cn-cqc.com/"],
+    YQ000067: ["浙江三科新能源有限公司", "https://skkne-sz.com/"],
+    YQ002914: ["浙江珠城科技股份有限公司", "https://www.zuch.cn/"],
+    YQ000327: ["温州匡亚科技有限公司", "https://cnkuangya.com/"],
+  };
+
+  for (const [id, [name, website]] of Object.entries(confirmed)) {
+    assert.equal(companyNames.get(id), name, `${id}: stable company identity changed`);
+    assert.equal(
+      profiles[id]?.links?.find((link) => link.type === "official_website")?.url,
+      website,
+      `${id}: confirmed official website is missing`,
+    );
+    assert.equal(icons[id]?.page_url, website, `${id}: icon source page is not the official website`);
+    const html = await read(builtPath(companyPath(id)));
+    const main = mainOf(html);
+    assert.ok(textOf(main).includes(name), `${id}: detail page needs the company name`);
+    assert.ok(anchorsOf(main).some((link) => link.href === website), `${id}: detail page needs ${website}`);
+    assert.ok(
+      tagsOf(main, "img").some((image) => image.src === icons[id].path),
+      `${id}: detail page needs its verified logo`,
+    );
+  }
+
+  assert.equal(
+    profiles.YQ000064?.links?.some((link) => link.type === "official_website") ?? false,
+    false,
+    "Zhuchuang trading company must not inherit the Zhucheng listed company website",
+  );
+  assert.equal(profiles.YQ000392?.details?.brand_name, "恒一电气");
+  assert.equal(
+    profiles.YQ000392?.links?.some((link) => link.type === "official_website") ?? false,
+    false,
+    "Hengyi must not receive an unverified website",
+  );
+});
+
 test("public company data omits private review notes and Dehui keeps its verified public facts", async () => {
   const [profiles, icons, html] = await Promise.all([
     readJson(`${dataPath}company-profiles.json`),

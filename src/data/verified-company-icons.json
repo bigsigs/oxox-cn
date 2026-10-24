@@ -1244,5 +1244,40 @@
     "page_url": "http://www.cnhtbyq.com/",
     "checked_at": "2026-10-24",
     "dark_background": false
+  },
+  "YQ000018": {
+    "path": "/company-icons/verified/YQ000018.png",
+    "source_url": "https://cdnus.globalso.com/cncele/LOGO.png",
+    "page_url": "https://www.cncele.com/",
+    "checked_at": "2026-10-24",
+    "dark_background": false
+  },
+  "YQ002842": {
+    "path": "/company-icons/verified/YQ002842.png",
+    "source_url": "https://www.cn-cqc.com/Uploads//20200614/5ee5eb59c1d90.png",
+    "page_url": "https://www.cn-cqc.com/",
+    "checked_at": "2026-10-24",
+    "dark_background": false
+  },
+  "YQ000067": {
+    "path": "/company-icons/verified/YQ000067.png",
+    "source_url": "https://skkne-sz.com/logo.jpg",
+    "page_url": "https://skkne-sz.com/",
+    "checked_at": "2026-10-24",
+    "dark_background": false
+  },
+  "YQ002914": {
+    "path": "/company-icons/verified/YQ002914.png",
+    "source_url": "https://www.zuch.cn/wp-content/themes/Zhucheng/assets/images/1761030715257966.png",
+    "page_url": "https://www.zuch.cn/",
+    "checked_at": "2026-10-24",
+    "dark_background": false
+  },
+  "YQ000327": {
+    "path": "/company-icons/verified/YQ000327.png",
+    "source_url": "https://cnkuangya.com/wp-content/uploads/2025/08/KUANGYA-logo.png",
+    "page_url": "https://cnkuangya.com/",
+    "checked_at": "2026-10-24",
+    "dark_background": false
   }
 }
