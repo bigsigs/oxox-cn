@@ -274,18 +274,30 @@ test("verified company icons use a website curated for the same company", async 
 });
 
 test("newly confirmed official websites publish on the exact matched companies", async () => {
-  const [profiles, icons, companies] = await Promise.all([
+  const [profiles, icons, companies, periods] = await Promise.all([
     readJson(`${dataPath}company-profiles.json`),
     readJson("src/data/verified-company-icons.json"),
     readJson(`${dataPath}companies.json`),
+    readJson(`${dataPath}periods.json`),
   ]);
   const companyNames = new Map(companies.map((company) => [company.company_id, company.company_name]));
+  const datasets = await Promise.all(periods.periods.map(async (period) => ({
+    period,
+    dataset: await readJson(`${dataPath}${period.file}`),
+  })));
   const confirmed = {
     YQ000018: ["浙江长城贸易有限公司", "https://www.cncele.com/"],
     YQ002842: ["温州奇诚配电电器有限公司", "https://www.cn-cqc.com/"],
     YQ000067: ["浙江三科新能源有限公司", "https://skkne-sz.com/"],
     YQ002914: ["浙江珠城科技股份有限公司", "https://www.zuch.cn/"],
     YQ000327: ["温州匡亚科技有限公司", "https://cnkuangya.com/"],
+    YQ000072: ["温州裕丰进出口有限公司", "https://www.cnyufeng.com.cn/"],
+    YQ000091: ["康泰电气有限公司", "https://www.kangtai.com.cn/"],
+    YQ000092: ["浙江齐慧进出口有限公司", "https://aierway.com/"],
+    YQ000109: ["温州沃森进出口有限公司", "https://www.wosomelec.com/"],
+    YQ000121: ["温州市华通机电进出口有限公司", "https://www.fato.cn/"],
+    YQ000464: ["一二三电气有限公司", "http://www.123ele.com/"],
+    YQ000617: ["乐清市佑川电气有限公司", "http://www.huajoinele.com/"],
   };
 
   for (const [id, [name, website]] of Object.entries(confirmed)) {
@@ -316,6 +328,26 @@ test("newly confirmed official websites publish on the exact matched companies",
     profiles.YQ000392?.links?.some((link) => link.type === "official_website") ?? false,
     false,
     "Hengyi must not receive an unverified website",
+  );
+  assert.equal(
+    profiles.YQ000072.links.find((link) => link.type === "alibaba_store")?.url,
+    "https://cnyufengcn.en.alibaba.com/",
+    "Yufeng must retain its verified Alibaba store",
+  );
+  const kangtaiLatest = datasets
+    .filter(({ period }) => period.id === "2026-ytd-08")
+    .flatMap(({ dataset }) => dataset.records.filter((record) => record.company_id === "YQ000091"));
+  assert.deepEqual(
+    kangtaiLatest.map((record) => [record.rank, record.source_duplicate]),
+    [[87, true], [662, true]],
+    "Kangtai source duplicates must remain distinct",
+  );
+  const kangtaiHtml = await read(builtPath(companyPath("YQ000091")));
+  assert.ok(textOf(mainOf(kangtaiHtml)).includes("并列收录"));
+  assert.doesNotMatch(
+    textOf(elementById(kangtaiHtml, "company-name")),
+    /#662|#87/,
+    "the duplicate source rows must not be merged into the company identity",
   );
 });
 

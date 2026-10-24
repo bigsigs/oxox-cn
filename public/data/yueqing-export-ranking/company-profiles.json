@@ -3939,6 +3939,14 @@
   "YQ000072": {
     "links": [
       {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "https://www.cnyufeng.com.cn/",
+        "domain": "cnyufeng.com.cn",
+        "source": "user_provided_group_identity_matched",
+        "added_at": "2026-10-24"
+      },
+      {
         "type": "alibaba_store",
         "label": "Alibaba 国际站",
         "url": "https://cnyufengcn.en.alibaba.com/",
@@ -3999,6 +4007,14 @@
         {
           "label": "企业公开资料",
           "url": "https://wy.sanyau.edu.cn/jyxx/list222.psp"
+        },
+        {
+          "label": "裕丰电气官网",
+          "url": "https://www.cnyufeng.com.cn/"
+        },
+        {
+          "label": "Yufeng Group 公开资料",
+          "url": "https://www.chyf.net.cn/index.php?class_id=3&r=article%2FCategory%2Findex"
         }
       ],
       "checked_at": "2026-10-24",
@@ -4845,9 +4861,9 @@
       "contact_address": "浙江省乐清市黄华工业区（康泰路5号）",
       "field_sources": {
         "contact_address": {
-          "url": "https://wzmsa.wenzhou.gov.cn/module/download/downfile.jsp?classid=0&filename=88cb6860db4c45b0a86c6ac57788f09d.pdf",
+          "url": "https://www.kangtai.com.cn/",
           "checked_at": "2026-10-24",
-          "source_type": "public_company_record"
+          "source_type": "company_website"
         },
         "main_products": {
           "url": "https://wzmsa.wenzhou.gov.cn/module/download/downfile.jsp?classid=0&filename=88cb6860db4c45b0a86c6ac57788f09d.pdf",
@@ -4893,14 +4909,38 @@
         {
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-0688d2f2d4594be7ddf740ffb3032f01.html"
+        },
+        {
+          "label": "康泰电气官网",
+          "url": "https://www.kangtai.com.cn/"
         }
       ],
       "checked_at": "2026-10-24",
       "legal_name": "康泰电气有限公司",
       "registered_capital": "3000万元人民币"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "https://www.kangtai.com.cn/",
+        "domain": "kangtai.com.cn",
+        "source": "user_confirmed",
+        "added_at": "2026-10-24"
+      }
+    ]
   },
   "YQ000092": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "https://aierway.com/",
+        "domain": "aierway.com",
+        "source": "user_confirmed",
+        "added_at": "2026-10-24"
+      }
+    ],
     "details": {
       "contact_address": "浙江省温州市乐清市乐清经济开发区经七路360号",
       "field_sources": {
@@ -4915,13 +4955,13 @@
           "source_type": "company_website_or_filing"
         },
         "main_products": {
-          "url": "https://top.qcc.com/tc/ce6f69eea22a.html",
+          "url": "https://aierway.com/en-gb/information/delivery",
           "checked_at": "2026-10-24",
           "source_type": "company_website"
         }
       },
       "registered_capital": "1000万元人民币",
-      "main_products": "货物进出口、技术进出口",
+      "main_products": "真空断路器、开关柜、变压器、负荷开关、隔离开关、接地开关、电气绝缘件及消防设备",
       "sources": [
         {
           "label": "企业公开资料",
@@ -4938,6 +4978,10 @@
         {
           "label": "监管或企业公告",
           "url": "https://www.sjzqx.gov.cn/columns/5a10d05f-731b-4c8e-836a-f9c24d7aab3e/202606/26/020d68a3-678d-4564-b296-05511ac2fc92.html"
+        },
+        {
+          "label": "齐慧官网",
+          "url": "https://aierway.com/"
         }
       ],
       "checked_at": "2026-10-24",
@@ -5715,21 +5759,31 @@
     }
   },
   "YQ000109": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "https://www.wosomelec.com/",
+        "domain": "wosomelec.com",
+        "source": "user_confirmed",
+        "added_at": "2026-10-24"
+      }
+    ],
     "details": {
-      "contact_address": "浙江省温州市乐清市柳市镇新光工业区新光大道115号",
+      "contact_address": "浙江省温州市乐清市柳市镇新光工业区新光大道115号（官网英文地址：Unit 10, No.115, Xinguang Avenue, Liushi, Wenzhou）",
       "field_sources": {
         "contact_address": {
-          "url": "https://m.qdyoucheng.com/wmjckgjmy/jck-837365.html",
+          "url": "https://www.wosomelec.com/",
           "checked_at": "2026-10-24",
-          "source_type": "public_company_record"
+          "source_type": "company_website"
         },
         "main_products": {
-          "url": "https://m.qdyoucheng.com/wmjckgjmy/jck-837365.html",
+          "url": "https://www.wosomelec.com/products",
           "checked_at": "2026-10-24",
           "source_type": "company_website"
         }
       },
-      "main_products": "电气相关商品进出口",
+      "main_products": "小型断路器、漏电保护器、配电箱、熔断器、浪涌保护器、开关插座及直流电气产品",
       "sources": [
         {
           "label": "企业公开资料",
@@ -5738,6 +5792,10 @@
         {
           "label": "企业公开资料",
           "url": "https://cospub.cantonfair.org.cn/461100754573217792/1757416245787-739eb7ed-6e2d-420d-809b-8df3ac4db35e.pdf"
+        },
+        {
+          "label": "沃森官网",
+          "url": "https://www.wosomelec.com/"
         }
       ],
       "checked_at": "2026-10-24",
@@ -6199,21 +6257,37 @@
     }
   },
   "YQ000121": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "https://www.fato.cn/",
+        "domain": "fato.cn",
+        "source": "user_confirmed",
+        "added_at": "2026-10-24"
+      }
+    ],
     "details": {
-      "contact_address": "浙江省温州市乐清市乐清经济开发区纬七路203号",
+      "contact_address": "浙江省乐清市经济开发区纬七路203号",
       "field_sources": {
         "contact_address": {
-          "url": "https://www.tendata.com/en/buyer/wenzhou-fato-mechanical-electrical-import-export-co-ltd-CHN8d397d4f6b77a6807305bd692fe25df8.html",
+          "url": "https://www.fato.cn/contact/",
           "checked_at": "2026-10-24",
-          "source_type": "public_company_record"
+          "source_type": "company_website"
         },
         "registered_capital": {
           "url": "https://www.tendata.com/en/buyer/wenzhou-fato-mechanical-electrical-import-export-co-ltd-CHN8d397d4f6b77a6807305bd692fe25df8.html",
           "checked_at": "2026-10-24",
           "source_type": "company_website_or_filing"
+        },
+        "main_products": {
+          "url": "https://www.fato.cn/product/",
+          "checked_at": "2026-10-24",
+          "source_type": "company_website"
         }
       },
       "registered_capital": "200万元人民币",
+      "main_products": "高低压电器、仪器仪表、电力变压器、智能电气及成套设备",
       "sources": [
         {
           "label": "企业公开资料",
@@ -6230,6 +6304,10 @@
         {
           "label": "企业公开资料",
           "url": "https://www.tendata.com/en/buyer/wenzhou-fato-mechanical-electrical-import-export-co-ltd-CHNI8d397d4f6b77a6807305bd692fe25df8.html"
+        },
+        {
+          "label": "华通机电官网",
+          "url": "https://www.fato.cn/"
         }
       ],
       "checked_at": "2026-10-24",
@@ -14522,20 +14600,20 @@
   },
   "YQ000464": {
     "details": {
-      "contact_address": "浙江省温州市乐清市经济开发区纬二十路西侧（资料另列纬二十路260号）",
+      "contact_address": "浙江省乐清经济开发区纬二十路260号",
       "field_sources": {
         "contact_address": {
-          "url": "https://sw.beijing.gov.cn/zt/gjh/tztg/202508/P020250821580354804172.pdf",
+          "url": "http://www.123ele.com/",
           "checked_at": "2026-10-24",
-          "source_type": "public_company_record"
+          "source_type": "company_website"
         },
         "main_products": {
-          "url": "https://mobile.dq800.com/shangpu/7371/index.aspx",
+          "url": "http://www.123ele.com/",
           "checked_at": "2026-10-24",
           "source_type": "company_website"
         }
       },
-      "main_products": "双电源自动转换开关、隔离开关、塑壳断路器、智能万能式断路器及低压电器元件",
+      "main_products": "双电源开关、控制器类、塑料外壳式断路器、万能式断路器、小型断路器、直流隔离开关、控制与保护开关、新能源高压直流继电器、物联网断路器及五金定制",
       "sources": [
         {
           "label": "企业公开资料",
@@ -14548,11 +14626,25 @@
         {
           "label": "监管或企业公告",
           "url": "https://sw.beijing.gov.cn/zt/gjh/tztg/202508/P020250821580354804172.pdf"
+        },
+        {
+          "label": "一二三电气官网",
+          "url": "http://www.123ele.com/"
         }
       ],
       "checked_at": "2026-10-24",
       "legal_name": "一二三电气有限公司"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "http://www.123ele.com/",
+        "domain": "123ele.com",
+        "source": "user_confirmed",
+        "added_at": "2026-10-24"
+      }
+    ]
   },
   "YQ000465": {
     "links": [
@@ -80210,6 +80302,47 @@
         }
       ],
       "checked_at": "2026-10-24"
+    }
+  },
+  "YQ000617": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "http://www.huajoinele.com/",
+        "domain": "huajoinele.com",
+        "source": "user_confirmed",
+        "added_at": "2026-10-24"
+      }
+    ],
+    "details": {
+      "sources": [
+        {
+          "label": "佑川官网",
+          "url": "http://www.huajoinele.com/"
+        }
+      ],
+      "checked_at": "2026-10-24",
+      "legal_name": "乐清市佑川电气有限公司",
+      "contact_address": "浙江省温州市乐清市",
+      "main_products": "小型断路器（MCB）、漏电保护断路器（RCCB/RCBO）、浪涌保护器（SPD）、自动调压及电流保护器、隔离开关、转换开关",
+      "field_sources": {
+        "legal_name": {
+          "url": "http://www.huajoinele.com/",
+          "checked_at": "2026-10-24",
+          "source_type": "company_website"
+        },
+        "contact_address": {
+          "url": "http://www.huajoinele.com/",
+          "checked_at": "2026-10-24",
+          "source_type": "company_website"
+        },
+        "main_products": {
+          "url": "http://www.huajoinele.com/",
+          "checked_at": "2026-10-24",
+          "source_type": "company_website"
+        }
+      }
     }
   }
 }
