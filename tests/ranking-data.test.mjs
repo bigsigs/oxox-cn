@@ -162,6 +162,7 @@ test("cross-period aliases reuse stable company IDs without forced fuzzy matches
   const previous = await loadJson("public/data/yueqing-export-ranking/2026-ytd-05.json");
   const current = await loadJson("public/data/yueqing-export-ranking/2026-ytd-06.json");
   const byName = new Map(companies.map((company) => [company.company_name, company]));
+  const faraday = companies.find((company) => company.company_id === "YQ000044");
   const priorChint = previous.records.find((record) => record.company_name === "浙江正泰电器股份有限公司");
   const currentChint = current.records.find((record) => record.company_name === "浙江正泰电器股份有限公司");
 
@@ -169,6 +170,14 @@ test("cross-period aliases reuse stable company IDs without forced fuzzy matches
   assert.equal(priorChint.company_id, currentChint.company_id);
   assert.ok(byName.get("浙江恒裕智能家具有限公司").aliases.includes("浙江恒裕智能家居有限公司"));
   assert.ok(byName.has("温州上陶进出口有限公司"));
+  assert.equal(faraday.company_name, "浙江法拉迪电气股份有限公司");
+  assert.ok(faraday.aliases.includes("浙江法拉油电气股份有限公司"));
+  assert.ok(
+    current.records
+      .filter((record) => record.company_id === "YQ000044")
+      .every((record) => record.company_name === faraday.company_name),
+    "the Jan-Jun source OCR name must not overwrite the verified company name",
+  );
 });
 
 test("one period never collapses two different source names into one company ID", async () => {
