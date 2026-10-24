@@ -1,0 +1,912 @@
+[
+  {
+    "rank": 3201,
+    "company_id": "YQ003085",
+    "company_name": "乐清市红西电气有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3201,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3202,
+    "company_id": "YQ003086",
+    "company_name": "朗诗德电气有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3202,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3203,
+    "company_id": "YQ003087",
+    "company_name": "裕丰电气有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3203,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3204,
+    "company_id": "YQ003088",
+    "company_name": "温州瑞川电子有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3204,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3205,
+    "company_id": "YQ003315",
+    "company_name": "温州亚特合金科技有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3205,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3206,
+    "company_id": "YQ003089",
+    "company_name": "温州海音科技有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3206,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3207,
+    "company_id": "YQ003090",
+    "company_name": "乐清玺鑫贸易有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3207,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3208,
+    "company_id": "YQ003418",
+    "company_name": "乐清市启和电子科技有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3208,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3209,
+    "company_id": "YQ003091",
+    "company_name": "浙江永成电子有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3209,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3210,
+    "company_id": "YQ003092",
+    "company_name": "腾达防爆科技有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3210,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3211,
+    "company_id": "YQ003093",
+    "company_name": "浙江约拿电气有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3211,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3212,
+    "company_id": "YQ003094",
+    "company_name": "浙江天盛双金科技有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3212,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3213,
+    "company_id": "YQ003095",
+    "company_name": "乐清珂锐森进出口有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3213,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3214,
+    "company_id": "YQ003096",
+    "company_name": "上陶电气有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3214,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3215,
+    "company_id": "YQ003097",
+    "company_name": "浙江万峰塑料有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3215,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3216,
+    "company_id": "YQ003098",
+    "company_name": "乐清市泰迪电气贸易有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3216,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3217,
+    "company_id": "YQ003099",
+    "company_name": "浙江双驰电气科技有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3217,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3218,
+    "company_id": "YQ003100",
+    "company_name": "浙江宝泰柜锁有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3218,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3219,
+    "company_id": "YQ003101",
+    "company_name": "浙江欧冠电气有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3219,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3220,
+    "company_id": "YQ003103",
+    "company_name": "浙江大郡电气有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3220,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3221,
+    "company_id": "YQ003104",
+    "company_name": "浙江施泰德电气科技有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3221,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3222,
+    "company_id": "YQ003105",
+    "company_name": "乐清市佰沃进出口有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3222,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3223,
+    "company_id": "YQ003392",
+    "company_name": "乐清市正捷进出口有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3223,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3224,
+    "company_id": "YQ003106",
+    "company_name": "温州顺全贸易有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3224,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3225,
+    "company_id": "YQ003107",
+    "company_name": "乐清市铂盛再生资源有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3225,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3226,
+    "company_id": "YQ003108",
+    "company_name": "浙江中煤机械科技有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3226,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3227,
+    "company_id": "YQ003109",
+    "company_name": "浙江逗号电气有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3227,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3228,
+    "company_id": "YQ003110",
+    "company_name": "温州乐也汽车配件有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3228,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3229,
+    "company_id": "YQ003354",
+    "company_name": "乐清市够我用电器有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3229,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3230,
+    "company_id": "YQ003111",
+    "company_name": "浙江凡客电气有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3230,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3231,
+    "company_id": "YQ003383",
+    "company_name": "乐清市今辰电子有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3231,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3232,
+    "company_id": "YQ003112",
+    "company_name": "浙江欧格照明科技有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3232,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3233,
+    "company_id": "YQ003113",
+    "company_name": "温州市维维电气有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3233,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3234,
+    "company_id": "YQ003114",
+    "company_name": "乐清市艾莱进出口有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3234,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3235,
+    "company_id": "YQ003115",
+    "company_name": "乐清高佳进出口有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3235,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3236,
+    "company_id": "YQ003116",
+    "company_name": "雅絮智能科技有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3236,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3237,
+    "company_id": "YQ003117",
+    "company_name": "乐清海纪进出口有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3237,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3238,
+    "company_id": "YQ003118",
+    "company_name": "温州美迈隆进出口贸易有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3238,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3239,
+    "company_id": "YQ003119",
+    "company_name": "温州婷杰礼品有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3239,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3240,
+    "company_id": "YQ003120",
+    "company_name": "温州久照光电有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3240,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3241,
+    "company_id": "YQ003121",
+    "company_name": "乐清市跃宇合金材料有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3241,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3242,
+    "company_id": "YQ003122",
+    "company_name": "乐清市大川贸易有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3242,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3243,
+    "company_id": "YQ003123",
+    "company_name": "新能高压电气有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3243,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3244,
+    "company_id": "YQ003124",
+    "company_name": "温州达美西进出口有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3244,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3245,
+    "company_id": "YQ003125",
+    "company_name": "朗景电气(浙江)有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3245,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3246,
+    "company_id": "YQ003331",
+    "company_name": "温州优优体育用品有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3246,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3247,
+    "company_id": "YQ003126",
+    "company_name": "浙江梵悟香料科技有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3247,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3248,
+    "company_id": "YQ003127",
+    "company_name": "乐清市乾莱电器有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3248,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3249,
+    "company_id": "YQ003128",
+    "company_name": "温州百多微进出口有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3249,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3250,
+    "company_id": "YQ003129",
+    "company_name": "温州瓯峰国际贸易有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3250,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3251,
+    "company_id": "YQ003130",
+    "company_name": "浙江鹏汉新能源有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3251,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3252,
+    "company_id": "YQ003131",
+    "company_name": "乐清玖月电气有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3252,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3253,
+    "company_id": "YQ003133",
+    "company_name": "浙江德运智能设备有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3253,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3254,
+    "company_id": "YQ003134",
+    "company_name": "乐清市安和贸易有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3254,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3255,
+    "company_id": "YQ003136",
+    "company_name": "温州和赢电气科技有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3255,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3256,
+    "company_id": "YQ003137",
+    "company_name": "温州郎浩国际贸易有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3256,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3257,
+    "company_id": "YQ003138",
+    "company_name": "浙江百士特机车部件有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3257,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3258,
+    "company_id": "YQ003139",
+    "company_name": "温州市格富电子有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3258,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3259,
+    "company_id": "YQ003140",
+    "company_name": "浙江中兴防爆器材有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3259,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3260,
+    "company_id": "YQ003141",
+    "company_name": "乐清市鸿坤贸易有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3260,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3261,
+    "company_id": "YQ003143",
+    "company_name": "乐清市鼎桥电气有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3261,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3262,
+    "company_id": "YQ003144",
+    "company_name": "乐清市京信金属有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3262,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3263,
+    "company_id": "YQ003145",
+    "company_name": "乐清市瀚途电气有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3263,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3264,
+    "company_id": "YQ003146",
+    "company_name": "温州龙象进出口有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3264,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3265,
+    "company_id": "YQ003147",
+    "company_name": "乐清宇乐汽配有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3265,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3266,
+    "company_id": "YQ003148",
+    "company_name": "乐清市乐川机械电子有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3266,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3267,
+    "company_id": "YQ003149",
+    "company_name": "国光集团乐清金谷电子有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3267,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3268,
+    "company_id": "YQ003151",
+    "company_name": "华通机电股份有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3268,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3269,
+    "company_id": "YQ003152",
+    "company_name": "温州日拓光电科技有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3269,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3270,
+    "company_id": "YQ003153",
+    "company_name": "浙江正普电力设备有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3270,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3271,
+    "company_id": "YQ003346",
+    "company_name": "温州远泰电器有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3271,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3272,
+    "company_id": "YQ003154",
+    "company_name": "浙江西京电气有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3272,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3273,
+    "company_id": "YQ003156",
+    "company_name": "浙江红日电源有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3273,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3274,
+    "company_id": "YQ003157",
+    "company_name": "温州市远通线缆有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3274,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3275,
+    "company_id": "YQ003158",
+    "company_name": "乐清市博凯精密模具有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3275,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3276,
+    "company_id": "YQ003159",
+    "company_name": "浙江佳博科技股份有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3276,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3277,
+    "company_id": "YQ003160",
+    "company_name": "乐清市惠普照明有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3277,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3278,
+    "company_id": "YQ003161",
+    "company_name": "乐清市首立电子有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3278,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3279,
+    "company_id": "YQ003162",
+    "company_name": "温州中菱电器有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3279,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3280,
+    "company_id": "YQ003163",
+    "company_name": "乐清市成功工具有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3280,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3281,
+    "company_id": "YQ003166",
+    "company_name": "林德新能源技术（温州）有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3281,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3282,
+    "company_id": "YQ003167",
+    "company_name": "温州洁尚电气有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3282,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3283,
+    "company_id": "YQ003168",
+    "company_name": "乐清市烁洲机械设备有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3283,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3284,
+    "company_id": "YQ003169",
+    "company_name": "乐清市正雁电气进出口有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3284,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3285,
+    "company_id": "YQ003171",
+    "company_name": "乐清市先辉电气有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3285,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3286,
+    "company_id": "YQ003172",
+    "company_name": "浙江悦龙电气有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3286,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3287,
+    "company_id": "YQ003174",
+    "company_name": "乐清市虹桥胡思思小仙女服装店",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3287,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3288,
+    "company_id": "YQ003175",
+    "company_name": "乐清市创传电器厂",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3288,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3289,
+    "company_id": "YQ003176",
+    "company_name": "乐清乐遥创业服务有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3289,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3290,
+    "company_id": "YQ003177",
+    "company_name": "温州清和物流有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3290,
+    "source_duplicate": false
+  },
+  {
+    "rank": 3291,
+    "company_id": "YQ003178",
+    "company_name": "乐清临保供应链管理有限公司",
+    "band_id": "b12",
+    "band_label": "100万美元以下",
+    "source_file": "Downloads/1-7 月",
+    "source_line": 3291,
+    "source_duplicate": false
+  }
+]

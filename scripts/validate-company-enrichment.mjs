@@ -23,6 +23,17 @@ const ranks1001To1500Dir = path.join(reviewDir, "ranks-1001-1500");
 const ranks1001To1500Checklist = readJson(path.join(ranks1001To1500Dir, "review-1001-1500.json"));
 const missing1001To1500Checklist = readJson(path.join(ranks1001To1500Dir, "missing-1001-1500.json"));
 const pending1001To1500Checklist = readJson(path.join(ranks1001To1500Dir, "pending-1001-1500.json"));
+const ranks1501To2000Dir = path.join(reviewDir, "ranks-1501-2000");
+const ranks2001To3291Dir = path.join(reviewDir, "ranks-2001-3291");
+const top3291Checklist = readJson(path.join(reviewDir, "top3291-review.json"));
+const ranks1501To2000Checklist = readJson(path.join(ranks1501To2000Dir, "review-1501-2000.json"));
+const missingRanks1501To2000Checklist = readJson(path.join(ranks1501To2000Dir, "missing-1501-2000.json"));
+const pendingRanks1501To2000Checklist = readJson(path.join(ranks1501To2000Dir, "pending-1501-2000.json"));
+const ranks2001To3291Checklist = readJson(path.join(ranks2001To3291Dir, "review-2001-3291.json"));
+const missingRanks2001To3291Checklist = readJson(path.join(ranks2001To3291Dir, "missing-2001-3291.json"));
+const pendingRanks2001To3291Checklist = readJson(path.join(ranks2001To3291Dir, "pending-2001-3291.json"));
+const missingTop3291Checklist = readJson(path.join(reviewDir, "top3291-missing.json"));
+const pendingTop3291Checklist = readJson(path.join(reviewDir, "top3291-pending.json"));
 
 const errors = [];
 const assert = (condition, message) => {
@@ -68,6 +79,9 @@ const top1000 = ranking
 const top1500 = ranking
   .filter((record) => Number.isInteger(record.rank) && record.rank >= 1 && record.rank <= 1500)
   .sort((a, b) => a.rank - b.rank);
+const top3291 = ranking
+  .filter((record) => Number.isInteger(record.rank) && record.rank >= 1 && record.rank <= 3291)
+  .sort((a, b) => a.rank - b.rank);
 const ids = new Set(companies.map((company) => company.company_id));
 
 assert(top500.length === 500, `Top 500 source has ${top500.length} rows`);
@@ -86,6 +100,12 @@ assert(top1500Checklist.length === 1500, `Top 1500 checklist has ${top1500Checkl
 assert(ranks1001To1500Checklist.length === 500, `ranks 1001-1500 checklist has ${ranks1001To1500Checklist.length} rows`);
 assert(new Set(top1500.map((record) => record.rank)).size === 1500, "Top 1500 ranks must be unique");
 assert(new Set(top1500Checklist.map((row) => row.rank)).size === 1500, "Top 1500 checklist ranks must be unique");
+assert(top3291.length === 3291, `Top 3291 source has ${top3291.length} rows`);
+assert(new Set(top3291.map((record) => record.rank)).size === 3291, "Top 3291 ranks must be unique");
+assert(top3291Checklist.length === 3291, `Top 3291 checklist has ${top3291Checklist.length} rows`);
+assert(new Set(top3291Checklist.map((row) => row.rank)).size === 3291, "Top 3291 checklist ranks must be unique");
+assert(ranks1501To2000Checklist.length === 500, `ranks 1501-2000 checklist has ${ranks1501To2000Checklist.length} rows`);
+assert(ranks2001To3291Checklist.length === 1291, `ranks 2001-3291 checklist has ${ranks2001To3291Checklist.length} rows`);
 
 top500.forEach((record, index) => {
   const row = checklist[index];
@@ -168,6 +188,88 @@ top1500.slice(1000).forEach((record, index) => {
   assert(row.company_name === record.company_name, `ranking #${record.rank}: ranks 1001-1500 name mismatch`);
 });
 
+const research1501To3291Directories = [ranks1501To2000Dir, ranks2001To3291Dir];
+const research1501To3291Files = research1501To3291Directories.flatMap((directory) =>
+  fs.readdirSync(directory)
+    .filter((name) => /^research-\d{4}-\d{4}\.json$/.test(name))
+    .sort()
+    .map((name) => path.join(directory, name)));
+const research1501To3291Rows = research1501To3291Files.flatMap((file) => readJson(file));
+assert(research1501To3291Rows.length === 1791, `ranks 1501-3291 research has ${research1501To3291Rows.length} rows`);
+assert(new Set(research1501To3291Rows.map((row) => row.rank)).size === 1791, "ranks 1501-3291 research ranks must be unique");
+top3291.slice(1500).forEach((record, index) => {
+  const row = research1501To3291Rows[index];
+  assert(row, `ranking #${record.rank}: missing ranks 1501-3291 research row`);
+  if (!row) return;
+  assert(row.rank === record.rank, `ranking #${record.rank}: ranks 1501-3291 research rank mismatch`);
+  assert(row.id === record.company_id, `ranking #${record.rank}: ranks 1501-3291 research ID mismatch`);
+  assert(row.name === record.company_name, `ranking #${record.rank}: ranks 1501-3291 research name mismatch`);
+  assert(Array.isArray(row.sources), `${record.company_id}: ranks 1501-3291 sources must be an array`);
+  for (const source of row.sources) {
+    assert(validUrl(source), `${record.company_id}: invalid ranks 1501-3291 source ${source}`);
+  }
+  if (row.website) {
+    assert(validUrl(row.website), `${record.company_id}: invalid ranks 1501-3291 website ${row.website}`);
+    assert(!isThirdParty(row.website), `${record.company_id}: third-party ranks 1501-3291 website ${row.website}`);
+    assert(host(row.website) !== "sxplastics.com", `${record.company_id}: rejected sxplastics.com website`);
+  }
+  if (row.alibaba_url) {
+    assert(host(row.alibaba_url).endsWith("alibaba.com"), `${record.company_id}: invalid ranks 1501-3291 Alibaba URL`);
+  }
+  if (row.contact_address || row.capital || row.products || row.website) {
+    assert(row.sources.length > 0, `${record.company_id}: populated ranks 1501-3291 research row has no source`);
+  }
+});
+assert(
+  research1501To3291Rows.find((row) => row.rank === 2657 && row.id === "YQ002542")?.contact_address
+    === "浙江省温州市乐清市柳市镇浃东村",
+  "YQ002542: exact manually verified address is missing",
+);
+assert(
+  !research1501To3291Rows.some((row) => /sxplastics\.com/i.test(`${row.website} ${row.sources.join(" ")}`)),
+  "ranks 1501-3291 research must not contain sxplastics.com",
+);
+
+top3291.forEach((record, index) => {
+  const row = top3291Checklist[index];
+  assert(row, `ranking #${record.rank}: missing Top 3291 checklist row`);
+  if (!row) return;
+  assert(row.rank === record.rank, `ranking #${record.rank}: Top 3291 rank mismatch`);
+  assert(row.company_id === record.company_id, `ranking #${record.rank}: Top 3291 ID mismatch`);
+  assert(row.company_name === record.company_name, `ranking #${record.rank}: Top 3291 name mismatch`);
+  assert(ids.has(row.company_id), `${row.company_id}: Top 3291 ID not in stable company registry`);
+  for (const field of ["website", "alibaba_url"]) {
+    if (row[field]) assert(validUrl(row[field]), `${row.company_id}: invalid Top 3291 ${field} ${row[field]}`);
+  }
+  if (row.website) {
+    assert(!isThirdParty(row.website), `${row.company_id}: Top 3291 third-party website ${row.website}`);
+    assert(!host(row.website).includes("alibaba.com"), `${row.company_id}: Top 3291 Alibaba URL used as website`);
+    assert(host(row.website) !== "sxplastics.com", `${row.company_id}: rejected sxplastics.com website`);
+  }
+  if (row.alibaba_url) {
+    assert(host(row.alibaba_url).endsWith("alibaba.com"), `${row.company_id}: Top 3291 Alibaba field is not Alibaba`);
+    assert(!host(row.alibaba_url).endsWith("1688.com"), `${row.company_id}: Top 3291 1688 URL used as Alibaba`);
+  }
+});
+
+top3291.slice(1500, 2000).forEach((record, index) => {
+  const row = ranks1501To2000Checklist[index];
+  assert(row, `ranking #${record.rank}: missing ranks 1501-2000 checklist row`);
+  if (!row) return;
+  assert(row.rank === record.rank, `ranking #${record.rank}: ranks 1501-2000 rank mismatch`);
+  assert(row.company_id === record.company_id, `ranking #${record.rank}: ranks 1501-2000 ID mismatch`);
+  assert(row.company_name === record.company_name, `ranking #${record.rank}: ranks 1501-2000 name mismatch`);
+});
+
+top3291.slice(2000).forEach((record, index) => {
+  const row = ranks2001To3291Checklist[index];
+  assert(row, `ranking #${record.rank}: missing ranks 2001-3291 checklist row`);
+  if (!row) return;
+  assert(row.rank === record.rank, `ranking #${record.rank}: ranks 2001-3291 rank mismatch`);
+  assert(row.company_id === record.company_id, `ranking #${record.rank}: ranks 2001-3291 ID mismatch`);
+  assert(row.company_name === record.company_name, `ranking #${record.rank}: ranks 2001-3291 name mismatch`);
+});
+
 const hasBusinessData = (row) => Boolean(
   row.website
   || row.alibaba_url
@@ -202,6 +304,48 @@ assert(
 assert(
   JSON.stringify(pending1001To1500Checklist) === JSON.stringify(expectedPending1001To1500),
   "pending-1001-1500.json is stale or incomplete",
+);
+const expectedMissingRanks1501To2000 = ranks1501To2000Checklist.filter((row) => !hasBusinessData(row));
+const expectedPendingRanks1501To2000 = ranks1501To2000Checklist.filter((row) => hasBusinessData(row) && (
+  row.confidence !== "high"
+  || row.status === "部分字段待复核"
+  || /待核|待复|需|冲突|仅|泛化|未确认|目录|catalog/i.test(row.note)
+));
+assert(
+  JSON.stringify(missingRanks1501To2000Checklist) === JSON.stringify(expectedMissingRanks1501To2000),
+  "missing-1501-2000.json is stale or incomplete",
+);
+assert(
+  JSON.stringify(pendingRanks1501To2000Checklist) === JSON.stringify(expectedPendingRanks1501To2000),
+  "pending-1501-2000.json is stale or incomplete",
+);
+const expectedMissingRanks2001To3291 = ranks2001To3291Checklist.filter((row) => !hasBusinessData(row));
+const expectedPendingRanks2001To3291 = ranks2001To3291Checklist.filter((row) => hasBusinessData(row) && (
+  row.confidence !== "high"
+  || row.status === "部分字段待复核"
+  || /待核|待复|需|冲突|仅|泛化|未确认|目录|catalog/i.test(row.note)
+));
+assert(
+  JSON.stringify(missingRanks2001To3291Checklist) === JSON.stringify(expectedMissingRanks2001To3291),
+  "missing-2001-3291.json is stale or incomplete",
+);
+assert(
+  JSON.stringify(pendingRanks2001To3291Checklist) === JSON.stringify(expectedPendingRanks2001To3291),
+  "pending-2001-3291.json is stale or incomplete",
+);
+const expectedMissingTop3291 = top3291Checklist.filter((row) => !hasBusinessData(row));
+const expectedPendingTop3291 = top3291Checklist.filter((row) => hasBusinessData(row) && (
+  row.confidence !== "high"
+  || row.status === "部分字段待复核"
+  || /待核|待复|需|冲突|仅|泛化|未确认|目录|catalog/i.test(row.note)
+));
+assert(
+  JSON.stringify(missingTop3291Checklist) === JSON.stringify(expectedMissingTop3291),
+  "top3291-missing.json is stale or incomplete",
+);
+assert(
+  JSON.stringify(pendingTop3291Checklist) === JSON.stringify(expectedPendingTop3291),
+  "top3291-pending.json is stale or incomplete",
 );
 for (const id of ["YQ000488", "YQ000499", "YQ000516", "YQ000517", "YQ000714", "YQ000716", "YQ000717", "YQ000726", "YQ000753"]) {
   assert(top1000Checklist.some((row) => row.company_id === id), `${id}: lower-rank research row is missing`);
@@ -530,6 +674,7 @@ if (errors.length) {
     top500: top500.length,
     top1000: top1000.length,
     top1500: top1500.length,
+    top3291: top3291.length,
     profiles: Object.keys(profiles).length,
     checklist: checklist.length,
     lowerChecklist: lowerChecklist.length,
@@ -538,6 +683,14 @@ if (errors.length) {
     ranks1001To1500: ranks1001To1500Checklist.length,
     ranks1001To1500Missing: missing1001To1500Checklist.length,
     ranks1001To1500Pending: pending1001To1500Checklist.length,
+    ranks1501To2000: ranks1501To2000Checklist.length,
+    ranks1501To2000Missing: missingRanks1501To2000Checklist.length,
+    ranks1501To2000Pending: pendingRanks1501To2000Checklist.length,
+    ranks2001To3291: ranks2001To3291Checklist.length,
+    ranks2001To3291Missing: missingRanks2001To3291Checklist.length,
+    ranks2001To3291Pending: pendingRanks2001To3291Checklist.length,
+    allMissing: missingTop3291Checklist.length,
+    allPending: pendingTop3291Checklist.length,
     researched: checklist.filter((row) => row.status !== "待检索").length,
     websites: checklist.filter((row) => row.website).length,
     alibaba: checklist.filter((row) => row.alibaba_url).length,
@@ -545,5 +698,11 @@ if (errors.length) {
     addresses: checklist.filter((row) => row.address).length,
     capital: checklist.filter((row) => row.registered_capital).length,
     products: checklist.filter((row) => row.main_products).length,
+    allResearched: top3291Checklist.filter((row) => row.status !== "待检索").length,
+    allWebsites: top3291Checklist.filter((row) => row.website).length,
+    allAlibaba: top3291Checklist.filter((row) => row.alibaba_url).length,
+    allAddresses: top3291Checklist.filter((row) => row.address).length,
+    allCapital: top3291Checklist.filter((row) => row.registered_capital).length,
+    allProducts: top3291Checklist.filter((row) => row.main_products).length,
   }, null, 2));
 }

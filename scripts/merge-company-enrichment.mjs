@@ -10,6 +10,8 @@ const reviewDir = path.join(root, "review/company-enrichment");
 const top500Dir = path.join(reviewDir, "top500");
 const ranks501To1000Dir = path.join(reviewDir, "ranks-501-1000");
 const ranks1001To1500Dir = path.join(reviewDir, "ranks-1001-1500");
+const ranks1501To2000Dir = path.join(reviewDir, "ranks-1501-2000");
+const ranks2001To3291Dir = path.join(reviewDir, "ranks-2001-3291");
 const checkedAt = "2026-10-24";
 const staleFieldUrls = new Map([
   ["YQ000022", new Set([
@@ -42,9 +44,15 @@ const ranking = readJson(path.join(dataDir, "2026-ytd-07.json")).records;
 const top1500 = ranking
   .filter((record) => Number.isInteger(record.rank) && record.rank >= 1 && record.rank <= 1500)
   .sort((a, b) => a.rank - b.rank);
+const top3291 = ranking
+  .filter((record) => Number.isInteger(record.rank) && record.rank >= 1 && record.rank <= 3291)
+  .sort((a, b) => a.rank - b.rank);
 
 if (top1500.length !== 1500) {
   throw new Error(`Expected 1500 ranking records, received ${top1500.length}`);
+}
+if (top3291.length !== 3291) {
+  throw new Error(`Expected 3291 ranking records, received ${top3291.length}`);
 }
 const top1000 = top1500.slice(0, 1000);
 
@@ -120,6 +128,51 @@ research.push(...ranks1001To1500Research.map((row) => ({
   ...row,
   role: "rank1001_to_1500",
 })));
+const ranks1501To3291Files = [
+  {
+    directory: ranks1501To2000Dir,
+    from: 1501,
+    to: 2000,
+  },
+  {
+    directory: ranks2001To3291Dir,
+    from: 2001,
+    to: 3291,
+  },
+].flatMap(({ directory, from, to }) => {
+  const files = [];
+  for (let start = from; start <= to; start += 100) {
+    files.push({
+      directory,
+      name: `research-${start}-${Math.min(start + 99, to)}.json`,
+    });
+  }
+  return files;
+});
+const ranks1501To3291Research = ranks1501To3291Files.flatMap(({ directory, name }) => {
+  const rows = readJson(path.join(directory, name));
+  if (!Array.isArray(rows)) throw new Error(`${name} must contain an array`);
+  return rows;
+});
+const expectedRanks1501To3291Research = top3291.filter((record) => record.rank >= 1501);
+if (ranks1501To3291Research.length !== expectedRanks1501To3291Research.length) {
+  throw new Error(
+    `Expected 1791 ranking records for ranks 1501-3291, received ${ranks1501To3291Research.length}`,
+  );
+}
+for (let index = 0; index < expectedRanks1501To3291Research.length; index += 1) {
+  const expected = expectedRanks1501To3291Research[index];
+  const row = ranks1501To3291Research[index];
+  if (row.rank !== expected.rank || row.id !== expected.company_id || row.name !== expected.company_name) {
+    throw new Error(
+      `Ranks 1501-3291 row ${index + 1} is misaligned: expected #${expected.rank} ${expected.company_id} ${expected.company_name}`,
+    );
+  }
+}
+research.push(...ranks1501To3291Research.map((row) => ({
+  ...row,
+  role: "rank1501_to_3291",
+})));
 research.push(...top100Supplemental.map((row) => ({
   ...row,
   role: "top100_supplemental",
@@ -152,13 +205,14 @@ for (const row of top100Review) {
   byId.set(row["企业ID"], { source: "top100", row });
 }
 for (const row of research) {
-  const existing = byId.get(row.id);
+  const rowKey = `${row.rank}:${row.id}`;
+  const existing = byId.get(rowKey);
   if (!existing) {
-    byId.set(row.id, { source: "research", row });
+    byId.set(rowKey, { source: "research", row });
     continue;
   }
   if (existing.source === "research") {
-    byId.set(row.id, {
+    byId.set(rowKey, {
       source: "research",
       row: row.role === "top100_supplemental"
         ? overlayResearchRows(existing.row, row)
@@ -167,7 +221,7 @@ for (const row of research) {
     continue;
   }
   if (row.role === "top100_supplemental") {
-    byId.set(row.id, {
+    byId.set(rowKey, {
       source: "top100+research",
       row: {
         ...existing.row,
@@ -180,7 +234,7 @@ for (const row of research) {
     });
     continue;
   }
-  byId.set(row.id, {
+  byId.set(rowKey, {
     source: "top100+research",
     row: {
       ...row,
@@ -418,8 +472,8 @@ let addressCount = 0;
 let capitalCount = 0;
 let productCount = 0;
 
-for (const record of top1500) {
-  const entry = byId.get(record.company_id);
+for (const record of top3291) {
+  const entry = byId.get(`${record.rank}:${record.company_id}`);
   const topRow = entry?.source === "top100" || entry?.source === "top100+research"
     ? entry.row
     : null;
@@ -432,6 +486,7 @@ for (const record of top1500) {
   const isSupplementalTop100 = researchRow?.role === "top100_supplemental";
   const isLowerRankResearch = researchRow?.role === "rank501_to_1000";
   const isTop1500Research = isLowerRankResearch || researchRow?.role === "rank1001_to_1500";
+  const isRanks1501To3291Research = researchRow?.role === "rank1501_to_3291";
   const rejectedUrls = staleFieldUrls.get(record.company_id) ?? new Set();
   if (researchRow && hasWebsiteIdentityConflict(researchRow)) {
     for (const url of urlsFrom(researchRow.website)) {
@@ -579,12 +634,29 @@ for (const record of top1500) {
       products = isAcceptableResearchProducts(researchRow, researchRow.products)
         ? cleanText(researchRow.products)
         : "";
+    } else if (isRanks1501To3291Research) {
+      address = isAcceptableResearchAddress(researchRow, researchRow.contact_address)
+        ? cleanText(researchRow.contact_address)
+        : "";
+      capital = looksLikeCapital(researchRow.capital)
+        ? cleanText(researchRow.capital)
+        : "";
+      products = isAcceptableResearchProducts(researchRow, researchRow.products)
+        ? cleanText(researchRow.products)
+        : "";
     }
-    note = cleanText(researchRow?.note)
-      || cleanText(legacy["待核对说明"])
-      || cleanText(researchRow?.note);
-    confidence = cleanText(researchRow?.confidence)
-      || cleanText(legacy["状态"]);
+    const researchNote = cleanText(researchRow?.note);
+    const legacyNote = cleanText(legacy["待核对说明"]);
+    const researchIsAtLeastLegacy = !legacyNote
+      || !isRanks1501To3291Research
+      || researchRow?.confidence === "high"
+      || legacyNote !== "公开资料不足";
+    note = isRanks1501To3291Research
+      ? researchIsAtLeastLegacy ? researchNote : legacyNote
+      : researchNote || legacyNote;
+    confidence = isRanks1501To3291Research
+      ? researchIsAtLeastLegacy ? researchRow?.confidence : legacy["状态"]
+      : researchRow?.confidence || legacy["状态"];
     sources = [
       ...sourceObjects(legacy["资料来源"]),
       ...sourceObjects(legacy["待核对检索来源"]),
@@ -598,7 +670,7 @@ for (const record of top1500) {
       ?? websiteSource
       ?? sources[0]?.url
       ?? null;
-    const lowerCapitalSource = isTop1500Research
+    const lowerCapitalSource = isTop1500Research || isRanks1501To3291Research
       ? explicitUrlOrNull(researchRow?.capital_source)
       : null;
     const capitalSource = lowerCapitalSource
@@ -621,10 +693,12 @@ for (const record of top1500) {
     });
     if (alibaba) addLink(profile, "alibaba_store", "Alibaba 国际站", alibaba, "alibaba_company_profile_verified");
     const detailSource = websiteSource ?? sources[0]?.url ?? null;
-    const supplementalOptions = {
-      replace: isSupplementalTop100 || researchRow?.role === "rank1001_to_1500",
-      clear: true,
-    };
+    const supplementalOptions = isRanks1501To3291Research
+      ? { replace: false, clear: false }
+      : {
+        replace: isSupplementalTop100 || researchRow?.role === "rank1001_to_1500",
+        clear: true,
+      };
     setDetails(details, "contact_address", address, addressSource ?? detailSource, "public_company_record", supplementalOptions);
     setDetails(details, "registered_address", registeredAddress, detailSource, "company_filing", supplementalOptions);
     setDetails(
@@ -744,10 +818,15 @@ const top500Rows = standardRows.slice(0, 500);
 const top1000Rows = standardRows.slice(0, 1000);
 const lowerRows = standardRows.slice(500, 1000);
 const newLowerRows = standardRows.slice(1000, 1500);
+const ranks1501To2000Rows = standardRows.slice(1500, 2000);
+const ranks2001To3291Rows = standardRows.slice(2000);
 writeJson(path.join(reviewDir, "top1000-review.json"), top1000Rows);
 writeJson(path.join(ranks501To1000Dir, "review-501-1000.json"), lowerRows);
-writeJson(path.join(reviewDir, "top1500-review.json"), standardRows);
+writeJson(path.join(reviewDir, "top1500-review.json"), standardRows.slice(0, 1500));
 writeJson(path.join(ranks1001To1500Dir, "review-1001-1500.json"), newLowerRows);
+writeJson(path.join(reviewDir, "top3291-review.json"), standardRows);
+writeJson(path.join(ranks1501To2000Dir, "review-1501-2000.json"), ranks1501To2000Rows);
+writeJson(path.join(ranks2001To3291Dir, "review-2001-3291.json"), ranks2001To3291Rows);
 
 const csvEscape = (value) => {
   const text = Array.isArray(value) ? value.join(" | ") : String(value ?? "");
@@ -759,8 +838,11 @@ const reviewCsv = (rows) => [
 ].join("\n");
 fs.writeFileSync(path.join(reviewDir, "top1000-review.csv"), `${reviewCsv(top1000Rows)}\n`);
 fs.writeFileSync(path.join(ranks501To1000Dir, "review-501-1000.csv"), `${reviewCsv(lowerRows)}\n`);
-fs.writeFileSync(path.join(reviewDir, "top1500-review.csv"), `${reviewCsv(standardRows)}\n`);
+fs.writeFileSync(path.join(reviewDir, "top1500-review.csv"), `${reviewCsv(standardRows.slice(0, 1500))}\n`);
 fs.writeFileSync(path.join(ranks1001To1500Dir, "review-1001-1500.csv"), `${reviewCsv(newLowerRows)}\n`);
+fs.writeFileSync(path.join(reviewDir, "top3291-review.csv"), `${reviewCsv(standardRows)}\n`);
+fs.writeFileSync(path.join(ranks1501To2000Dir, "review-1501-2000.csv"), `${reviewCsv(ranks1501To2000Rows)}\n`);
+fs.writeFileSync(path.join(ranks2001To3291Dir, "review-2001-3291.csv"), `${reviewCsv(ranks2001To3291Rows)}\n`);
 
 const hasBusinessData = (row) => Boolean(
   row.website
@@ -847,6 +929,96 @@ fs.writeFileSync(
   path.join(ranks1001To1500Dir, "missing-1001-1500.md"),
   missingNewMarkdown,
 );
+
+const missingRanks1501To2000Rows = ranks1501To2000Rows.filter((row) => !hasBusinessData(row));
+const pendingRanks1501To2000Rows = ranks1501To2000Rows.filter((row) => hasBusinessData(row) && (
+  row.confidence !== "high"
+  || row.status === "部分字段待复核"
+  || /待核|待复|需|冲突|仅|泛化|未确认|目录|catalog/i.test(row.note)
+));
+writeJson(path.join(ranks1501To2000Dir, "missing-1501-2000.json"), missingRanks1501To2000Rows);
+writeJson(path.join(ranks1501To2000Dir, "pending-1501-2000.json"), pendingRanks1501To2000Rows);
+fs.writeFileSync(
+  path.join(ranks1501To2000Dir, "missing-1501-2000.csv"),
+  `${compactCsv(missingRanks1501To2000Rows)}\n`,
+);
+fs.writeFileSync(
+  path.join(ranks1501To2000Dir, "pending-1501-2000.csv"),
+  `${compactCsv(pendingRanks1501To2000Rows)}\n`,
+);
+const missingRanks1501To2000Markdown = [
+  "# 1501–2000 名尚无业务字段企业",
+  "",
+  `检索日期：${checkedAt}。以下 ${missingRanks1501To2000Rows.length} 家企业在官网、Alibaba 国际站、地址、注册资金和主营产品五项中均没有可写入的可靠公开资料。`,
+  "",
+  "| 排名 | 企业ID | 企业名称 | 检索状态 |",
+  "| ---: | --- | --- | --- |",
+  ...missingRanks1501To2000Rows.map((row) => (
+    `| ${row.rank} | ${row.company_id} | ${row.company_name.replaceAll("|", "\\|")} | ${row.note.replaceAll("|", "\\|")} |`
+  )),
+  "",
+].join("\n");
+fs.writeFileSync(
+  path.join(ranks1501To2000Dir, "missing-1501-2000.md"),
+  missingRanks1501To2000Markdown,
+);
+
+const missingRanks2001To3291Rows = ranks2001To3291Rows.filter((row) => !hasBusinessData(row));
+const pendingRanks2001To3291Rows = ranks2001To3291Rows.filter((row) => hasBusinessData(row) && (
+  row.confidence !== "high"
+  || row.status === "部分字段待复核"
+  || /待核|待复|需|冲突|仅|泛化|未确认|目录|catalog/i.test(row.note)
+));
+writeJson(path.join(ranks2001To3291Dir, "missing-2001-3291.json"), missingRanks2001To3291Rows);
+writeJson(path.join(ranks2001To3291Dir, "pending-2001-3291.json"), pendingRanks2001To3291Rows);
+fs.writeFileSync(
+  path.join(ranks2001To3291Dir, "missing-2001-3291.csv"),
+  `${compactCsv(missingRanks2001To3291Rows)}\n`,
+);
+fs.writeFileSync(
+  path.join(ranks2001To3291Dir, "pending-2001-3291.csv"),
+  `${compactCsv(pendingRanks2001To3291Rows)}\n`,
+);
+const missingRanks2001To3291Markdown = [
+  "# 2001–3291 名尚无业务字段企业",
+  "",
+  `检索日期：${checkedAt}。以下 ${missingRanks2001To3291Rows.length} 家企业在官网、Alibaba 国际站、地址、注册资金和主营产品五项中均没有可写入的可靠公开资料。`,
+  "",
+  "| 排名 | 企业ID | 企业名称 | 检索状态 |",
+  "| ---: | --- | --- | --- |",
+  ...missingRanks2001To3291Rows.map((row) => (
+    `| ${row.rank} | ${row.company_id} | ${row.company_name.replaceAll("|", "\\|")} | ${row.note.replaceAll("|", "\\|")} |`
+  )),
+  "",
+].join("\n");
+fs.writeFileSync(
+  path.join(ranks2001To3291Dir, "missing-2001-3291.md"),
+  missingRanks2001To3291Markdown,
+);
+
+const missingAllRows = standardRows.filter((row) => !hasBusinessData(row));
+const pendingAllRows = standardRows.filter((row) => hasBusinessData(row) && (
+  row.confidence !== "high"
+  || row.status === "部分字段待复核"
+  || /待核|待复|需|冲突|仅|泛化|未确认|目录|catalog/i.test(row.note)
+));
+writeJson(path.join(reviewDir, "top3291-missing.json"), missingAllRows);
+writeJson(path.join(reviewDir, "top3291-pending.json"), pendingAllRows);
+fs.writeFileSync(path.join(reviewDir, "top3291-missing.csv"), `${compactCsv(missingAllRows)}\n`);
+fs.writeFileSync(path.join(reviewDir, "top3291-pending.csv"), `${compactCsv(pendingAllRows)}\n`);
+const missingAllMarkdown = [
+  "# 全部 3,291 名尚无业务字段企业",
+  "",
+  `检索日期：${checkedAt}。以下 ${missingAllRows.length} 家企业在官网、Alibaba 国际站、地址、注册资金和主营产品五项中均没有可写入的可靠公开资料。`,
+  "",
+  "| 排名 | 企业ID | 企业名称 | 检索状态 |",
+  "| ---: | --- | --- | --- |",
+  ...missingAllRows.map((row) => (
+    `| ${row.rank} | ${row.company_id} | ${row.company_name.replaceAll("|", "\\|")} | ${row.note.replaceAll("|", "\\|")} |`
+  )),
+  "",
+].join("\n");
+fs.writeFileSync(path.join(reviewDir, "top3291-missing.md"), missingAllMarkdown);
 
 const escapeHtml = (value) => String(value ?? "").replace(/[&<>"']/g, (character) => ({
   "&": "&amp;",
@@ -977,9 +1149,33 @@ fs.writeFileSync(
 fs.writeFileSync(
   path.join(reviewDir, "top1500-review.html"),
   htmlForRows(
-    standardRows,
+    standardRows.slice(0, 1500),
     "OXOX Top 1500 企业资料核对清单",
     "2026 年 1–7 月累计出口榜前 1500 名。空白表示检索后仍没有可写入的可靠证据，“候选”资料不进入生产页面。",
+  ),
+);
+fs.writeFileSync(
+  path.join(reviewDir, "top3291-review.html"),
+  htmlForRows(
+    standardRows,
+    "OXOX 全部 3,291 名企业资料核对清单",
+    "2026 年 1–7 月累计出口榜全部 3,291 条排名记录。空白表示检索后仍没有可写入的可靠证据，“候选”资料不进入生产页面。",
+  ),
+);
+fs.writeFileSync(
+  path.join(ranks1501To2000Dir, "review-1501-2000.html"),
+  htmlForRows(
+    ranks1501To2000Rows,
+    "OXOX 1501–2000 名企业资料核对清单",
+    "2026 年 1–7 月累计出口榜第 1501–2000 名。空白表示检索后仍没有可写入的可靠证据。",
+  ),
+);
+fs.writeFileSync(
+  path.join(ranks2001To3291Dir, "review-2001-3291.html"),
+  htmlForRows(
+    ranks2001To3291Rows,
+    "OXOX 2001–3291 名企业资料核对清单",
+    "2026 年 1–7 月累计出口榜第 2001–3291 名。空白表示检索后仍没有可写入的可靠证据。",
   ),
 );
 
