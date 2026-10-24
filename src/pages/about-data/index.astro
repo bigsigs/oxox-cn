@@ -3,7 +3,7 @@ import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 import ThemeHead from "../../components/ThemeHead.astro";
 import periodsData from "../../../public/data/yueqing-export-ranking/periods.json";
-import latestData from "../../../public/data/yueqing-export-ranking/2026-ytd-07.json";
+import latestData from "../../../public/data/yueqing-export-ranking/2026-ytd-08.json";
 import "../../styles/reference.css";
 
 const latestPeriod = periodsData.periods.find((period) => period.id === periodsData.latest)!;
@@ -18,7 +18,7 @@ const aboutSchema = {
     "@type": "Dataset",
     name: "乐清企业累计出口额排名",
     url: "https://oxox.cn/",
-    temporalCoverage: "2026-01-01/2026-07-31",
+    temporalCoverage: "2026-01-01/2026-08-31",
   },
 };
 ---
@@ -55,7 +55,7 @@ const aboutSchema = {
           <section class="explanation">
             <h2><span>01</span>累计周期</h2>
             <div>
-              <p>排行榜展示乐清企业的累计出口额排名。“2026 年 1—7 月”指 1 月至 7 月的累计数据，不是 7 月单月数据。</p>
+              <p>排行榜展示乐清企业的累计出口额排名。“2026 年 1—8 月”指 1 月至 8 月的累计数据，不是 8 月单月数据。</p>
               <p>各期榜单按各自统计周期独立保留。比较企业表现时，应同时查看数据周期和数据口径。</p>
             </div>
           </section>
@@ -76,7 +76,8 @@ const aboutSchema = {
           <section class="explanation">
             <h2><span>04</span>缺号与重复记录</h2>
             <div>
-              <p>2026 年 1—6 月精准源表未提供第 16 名，页面保留这一缺号，不补号、不重排。</p>
+              <p>2026 年 1—6 月精准源表未提供第 16 名，1—8 月区间源表未提供第 43 名；页面保留这些缺号，不补号、不重排。</p>
+              <p>1—8 月源表中未填写金额区间的企业，按源表口径归入“100 万美元以下”。</p>
               <p>同一周期重复出现的企业名称按源表保留。因此，“排名记录数”与“企业档案数”可能不同；相关周期不直接合并计算名次变化。</p>
             </div>
           </section>

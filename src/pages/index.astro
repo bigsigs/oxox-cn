@@ -6,8 +6,8 @@ import ThemeHead from "../components/ThemeHead.astro";
 import "../styles/reference.css";
 import "../styles/home-ranking.css";
 import periods from "../../public/data/yueqing-export-ranking/periods.json";
-import latestRanking from "../../public/data/yueqing-export-ranking/2026-ytd-07.json";
-import previousRanking from "../../public/data/yueqing-export-ranking/2026-ytd-06-exact.json";
+import latestRanking from "../../public/data/yueqing-export-ranking/2026-ytd-08.json";
+import previousRanking from "../../public/data/yueqing-export-ranking/2026-ytd-07.json";
 import companies from "../../public/data/yueqing-export-ranking/companies.json";
 import profiles from "../../public/data/yueqing-export-ranking/company-profiles.json";
 import { buildPeriodIndex } from "../lib/ranking-core.js";
@@ -30,7 +30,7 @@ const siteSchema = {
   "@context": "https://schema.org",
   "@graph": [
     { "@type": "WebSite", name: "OXOX 乐清出口排行榜", url: "https://oxox.cn/", inLanguage: "zh-CN" },
-    { "@type": "Dataset", name: `${latestRanking.period.label}乐清企业累计出口排名`, description: latestRanking.source_note, temporalCoverage: "2026-01-01/2026-07-31", url: "https://oxox.cn/", variableMeasured: ["累计出口排名", "累计出口额区间"] },
+    { "@type": "Dataset", name: `${latestRanking.period.label}乐清企业累计出口排名`, description: latestRanking.source_note, temporalCoverage: "2026-01-01/2026-08-31", url: "https://oxox.cn/", variableMeasured: ["累计出口排名", "累计出口额区间"] },
     { "@type": "ItemList", name: "乐清企业出口排名", numberOfItems: latestRanking.records.length, itemListElement: latestRanking.records.slice(0, 30).map(record => ({ "@type": "ListItem", position: record.rank, name: record.company_name, url: `https://oxox.cn/yueqing-export-ranking/company/${record.company_id}/` })) },
   ],
 };
@@ -86,9 +86,9 @@ const boot = { periods: periods.periods, latest: periods.latest, companyMeta };
         </div>
         <label class="period-control"><span class="ref-sr-only">选择数据周期</span><select id="periodSelect" disabled>{periods.periods.map(period => <option value={period.id} selected={period.id === periods.latest}>{period.label}{period.id === periods.latest ? "（最新）" : ""}</option>)}</select></label>
       </div>
-      <div class="ranking-board">
+        <div class="ranking-board">
         <div class="board-heading"><div><h2>按累计出口排名</h2><p id="rankingPeriod">{latestRanking.period.label} · 累计出口额区间，非单月数据。</p></div><button type="button" class="clear-filters" id="clearFilters" hidden>清除筛选 ×</button></div>
-        <div class="ranking-columns" aria-hidden="true"><span>#</span><span></span><span>企业</span><span id="amountHeading">累计出口额区间</span><span id="changeHeading">较 1—6 月精准</span></div>
+        <div class="ranking-columns" aria-hidden="true"><span>#</span><span></span><span>企业</span><span id="amountHeading">累计出口额区间</span><span id="changeHeading">较 1—7 月</span></div>
         <div id="rankingRows">
           {latestRanking.records.slice(0, 30).map(record => {
             const meta = companyMeta[record.company_id];
@@ -97,7 +97,7 @@ const boot = { periods: periods.periods, latest: periods.latest, companyMeta };
               <span class:list={["row-rank", { "rank-top": record.rank <= 3 }]}>{record.rank}</span>
               <span class:list={["company-mark", { "dark-logo": meta?.icon && meta?.darkIcon }]} aria-hidden="true">{meta?.icon ? <img src={meta.icon} width="42" height="42" alt="" loading="lazy" /> : <span>{mark(record.company_name)}</span>}</span>
               <span class="row-company"><b>{record.company_name}</b>{meta?.domain && <span class="company-badge">官网</span>}<span class="company-subline">{meta?.domain || record.company_id}</span></span>
-              <span class="row-amount">{record.band_label.replace("万美元", "")}<small>万美元</small></span>
+              <span class="row-amount">{record.band_label === "未提供" ? "未提供" : record.band_label.replace(/万(?:美元|美金)$/, "")}<small>{record.band_label === "未提供" ? "" : "万美元"}</small></span>
               <span class:list={["row-change", signal.type]}><span class="mobile-change-label">名次 </span>{signal.label}</span>
             </a>;
           })}

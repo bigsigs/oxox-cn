@@ -9,6 +9,7 @@ import "../../../styles/company-detail.css";
 import companies from "../../../../public/data/yueqing-export-ranking/companies.json";
 import profiles from "../../../../public/data/yueqing-export-ranking/company-profiles.json";
 import periods from "../../../../public/data/yueqing-export-ranking/periods.json";
+import data2026Ytd08 from "../../../../public/data/yueqing-export-ranking/2026-ytd-08.json";
 import data2026Ytd07 from "../../../../public/data/yueqing-export-ranking/2026-ytd-07.json";
 import data2026Ytd06Exact from "../../../../public/data/yueqing-export-ranking/2026-ytd-06-exact.json";
 import data2026Ytd06 from "../../../../public/data/yueqing-export-ranking/2026-ytd-06.json";
@@ -60,6 +61,7 @@ type CompanyHistory = {
 
 export async function getStaticPaths() {
   const datasets = new Map<string, RankingDataset>([
+    ["2026-ytd-08", data2026Ytd08],
     ["2026-ytd-07", data2026Ytd07],
     ["2026-ytd-06-exact", data2026Ytd06Exact],
     ["2026-ytd-06", data2026Ytd06],

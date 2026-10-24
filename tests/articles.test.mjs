@@ -4,6 +4,16 @@ import { test } from "node:test";
 
 const root = new URL("../", import.meta.url);
 const read = (path) => readFile(new URL(path, root), "utf8");
+const decodeHtml = (value) => String(value)
+  .replace(/&#x([\da-f]+);/gi, (_, number) => String.fromCodePoint(parseInt(number, 16)))
+  .replace(/&#(\d+);/g, (_, number) => String.fromCodePoint(Number(number)))
+  .replace(/&quot;/g, '"').replace(/&#0*39;|&apos;/g, "'")
+  .replace(/&lt;/g, "<").replace(/&gt;/g, ">")
+  .replace(/&nbsp;/g, " ").replace(/&amp;/g, "&");
+const textOf = (html) => decodeHtml(html
+  .replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi, " ")
+  .replace(/<[^>]*>/g, " ")).replace(/\s+/g, " ").trim();
+const mainOf = (html) => html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)?.[1] ?? "";
 
 const sectionHeadings = [
   "一、外贸进出口情况概况",
@@ -15,13 +25,16 @@ const sectionHeadings = [
 
 test("article center publishes monthly reports in period order", async () => {
   const html = await read("dist/articles/index.html");
+  const augustTitle = "乐清市 2026 年 1—8 月外贸情况分析";
   const julyTitle = "乐清市 2026 年 1—7 月外贸情况分析";
   const h1Title = "乐清市 2026 年 1—6 月外贸情况分析";
   const mayTitle = "乐清市 2026 年 1—5 月外贸情况分析";
 
+  assert.ok(html.indexOf(augustTitle) < html.indexOf(julyTitle));
   assert.ok(html.indexOf(julyTitle) < html.indexOf(h1Title));
   assert.ok(html.indexOf(h1Title) < html.indexOf(mayTitle));
   assert.match(html, /月报/);
+  assert.match(html, /href="\/articles\/yueqing-foreign-trade-2026-jan-aug\/"/);
   assert.match(html, /href="\/articles\/yueqing-foreign-trade-2026-jan-jul\/"/);
   assert.match(html, /href="\/articles\/yueqing-foreign-trade-2026-h1\/"/);
   assert.match(html, /href="\/articles\/yueqing-foreign-trade-2026-jan-may\/"/);
@@ -49,6 +62,27 @@ test("January-July report publishes the complete reviewed data contract", async 
   assert.match(html, /分类企业数量合计为 2,953 家/);
   assert.match(html, /机床出口额 9,035 万元/);
   assert.doesNotMatch(html, /数据来源|整理：|作者：/);
+});
+
+test("January-August report publishes the latest monthly review", async () => {
+  const html = await read("dist/articles/yueqing-foreign-trade-2026-jan-aug/index.html");
+  const text = textOf(mainOf(html));
+  for (const value of [
+    "乐清市 2026 年 1—8 月外贸情况分析",
+    "246.82 亿元",
+    "238.59 亿元",
+    "151.61 亿元",
+    "165.57 亿元",
+  ]) assert.ok(text.includes(value), `January-August report needs ${value}`);
+  for (const label of [
+    "主要出口商品",
+    "主要进口商品",
+    "主要出口贸易区",
+    "主要出口国家和地区",
+    "镇（街道）进出口总额",
+    "镇（街道）出口总额",
+    "温州各县（市、区）进出口情况",
+  ]) assert.ok(text.includes(label), `January-August report needs ${label}`);
 });
 
 test("January-June report preserves its confirmed data contract", async () => {

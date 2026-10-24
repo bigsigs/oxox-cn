@@ -33,8 +33,9 @@ function rowMarkup(record) {
   const signal = rankSignal(record, state.currentIndex, state.previousIndex, state.hasPrevious);
   const amount = record.amount_label || record.band_label;
   const exact = state.dataset.period.precision === "exact";
-  const amountText = exact ? format(record.amount_usd_10k) : amount.replace("万美元", "");
-  return `<a class="ranking-row" href="/yueqing-export-ranking/company/${escape(record.company_id)}/" data-rank="${record.rank}"><span class="row-rank ${record.rank <= 3 ? "rank-top" : ""}">${record.rank}</span><span class="company-mark ${meta?.icon && meta?.darkIcon ? "dark-logo" : ""}" aria-hidden="true">${meta?.icon ? `<img src="${escape(meta.icon)}" alt="" width="42" height="42" loading="lazy">` : `<span>${escape(initials)}</span>`}</span><span class="row-company"><b>${escape(record.company_name)}</b>${meta?.domain ? `<span class="company-badge">官网</span>` : ""}<span class="company-subline">${escape(meta?.domain || record.company_id)}</span></span><span class="row-amount">${escape(amountText)}<small>万美元</small></span><span class="row-change ${signal.type}"><span class="mobile-change-label">名次 </span>${signal.label}</span></a>`;
+  const missingAmount = amount === "未提供";
+  const amountText = exact ? format(record.amount_usd_10k) : amount.replace(/万(?:美元|美金)$/, "");
+  return `<a class="ranking-row" href="/yueqing-export-ranking/company/${escape(record.company_id)}/" data-rank="${record.rank}"><span class="row-rank ${record.rank <= 3 ? "rank-top" : ""}">${record.rank}</span><span class="company-mark ${meta?.icon && meta?.darkIcon ? "dark-logo" : ""}" aria-hidden="true">${meta?.icon ? `<img src="${escape(meta.icon)}" alt="" width="42" height="42" loading="lazy">` : `<span>${escape(initials)}</span>`}</span><span class="row-company"><b>${escape(record.company_name)}</b>${meta?.domain ? `<span class="company-badge">官网</span>` : ""}<span class="company-subline">${escape(meta?.domain || record.company_id)}</span></span><span class="row-amount">${escape(amountText)}${missingAmount ? "" : "<small>万美元</small>"}</span><span class="row-change ${signal.type}"><span class="mobile-change-label">名次 </span>${signal.label}</span></a>`;
 }
 function saveUrl() {
   const url = new URL(location.href);
