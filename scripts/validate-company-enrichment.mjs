@@ -13,6 +13,11 @@ const ranking = readJson(path.join(dataDir, "2026-ytd-07.json")).records;
 const companies = readJson(path.join(dataDir, "companies.json"));
 const profiles = readJson(path.join(dataDir, "company-profiles.json"));
 const checklist = readJson(path.join(reviewDir, "top500-review.json"));
+const top1000Checklist = readJson(path.join(reviewDir, "top1000-review.json"));
+const lowerReviewDir = path.join(reviewDir, "ranks-501-1000");
+const lowerChecklist = readJson(path.join(lowerReviewDir, "review-501-1000.json"));
+const missingLowerChecklist = readJson(path.join(lowerReviewDir, "missing-501-1000.json"));
+const pendingLowerChecklist = readJson(path.join(lowerReviewDir, "pending-501-1000.json"));
 
 const errors = [];
 const assert = (condition, message) => {
@@ -52,6 +57,9 @@ const isThirdParty = (value) => {
 const top500 = ranking
   .filter((record) => Number.isInteger(record.rank) && record.rank >= 1 && record.rank <= 500)
   .sort((a, b) => a.rank - b.rank);
+const top1000 = ranking
+  .filter((record) => Number.isInteger(record.rank) && record.rank >= 1 && record.rank <= 1000)
+  .sort((a, b) => a.rank - b.rank);
 const ids = new Set(companies.map((company) => company.company_id));
 
 assert(top500.length === 500, `Top 500 source has ${top500.length} rows`);
@@ -60,6 +68,11 @@ assert(new Set(top500.map((record) => record.rank)).size === 500, "Top 500 ranks
 assert(new Set(top500.map((record) => record.company_id)).size === 500, "Top 500 company IDs must be unique");
 assert(new Set(checklist.map((row) => row.rank)).size === 500, "checklist ranks must be unique");
 assert(new Set(checklist.map((row) => row.company_id)).size === 500, "checklist company IDs must be unique");
+assert(top1000.length === 1000, `Top 1000 source has ${top1000.length} rows`);
+assert(top1000Checklist.length === 1000, `Top 1000 checklist has ${top1000Checklist.length} rows`);
+assert(lowerChecklist.length === 500, `lower checklist has ${lowerChecklist.length} rows`);
+assert(new Set(top1000.map((record) => record.rank)).size === 1000, "Top 1000 ranks must be unique");
+assert(new Set(top1000Checklist.map((row) => row.rank)).size === 1000, "Top 1000 checklist ranks must be unique");
 
 top500.forEach((record, index) => {
   const row = checklist[index];
@@ -81,6 +94,65 @@ top500.forEach((record, index) => {
     assert(!host(row.alibaba_url).endsWith("1688.com"), `${row.company_id}: 1688 domestic store used as Alibaba`);
   }
 });
+
+top1000.forEach((record, index) => {
+  const row = top1000Checklist[index];
+  assert(row, `ranking #${record.rank}: missing Top 1000 checklist row`);
+  if (!row) return;
+  assert(row.rank === record.rank, `ranking #${record.rank}: Top 1000 checklist rank mismatch`);
+  assert(row.company_id === record.company_id, `ranking #${record.rank}: Top 1000 checklist ID mismatch`);
+  assert(row.company_name === record.company_name, `ranking #${record.rank}: Top 1000 checklist name mismatch`);
+  assert(ids.has(row.company_id), `${row.company_id}: Top 1000 ID not in stable company registry`);
+  for (const field of ["website", "alibaba_url"]) {
+    if (row[field]) assert(validUrl(row[field]), `${row.company_id}: invalid Top 1000 ${field} ${row[field]}`);
+  }
+  if (row.website) {
+    assert(!isThirdParty(row.website), `${row.company_id}: Top 1000 third-party website ${row.website}`);
+    assert(!host(row.website).includes("alibaba.com"), `${row.company_id}: Top 1000 Alibaba URL used as website`);
+  }
+  if (row.alibaba_url) {
+    assert(host(row.alibaba_url).endsWith("alibaba.com"), `${row.company_id}: Top 1000 Alibaba field is not Alibaba`);
+    assert(!host(row.alibaba_url).endsWith("1688.com"), `${row.company_id}: Top 1000 1688 URL used as Alibaba`);
+  }
+});
+
+top1000.slice(500).forEach((record, index) => {
+  const row = lowerChecklist[index];
+  assert(row, `ranking #${record.rank}: missing lower checklist row`);
+  if (!row) return;
+  assert(row.rank === record.rank, `ranking #${record.rank}: lower checklist rank mismatch`);
+  assert(row.company_id === record.company_id, `ranking #${record.rank}: lower checklist ID mismatch`);
+  assert(row.company_name === record.company_name, `ranking #${record.rank}: lower checklist name mismatch`);
+});
+
+const hasBusinessData = (row) => Boolean(
+  row.website
+  || row.alibaba_url
+  || row.address
+  || row.registered_capital
+  || row.main_products,
+);
+const expectedMissingLower = lowerChecklist.filter((row) => !hasBusinessData(row));
+const expectedPendingLower = lowerChecklist.filter((row) => hasBusinessData(row) && (
+  row.confidence !== "high"
+  || row.status === "部分字段待复核"
+  || /待核|待复|需|冲突|仅|泛化|未确认|目录|catalog/i.test(row.note)
+));
+assert(
+  JSON.stringify(missingLowerChecklist) === JSON.stringify(expectedMissingLower),
+  "missing-501-1000.json is stale or incomplete",
+);
+assert(
+  JSON.stringify(pendingLowerChecklist) === JSON.stringify(expectedPendingLower),
+  "pending-501-1000.json is stale or incomplete",
+);
+for (const id of ["YQ000488", "YQ000499", "YQ000516", "YQ000517", "YQ000714", "YQ000716", "YQ000717", "YQ000726", "YQ000753"]) {
+  assert(top1000Checklist.some((row) => row.company_id === id), `${id}: lower-rank research row is missing`);
+}
+assert(
+  lowerChecklist.filter((row) => row.company_id === "YQ000488").length === 2,
+  "YQ000488 must remain on both source ranks 527 and 528",
+);
 
 const sourceIds = new Set();
 for (const file of fs.readdirSync(reviewDir)) {
@@ -272,8 +344,12 @@ if (errors.length) {
 } else {
   console.log(JSON.stringify({
     top500: top500.length,
+    top1000: top1000.length,
     profiles: Object.keys(profiles).length,
     checklist: checklist.length,
+    lowerChecklist: lowerChecklist.length,
+    lowerMissing: missingLowerChecklist.length,
+    lowerPending: pendingLowerChecklist.length,
     researched: checklist.filter((row) => row.status !== "待检索").length,
     websites: checklist.filter((row) => row.website).length,
     alibaba: checklist.filter((row) => row.alibaba_url).length,

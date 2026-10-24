@@ -12,7 +12,8 @@ const outputDir = path.join(root, "public/company-icons/verified");
 const manifestFile = path.join(root, "src/data/verified-company-icons.json");
 const reviewFile = path.join(root, "review/company-enrichment/logo-selection.json");
 const candidates = JSON.parse(fs.readFileSync(candidatesFile, "utf8"));
-const manifest = JSON.parse(fs.readFileSync(manifestFile, "utf8"));
+const committedManifest = JSON.parse(fs.readFileSync(manifestFile, "utf8"));
+const manifest = structuredClone(committedManifest);
 const rejects = new Set([
   "YQ000005", // favicon is a near-empty micro mark
   "YQ000037", // source file is a white wordmark with no suitable light-background version
@@ -49,13 +50,16 @@ const rejects = new Set([
   "YQ000183", // group website is not curated as the subsidiary's own official website
   "YQ000249", // radin.cn belongs to a different legal entity
   "YQ000265", // domain is only a medium-confidence candidate, not a verified official site
+  "YQ000482", // white wordmark disappears on the light listing card
+  "YQ000493", // favicon is too small and indistinct at listing-card size
+  "YQ000595", // favicon is too small and indistinct at listing-card size
+  "YQ000669", // selected image is the GDPR cookie-plugin mark
+  "YQ000685", // favicon is a square social-profile crop without a readable lockup
+  "YQ000711", // favicon is a wide, low-contrast source image
+  "YQ000753", // social image is too large and unclear at listing-card size
+  "YQ000761", // favicon is too small and indistinct at listing-card size
+  "YQ000882", // favicon is a square social-profile crop without a readable lockup
 ]);
-for (const id of rejects) {
-  delete manifest[id];
-  for (const filename of fs.readdirSync(outputDir)) {
-    if (filename.startsWith(`${id}.`)) fs.rmSync(path.join(outputDir, filename), { force: true });
-  }
-}
 
 // A page-level logo label is strong evidence, but social cards and large banners
 // are routinely tagged the same way. These thresholds reject those cases while
@@ -128,6 +132,7 @@ const usedOrigins = new Map();
 const selections = [];
 for (const entity of candidates) {
   if (rejects.has(entity.id)) continue;
+  if (committedManifest[entity.id]) continue;
   if (!entity.candidates?.length) continue;
   const selected = entity.candidates.find((candidate) => {
     const raw = path.join(candidatesDir, candidate.filename);

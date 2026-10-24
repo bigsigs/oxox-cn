@@ -8,6 +8,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const dataDir = path.join(root, "public/data/yueqing-export-ranking");
 const reviewDir = path.join(root, "review/company-enrichment");
 const top500Dir = path.join(reviewDir, "top500");
+const ranks501To1000Dir = path.join(reviewDir, "ranks-501-1000");
 const checkedAt = "2026-10-24";
 const staleFieldUrls = new Map([
   ["YQ000022", new Set([
@@ -37,12 +38,12 @@ const writeJson = (file, value) => {
 };
 
 const ranking = readJson(path.join(dataDir, "2026-ytd-07.json")).records;
-const top500 = ranking
-  .filter((record) => Number.isInteger(record.rank) && record.rank >= 1 && record.rank <= 500)
+const top1000 = ranking
+  .filter((record) => Number.isInteger(record.rank) && record.rank >= 1 && record.rank <= 1000)
   .sort((a, b) => a.rank - b.rank);
 
-if (top500.length !== 500) {
-  throw new Error(`Expected 500 ranking records, received ${top500.length}`);
+if (top1000.length !== 1000) {
+  throw new Error(`Expected 1000 ranking records, received ${top1000.length}`);
 }
 
 const top100Review = readJson(path.join(reviewDir, "top100-review.json"));
@@ -57,6 +58,35 @@ const research = researchFiles.flatMap((name) => {
   if (!Array.isArray(rows)) throw new Error(`${name} must contain an array`);
   return rows;
 });
+const lowerResearchFiles = [
+  "research-501-600.json",
+  "research-601-700.json",
+  "research-701-800.json",
+  "research-801-900.json",
+  "research-901-1000.json",
+];
+const lowerResearch = lowerResearchFiles.flatMap((name) => {
+  const rows = readJson(path.join(ranks501To1000Dir, name));
+  if (!Array.isArray(rows)) throw new Error(`${name} must contain an array`);
+  return rows;
+});
+const expectedLowerResearch = top1000.filter((record) => record.rank >= 501);
+if (lowerResearch.length !== expectedLowerResearch.length) {
+  throw new Error(`Expected 500 ranking records for ranks 501-1000, received ${lowerResearch.length}`);
+}
+for (let index = 0; index < expectedLowerResearch.length; index += 1) {
+  const expected = expectedLowerResearch[index];
+  const row = lowerResearch[index];
+  if (row.rank !== expected.rank || row.id !== expected.company_id || row.name !== expected.company_name) {
+    throw new Error(
+      `Ranks 501-1000 row ${index + 1} is misaligned: expected #${expected.rank} ${expected.company_id} ${expected.company_name}`,
+    );
+  }
+}
+research.push(...lowerResearch.map((row) => ({
+  ...row,
+  role: "rank501_to_1000",
+})));
 research.push(...top100Supplemental.map((row) => ({
   ...row,
   role: "top100_supplemental",
@@ -64,6 +94,10 @@ research.push(...top100Supplemental.map((row) => ({
 const currentMarketingSites = [
   ["YQ000018", "https://www.cncele.com/"],
 ];
+const reviewedWebsiteOverrides = new Map([
+  ["YQ000593", "https://www.chintelc.com/"],
+  ["YQ000679", "https://www.chinaweipeng.cn/"],
+]);
 
 const byId = new Map();
 const mergeResearchRows = (base, incoming) => {
@@ -151,6 +185,12 @@ const normalizeUrl = (value) => {
   } catch {
     return null;
   }
+};
+const explicitUrlOrNull = (value) => {
+  if (typeof value !== "string") return null;
+  const text = value.trim();
+  if (!/^https?:\/\//i.test(text)) return null;
+  return normalizeUrl(text);
 };
 
 const urlsFrom = (value) => {
@@ -240,8 +280,12 @@ const isReliableResearchWebsite = (row, url) =>
   (row.confidence === "high"
     || (row.confidence === "medium" && cleanText(row.website_relation))
     || (row.confidence === "medium" && /(?:子公司|品牌关联|品牌运营|贸易主体|同名商标)/.test(
-      `${cleanText(row.website_source)} ${cleanText(row.note)}`,
+      `${cleanText(row.website_source)} ${cleanText(row.website_relation)} ${cleanText(row.note)}`,
     )))
+    || (row.confidence === "medium"
+      && /官网.{0,20}(?:英文站|页面).{0,80}(?:有限公司|Corporation|Company|Co\.?,?\s*Ltd)/i.test(
+        cleanText(row.note),
+      ))
   && !isThirdPartyWebsite(url)
   && !isAlibabaStore(url)
   && !hasWebsiteIdentityConflict(row);
@@ -340,7 +384,7 @@ let addressCount = 0;
 let capitalCount = 0;
 let productCount = 0;
 
-for (const record of top500) {
+for (const record of top1000) {
   const entry = byId.get(record.company_id);
   const topRow = entry?.source === "top100" || entry?.source === "top100+research"
     ? entry.row
@@ -352,6 +396,7 @@ for (const record of top500) {
   const details = profile.details;
   const before = JSON.stringify(profile);
   const isSupplementalTop100 = researchRow?.role === "top100_supplemental";
+  const isLowerRankResearch = researchRow?.role === "rank501_to_1000";
   const rejectedUrls = staleFieldUrls.get(record.company_id) ?? new Set();
   if (researchRow && hasWebsiteIdentityConflict(researchRow)) {
     for (const url of urlsFrom(researchRow.website)) {
@@ -439,6 +484,7 @@ for (const record of top500) {
     const supplementalWebsites = researchRow
       ? urlsFrom(researchRow.website).filter((url) => isReliableResearchWebsite(researchRow, url))
       : [];
+    const reviewedWebsite = reviewedWebsiteOverrides.get(record.company_id);
     const supplementalAlibabaUrls = researchRow
       ? urlsFrom(researchRow.alibaba_url)
         .filter(isAlibabaStore)
@@ -447,6 +493,7 @@ for (const record of top500) {
     const websites = [
       ...urlsFrom(legacy["官网"]),
       ...supplementalWebsites,
+      ...(reviewedWebsite ? [reviewedWebsite] : []),
     ].filter((url, index, all) => all.indexOf(url) === index);
     const alibabaUrls = [
       ...urlsFrom(legacy["Alibaba店铺"]),
@@ -475,6 +522,17 @@ for (const record of top500) {
       || (researchRow && isAcceptableResearchProducts(researchRow, researchRow.products)
         ? cleanText(researchRow.products)
         : "");
+    if (isLowerRankResearch) {
+      address = isAcceptableResearchAddress(researchRow, researchRow.contact_address)
+        ? cleanText(researchRow.contact_address)
+        : "";
+      capital = ["high", "medium"].includes(researchRow.confidence) && looksLikeCapital(researchRow.capital)
+        ? cleanText(researchRow.capital)
+        : "";
+      products = isAcceptableResearchProducts(researchRow, researchRow.products)
+        ? cleanText(researchRow.products)
+        : "";
+    }
     note = cleanText(researchRow?.note)
       || cleanText(legacy["待核对说明"])
       || cleanText(researchRow?.note);
@@ -493,7 +551,11 @@ for (const record of top500) {
       ?? websiteSource
       ?? sources[0]?.url
       ?? null;
-    const capitalSource = bestResearchSource(researchRow ?? {}, ["cninfo", "sina", "szse", "gov.cn"])
+    const lowerCapitalSource = isLowerRankResearch
+      ? explicitUrlOrNull(researchRow?.capital_source)
+      : null;
+    const capitalSource = lowerCapitalSource
+      ?? bestResearchSource(researchRow ?? {}, ["cninfo", "sina", "szse", "gov.cn"])
       ?? addressSource
       ?? sources[0]?.url
       ?? null;
@@ -525,82 +587,6 @@ for (const record of top500) {
     );
     setDetails(details, "registered_capital", capital, capitalSource ?? detailSource, "company_website_or_filing", supplementalOptions);
     setDetails(details, "main_products", products, productSource ?? detailSource, "company_website", supplementalOptions);
-  } else if (researchRow) {
-    const websiteUrls = urlsFrom(researchRow.website).filter((url) => isReliableResearchWebsite(researchRow, url));
-    const supplementalOptions = { replace: isSupplementalTop100, clear: true };
-    website = websiteUrls[0] ?? "";
-    const alibabaUrls = urlsFrom(researchRow.alibaba_url)
-      .filter(isAlibabaStore)
-      .filter((url) => !domainOf(url).toLowerCase().endsWith("1688.com"));
-    alibaba = alibabaUrls.find((url) => {
-      const parsed = new URL(url);
-      const host = parsed.hostname.toLowerCase();
-      const pathname = parsed.pathname.toLowerCase();
-      if (host === "supplier.alibaba.com" && pathname.includes("/activity/")) return false;
-      if (host === "www.alibaba.com" && !/(?:company_profile|showroom|supplier|store)/.test(pathname)) return false;
-      return true;
-    }) ?? "";
-    alibabaAddress = isAcceptableResearchAddress(researchRow, researchRow.alibaba_address)
-      ? cleanText(researchRow.alibaba_address)
-      : "";
-    address = isAcceptableResearchAddress(researchRow, researchRow.contact_address)
-      ? cleanText(researchRow.contact_address)
-      : "";
-    capital = ["high", "medium"].includes(researchRow.confidence) && looksLikeCapital(researchRow.capital)
-      ? cleanText(researchRow.capital)
-      : "";
-    products = isAcceptableResearchProducts(researchRow, researchRow.products)
-      ? cleanText(researchRow.products)
-      : "";
-    note = cleanText(researchRow.note);
-    confidence = cleanText(researchRow.confidence);
-    sources = sourceObjects(researchRow.sources);
-
-    websiteUrls.forEach((url, index) => {
-      addLink(
-        profile,
-        index === 0 ? "official_website" : "official_website_alt",
-        index === 0 ? "官方网站" : "企业官网（其他域名）",
-        url,
-        "company_review_verified",
-      );
-    });
-    if (record.company_id === "YQ000123") {
-      alibaba = "https://suppliers.alibaba.com/zhejiang-meto-electrical-coltd_17380250387";
-    }
-    if (alibaba && alibaba === "https://www.alibaba.com/housing-terminal-suppliers.html") alibaba = "";
-    // Alibaba addresses belong in the field only when an international-store
-    // link is displayed. Domestic 1688 links and their copied addresses are not
-    // sufficient evidence for this section.
-    if (!alibaba) alibabaAddress = "";
-    if (alibaba) {
-      addLink(
-        profile,
-        "alibaba_store",
-        "Alibaba 国际站",
-        alibaba,
-        record.company_id === "YQ000123"
-          ? "independent_search_verified"
-          : "alibaba_company_profile_verified",
-      );
-    }
-    const generalSource = bestResearchSource(researchRow)
-      ?? normalizeUrl(website)
-      ?? normalizeUrl(alibaba)
-      ?? null;
-    const addressSource = bestResearchSource(researchRow, ["gov.cn", "company", "cninfo"])
-      ?? generalSource;
-    setDetails(details, "contact_address", address, addressSource, "public_company_record", supplementalOptions);
-    setDetails(
-      details,
-      "alibaba_address",
-      alibabaAddress,
-      normalizeUrl(researchRow.alibaba_source) ?? normalizeUrl(alibaba) ?? generalSource,
-      "alibaba_company_profile",
-      supplementalOptions,
-    );
-    setDetails(details, "registered_capital", capital, addressSource, "public_company_record", supplementalOptions);
-    setDetails(details, "main_products", products, generalSource, "company_website_or_directory", supplementalOptions);
   }
 
   if (note && (!details.source_note || isSupplementalTop100)) details.source_note = note;
@@ -691,17 +677,74 @@ const columns = [
   ["source_urls", "资料来源"],
 ];
 
-writeJson(path.join(reviewDir, "top500-review.json"), standardRows);
+const top500Rows = standardRows.slice(0, 500);
+const lowerRows = standardRows.slice(500);
+writeJson(path.join(reviewDir, "top1000-review.json"), standardRows);
+writeJson(path.join(ranks501To1000Dir, "review-501-1000.json"), lowerRows);
 
 const csvEscape = (value) => {
   const text = Array.isArray(value) ? value.join(" | ") : String(value ?? "");
   return `"${text.replaceAll('"', '""')}"`;
 };
-const csv = [
+const reviewCsv = (rows) => [
   columns.map(([, label]) => csvEscape(label)).join(","),
-  ...standardRows.map((row) => columns.map(([key]) => csvEscape(row[key])).join(",")),
+  ...rows.map((row) => columns.map(([key]) => csvEscape(row[key])).join(",")),
 ].join("\n");
-fs.writeFileSync(path.join(reviewDir, "top500-review.csv"), `${csv}\n`);
+fs.writeFileSync(path.join(reviewDir, "top1000-review.csv"), `${reviewCsv(standardRows)}\n`);
+fs.writeFileSync(path.join(ranks501To1000Dir, "review-501-1000.csv"), `${reviewCsv(lowerRows)}\n`);
+
+const hasBusinessData = (row) => Boolean(
+  row.website
+  || row.alibaba_url
+  || row.address
+  || row.registered_capital
+  || row.main_products,
+);
+const missingLowerRows = lowerRows.filter((row) => !hasBusinessData(row));
+const partialLowerRows = lowerRows.filter((row) => hasBusinessData(row) && (
+  row.confidence !== "high"
+  || row.status === "部分字段待复核"
+  || /待核|待复|需|冲突|仅|泛化|未确认|目录|catalog/i.test(row.note)
+));
+const compactColumns = [
+  ["rank", "排名"],
+  ["company_id", "企业ID"],
+  ["company_name", "企业名称"],
+  ["status", "核对状态"],
+  ["available_fields", "已有字段"],
+  ["confidence", "置信度"],
+  ["note", "核对说明"],
+  ["source_urls", "资料来源"],
+];
+const compactCsv = (rows) => [
+  compactColumns.map(([, label]) => csvEscape(label)).join(","),
+  ...rows.map((row) => compactColumns.map(([key]) => csvEscape(key === "available_fields"
+    ? [
+      row.website && "官网",
+      row.alibaba_url && "Alibaba",
+      row.address && "地址",
+      row.registered_capital && "注册资金",
+      row.main_products && "主营产品",
+    ].filter(Boolean).join(" | ")
+    : row[key])).join(",")),
+].join("\n");
+fs.writeFileSync(path.join(ranks501To1000Dir, "missing-501-1000.csv"), `${compactCsv(missingLowerRows)}\n`);
+fs.writeFileSync(path.join(ranks501To1000Dir, "pending-501-1000.csv"), `${compactCsv(partialLowerRows)}\n`);
+writeJson(path.join(ranks501To1000Dir, "missing-501-1000.json"), missingLowerRows);
+writeJson(path.join(ranks501To1000Dir, "pending-501-1000.json"), partialLowerRows);
+const missingMarkdown = [
+  "# 501–1000 名尚无业务字段企业",
+  "",
+  `检索日期：${checkedAt}。以下 ${missingLowerRows.length} 家企业在官网、Alibaba 国际站、地址、注册资金和主营产品五项中均没有可写入的可靠公开资料。`,
+  "",
+  "| 排名 | 企业ID | 企业名称 | 检索状态 |",
+  "| ---: | --- | --- | --- |",
+  ...missingLowerRows.map((row) => (
+    `| ${row.rank} | ${row.company_id} | ${row.company_name.replaceAll("|", "\\|")} | ${row.note.replaceAll("|", "\\|")} |`
+  )),
+  "",
+].join("\n");
+fs.writeFileSync(path.join(ranks501To1000Dir, "missing-501-1000.md"), missingMarkdown);
 
 const escapeHtml = (value) => String(value ?? "").replace(/[&<>"']/g, (character) => ({
   "&": "&amp;",
@@ -717,16 +760,17 @@ const statusKey = (row) => {
   return "low";
 };
 const summary = {
-  companies: standardRows.length,
-  researched: standardRows.filter((row) => row.status !== "待检索").length,
-  highConfidence: standardRows.filter((row) => row.status === "已核实或高可信").length,
-  websites: websiteCount,
-  alibaba: alibabaCount,
-  addresses: addressCount,
-  capital: capitalCount,
-  products: productCount,
+  companies: top500Rows.length,
+  researched: top500Rows.filter((row) => row.status !== "待检索").length,
+  highConfidence: top500Rows.filter((row) => row.status === "已核实或高可信").length,
+  websites: top500Rows.filter((row) => row.website).length,
+  alibaba: top500Rows.filter((row) => row.alibaba_url).length,
+  addresses: top500Rows.filter((row) => row.address).length,
+  capital: top500Rows.filter((row) => row.registered_capital).length,
+  products: top500Rows.filter((row) => row.main_products).length,
 };
-const tableRows = standardRows.map((row) => `<tr data-status="${statusKey(row)}">
+const htmlForRows = (rows, title, description) => {
+  const tableRows = rows.map((row) => `<tr data-status="${statusKey(row)}">
   <td>${row.rank}</td>
   <td><code>${escapeHtml(row.company_id)}</code></td>
   <td>${escapeHtml(row.company_name)}</td>
@@ -740,12 +784,22 @@ const tableRows = standardRows.map((row) => `<tr data-status="${statusKey(row)}"
   <td>${row.logo ? `<img src="${escapeHtml(logoSrc(row))}" alt="" width="32" height="32" loading="lazy">` : ""}</td>
   <td>${escapeHtml(row.note)}</td>
 </tr>`).join("\n");
-const html = `<!doctype html>
+  const pageSummary = {
+    companies: rows.length,
+    researched: rows.filter((row) => row.status !== "待检索").length,
+    highConfidence: rows.filter((row) => row.status === "已核实或高可信").length,
+    websites: rows.filter((row) => row.website).length,
+    alibaba: rows.filter((row) => row.alibaba_url).length,
+    addresses: rows.filter((row) => row.address).length,
+    capital: rows.filter((row) => row.registered_capital).length,
+    products: rows.filter((row) => row.main_products).length,
+  };
+  return `<!doctype html>
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>OXOX Top 500 企业资料核对清单</title>
+  <title>${title}</title>
   <style>
     :root{color-scheme:light;--ink:#1e2421;--muted:#66706b;--line:#dfe4e1;--paper:#f7f8f6;--panel:#fff;--accent:#255f46}
     *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:13px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",sans-serif}
@@ -758,16 +812,16 @@ const html = `<!doctype html>
 </head>
 <body>
 <main>
-  <h1>OXOX Top 500 企业资料核对清单</h1>
-  <p class="lede">2026 年 1–7 月累计出口榜前 500 名。空白表示检索后仍没有可写入的可靠证据，“候选”资料不进入生产页面。</p>
+  <h1>${title}</h1>
+  <p class="lede">${description}</p>
   <section class="stats">
-    <div class="stat"><b>${summary.companies}</b><span>覆盖企业</span></div>
-    <div class="stat"><b>${summary.researched}</b><span>已检索</span></div>
-    <div class="stat"><b>${summary.highConfidence}</b><span>高可信</span></div>
-    <div class="stat"><b>${summary.websites}</b><span>有效官网</span></div>
-    <div class="stat"><b>${summary.alibaba}</b><span>Alibaba 国际站</span></div>
-    <div class="stat"><b>${summary.addresses}</b><span>地址</span></div>
-    <div class="stat"><b>${summary.products}</b><span>主营产品</span></div>
+    <div class="stat"><b>${pageSummary.companies}</b><span>覆盖企业</span></div>
+    <div class="stat"><b>${pageSummary.researched}</b><span>已检索</span></div>
+    <div class="stat"><b>${pageSummary.highConfidence}</b><span>高可信</span></div>
+    <div class="stat"><b>${pageSummary.websites}</b><span>有效官网</span></div>
+    <div class="stat"><b>${pageSummary.alibaba}</b><span>Alibaba 国际站</span></div>
+    <div class="stat"><b>${pageSummary.addresses}</b><span>地址</span></div>
+    <div class="stat"><b>${pageSummary.products}</b><span>主营产品</span></div>
   </section>
   <div class="tools">
     <input id="filter" type="search" placeholder="搜索排名、企业、ID、地址或产品">
@@ -809,7 +863,15 @@ const html = `<!doctype html>
 </body>
 </html>
 `;
-fs.writeFileSync(path.join(reviewDir, "top500-review.html"), html);
+};
+fs.writeFileSync(
+  path.join(reviewDir, "top1000-review.html"),
+  htmlForRows(
+    standardRows,
+    "OXOX Top 1000 企业资料核对清单",
+    "2026 年 1–7 月累计出口榜前 1000 名。空白表示检索后仍没有可写入的可靠证据，“候选”资料不进入生产页面。",
+  ),
+);
 
 console.log(JSON.stringify({
   ...summary,

@@ -1,0 +1,1454 @@
+[
+  {
+    "rank": 506,
+    "company_id": "YQ000464",
+    "company_name": "一二三电气有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省温州市乐清市经济开发区纬二十路西侧（资料另列纬二十路260号）",
+    "registered_capital": "",
+    "main_products": "双电源自动转换开关、隔离开关、塑壳断路器、智能万能式断路器及低压电器元件",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "企业B2B页和产品页主体、地址、产品一致；未找到独立官网/注册资本/Alibaba国际站。",
+    "source_urls": [
+      "https://mobile.dq800.com/shangpu/7371/index.aspx",
+      "https://mty360.com/supply/factoryDetail.html?id=59937",
+      "https://sw.beijing.gov.cn/zt/gjh/tztg/202508/P020250821580354804172.pdf"
+    ]
+  },
+  {
+    "rank": 509,
+    "company_id": "YQ000499",
+    "company_name": "浙江威利坚进出口有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省温州市乐清市经济开发区滨海南三路99号",
+    "registered_capital": "200万元人民币",
+    "main_products": "货物进出口、技术进出口",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "上市公司公告/企业登记资料明确子公司主体、注册地址和拟设注册资本；经营范围仅记货物/技术进出口，未将母公司漏电断路器或光伏产品作为子公司独立产品。",
+    "source_urls": [
+      "https://www.sohu.com/a/559615357_121118710",
+      "https://www.cnverify.com/company/Zhejiang-Welijian-Import-And-Export-Co-Ltd",
+      "https://pdf.dfcfw.com/pdf/H2_AN202604291821745724_1.pdf?1777481720000.pdf="
+    ]
+  },
+  {
+    "rank": 527,
+    "company_id": "YQ000488",
+    "company_name": "温州泰康智能电子股份有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "",
+    "registered_capital": "10760.2906万元人民币",
+    "main_products": "汽车中控面板开关、智能电子/汽车电子开关",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "与排名527为源名单重复ID/名称，逐行保留；公开专利报道明确主体和资本/产品，官网、地址、Alibaba仍待核验。",
+    "source_urls": [
+      "https://m.jrj.com.cn/madapter/finance/2026/08/19111258169750.shtml",
+      "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web1825/site/attach/0/ed7f386df6b740d686746f32243f09fd.pdf"
+    ]
+  },
+  {
+    "rank": 528,
+    "company_id": "YQ000488",
+    "company_name": "温州泰康智能电子股份有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "",
+    "registered_capital": "10760.2906万元人民币",
+    "main_products": "汽车中控面板开关、智能电子/汽车电子开关",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "与排名527为源名单重复ID/名称，逐行保留；公开专利报道明确主体和资本/产品，官网、地址、Alibaba仍待核验。",
+    "source_urls": [
+      "https://m.jrj.com.cn/madapter/finance/2026/08/19111258169750.shtml",
+      "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web1825/site/attach/0/ed7f386df6b740d686746f32243f09fd.pdf"
+    ]
+  },
+  {
+    "rank": 549,
+    "company_id": "YQ000593",
+    "company_name": "浙江正泰建筑电器有限公司",
+    "status": "部分字段待复核",
+    "website": "https://www.chintelc.com/",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "",
+    "registered_capital": "",
+    "main_products": "建筑电器、墙壁开关、智能锁及住宅/商业建筑电器解决方案",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "官方品牌页及企业官网明确主体和产品；未找到注册资本或Alibaba国际站。",
+    "source_urls": [
+      "https://www.chintelc.com/about/index.html",
+      "https://www.chintstore.com/guanyuwomen/"
+    ]
+  },
+  {
+    "rank": 602,
+    "company_id": "YQ000663",
+    "company_name": "温州美讯进出口有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省乐清市白石街道上陈村",
+    "registered_capital": "100万元",
+    "main_products": "货物进出口、技术进出口；配电开关控制设备、高低压电器设备及配件、电线电缆、仪器仪表、液压和气压动力机械及元件、五金工具、数码产品、塑料制品、电子元件、机电产品销售",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "Tendata企业档案按统一社会信用代码和法定名称列示注册地址、注册资本及经营范围；未找到主体匹配独立官网或Alibaba国际站。",
+    "source_urls": [
+      "https://www.tendata.com/en/buyer/wenzhou-meixun-import-export-co-ltd-CHNI977d083d0f7ed7a926ffccec25227b7c.html"
+    ]
+  },
+  {
+    "rank": 604,
+    "company_id": "YQ000567",
+    "company_name": "乐清市嘉斯科电器有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省温州市乐清市柳市镇前窑村（浙江飞奔电器有限公司内）",
+    "registered_capital": "300万元人民币",
+    "main_products": "配电开关控制设备、高低压电器及配件、成套电器、电线电缆附件、电子元器件、接线端子/盒/柱",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "第三方企业页披露地址、注册资本和经营范围；根据规则未将该第三方目录作为官网。",
+    "source_urls": [
+      "https://qiye.gongchang.com/jascofuse/"
+    ]
+  },
+  {
+    "rank": 611,
+    "company_id": "YQ000585",
+    "company_name": "浙江勤进电力设备有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "",
+    "registered_capital": "",
+    "main_products": "电力电子元件、智能输配电及控制设备、配电开关、电线电缆、光伏设备、仪器仪表等",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "企业登记页披露经营范围，未找到可确认官网及详细注册地址。",
+    "source_urls": [
+      "https://www.cnverify.com/company/Zhejiang-Qinjin-Power-Equipment-Co-Ltd"
+    ]
+  },
+  {
+    "rank": 644,
+    "company_id": "YQ000697",
+    "company_name": "浙江贝利工具有限公司",
+    "status": "已核实或高可信",
+    "website": "https://www.beilitools.com/",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "",
+    "registered_capital": "",
+    "main_products": "麻花钻、硬质合金多用钻、金属开孔器、锯片、电锤冲击钻、木工铣刀、双金属/硬质合金开孔器及螺丝批头",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "high",
+    "note": "贝利工具官网明确浙江贝利工具有限公司主体和钻头/开孔器/电锤钻等产品；官网仅列“Furong town, Yueqing”未达到详细地址标准，故地址留空；未见注册资本或Alibaba国际站。",
+    "source_urls": [
+      "https://www.beilitools.com/",
+      "https://www.cnverify.com/company/Zhejiang-Beili-Tools-Co-Ltd"
+    ]
+  },
+  {
+    "rank": 646,
+    "company_id": "YQ000603",
+    "company_name": "浙江爱姆乐环保设备有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省乐清市乐清湾港区双屿路666号3幢901、1001室",
+    "registered_capital": "",
+    "main_products": "清洁设备、清洁机械的研发、制造和销售",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "Interclean China展商档案按法定名称列示浙江爱姆乐环保设备有限公司、清洁设备业务和乐清湾港区地址，并给出网站链接但当前域名返回404，故不记为官网。",
+    "source_urls": [
+      "https://www.intercleanchina.com/exhibitor/1687.html"
+    ]
+  },
+  {
+    "rank": 648,
+    "company_id": "YQ000634",
+    "company_name": "温州雷盾头盔制造有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "",
+    "registered_capital": "",
+    "main_products": "摩托车骑行头盔",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "中国专利页面将温州雷盾头盔制造有限公司列为头盔外观设计专利原始申请人，CNVerify同名主体行业为摩托车零部件制造；未找到可靠独立官网、地址或注册资本。",
+    "source_urls": [
+      "https://patents.google.com/patent/CN309532893S/zh",
+      "https://www.cnverify.com/company/Wenzhou-Leiden-Helmet-Manufacturing-Co-Ltd"
+    ]
+  },
+  {
+    "rank": 650,
+    "company_id": "YQ000591",
+    "company_name": "乐清美硕进出口有限公司",
+    "status": "已核实或高可信",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省温州市乐清市乐清经济开发区纬十二路158号",
+    "registered_capital": "50万元",
+    "main_products": "进出口贸易；配电开关控制设备、电子元器件、电器配件、健身器配件、电机、汽车配件、机电设备、通讯器材、电线电缆等产品销售",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "high",
+    "note": "美硕科技上市招股说明书按统一社会信用代码确认乐清美硕进出口有限公司住所、注册资本50万元及经营范围；该子公司仅从事进出口贸易，不将母公司继电器制造业务套用为其产品。",
+    "source_urls": [
+      "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=8304257&stockid=301295"
+    ]
+  },
+  {
+    "rank": 659,
+    "company_id": "YQ000679",
+    "company_name": "乐清市通达有线电厂",
+    "status": "部分字段待复核",
+    "website": "https://www.chinaweipeng.cn/",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省乐清湾港区创二路8号",
+    "registered_capital": "1517万元",
+    "main_products": "微动开关、防水微动开关、翘板开关、按钮开关、磁力开关及定制工控开关",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "通达有线电厂官网明确法定名称、地址和微动/防水微动/翘板/按钮开关产品；注册资本1517万元来自买购企业档案，需以工商登记复核。",
+    "source_urls": [
+      "https://www.chinaweipeng.cn/",
+      "https://www.maigoo.com/company/620355.html?brandid=4170689&dynamic=1"
+    ]
+  },
+  {
+    "rank": 660,
+    "company_id": "YQ000800",
+    "company_name": "网源电力科技有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省乐清市乐清经济开发区纬七路281号",
+    "registered_capital": "5188万元",
+    "main_products": "电力金具、配电开关控制设备、变压器、绝缘件、建筑电器、避雷器、电线电缆及附件、电工器具、仪器仪表、母线及电感器",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "样本网企业档案按法定名称列示网源电力科技有限公司地址、注册资本5188万元及经营范围；未找到可靠独立官网或Alibaba国际站。",
+    "source_urls": [
+      "https://ybw.cn/company/386"
+    ]
+  },
+  {
+    "rank": 668,
+    "company_id": "YQ000651",
+    "company_name": "温州格亚贸易有限公司",
+    "status": "公开资料不足",
+    "website": "https://www.geya.net/",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "",
+    "registered_capital": "",
+    "main_products": "",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "low",
+    "note": "尚未检索到可靠公开证据，待核查。",
+    "source_urls": []
+  },
+  {
+    "rank": 676,
+    "company_id": "YQ000644",
+    "company_name": "乐清市星火汽车电子有限公司",
+    "status": "已核实或高可信",
+    "website": "http://www.xinghuo.com/",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省温州市乐清市淡溪镇山地工业区纬一路9号",
+    "registered_capital": "",
+    "main_products": "汽车连接器、线束、门把手天线、壳体、开关及五金件",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "high",
+    "note": "星火汽车电子官网明确法定名称、汽车连接器/线束/天线等产品；工商档案列示注册地址，公开资料对注册资本有1000万元与3000万元冲突，故留空待复核。",
+    "source_urls": [
+      "http://www.xinghuo.com/",
+      "https://www.tianxiagongchang.com/detail/3941654_yue-qing-shi-xing-huo-qi-che-dian-zi-you-xian-gong-si"
+    ]
+  },
+  {
+    "rank": 683,
+    "company_id": "YQ000624",
+    "company_name": "浙江天顺玻璃钢有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省乐清市经济开发区纬六路198号",
+    "registered_capital": "1.01亿元",
+    "main_products": "玻璃钢/SMC复合材料、电能计量箱（电表箱）、电缆分支箱、配电箱、箱式变电站、电缆桥架、环保设备及复合材料制品",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "公开工商档案与复材行业资料按法定名称确认地址、玻璃钢复合材料及配电箱等产品；注册资本现有工商档案列1.01亿元，早期企业彩页列5000万元，需按最新登记复核。",
+    "source_urls": [
+      "https://www.cnverify.com/company/Zhejiang-Tianshun-Frp-Co-Ltd",
+      "https://www.zhaopin.com/companydetail/91331949LNP85UCV9A.htm",
+      "https://www.cnfrp.com/download/201520.pdf"
+    ]
+  },
+  {
+    "rank": 692,
+    "company_id": "YQ000669",
+    "company_name": "百灵气动科技有限公司",
+    "status": "已核实或高可信",
+    "website": "https://www.blpneumatic.com/",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省乐清市经济开发区经八路387号",
+    "registered_capital": "",
+    "main_products": "气源处理元件、气动控制元件、执行元件、辅助元件及气动附件",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "high",
+    "note": "百灵气动官网和产品目录明确法定名称、乐清经八路地址及气动元件产品；未见注册资本或Alibaba国际站。",
+    "source_urls": [
+      "https://www.blpneumatic.com/zh-CN/about-us/",
+      "https://www.blpneumatic.com/wp-content/uploads/2024/12/2024-BLCH-English-Catalogue.pdf"
+    ]
+  },
+  {
+    "rank": 701,
+    "company_id": "YQ000675",
+    "company_name": "乐清市诺一进出口有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省温州市乐清市柳市镇前州村",
+    "registered_capital": "",
+    "main_products": "配电开关控制设备、模具、电线电缆、电动工具、电气设备、橡胶及塑料制品、机械设备、第一/第二类医疗器械销售",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "招聘页明确同一法定企业全称及经营范围，注册地址采用工商信息来源；未找到可确认官网或Alibaba国际站。",
+    "source_urls": [
+      "https://m.zhipin.com/companys/3e8d3b84c510b3a81HR72Ni_GFU~.html"
+    ]
+  },
+  {
+    "rank": 703,
+    "company_id": "YQ000622",
+    "company_name": "乐清市瑞亨科技有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省温州市乐清市柳市镇前西洋村",
+    "registered_capital": "",
+    "main_products": "高低压电气、计算机软件、电子元件、机械设备、灯具、通讯及办公设备销售；新能源开发；货物和技术进出口",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "公开企业信息明确同一主体、注册地址和经营范围；未找到可确认官网、资本或Alibaba国际站。",
+    "source_urls": [
+      "https://zhidao.baidu.com/question/461894401956542485.html",
+      "https://tm.aliyun.com/detail/243d_82655854_7"
+    ]
+  },
+  {
+    "rank": 704,
+    "company_id": "YQ000818",
+    "company_name": "乐清市芙蓉工具一厂",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省温州市乐清市芙蓉镇新村路28号",
+    "registered_capital": "",
+    "main_products": "钻头、锯片、开孔器、凿子、麻花钻、螺丝批",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "企业页和行业目录明确主体、地址和五金工具主营；未找到注册资本或Alibaba国际站。",
+    "source_urls": [
+      "https://jz.hc23.com/company/349458.html",
+      "https://frtools.boyuan.com/",
+      "https://www.cqn.com.cn/ms/content/2021-01/20/content_8661484.htm"
+    ]
+  },
+  {
+    "rank": 706,
+    "company_id": "YQ000623",
+    "company_name": "浙江高桥电子有限公司",
+    "status": "已核实或高可信",
+    "website": "https://www.gqele.cn/",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省乐清市柳市镇柳黄路1666号",
+    "registered_capital": "500万元人民币",
+    "main_products": "LED指示灯、按钮开关、蜂鸣器、PG防水接头、接触器、LED元器件、智能温控仪表",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "high",
+    "note": "公司官网明确企业全称、地址与主营产品；企业目录公开注册资本500万元；未找到Alibaba国际站。",
+    "source_urls": [
+      "https://www.gqele.cn/about/",
+      "https://www.gqele.cn/service/",
+      "https://www.ybw.cn/company/1290"
+    ]
+  },
+  {
+    "rank": 711,
+    "company_id": "YQ000694",
+    "company_name": "浙江美至电气有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省温州市乐清市城东街道产业功能区永和三路16-18号",
+    "registered_capital": "2000万元人民币",
+    "main_products": "按钮开关、金属防水按钮开关、信号灯、防爆开关、触摸开关、接近开关",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "企业页面与政府展会资料明确主体、详细地址和产品；企业页面公开注册资本2000万元。未找到可确认独立官网或Alibaba国际站。",
+    "source_urls": [
+      "https://qiannian.boyuan.com/company/introduce/",
+      "https://zhan365.com/upfile/2023/07/1689228288229.pdf",
+      "https://cn.linkedin.com/company/qiannian"
+    ]
+  },
+  {
+    "rank": 718,
+    "company_id": "YQ000824",
+    "company_name": "乐清古斯特电气有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省温州市乐清市乐清经济开发区滨海四路66号博通慧谷小微园8-2幢",
+    "registered_capital": "100万元人民币",
+    "main_products": "连接线、接线端子",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "招聘页与1688企业店铺均对应同一法定企业全称；未找到独立官网或Alibaba国际站。",
+    "source_urls": [
+      "https://www.zhipin.com/gongsis/05baeb8e3e7e7e8bi3V93tW4FFtSxQ~~.html",
+      "https://shop58190f9309408.1688.com/"
+    ]
+  },
+  {
+    "rank": 721,
+    "company_id": "YQ000699",
+    "company_name": "乐清市康元汽车电器厂",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省温州市乐清市北白象镇高西村",
+    "registered_capital": "10万元人民币",
+    "main_products": "汽车接插件、汽车线束、端子、保险片、传感器/ECU接插件",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "供应商目录与展会资料均对应同一企业全称；官网字段留空，未把供应商目录当作官网；注册资本按供应商页显示为10万元。",
+    "source_urls": [
+      "https://ky325603.gys.cn/",
+      "https://www.tapasfair.com/show-1847-4850.html"
+    ]
+  },
+  {
+    "rank": 724,
+    "company_id": "YQ000636",
+    "company_name": "乐清市天迈电器有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "乐清市象阳镇高后村",
+    "registered_capital": "500万元人民币",
+    "main_products": "配电开关控制设备及配件",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "企业资料页精确匹配企业全称，保留登记地址、资本和保守产品范围；官网及Alibaba未确认。",
+    "source_urls": [
+      "https://www.tendata.com/en/buyer/yueqing-tianmai-electric-co-ltd-CHNI7781240557ee85ab0b52412fa58bb75d.html"
+    ]
+  },
+  {
+    "rank": 725,
+    "company_id": "YQ000735",
+    "company_name": "温州欧伏安贸易有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省乐清市柳市镇西宋村宋湖路183号",
+    "registered_capital": "100万元人民币",
+    "main_products": "",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "公开工商页精确匹配企业全称并披露地址和注册资本；主营产品尚无足够证据，留空。",
+    "source_urls": [
+      "https://m.tianyancha.com/company/3240747224"
+    ]
+  },
+  {
+    "rank": 727,
+    "company_id": "YQ000704",
+    "company_name": "浙江蓝马贸易有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省温州市乐清市城南街道千帆西路222号香江丽苑1幢105室",
+    "registered_capital": "1000万元人民币",
+    "main_products": "互联网销售、国内贸易代理、风动和电动工具、金属切割及焊接设备销售",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "企业资料页精确匹配法定企业全称；主营按登记经营范围记录，官网和Alibaba未确认。",
+    "source_urls": [
+      "https://www.tendata.com/en/buyer/zhejiang-lanma-trading-co-ltd-CHN50b028dc9cc43f07f897f11f18d18377.html"
+    ]
+  },
+  {
+    "rank": 731,
+    "company_id": "YQ000826",
+    "company_name": "温州仁山进出口有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省温州市乐清市城东街道水上花园E幢1单元701室（仅限办公使用）",
+    "registered_capital": "",
+    "main_products": "",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "公开登记信息精确匹配企业全称和地址；资本及具体产品仍未确认。",
+    "source_urls": [
+      "https://tm.aliyun.com/detail/4b05_93599765_9"
+    ]
+  },
+  {
+    "rank": 732,
+    "company_id": "YQ000647",
+    "company_name": "浙江御轩防爆电器有限公司",
+    "status": "已核实或高可信",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省温州市乐清市城东街道城东功能产业园永和一路12号",
+    "registered_capital": "2200万元人民币",
+    "main_products": "防爆开关按钮、信号灯、防爆电器、防爆灯具、防爆管件、配电开关控制设备",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "high",
+    "note": "公开企业信息精确匹配企业全称、地址、资本和产品范围；官网及Alibaba未确认。",
+    "source_urls": [
+      "https://www.shuididp.cn/yp-7bf45419ca90855435fb9a320f3d5e3c.html"
+    ]
+  },
+  {
+    "rank": 735,
+    "company_id": "YQ000739",
+    "company_name": "浙江汇力锁业有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "",
+    "registered_capital": "1388万元人民币",
+    "main_products": "智能锁、叶片锁、弹子锁、电源开关锁、电柜锁、汽车锁、电脑锁",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "企业资料页匹配企业全称并披露产品与资本；只有“乐清市天成工业产业功能区”泛化地址，故不写入精确地址。",
+    "source_urls": [
+      "https://aichangjia.com/factory/32542.html"
+    ]
+  },
+  {
+    "rank": 736,
+    "company_id": "YQ000702",
+    "company_name": "乐清市东科电气有限公司",
+    "status": "已核实或高可信",
+    "website": "https://www.dongkeelec.com/",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省温州市乐清市虹桥镇电子信息产业园幸福东路2166-1号",
+    "registered_capital": "",
+    "main_products": "电动器具开关、直流开关、激光标线器及配套电源",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "high",
+    "note": "公司官网明确企业全称、详细地址和产品；资本尚未确认。",
+    "source_urls": [
+      "https://www.dongkeelec.com/"
+    ]
+  },
+  {
+    "rank": 737,
+    "company_id": "YQ000710",
+    "company_name": "浙江龙翔工具科技有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "",
+    "registered_capital": "",
+    "main_products": "金刚石硬质工具、倒角器",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "公开产品资料精确显示企业全称及产品；未找到可核验独立官网、精确地址或注册资本，diytrade不作为官网。",
+    "source_urls": [
+      "https://loxatools.diytrade.com/"
+    ]
+  },
+  {
+    "rank": 738,
+    "company_id": "YQ000757",
+    "company_name": "乐清市弗莱电器有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "",
+    "registered_capital": "",
+    "main_products": "智能漏电断路器、塑壳断路器、配电开关控制设备",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "公开产品页与商标记录对应同一企业全称，显示智能断路器、塑壳断路器等；精确注册地址与注册资本尚未确认。",
+    "source_urls": [
+      "https://www.dlfwy.com/mobile/mall/search.php?areaid=&catid=378&job=ajax&kw=",
+      "https://tm.aliyun.com/detail/db25_8272650_9"
+    ]
+  },
+  {
+    "rank": 741,
+    "company_id": "YQ000790",
+    "company_name": "温州市三托电器有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "",
+    "registered_capital": "",
+    "main_products": "断路器、继电器、配电箱、稳压器、测量仪器、电源开关、浪涌保护器等电气设备",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "商标记录精确显示企业全称及电气产品类别；地址和注册资本尚未确认。",
+    "source_urls": [
+      "https://tm.aliyun.com/detail/2f99_66577649_9",
+      "https://tm.aliyun.com/detail/9f4d_90388168_9"
+    ]
+  },
+  {
+    "rank": 743,
+    "company_id": "YQ000648",
+    "company_name": "乐清市联睿电气有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "",
+    "registered_capital": "",
+    "main_products": "AC/DC逆变器、应急电源转换设备",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "行业产品页精确显示企业全称和产品；地址、资本及官网仍未确认。",
+    "source_urls": [
+      "https://mobile.dq800.com/shangpu/8127/productdetail.aspx?id=150449"
+    ]
+  },
+  {
+    "rank": 744,
+    "company_id": "YQ000666",
+    "company_name": "乐清迎发进出口有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省乐清市柳市镇垟宅村",
+    "registered_capital": "30万元人民币",
+    "main_products": "五金电气、高低压电器、电线电缆、家电、灯具、建材销售及进出口",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "公开企业页匹配企业全称、地址、资本及经营范围；未找到官网或Alibaba国际站。",
+    "source_urls": [
+      "https://www.cnverify.com/company/Yueqing-Yingfa-Import-And-Export-Co-Ltd"
+    ]
+  },
+  {
+    "rank": 745,
+    "company_id": "YQ000853",
+    "company_name": "浙江修远医疗科技有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省温州市乐清市北白象镇温州大桥工业园区（新亚电子股份有限公司内）",
+    "registered_capital": "",
+    "main_products": "碘化铯闪烁屏",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "公开企业页精确匹配企业全称、登记地址和产品；资本、官网及Alibaba未确认。",
+    "source_urls": [
+      "https://m.bidcenter.com.cn/newsrili-17-268191092.html",
+      "https://m.bidcenter.com.cn/news-17-443780234.html",
+      "https://www.cnverify.com/company/Zhejiang-Xiuyuan-Medical-Technology-Co-Ltd"
+    ]
+  },
+  {
+    "rank": 746,
+    "company_id": "YQ000705",
+    "company_name": "乐清合德进出口有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省温州市乐清市柳市镇浃西村",
+    "registered_capital": "20万元人民币",
+    "main_products": "化工产品、机械设备、电气设备、汽车配件、建材、纺织品、金属材料销售及进出口；WAGO建筑布线连接器",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "企业官网及公开企业页匹配企业全称、地址、资本和经营范围；经营范围与展销产品分开记录，未找到Alibaba国际站。",
+    "source_urls": [
+      "http://www.hord.cn/",
+      "https://www.tendata.com/en/buyer/yueqing-hord-imp-exp-co-ltd-CHN90237a230c40de4eb0107cbdeec4df16.html",
+      "https://product.dzsc.com/product/922695-20140808055310647.html"
+    ]
+  },
+  {
+    "rank": 749,
+    "company_id": "YQ000885",
+    "company_name": "浙江开宇电器有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "",
+    "registered_capital": "801万元人民币",
+    "main_products": "低压电器元件、高低压配电框",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "工商信息精确匹配企业全称、资本和经营范围，但只披露“乐清市柳市镇新光工业区”泛化区域，因此不写入精确地址；官网未确认。",
+    "source_urls": [
+      "https://aiqicha.baidu.com/detail/compinfo?pid=xlTM-TogKuTw4G1Yxx9w-GQ99emTyA2JIAmd&pd=aen&from=ps&query=%E6%B5%99%E6%B1%9F%E5%BC%80%E5%AE%87%E7%94%B5%E5%99%A8%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8",
+      "https://www.qcc.com/firm/817626c9d1ee3a1188da91c27b2c91b4.html"
+    ]
+  },
+  {
+    "rank": 756,
+    "company_id": "YQ000706",
+    "company_name": "温州泛程户外用品有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省温州市乐清市湖雾镇台头村湖雾街73号",
+    "registered_capital": "",
+    "main_products": "",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "公开企业页精确匹配企业全称与地址；产品未凭公司名称推断，资本和官网仍待核。",
+    "source_urls": [
+      "https://www.cnverify.com/company/Wenzhou-Fancheng-Outdoor-Products-Co-Ltd"
+    ]
+  },
+  {
+    "rank": 757,
+    "company_id": "YQ000729",
+    "company_name": "浙江华晶整流器有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省温州市乐清市经济开发区经十路188号",
+    "registered_capital": "",
+    "main_products": "整流管、晶闸管、功率模块、整流桥、固态继电器、整流装置、开关电源、充电机",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "公开资料明确企业全称、生产地址和产品；注册地址、资本和官网仍待核。",
+    "source_urls": [
+      "https://www.cnverify.com/company/Zhejiang-Huajing-Rectifier-Co-Ltd",
+      "https://pcimasia-expo.cn.messefrankfurt.com/content/dam/messefrankfurt-redaktion/pcim_asia/download/2023/PCIM%20Asia%2023%20%E4%BC%9A%E5%88%8A.pdf",
+      "https://www.wzrc.net/index.php?a=com_show&c=jobs&id=d5fac66eedc1eea07d071b91fb33f970&m=home"
+    ]
+  },
+  {
+    "rank": 758,
+    "company_id": "YQ000749",
+    "company_name": "乐清市东润电气有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省温州市乐清市北白象镇金炉工业区（温州来润电气有限公司内）",
+    "registered_capital": "50万元人民币",
+    "main_products": "家电、五金交电、机械设备、高低压电器销售及进出口",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "公开企业页精确匹配企业全称、地址、资本及经营范围；未找到官网或Alibaba国际站。",
+    "source_urls": [
+      "https://www.cnverify.com/company/Yueqing-Dongrun-Electric-Co-Ltd"
+    ]
+  },
+  {
+    "rank": 761,
+    "company_id": "YQ000714",
+    "company_name": "乐清市安连贸易有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省温州市乐清市虹桥镇仙垟北路13-15号",
+    "registered_capital": "100万元人民币",
+    "main_products": "汽车配件、电子元件、电器配件、开关、连接器、线束、逆变器、电缆附件销售及进出口",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "公开企业页精确匹配企业全称、地址、资本和经营范围；未找到官网或Alibaba国际站。",
+    "source_urls": [
+      "https://www.cnverify.com/company/Yueqing-Anlian-Trade-Co-Ltd"
+    ]
+  },
+  {
+    "rank": 763,
+    "company_id": "YQ000672",
+    "company_name": "浙江神目电气有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省乐清市柳市镇象阳街道寺前村井虹西路3号",
+    "registered_capital": "",
+    "main_products": "智能旁路软启动器、变频器",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "公开资料明确企业全称、联系地址和产品；该地址未确认等同工商注册地址，资本及官网仍待核。",
+    "source_urls": [
+      "https://www.cnverify.com/company/Zhejiang-Shenmu-Electric-Co-Ltd"
+    ]
+  },
+  {
+    "rank": 766,
+    "company_id": "YQ000814",
+    "company_name": "乐清市高桥贸易有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省乐清市柳市镇象山新村",
+    "registered_capital": "50万元人民币",
+    "main_products": "家电、配电开关、电力金具、连接器、电缆、塑料、电子、五金、机械、建材销售及进出口",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "企业资料页精确匹配企业全称、地址、资本和经营范围；未找到官网或Alibaba国际站。",
+    "source_urls": [
+      "https://www.tendata.com/en/buyer/yueqing-gq-trading-co-ltd-CHN7b31ffc8958dfff5454c96a02de1428d.html"
+    ]
+  },
+  {
+    "rank": 768,
+    "company_id": "YQ000685",
+    "company_name": "奔龙自动化科技有限公司",
+    "status": "已核实或高可信",
+    "website": "https://www.benlongkj.com/",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省温州市乐清市北白象镇沿江产业园象西路88号C栋南区5F",
+    "registered_capital": "5088万元人民币",
+    "main_products": "MCB/MCCB/RCBO/RCCB低压电器自动化生产线、数字化工厂设备",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "high",
+    "note": "官网和工商页均匹配企业全称；地址、资本及产品已核对，Alibaba未确认。",
+    "source_urls": [
+      "https://www.benlongkj.com/",
+      "https://www.aiznhw.com/sell/show.php?itemid=3261",
+      "https://top.qcc.com/tc/146cd75b39a5.html",
+      "https://aiqicha.baidu.com/detail/compinfo?pid=xlTM-TogKuTwuQkc4BvFI545MCq-CKNUBwmd&pd=aen&from=ps&query=%E5%A5%94%E9%BE%99%E8%87%AA%E5%8A%A8%E5%8C%96%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8"
+    ]
+  },
+  {
+    "rank": 769,
+    "company_id": "YQ000724",
+    "company_name": "温州欧拉工贸有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "",
+    "registered_capital": "100万元人民币",
+    "main_products": "服装服饰、电动自行车、摩托车及配件、汽车配件、电子元件销售及进出口",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "公开企业页精确匹配企业全称、资本和经营范围；精确地址、官网及Alibaba仍未确认。",
+    "source_urls": [
+      "https://www.cnverify.com/company/Wenzhou-Hola-Industry-Trade-Co-Ltd"
+    ]
+  },
+  {
+    "rank": 773,
+    "company_id": "YQ000731",
+    "company_name": "乐清市致诚配电设备有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省温州市乐清市柳市镇柳江村2幢6单元6-207室",
+    "registered_capital": "50万元人民币",
+    "main_products": "配电开关、机电设备、五金、家电、建材、电子元件销售及进出口",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "公开企业页精确匹配企业全称、地址、资本及经营范围；未找到官网或Alibaba国际站。",
+    "source_urls": [
+      "https://www.cnverify.com/company/Yueqing-Zhicheng-Electrical-Equipment-Co-Ltd"
+    ]
+  },
+  {
+    "rank": 775,
+    "company_id": "YQ000726",
+    "company_name": "乐清市凯士普电气有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "乐清市柳市镇上峰村",
+    "registered_capital": "50万元人民币",
+    "main_products": "高低压电器、电子元件、五金配件、电工器材、继电器、仪器仪表",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "公开企业页精确匹配企业全称、地址、资本和产品范围；未找到官网或Alibaba国际站。",
+    "source_urls": [
+      "https://www.cnverify.com/company/Yueqing-Kaisipu-Electric-Co-Ltd"
+    ]
+  },
+  {
+    "rank": 777,
+    "company_id": "YQ000692",
+    "company_name": "浙江菲德电气科技有限公司",
+    "status": "已核实或高可信",
+    "website": "https://www.feide.cc/",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江乐清市七里港镇曹田后工业区",
+    "registered_capital": "",
+    "main_products": "接线端子、防水接线盒、工业插座、配电箱、五金工具",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "high",
+    "note": "企业官网明确企业全称、地址和产品；资本及Alibaba未确认。",
+    "source_urls": [
+      "https://www.feide.cc/"
+    ]
+  },
+  {
+    "rank": 778,
+    "company_id": "YQ000803",
+    "company_name": "乐清市七里港塑料制造有限公司",
+    "status": "已核实或高可信",
+    "website": "https://www.qiligang.com/",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省乐清市黄华镇华西工业区",
+    "registered_capital": "",
+    "main_products": "尼龙/不锈钢扎带、钢钉线卡、膨胀管、压线帽、接线端子等配线器材",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "high",
+    "note": "企业官网明确企业全称、地址和产品；资本及Alibaba未确认。",
+    "source_urls": [
+      "https://www.qiligang.com/"
+    ]
+  },
+  {
+    "rank": 783,
+    "company_id": "YQ000737",
+    "company_name": "温州康信科技有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "",
+    "registered_capital": "",
+    "main_products": "汽车组合开关、车窗开关、空调开关、刹车灯开关、后视镜开关、传感器、接插件、端子",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "公开企业资料显示上述汽车电气产品；地址、资本、官网及Alibaba仍待核。",
+    "source_urls": [
+      "https://www.cnverify.com/company/Wenzhou-Kangxin-Technology-Co-Ltd",
+      "https://b2b.makepolo.com/qiye/diqu_fqh2893510_15.html"
+    ]
+  },
+  {
+    "rank": 788,
+    "company_id": "YQ000855",
+    "company_name": "浙江飞龙电气有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省乐清市柳市镇杨宅飞龙大厦",
+    "registered_capital": "508万元人民币",
+    "main_products": "MCB/MCCB、照明箱、交流接触器、工业插头插座、接线端子、电缆接头、开关、电表",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "公开企业页精确匹配企业全称、地址、资本和产品；未把Sunmen托管页当作独立官网。",
+    "source_urls": [
+      "https://www.cnverify.com/company/Zhejiang-Feilong-Electric-Co-Ltd"
+    ]
+  },
+  {
+    "rank": 790,
+    "company_id": "YQ000733",
+    "company_name": "浙江博迪户外休闲用品有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省乐清市柳市镇杨宅工业区（温州飞龙电器有限公司内）",
+    "registered_capital": "1000万元人民币",
+    "main_products": "户外野营用具、眼镜、箱包、日用百货、电器、五金工具线上销售及进出口",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "公开企业页精确匹配企业全称、地址、资本和经营范围；未找到官网或Alibaba国际站。",
+    "source_urls": [
+      "https://www.cnverify.com/company/Zhejiang-Bodi-Outdoor-Leisure-Products-Co-Ltd"
+    ]
+  },
+  {
+    "rank": 792,
+    "company_id": "YQ000756",
+    "company_name": "乐清市英朗进出口有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省温州市乐清市城东街道旭阳路6688号总部经济园2、3、4幢1711室",
+    "registered_capital": "20万元人民币",
+    "main_products": "高低压电器、电子元件、五金工具、汽模配件、电力照明及进出口",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "公开企业页精确匹配企业全称、地址、资本及经营范围；未找到官网或Alibaba国际站。",
+    "source_urls": [
+      "https://www.cnverify.com/company/Yueqing-Yinglang-Imp-Exp-Co-Ltd"
+    ]
+  },
+  {
+    "rank": 793,
+    "company_id": "YQ000741",
+    "company_name": "乐清市流金电气有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省温州市乐清市蒲岐镇仓下村",
+    "registered_capital": "50万元人民币",
+    "main_products": "电气设备、电子元件、仪器仪表、配电开关、五金、照明、工具销售",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "公开企业页精确匹配企业全称、地址、资本及经营范围；未找到官网或Alibaba国际站。",
+    "source_urls": [
+      "https://www.shuididp.cn/yp-86befc3a3576eb350c5196986f0d4101.html"
+    ]
+  },
+  {
+    "rank": 795,
+    "company_id": "YQ000789",
+    "company_name": "温州乔硕国际贸易有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省温州市乐清市柳市镇柳青南路2555号五洲电工电器城D区19幢1516-1519室",
+    "registered_capital": "100万元人民币",
+    "main_products": "皮革制品、日用品、五金、建材、化工产品、针纺织品、纸制品、配电开关、缝纫机械、工具、机械设备、模具销售及进出口",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "公开企业页精确匹配企业全称、地址、资本及经营范围；未找到官网或Alibaba国际站。",
+    "source_urls": [
+      "https://www.cnverify.com/company/Wenzhou-Jostar-International-Trade-Co-Ltd"
+    ]
+  },
+  {
+    "rank": 800,
+    "company_id": "YQ000782",
+    "company_name": "乐清市多益电气有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省乐清市柳市镇大桥路168号",
+    "registered_capital": "51万元人民币",
+    "main_products": "高低压电器及配件",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "企业资料页精确匹配企业全称、地址、资本和产品；未找到官网或Alibaba国际站。",
+    "source_urls": [
+      "https://www.tendata.com/en/buyer/yueqing-duoyi-electric-co-ltd-CHNb2a0562f558fea2f80e8f329293fcafe.html"
+    ]
+  },
+  {
+    "rank": 802,
+    "company_id": "YQ000785",
+    "company_name": "乐清帕戈电器有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省温州市乐清市城东街道旭阳路6666号铂金湾花园3幢2101室（仅限办公使用）",
+    "registered_capital": "50万元人民币",
+    "main_products": "配电开关控制设备、高低压电器及配件、电子元器件、仪器仪表、五金工具、照明灯具、墙壁开关、插座、电线电缆及进出口贸易",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "Tendata企业资料以统一社会信用代码和法定代表人匹配乐清帕戈电器有限公司，披露注册地址、注册资本和经营范围；未发现可靠官网/Alibaba。",
+    "source_urls": [
+      "https://www.tendata.com/en/buyer/yueqing-page-electrical-co-ltd-CHNIebf6b37666b85f1f3d5713ef8c2f1c55.html"
+    ]
+  },
+  {
+    "rank": 803,
+    "company_id": "YQ000722",
+    "company_name": "乐清市沃顿国际贸易有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省乐清市乐成街道晨沐花园4号楼502室",
+    "registered_capital": "108万元人民币",
+    "main_products": "体育用品、塑料制品、户外用品、摩托车配件、金属工具及进出口贸易",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "通关网企业资料披露主体、注册地址、注册资本和经营范围；未发现可靠官网。",
+    "source_urls": [
+      "https://hs.bianmachaxun.com/qcc_company/details/1691366"
+    ]
+  },
+  {
+    "rank": 805,
+    "company_id": "YQ000851",
+    "company_name": "浙江铁富隆线缆有限公司",
+    "status": "部分字段待复核",
+    "website": "https://www.zjtfl.com/",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省温州市乐清经济开发区乐商创业园（投资发展有限公司内F幢1、5、6层）",
+    "registered_capital": "",
+    "main_products": "PTFE、ETFE、XLPE、PFA、FEP等绝缘线缆及高温电线电缆、同轴线、线束加工",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "官网英文站明确 Zhejiang IRONFLON Wire & Cable Co., Ltd.（对应浙江铁富隆线缆有限公司）、乐清经济开发区地址及特种线缆产品；注册资本未公开。",
+    "source_urls": [
+      "https://www.zjtfl.com/",
+      "https://www.zjtfl.com/news/happy-new-year-zhejiang-ironflon-wire-cable-e-85375800.html"
+    ]
+  },
+  {
+    "rank": 811,
+    "company_id": "YQ000760",
+    "company_name": "南艺礼品有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省温州市乐清市天成街道工业园区（巉头村）（一照多址）",
+    "registered_capital": "2700万元人民币",
+    "main_products": "铁艺烛台、圣诞工艺品、金属工艺品及礼品",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "Wind企业资料披露主体、注册地址、注册资本和产品；按规则不将第三方目录作为官网。",
+    "source_urls": [
+      "https://www.windzx.com/1025424636.html"
+    ]
+  },
+  {
+    "rank": 814,
+    "company_id": "YQ000746",
+    "company_name": "弘新(乐清)进出口有限公司",
+    "status": "已核实或高可信",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省温州市乐清市北白象镇赖宅智能产业园潘珠垟路1号",
+    "registered_capital": "100万元人民币",
+    "main_products": "货物进出口、技术进出口、进出口代理、国内贸易代理（主营产品未明确）",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "high",
+    "note": "新亚电子2024-08-10公告明确弘新（乐清）进出口有限公司注册地址、注册资本及100%持股；仅记录其公告所列进出口/贸易代理范围，不继承母公司产品。",
+    "source_urls": [
+      "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=10367455&stockid=605277"
+    ]
+  },
+  {
+    "rank": 817,
+    "company_id": "YQ000821",
+    "company_name": "浙江佳威工具有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "",
+    "registered_capital": "",
+    "main_products": "工程机械配件及旋挖/挖沟/铣刨机刀头、掘进机截齿、采煤机截齿、齿座及盾构刀具",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "展商/行业资料明确浙江佳威工具有限公司及其工程机械、矿山/隧道刀具产品；未找到可确认官网、注册地址或注册资本。",
+    "source_urls": [
+      "https://community.b-china.cn/exnews/info/134",
+      "https://www.xtrasounds.com/industry/1240592.html"
+    ]
+  },
+  {
+    "rank": 820,
+    "company_id": "YQ000730",
+    "company_name": "浙江智通线缆有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "",
+    "registered_capital": "800万元人民币",
+    "main_products": "电线电缆（含无卤低烟阻燃绝缘电缆、汽车/新能源电线等）",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "公开企业资料明确浙江智通线缆有限公司注册资本800万元；企业产品页和质量抽查资料明确电线电缆/无卤低烟阻燃电缆，未找到可确认官网与具体地址。",
+    "source_urls": [
+      "https://top.qcc.com/tc/a4f694f26bc9.html",
+      "https://cneztw.com/level3/50.html",
+      "https://www.cqn.com.cn/ms/content/2025-02/27/content_9093942.htm"
+    ]
+  },
+  {
+    "rank": 821,
+    "company_id": "YQ000753",
+    "company_name": "温州市伊卡电气有限公司",
+    "status": "部分字段待复核",
+    "website": "https://yikaelectric.com/",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省温州市乐清市柳市镇金谷二期A幢601室",
+    "registered_capital": "100万元人民币",
+    "main_products": "熔断器及熔断器底座、复合绝缘子、避雷器、隔离开关、断路器、电缆附件、逆变器等电力设备和安全产品",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "官网英文站明确 Wenzhou Yika Electric Co., Ltd.（对应温州市伊卡电气有限公司）及电力设备产品；登记地址和注册资本来自企业登记/外贸名录。",
+    "source_urls": [
+      "https://yikaelectric.com/pages/about-us-1",
+      "https://www.cnverify.com/company/Wenzhou-Yika-Electric-Co-Ltd",
+      "https://www.chinayinyi.com-www.qdyoucheng.com/wmjckgjmy/jck-760635.html"
+    ]
+  },
+  {
+    "rank": 822,
+    "company_id": "YQ000740",
+    "company_name": "乐清市凌晨电子有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省乐清市虹桥镇前垟工业区（华超仪表有限公司内）",
+    "registered_capital": "50万元人民币",
+    "main_products": "电子元件、微型电机、开关、线束",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "企业登记页明确乐清市凌晨电子有限公司主体、虹桥镇前垟工业区地址、注册资本及电子元件/微电机/开关/线束经营范围；未找到官网。",
+    "source_urls": [
+      "https://www.cnverify.com/company/Yueqing-Linchen-Electronic-Co-Ltd",
+      "https://www.indbrg.cn/site/supplier/part?currentPage=1627&search_EQ_goodsCategoryId=1&search_EQ_supplierIndustryId=2c90691e684a39d501684a4942540020&search_LIKE_name="
+    ]
+  },
+  {
+    "rank": 823,
+    "company_id": "YQ000751",
+    "company_name": "乐清市度外电气有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省温州市乐清市柳市镇柳西路22号",
+    "registered_capital": "",
+    "main_products": "电气产品及电器技术服务（第三方企业页未列完整产品清单）",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "第三方企业页披露地址和业务概况；未找到可确认官网，产品字段仅保守记录。",
+    "source_urls": [
+      "https://www.zgznh.com/com/l6z2n7zf/"
+    ]
+  },
+  {
+    "rank": 826,
+    "company_id": "YQ000804",
+    "company_name": "浙江紫日电气科技有限公司",
+    "status": "已核实或高可信",
+    "website": "https://cn.chziri.com/",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省乐清市柳市镇大桥路62-70号",
+    "registered_capital": "",
+    "main_products": "变频器、软起动器及低压电气控制产品",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "high",
+    "note": "紫日电气官方产品目录明确浙江紫日电气科技有限公司、官网域名、乐清柳市地址及变频器/软起动产品。",
+    "source_urls": [
+      "https://cn.chziri.com/upload/1c/pdf/zvf380-gxnslxbpq.pdf",
+      "https://cn.chziri.com/upload/1c/pdf/ZHG-9603%E6%81%92%E5%8E%8B%E4%BE%9B%E6%B0%B4%E6%8E%A7%E5%88%B6%E5%99%A8%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E%E4%B9%A6.pdf"
+    ]
+  },
+  {
+    "rank": 830,
+    "company_id": "YQ000837",
+    "company_name": "温州倪氏霓虹灯有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省乐清市天成巨光工业区",
+    "registered_capital": "200万元人民币",
+    "main_products": "工艺吊灯、工艺台灯等装饰灯具；节日灯、灯具、灯泡及相关电气配件",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "企业登记/招聘页明确温州倪氏霓虹灯有限公司主体、巨光工业区地址、注册资本和装饰灯具/节日灯经营范围；未找到官网。",
+    "source_urls": [
+      "https://www.cnverify.com/company/Wenzhou-Ni-S-Neon-Light-Co-Ltd",
+      "https://www.job5156.com/ningbo/job_277016695"
+    ]
+  },
+  {
+    "rank": 901,
+    "company_id": "YQ000896",
+    "company_name": "温州汉德派克包装机械有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省温州市乐清市天成街道天成工业区",
+    "registered_capital": "",
+    "main_products": "手持式气动/手动/电动捆扎机及包装机械",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "企业B2B介绍和政府工业企业名录确认主体、地址和包装机械产品；未找到独立官网或注册资本。",
+    "source_urls": [
+      "https://www.boyuan.com/com/handepaike/introduce/",
+      "https://news.66wz.com/doc/003/003/360/00300336041_6026816c.pdf"
+    ]
+  },
+  {
+    "rank": 919,
+    "company_id": "YQ001056",
+    "company_name": "乐清市中鸣电器有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省乐清市柳市镇朝阳村",
+    "registered_capital": "",
+    "main_products": "稳压器、调压器、变压器、直流电源",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "官网产品页显示法定名称、稳压器/调压器/变压器产品分类和联系地址；未找到注册资本或Alibaba国际站。",
+    "source_urls": [
+      "http://www.zmelec.com/product_info.asp?productid=332",
+      "https://company.dzsc.com/card/852186/"
+    ]
+  },
+  {
+    "rank": 920,
+    "company_id": "YQ000996",
+    "company_name": "浙江宏泰电子设备有限公司",
+    "status": "部分字段待复核",
+    "website": "",
+    "alibaba_url": "",
+    "alibaba_address": "",
+    "address": "浙江省温州市乐清市经济开发区纬七路222号",
+    "registered_capital": "1000万元",
+    "main_products": "电子锁、门禁锁、指纹锁、电机锁、防尾随联动控制器、门禁系统",
+    "logo": "",
+    "checked_at": "2026-10-24",
+    "confidence": "medium",
+    "note": "买购企业档案与官网域名精确匹配浙江宏泰电子设备有限公司，列示地址、注册资本和电子锁/门禁产品；未找到Alibaba国际站。",
+    "source_urls": [
+      "https://www.maigoo.com/company/19846.html",
+      "https://www.chinahongtai.com/"
+    ]
+  }
+]
