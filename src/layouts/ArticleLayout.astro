@@ -67,7 +67,7 @@ const breadcrumbSchema = {
       font-family: var(--sans);
       background:
         linear-gradient(90deg, transparent 49.9%, rgba(24,32,29,.035) 50%, transparent 50.1%),
-        radial-gradient(circle at 10% 0%, rgba(255,255,255,.96), transparent 32rem),
+        radial-gradient(circle at 10% 0%, var(--panel), transparent 32rem),
         var(--paper);
       background-size: 56px 100%, auto, auto;
     }
@@ -473,7 +473,7 @@ const breadcrumbSchema = {
 <body class="reference-page">
   <div class="noise" aria-hidden="true"></div>
   <div style="max-width:1080px;margin:0 auto;padding:0 20px;">
-    <SiteHeader active="articles" showTheme={false} />
+    <SiteHeader active="articles" />
   </div>
 
   <main>

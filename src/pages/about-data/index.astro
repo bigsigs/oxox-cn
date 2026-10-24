@@ -1,7 +1,6 @@
 ---
 import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
-import ThemeHead from "../../components/ThemeHead.astro";
 import periodsData from "../../../public/data/yueqing-export-ranking/periods.json";
 import latestData from "../../../public/data/yueqing-export-ranking/2026-ytd-08.json";
 import "../../styles/reference.css";
@@ -32,7 +31,6 @@ const aboutSchema = {
     <link rel="canonical" href="https://oxox.cn/about-data/">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <title>数据说明｜OXOX 乐清出口排行榜</title>
-    <ThemeHead />
     <script is:inline type="application/ld+json" set:html={JSON.stringify(aboutSchema).replace(/</g, "\\u003c")}></script>
   </head>
   <body>

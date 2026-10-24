@@ -109,6 +109,29 @@ test("primary built pages retain canonical URLs, structured data and shared navi
   }
 });
 
+test("every public page uses one shared header with persistent theme controls", async () => {
+  const [companies] = await Promise.all([readJson(`${dataPath}companies.json`)]);
+  const paths = new Set([
+    ...publicRoutes,
+    "/articles/yueqing-foreign-trade-2026-jan-aug/",
+    ...companies.slice(0, 8).map((company) => companyPath(company.company_id)),
+  ]);
+  const navLinks = ["/", "/yueqing-seo/", "/articles/", "/tools/", "/about-data/"];
+  for (const path of paths) {
+    const html = await read(builtPath(path));
+    const header = html.match(/<header\b([^>]*)>([\s\S]*?)<\/header>/i);
+    assert.ok(header, `${path}: shared header is missing`);
+    assert.match(header[1], /\bclass=["'][^"']*\bref-header\b/, `${path}: header must use the shared component`);
+    const anchors = anchorsOf(header[2]);
+    for (const href of navLinks) {
+      assert.ok(anchors.some((link) => link.href === href), `${path}: menu is missing ${href}`);
+    }
+    const themeButtons = tagsOf(header[2], "button").filter((button) => "data-theme-toggle" in button);
+    assert.equal(themeButtons.length, 1, `${path}: shared header needs one theme button`);
+    assert.match(html, /oxox-theme/, `${path}: theme preference must initialize before the header action runs`);
+  }
+});
+
 test("the homepage publishes the real first thirty companies before JavaScript runs", async () => {
   const [html, periods] = await Promise.all([read("dist/index.html"), readJson(`${dataPath}periods.json`)]);
   const period = periods.periods.find((item) => item.id === periods.latest);
@@ -269,6 +292,17 @@ test("curated company links and verified company facts survive the redesign", as
       const link = links.find((item) => item.href === source.url);
       assert.ok(link, `${id}: preserve curated link ${source.url}`);
       assert.ok((link.rel ?? "").split(/\s+/).includes("nofollow"), `${id}: curated websites need nofollow`);
+    }
+    const actions = links.filter((link) => link.class === "detail-button");
+    const websiteIndex = profile.links?.findIndex((link) => link.type === "official_website") ?? -1;
+    const alibaba = profile.links?.find((link) => link.type === "alibaba_store");
+    if (websiteIndex >= 0 && alibaba) {
+      const websiteActionIndex = actions.findIndex((link) => link.href === profile.links[websiteIndex].url);
+      const alibabaActionIndex = actions.findIndex((link) => link.href === alibaba.url);
+      assert.ok(websiteActionIndex >= 0, `${id}: official website needs its header link`);
+      assert.equal(alibabaActionIndex, websiteActionIndex + 1, `${id}: Alibaba must follow the official website`);
+    } else if (alibaba) {
+      assert.ok(actions.some((link) => link.href === alibaba.url), `${id}: Alibaba-only company needs its header link`);
     }
     if (profile.details) {
       const text = textOf(mainOf(html));

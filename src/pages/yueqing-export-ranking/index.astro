@@ -65,7 +65,7 @@ const datasetSchema = {
       font-family: var(--sans);
       background:
         linear-gradient(90deg, transparent 49.9%, rgba(24,32,29,.035) 50%, transparent 50.1%),
-        radial-gradient(circle at 9% 0%, rgba(255,255,255,.95), transparent 30rem),
+        radial-gradient(circle at 9% 0%, var(--panel), transparent 30rem),
         var(--paper);
       background-size: 56px 100%, auto, auto;
     }
@@ -249,7 +249,7 @@ const datasetSchema = {
       gap: 12px;
       padding: 16px;
       border: 1px solid var(--line);
-      background: rgba(250,249,244,.74);
+      background: var(--panel2);
     }
     .search-wrap { position: relative; }
     .search-wrap svg {
@@ -265,7 +265,7 @@ const datasetSchema = {
       min-height: 46px;
       border: 1px solid var(--line);
       border-radius: 0;
-      background: white;
+      background: var(--panel);
     }
     .search-wrap input { padding: 0 44px; }
     .search-wrap input:focus, .controls select:focus { outline: 2px solid var(--green); outline-offset: 1px; }
@@ -352,7 +352,7 @@ const datasetSchema = {
       min-height: 80px;
       border: 1px solid var(--line);
       border-top: 0;
-      background: rgba(250,249,244,.5);
+      background: var(--panel2);
     }
     .page-btn {
       display: grid;
@@ -375,7 +375,7 @@ const datasetSchema = {
       margin-top: 24px;
       padding: 20px;
       border-left: 4px solid var(--orange);
-      background: rgba(255,255,255,.48);
+      background: var(--panel);
       color: var(--muted);
       font-size: 12px;
       line-height: 1.8;
@@ -622,7 +622,7 @@ const datasetSchema = {
 </head>
 <body class="reference-page">
   <div class="noise" aria-hidden="true"></div>
-  <div style="max-width:1080px;margin:0 auto;padding:0 20px;"><SiteHeader active="ranking" showTheme={false} /></div>
+  <div style="max-width:1080px;margin:0 auto;padding:0 20px;"><SiteHeader active="ranking" /></div>
 
   <main>
     <section class="hero shell">

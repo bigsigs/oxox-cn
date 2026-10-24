@@ -2,7 +2,6 @@
 import { getCompanyIcon, hasDarkCompanyIcon } from "../data/company-icons.js";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
-import ThemeHead from "../components/ThemeHead.astro";
 import "../styles/reference.css";
 import "../styles/home-ranking.css";
 import periods from "../../public/data/yueqing-export-ranking/periods.json";
@@ -47,7 +46,6 @@ const boot = { periods: periods.periods, latest: periods.latest, companyMeta };
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://oxox.cn/" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <ThemeHead />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(siteSchema).replace(/</g, "\\u003c")} />
 </head>
 <body>

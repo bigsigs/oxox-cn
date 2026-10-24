@@ -16,10 +16,10 @@
 .company-tag { display:inline-flex; align-items:center; padding:2px 7px; border-radius:5px; background:var(--panel2); color:var(--ink2); font-family:var(--mono); font-size:11px; line-height:1.5; }
 .company-tag.industry-tag { background:#ededdf; color:#767151; }
 .company-actions { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-top:18px; }
-.detail-button { display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:38px; padding:8px 14px; border:1px solid var(--line); border-radius:11px; background:var(--panel); color:var(--ink2); font-family:var(--mono); font-size:12px; font-weight:600; line-height:1.5; transition:border-color .15s ease,background .15s ease; }
-.detail-button:hover { border-color:#c4c3be; background:var(--panel2); }
-.detail-button.primary { border-color:var(--ink); background:var(--ink); color:var(--bg); }
-.detail-button.primary:hover { background:var(--ink); opacity:.85; }
+.detail-button { display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:38px; padding:8px 14px; border:1px solid #dcdcd7; border-radius:11px; background:#f2f2ef; color:var(--ink2); font-family:var(--mono); font-size:12px; font-weight:600; line-height:1.5; transition:border-color .15s ease,background .15s ease; }
+.detail-button:hover { border-color:#c4c3be; background:#e9e9e5; color:var(--ink); }
+:root[data-theme="dark"] .detail-button { border-color:#3a3a38; background:#242422; color:var(--ink); }
+:root[data-theme="dark"] .detail-button:hover { border-color:#555550; background:#30302d; color:var(--ink); }
 .detail-stats { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin-bottom:20px; }
 .detail-stat { display:flex; flex-direction:column; align-items:flex-start; min-width:0; min-height:117px; padding:15px 16px; border:1px solid var(--line); border-radius:15px; background:var(--panel); }
 .stat-label { margin-bottom:6px; color:var(--ink3); font-family:var(--mono); font-size:12px; }

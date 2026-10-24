@@ -50,7 +50,7 @@ const appSchema = {
       font-family: var(--sans);
       background:
         linear-gradient(90deg, transparent 49.9%, rgba(24,32,29,.035) 50%, transparent 50.1%),
-        radial-gradient(circle at 12% 0%, rgba(255,255,255,.95), transparent 30rem),
+        radial-gradient(circle at 12% 0%, var(--panel), transparent 30rem),
         var(--paper);
       background-size: 56px 100%, auto, auto;
     }
@@ -125,7 +125,7 @@ const appSchema = {
     .eyebrow::before { content: ""; width: 17px; height: 3px; background: var(--acid); box-shadow: 0 0 0 1px var(--ink); }
     select, input[type=number] {
       width: 100%; height: 44px; padding: 0 12px; border: 1px solid var(--line);
-      border-radius: 10px; background: rgba(255,255,255,.82); outline: 0;
+      border-radius: 10px; background: var(--panel); outline: 0;
     }
     select:focus, input:focus { border-color: var(--deep); box-shadow: 0 0 0 3px rgba(31,59,48,.08); }
     .dimensions { display: grid; grid-template-columns: 1fr 17px 1fr; align-items: center; gap: 7px; margin-top: 10px; }
@@ -134,15 +134,15 @@ const appSchema = {
     .range-head output { font-family: ui-monospace, monospace; color: var(--deep); font-weight: 700; }
     input[type=range] { width: 100%; accent-color: var(--deep); cursor: pointer; }
     .hint { margin: 8px 0 0; color: var(--muted); font-size: 11px; line-height: 1.55; }
-    .segmented { display: grid; grid-template-columns: 1fr 1fr; padding: 3px; border-radius: 11px; background: rgba(23,33,29,.07); }
+    .segmented { display: grid; grid-template-columns: 1fr 1fr; padding: 3px; border-radius: 11px; background: var(--panel2); }
     .segmented button { border: 0; padding: 8px; background: transparent; border-radius: 8px; cursor: pointer; font-size: 12px; }
-    .segmented button.active { background: white; box-shadow: 0 3px 11px rgba(23,33,29,.1); font-weight: 700; }
+    .segmented button.active { background: var(--panel); box-shadow: 0 3px 11px rgba(23,33,29,.1); font-weight: 700; }
     .workspace { min-height: 660px; animation: rise .55s .14s ease both; display: flex; flex-direction: column; }
     .drop {
       position: relative; min-height: 560px; flex: 1; margin: 16px;
       border: 1.5px dashed rgba(11,99,75,.34); border-radius: 2px;
       display: grid; place-items: center; overflow: hidden; transition: .25s ease;
-      background: rgba(255,255,255,.25);
+      background: var(--panel2);
     }
     .drop.dragging { border-color: var(--ink); background: rgba(245,212,81,.2); transform: scale(.995); }
     .empty { text-align: center; max-width: 420px; padding: 45px 24px; }
@@ -158,7 +158,7 @@ const appSchema = {
     .primary:hover, .download:hover { transform: translate(-1px,-1px); box-shadow: 6px 6px 0 var(--acid); }
     .gallery { display: none; width: 100%; height: 100%; padding: 6px; align-content: start; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
     .gallery.active { display: grid; }
-    .tile { position: relative; border-radius: 14px; background: white; border: 1px solid var(--line); overflow: hidden; animation: pop .35s ease both; }
+    .tile { position: relative; border-radius: 14px; background: var(--panel); border: 1px solid var(--line); overflow: hidden; animation: pop .35s ease both; }
     .preview { aspect-ratio: 1 / 1; display: grid; place-items: center; padding: 14px; background: #e8e8e6; }
     .preview canvas { max-width: 100%; max-height: 100%; box-shadow: 0 7px 25px rgba(0,0,0,.1); image-rendering: auto; }
     .meta { padding: 12px; }
@@ -166,15 +166,15 @@ const appSchema = {
     .spec { margin-top: 4px; font-size: 10px; color: var(--muted); font-family: ui-monospace, monospace; }
     .tile-actions { display: grid; grid-template-columns: 1fr 1fr 36px; gap: 7px; margin-top: 11px; }
     .download { padding: 9px; color: white; background: var(--deep); font-size: 11px; }
-    .edit-one { padding: 9px; border: 1px solid var(--deep); border-radius: 9px; background: white; color: var(--deep); cursor: pointer; font-size: 11px; font-weight: 750; }
+    .edit-one { padding: 9px; border: 1px solid var(--deep); border-radius: 9px; background: var(--panel); color: var(--deep); cursor: pointer; font-size: 11px; font-weight: 750; }
     .edit-one:hover { background: var(--acid); }
-    .remove { border: 1px solid var(--line); border-radius: 9px; background: white; cursor: pointer; }
+    .remove { border: 1px solid var(--line); border-radius: 9px; background: var(--panel); cursor: pointer; }
     .remove:hover { color: var(--danger); border-color: var(--danger); }
     .toolbar { display: none; align-items: center; justify-content: space-between; padding: 0 18px 16px; gap: 12px; }
     .toolbar.active { display: flex; }
     .count { font-size: 12px; color: var(--muted); }
     .toolbar .buttons { display: flex; gap: 8px; }
-    .secondary { padding: 10px 14px; background: white; border: 1px solid var(--line); font-size: 11px; }
+    .secondary { padding: 10px 14px; background: var(--panel); border: 1px solid var(--line); font-size: 11px; }
     #fileInput { display: none; }
     .processing { opacity: .55; pointer-events: none; }
     .modal {
@@ -185,7 +185,7 @@ const appSchema = {
     .editor {
       width: min(960px, 100%); max-height: calc(100vh - 40px); display: grid;
       grid-template-columns: minmax(0, 1fr) 280px; overflow: hidden;
-      border-radius: 24px; background: #f8f6ef; box-shadow: 0 30px 100px rgba(0,0,0,.36);
+      border-radius: 24px; background: var(--panel); box-shadow: 0 30px 100px rgba(0,0,0,.36);
     }
     .editor-stage {
       min-height: 570px; padding: 36px; display: grid; place-items: center;
@@ -197,7 +197,7 @@ const appSchema = {
       background-size: 22px 22px; background-position: 0 0,0 11px,11px -11px,-11px 0;
     }
     .editor-stage canvas {
-      max-width: 100%; max-height: min(74vh, 650px); background: white;
+      max-width: 100%; max-height: min(74vh, 650px); background: var(--panel);
       box-shadow: 0 18px 50px rgba(21,33,27,.22); cursor: ns-resize; touch-action: none;
     }
     .editor-side { padding: 27px; display: flex; flex-direction: column; }
@@ -268,7 +268,7 @@ const appSchema = {
   <div class="noise" aria-hidden="true"></div>
   <div class="shell">
     <div class="tool-header">
-    <SiteHeader active="tools" showTheme={false} />
+    <SiteHeader active="tools" />
   </div>
 
     <p style="margin:20px 0 -30px;font-size:11px;color:var(--muted);"><a href="/tools/">← 全部图片工具</a></p>

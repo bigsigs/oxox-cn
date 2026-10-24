@@ -1,7 +1,6 @@
 ---
 import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
-import ThemeHead from "../../components/ThemeHead.astro";
 import tools from "../../data/tools.js";
 import "../../styles/reference.css";
 
@@ -32,7 +31,6 @@ const collectionSchema = {
     <link rel="canonical" href="https://oxox.cn/tools/">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <title>图片工具｜OXOX</title>
-    <ThemeHead />
     <script is:inline type="application/ld+json" set:html={JSON.stringify(collectionSchema).replace(/</g, "\\u003c")}></script>
   </head>
   <body>

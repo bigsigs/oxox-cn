@@ -3,7 +3,6 @@ import CompanyHistoryTable from "../../../components/CompanyHistoryTable.astro";
 import { getCompanyIcon, hasDarkCompanyIcon } from "../../../data/company-icons.js";
 import SiteHeader from "../../../components/SiteHeader.astro";
 import SiteFooter from "../../../components/SiteFooter.astro";
-import ThemeHead from "../../../components/ThemeHead.astro";
 import "../../../styles/reference.css";
 import "../../../styles/company-detail.css";
 import companies from "../../../../public/data/yueqing-export-ranking/companies.json";
@@ -124,6 +123,7 @@ const isHttpUrl = (value: string) => {
 };
 const validLinks = (profile?.links ?? []).filter((link) => isHttpUrl(link.url));
 const primaryWebsite = validLinks.find((link) => link.type === "official_website")?.url;
+const alibabaStore = validLinks.find((link) => link.type === "alibaba_store")?.url;
 const primaryDomain = primaryWebsite ? new URL(primaryWebsite).hostname.replace(/^www\./, "") : null;
 const companyIcon = getCompanyIcon(primaryDomain, company.company_id);
 const companyInitials = company.company_name.replace(/^(?:浙江省?|温州市?|乐清市?)/, "").slice(0, 2);
@@ -248,7 +248,6 @@ const schema = {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content={description}>
   <meta name="robots" content="index,follow,max-image-preview:large">
-  <ThemeHead />
   <link rel="canonical" href={canonical}>
   <title>{title}</title>
   <script is:inline type="application/ld+json" set:html={JSON.stringify(schema).replace(/</g, "\\u003c")} />
@@ -279,7 +278,8 @@ const schema = {
           </div>
         </div>
         <div class="company-actions">
-          {primaryWebsite && <a class="detail-button primary" href={primaryWebsite} target="_blank" rel="nofollow noopener noreferrer">访问官网 <span aria-hidden="true">↗</span></a>}
+          {primaryWebsite && <a class="detail-button" href={primaryWebsite} target="_blank" rel="nofollow noopener noreferrer">访问官网 <span aria-hidden="true">↗</span></a>}
+          {alibabaStore && <a class="detail-button" href={alibabaStore} target="_blank" rel="nofollow noopener noreferrer">Alibaba 国际站 <span aria-hidden="true">↗</span></a>}
           <a class="detail-button" href={`/?q=${encodeURIComponent(company.company_name)}`}>← 返回排行榜</a>
         </div>
       </section>
@@ -354,7 +354,7 @@ const schema = {
       </section>}
 
       {validLinks.length > 0 && <section class="detail-panel links-panel" aria-labelledby="links-title">
-        <h2 id="links-title">企业网站</h2>
+        <h2 id="links-title">企业链接</h2>
         <div class="company-websites">
           {validLinks.map((link) => <a href={link.url} target="_blank" rel="nofollow noopener noreferrer"><span><strong>{link.label}</strong><small>{link.domain}</small></span><span aria-hidden="true">↗</span></a>)}
         </div>

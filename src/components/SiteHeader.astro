@@ -1,7 +1,7 @@
 ---
 import Wordmark from "./Wordmark.astro";
-interface Props { active?: string; showTheme?: boolean; }
-const { active = "", showTheme = true } = Astro.props;
+interface Props { active?: string; }
+const { active = "" } = Astro.props;
 const links = [
   { key: "ranking", href: "/", label: "出口排行榜" },
   { key: "seo", href: "/yueqing-seo/", label: "SEO 榜单" },
@@ -11,6 +11,14 @@ const links = [
 ];
 ---
 <header class="ref-header">
+  <script is:inline>
+    try {
+      const savedTheme = localStorage.getItem("oxox-theme");
+      document.documentElement.dataset.theme = savedTheme === "dark" ? "dark" : "light";
+    } catch {
+      document.documentElement.dataset.theme = "light";
+    }
+  </script>
   <a class="ref-brand" href="/" aria-label="OXOX 乐清出口数据首页"><Wordmark class="ref-wordmark" /><span>乐清出口数据</span></a>
   <div class="ref-header-actions">
     <details class="ref-menu">
@@ -19,7 +27,7 @@ const links = [
         {links.map(link => <a href={link.href} aria-current={active === link.key ? "page" : undefined}>{link.label}<span aria-hidden="true">{active === link.key ? "●" : "↗"}</span></a>)}
       </nav>
     </details>
-    {showTheme && <button class="ref-theme" type="button" data-theme-toggle aria-label="切换深色主题" aria-pressed="false"><span aria-hidden="true">◐</span> 主题</button>}
+    <button class="ref-theme" type="button" data-theme-toggle aria-label="切换深色主题" aria-pressed="false"><span aria-hidden="true">◐</span> 主题</button>
   </div>
 </header>
 <style>
