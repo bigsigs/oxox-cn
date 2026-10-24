@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { buildCompanySearchIndex, buildPeriodIndex, filterRanking } from "../lib/ranking-core.js";
+import { buildCompanySearchIndex, buildPeriodIndex, filterRanking, suggestCompanies } from "../lib/ranking-core.js";
 import { amountGroups, matchesAmountGroup, rankSignal } from "../lib/home-ranking.js";
 const boot = JSON.parse(document.querySelector("#rankingBoot").textContent);
 const search = document.querySelector("#rankingSearch");
@@ -117,7 +117,7 @@ async function initialize() {
   try {
     const response = await fetch("/data/yueqing-export-ranking/companies.json");
     if (!response.ok) throw new Error("load");
-    state.searchIndex = buildCompanySearchIndex(await response.json());
+    state.searchIndex = buildCompanySearchIndex((await response.json()).map(company => ({ ...company, ...boot.companyMeta[company.company_id] })));
     state.filter = ["top100", "top500", "up", "down"].includes(params.get("filter")) ? params.get("filter") : "all";
     await setPeriod(boot.periods.some(p => p.id === requestedPeriod) ? requestedPeriod : boot.latest);
     if (state.ready && state.groups.some(g => g.id === params.get("band"))) { state.group = params.get("band"); render(); }
@@ -143,3 +143,26 @@ document.querySelector("[data-reset]").addEventListener("click", reset);
 document.querySelector("#retryLoad").addEventListener("click", initialize);
 document.addEventListener("keydown", event => { if (event.key === "/" && !event.ctrlKey && !event.metaKey && !(event.target instanceof HTMLInputElement) && !(event.target instanceof HTMLTextAreaElement) && !event.target.isContentEditable) { event.preventDefault(); search.focus(); } });
 initialize();
+
+const suggestions = document.createElement("div");
+suggestions.hidden = true;
+suggestions.setAttribute("aria-label", "匹配企业");
+suggestions.style.cssText = "background:var(--bg,#fff);border:1px solid var(--line,#ddd);border-radius:8px;padding:8px;margin-bottom:12px;font-size:12px";
+document.querySelector("#rankingSearchForm").after(suggestions);
+function showSuggestions() {
+  if (!state.ready || !search.value.trim()) { suggestions.hidden = true; return; }
+  const matches = suggestCompanies(state.dataset.records, search.value, { searchIndex: state.searchIndex });
+  suggestions.innerHTML = matches.length ? matches.map(record => {
+    let label = escape(record.company_name);
+    for (const term of search.value.trim().split(/\s+/)) {
+      if (/^[\p{Script=Han}]+$/u.test(term)) label = label.split(escape(term)).join(`<mark>${escape(term)}</mark>`);
+    }
+    return `<a class="ranking-row" style="display:block;padding:8px" href="/yueqing-export-ranking/company/${record.company_id}/">${label}<small style="display:block;opacity:.6">${escape(boot.companyMeta[record.company_id]?.domain || "")}</small></a>`;
+  }).join("") : "未找到匹配企业";
+  suggestions.hidden = false;
+}
+suggestions.addEventListener("click", rememberList);
+search.addEventListener("input", showSuggestions);
+search.addEventListener("focus", showSuggestions);
+document.addEventListener("click", event => { if (!suggestions.contains(event.target) && event.target !== search) suggestions.hidden = true; });
+search.addEventListener("keydown", event => { if(event.key === "Escape") suggestions.hidden = true; });

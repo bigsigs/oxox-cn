@@ -20,11 +20,11 @@ const previousIndex = buildPeriodIndex(previousRanking.records);
 const groups = amountGroups(latestRanking);
 type CompanyLink = { type: string; label: string; url: string; domain: string };
 type CompanyProfile = { links?: CompanyLink[]; details?: Record<string, unknown> };
-const companyMeta: Record<string, { domain: string; icon: string; darkIcon: boolean }> = Object.fromEntries(Object.entries(profiles).map(([id, profile]) => {
+const companyMeta: Record<string, { domain: string; icon: string; darkIcon: boolean; brand_name: string }> = Object.fromEntries(Object.entries(profiles).map(([id, profile]) => {
   const website = (profile as CompanyProfile).links?.find(link => link.type === "official_website");
   const domain = website?.domain || "";
   const icon = getCompanyIcon(domain, id) || "";
-  return [id, { domain, icon, darkIcon: hasDarkCompanyIcon(id) }];
+  return [id, { domain, icon, darkIcon: hasDarkCompanyIcon(id), brand_name: String((profile as CompanyProfile).details?.brand_name || "") }];
 }));
 const siteSchema = {
   "@context": "https://schema.org",

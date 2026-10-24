@@ -35,7 +35,7 @@ test("filterRanking combines company, band, and top-rank filters", () => {
   );
 });
 
-test("pinyin search matches full pinyin, spaces, initials, and Chinese homophones", () => {
+test("pinyin search matches full pinyin, spaces, initials, without Chinese homophones", () => {
   assert.equal(typeof rankingCore.buildCompanySearchIndex, "function");
 
   const searchIndex = rankingCore.buildCompanySearchIndex([
@@ -51,7 +51,7 @@ test("pinyin search matches full pinyin, spaces, initials, and Chinese homophone
     },
   ]);
 
-  for (const query of ["zhengtai", "zheng tai", "ZHENGTAI", "zjztdq", "浙江政泰"]) {
+  for (const query of ["zhengtai", "zheng tai", "ZHENGTAI", "zjztdq"]) {
     assert.deepEqual(
       filterRanking(records, { query, searchIndex }).map((item) => item.rank),
       [1],
@@ -142,4 +142,11 @@ test("duplicate company rows are flagged for manual comparison review", () => {
     describeRankChange({ rank: 8, company_id: "YQ000001" }, buildPeriodIndex(previous)),
     { type: "review", delta: null, previousRank: null },
   );
+});
+
+test("unrelated Chinese and partial initials never produce suggestions", () => {
+ const data=[{company_id:"a",company_name:"浙江法拉迪电气股份有限公司",rank:1,domain:"farady.cn"}];
+ const searchIndex=rankingCore.buildCompanySearchIndex(data);
+ for(const query of ["法拉第","浙江 无关","zj"]) assert.deepEqual(suggestCompanies(data,query,{searchIndex}),[]);
+ for(const query of ["浙江 法拉迪","farady.cn","faladi"]) assert.equal(suggestCompanies(data,query,{searchIndex}).length,1);
 });

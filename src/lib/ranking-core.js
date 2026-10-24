@@ -26,73 +26,50 @@ function getSearchTokens(value, includePinyin = true) {
 }
 
 export function buildCompanySearchIndex(companies = []) {
-  return new Map(companies.map((company) => {
-    const names = [company.company_name, ...(company.aliases || [])].filter(Boolean);
-    const tokens = names.flatMap((name) => getSearchTokens(name));
-    return [company.company_id, [...new Set(tokens)].join(" ")];
-  }));
+  return new Map(companies.map(c => [c.company_id, {
+    names: [c.company_name, ...(c.aliases || []), c.brand_name].filter(Boolean).map(compact),
+    domain: normalize(c.domain),
+    phonetics: [c.company_name, ...(c.aliases || []), c.brand_name].filter(Boolean).map(getPinyinTokens),
+  }]));
 }
-
-export function filterRanking(records, filters = {}) {
-  const queryTokens = getSearchTokens(filters.query);
-  const searchIndex = filters.searchIndex instanceof Map ? filters.searchIndex : new Map();
-  const band = filters.band || "all";
-  const top = Number(filters.top) || Infinity;
-
-  return records.filter((record) => {
-    if (record.rank > top) return false;
-    if (band !== "all" && record.band_id !== band) return false;
-    if (!queryTokens.length) return true;
-
-    const haystack = [
-      ...getSearchTokens(record.company_name, false),
-      compact(record.company_id),
-      searchIndex.get(record.company_id) || "",
-    ].join(" ");
-    return queryTokens.some((query) => haystack.includes(query));
+function matchScore(record, query, index) {
+  const terms = normalize(query).split(/\s+/).filter(Boolean);
+  if (!terms.length) return 0;
+  const entry = index.get(record.company_id);
+  const names = [compact(record.company_name), ...(entry?.names || [])];
+  const id = compact(record.company_id);
+  const scores = terms.map(term => {
+    const token = compact(term);
+    if (!token) return Infinity;
+    if (names[0] === token) return 0;
+    if (names.includes(token)) return 1;
+    if (names.some(name => name.includes(token))) return 2;
+    if (entry?.domain && entry.domain.includes(term)) return 3;
+    if (id === token || (token.startsWith("yq") && token.length >= 3 && id.startsWith(token))) return 3;
+    if (token.length >= 2 && /^[a-z]+$/.test(term)) {
+      const phonetics = entry?.phonetics || [getPinyinTokens(record.company_name)];
+      if (phonetics.some(([full]) => full?.includes(token))) return 4;
+      if (token.length >= 3 && phonetics.some(([, initials]) => initials?.includes(token))) return 5;
+    }
+    return Infinity;
   });
+  return Math.max(...scores);
 }
-
+export function filterRanking(records, filters = {}) {
+  const index = filters.searchIndex instanceof Map ? filters.searchIndex : new Map();
+  return records.filter(record => record.rank <= (Number(filters.top) || Infinity)
+    && (!filters.band || filters.band === "all" || record.band_id === filters.band)
+    && Number.isFinite(matchScore(record, filters.query, index)));
+}
 export function suggestCompanies(records, query, options = {}) {
-  const queryTokens = getSearchTokens(query);
-  if (!queryTokens.length) return [];
-
-  const searchIndex = options.searchIndex instanceof Map
-    ? options.searchIndex
-    : buildCompanySearchIndex(records);
-  const limit = Math.max(1, Number(options.limit) || 6);
-  const candidates = records.map((record) => {
-    const name = compact(record.company_name);
-    const companyId = compact(record.company_id);
-    const indexed = searchIndex.get(record.company_id) || "";
-    const matches = queryTokens.some((token) => (
-      name.includes(token)
-      || companyId.includes(token)
-      || indexed.includes(token)
-    ));
-    if (!matches) return null;
-
-    const score = Math.min(...queryTokens.map((token) => {
-      if (name === token) return 0;
-      if (name.startsWith(token)) return 1;
-      if (name.includes(token)) return 2;
-      if (companyId.startsWith(token)) return 3;
-      return 4;
-    }));
-    return { record, score };
-  }).filter(Boolean).sort((left, right) => (
-    left.score - right.score || left.record.rank - right.record.rank
-  ));
-
+  if (!normalize(query)) return [];
+  const index = options.searchIndex instanceof Map ? options.searchIndex : buildCompanySearchIndex(records);
   const seen = new Set();
-  const suggestions = [];
-  for (const candidate of candidates) {
-    if (seen.has(candidate.record.company_id)) continue;
-    seen.add(candidate.record.company_id);
-    suggestions.push(candidate.record);
-    if (suggestions.length === limit) break;
-  }
-  return suggestions;
+  return records.map(record => ({ record, score: matchScore(record, query, index) }))
+    .filter(item => Number.isFinite(item.score))
+    .sort((a,b) => a.score-b.score || a.record.rank-b.record.rank)
+    .filter(({record}) => { if(seen.has(record.company_id)) return false; seen.add(record.company_id); return true; })
+    .slice(0, Math.min(8, options.limit || 8)).map(item => item.record);
 }
 
 export function paginateRanking(records, requestedPage = 1, pageSize = 50) {
