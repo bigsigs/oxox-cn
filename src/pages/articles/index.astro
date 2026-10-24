@@ -1,6 +1,7 @@
 ---
 import "../../styles/reference.css";
 import "../../styles/reference-pages.css";
+import "../../styles/page-hero.css";
 import { getCollection, type CollectionEntry } from "astro:content";
 import SiteHeader from "../../components/SiteHeader.astro";
 
@@ -81,29 +82,6 @@ const collectionSchema = {
     .header-nav { display: flex; align-items: center; gap: 26px; font-size: 12px; font-weight: 750; }
     .nav-cta { padding: 10px 15px; border: 1px solid var(--ink); border-radius: 999px; background: var(--yellow); }
 
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(260px, .7fr);
-      gap: 58px;
-      padding: 88px 0 72px;
-      border-bottom: 1px solid var(--line);
-    }
-    .eyebrow { display: flex; align-items: center; gap: 12px; margin: 0 0 25px; color: var(--green); font-size: 10px; font-weight: 850; letter-spacing: .18em; text-transform: uppercase; }
-    .eyebrow::before { content: ""; width: 30px; height: 7px; border-radius: 99px; background: var(--orange); }
-    h1 { max-width: 830px; margin: 0; font-family: var(--serif); font-size: clamp(60px, 7.5vw, 104px); font-weight: 400; letter-spacing: -.07em; line-height: .92; }
-    h1 em { color: var(--green); font-style: normal; }
-    .hero p:last-child { max-width: 690px; margin: 34px 0 0; color: var(--muted); font-size: 14px; line-height: 1.9; }
-    .hero-mark {
-      position: relative;
-      align-self: end;
-      aspect-ratio: 1;
-      max-width: 280px;
-      border: 1px solid var(--ink);
-      border-radius: 50%;
-    }
-    .hero-mark::before { content: ""; position: absolute; inset: 20%; border-radius: 50%; background: var(--yellow); }
-    .hero-mark::after { content: ""; position: absolute; top: 44%; left: 44%; width: 12%; aspect-ratio: 1; border-radius: 50%; background: var(--orange); box-shadow: 78px -58px 0 var(--green); }
-
     .reports { padding: 84px 0 120px; }
     .section-label { margin: 0 0 26px; color: var(--orange); font-size: 10px; font-weight: 850; letter-spacing: .18em; }
     .featured {
@@ -140,8 +118,7 @@ const collectionSchema = {
     @keyframes dotOrbitClockwise { 0%,100%{transform:translate(0) scale(1)}25%{transform:translate(var(--dot-travel),calc(var(--dot-travel)*-.55)) scale(.8)}50%{transform:translate(0,calc(var(--dot-travel)*-1)) scale(1.08)}75%{transform:translate(calc(var(--dot-travel)*-1),calc(var(--dot-travel)*-.45)) scale(.9)} }
     @keyframes dotOrbitCounter { 0%,100%{transform:translate(0) scale(1)}25%{transform:translate(calc(var(--dot-travel)*-1),calc(var(--dot-travel)*.55)) scale(.8)}50%{transform:translate(0,var(--dot-travel)) scale(1.08)}75%{transform:translate(var(--dot-travel),calc(var(--dot-travel)*.45)) scale(.9)} }
     @media (max-width: 800px) {
-      .hero, .featured { grid-template-columns: 1fr; }
-      .hero-mark { display: none; }
+      .featured { grid-template-columns: 1fr; }
       .featured-issue { min-height: 190px; }
       .archive-head { display: none; }
       .archive-card { grid-template-columns: 72px 1fr 35px; }
@@ -154,8 +131,6 @@ const collectionSchema = {
       .wordmark { width: 101px; }
       .brand-label { display: none; }
       .header-nav > a:not(.nav-cta) { display: none; }
-      .hero { padding: 66px 0 52px; }
-      h1 { font-size: clamp(52px, 16vw, 72px); }
       .reports { padding: 64px 0 90px; }
       .featured-copy { padding: 30px 24px; }
       .featured h2 { font-size: 39px; }
@@ -175,13 +150,9 @@ const collectionSchema = {
   </div>
 
   <main>
-    <section class="hero shell">
-      <div>
-        <p class="eyebrow">EDITORIAL DATA / 数据解读</p>
-        <h1>乐清外贸数据解读</h1>
-        <p>从月度外贸概况、企业结构、出口产品和主要市场出发，整理有明确数据依据的乐清外贸观察。</p>
-      </div>
-      <div class="hero-mark" aria-hidden="true"></div>
+    <section class="ranking-hero shell" aria-labelledby="articles-title">
+      <h1 id="articles-title">乐清外贸数据解读</h1>
+      <p class="hero-subtitle">从月度外贸概况、企业结构、出口产品和主要市场出发，<br class="desktop-break">整理有明确数据依据的乐清外贸观察。</p>
     </section>
 
     <section class="reports shell">

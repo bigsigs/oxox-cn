@@ -1,0 +1,20 @@
+.ranking-hero { padding:44px 0 64px; text-align:center; }
+.ranking-hero h1,
+.reference-page .ranking-hero h1 { max-width:none; margin:0 auto; color:var(--ink); font-family:var(--mono); font-size:50px; font-weight:750; line-height:1.25; letter-spacing:-2px; }
+.hero-subtitle { max-width:760px; margin:18px auto 0; color:var(--ink2); font-size:14.5px; line-height:1.95; }
+
+@media (max-width:850px) {
+  .ranking-hero h1,
+  .reference-page .ranking-hero h1 { font-size:43px; letter-spacing:-1.6px; }
+}
+@media (max-width:640px) {
+  .ranking-hero { padding:34px 0 43px; }
+  .ranking-hero h1,
+  .reference-page .ranking-hero h1 { font-size:30px; letter-spacing:-1px; }
+  .hero-subtitle { max-width:390px; margin-top:14px; font-size:12px; line-height:1.9; }
+  .desktop-break { display:none; }
+}
+@media (max-width:380px) {
+  .ranking-hero h1,
+  .reference-page .ranking-hero h1 { font-size:28px; }
+}

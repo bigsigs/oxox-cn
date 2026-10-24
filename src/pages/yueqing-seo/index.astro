@@ -198,10 +198,8 @@ const datasetSchema = {
       transform-origin: left;
     }
 
-    .reference-page .ranking-hero h1 {
-      max-width: 100%;
-      margin-inline: auto;
-      text-align: center;
+    .reference-page .ranking-hero {
+      padding-bottom: 28px;
     }
 
     .seo-distribution .distribution-bar,
@@ -277,7 +275,7 @@ const datasetSchema = {
 
     .hero-intro strong { color: var(--ink); }
 
-    .ranking-section { padding: 0 0 80px; }
+    .reference-page .ranking-section { padding: 0 0 60px; }
 
     .section-head {
       display: flex;
@@ -702,7 +700,6 @@ const datasetSchema = {
       .header-nav a:not([aria-current="page"]) { display: none; }
       h1 { font-size: clamp(52px, 16vw, 75px); }
       .hero-intro { font-size: 13px; }
-      .ranking-section { padding: 42px 0 70px; }
       .section-head { align-items: start; flex-direction: column; }
       .search-control input { font-size: 16px; }
       .filter-control {
@@ -748,6 +745,10 @@ const datasetSchema = {
       .methodology { grid-template-columns: 1fr; gap: 19px; padding: 25px; }
       footer { grid-template-columns: 1fr; }
       .footer-copy { text-align: left; }
+    }
+
+    @media (max-width: 640px) {
+      .reference-page .ranking-hero { padding-bottom: 24px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
