@@ -10,6 +10,7 @@ const reportFile = path.join(outputDir, "candidates.json");
 const reviewDir = path.join(root, "review/company-enrichment");
 const researchDir = path.join(reviewDir, "top500");
 const lowerResearchDir = path.join(reviewDir, "ranks-501-1000");
+const ranks1001To1500ResearchDir = path.join(reviewDir, "ranks-1001-1500");
 
 const readJson = (file) => JSON.parse(fs.readFileSync(file, "utf8"));
 const decode = (value) => String(value ?? "")
@@ -58,7 +59,7 @@ for (const file of ["top100-review.json", "top100-supplemental.json"]) {
     if (row["状态"] !== "待核实") add(row);
   }
 }
-for (const directory of [researchDir, lowerResearchDir]) {
+for (const directory of [researchDir, lowerResearchDir, ranks1001To1500ResearchDir]) {
   if (!fs.existsSync(directory)) continue;
   for (const file of fs.readdirSync(directory).filter((name) => /^research-.*\.json$/.test(name)).sort()) {
     for (const row of readJson(path.join(directory, file))) add(row);
