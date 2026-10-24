@@ -4,12 +4,9 @@ import "../../styles/reference-pages.css";
 import Wordmark from "../../components/Wordmark.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import seoCompanies from "../../data/seo-companies.js";
-import {
-  filterSeoCompanies,
-  summarizeSeoCompanies,
-} from "../../lib/seo-ranking-core.js";
+import { filterSeoCompanies } from "../../lib/seo-ranking-core.js";
 
-const snapshotDate = "2026-08-29";
+const snapshotDate = "2026-10-25";
 const palette = ["#ff5c35", "#f5d451", "#0b634b", "#5f94c9", "#c8789b", "#8588c7"];
 const companies = seoCompanies.map((company, index) => ({
   ...company,
@@ -17,9 +14,7 @@ const companies = seoCompanies.map((company, index) => ({
   icon: `/company-icons/${company.domain}.png`,
   initials: company.brand.replace(/[^A-Z0-9]/g, "").slice(0, 2) || "YQ",
 }));
-const summary = summarizeSeoCompanies(companies);
 const initialCompanies = filterSeoCompanies(companies, { sortBy: "traffic" }).slice(0, 20);
-const leaders = filterSeoCompanies(companies, { sortBy: "traffic" }).slice(0, 3);
 const formatNumber = (value: number | null) => {
   if (value === null) return "N/A";
   if (value >= 100000) return `${(value / 10000).toFixed(value % 10000 === 0 ? 0 : 1)}万`;
@@ -191,14 +186,9 @@ const datasetSchema = {
     }
 
     .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(360px, .85fr);
-      gap: clamp(48px, 7vw, 108px);
-      align-items: center;
-      min-height: 440px;
-      padding: 44px 0 58px;
+      min-height: 0;
+      padding: 44px 0 35px;
       border-bottom: 1px solid var(--line);
-      overflow: clip;
     }
 
     .eyebrow {
@@ -256,195 +246,7 @@ const datasetSchema = {
 
     .hero-intro strong { color: var(--ink); }
 
-    .pulse-card {
-      position: relative;
-      padding: 28px 28px 0;
-      color: var(--ink);
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      box-shadow: none;
-    }
-
-    .pulse-card::before {
-      display: none;
-    }
-
-    .pulse-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 20px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .pulse-head span {
-      color: var(--muted);
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: .14em;
-    }
-
-    .pulse-head strong {
-      font: 500 47px/.8 var(--serif);
-      letter-spacing: -.06em;
-    }
-
-    .pulse-total {
-      display: flex;
-      flex-direction: column;
-      align-items: end;
-      gap: 8px;
-    }
-
-    .pulse-total small {
-      color: var(--muted);
-      font-size: 8px;
-      font-weight: 800;
-      letter-spacing: .12em;
-    }
-
-    .leader-stairs {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      align-items: end;
-      min-height: 245px;
-      margin-top: 22px;
-    }
-
-    .leader-step {
-      display: flex;
-      min-width: 0;
-      height: var(--step-height);
-      flex-direction: column;
-      padding: 16px 14px 15px;
-      color: var(--ink);
-      background: var(--step-color);
-      border-right: 1px solid var(--green-dark);
-      transition: transform .22s ease;
-    }
-
-    .leader-step:last-child { border-right: 0; }
-    .leader-step:hover { transform: translateY(-7px); }
-
-    .leader-rank {
-      display: flex;
-      align-items: start;
-      justify-content: space-between;
-      gap: 8px;
-    }
-
-    .leader-rank strong {
-      font: 500 clamp(30px, 3.5vw, 45px)/.8 var(--serif);
-      letter-spacing: -.07em;
-    }
-
-    .leader-icon {
-      width: 38px;
-      height: 38px;
-      flex: 0 0 auto;
-      object-fit: contain;
-      border: 1px solid rgba(24,32,29,.18);
-      border-radius: 9px;
-      background: var(--panel);
-    }
-
-    .leader-company {
-      min-width: 0;
-      margin-top: auto;
-    }
-
-    .leader-company b {
-      display: -webkit-box;
-      overflow: hidden;
-      font-size: 10px;
-      font-weight: 800;
-      line-height: 1.35;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 2;
-    }
-
-    .leader-company small {
-      display: block;
-      overflow: hidden;
-      margin-top: 5px;
-      color: rgba(24,32,29,.58);
-      font: 700 8px/1.2 var(--mono);
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-    .leader-traffic {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 5px;
-      margin-top: 12px;
-      padding-top: 10px;
-      border-top: 1px solid rgba(24,32,29,.24);
-    }
-
-    .leader-traffic span {
-      font: 500 clamp(20px, 2.4vw, 29px)/1 var(--serif);
-      letter-spacing: -.05em;
-      white-space: nowrap;
-    }
-
-    .leader-traffic small {
-      color: rgba(24,32,29,.58);
-      font-size: 7px;
-      font-weight: 800;
-      letter-spacing: .08em;
-    }
-
-    .summary-strip {
-      display: grid;
-      grid-template-columns: 1.05fr repeat(5, 1fr);
-      border-right: 1px solid var(--ink);
-      border-bottom: 1px solid var(--ink);
-      background: var(--paper-light);
-    }
-
-    .summary-strip > * {
-      min-height: 133px;
-      padding: 23px;
-      border-left: 1px solid var(--ink);
-      border-top: 1px solid var(--ink);
-    }
-
-    .summary-label {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      color: white;
-      background: var(--ink);
-    }
-
-    .summary-label small,
-    .summary-card span {
-      font-size: 9px;
-      font-weight: 800;
-      letter-spacing: .13em;
-    }
-
-    .summary-label strong {
-      font: 500 28px/1 var(--serif);
-    }
-
-    .summary-card {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .summary-card span { color: var(--muted); }
-    .summary-card strong {
-      font: 500 clamp(27px, 3vw, 43px)/1 var(--serif);
-      letter-spacing: -.055em;
-    }
-
-    .ranking-section { padding: 92px 0 100px; }
+    .ranking-section { padding: 55px 0 80px; }
 
     .section-head {
       display: flex;
@@ -854,10 +656,6 @@ const datasetSchema = {
     }
 
     @media (max-width: 1100px) {
-      .hero { grid-template-columns: 1fr; min-height: 0; }
-      .pulse-card { width: min(100%, 660px); }
-      .summary-strip { grid-template-columns: repeat(3, 1fr); }
-      .summary-label { grid-column: 1 / -1; }
       .toolbar { grid-template-columns: 1fr; }
       .filter-control { flex-wrap: wrap; }
       .rank-table { overflow-x: auto; }
@@ -871,20 +669,10 @@ const datasetSchema = {
       .brand-label { display: none; }
       .header-nav { gap: 15px; font-size: 11px; }
       .header-nav a:not([aria-current="page"]) { display: none; }
-      .hero { gap: 36px; padding: 34px 0 48px; }
+      .hero { padding: 34px 0 29px; }
       h1 { font-size: clamp(52px, 16vw, 75px); }
       .hero-intro { font-size: 13px; }
-      .pulse-card { padding: 23px 18px 0; box-shadow: 9px 9px 0 var(--yellow); }
-      .pulse-head strong { font-size: 38px; }
-      .leader-stairs { min-height: 220px; }
-      .leader-step { padding: 13px 10px 12px; }
-      .leader-icon { width: 32px; height: 32px; }
-      .leader-company b { font-size: 9px; }
-      .leader-traffic small { display: none; }
-      .summary-strip { grid-template-columns: 1fr 1fr; }
-      .summary-label { grid-column: 1 / -1; }
-      .summary-strip > * { min-height: 116px; padding: 19px; }
-      .ranking-section { padding: 70px 0 80px; }
+      .ranking-section { padding: 42px 0 70px; }
       .section-head { align-items: start; flex-direction: column; }
       .search-control input { font-size: 16px; }
       .filter-control {
@@ -956,58 +744,15 @@ const datasetSchema = {
         <h1>乐清 SEO 榜单</h1>
         <p class="hero-intro">
           聚焦乐清电气企业的<strong>自然流量、关键词、链接资产与 AI 品牌曝光</strong>。
-          以域名为观察对象，用统一快照比较相对位置和增长信号。
+          以域名为观察对象，用统一快照比较相对位置和增长信号；仅收录自然流量非零站点。
         </p>
       </div>
-
-      <aside class="pulse-card" aria-label="自然流量领先站点">
-        <div class="pulse-head">
-          <span>TRAFFIC TOP 3 / 自然流量前三</span>
-          <div class="pulse-total">
-            <strong>{formatNumber(summary.traffic)}</strong>
-            <small>监测站点总流量</small>
-          </div>
-        </div>
-        <div class="leader-stairs">
-          {leaders.map((company, index) => (
-            <article
-              class="leader-step"
-              style={`--step-height:${245 - index * 40}px;--step-color:${index === 0 ? "var(--yellow)" : index === 1 ? "var(--paper-light)" : "var(--orange)"}`}
-            >
-              <div class="leader-rank">
-                <strong>{String(index + 1).padStart(2, "0")}</strong>
-                <img class="leader-icon" src={company.icon} alt="" width="38" height="38">
-              </div>
-              <div class="leader-company">
-                <b>{company.brand}</b>
-                <small>{company.domain}</small>
-              </div>
-              <div class="leader-traffic">
-                <span>{formatNumber(company.traffic)}</span>
-                <small>TRAFFIC</small>
-              </div>
-            </article>
-          ))}
-        </div>
-      </aside>
-    </section>
-
-    <section class="summary-strip shell" aria-label="SEO 数据概览">
-      <div class="summary-label">
-        <small>SNAPSHOT / 数据快照</small>
-        <strong>2026.08.29</strong>
-      </div>
-      <div class="summary-card"><span>监测站点</span><strong>{summary.sites}</strong></div>
-      <div class="summary-card"><span>自然流量</span><strong>{formatNumber(summary.traffic)}</strong></div>
-      <div class="summary-card"><span>自然关键词</span><strong>{formatNumber(summary.keywords)}</strong></div>
-      <div class="summary-card"><span>AI 提及</span><strong>{formatNumber(summary.mentions)}</strong></div>
-      <div class="summary-card"><span>反向链接</span><strong>{formatNumber(summary.backlinks)}</strong></div>
     </section>
 
     <section class="ranking-section shell">
       <div class="section-head">
         <div>
-          <p class="section-kicker">COMPETITIVE SIGNALS / 竞争信号</p>
+          <p class="section-kicker">COMPETITIVE SIGNALS / 竞争信号 · 2026.10.25</p>
           <h2>企业搜索表现排名</h2>
         </div>
         <p class="result-count">当前匹配 <strong id="seoResultCount">{companies.length}</strong> 个站点</p>

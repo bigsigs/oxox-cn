@@ -47,8 +47,9 @@ npm run build
 
 ## 乐清 SEO 观察台
 
-SEO 观察台位于 `/yueqing-seo/`，当前快照数据保存在
-`src/data/seo-companies.js`，筛选、排序、汇总和分页逻辑位于
+SEO 观察台位于 `/yueqing-seo/`，2026-10-25 快照保存在
+`src/data/seo-companies-2026-10.js`，由 `src/data/seo-companies.js` 引入，
+筛选、排序和分页逻辑位于
 `src/lib/seo-ranking-core.js`，公司图标位于 `public/company-icons/`。
 自然流量、关键词、反向链接及 AI 可见度来自 Semrush，属于第三方
 估算指标，只用于相对排名与趋势观察；精确数据以企业自己的 Google

@@ -1,4 +1,4 @@
-import currentSeoCompanies from "./seo-companies-2026-08.js";
+import currentSeoCompanies from "./seo-companies-2026-10.js";
 
 const previousSeoCompanies = [
   { brand: "GRL Electric", company_name: "GRL Electric", domain: "grlgroup.com", aiVisibility: 14, mentions: 7, traffic: 3018, trafficChange: 12.99, keywords: 3770, keywordsChange: 9.62, backlinks: 18000, backlinksChange: -28.54 },

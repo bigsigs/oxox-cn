@@ -48,7 +48,21 @@ const domains = new Set([
   "weishoelec.com",
   "willele.com",
   "wilmall.com",
-  "wosomelec.com"
+  "wosomelec.com",
+  "kaseey.com",
+  "aierway.com",
+  "chint.com",
+  "eilitetech.com",
+  "ewjele.com",
+  "igotocableties.com",
+  "industrialmonitordirect.com",
+  "jutrion.com",
+  "mg-cnsolar.com",
+  "spds.global",
+  "cnspd.com",
+  "electricaltechnology.org",
+  "projoy-electric.com",
+  "vioxsolar.com"
 ]);
 export const getCompanyIcon = (domain, companyId = "") => verifiedIcons[companyId]?.path || (domains.has(domain) ? `/company-icons/${domain}.png` : null);
 export const hasDarkCompanyIcon = (companyId = "") => Boolean(verifiedIcons[companyId]?.dark_background);
