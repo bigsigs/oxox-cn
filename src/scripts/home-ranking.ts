@@ -13,7 +13,23 @@ const format = value => new Intl.NumberFormat("zh-CN").format(value);
 const escape = value => String(value ?? "").replace(/[&<>"']/g, c => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" })[c]);
 const cache = new Map();
 const state = { periodId: boot.latest, dataset: null, previousIndex: new Map(), currentIndex: new Map(), hasPrevious: true, searchIndex: new Map(), groups: [], group: "all", filter: "all", limit: 30, ready: false };
+const returnKey = "oxox-ranking-return";
+let savedReturn = null;
+try {
+  const saved = JSON.parse(sessionStorage.getItem(returnKey) || "null");
+  const back = performance.getEntriesByType("navigation")[0]?.type === "back_forward";
+  if (saved && saved.url === location.pathname + location.search.replace(/([?&])restore=1&?/, "$1").replace(/[?&]$/, "") && (back || new URLSearchParams(location.search).has("restore"))) savedReturn = saved;
+} catch {}
 const params = new URLSearchParams(location.search);
+function rememberList(event) {
+  const link = event.target.closest("a.ranking-row");
+  if (!link || !state.ready) return;
+  try {
+    sessionStorage.setItem(returnKey, JSON.stringify({ url: location.pathname + location.search, limit: state.limit, scrollY, href: link.getAttribute("href"), top: link.getBoundingClientRect().top }));
+  } catch {}
+}
+rows.addEventListener("click", rememberList);
+
 const requestedPeriod = params.get("period");
 search.value = params.get("q") || "";
 const previousPeriod = period => boot.periods.find(p => p.as_of < period.as_of && p.as_of.slice(0, 4) === period.as_of.slice(0, 4));
@@ -40,7 +56,8 @@ function rowMarkup(record) {
 function saveUrl() {
   const url = new URL(location.href);
   for (const [key, value] of [["q", search.value.trim()], ["period", state.periodId === boot.latest ? "" : state.periodId], ["filter", state.filter === "all" ? "" : state.filter], ["band", state.group === "all" ? "" : state.group]]) value ? url.searchParams.set(key, value) : url.searchParams.delete(key);
-  history.replaceState(null, "", url);
+  url.searchParams.delete("restore");
+  history.replaceState(history.state, "", url);
 }
 function render() {
   if (!state.ready) return;
@@ -104,6 +121,14 @@ async function initialize() {
     state.filter = ["top100", "top500", "up", "down"].includes(params.get("filter")) ? params.get("filter") : "all";
     await setPeriod(boot.periods.some(p => p.id === requestedPeriod) ? requestedPeriod : boot.latest);
     if (state.ready && state.groups.some(g => g.id === params.get("band"))) { state.group = params.get("band"); render(); }
+    if (state.ready && savedReturn) {
+      state.limit = Math.max(30, Number(savedReturn.limit) || 30);
+      render();
+      requestAnimationFrame(() => {
+        const target = Array.from(rows.querySelectorAll("a")).find(link => link.getAttribute("href") === savedReturn.href);
+        window.scrollTo(0, target ? window.scrollY + target.getBoundingClientRect().top - savedReturn.top : savedReturn.scrollY);
+      });
+    }
   } catch { error.hidden = false; }
 }
 search.addEventListener("input", () => { state.limit = 30; render(); });

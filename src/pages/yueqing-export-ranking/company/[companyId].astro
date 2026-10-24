@@ -372,3 +372,18 @@ const schema = {
   </div>
 </body>
 </html>
+
+<script>
+  try {
+    const saved = JSON.parse(sessionStorage.getItem("oxox-ranking-return") || "null");
+    if (saved && saved.href === location.pathname && typeof saved.url === "string" && saved.url.startsWith("/") && !saved.url.startsWith("//")) {
+      document.querySelectorAll('a').forEach(link => {
+        if (link.textContent?.includes("返回排行榜") || link.textContent?.includes("返回出口排行榜")) {
+          const url = new URL(saved.url, location.origin);
+          url.searchParams.set("restore", "1");
+          link.href = url.pathname + url.search;
+        }
+      });
+    }
+  } catch {}
+</script>
