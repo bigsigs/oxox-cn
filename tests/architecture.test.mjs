@@ -325,9 +325,14 @@ test("newly confirmed official websites publish on the exact matched companies",
   );
   assert.equal(profiles.YQ000392?.details?.brand_name, "恒一电气");
   assert.equal(
-    profiles.YQ000392?.links?.some((link) => link.type === "official_website") ?? false,
-    false,
-    "Hengyi must not receive an unverified website",
+    profiles.YQ000392?.links?.find((link) => link.type === "official_website")?.url,
+    "http://lastone.cn/",
+    "Hengyi must retain its verified website",
+  );
+  const hengyiHtml = await read(builtPath(companyPath("YQ000392")));
+  assert.ok(
+    anchorsOf(mainOf(hengyiHtml)).some((link) => link.href === "http://lastone.cn/"),
+    "Hengyi detail page must publish its verified website",
   );
   assert.equal(
     profiles.YQ000072.links.find((link) => link.type === "alibaba_store")?.url,
