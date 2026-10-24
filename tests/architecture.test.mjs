@@ -298,6 +298,15 @@ test("newly confirmed official websites publish on the exact matched companies",
     YQ000121: ["温州市华通机电进出口有限公司", "https://www.fato.cn/"],
     YQ000464: ["一二三电气有限公司", "http://www.123ele.com/"],
     YQ000617: ["乐清市佑川电气有限公司", "http://www.huajoinele.com/"],
+    YQ000024: ["意华控股集团有限公司", "http://www.cztgroup.cn/"],
+    YQ000085: ["人民电器集团浙江进出口有限公司", "https://www.chinapeople.com/"],
+    YQ000249: ["乐清雷顿进出口有限公司", "https://www.radin.cn/"],
+    YQ001132: ["浙江亚威电气有限公司", "http://www.yaweidq.cn/"],
+    YQ001707: ["浙江昊鑫电力科技有限公司", "http://www.chinahossin.com/"],
+    YQ002231: ["浙江欧雷凯气动有限公司", "https://www.olkptc.com/"],
+    YQ002584: ["浙江强力电力金具有限公司", "https://www.qlgpowerfitting.com/"],
+    YQ002611: ["国隆电气有限公司", "http://www.gldq.net/"],
+    YQ002719: ["乐清双凯模具厂", "http://www.skmjc.com/"],
   };
 
   for (const [id, [name, website]] of Object.entries(confirmed)) {
@@ -322,6 +331,16 @@ test("newly confirmed official websites publish on the exact matched companies",
     profiles.YQ000064?.links?.some((link) => link.type === "official_website") ?? false,
     false,
     "Zhuchuang trading company must not inherit the Zhucheng listed company website",
+  );
+  assert.equal(
+    profiles.YQ000411?.links?.find((link) => link.type === "official_website")?.url,
+    "https://www.gwiec.com/ch",
+    "Green Import and Export must retain its user-confirmed website",
+  );
+  assert.equal(
+    icons.YQ000411,
+    undefined,
+    "Green Import and Export must use its text icon until a matching company logo is verified",
   );
   assert.equal(profiles.YQ000392?.details?.brand_name, "恒一电气");
   assert.equal(

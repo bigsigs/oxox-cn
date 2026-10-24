@@ -1371,6 +1371,16 @@
     ]
   },
   "YQ000024": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "http://www.cztgroup.cn/",
+        "domain": "cztgroup.cn",
+        "source": "user_confirmed",
+        "added_at": "2026-10-24"
+      }
+    ],
     "details": {
       "registered_capital": "9158万元人民币",
       "field_sources": {
@@ -4594,6 +4604,16 @@
     }
   },
   "YQ000085": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "https://www.chinapeople.com/",
+        "domain": "chinapeople.com",
+        "source": "user_confirmed",
+        "added_at": "2026-10-24"
+      }
+    ],
     "details": {
       "main_products": "高低压电器、机电设备等产品的进出口业务",
       "field_sources": {
@@ -10541,6 +10561,16 @@
     }
   },
   "YQ000249": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "https://www.radin.cn/",
+        "domain": "radin.cn",
+        "source": "user_confirmed",
+        "added_at": "2026-10-24"
+      }
+    ],
     "details": {
       "field_sources": {
         "registered_capital": {
@@ -13601,6 +13631,16 @@
     }
   },
   "YQ000411": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "https://www.gwiec.com/ch",
+        "domain": "gwiec.com",
+        "source": "user_confirmed",
+        "added_at": "2026-10-24"
+      }
+    ],
     "details": {
       "field_sources": {
         "main_products": {
@@ -23312,6 +23352,16 @@
     }
   },
   "YQ001132": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "http://www.yaweidq.cn/",
+        "domain": "yaweidq.cn",
+        "source": "user_confirmed",
+        "added_at": "2026-10-24"
+      }
+    ],
     "details": {
       "registered_capital": "1000万元人民币",
       "field_sources": {
@@ -32727,6 +32777,16 @@
     }
   },
   "YQ001707": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "http://www.chinahossin.com/",
+        "domain": "chinahossin.com",
+        "source": "user_confirmed",
+        "added_at": "2026-10-24"
+      }
+    ],
     "details": {
       "contact_address": "浙江省温州市乐清市柳市镇坭前村",
       "field_sources": {
@@ -48633,6 +48693,16 @@
     }
   },
   "YQ002231": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "https://www.olkptc.com/",
+        "domain": "olkptc.com",
+        "source": "user_confirmed",
+        "added_at": "2026-10-24"
+      }
+    ],
     "details": {
       "contact_address": "乐清市柳市镇新光工业区正泰路11号",
       "field_sources": {
@@ -59340,6 +59410,16 @@
     }
   },
   "YQ002584": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "https://www.qlgpowerfitting.com/",
+        "domain": "qlgpowerfitting.com",
+        "source": "user_confirmed",
+        "added_at": "2026-10-24"
+      }
+    ],
     "details": {
       "contact_address": "浙江省温州市乐清市翁垟街道文康路179号（一照多址）",
       "field_sources": {
@@ -60226,6 +60306,16 @@
     }
   },
   "YQ002611": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "http://www.gldq.net/",
+        "domain": "gldq.net",
+        "source": "user_confirmed",
+        "added_at": "2026-10-24"
+      }
+    ],
     "details": {
       "contact_address": "浙江省温州市乐清市北白象镇高新大道558号",
       "field_sources": {
@@ -63579,6 +63669,16 @@
     }
   },
   "YQ002719": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "http://www.skmjc.com/",
+        "domain": "skmjc.com",
+        "source": "user_confirmed",
+        "added_at": "2026-10-24"
+      }
+    ],
     "details": {
       "contact_address": "浙江省温州市乐清市柳市镇里隆村兴瓯路3-5号",
       "field_sources": {
