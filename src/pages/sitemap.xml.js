@@ -18,6 +18,8 @@ export async function GET() {
     "/yueqing-export-ranking/",
     "/yueqing-seo/",
     "/articles/",
+    "/tools/",
+    "/about-data/",
     "/product-image-resizer/",
     "/webp-converter/",
   ];

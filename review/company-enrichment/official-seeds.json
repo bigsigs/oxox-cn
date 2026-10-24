@@ -1,0 +1,398 @@
+[
+  {
+    "id": "YQ000001",
+    "name": "浙江正泰电器股份有限公司",
+    "rank": 1,
+    "url": "https://www.chint.net/about/overview/about_us",
+    "contact_address": "",
+    "main_products": "低压配电电器、控制电器、终端电器",
+    "registered_capital": ""
+  },
+  {
+    "id": "YQ000002",
+    "name": "乐清意华新能源科技有限公司",
+    "rank": 2,
+    "url": "https://www.czt-energy.com/about/2672.html",
+    "contact_address": "浙江乐清经济开发区纬十八路186号",
+    "main_products": "光伏跟踪支架及核心部件、新能源金属配件",
+    "registered_capital": "1.3亿元人民币（官网自述）"
+  },
+  {
+    "id": "YQ000004",
+    "name": "温州合盛电子有限公司",
+    "rank": 4,
+    "url": "https://www.heshengele.com/",
+    "contact_address": "",
+    "main_products": "",
+    "registered_capital": ""
+  },
+  {
+    "id": "YQ000005",
+    "name": "浙江创奇电气股份有限公司",
+    "rank": 5,
+    "url": "https://www.chac-cn.com/",
+    "contact_address": "浙江省温州市乐清市北白象镇沙洪路18号",
+    "main_products": "小型断路器、塑壳断路器、配电及控制电器",
+    "registered_capital": "1亿元人民币（官网自述）"
+  },
+  {
+    "id": "YQ000007",
+    "name": "温州宏丰电工合金股份有限公司",
+    "rank": 6,
+    "url": "https://www.wzhf.com/investor.html",
+    "contact_address": "浙江省温州海洋经济发展示范区瓯锦大道5600号",
+    "main_products": "",
+    "registered_capital": ""
+  },
+  {
+    "id": "YQ000006",
+    "name": "加西亚电子电器股份有限公司",
+    "rank": 7,
+    "url": "https://www.gacia.com.cn/ABOUT.html",
+    "contact_address": "浙江省温州市乐清市大桥工业区楠溪江路1号",
+    "main_products": "断路器、物联网智慧断路器、电弧故障断路器",
+    "registered_capital": ""
+  },
+  {
+    "id": "YQ000008",
+    "name": "方大控股有限公司",
+    "rank": 8,
+    "url": "https://www.fangdatools.com/about.html",
+    "contact_address": "",
+    "main_products": "",
+    "registered_capital": ""
+  },
+  {
+    "id": "YQ000010",
+    "name": "温州意华接插件股份有限公司",
+    "rank": 10,
+    "url": "https://www.czt.com.cn/",
+    "contact_address": "浙江省温州市乐清市翁垟街道意华科技园华星路2号",
+    "main_products": "网络及光电连接器、电源连接器、汽车连接器、线束",
+    "registered_capital": ""
+  },
+  {
+    "id": "YQ000011",
+    "name": "浙江奔一新能源有限公司",
+    "rank": 11,
+    "url": "https://zjbeny.com/about-zjbeny/",
+    "contact_address": "浙江省温州市乐清市北白象镇温州大桥工业区长江路",
+    "main_products": "光伏直流保护元件、光伏智能关断器、微型逆变器",
+    "registered_capital": ""
+  },
+  {
+    "id": "YQ000012",
+    "name": "温州龙华日用电子有限公司",
+    "rank": 12,
+    "url": "http://www.cn-cableties.com/",
+    "contact_address": "",
+    "main_products": "",
+    "registered_capital": ""
+  },
+  {
+    "id": "YQ000015",
+    "name": "乐清市八达光电科技股份有限公司",
+    "rank": 13,
+    "url": "https://www.badagd.com/",
+    "contact_address": "",
+    "main_products": "",
+    "registered_capital": ""
+  },
+  {
+    "id": "YQ000014",
+    "name": "科都电气股份有限公司",
+    "rank": 14,
+    "url": "https://www.kedu.cn/cn/contact.php",
+    "contact_address": "浙江乐清市虹桥蒲岐工业区C座",
+    "main_products": "电动工具开关、电机保护、漏电保护插头插座、断路器、工业插头插座",
+    "registered_capital": ""
+  },
+  {
+    "id": "YQ000019",
+    "name": "浙江科瑞普电气有限公司",
+    "rank": 15,
+    "url": "https://www.kripal.com/cn/about.html",
+    "contact_address": "浙江乐清温州大桥工业区",
+    "main_products": "低压电气、防水电气、新能源电气产品",
+    "registered_capital": ""
+  },
+  {
+    "id": "YQ000020",
+    "name": "浙江德威硬质合金制造股份有限公司",
+    "rank": 18,
+    "url": "http://www.cn-dewei.com/",
+    "contact_address": "",
+    "main_products": "",
+    "registered_capital": ""
+  },
+  {
+    "id": "YQ000016",
+    "name": "合兴汽车电子股份有限公司",
+    "rank": 19,
+    "url": "https://www.cwb.com.cn/zh-hans/?p=62966",
+    "contact_address": "",
+    "main_products": "新能源汽车系统、智能驾驶及座舱系统零部件、汽车动力系统零部件",
+    "registered_capital": ""
+  },
+  {
+    "id": "YQ000026",
+    "name": "金卡智能集团股份有限公司",
+    "rank": 21,
+    "url": "https://www.jinka.cn/support/contact.html?mt=1",
+    "contact_address": "浙江省杭州市钱塘区元成路161号",
+    "main_products": "",
+    "registered_capital": ""
+  },
+  {
+    "id": "YQ000023",
+    "name": "安德利集团有限公司",
+    "rank": 25,
+    "url": "https://www.andeli.cn/contactus.html",
+    "contact_address": "浙江省乐清市经济开发区纬七路208号安德利科技园",
+    "main_products": "",
+    "registered_capital": ""
+  },
+  {
+    "id": "YQ000025",
+    "name": "温州华嘉电器有限公司",
+    "rank": 26,
+    "url": "https://www.huajiagroup.com/cn/about.html",
+    "contact_address": "",
+    "main_products": "小型断路器、熔断器、塑壳断路器、交流接触器、漏电断路器、光伏直流开关配电箱",
+    "registered_capital": ""
+  },
+  {
+    "id": "YQ000027",
+    "name": "新亚电子股份有限公司",
+    "rank": 27,
+    "url": "https://www.xinya-cn.com/INVESTOR.html",
+    "contact_address": "浙江省乐清市北白象镇赖宅智能产业园区潘珠垟路1号",
+    "main_products": "",
+    "registered_capital": ""
+  },
+  {
+    "id": "YQ000030",
+    "name": "温州奥来电器有限公司",
+    "rank": 29,
+    "url": "https://www.aoelec.com/job/",
+    "contact_address": "浙江乐清柳市镇新光工业区振兴路7号",
+    "main_products": "",
+    "registered_capital": ""
+  },
+  {
+    "id": "YQ000031",
+    "name": "温州恩波利电气有限公司",
+    "rank": 30,
+    "url": "https://www.wzebl.com/",
+    "contact_address": "",
+    "main_products": "",
+    "registered_capital": ""
+  },
+  {
+    "id": "YQ000044",
+    "name": "浙江法拉迪电气股份有限公司",
+    "rank": 33,
+    "url": "https://www.farady.cn/",
+    "contact_address": "",
+    "main_products": "新能源变压器、智能馈线调压器",
+    "registered_capital": "5350万元人民币（官网自述）"
+  },
+  {
+    "id": "YQ000039",
+    "name": "浙江致威电子科技有限公司",
+    "rank": 36,
+    "url": "https://www.zwelec.com/",
+    "contact_address": "浙江省乐清市虹桥镇东电子产业园",
+    "main_products": "汽车保险丝盒、高压配电盒、交直流充电枪及插座、智能控制开关",
+    "registered_capital": ""
+  },
+  {
+    "id": "YQ000037",
+    "name": "乐清市宏业电子元件有限公司",
+    "rank": 38,
+    "url": "http://www.yqhy.com/",
+    "contact_address": "",
+    "main_products": "",
+    "registered_capital": ""
+  },
+  {
+    "id": "YQ000042",
+    "name": "浙江天正电气股份有限公司",
+    "rank": 41,
+    "url": "https://ck.tengen.com.cn/newNews/209.html",
+    "contact_address": "",
+    "main_products": "配电电器、终端电器、电源电器、控制电器、智能仪表、变频器、中压电器",
+    "registered_capital": ""
+  },
+  {
+    "id": "YQ000038",
+    "name": "浙江京红电器有限公司",
+    "rank": 43,
+    "url": "https://www.cnjhele.com/about/index.html",
+    "contact_address": "",
+    "main_products": "接线端子、连接器",
+    "registered_capital": ""
+  },
+  {
+    "id": "YQ000045",
+    "name": "浙江伏尔特电器有限公司",
+    "rank": 44,
+    "url": "https://www.chinafuerte.com/",
+    "contact_address": "",
+    "main_products": "熔断器、避雷器、隔离开关",
+    "registered_capital": ""
+  },
+  {
+    "id": "YQ000052",
+    "name": "浙江泰科天唯电气有限公司",
+    "rank": 47,
+    "url": "https://www.chtaike.com.cn/",
+    "contact_address": "",
+    "main_products": "电源电涌保护器（SPD）、电源防雷箱、信号防雷器、天馈同轴电涌保护器",
+    "registered_capital": ""
+  },
+  {
+    "id": "YQ000046",
+    "name": "浙江百诺电气有限公司",
+    "rank": 48,
+    "url": "https://www.cnznt.com/cn/products.aspx",
+    "contact_address": "浙江省乐清市经济开发区经八路385号",
+    "main_products": "门铃、灯具、智能家居、安防报警系统、遥控插座",
+    "registered_capital": ""
+  },
+  {
+    "id": "YQ000048",
+    "name": "浙江乾纳电气有限公司",
+    "rank": 51,
+    "url": "https://www.traner.net/cn/Index.php?class_id=22&r=page%2FCategory%2Findex",
+    "contact_address": "浙江省温州市乐清市北白象镇高新大道3288号",
+    "main_products": "",
+    "registered_capital": ""
+  },
+  {
+    "id": "YQ000049",
+    "name": "浙江东亚电子有限公司",
+    "rank": 52,
+    "url": "https://www.cndongya.com/gsxw/",
+    "contact_address": "浙江省乐清市翁洋街道工业区",
+    "main_products": "高低压直流接触器、分流器、断路器、智能高压配电盒",
+    "registered_capital": ""
+  },
+  {
+    "id": "YQ000056",
+    "name": "浙江力夫自控技术股份有限公司",
+    "rank": 57,
+    "url": "https://www.lefoo.cn/contactus.html",
+    "contact_address": "",
+    "main_products": "",
+    "registered_capital": ""
+  },
+  {
+    "id": "YQ000054",
+    "name": "弘乐集团有限公司",
+    "rank": 58,
+    "url": "http://www.honleworld.com/",
+    "contact_address": "",
+    "main_products": "",
+    "registered_capital": ""
+  },
+  {
+    "id": "YQ000057",
+    "name": "浙江合丰科技有限公司",
+    "rank": 59,
+    "url": "http://www.hefengele.com/",
+    "contact_address": "",
+    "main_products": "",
+    "registered_capital": ""
+  },
+  {
+    "id": "YQ000062",
+    "name": "浙江宝龙机电有限公司",
+    "rank": 60,
+    "url": "https://www.baolong.com/about.php?css=1&getm=1",
+    "contact_address": "浙江省乐清市宁康东路388号",
+    "main_products": "微型振动马达、微型驱动马达、复位开关",
+    "registered_capital": ""
+  },
+  {
+    "id": "YQ000059",
+    "name": "红波按钮制造有限公司",
+    "rank": 63,
+    "url": "https://www.hongbo.cn/about_us.html",
+    "contact_address": "浙江省温州乐清市七里港电气产业园上浦二路25号",
+    "main_products": "按钮开关、信号指示灯、开关配套附件",
+    "registered_capital": "8008万元人民币（官网自述）"
+  },
+  {
+    "id": "YQ000066",
+    "name": "曼瑞德光储系统(浙江)有限公司",
+    "rank": 67,
+    "url": "https://menred-ess.cn/chanpinzhongxin/",
+    "contact_address": "",
+    "main_products": "磷酸铁锂电池簇、工商业及住宅光伏储能系统、逆变器",
+    "registered_capital": ""
+  },
+  {
+    "id": "YQ000070",
+    "name": "浙江金莱勒电气股份有限公司",
+    "rank": 71,
+    "url": "https://grlele.com/",
+    "contact_address": "",
+    "main_products": "熔断器、母线系统、隔离开关",
+    "registered_capital": ""
+  },
+  {
+    "id": "YQ000076",
+    "name": "浙江康信电器集团有限公司",
+    "rank": 74,
+    "url": "https://cn.conshion.com/aboutus.html",
+    "contact_address": "",
+    "main_products": "汽车开关、保险丝及继电器盒、控制模块、连接器、传感器",
+    "registered_capital": ""
+  },
+  {
+    "id": "YQ000071",
+    "name": "浙江春生电子有限公司",
+    "rank": 78,
+    "url": "http://chunsheng.com/",
+    "contact_address": "",
+    "main_products": "",
+    "registered_capital": ""
+  },
+  {
+    "id": "YQ000075",
+    "name": "金三角电力科技股份有限公司",
+    "rank": 80,
+    "url": "https://www.jinsant.com/",
+    "contact_address": "",
+    "main_products": "",
+    "registered_capital": ""
+  },
+  {
+    "id": "YQ000079",
+    "name": "温州港源电子有限公司",
+    "rank": 83,
+    "url": "https://www.gangyuan.com/gygy.html",
+    "contact_address": "",
+    "main_products": "轻触开关、微动开关、拨码开关、编码器、AC/DC插座",
+    "registered_capital": ""
+  },
+  {
+    "id": "YQ000089",
+    "name": "温州罗克维电气有限公司",
+    "rank": 92,
+    "url": "https://www.rockwill.cn/contact-us",
+    "contact_address": "",
+    "main_products": "",
+    "registered_capital": ""
+  },
+  {
+    "id": "YQ000102",
+    "name": "浙江格亚电气有限公司",
+    "rank": 93,
+    "url": "https://www.cngeya.com/",
+    "contact_address": "浙江省温州市乐清市北白象镇温州大桥工业区",
+    "main_products": "时间继电器、智能断路器、双电源自动转换开关、过欠压保护器",
+    "registered_capital": ""
+  }
+]

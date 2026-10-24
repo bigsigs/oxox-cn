@@ -1,5 +1,8 @@
 ---
+import "../../styles/reference.css";
+import "../../styles/reference-pages.css";
 import Wordmark from "../../components/Wordmark.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
 import seoCompanies from "../../data/seo-companies.js";
 import {
   filterSeoCompanies,
@@ -945,27 +948,18 @@ const datasetSchema = {
     }
   </style>
 </head>
-<body>
+<body class="reference-page">
   <div class="noise" aria-hidden="true"></div>
 
-  <header class="site-header shell">
-    <a class="brand" href="/" aria-label="OXOX 乐清出口数据首页">
-      <Wordmark />
-      <span class="brand-label">乐清出口数据</span>
-    </a>
-    <nav class="header-nav" aria-label="主要导航">
-      <a href="/">首页</a>
-      <a href="/yueqing-export-ranking/">出口排名</a>
-      <a href="/articles/">外贸月报</a>
-      <a href="/yueqing-seo/" aria-current="page">SEO 榜单</a>
-    </nav>
-  </header>
+  <div style="max-width:1080px;margin:0 auto;padding:0 20px;">
+    <SiteHeader active="seo" showTheme={false} />
+  </div>
 
   <main>
     <section class="hero shell">
       <div>
         <p class="eyebrow">YUEQING SEARCH INTELLIGENCE / 乐清搜索情报</p>
-        <h1>乐清 SEO<br><span class="title-accent">榜单</span></h1>
+        <h1>乐清 SEO 榜单</h1>
         <p class="hero-intro">
           聚焦乐清电气企业的<strong>自然流量、关键词、链接资产与 AI 品牌曝光</strong>。
           以域名为观察对象，用统一快照比较相对位置和增长信号。

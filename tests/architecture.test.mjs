@@ -1,455 +1,317 @@
 import assert from "node:assert/strict";
-import { readFile, readdir } from "node:fs/promises";
+import { access, readFile } from "node:fs/promises";
 import { test } from "node:test";
 
 const root = new URL("../", import.meta.url);
 const read = (path) => readFile(new URL(path, root), "utf8");
+const readJson = async (path) => JSON.parse(await read(path));
+const companyPath = (id) => `/yueqing-export-ranking/company/${id}/`;
+const builtPath = (path) => `dist${path}index.html`;
+const dataPath = "public/data/yueqing-export-ranking/";
+const publicRoutes = [
+  "/", "/yueqing-export-ranking/", "/yueqing-seo/", "/articles/",
+  "/tools/", "/about-data/", "/product-image-resizer/", "/webp-converter/",
+];
 
-test("Astro owns all existing public routes", async () => {
-  const routes = [
-    "src/pages/index.astro",
-    "src/pages/product-image-resizer/index.astro",
-    "src/pages/webp-converter/index.astro",
-    "src/pages/yueqing-export-ranking/index.astro",
-    "src/pages/yueqing-seo/index.astro",
-  ];
+const decodeHtml = (value) => String(value)
+  .replace(/&#x([\da-f]+);/gi, (_, number) => String.fromCodePoint(parseInt(number, 16)))
+  .replace(/&#(\d+);/g, (_, number) => String.fromCodePoint(Number(number)))
+  .replace(/&quot;/g, '"').replace(/&#0*39;|&apos;/g, "'")
+  .replace(/&lt;/g, "<").replace(/&gt;/g, ">")
+  .replace(/&nbsp;/g, " ").replace(/&amp;/g, "&");
+const textOf = (html) => decodeHtml(html
+  .replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi, " ")
+  .replace(/<[^>]*>/g, " ")).replace(/\s+/g, " ").trim();
+const compactText = (value) => String(value).replace(/\s+/g, "");
+const attributesOf = (html) => Object.fromEntries([...html.matchAll(
+  /([\w:-]+)(?:\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+)))?/g,
+)].map((match) => [match[1].toLowerCase(), decodeHtml(match[2] ?? match[3] ?? match[4] ?? "")]));
+const anchorsOf = (html) => [...html.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/gi)]
+  .map((match) => ({ ...attributesOf(match[1]), text: textOf(match[2]) }));
+const tagsOf = (html, tag) => [...html.matchAll(new RegExp(`<${tag}\\b([^>]*)>`, "gi"))]
+  .map((match) => attributesOf(match[1]));
+const hasId = (html, id) => new RegExp(`\\bid=["']${id}["']`).test(html);
+const mainOf = (html) => html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)?.[1] ?? "";
 
-  for (const route of routes) {
-    const source = await read(route);
-    assert.match(source, /<!doctype html>/i);
+function elementById(html, id) {
+  const start = new RegExp(`<([a-z][\\w:-]*)\\b[^>]*\\bid=["']${id}["'][^>]*>`, "i").exec(html);
+  assert.ok(start, `missing #${id}`);
+  const tag = start[1];
+  if (["input", "img", "br", "hr", "meta", "link"].includes(tag.toLowerCase())) return start[0];
+  const tokens = new RegExp(`</?${tag}\\b[^>]*>`, "gi");
+  tokens.lastIndex = start.index;
+  let depth = 0;
+  for (let token; (token = tokens.exec(html));) {
+    depth += token[0].startsWith("</") ? -1 : 1;
+    if (depth === 0) return html.slice(start.index, tokens.lastIndex);
   }
-});
+  assert.fail(`unclosed #${id}`);
+}
 
-test("every primary indexable route declares a canonical URL and matching structured data", async () => {
-  const routes = [
-    "src/pages/index.astro",
-    "src/pages/articles/index.astro",
-    "src/pages/product-image-resizer/index.astro",
-    "src/pages/webp-converter/index.astro",
-    "src/pages/yueqing-export-ranking/index.astro",
-    "src/pages/yueqing-seo/index.astro",
-  ];
+function schemaNodes(html) {
+  return [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)]
+    .filter((match) => attributesOf(match[1]).type === "application/ld+json")
+    .flatMap((match) => {
+      const schema = JSON.parse(match[2]);
+      return schema["@graph"] ?? [schema];
+    });
+}
 
-  for (const route of routes) {
-    const source = await read(route);
-    assert.match(source, /rel="canonical"/, `${route} should declare a canonical URL`);
-    assert.match(source, /application\/ld\+json/, `${route} should publish JSON-LD`);
+function assertCanonical(html, path) {
+  const canonical = tagsOf(html, "link").filter((link) => link.rel === "canonical");
+  assert.equal(canonical.length, 1, `${path} needs one canonical URL`);
+  assert.equal(canonical[0].href, new URL(path, "https://oxox.cn").href);
+}
+
+function assertSafeExternalLinks(html, label) {
+  for (const link of anchorsOf(html)) {
+    assert.doesNotMatch(link.href ?? "", /^\s*(?:javascript|data|vbscript):/i, `${label}: unsafe link`);
+    if (!/^https?:\/\//i.test(link.href ?? "") || link.target !== "_blank") continue;
+    const rel = new Set((link.rel ?? "").split(/\s+/));
+    assert.ok(rel.has("noopener") && rel.has("noreferrer"), `${label}: ${link.href} needs secure rel tokens`);
   }
+}
 
-  assert.match(await read("src/pages/index.astro"), /"@type": "WebSite"/);
-  assert.match(await read("src/pages/yueqing-export-ranking/index.astro"), /"@type": "Dataset"/);
-  assert.match(await read("src/pages/yueqing-seo/index.astro"), /"@type": "Dataset"/);
-  assert.match(await read("src/pages/product-image-resizer/index.astro"), /"@type": "SoftwareApplication"/);
-  assert.match(await read("src/pages/webp-converter/index.astro"), /"@type": "SoftwareApplication"/);
-  assert.match(await read("src/pages/articles/index.astro"), /"@type": "CollectionPage"/);
-});
-
-test("Yueqing SEO observatory is an OXOX-native data page", async () => {
-  const [home, page] = await Promise.all([
-    read("src/pages/index.astro"),
-    read("src/pages/yueqing-seo/index.astro"),
+test("the build and sitemap preserve every public route and stable company URL", async () => {
+  const [sitemap, robots, companies] = await Promise.all([
+    read("dist/sitemap.xml"), read("dist/robots.txt"), readJson(`${dataPath}companies.json`),
   ]);
-
-  assert.match(home, /href="\/yueqing-seo\/"/);
-  assert.match(home, /href="\/yueqing-seo\/">SEO 榜单<\/a>/);
-  assert.match(page, /href="\/yueqing-seo\/" aria-current="page">SEO 榜单<\/a>/);
-  assert.match(page, /<Wordmark/);
-  assert.match(page, /乐清 SEO 榜单/);
-  assert.match(page, /YUEQING SEARCH INTELLIGENCE/);
-  assert.match(page, /id="seoSearch"/);
-  assert.match(page, /id="seoFilter"/);
-  assert.match(page, /id="seoSort"/);
-  assert.match(page, /id="seoRows"/);
-  assert.match(page, /Semrush/);
-  assert.match(page, /Google Search Console/);
-  assert.match(page, /第三方估算数据/);
-  assert.match(page, /不代表企业真实流量/);
-  assert.match(page, /const pageSize = 20/);
-  assert.match(page, /\/company-icons\/\$\{company\.domain\}\.png/);
-  assert.doesNotMatch(page, /<em>观察台<\/em>/);
-  assert.match(page, /<span class="title-accent">榜单<\/span>/);
-  assert.match(page, /class="leader-stairs"/);
-  assert.match(page, /class="leader-icon"/);
-  assert.match(page, /company\.icon/);
-  assert.match(page, /h1\s*\{[^}]*font:\s*650/s);
-  assert.match(page, /\.hero\s*\{[^}]*min-height:\s*440px[^}]*padding:\s*44px 0 58px/s);
-  assert.match(page, /\.pagination > button\s*\{[^}]*width:\s*104px/s);
-  assert.match(page, /\.pagination > button:first-child\s*\{[^}]*justify-self:\s*start/s);
-  assert.match(page, /\.pagination > button:last-child\s*\{[^}]*justify-self:\s*end/s);
-  assert.match(page, /rel="nofollow noopener noreferrer"/);
-  assert.match(page, /domain\.rel = "nofollow noopener noreferrer"/);
-  assert.match(page, /import seoCompanies from "\.\.\/\.\.\/data\/seo-companies\.js"/);
-  assert.doesNotMatch(page, /from ["']react["']/);
-});
-
-test("the shared OXOX wordmark is used by every page", async () => {
-  const component = await read("src/components/Wordmark.astro");
-  assert.match(component, /class="logo-dot dot-warm"/);
-  assert.match(component, /class="logo-dot dot-green"/);
-
-  for (const route of [
-    "src/pages/index.astro",
-    "src/pages/product-image-resizer/index.astro",
-    "src/pages/webp-converter/index.astro",
-    "src/pages/yueqing-export-ranking/index.astro",
-  ]) {
-    assert.match(await read(route), /<Wordmark/);
+  const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => new URL(decodeHtml(match[1])));
+  const paths = new Set(urls.map((url) => url.pathname));
+  assert.equal(paths.size, urls.length, "sitemap URLs must be unique");
+  for (const path of [...publicRoutes, ...companies.map((company) => companyPath(company.company_id))]) {
+    assert.ok(paths.has(path), `sitemap is missing ${path}`);
   }
+  await Promise.all(urls.map(async (url) => {
+    assert.equal(url.origin, "https://oxox.cn");
+    await access(new URL(builtPath(url.pathname), root));
+  }));
+  assert.match(robots, /Sitemap:\s*https:\/\/oxox\.cn\/sitemap\.xml/);
 });
 
-test("tool catalogue content comes from one shared data source", async () => {
-  const catalogue = await read("src/data/tools.js");
-  assert.match(catalogue, /商品图尺寸处理/);
-  assert.match(catalogue, /WebP 转换与重命名/);
-  assert.match(catalogue, /乐清出口排名/);
-  assert.match(catalogue, /乐清 SEO 榜单/);
-
-  const home = await read("src/pages/index.astro");
-  assert.match(home, /import tools from "\.\.\/data\/tools\.js"/);
-  assert.match(home, /const liveTools = tools\.filter/);
-});
-
-test("homepage makes Yueqing export company search the primary action", async () => {
-  const home = await read("src/pages/index.astro");
-  assert.match(home, /乐清出口数据/);
-  assert.match(home, /查询乐清企业/);
-  assert.match(home, /出口排名/);
-  assert.match(home, /action="\/yueqing-export-ranking\/"/);
-  assert.match(home, /name="q"/);
-  assert.match(home, /id="companySuggestions"/);
-  assert.match(home, /role="listbox"/);
-  assert.match(home, /aria-autocomplete="list"/);
-  assert.match(home, /2026-ytd-07\.json/);
-  assert.match(home, /suggestCompanies/);
-  assert.match(home, /\.company-search:focus-within\s*\{[^}]*z-index:\s*10/s);
-  assert.match(home, /\.company-suggestions\s*\{[^}]*position:\s*fixed/s);
-  assert.match(home, /document\.body\.append\(suggestionsBox\)/);
-  assert.match(home, /suggestionsBox\.contains\(event\.target\)/);
-  assert.match(home, /latestRanking\.records\.length/);
-  assert.match(home, /精准数值/);
-  assert.match(home, /periods\.periods\.length/);
-  assert.match(home, /class="full-ranking-cta"/);
-  assert.match(home, /FULL RANKING \/ 完整榜单/);
-  assert.match(home, /查看全部 \{formatNumber\(latestRanking\.records\.length\)\} 家企业完整排名/);
-  assert.match(home, /查看 \{latestRanking\.period\.label\}完整排名/);
-  assert.match(home, /辅助工具/);
-  assert.doesNotMatch(home, /进出口额/);
-});
-
-test("homepage header omits the data explanation shortcut while keeping the section", async () => {
-  const home = await read("src/pages/index.astro");
-  const headerNav = home.match(/<nav class="header-nav"[\s\S]*?<\/nav>/)?.[0];
-
-  assert.ok(headerNav);
-  assert.doesNotMatch(headerNav, /数据说明/);
-  assert.doesNotMatch(headerNav, /#data-capabilities/);
-  assert.match(home, /<section class="capabilities" id="data-capabilities">/);
-});
-
-test("site navigation labels the article center as foreign trade monthly reports", async () => {
-  const pages = await Promise.all([
-    read("src/pages/index.astro"),
-    read("src/pages/articles/index.astro"),
-    read("src/layouts/ArticleLayout.astro"),
-    read("src/pages/yueqing-seo/index.astro"),
-    read("src/pages/yueqing-export-ranking/index.astro"),
-    read("src/pages/yueqing-export-ranking/company/[companyId].astro"),
-  ]);
-
-  for (const page of pages) {
-    assert.match(page, /href="\/articles\/"[\s\S]{0,300}?外贸月报/);
+test("primary built pages retain canonical URLs, structured data and shared navigation", async () => {
+  for (const path of publicRoutes) {
+    const html = await read(builtPath(path));
+    assert.match(html, /<!doctype html>/i, path);
+    assertCanonical(html, path);
+    assert.ok(schemaNodes(html).length, `${path} needs valid JSON-LD`);
+    assert.match(html, /<header\b/i, `${path} needs site navigation`);
+    assert.ok(anchorsOf(html).some((link) => link.href === "/"), `${path} needs a home link`);
+    assertSafeExternalLinks(html, path);
   }
-});
-
-test("homepage footer credits SIGS with a secure external link", async () => {
-  const home = await read("src/pages/index.astro");
-  const footer = home.match(/<footer class="shell">[\s\S]*?<\/footer>/)?.[0];
-
-  assert.ok(footer);
-  assert.match(footer, /<a href="https:\/\/si\.gs\/"[^>]*>Design by SIGS<\/a>/);
-});
-
-test("ranking page labels the source as Jan-Jul cumulative data and hydrates homepage queries", async () => {
-  const page = await read("src/pages/yueqing-export-ranking/index.astro");
-  assert.match(page, /data-period-id="2026-ytd-07"/);
-  assert.match(page, /2026年1—7月/);
-  assert.match(page, /data-period-id="2026-ytd-06-exact"/);
-  assert.match(page, /2026年1—6月（精准数值）/);
-  assert.match(page, /amount_label/);
-  assert.match(page, /单位：万美元/);
-  assert.match(page, /源表未提供第 16 名/);
-  assert.match(page, /2026年1—6月累计出口额排名/);
-  assert.match(page, /id="rankingSearch"/);
-  assert.match(page, /id="rankingTableBody"/);
-  assert.match(page, /id="companyDrawer"/);
-  assert.match(page, /companies\.length/);
-  assert.match(page, /已收录 2026 年 1—5 月、1—4 月、1—3 月、1—2 月及 2025 年全年、1—11 月、1—10 月、1—6 月历史数据/);
-  assert.match(page, /data-period-id="2026-ytd-05"/);
-  assert.match(page, /data-period-id="2026-ytd-04"/);
-  assert.match(page, /data-period-id="2026-ytd-03"/);
-  assert.match(page, /data-period-id="2026-ytd-02"/);
-  assert.match(page, /data-period-id="2025-ytd-06"/);
-  assert.match(page, /data-period-id="2025-ytd-10"/);
-  assert.match(page, /data-period-id="2025-ytd-11"/);
-  assert.match(page, /data-period-id="2025-ytd-12"/);
-  assert.match(page, /id="periodSelect"/);
-  assert.match(page, /function renderRankChange/);
-  assert.match(page, /id="yearChangeHeading">较去年同期/);
-  assert.match(page, /function renderYearChange/);
-  assert.match(page, /去年未收录/);
-  assert.match(page, /待导入去年同期/);
-  assert.match(page, /2026年1—5月累计出口额排名/);
-  assert.match(page, /2026年1—4月累计出口额排名/);
-  assert.match(page, /2026年1—3月累计出口额排名/);
-  assert.match(page, /2026年1—2月累计出口额排名/);
-  assert.match(page, /2025年1—6月累计出口额排名/);
-  assert.match(page, /2025年1—12月累计出口额排名/);
-  assert.match(page, /new URLSearchParams\(location\.search\)\.get\("q"\)/);
-  assert.match(page, /search\.value = initialQuery/);
-  assert.match(page, /id="companyLinks"/);
-  assert.match(page, /company-profiles\.json/);
-  assert.match(page, /rel="nofollow noopener noreferrer"/);
-  assert.match(page, /\["https:", "http:"\]\.includes\(url\.protocol\)/);
-  assert.doesNotMatch(page, /进出口额/);
-  assert.doesNotMatch(page, /2026年6月出口额排名/);
-});
-
-test("company ranking profiles have crawlable static URLs and unique SEO content", async () => {
-  const [rankingPage, companyPage, sitemapPage, robots] = await Promise.all([
-    read("src/pages/yueqing-export-ranking/index.astro"),
-    read("src/pages/yueqing-export-ranking/company/[companyId].astro"),
-    read("src/pages/sitemap.xml.js"),
-    read("public/robots.txt"),
-  ]);
-
-  assert.match(rankingPage, /href="\/yueqing-export-ranking\/company\/\$\{escapeHtml\(record\.company_id\)\}\//);
-  assert.match(rankingPage, /event\.preventDefault\(\)/);
-  assert.match(rankingPage, /location\.replace\(`\/yueqing-export-ranking\/company\/\$\{companyId\}\//);
-  assert.match(rankingPage, /id="drawerProfileLink"/);
-  assert.match(rankingPage, /查看完整企业档案/);
-  assert.match(rankingPage, /profileLink\.href = `\/yueqing-export-ranking\/company\/\$\{companyId\}\//);
-  assert.match(companyPage, /export async function getStaticPaths/);
-  assert.match(companyPage, /companies\.map/);
-  assert.match(companyPage, /rel="canonical"/);
-  assert.match(companyPage, /rel="icon"/);
-  assert.match(companyPage, /application\/ld\+json/);
-  assert.match(companyPage, /RANKING HISTORY \/ 排名历史/);
-  assert.match(companyPage, /rel="nofollow noopener noreferrer"/);
-  assert.match(sitemapPage, /yueqing-export-ranking\/company/);
-  assert.match(robots, /Sitemap: https:\/\/oxox\.cn\/sitemap\.xml/);
-
-  const builtCompany = await read("dist/yueqing-export-ranking/company/YQ003159/index.html");
-  assert.match(builtCompany, /<title>浙江佳博科技股份有限公司出口排名与历史数据｜OXOX<\/title>/);
-  assert.match(builtCompany, /<link rel="canonical" href="https:\/\/oxox\.cn\/yueqing-export-ranking\/company\/YQ003159\/">/);
-  assert.match(builtCompany, /2026年1—7月累计排名/);
-  assert.match(builtCompany, /NO\. 3276/);
-  assert.match(builtCompany, /100万美元以下/);
-  assert.match(builtCompany, /（0 万美元）/);
-  assert.match(builtCompany, /2025年1—6月/);
-});
-
-test("curated company profiles keep external links separate from generated ranking data", async () => {
-  const [profilesSource, companiesSource] = await Promise.all([
-    read("public/data/yueqing-export-ranking/company-profiles.json"),
-    read("public/data/yueqing-export-ranking/companies.json"),
-  ]);
-  const profiles = JSON.parse(profilesSource);
-  const companies = JSON.parse(companiesSource);
-  const chint = companies.find((item) => item.company_name === "浙江正泰电器股份有限公司");
-  const beny = companies.find((item) => item.company_name === "浙江奔一新能源有限公司");
-  const kripal = companies.find((item) => item.company_name === "浙江科瑞普电气有限公司");
-  const vecas = companies.find((item) => item.company_name === "温州华嘉电器有限公司");
-  const tycotiu = companies.find((item) => item.company_name === "浙江泰科天唯电气有限公司");
-  const lsp = companies.find((item) => item.company_name === "温州猎雷电气有限公司");
-  const geya = companies.find((item) => item.company_name === "浙江格亚电气有限公司");
-  const geyaTrading = companies.find((item) => item.company_name === "温州格亚贸易有限公司");
-  const company = companies.find((item) => item.company_name === "乐清市名格思进出口有限公司");
-
-  assert.equal(chint?.company_id, "YQ000001");
-  assert.equal(profiles.YQ000001.links[0].url, "https://www.chintglobal.com/");
-  assert.equal(beny?.company_id, "YQ000011");
-  assert.equal(profiles.YQ000011.links[0].url, "https://www.beny.com/");
-  assert.equal(kripal?.company_id, "YQ000019");
-  assert.equal(profiles.YQ000019.links[0].url, "https://www.kripal.net/");
-  assert.equal(vecas?.company_id, "YQ000025");
-  assert.equal(profiles.YQ000025.links[0].url, "https://www.vecas.cn/cn/index.html");
-  assert.equal(tycotiu?.company_id, "YQ000052");
-  assert.equal(profiles.YQ000052.links[0].url, "http://www.chtaike.com.cn/");
-  assert.equal(lsp?.company_id, "YQ000454");
-  assert.equal(profiles.YQ000454.links[0].url, "https://lsp.global/");
-  assert.equal(geya?.company_id, "YQ000102");
-  assert.equal(profiles.YQ000102.links[0].url, "https://www.geya.net/");
-  assert.equal(geyaTrading?.company_id, "YQ000651");
-  assert.equal(profiles.YQ000651.links[0].url, "https://www.geya.net/");
-  assert.equal(company?.company_id, "YQ000080");
-  assert.deepEqual(profiles.YQ000080.links[0], {
-    type: "alibaba_store",
-    label: "阿里巴巴国际站",
-    url: "https://mggsdtie.en.alibaba.com/",
-    domain: "mggsdtie.en.alibaba.com",
-    source: "user_provided",
-    added_at: "2026-07-30",
-  });
-
-  const kinkong = companies.find((item) => item.company_name === "乐清市千工电器有限公司");
-  assert.equal(kinkong?.company_id, "YQ000130");
-  assert.deepEqual(profiles.YQ000130.links[0], {
-    type: "official_website",
-    label: "官方网站",
-    url: "https://www.kinkong.com/",
-    domain: "kinkong.com",
-    source: "user_provided",
-    added_at: "2026-07-30",
-  });
-
-  assert.equal(profiles.YQ000008.details.legal_name, "方大控股有限公司");
-  assert.equal(profiles.YQ000008.details.registered_on, "1997-03-24");
-  assert.equal(profiles.YQ000008.details.unified_social_credit_code, "91330382716178867Y");
-  assert.equal(profiles.YQ000008.details.legal_representative, "林昌方");
-  assert.equal(profiles.YQ000008.details.registered_address, "乐清市芙蓉镇工业区");
-  assert.equal(profiles.YQ000008.links[0].url, "https://www.fangdatools.com/");
-});
-
-test("ranking search exposes pinyin support and uses the requested change colors", async () => {
-  const page = await read("src/pages/yueqing-export-ranking/index.astro");
-  const home = await read("src/pages/index.astro");
-
-  assert.match(page, /输入企业名称、拼音或企业编号/);
-  assert.match(home, /支持企业名称、拼音或企业编号/);
-  assert.match(page, /\.rank-change\.up\s*\{\s*color:\s*var\(--orange\);\s*\}/);
-  assert.match(page, /\.rank-change\.down\s*\{\s*color:\s*var\(--green\);\s*\}/);
-  assert.match(page, /buildCompanySearchIndex/);
-  assert.match(page, /companies\.json/);
-});
-
-test("homepage keeps utility tools secondary to the export data experience", async () => {
-  const home = await read("src/pages/index.astro");
-  assert.match(home, /id="auxiliary-tools"/);
-  assert.match(home, /\{tool\.title\}/);
-  assert.match(home, /\{tool\.description\}/);
-  assert.doesNotMatch(home, /data-filter=/);
-  assert.doesNotMatch(home, /外贸邮件润色/);
-});
-
-test("built homepage keeps company search first and surfaces the latest monthly report", async () => {
-  const home = await read("dist/index.html");
-  const ranking = await read("dist/yueqing-export-ranking/index.html");
-
-  assert.match(home, /LATEST REPORT \/ 最新月报/);
-  assert.match(home, /乐清市 2026 年 1—7 月外贸情况分析/);
-  assert.match(home, /href="\/articles\/yueqing-foreign-trade-2026-jan-jul\/"/);
-  assert.match(home, /href="\/articles\/"/);
-  assert.match(ranking, /href="\/articles\/"/);
-  assert.ok(home.indexOf('class="company-search"') < home.indexOf("LATEST REPORT / 最新月报"));
-});
-
-test("homepage hero contains its rotating decorative orbit without page overflow", async () => {
-  const cssFiles = (await readdir(new URL("dist/_astro/", root))).filter((name) => name.endsWith(".css"));
-  const css = (await Promise.all(cssFiles.map((name) => read(`dist/_astro/${name}`)))).join("\n");
-  assert.match(css, /\.hero\{[^}]*overflow:\s*clip/s);
-});
-
-test("mobile homepage search prevents input zoom and follows the visual keyboard viewport", async () => {
-  const home = await read("src/pages/index.astro");
-
-  assert.match(home, /@media \(max-width:\s*760px\)[\s\S]*?\.company-search input\s*\{[^}]*font-size:\s*16px/s);
-  assert.match(home, /window\.visualViewport/);
-  assert.match(home, /visualViewport\?\.addEventListener\("resize",\s*positionSuggestions\)/);
-  assert.match(home, /document\.body\.classList\.add\("search-focused"\)/);
-  assert.match(home, /searchForm\.scrollIntoView\(\{\s*behavior:\s*"smooth",\s*block:\s*"start"\s*\}\)/);
-  assert.match(home, /body\.search-focused\s+\.hero-art\s*\{[^}]*animation:\s*none/s);
-});
-
-test("hero removes the issue number and keeps orbit dots above the copy", async () => {
-  const home = await read("src/pages/index.astro");
-
-  assert.doesNotMatch(home, /class="hero-no"/);
-  assert.doesNotMatch(home, /NO\.<br>001/);
-  assert.match(home, /\.hero-art\s*\{[^}]*z-index:\s*3/s);
-  assert.match(home, /\.orbit::before,\s*\.orbit::after\s*\{[^}]*z-index:\s*4/s);
-});
-
-test("homepage period card keeps rotated content inside the hero at medium widths", async () => {
-  const home = await read("src/pages/index.astro");
-
-  assert.match(home, /\.period-card strong\s*\{[^}]*white-space:\s*normal/s);
-  assert.match(home, /@media \(min-width:\s*961px\) and \(max-width:\s*1180px\)/);
-  assert.match(home, /\.period-card\s*\{[^}]*width:\s*min\(calc\(100% - 28px\),\s*340px\)[^}]*transform:\s*translateX\(-10px\)/s);
-  assert.match(home, /\.period-stat b\s*\{[^}]*min-width:\s*0[^}]*text-align:\s*right/s);
-});
-
-test("the production build preserves the current routes and UI hooks", async () => {
-  const expectations = {
-    "dist/index.html": [
-      "查询乐清企业",
-      'name="q"',
-      'action="/yueqing-export-ranking/"',
-      'id="companySuggestions"',
-      'aria-autocomplete="list"',
-      "3,291 条排名记录",
-      "12 个出口额区间",
-      "已收录 11 个周期",
-      'id="auxiliary-tools"',
-      'class="footer-mark"',
-      "product-image-resizer/",
-      "webp-converter/",
-    ],
-    "dist/product-image-resizer/index.html": [
-      "商品图尺寸处理",
-      'id="dropZone"',
-      'id="editModal"',
-      "全部导出 WebP",
-    ],
-    "dist/webp-converter/index.html": [
-      "WebP 转换与重命名",
-      'id="dropZone"',
-      'id="nameTemplate"',
-      'src="/webp-converter/app.js"',
-    ],
-    "dist/yueqing-export-ranking/index.html": [
-      "2026年1—7月累计出口额排名",
-      "2026年1—6月累计出口额排名",
-      'id="rankingSearch"',
-      'id="rankingTableBody"',
-      'id="companyDrawer"',
-      "3,742",
-      "跨期企业档案",
-      'id="yearChangeHeading"',
-      "较去年同期",
-      "已收录 2026 年 1—5 月、1—4 月、1—3 月、1—2 月及 2025 年全年、1—11 月、1—10 月、1—6 月历史数据",
-      'data-period-id="2026-ytd-05"',
-      'data-period-id="2026-ytd-04"',
-      'data-period-id="2026-ytd-03"',
-      'data-period-id="2026-ytd-02"',
-      'data-period-id="2025-ytd-06"',
-      'data-period-id="2025-ytd-10"',
-      'data-period-id="2025-ytd-11"',
-      'data-period-id="2025-ytd-12"',
-      "2026年1—5月累计出口额排名",
-      "2026年1—4月累计出口额排名",
-      "2026年1—3月累计出口额排名",
-      "2026年1—2月累计出口额排名",
-      "2025年1—6月累计出口额排名",
-      "2025年1—10月累计出口额排名",
-      "2025年1—11月累计出口额排名",
-      "2025年1—12月累计出口额排名",
-    ],
-    "dist/yueqing-seo/index.html": [
-      "乐清 SEO 榜单",
-      "YUEQING SEARCH INTELLIGENCE",
-      'id="seoSearch"',
-      'id="seoFilter"',
-      'id="seoSort"',
-      'id="seoRows"',
-      "第三方估算数据",
-      "Semrush",
-      "Google Search Console",
-      "Design by SIGS",
-    ],
+  const expectedTypes = {
+    "/": "WebSite", "/yueqing-export-ranking/": "Dataset", "/yueqing-seo/": "Dataset",
+    "/articles/": "CollectionPage", "/product-image-resizer/": "SoftwareApplication", "/webp-converter/": "SoftwareApplication",
   };
-
-  for (const [path, needles] of Object.entries(expectations)) {
-    const html = await read(path);
-    for (const needle of needles) assert.ok(html.includes(needle), `${path} is missing ${needle}`);
+  for (const [path, type] of Object.entries(expectedTypes)) {
+    const nodes = schemaNodes(await read(builtPath(path)));
+    assert.ok(nodes.some((node) => [node["@type"]].flat().includes(type)), `${path} needs ${type} JSON-LD`);
   }
+});
+
+test("the homepage publishes the real first thirty companies before JavaScript runs", async () => {
+  const [html, periods] = await Promise.all([read("dist/index.html"), readJson(`${dataPath}periods.json`)]);
+  const period = periods.periods.find((item) => item.id === periods.latest);
+  const dataset = await readJson(`${dataPath}${period.file}`);
+  const links = anchorsOf(elementById(html, "rankingRows"))
+    .filter((link) => /^\/yueqing-export-ranking\/company\/YQ\d+\/$/.test(link.href));
+  assert.ok(links.length >= 30, "initial HTML must expose at least thirty real company links");
+  dataset.records.slice(0, 30).forEach((record, index) => {
+    assert.equal(links[index].href, companyPath(record.company_id));
+    assert.ok(links[index].text.includes(record.company_name), `row ${index + 1} needs the source company name`);
+    assert.ok(compactText(links[index].text).includes(compactText(record.amount_label || record.band_label)), `row ${index + 1} needs its source amount label`);
+  });
+  const main = mainOf(html);
+  const summary = textOf(main.slice(0, main.indexOf('id="rankingSearch"')));
+  const text = textOf(main);
+  assert.ok(text.includes(period.label));
+  assert.ok(summary.includes(dataset.records.length.toLocaleString("zh-CN")), "summary needs the source record count before the search");
+  assert.match(summary, new RegExp(`(?:^|\\D)${dataset.bands.length}(?:\\D|$)`), "summary needs the source amount-band count");
+  assert.match(summary, new RegExp(`(?:^|\\D)${periods.periods.length}(?:\\D|$)`), "summary needs the source period count");
+  assert.match(text, /累计/);
+  assert.match(text, /区间/);
+  assert.doesNotMatch(text, /2026年7月出口额排名|2026年6月出口额排名|进出口额排名/);
+});
+
+test("homepage controls expose search, every source period, categories and further results", async () => {
+  const [html, periods] = await Promise.all([read("dist/index.html"), readJson(`${dataPath}periods.json`)]);
+  const search = tagsOf(html, "input").find((input) => input.id === "rankingSearch");
+  assert.ok(search);
+  assert.equal(search.type, "search");
+  assert.match(`${search.placeholder ?? ""} ${search["aria-label"] ?? ""}`, /企业|公司/);
+  const options = [...elementById(html, "periodSelect").matchAll(/<option\b([^>]*)>([\s\S]*?)<\/option>/gi)]
+    .map((match) => ({ ...attributesOf(match[1]), text: textOf(match[2]) }));
+  for (const period of periods.periods) {
+    const option = options.find((item) => item.value === period.id);
+    assert.ok(option, `period switch is missing ${period.id}`);
+    assert.ok(option.text.includes(period.label));
+  }
+  assert.equal((options.find((option) => "selected" in option) ?? options[0]).value, periods.latest);
+  assert.ok(tagsOf(elementById(html, "rankTabs"), "button").length > 1, "ranking categories need usable controls");
+  assert.ok(tagsOf(html, "button").some((button) => button.id === "loadMore"), "further results need an explicit button");
+  const modules = tagsOf(html, "script").filter((script) => script.type === "module" && script.src?.startsWith("/_astro/"));
+  assert.ok(modules.length, "ranking controls need their built client module");
+  await Promise.all(modules.map((script) => access(new URL(`dist${script.src}`, root))));
+});
+
+test("homepage keeps reports and utilities in the menu and their independent pages", async () => {
+  const html = await read("dist/index.html");
+  const header = html.match(/<header\b[^>]*>([\s\S]*?)<\/header>/i)?.[1] ?? "";
+  for (const path of ["/articles/", "/tools/", "/yueqing-seo/", "/about-data/"]) {
+    assert.ok(anchorsOf(header).some((link) => link.href === path), `header menu needs ${path}`);
+  }
+  const main = mainOf(html);
+  assert.ok(main, "homepage needs a main content region");
+  assert.doesNotMatch(main, /id=["'](?:auxiliary-tools|data-capabilities)["']|LATEST REPORT\s*\/\s*最新月报/);
+  for (const link of anchorsOf(main)) {
+    assert.doesNotMatch(link.href ?? "", /^\/(?:product-image-resizer|webp-converter)\/|^\/articles\/.+\/$/, "homepage should focus on the ranking");
+  }
+  const tools = anchorsOf(mainOf(await read("dist/tools/index.html")));
+  for (const path of ["/product-image-resizer/", "/webp-converter/"]) {
+    assert.ok(tools.some((link) => link.href === path), `tool directory needs ${path}`);
+  }
+});
+
+test("company pages preserve stable identity, source histories and genuine zero amounts", async () => {
+  const [companies, periods] = await Promise.all([
+    readJson(`${dataPath}companies.json`), readJson(`${dataPath}periods.json`),
+  ]);
+  const datasets = await Promise.all(periods.periods.map(async (period) => ({
+    period, dataset: await readJson(`${dataPath}${period.file}`),
+  })));
+  for (const id of ["YQ000001", "YQ003159", "YQ003742", "YQ001153", "YQ000091"]) {
+    const company = companies.find((item) => item.company_id === id);
+    const html = await read(builtPath(companyPath(id)));
+    assertCanonical(html, companyPath(id));
+    const nodes = schemaNodes(html);
+    for (const type of ["WebPage", "Dataset", "BreadcrumbList"]) {
+      assert.ok(nodes.some((node) => node["@type"] === type), `${id} needs ${type} JSON-LD`);
+    }
+    assert.ok(textOf(html).includes(company.company_name));
+    assert.ok(textOf(html).includes(id));
+    const expected = datasets.flatMap(({ period, dataset }) => dataset.records
+      .filter((record) => record.company_id === id).map((record) => ({ period, record })));
+    const panelStart = html.indexOf(elementById(html, "history-title"));
+    const primaryHistory = html.slice(panelStart);
+    const visibleTableHtml = primaryHistory.slice(0, primaryHistory.indexOf('<details class="older-history"'));
+    const rows = [...visibleTableHtml.matchAll(/<tr\b([^>]*)>([\s\S]*?)<\/tr>/gi)]
+      .map((match) => ({ ...attributesOf(match[1]), text: textOf(match[2]) }))
+      .filter((row) => row["data-period-id"]);
+    const latestAsOf = expected.reduce(
+      (latest, item) => item.period.as_of > latest ? item.period.as_of : latest,
+      "",
+    );
+    const visibleExpected = expected.filter(({ period }) => period.as_of === latestAsOf);
+    assert.equal(rows.length, visibleExpected.length, `${id}: main history table must show only the latest month`);
+    for (const { period, record } of expected) {
+      const amount = record.amount_label ?? record.band_label ?? "未提供";
+      assert.ok(
+        compactText(textOf(html)).includes(compactText(amount.replace(/\s+/g, ""))),
+        `${id}: preserve folded source amount ${period.id}`,
+      );
+    }
+    visibleExpected.forEach(({ period, record }, index) => {
+      assert.equal(rows[index]["data-period-id"], period.id);
+      const periodLabel = period.label.replace(/（精准数值）|（区间数据）/g, "");
+      assert.ok(rows[index].text.includes(periodLabel), `${id}: preserve the cumulative period`);
+      assert.match(rows[index].text, record.amount_label ? /精准数值/ : /金额区间|出口额区间/);
+      assert.ok(rows[index].text.includes(record.amount_label || record.band_label), `${id}: preserve the source amount`);
+      if (record.source_duplicate) assert.match(rows[index].text, /待核对|来源重复|重复记录|源表多条/);
+    });
+    if (new Set(expected.map(({ period }) => period.as_of)).size > 1) {
+      assert.match(html, /查看历史月份/, `${id}: older months must remain available behind the history disclosure`);
+    }
+    if (id === "YQ003159") assert.ok(textOf(html).includes("（0 万美元）"), "a confirmed zero amount is valid data");
+    if (id === "YQ003742") {
+      assert.equal(rows.length, 1);
+      assert.doesNotMatch(textOf(mainOf(html)), /[（(]\s*0(?:\.0+)?\s*万美元\s*[）)]|(?:NO\.|#)\s*0\b/);
+    }
+    assertSafeExternalLinks(html, id);
+  }
+});
+
+test("curated company links and verified company facts survive the redesign", async () => {
+  const [profiles, companies] = await Promise.all([
+    readJson(`${dataPath}company-profiles.json`), readJson(`${dataPath}companies.json`),
+  ]);
+  const identities = new Set(companies.map((company) => company.company_id));
+  for (const [id, profile] of Object.entries(profiles)) {
+    assert.ok(identities.has(id), `${id} must belong to a stable company identity`);
+    const html = await read(builtPath(companyPath(id)));
+    const links = anchorsOf(mainOf(html));
+    for (const source of profile.links ?? []) {
+      if (!["http:", "https:"].includes(new URL(source.url).protocol)) continue;
+      const link = links.find((item) => item.href === source.url);
+      assert.ok(link, `${id}: preserve curated link ${source.url}`);
+      assert.ok((link.rel ?? "").split(/\s+/).includes("nofollow"), `${id}: curated websites need nofollow`);
+    }
+    if (profile.details) {
+      const text = textOf(mainOf(html));
+      for (const field of ["legal_name", "unified_social_credit_code", "legal_representative", "registered_address"]) {
+        if (profile.details[field]) assert.ok(text.includes(profile.details[field]), `${id}: preserve verified ${field}`);
+      }
+    }
+    assertSafeExternalLinks(html, id);
+  }
+});
+
+test("verified company icons use a website curated for the same company", async () => {
+  const [icons, profiles] = await Promise.all([
+    readJson("src/data/verified-company-icons.json"),
+    readJson(`${dataPath}company-profiles.json`),
+  ]);
+  const normalizedHost = (value) => new URL(value).hostname.replace(/^www\./, "").toLowerCase();
+  for (const [id, icon] of Object.entries(icons)) {
+    const profile = profiles[id];
+    assert.ok(profile, `${id}: icon has no company profile`);
+    const officialHosts = new Set((profile.links ?? [])
+      .filter((link) => ["official_website", "official_website_alt"].includes(link.type))
+      .map((link) => normalizedHost(link.url)));
+    assert.ok(officialHosts.size, `${id}: icon has no curated official website`);
+    assert.ok(officialHosts.has(normalizedHost(icon.page_url)), `${id}: icon page ${icon.page_url} is not its curated official website`);
+    await access(new URL(`public${icon.path}`, root));
+  }
+});
+
+test("the existing ranking page retains its query, period and comparison controls", async () => {
+  const [html, periods] = await Promise.all([
+    read("dist/yueqing-export-ranking/index.html"), readJson(`${dataPath}periods.json`),
+  ]);
+  for (const id of ["rankingSearch", "periodSelect", "bandFilter", "topFilter", "rankingTableBody", "pagination"]) {
+    assert.ok(hasId(html, id), `existing ranking page needs #${id}`);
+  }
+  const options = tagsOf(elementById(html, "periodSelect"), "option");
+  for (const period of periods.periods) assert.ok(options.some((option) => option.value === period.id));
+  const text = textOf(html);
+  for (const needle of ["累计", "区间", "精准", "万美元", "较去年同期"]) assert.ok(text.includes(needle), needle);
+  assert.doesNotMatch(text, /2026年7月出口额排名|2026年6月出口额排名|进出口额排名/);
+});
+
+test("SEO rankings retain their search controls and estimated-data qualification", async () => {
+  const html = await read("dist/yueqing-seo/index.html");
+  for (const id of ["seoSearch", "seoFilter", "seoSort", "seoRows"]) assert.ok(hasId(html, id), id);
+  const text = textOf(html);
+  for (const needle of ["乐清 SEO", "Semrush", "Google Search Console", "第三方估算数据", "不代表企业真实流量"]) {
+    assert.ok(text.includes(needle), `SEO page needs ${needle}`);
+  }
+  assert.ok(anchorsOf(elementById(html, "seoRows")).some((link) => /^https?:\/\//.test(link.href)), "SEO records need their real domain links");
+  assertSafeExternalLinks(html, "SEO rankings");
+});
+
+test("image tools preserve their working controls and shipped client assets", async () => {
+  const resizer = await read("dist/product-image-resizer/index.html");
+  const converter = await read("dist/webp-converter/index.html");
+  for (const id of ["dropZone", "editModal"]) assert.ok(hasId(resizer, id), `resizer needs #${id}`);
+  assert.match(textOf(resizer), /全部导出 WebP/);
+  for (const id of ["dropZone", "nameTemplate"]) assert.ok(hasId(converter, id), `converter needs #${id}`);
+  assert.ok(tagsOf(converter, "script").some((script) => script.src === "/webp-converter/app.js"));
+  await Promise.all(["dist/webp-converter/app.js", "dist/webp-converter/core.js"].map((path) => access(new URL(path, root))));
+});
+
+test("the data explanation keeps cumulative, range, exact and missing-data meanings distinct", async () => {
+  const text = textOf(mainOf(await read("dist/about-data/index.html")));
+  for (const needle of ["累计", "区间", "精准", "万美元"]) assert.ok(text.includes(needle), `data explanation needs ${needle}`);
+  assert.match(text, /单月/);
+  assert.match(text, /缺失|未收录|暂无|未提供/);
+  assert.match(text, /待核对|重复/);
 });

@@ -1,6 +1,6 @@
-# OXOX 外贸小工具
+# OXOX 乐清出口排行榜
 
-[oxox.cn](https://oxox.cn/) 的独立导航首页，用于汇总 OXOX 旗下的外贸小工具。
+[oxox.cn](https://oxox.cn/) 的累计出口排行榜、企业跨期档案，以及独立的 SEO 榜单、外贸月报和图片工具。
 
 ## 本地开发
 
@@ -53,3 +53,16 @@ SEO 观察台位于 `/yueqing-seo/`，当前快照数据保存在
 自然流量、关键词、反向链接及 AI 可见度来自 Semrush，属于第三方
 估算指标，只用于相对排名与趋势观察；精确数据以企业自己的 Google
 Search Console 为准。
+
+## 排行榜首页与企业档案
+
+首页直接展示真实榜单，支持名称／拼音／编号搜索、周期切换、金额区间分布筛选、Top 100／500、名次升降与逐批加载。前 30 条记录在静态 HTML 中可直接访问；交互数据加载失败时仍保留这些记录并提供重试。
+
+- 首页：`src/pages/index.astro`，交互：`src/scripts/home-ranking.ts`
+- 企业档案：`src/pages/yueqing-export-ranking/company/[companyId].astro`
+- 共享样式：`src/styles/reference.css`，导航：`src/components/SiteHeader.astro`
+- 工具目录：`/tools/`；完整口径说明：`/about-data/`
+
+继续补充企业资料时，编辑 `public/data/yueqing-export-ranking/company-profiles.json`，以稳定企业编号为键添加已确认的官网 `links` 或工商信息 `details`。没有内容的模块不会显示。周期排名仍放在各期 JSON 中，与企业资料分开维护；保留真实零值、缺号与同名重复记录，不用缺失值补零。
+
+本地图标位于 `public/company-icons/`，新增图标时同步 `src/data/company-icons.js` 的域名清单。首页与详情页使用相同的本地图标映射，未收录图标时显示企业名称文字标记。

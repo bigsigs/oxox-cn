@@ -1,0 +1,75 @@
+[
+  {
+    "store": "kedu",
+    "company_name": "Kedu Electric Co., Ltd.",
+    "address": "Block C, Puqi Industrial Zone, Hongqiao Town, Wenzhou, Zhejiang, China",
+    "source_url": "https://kedu.en.alibaba.com/company_profile.html",
+    "checked_at": "2026-10-24",
+    "status": "confirmed"
+  },
+  {
+    "store": "morning-e",
+    "company_name": "Wenzhou Morning Electronics Co., Ltd.",
+    "address": "No. 238, Wei11 Road, Yueqing Economic Development Zone, Yueqing, Zhejiang, China",
+    "source_url": "https://morning-e.en.alibaba.com/company_profile.html",
+    "checked_at": "2026-10-24",
+    "status": "confirmed",
+    "identity_evidence": "MOES官网隐私政策中文主体及纬11路238号地址与店铺一致。"
+  },
+  {
+    "store": "hongbo",
+    "company_name": "Onpow Push Button Manufacture Co., Ltd.",
+    "address": "No. 25, Shangpu 2nd Road, Qiligang Electric Industrial Park, Liushi Town, Wenzhou, Zhejiang, China",
+    "source_url": "https://hongbo.en.alibaba.com/company_profile.html",
+    "checked_at": "2026-10-24",
+    "status": "confirmed"
+  },
+  {
+    "store": "youuelec",
+    "company_name": "Yueqing Youu Electric Co., Ltd.",
+    "address": "Rm. 1903, Bldg. 2-4, Headquarters Economic Park, No. 6688, Xuyang Road, Chengdong Street, Yueqing, Wenzhou, Zhejiang, China",
+    "source_url": "https://youuelec.en.alibaba.com/company_profile.html",
+    "checked_at": "2026-10-24",
+    "status": "pending_identity"
+  },
+  {
+    "store": "lefoo",
+    "company_name": "Zhejiang Lefoo Controls Co., Ltd.",
+    "address": "No. 220, Wei 15th Road, Yueqing Economic Development Zone, Wenzhou, Zhejiang, China",
+    "source_url": "https://lefoo.en.alibaba.com/company_profile.html",
+    "checked_at": "2026-10-24",
+    "status": "confirmed"
+  },
+  {
+    "store": "andeligroup",
+    "company_name": "Andeli Group Co., Ltd.",
+    "address": "No. 208, Weiqi Road, Yueqing Economic Development Zone, Wenzhou, Zhejiang, China",
+    "source_url": "https://andeligroup.en.alibaba.com/company_profile.html",
+    "checked_at": "2026-10-24",
+    "status": "confirmed"
+  },
+  {
+    "store": "cndeso",
+    "company_name": "Zhejiang Deso New Building Material Co., Ltd.",
+    "address": "No. 121 Jingsan Road, Yueqing Economic Development Zone, Wenzhou, Zhejiang, China",
+    "source_url": "https://cndeso.en.alibaba.com/company_profile.html",
+    "checked_at": "2026-10-24",
+    "status": "pending_identity"
+  },
+  {
+    "store": "cnyufengcn",
+    "company_name": "Wenzhou Yufeng Import And Export Co., Ltd.",
+    "address": "No. 18 Liujiang Road, Liushi Town, Wenzhou, Zhejiang, China",
+    "source_url": "https://cnyufengcn.en.alibaba.com/company_profile.html",
+    "checked_at": "2026-10-24",
+    "status": "pending_identity"
+  },
+  {
+    "store": "geya",
+    "company_name": "Zhejiang Geya Electrical Co., Ltd.",
+    "address": "Daqiao Industrial Zone, Beibaixiang Town, Wenzhou, Zhejiang, China",
+    "source_url": "https://geya.en.alibaba.com/company_profile.html",
+    "checked_at": "2026-10-24",
+    "status": "confirmed"
+  }
+]

@@ -1,5 +1,11 @@
 ---
-import Wordmark from "../../../components/Wordmark.astro";
+import CompanyHistoryTable from "../../../components/CompanyHistoryTable.astro";
+import { getCompanyIcon, hasDarkCompanyIcon } from "../../../data/company-icons.js";
+import SiteHeader from "../../../components/SiteHeader.astro";
+import SiteFooter from "../../../components/SiteFooter.astro";
+import ThemeHead from "../../../components/ThemeHead.astro";
+import "../../../styles/reference.css";
+import "../../../styles/company-detail.css";
 import companies from "../../../../public/data/yueqing-export-ranking/companies.json";
 import profiles from "../../../../public/data/yueqing-export-ranking/company-profiles.json";
 import periods from "../../../../public/data/yueqing-export-ranking/periods.json";
@@ -36,6 +42,9 @@ type CompanyDetails = {
   company_type?: string;
   registered_address?: string;
   operating_address?: string;
+  contact_address?: string;
+  alibaba_address?: string;
+  main_products?: string;
   registration_authority?: string;
   industry?: string;
   source_note?: string;
@@ -105,30 +114,85 @@ const { company, history, profile } = Astro.props as {
 };
 const latest = history[0];
 const previous = history.find((record) => record.asOf !== latest?.asOf);
-const latestAmount = latest?.amountLabel || latest?.bandLabel;
+const latestAmount = latest?.amountLabel ?? latest?.bandLabel;
 const details = profile?.details;
 const canonical = new URL(`/yueqing-export-ranking/company/${company.company_id}/`, Astro.site);
 const title = `${company.company_name}出口排名与历史数据｜OXOX`;
 const description = latest
   ? `${company.company_name}乐清出口排名查询：${latest.periodLabel}累计排名第${latest.rank}名，累计出口额为${latestAmount}，并提供历史排名变化。`
   : `${company.company_name}出口排名与历史数据档案。`;
-const validLinks = (profile?.links || []).filter((link) => {
-  try {
-    return ["http:", "https:"].includes(new URL(link.url).protocol);
-  } catch {
-    return false;
-  }
-});
+const isHttpUrl = (value: string) => {
+  try { return ["http:", "https:"].includes(new URL(value).protocol); }
+  catch { return false; }
+};
+const validLinks = (profile?.links ?? []).filter((link) => isHttpUrl(link.url));
 const primaryWebsite = validLinks.find((link) => link.type === "official_website")?.url;
-const rankDelta = latest && previous ? previous.rank - latest.rank : null;
+const primaryDomain = primaryWebsite ? new URL(primaryWebsite).hostname.replace(/^www\./, "") : null;
+const companyIcon = getCompanyIcon(primaryDomain, company.company_id);
+const companyInitials = company.company_name.replace(/^(?:浙江省?|温州市?|乐清市?)/, "").slice(0, 2);
+const periodRecordCounts = new Map<string, number>();
+for (const record of history) {
+  periodRecordCounts.set(record.periodId, (periodRecordCounts.get(record.periodId) ?? 0) + 1);
+}
+const isAmbiguous = (record: CompanyHistory | undefined) => Boolean(record && (
+  record.sourceDuplicate || (periodRecordCounts.get(record.periodId) ?? 0) > 1
+));
+const rankDelta = latest && previous && !isAmbiguous(latest) && !isAmbiguous(previous)
+  ? previous.rank - latest.rank
+  : null;
 const rankState = rankDelta === null ? "pending" : rankDelta > 0 ? "up" : rankDelta < 0 ? "down" : "flat";
 const rankCopy = rankDelta === null
-  ? "暂无相邻周期"
-  : rankDelta > 0
-    ? `较上期上升 ${rankDelta} 名`
-    : rankDelta < 0
-      ? `较上期下降 ${Math.abs(rankDelta)} 名`
-      : "较上期持平";
+  ? (isAmbiguous(latest) || isAmbiguous(previous) ? "源表多条，未比较" : "暂无可比较记录")
+  : rankDelta > 0 ? `↑ ${rankDelta}` : rankDelta < 0 ? `↓ ${Math.abs(rankDelta)}` : "— 持平";
+const rankComparison = previous ? `对比 ${previous.periodLabel}` : "首次收录";
+const uniqueDates = [...new Set(history.map((record) => record.asOf))].sort().reverse();
+const latestValue = latestAmount && latestAmount !== "区间未提供"
+  ? latestAmount.replace(/[（）()]/g, "").replace(/\s*万美元/, "").replace(/-/g, "–").trim()
+  : "未提供";
+const amountUnit = latestAmount?.includes("万美元") ? "万美元" : "";
+// A date can have both an exact and a range edition. The main table shows only the
+// latest month; the chart uses up to six months and prefers one exact record per date.
+const latestTableDate = uniqueDates[0];
+const latestHistory = history.filter(record => record.asOf === latestTableDate);
+const olderHistory = history.filter(record => record.asOf !== latestTableDate);
+const chartDates = uniqueDates.slice(0, 6);
+const chartByDate = new Map<string, CompanyHistory>();
+for (const record of history) {
+  const existing = chartByDate.get(record.asOf);
+  if (!existing || (!existing.amountLabel && record.amountLabel)) chartByDate.set(record.asOf, record);
+}
+const chartHistory = [...chartByDate.values()]
+  .filter((record) => chartDates.includes(record.asOf) && !isAmbiguous(record))
+  .sort((a, b) => a.asOf.localeCompare(b.asOf));
+const minRank = chartHistory.length ? Math.min(...chartHistory.map((record) => record.rank)) : 1;
+const maxRank = chartHistory.length ? Math.max(...chartHistory.map((record) => record.rank)) : 1;
+const chartMin = Math.max(1, minRank - Math.max(1, Math.round((maxRank - minRank) * .15)));
+const chartMax = maxRank + Math.max(1, Math.round((maxRank - minRank) * .15));
+const chartPoints = chartHistory.map((record, index) => ({
+  ...record,
+  x: 62 + (index / Math.max(1, chartHistory.length - 1)) * 824,
+  y: 32 + ((record.rank - chartMin) / Math.max(1, chartMax - chartMin)) * 138,
+  label: `${record.asOf.slice(2, 4)}.${record.asOf.slice(5, 7)}`,
+}));
+const chartTicks = [...new Set([chartMin, Math.round((chartMin + chartMax) / 2), chartMax])];
+const facts = [
+  ["企业名称", details?.legal_name],
+  ["企业自述成立时间", details?.founding_claim],
+  ["工商登记成立日期", details?.registered_on],
+  ["法定代表人", details?.legal_representative],
+  ["注册资本", details?.registered_capital],
+  ["统一社会信用代码", details?.unified_social_credit_code],
+  ["企业状态", details?.status],
+  ["企业类型", details?.company_type],
+  ["注册地址", details?.registered_address],
+  ["生产经营地址", details?.operating_address],
+  ["官网联系地址", details?.contact_address],
+  ["Alibaba 店铺地址", details?.alibaba_address],
+  ["主营产品", details?.main_products],
+  ["登记机关", details?.registration_authority],
+  ["行业分类", details?.industry],
+].filter((fact) => fact[1] !== undefined && fact[1] !== null && fact[1] !== "");
+const validSources = (details?.sources ?? []).filter((source) => isHttpUrl(source.url));
 const companySchema = details ? {
   "@type": "Organization",
   "@id": `${canonical.href}#organization`,
@@ -187,387 +251,130 @@ const schema = {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content={description}>
-  <meta name="theme-color" content="#f2f0e8">
   <meta name="robots" content="index,follow,max-image-preview:large">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <ThemeHead />
   <link rel="canonical" href={canonical}>
   <title>{title}</title>
   <script is:inline type="application/ld+json" set:html={JSON.stringify(schema).replace(/</g, "\\u003c")} />
-  <style is:global>
-    :root {
-      --paper: #f2f0e8;
-      --paper-light: #faf9f4;
-      --ink: #18201d;
-      --muted: #68716c;
-      --green: #0b634b;
-      --green-dark: #064636;
-      --orange: #ff5c35;
-      --yellow: #f5d451;
-      --line: rgba(24, 32, 29, .16);
-      --serif: "Iowan Old Style", "Baskerville", "Songti SC", "STSong", serif;
-      --sans: "Avenir Next", "PingFang SC", "Hiragino Sans GB", sans-serif;
-    }
-
-    * { box-sizing: border-box; }
-    html { background: var(--paper); }
-    body {
-      margin: 0;
-      min-width: 320px;
-      color: var(--ink);
-      font-family: var(--sans);
-      background:
-        linear-gradient(90deg, transparent 49.9%, rgba(24,32,29,.035) 50%, transparent 50.1%),
-        radial-gradient(circle at 8% 0%, rgba(255,255,255,.96), transparent 31rem),
-        var(--paper);
-      background-size: 56px 100%, auto, auto;
-    }
-    a { color: inherit; text-decoration: none; }
-    .shell { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
-    .site-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      min-height: 92px;
-      border-bottom: 1px solid var(--line);
-    }
-    .brand { display: inline-flex; align-items: center; gap: 14px; }
-    .wordmark { --dot-travel: 10px; width: 126px; overflow: visible; }
-    .brand-label {
-      padding-left: 14px;
-      border-left: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 650;
-      letter-spacing: .12em;
-    }
-    .header-nav { display: flex; align-items: center; gap: 10px; }
-    .header-nav a {
-      padding: 10px 15px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 750;
-      transition: transform .2s ease, box-shadow .2s ease;
-    }
-    .header-nav a:hover { transform: translateY(-2px); box-shadow: 4px 4px 0 var(--yellow); }
-    .breadcrumb {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      padding: 24px 0 0;
-      color: var(--muted);
-      font-size: 12px;
-    }
-    .breadcrumb a:hover { color: var(--green); }
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(300px, .7fr);
-      gap: 70px;
-      align-items: end;
-      padding: 62px 0 58px;
-    }
-    .eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin: 0 0 20px;
-      color: var(--green);
-      font-size: 10px;
-      font-weight: 850;
-      letter-spacing: .17em;
-      text-transform: uppercase;
-    }
-    .eyebrow::before { content: ""; width: 28px; height: 7px; border-radius: 999px; background: var(--orange); }
-    h1 {
-      max-width: 780px;
-      margin: 0;
-      font-family: var(--serif);
-      font-size: clamp(48px, 6.1vw, 82px);
-      font-weight: 400;
-      letter-spacing: -.06em;
-      line-height: 1.03;
-    }
-    .company-code {
-      display: inline-flex;
-      margin-top: 24px;
-      padding: 7px 11px;
-      border: 1px solid var(--line);
-      color: var(--muted);
-      background: rgba(255,255,255,.45);
-      font-size: 11px;
-      font-weight: 750;
-      letter-spacing: .12em;
-    }
-    .hero-copy { max-width: 720px; margin: 24px 0 0; color: var(--muted); font-size: 14px; line-height: 1.85; }
-    .rank-ticket {
-      position: relative;
-      padding: 27px;
-      border: 1px solid var(--ink);
-      background: var(--yellow);
-      box-shadow: 11px 11px 0 var(--green);
-      transform: rotate(1.2deg);
-    }
-    .rank-ticket small { display: block; font-size: 9px; font-weight: 850; letter-spacing: .16em; }
-    .rank-ticket strong {
-      display: block;
-      margin: 25px 0 10px;
-      font-family: var(--serif);
-      font-size: clamp(46px, 5vw, 68px);
-      font-weight: 400;
-      letter-spacing: -.05em;
-      line-height: .9;
-    }
-    .rank-ticket b { font-family: var(--serif); font-size: 24px; font-weight: 400; }
-    .rank-ticket .rank-change { margin-top: 25px; padding-top: 13px; border-top: 1px solid rgba(24,32,29,.22); font-size: 12px; font-weight: 800; }
-    .rank-change.up { color: var(--orange); }
-    .rank-change.down { color: var(--green); }
-    .rank-change.flat, .rank-change.pending { color: var(--muted); }
-    .summary {
-      display: grid;
-      grid-template-columns: 1fr 1.45fr 1fr;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-    .summary-item { min-height: 118px; padding: 25px; border-right: 1px solid var(--line); }
-    .summary-item:first-child { border-left: 1px solid var(--line); }
-    .summary-item span { display: block; margin-bottom: 12px; color: var(--muted); font-size: 11px; }
-    .summary-item strong { display: block; font-family: var(--serif); font-size: clamp(24px, 2.5vw, 34px); font-weight: 400; line-height: 1.15; }
-    .company-facts { padding: 44px 0 0; }
-    .facts-panel { border: 1px solid var(--line); background: rgba(250,249,244,.66); }
-    .facts-head { display: flex; justify-content: space-between; gap: 24px; align-items: end; padding: 25px 28px; border-bottom: 1px solid var(--line); }
-    .facts-meta { color: var(--muted); font-size: 11px; }
-    .fact-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
-    .fact { min-height: 92px; padding: 19px 22px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    .fact:nth-child(4n) { border-right: 0; }
-    .fact:nth-last-child(-n + 4) { border-bottom: 0; }
-    .fact-label { display: block; margin-bottom: 9px; color: var(--muted); font-size: 10px; }
-    .fact-value { display: block; font-size: 14px; font-weight: 750; line-height: 1.45; overflow-wrap: anywhere; }
-    .fact-value.muted { color: var(--muted); font-weight: 500; }
-    .facts-note { display: flex; justify-content: space-between; gap: 20px; padding: 14px 22px; color: var(--muted); background: rgba(24,32,29,.035); font-size: 10px; line-height: 1.6; }
-    .facts-note strong { color: var(--ink); font-weight: 750; }
-    .facts-sources { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; padding: 13px 22px; border-top: 1px solid var(--line); color: var(--muted); font-size: 10px; line-height: 1.5; }
-    .facts-sources > span { color: var(--ink); font-weight: 750; }
-    .facts-sources a { text-decoration: underline; text-underline-offset: 3px; }
-    .facts-sources a:hover { color: var(--green); }
-    .content-grid { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(280px, .65fr); gap: 28px; padding: 64px 0 84px; }
-    .panel { border: 1px solid var(--line); background: rgba(250,249,244,.66); }
-    .panel-head { display: flex; justify-content: space-between; gap: 24px; align-items: end; padding: 25px 28px; border-bottom: 1px solid var(--line); }
-    .panel-kicker { margin: 0 0 7px; color: var(--orange); font-size: 9px; font-weight: 850; letter-spacing: .17em; text-transform: uppercase; }
-    h2 { margin: 0; font-family: var(--serif); font-size: 34px; font-weight: 400; letter-spacing: -.035em; }
-    .panel-count { color: var(--muted); font-size: 11px; }
-    .history-row {
-      display: grid;
-      grid-template-columns: minmax(150px, .9fr) 90px minmax(150px, 1fr);
-      align-items: center;
-      min-height: 78px;
-      padding: 16px 28px;
-      border-bottom: 1px solid var(--line);
-    }
-    .history-row:last-child { border-bottom: 0; }
-    .history-period strong { display: block; font-size: 14px; }
-    .history-period small { display: block; margin-top: 4px; color: var(--muted); font-size: 10px; }
-    .history-rank { color: var(--green); font-family: var(--serif); font-size: 25px; }
-    .history-band { justify-self: start; padding: 7px 10px; border-radius: 999px; color: var(--green-dark); background: rgba(11,99,75,.08); font-size: 11px; font-weight: 750; }
-    .sidebar { display: grid; gap: 20px; align-content: start; }
-    .note-card { padding: 25px; border: 1px solid var(--line); }
-    .note-card.dark { color: white; background: var(--green-dark); }
-    .note-card h2 { font-size: 27px; }
-    .note-card p { margin: 15px 0 0; color: var(--muted); font-size: 13px; line-height: 1.75; }
-    .note-card.dark p { color: rgba(255,255,255,.66); }
-    .external-links { display: grid; gap: 9px; margin-top: 18px; }
-    .external-link {
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      align-items: center;
-      padding: 14px;
-      border: 1px solid rgba(255,255,255,.2);
-      background: rgba(255,255,255,.06);
-    }
-    .external-link b, .external-link small { display: block; }
-    .external-link b { font-size: 12px; }
-    .external-link small { margin-top: 4px; color: rgba(255,255,255,.55); font-size: 10px; }
-    .external-link:hover { color: var(--yellow); border-color: var(--yellow); }
-    .back-cta {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 19px 20px;
-      color: white;
-      background: var(--orange);
-      box-shadow: 6px 6px 0 var(--yellow);
-      font-size: 13px;
-      font-weight: 800;
-      transition: transform .2s ease, box-shadow .2s ease;
-    }
-    .back-cta:hover { transform: translate(-2px,-2px); box-shadow: 9px 9px 0 var(--yellow); }
-    footer { display: flex; justify-content: space-between; gap: 20px; padding: 25px 0 34px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; }
-
-    @media (max-width: 780px) {
-      .shell { width: min(100% - 28px, 1180px); }
-      .site-header { min-height: 76px; }
-      .wordmark { width: 104px; }
-      .brand-label, .header-nav a:first-child { display: none; }
-      .breadcrumb { padding-top: 18px; }
-      .hero { grid-template-columns: 1fr; gap: 42px; padding: 42px 0 52px; }
-      h1 { font-size: clamp(42px, 13vw, 58px); }
-      .rank-ticket { width: calc(100% - 12px); }
-      .summary { grid-template-columns: 1fr; }
-      .summary-item { min-height: 94px; border-left: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-      .summary-item:last-child { border-bottom: 0; }
-      .company-facts { padding-top: 36px; }
-      .facts-head { align-items: start; flex-direction: column; }
-      .fact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .fact:nth-child(4n) { border-right: 1px solid var(--line); }
-      .fact:nth-child(2n) { border-right: 0; }
-      .fact:nth-last-child(-n + 4) { border-bottom: 1px solid var(--line); }
-      .fact:nth-last-child(-n + 2) { border-bottom: 0; }
-      .facts-note { align-items: start; flex-direction: column; gap: 5px; }
-      .content-grid { grid-template-columns: 1fr; padding: 44px 0 64px; }
-      .panel-head { align-items: start; flex-direction: column; }
-      .history-row { grid-template-columns: 1fr auto; gap: 12px; padding: 18px; }
-      .history-band { grid-column: 1 / -1; }
-      footer { flex-direction: column; }
-    }
-  </style>
 </head>
 <body>
-  <header class="site-header shell">
-    <a class="brand" href="/" aria-label="OXOX 乐清出口数据首页">
-      <Wordmark />
-      <span class="brand-label">乐清出口数据</span>
-    </a>
-    <nav class="header-nav" aria-label="主要导航">
-      <a href="/articles/">外贸月报</a>
-      <a href="/yueqing-export-ranking/">出口排名</a>
-    </nav>
-  </header>
+  <div class="reference-wrap">
+    <SiteHeader active="ranking" />
+    <main class="company-detail">
+      <nav class="detail-breadcrumb" aria-label="面包屑">
+        <a href="/">OXOX</a><span aria-hidden="true">›</span>
+        <a href="/">出口排名</a><span aria-hidden="true">›</span>
+        <span aria-current="page">{company.company_name}</span>
+      </nav>
 
-  <main>
-    <nav class="breadcrumb shell" aria-label="面包屑">
-      <a href="/">首页</a><span>/</span>
-      <a href="/yueqing-export-ranking/">乐清出口排名</a><span>/</span>
-      <span aria-current="page">{company.company_name}</span>
-    </nav>
-
-    <section class="hero shell">
-      <div>
-        <p class="eyebrow">Company export profile / 企业出口档案</p>
-        <h1>{company.company_name}</h1>
-        <span class="company-code">企业编号 / {company.company_id}</span>
-        <p class="hero-copy">查询该企业在已收录累计周期中的出口排名、出口额区间、精准出口额与名次变化。区间和精准数值均按对应源表口径展示。</p>
-      </div>
-      {latest && (
-        <aside class="rank-ticket" aria-label="最新累计排名">
-          <small>{latest.periodLabel}累计排名</small>
-          <strong>NO. {latest.rank}</strong>
-          <b>{latestAmount}</b>
-          <div class={`rank-change ${rankState}`}>{rankCopy}</div>
-        </aside>
-      )}
-    </section>
-
-    <section class="summary shell" aria-label="企业出口数据摘要">
-      <div class="summary-item"><span>最新收录周期</span><strong>{latest?.periodLabel || "暂无数据"}</strong></div>
-      <div class="summary-item"><span>{latest?.amountLabel ? "累计出口额（万美元）" : "累计出口额区间"}</span><strong>{latestAmount || "区间未提供"}</strong></div>
-      <div class="summary-item"><span>已收录历史周期</span><strong>{history.length} 个周期</strong></div>
-    </section>
-
-    {details && (
-      <section class="company-facts shell" aria-labelledby="company-facts-title">
-        <div class="facts-panel">
-          <header class="facts-head">
-            <div>
-              <p class="panel-kicker">COMPANY FACTS / 企业工商资料</p>
-              <h2 id="company-facts-title">企业基本信息</h2>
-            </div>
-            <span class="facts-meta">公开资料核验样例</span>
-          </header>
-          <div class="fact-grid">
-            <div class="fact"><span class="fact-label">企业自述成立时间</span><strong class="fact-value">{details.founding_claim || "—"}</strong></div>
-            <div class="fact"><span class="fact-label">工商登记成立日期</span><strong class="fact-value">{details.registered_on || "—"}</strong></div>
-            <div class="fact"><span class="fact-label">法定代表人</span><strong class="fact-value">{details.legal_representative || "—"}</strong></div>
-            <div class="fact"><span class="fact-label">注册资本</span><strong class="fact-value">{details.registered_capital || "—"}</strong></div>
-            <div class="fact"><span class="fact-label">统一社会信用代码</span><strong class="fact-value">{details.unified_social_credit_code || "—"}</strong></div>
-            <div class="fact"><span class="fact-label">企业状态</span><strong class="fact-value">{details.status || "—"}</strong></div>
-            <div class="fact"><span class="fact-label">注册地址</span><strong class="fact-value">{details.registered_address || "—"}</strong></div>
-            <div class="fact"><span class="fact-label">生产经营地址</span><strong class="fact-value">{details.operating_address || "—"}</strong></div>
-            <div class="fact"><span class="fact-label">企业类型</span><strong class="fact-value">{details.company_type || "—"}</strong></div>
-            <div class="fact"><span class="fact-label">登记机关</span><strong class="fact-value">{details.registration_authority || "—"}</strong></div>
-            <div class="fact"><span class="fact-label">行业分类</span><strong class="fact-value">{details.industry || "—"}</strong></div>
-            <div class="fact"><span class="fact-label">资料核验日期</span><strong class="fact-value">{details.checked_at || "—"}</strong></div>
+      <section class="detail-hero" aria-labelledby="company-name">
+        <div class="company-identity">
+          <div class:list={["company-mark", { "has-icon": companyIcon, "dark-logo": companyIcon && hasDarkCompanyIcon(company.company_id) }]} aria-hidden="true">
+            {companyIcon ? <img src={companyIcon} alt="" width="64" height="64" /> : <span>{companyInitials}</span>}
           </div>
-          <div class="facts-note">
-            <span><strong>资料说明：</strong>{details.source_note || "信息来自公开资料，仅供参考。"}</span>
-            <span>可信度：{details.confidence === "mixed" ? "多来源交叉核验" : details.confidence || "待核验"}</span>
-          </div>
-          {details.sources?.length && (
-            <div class="facts-sources" aria-label="资料来源">
-              <span>资料来源</span>
-              {details.sources.map((source) => (
-                <a href={source.url} target="_blank" rel="nofollow noopener noreferrer">{source.label} ↗</a>
-              ))}
+          <div class="company-title-group">
+            <h1 id="company-name">{company.company_name}</h1>
+            <p class="company-subtitle">乐清出口企业 · 历史排名与累计出口数据</p>
+            <div class="company-tags">
+              <span class="company-tag">{company.company_id}</span>
+              {details?.industry && <span class="company-tag industry-tag">{details.industry}</span>}
+              {isAmbiguous(latest) && <span class="company-tag">源表含多条记录</span>}
             </div>
-          )}
+          </div>
+        </div>
+        <div class="company-actions">
+          {primaryWebsite && <a class="detail-button primary" href={primaryWebsite} target="_blank" rel="nofollow noopener noreferrer">访问官网 <span aria-hidden="true">↗</span></a>}
+          <a class="detail-button" href={`/?q=${encodeURIComponent(company.company_name)}`}>← 返回排行榜</a>
         </div>
       </section>
-    )}
 
-    <section class="content-grid shell">
-      <article class="panel">
-        <header class="panel-head">
-          <div>
-            <p class="panel-kicker">RANKING HISTORY / 排名历史</p>
-            <h2>累计出口排名变化</h2>
-          </div>
-          <span class="panel-count">共 {history.length} 条已确认记录</span>
-        </header>
-        <div>
-          {history.map((record) => (
-            <div class="history-row">
-              <div class="history-period">
-                <strong>{record.periodLabel}</strong>
-                <small>截至 {record.asOf}</small>
-              </div>
-              <strong class="history-rank">#{record.rank}</strong>
-              <span class="history-band">{record.amountLabel || record.bandLabel}</span>
-            </div>
-          ))}
+      <section class="detail-stats" aria-label="企业出口数据摘要">
+        <div class="detail-stat">
+          <span class="stat-label">最近收录排名</span>
+          <strong class="stat-value">{latest ? `#${latest.rank.toLocaleString("en-US")}` : "—"}</strong>
+          <span class="stat-caption">{latest?.periodLabel ?? "尚无排名记录"}</span>
         </div>
-      </article>
+        <div class="detail-stat amount-stat">
+          <span class="stat-label">{latest?.amountLabel ? "累计出口额" : "累计出口额区间"}</span>
+          <strong class="stat-value">{latestValue}</strong>
+          <span class="stat-caption">{amountUnit}{amountUnit && " · "}{latest?.amountLabel ? "源表精准数值" : "源表金额区间"}</span>
+        </div>
+        <div class="detail-stat">
+          <span class="stat-label">名次变化</span>
+          <strong class:list={["stat-value", "rank-movement", rankState, { "unavailable": rankDelta === null }]}>{rankCopy}</strong>
+          <span class="stat-caption">{rankComparison}</span>
+        </div>
+        <div class="detail-stat">
+          <span class="stat-label">历史记录</span>
+          <strong class="stat-value">{history.length.toLocaleString("en-US")} <small>条</small></strong>
+          <span class="stat-caption">覆盖 {uniqueDates.length} 个累计周期</span>
+        </div>
+      </section>
 
-      <aside class="sidebar">
-        <section class="note-card">
-          <p class="panel-kicker">ABOUT THE DATA / 数据说明</p>
-          <h2>排名是累计周期，不是单月数据</h2>
-          <p>精准榜单按源表原值展示，单位为万美元；其他周期仅展示源资料提供的区间。企业名称如发生变化，将通过稳定企业编号连接历史记录。</p>
-        </section>
+      <section class="detail-panel overview-panel" aria-labelledby="overview-title">
+        <h2 id="overview-title">概况</h2>
+        {latest ? <>
+          <p><strong>{company.company_name}</strong>在 <strong>{latest.periodLabel}</strong>的乐清企业累计出口榜单中排名 <strong>第 {latest.rank} 名</strong>，累计出口额{latest.amountLabel ? "为" : "区间为"} <strong>{latestAmount}</strong>。</p>
+          {rankDelta !== null && previous && <p>与 {previous.periodLabel}的第 {previous.rank} 名相比，{rankDelta > 0 ? `排名上升 ${rankDelta} 名` : rankDelta < 0 ? `排名下降 ${Math.abs(rankDelta)} 名` : "排名持平"}。名次变化反映榜单位置变化。</p>}
+          <p class="overview-meta">已收录 {history.length} 条出口记录，覆盖 {uniqueDates.length} 个累计周期。最近收录截至 <time datetime={latest.asOf}>{latest.asOf}</time>。</p>
+        </> : <p>该企业已建立出口排名档案，暂无已收录的出口记录。</p>}
+      </section>
 
-        {validLinks.length > 0 && (
-          <section class="note-card dark">
-            <p class="panel-kicker">ONLINE PRESENCE / 企业线上入口</p>
-            <h2>企业网站</h2>
-            <div class="external-links">
-              {validLinks.map((link) => (
-                <a class="external-link" href={link.url} target="_blank" rel="nofollow noopener noreferrer">
-                  <span><b>{link.label}</b><small>{link.domain}</small></span><span aria-hidden="true">↗</span>
-                </a>
-              ))}
-            </div>
-          </section>
-        )}
+      <section class="detail-panel history-panel" aria-labelledby="history-title">
+        <div class="detail-section-heading">
+          <h2 id="history-title">累计出口排名变化</h2>
+          <span>最新月份 {latestTableDate}</span>
+        </div>
+        {chartPoints.length > 1 && <>
+          <p class="chart-explanation">近 {chartDates.length} 期趋势 · 名次越小，排名越靠前</p>
+          <div class="rank-chart" role="img" aria-label={`${company.company_name}累计出口排名趋势，完整数值见下方历史表格。`}>
+            <svg viewBox="0 0 920 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              {chartTicks.map((tick) => {
+                const y = 32 + ((tick - chartMin) / Math.max(1, chartMax - chartMin)) * 138;
+                return <g><line class="chart-gridline" x1="62" y1={y} x2="886" y2={y} /><text class="chart-axis" x="47" y={y + 4} text-anchor="end">#{tick}</text></g>;
+              })}
+              <polyline class="chart-line" points={chartPoints.map((point) => `${point.x},${point.y}`).join(" ")} />
+              {chartPoints.map((point, index) => <g>
+                <circle class:list={["chart-point", { "latest-point": index === chartPoints.length - 1 }]} cx={point.x} cy={point.y} r="4" />
+                <text class="chart-point-value" x={point.x} y={point.y - 12} text-anchor="middle">{point.rank}</text>
+                <text class="chart-axis chart-date" x={point.x} y="206" text-anchor="middle">{point.label}</text>
+              </g>)}
+            </svg>
+          </div>
+        </>}
+        <CompanyHistoryTable companyName={company.company_name} records={latestHistory} isAmbiguous={isAmbiguous} />
+        {olderHistory.length > 0 && <details class="older-history">
+          <summary>查看历史月份（{olderHistory.length} 条，{uniqueDates.length - 1} 个周期）</summary>
+          <CompanyHistoryTable companyName={company.company_name} records={olderHistory} isAmbiguous={isAmbiguous} />
+        </details>}
+        <p class="detail-table-note">同一累计周期的精准数值与区间数据分别保留。{chartPoints.length > 1 && "趋势图每期展示一条记录，同期优先采用精准榜单；源表多条记录的周期不参与趋势和名次比较。"}</p>
+      </section>
 
-        <a class="back-cta" href={`/yueqing-export-ranking/?q=${encodeURIComponent(company.company_name)}`}>
-          <span>返回完整排名查询</span><span aria-hidden="true">→</span>
-        </a>
-      </aside>
-    </section>
-  </main>
+      {facts.length > 0 && <section class="detail-panel facts-panel" aria-labelledby="facts-title">
+        <div class="detail-section-heading"><h2 id="facts-title">企业基本信息</h2>{details?.checked_at && <span>核验于 {details.checked_at}</span>}</div>
+        <dl class="company-facts-list">
+          {facts.map(([label, value]) => <div><dt>{label}</dt><dd>{value}</dd></div>)}
+        </dl>
+        <p class="detail-table-note">{details?.source_note || "企业自述成立时间与工商登记日期分别列示。工商登记信息以登记机关最新记录为准。"}</p>
+        {validSources.length > 0 && <div class="detail-sources"><span>资料来源</span>{validSources.map((source) => <a href={source.url} target="_blank" rel="nofollow noopener noreferrer">{source.label} ↗</a>)}</div>}
+      </section>}
 
-  <footer class="shell">
-    <span>OXOX.CN · 乐清出口数据</span>
-    <span>{company.company_name} · {company.company_id}</span>
-  </footer>
+      {validLinks.length > 0 && <section class="detail-panel links-panel" aria-labelledby="links-title">
+        <h2 id="links-title">企业网站</h2>
+        <div class="company-websites">
+          {validLinks.map((link) => <a href={link.url} target="_blank" rel="nofollow noopener noreferrer"><span><strong>{link.label}</strong><small>{link.domain}</small></span><span aria-hidden="true">↗</span></a>)}
+        </div>
+      </section>}
+
+      <section class="detail-panel methodology-panel" aria-labelledby="methodology-title">
+        <h2 id="methodology-title">数据说明</h2>
+        <p>本页排名和出口额按各期源表展示。所有周期均为年初至所示月份的累计数据；金额单位为万美元，精准数值与金额区间分别标注。</p>
+        <p>企业名称通过稳定企业编号关联历史记录。未收录的周期不作零值处理；源表同一企业有多条记录时，保留原始条目，并暂停相关周期的名次比较。名次升降不代表出口额同比增长。</p>
+        <a class="detail-text-link" href="/about-data/">查看数据来源与口径 →</a>
+      </section>
+      <div class="detail-bottom-nav"><a href="/">← 返回出口排行榜</a><span>{company.company_id}</span></div>
+    </main>
+    <SiteFooter />
+  </div>
 </body>
 </html>

@@ -1,6 +1,8 @@
 ---
+import "../../styles/reference.css";
+import "../../styles/reference-pages.css";
 import { getCollection, type CollectionEntry } from "astro:content";
-import Wordmark from "../../components/Wordmark.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
 
 const articles = (await getCollection("articles", ({ data }) => !data.draft))
   .sort((a: CollectionEntry<"articles">, b: CollectionEntry<"articles">) => b.data.periodEnd.valueOf() - a.data.periodEnd.valueOf());
@@ -166,25 +168,17 @@ const collectionSchema = {
     @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; } }
   </style>
 </head>
-<body>
+<body class="reference-page">
   <div class="noise" aria-hidden="true"></div>
-  <header class="site-header shell">
-    <a class="brand" href="/" aria-label="OXOX 乐清出口数据首页">
-      <Wordmark />
-      <span class="brand-label">乐清出口数据</span>
-    </a>
-    <nav class="header-nav" aria-label="主要导航">
-      <a href="/yueqing-export-ranking/">出口排名</a>
-      <a href="/articles/">外贸月报</a>
-      <a class="nav-cta" href="/yueqing-export-ranking/">查询企业</a>
-    </nav>
-  </header>
+  <div style="max-width:1080px;margin:0 auto;padding:0 20px;">
+    <SiteHeader active="articles" showTheme={false} />
+  </div>
 
   <main>
     <section class="hero shell">
       <div>
         <p class="eyebrow">EDITORIAL DATA / 数据解读</p>
-        <h1>乐清外贸<br><em>数据解读</em></h1>
+        <h1>乐清外贸数据解读</h1>
         <p>从月度外贸概况、企业结构、出口产品和主要市场出发，整理有明确数据依据的乐清外贸观察。</p>
       </div>
       <div class="hero-mark" aria-hidden="true"></div>
@@ -205,7 +199,7 @@ const collectionSchema = {
             </div>
             <div class="featured-issue">
               <small>LATEST ISSUE</small>
-              <strong>01—06</strong>
+              <strong>{featured.data.period}</strong>
             </div>
           </a>
 
