@@ -15,10 +15,10 @@ test("SEO page identifies the current Semrush snapshot", async () => {
 });
 
 test("SEO snapshot preserves every monitored domain exactly once", () => {
-  assert.equal(seoCompanies.length, 61);
-  assert.equal(new Set(seoCompanies.map((company) => company.domain)).size, 61);
-  assert.ok(seoCompanies.some((company) => company.domain === "industrialmonitordirect.com"));
-  assert.ok(seoCompanies.some((company) => company.domain === "electricaltechnology.org"));
+  assert.equal(seoCompanies.length, 59);
+  assert.equal(new Set(seoCompanies.map((company) => company.domain)).size, 59);
+  assert.ok(!seoCompanies.some((company) => company.domain === "industrialmonitordirect.com"));
+  assert.ok(!seoCompanies.some((company) => company.domain === "electricaltechnology.org"));
   assert.ok(!seoCompanies.some((company) => company.domain === "tools.viox.com"));
   assert.ok(!seoCompanies.some((company) => company.domain === "usfull.com"));
   assert.ok(seoCompanies.every((company) => company.traffic > 0));
@@ -51,7 +51,6 @@ test("SEO snapshot uses the prepared company names and local icons", async () =>
   assert.equal(seoCompanies.find((company) => company.domain === "viox.com")?.traffic, 54000);
   assert.equal(seoCompanies.find((company) => company.domain === "wosomelec.com")?.backlinks, 1880);
   assert.equal(seoCompanies.find((company) => company.domain === "wosomelec.com")?.backlinksChange, 264.34);
-  assert.equal(seoCompanies.find((company) => company.domain === "industrialmonitordirect.com")?.backlinksChange, 1.32);
 
   for (const company of seoCompanies) {
     await access(new URL(`../public/company-icons/${company.domain}.png`, import.meta.url));

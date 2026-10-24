@@ -55,12 +55,10 @@ const domains = new Set([
   "eilitetech.com",
   "ewjele.com",
   "igotocableties.com",
-  "industrialmonitordirect.com",
   "jutrion.com",
   "mg-cnsolar.com",
   "spds.global",
   "cnspd.com",
-  "electricaltechnology.org",
   "projoy-electric.com",
   "vioxsolar.com"
 ]);
