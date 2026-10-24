@@ -10,7 +10,10 @@ test("SEO page identifies the current Semrush snapshot", async () => {
   );
   assert.match(page, /const snapshotDate = "2026-10-25"/);
   assert.match(page, /数据来源为 Semrush/);
-  assert.match(page, /COMPETITIVE SIGNALS \/ 竞争信号 · 2026\.10\.25/);
+  assert.match(page, /COMPETITIVE SIGNALS \/ 竞争信号/);
+  for (const className of ["ranking-hero", "ranking-stats", "distribution", "ranking-search", "ranking-controls", "ranking-board"]) {
+    assert.match(page, new RegExp(`class=\\"[^\\"]*${className}`), `SEO page needs homepage layout block: ${className}`);
+  }
   assert.doesNotMatch(page, /pulse-card|summary-strip|TRAFFIC TOP 3|监测站点总流量|SNAPSHOT \/ 数据快照/);
 });
 

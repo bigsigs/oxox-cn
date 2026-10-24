@@ -1,10 +1,11 @@
 ---
 import "../../styles/reference.css";
 import "../../styles/reference-pages.css";
+import "../../styles/home-ranking.css";
 import Wordmark from "../../components/Wordmark.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import seoCompanies from "../../data/seo-companies.js";
-import { filterSeoCompanies } from "../../lib/seo-ranking-core.js";
+import { filterSeoCompanies, summarizeSeoCompanies } from "../../lib/seo-ranking-core.js";
 
 const snapshotDate = "2026-10-25";
 const palette = ["#ff5c35", "#f5d451", "#0b634b", "#5f94c9", "#c8789b", "#8588c7"];
@@ -14,6 +15,7 @@ const companies = seoCompanies.map((company, index) => ({
   icon: `/company-icons/${company.domain}.png`,
   initials: company.brand.replace(/[^A-Z0-9]/g, "").slice(0, 2) || "YQ",
 }));
+const summary = summarizeSeoCompanies(companies);
 const initialCompanies = filterSeoCompanies(companies, { sortBy: "traffic" }).slice(0, 20);
 const formatNumber = (value: number | null) => {
   if (value === null) return "N/A";
@@ -29,6 +31,16 @@ const changeText = (value: number | null) => {
   const arrow = value === 0 ? "→" : value > 0 ? "↗" : "↘";
   return `${arrow} ${value > 0 ? "+" : ""}${value.toFixed(value % 1 === 0 ? 0 : 2)}%`;
 };
+const trafficBandDefinitions = [
+  { id: "100k-plus", label: "10万以上", color: "#2a78d6", matches: (value: number) => value >= 100000 },
+  { id: "10k-plus", label: "1万–10万", color: "#eb6834", matches: (value: number) => value >= 10000 && value < 100000 },
+  { id: "1k-plus", label: "1000–1万", color: "#1baf7a", matches: (value: number) => value >= 1000 && value < 10000 },
+  { id: "under-1k", label: "1000以下", color: "#eda100", matches: (value: number) => value < 1000 },
+];
+const trafficBands = trafficBandDefinitions.map(({ matches, ...band }) => ({
+  ...band,
+  count: companies.filter((company) => matches(company.traffic)).length,
+}));
 const datasetSchema = {
   "@context": "https://schema.org",
   "@type": "Dataset",
@@ -246,7 +258,7 @@ const datasetSchema = {
 
     .hero-intro strong { color: var(--ink); }
 
-    .ranking-section { padding: 55px 0 80px; }
+    .ranking-section { padding: 0 0 80px; }
 
     .section-head {
       display: flex;
@@ -738,40 +750,48 @@ const datasetSchema = {
   </div>
 
   <main>
-    <section class="hero shell">
-      <div>
-        <p class="eyebrow">YUEQING SEARCH INTELLIGENCE / 乐清搜索情报</p>
-        <h1>乐清 SEO 榜单</h1>
-        <p class="hero-intro">
-          聚焦乐清电气企业的<strong>自然流量、关键词、链接资产与 AI 品牌曝光</strong>。
-          以域名为观察对象，用统一快照比较相对位置和增长信号；仅收录自然流量非零站点。
-        </p>
+    <section class="ranking-hero shell" aria-labelledby="seo-title">
+      <p class="eyebrow">YUEQING SEARCH INTELLIGENCE / 乐清搜索情报</p>
+      <h1 id="seo-title">乐清 SEO 榜单</h1>
+      <p class="hero-subtitle">
+        聚焦乐清电气企业的<strong>自然流量、关键词、链接资产与 AI 品牌曝光</strong>。<br class="desktop-break">
+        以域名为观察对象，用统一快照比较相对位置和增长信号；仅收录自然流量非零站点。
+      </p>
+
+      <div class="ranking-stats" aria-label="SEO 数据统计">
+        <div><b>{formatNumber(summary.sites)}</b><span>监测站点</span></div>
+        <div><b>{formatNumber(summary.traffic)}</b><span>自然流量</span></div>
+        <div><b>{formatNumber(summary.keywords)}</b><span>自然关键词</span></div>
+        <div><b class="stat-emphasis">{formatNumber(summary.mentions)}</b><span>AI 提及</span></div>
       </div>
+
+      <div class="distribution" aria-label="自然流量区间分布">
+        <div class="distribution-bar">
+          {trafficBands.map((band) => <span style={`--segment:${band.color};flex:${band.count}`} title={`${band.label}：${band.count} 个站点`} />)}
+        </div>
+        <div class="distribution-legend">
+          {trafficBands.map((band) => <span><i style={`--segment:${band.color}`} aria-hidden="true" />{band.label}<b>{band.count}</b></span>)}
+        </div>
+      </div>
+
+      <label class="ranking-search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m16 16 4.5 4.5" /></svg>
+        <span class="ref-sr-only">搜索品牌、企业名称或域名</span>
+        <input id="seoSearch" type="search" placeholder="搜索品牌、企业名称或域名" autocomplete="off">
+        <kbd aria-hidden="true">/</kbd>
+      </label>
     </section>
 
     <section class="ranking-section shell">
-      <div class="section-head">
-        <div>
-          <p class="section-kicker">COMPETITIVE SIGNALS / 竞争信号 · 2026.10.25</p>
-          <h2>企业搜索表现排名</h2>
-        </div>
-        <p class="result-count">当前匹配 <strong id="seoResultCount">{companies.length}</strong> 个站点</p>
-      </div>
-
-      <div class="toolbar">
-        <label class="search-control">
-          <span aria-hidden="true">⌕</span>
-          <input id="seoSearch" type="search" placeholder="搜索品牌、企业名称或域名" autocomplete="off">
-        </label>
-
-        <div class="filter-control" id="seoFilter" aria-label="筛选站点">
+      <div class="ranking-controls">
+        <div class="rank-tabs" id="seoFilter" aria-label="筛选站点">
           <button type="button" data-filter="all" aria-pressed="true">全部</button>
           <button type="button" data-filter="growing" aria-pressed="false">流量增长</button>
           <button type="button" data-filter="declining" aria-pressed="false">流量下降</button>
           <button type="button" data-filter="ai" aria-pressed="false">有 AI 提及</button>
         </div>
 
-        <label class="sort-control">
+        <label class="period-control">
           <select id="seoSort" aria-label="选择排序指标">
             <option value="traffic">按自然流量排序</option>
             <option value="keywords">按自然关键词排序</option>
@@ -782,17 +802,26 @@ const datasetSchema = {
         </label>
       </div>
 
-      <div class="rank-table">
-        <div class="rank-head" aria-hidden="true">
-          <span>排名 / 公司</span>
-          <span>AI 可见度</span>
-          <span>AI 提及</span>
-          <span>自然流量</span>
-          <span>自然关键词</span>
-          <span>反向链接</span>
+      <div class="ranking-board">
+        <div class="board-heading">
+          <div>
+            <p class="section-kicker">COMPETITIVE SIGNALS / 竞争信号 · {snapshotDate.replaceAll("-", ".")}</p>
+            <h2>企业搜索表现排名</h2>
+          </div>
+          <p class="result-count">当前匹配 <strong id="seoResultCount">{companies.length}</strong> 个站点</p>
         </div>
 
-        <div id="seoRows" aria-live="polite">
+        <div class="rank-table">
+          <div class="rank-head" aria-hidden="true">
+            <span>排名 / 公司</span>
+            <span>AI 可见度</span>
+            <span>AI 提及</span>
+            <span>自然流量</span>
+            <span>自然关键词</span>
+            <span>反向链接</span>
+          </div>
+
+          <div id="seoRows" aria-live="polite">
           {initialCompanies.map((company, index) => (
             <article class="company-row" style={`--accent:${company.accent}`}>
               <div class="company-cell">
@@ -830,14 +859,15 @@ const datasetSchema = {
               ))}
             </article>
           ))}
+          </div>
         </div>
-      </div>
 
-      <nav class="pagination" aria-label="SEO 榜单分页">
-        <button id="seoPrev" type="button" disabled>← 上一页</button>
-        <div class="page-numbers" id="seoPages"></div>
-        <button id="seoNext" type="button">下一页 →</button>
-      </nav>
+        <nav class="pagination" aria-label="SEO 榜单分页">
+          <button id="seoPrev" type="button" disabled>← 上一页</button>
+          <div class="page-numbers" id="seoPages"></div>
+          <button id="seoNext" type="button">下一页 →</button>
+        </nav>
+      </div>
 
       <aside class="methodology">
         <div>
