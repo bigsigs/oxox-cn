@@ -197,30 +197,48 @@ const datasetSchema = {
       transform-origin: left;
     }
 
-    .hero {
-      min-height: 0;
-      padding: 44px 0 35px;
-      border-bottom: 1px solid var(--line);
+    .reference-page .ranking-hero h1 {
+      max-width: 100%;
+      margin-inline: auto;
+      text-align: center;
     }
 
-    .eyebrow {
+    .seo-distribution .distribution-bar,
+    .seo-distribution .distribution-legend {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0;
+    }
+
+    .seo-distribution .distribution-bar > span {
+      height: 100%;
+      background: var(--segment);
+      border-right: 1px solid var(--paper);
+    }
+
+    .seo-distribution .distribution-bar > span:last-child {
+      border-right: 0;
+    }
+
+    .seo-distribution .distribution-legend > span {
       display: flex;
+      min-width: 0;
+      flex-direction: column;
       align-items: center;
-      gap: 11px;
-      margin: 0 0 27px;
-      color: var(--green);
+      gap: 3px;
+      color: var(--ink2);
       font-size: 10px;
-      font-weight: 800;
-      letter-spacing: .18em;
-      text-transform: uppercase;
+      line-height: 1.6;
+      white-space: nowrap;
     }
 
-    .eyebrow::before {
-      content: "";
-      width: 27px;
-      height: 7px;
-      border-radius: 99px;
-      background: var(--orange);
+    .seo-distribution .distribution-legend b {
+      margin: 0;
+      font-size: 12px;
+    }
+
+    .reference-page .ranking-controls {
+      background: var(--paper);
     }
 
     h1 {
@@ -681,7 +699,6 @@ const datasetSchema = {
       .brand-label { display: none; }
       .header-nav { gap: 15px; font-size: 11px; }
       .header-nav a:not([aria-current="page"]) { display: none; }
-      .hero { padding: 34px 0 29px; }
       h1 { font-size: clamp(52px, 16vw, 75px); }
       .hero-intro { font-size: 13px; }
       .ranking-section { padding: 42px 0 70px; }
@@ -751,7 +768,6 @@ const datasetSchema = {
 
   <main>
     <section class="ranking-hero shell" aria-labelledby="seo-title">
-      <p class="eyebrow">YUEQING SEARCH INTELLIGENCE / 乐清搜索情报</p>
       <h1 id="seo-title">乐清 SEO 榜单</h1>
       <p class="hero-subtitle">
         聚焦乐清电气企业的<strong>自然流量、关键词、链接资产与 AI 品牌曝光</strong>。<br class="desktop-break">
@@ -765,12 +781,12 @@ const datasetSchema = {
         <div><b class="stat-emphasis">{formatNumber(summary.mentions)}</b><span>AI 提及</span></div>
       </div>
 
-      <div class="distribution" aria-label="自然流量区间分布">
-        <div class="distribution-bar">
-          {trafficBands.map((band) => <span style={`--segment:${band.color};flex:${band.count}`} title={`${band.label}：${band.count} 个站点`} />)}
+      <div class="distribution seo-distribution" aria-label="自然流量区间站点数">
+        <div class="distribution-bar" aria-hidden="true">
+          {trafficBands.map((band) => <span style={`--segment:${band.color}`} />)}
         </div>
         <div class="distribution-legend">
-          {trafficBands.map((band) => <span><i style={`--segment:${band.color}`} aria-hidden="true" />{band.label}<b>{band.count}</b></span>)}
+          {trafficBands.map((band) => <span>{band.label}<b>{band.count}</b></span>)}
         </div>
       </div>
 
