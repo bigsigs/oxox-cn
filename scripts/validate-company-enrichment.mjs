@@ -663,6 +663,23 @@ for (const [id, profile] of Object.entries(profiles)) {
     assert(!/(?:省|市|区|县|镇|街道|路|村|号|室|楼|园区)/.test(value)
       || /(?:人民币|万元|亿元|美元|港元)/.test(value), `${id}: capital appears to be an address`);
   }
+  if (id === "YQ000175") {
+    assert(profile.links?.find(link => link.type === "official_website")?.url === "https://www.bjenclosure.com/");
+    assert(!JSON.stringify(profile).includes("p-dbox.com"), "YQ000175: obsolete website must be removed");
+    assert(profile.details?.registered_capital === "500万元人民币");
+    assert(/配电箱/.test(profile.details?.main_products ?? ""), "YQ000175: verified products are missing");
+  }
+  if (id === "YQ000176") {
+    assert(profile.details?.main_products === "金属易撕盖、易拉盖及罐头包装材料");
+  }
+  if (id === "YQ000190") {
+    assert(profile.details?.registered_capital === undefined, "YQ000190: uncertain capital must stay omitted");
+  }
+  if (id === "YQ000205") {
+    assert(profile.links?.find(link => link.type === "official_website")?.url === "https://www.singi.com/");
+    assert(profile.details?.contact_address === "浙江省乐清经济开发区纬十二路148号东首");
+    assert(profile.details?.registered_capital === "2288万元人民币");
+  }
 }
 
 if (errors.length) {

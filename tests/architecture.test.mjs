@@ -154,6 +154,31 @@ test("homepage controls expose search, every source period, categories and furth
   await Promise.all(modules.map((script) => access(new URL(`dist${script.src}`, root))));
 });
 
+test("homepage publishes and retains the August source-rank gap and genuine search suggestions", async () => {
+  const [html, dataset] = await Promise.all([
+    read("dist/index.html"),
+    readJson(`${dataPath}2026-ytd-08.json`),
+  ]);
+  assert.equal(dataset.records.some((record) => record.rank === 43), false, "August source rank 43 must stay absent");
+  assert.match(textOf(elementById(html, "sourceGapNote")), /第\s*43\s*名.*不补号/);
+  const search = tagsOf(html, "input").find((input) => input.id === "rankingSearch");
+  assert.equal(search.role, "combobox");
+  assert.equal(search["aria-controls"], "rankingSuggestions");
+  const suggestions = elementById(html, "rankingSuggestions");
+  assert.match(suggestions, /role=["']listbox["']/);
+  const modulePath = tagsOf(html, "script")
+    .find((script) => script.type === "module" && script.src?.startsWith("/_astro/"))?.src;
+  assert.ok(modulePath, "homepage needs its client module");
+  const client = await read(`dist${modulePath}`);
+  assert.match(client, /rankingSuggestion/);
+  assert.match(client, /oxox-ranking-return/);
+  assert.match(client, /pageshow/);
+  assert.match(client, /scrollRestoration/);
+  assert.match(client, /pageUrl/);
+  assert.match(client, /url:\s*\w+\.pageUrl/, "the saved return URL must stay bound to the rendered ranking URL");
+  assert.doesNotMatch(client, /url:normalizedUrl\(\)/, "leaving the ranking must not overwrite its saved return URL");
+});
+
 test("homepage keeps reports and utilities in the menu and their independent pages", async () => {
   const html = await read("dist/index.html");
   const header = html.match(/<header\b[^>]*>([\s\S]*?)<\/header>/i)?.[1] ?? "";
@@ -307,6 +332,7 @@ test("newly confirmed official websites publish on the exact matched companies",
     YQ002584: ["浙江强力电力金具有限公司", "https://www.qlgpowerfitting.com/"],
     YQ002611: ["国隆电气有限公司", "http://www.gldq.net/"],
     YQ002719: ["乐清双凯模具厂", "http://www.skmjc.com/"],
+    YQ000175: ["浙江邦吉电气有限公司", "https://www.bjenclosure.com/"],
   };
 
   for (const [id, [name, website]] of Object.entries(confirmed)) {

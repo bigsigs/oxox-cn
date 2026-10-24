@@ -3,32 +3,90 @@ import { buildCompanySearchIndex, buildPeriodIndex, filterRanking, suggestCompan
 import { amountGroups, matchesAmountGroup, rankSignal } from "../lib/home-ranking.js";
 const boot = JSON.parse(document.querySelector("#rankingBoot").textContent);
 const search = document.querySelector("#rankingSearch");
+const suggestions = document.querySelector("#rankingSuggestions");
 const periodSelect = document.querySelector("#periodSelect");
 const exactShortcut = document.querySelector("#exactPeriodShortcut");
 const rows = document.querySelector("#rankingRows");
 const more = document.querySelector("#loadMore");
 const status = document.querySelector("#rankingStatus");
 const error = document.querySelector("#rankingError");
+const sourceGapNote = document.querySelector("#sourceGapNote");
+const returnKey = "oxox-ranking-return";
+const navigationEntry = performance.getEntriesByType("navigation")[0];
+if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 const format = value => new Intl.NumberFormat("zh-CN").format(value);
 const escape = value => String(value ?? "").replace(/[&<>"']/g, c => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" })[c]);
 const cache = new Map();
-const state = { periodId: boot.latest, dataset: null, previousIndex: new Map(), currentIndex: new Map(), hasPrevious: true, searchIndex: new Map(), groups: [], group: "all", filter: "all", limit: 30, ready: false };
-const returnKey = "oxox-ranking-return";
-let savedReturn = null;
-try {
-  const saved = JSON.parse(sessionStorage.getItem(returnKey) || "null");
-  const back = performance.getEntriesByType("navigation")[0]?.type === "back_forward";
-  if (saved && saved.url === location.pathname + location.search.replace(/([?&])restore=1&?/, "$1").replace(/[?&]$/, "") && (back || new URLSearchParams(location.search).has("restore"))) savedReturn = saved;
-} catch {}
-const params = new URLSearchParams(location.search);
-function rememberList(event) {
-  const link = event.target.closest("a.ranking-row");
-  if (!link || !state.ready) return;
+const state = { periodId: boot.latest, dataset: null, previousIndex: new Map(), currentIndex: new Map(), hasPrevious: true, searchIndex: new Map(), groups: [], group: "all", filter: "all", limit: 30, ready: false, activeSuggestion: -1, pageUrl: "" };
+let cleanCanvasUrl = "";
+
+function normalizedUrl(value = location.href) {
+  const url = new URL(value, location.origin);
+  url.searchParams.delete("restore");
+  return `${url.pathname}${url.search}${url.hash}`;
+}
+function readRestorePoint({ force = false } = {}) {
   try {
-    sessionStorage.setItem(returnKey, JSON.stringify({ url: location.pathname + location.search, limit: state.limit, scrollY, href: link.getAttribute("href"), top: link.getBoundingClientRect().top }));
+    const saved = JSON.parse(sessionStorage.getItem(returnKey) || "null");
+    if (!saved || typeof saved.url !== "string" || normalizedUrl(saved.url) !== normalizedUrl()) return null;
+    const explicitRestore = new URLSearchParams(location.search).has("restore");
+    const browserBack = navigationEntry?.type === "back_forward";
+    return force || explicitRestore || browserBack ? saved : null;
+  } catch {
+    return null;
+  }
+}
+let savedReturn = readRestorePoint();
+const params = new URLSearchParams(location.search);
+
+function saveRestorePoint(extra = {}) {
+  if (!state.ready) return;
+  try {
+    const previous = JSON.parse(sessionStorage.getItem(returnKey) || "null");
+    const retained = previous?.url === state.pageUrl ? previous : {};
+    sessionStorage.setItem(returnKey, JSON.stringify({
+      ...retained,
+      // pagehide can fire after the destination URL has replaced the ranking URL.
+      // Keep the last rendered ranking URL so leaving the page cannot overwrite it.
+      url: state.pageUrl,
+      periodId: state.periodId,
+      query: search.value,
+      filter: state.filter,
+      group: state.group,
+      limit: state.limit,
+      scrollY: window.scrollY,
+      savedAt: Date.now(),
+      ...extra,
+    }));
   } catch {}
 }
-rows.addEventListener("click", rememberList);
+function restoreScroll(saved) {
+  const target = Array.from(rows.querySelectorAll("a")).find(link => link.getAttribute("href") === saved.href);
+  const top = target && Number.isFinite(Number(saved.top))
+    ? window.scrollY + target.getBoundingClientRect().top - Number(saved.top)
+    : Number(saved.scrollY) || 0;
+  window.scrollTo({ left: 0, top, behavior: "instant" });
+}
+async function restoreSavedState(saved) {
+  if (!saved || !state.ready) return;
+  state.limit = Math.max(30, Number(saved.limit) || 30);
+  state.group = state.groups.some(group => group.id === saved.group) ? saved.group : "all";
+  state.filter = ["top100", "top500", "up", "down"].includes(saved.filter) ? saved.filter : "all";
+  if (typeof saved.query === "string" && saved.query !== search.value) search.value = saved.query;
+  render();
+  await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+  restoreScroll(saved);
+}
+
+rows.addEventListener("click", event => {
+  const link = event.target.closest("a.ranking-row");
+  if (!link) return;
+  saveRestorePoint({
+    clickedRank: Number(link.dataset.rank),
+    href: link.getAttribute("href"),
+    top: link.getBoundingClientRect().top,
+  });
+});
 
 const requestedPeriod = params.get("period");
 search.value = params.get("q") || "";
@@ -53,17 +111,50 @@ function rowMarkup(record) {
   const amountText = exact ? format(record.amount_usd_10k) : amount.replace(/万(?:美元|美金)$/, "");
   return `<a class="ranking-row" href="/yueqing-export-ranking/company/${escape(record.company_id)}/" data-rank="${record.rank}"><span class="row-rank ${record.rank <= 3 ? "rank-top" : ""}">${record.rank}</span><span class="company-mark ${meta?.icon && meta?.darkIcon ? "dark-logo" : ""}" aria-hidden="true">${meta?.icon ? `<img src="${escape(meta.icon)}" alt="" width="42" height="42" loading="lazy">` : `<span>${escape(initials)}</span>`}</span><span class="row-company"><b>${escape(record.company_name)}</b>${meta?.domain ? `<span class="company-badge">官网</span>` : ""}<span class="company-subline">${escape(meta?.domain || record.company_id)}</span></span><span class="row-amount">${escape(amountText)}${missingAmount ? "" : "<small>万美元</small>"}</span><span class="row-change ${signal.type}"><span class="mobile-change-label">名次 </span>${signal.label}</span></a>`;
 }
-function saveUrl() {
-  const url = new URL(location.href);
-  for (const [key, value] of [["q", search.value.trim()], ["period", state.periodId === boot.latest ? "" : state.periodId], ["filter", state.filter === "all" ? "" : state.filter], ["band", state.group === "all" ? "" : state.group]]) value ? url.searchParams.set(key, value) : url.searchParams.delete(key);
+function canvasUrl() {
+  const url = new URL(cleanCanvasUrl || location.href, location.origin);
+  for (const [key, value] of [
+    ["q", search.value.trim()],
+    ["period", state.periodId === boot.latest ? "" : state.periodId],
+    ["filter", state.filter === "all" ? "" : state.filter],
+    ["band", state.group === "all" ? "" : state.group],
+  ]) value ? url.searchParams.set(key, value) : url.searchParams.delete(key);
   url.searchParams.delete("restore");
+  return url;
+}
+function saveUrl() {
+  if (!state.ready) return;
+  const url = canvasUrl();
+  cleanCanvasUrl = state.pageUrl = `${url.pathname}${url.search}${url.hash}`;
   history.replaceState(history.state, "", url);
+}
+function closeSuggestions() {
+  suggestions.hidden = true;
+  state.activeSuggestion = -1;
+  search.setAttribute("aria-expanded", "false");
+  search.removeAttribute("aria-activedescendant");
+}
+function selectSuggestion(record) {
+  search.value = record.company_name;
+  state.limit = 30;
+  closeSuggestions();
+  render();
+  saveRestorePoint({ focus: "search" });
+  document.querySelector(".ranking-section").scrollIntoView({ block: "start" });
+}
+function renderSuggestions() {
+  if (!state.ready || !search.value.trim()) return closeSuggestions();
+  const matches = suggestCompanies(state.dataset.records, search.value, { searchIndex: state.searchIndex, limit: 6 });
+  if (!matches.length) return closeSuggestions();
+  suggestions.innerHTML = matches.map((record, index) => `<button type="button" role="option" id="rankingSuggestion${index}" data-company-id="${escape(record.company_id)}" aria-selected="${index === state.activeSuggestion}"><span class="suggestion-rank">#${record.rank}</span><span><b class="suggestion-name">${escape(record.company_name)}</b><small class="suggestion-note">${escape(boot.companyMeta[record.company_id]?.domain || record.company_id)}</small></span><span class="suggestion-arrow" aria-hidden="true">↗</span></button>`).join("");
+  suggestions.hidden = false;
+  search.setAttribute("aria-expanded", "true");
 }
 function render() {
   if (!state.ready) return;
   let records = filterRanking(state.dataset.records, { query: search.value, searchIndex: state.searchIndex, top: state.filter === "top100" ? 100 : state.filter === "top500" ? 500 : 0 });
   if (state.group !== "all") {
-    const group = state.groups.find(g => g.id === state.group);
+    const group = state.groups.find(item => item.id === state.group);
     if (group) records = records.filter(record => matchesAmountGroup(record, group));
   }
   if (["up", "down"].includes(state.filter)) records = records.filter(record => rankSignal(record, state.currentIndex, state.previousIndex, state.hasPrevious).type === state.filter);
@@ -78,10 +169,17 @@ function render() {
   document.querySelectorAll("#distributionLegend button").forEach(button => button.setAttribute("aria-pressed", String(button.dataset.group === state.group)));
   exactShortcut?.setAttribute("aria-pressed", String(state.dataset.period.precision === "exact"));
   saveUrl();
+  renderSuggestions();
 }
-function reset() { search.value = ""; state.group = "all"; state.filter = "all"; state.limit = 30; render(); }
-async function setPeriod(id) {
-  const period = boot.periods.find(p => p.id === id);
+function reset() {
+  search.value = "";
+  state.group = "all";
+  state.filter = "all";
+  state.limit = 30;
+  render();
+}
+async function setPeriod(id, options = {}) {
+  const period = boot.periods.find(item => item.id === id);
   if (!period) return;
   const previous = previousPeriod(period);
   periodSelect.disabled = true;
@@ -91,26 +189,36 @@ async function setPeriod(id) {
   error.hidden = true;
   try {
     const [dataset, previousData] = await Promise.all([getDataset(id), previous ? getDataset(previous.id) : null]);
-    state.periodId = id; state.dataset = dataset; state.hasPrevious = !!previous;
+    state.periodId = id;
+    state.dataset = dataset;
+    state.hasPrevious = !!previous;
     state.currentIndex = buildPeriodIndex(dataset.records);
     state.previousIndex = buildPeriodIndex(previousData?.records || []);
-    state.groups = amountGroups(dataset); state.group = "all"; state.limit = 30; state.ready = true;
+    state.groups = amountGroups(dataset);
+    state.group = state.groups.some(group => group.id === options.group) ? options.group : "all";
+    state.limit = Math.max(30, Number(options.limit) || 30);
+    state.ready = true;
     periodSelect.value = id;
     document.querySelector("#statRecords").textContent = format(dataset.records.length);
     document.querySelector("#tabCount").textContent = format(dataset.records.length);
     document.querySelector("#statBands").textContent = dataset.period.precision === "exact" ? "精准" : dataset.bands.length;
     document.querySelector("#statBandLabel").textContent = dataset.period.precision === "exact" ? "源表金额口径" : "出口额区间";
     document.querySelector("#rankingPeriod").textContent = `${period.label} · ${dataset.period.precision === "exact" ? "精准数值，单位：万美元" : "累计出口额区间，非单月数据"}。`;
+    sourceGapNote.hidden = id !== "2026-ytd-08";
     document.querySelector("#amountHeading").textContent = dataset.period.precision === "exact" ? "累计出口额（万美元）" : "累计出口额区间";
     document.querySelector("#changeHeading").textContent = previous ? `较 ${previous.label.replace(/^\d{4}年/, "").replace("（精准数值）", "精准").replace("（区间数据）", "区间")}` : "名次变化";
-    document.querySelector("#distributionBar").innerHTML = state.groups.map(g => `<button type="button" data-group="${g.id}" style="--segment:${g.color};flex:${g.count}" title="${escape(g.label)} · ${format(g.count)}" aria-label="${escape(g.label)}：${g.count}条记录"></button>`).join("");
-    document.querySelector("#distributionLegend").innerHTML = state.groups.map(g => `<button type="button" data-group="${g.id}" style="--segment:${g.color}" aria-pressed="false"><i aria-hidden="true"></i>${escape(g.label)}<b>${format(g.count)}</b></button>`).join("");
+    document.querySelector("#distributionBar").innerHTML = state.groups.map(group => `<button type="button" data-group="${group.id}" style="--segment:${group.color};flex:${group.count}" title="${escape(group.label)} · ${format(group.count)}" aria-label="${escape(group.label)}：${group.count}条记录"></button>`).join("");
+    document.querySelector("#distributionLegend").innerHTML = state.groups.map(group => `<button type="button" data-group="${group.id}" style="--segment:${group.color}" aria-pressed="false"><i aria-hidden="true"></i>${escape(group.label)}<b>${format(group.count)}</b></button>`).join("");
     render();
   } catch {
     error.hidden = false;
     status.textContent = state.ready ? "未能切换周期，仍显示上次载入的数据。" : "当前显示前 30 条排名记录";
     periodSelect.value = state.periodId;
-  } finally { periodSelect.disabled = false; more.disabled = !state.ready; if (exactShortcut) exactShortcut.disabled = !state.ready; }
+  } finally {
+    periodSelect.disabled = false;
+    more.disabled = !state.ready;
+    if (exactShortcut) exactShortcut.disabled = !state.ready;
+  }
 }
 async function initialize() {
   error.hidden = true;
@@ -118,51 +226,105 @@ async function initialize() {
     const response = await fetch("/data/yueqing-export-ranking/companies.json");
     if (!response.ok) throw new Error("load");
     state.searchIndex = buildCompanySearchIndex((await response.json()).map(company => ({ ...company, ...boot.companyMeta[company.company_id] })));
-    state.filter = ["top100", "top500", "up", "down"].includes(params.get("filter")) ? params.get("filter") : "all";
-    await setPeriod(boot.periods.some(p => p.id === requestedPeriod) ? requestedPeriod : boot.latest);
-    if (state.ready && state.groups.some(g => g.id === params.get("band"))) { state.group = params.get("band"); render(); }
-    if (state.ready && savedReturn) {
-      state.limit = Math.max(30, Number(savedReturn.limit) || 30);
-      render();
-      requestAnimationFrame(() => {
-        const target = Array.from(rows.querySelectorAll("a")).find(link => link.getAttribute("href") === savedReturn.href);
-        window.scrollTo(0, target ? window.scrollY + target.getBoundingClientRect().top - savedReturn.top : savedReturn.scrollY);
-      });
+    const restore = readRestorePoint();
+    const filter = params.get("filter") || restore?.filter;
+    state.filter = ["top100", "top500", "up", "down"].includes(filter) ? filter : "all";
+    const periodId = restore?.periodId && boot.periods.some(period => period.id === restore.periodId)
+      ? restore.periodId
+      : boot.periods.some(period => period.id === requestedPeriod) ? requestedPeriod : boot.latest;
+    await setPeriod(periodId, {
+      group: params.get("band") || restore?.group,
+      limit: restore?.limit,
+    });
+    if (restore) {
+      await restoreSavedState(restore);
+      if (restore.focus === "search") search.focus({ preventScroll: true });
     }
-  } catch { error.hidden = false; }
+  } catch {
+    error.hidden = false;
+  }
 }
-search.addEventListener("input", () => { state.limit = 30; render(); });
-document.querySelector("#rankingSearchForm").addEventListener("submit", event => { event.preventDefault(); state.limit = 30; render(); document.querySelector(".ranking-section").scrollIntoView({ block: "start" }); });
-document.querySelector("#rankTabs").addEventListener("click", event => { const button = event.target.closest("[data-filter]"); if (!button) return; state.filter = button.dataset.filter; state.limit = 30; render(); });
-document.querySelector(".distribution").addEventListener("click", event => { const button = event.target.closest("[data-group]"); if (!button || !state.ready) return; state.group = state.group === button.dataset.group ? "all" : button.dataset.group; state.limit = 30; render(); });
-exactShortcut?.addEventListener("click", () => { if (!periodSelect.disabled) setPeriod(exactShortcut.dataset.period); });
+
+search.addEventListener("input", () => {
+  state.limit = 30;
+  state.activeSuggestion = -1;
+  render();
+});
+search.addEventListener("focus", renderSuggestions);
+search.addEventListener("keydown", event => {
+  const options = [...suggestions.querySelectorAll("[role=option]")];
+  if (event.key === "Escape") return closeSuggestions();
+  if (!options.length) return;
+  if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+    event.preventDefault();
+    const delta = event.key === "ArrowDown" ? 1 : -1;
+    state.activeSuggestion = (state.activeSuggestion + delta + options.length) % options.length;
+    options.forEach((option, index) => option.setAttribute("aria-selected", String(index === state.activeSuggestion)));
+    search.setAttribute("aria-activedescendant", options[state.activeSuggestion].id);
+  } else if (event.key === "Enter" && state.activeSuggestion >= 0) {
+    event.preventDefault();
+    const record = state.dataset.records.find(item => item.company_id === options[state.activeSuggestion].dataset.companyId);
+    if (record) selectSuggestion(record);
+  }
+});
+document.querySelector("#rankingSearchForm").addEventListener("submit", event => {
+  event.preventDefault();
+  state.limit = 30;
+  closeSuggestions();
+  render();
+  document.querySelector(".ranking-section").scrollIntoView({ block: "start" });
+});
+document.querySelector("#rankTabs").addEventListener("click", event => {
+  const button = event.target.closest("[data-filter]");
+  if (!button) return;
+  state.filter = button.dataset.filter;
+  state.limit = 30;
+  render();
+});
+document.querySelector(".distribution").addEventListener("click", event => {
+  const button = event.target.closest("[data-group]");
+  if (!button || !state.ready) return;
+  state.group = state.group === button.dataset.group ? "all" : button.dataset.group;
+  state.limit = 30;
+  render();
+});
+exactShortcut?.addEventListener("click", () => {
+  if (!periodSelect.disabled) setPeriod(exactShortcut.dataset.period);
+});
 periodSelect.addEventListener("change", () => setPeriod(periodSelect.value));
-more.addEventListener("click", () => { const offset = rows.children.length; state.limit += 30; render(); rows.children[offset]?.focus({ preventScroll: true }); });
+more.addEventListener("click", () => {
+  const offset = rows.children.length;
+  state.limit += 30;
+  render();
+  saveRestorePoint();
+  rows.children[offset]?.focus({ preventScroll: true });
+});
 document.querySelector("#clearFilters").addEventListener("click", reset);
 document.querySelector("[data-reset]").addEventListener("click", reset);
 document.querySelector("#retryLoad").addEventListener("click", initialize);
-document.addEventListener("keydown", event => { if (event.key === "/" && !event.ctrlKey && !event.metaKey && !(event.target instanceof HTMLInputElement) && !(event.target instanceof HTMLTextAreaElement) && !event.target.isContentEditable) { event.preventDefault(); search.focus(); } });
+document.addEventListener("keydown", event => {
+  if (event.key === "/" && !event.ctrlKey && !event.metaKey && !(event.target instanceof HTMLInputElement) && !(event.target instanceof HTMLTextAreaElement) && !event.target.isContentEditable) {
+    event.preventDefault();
+    search.focus();
+  }
+});
+document.addEventListener("click", event => {
+  if (!(event.target instanceof Node) || !event.target.closest(".ranking-search")) closeSuggestions();
+});
+suggestions.addEventListener("click", event => {
+  const option = event.target.closest("[data-company-id]");
+  if (!option) return;
+  const record = state.dataset.records.find(item => item.company_id === option.dataset.companyId);
+  if (record) selectSuggestion(record);
+});
+window.addEventListener("scroll", () => saveRestorePoint(), { passive: true });
+window.addEventListener("pagehide", () => saveRestorePoint());
+window.addEventListener("pageshow", async event => {
+  if (!event.persisted) return;
+  const restored = readRestorePoint({ force: true });
+  if (!restored) return;
+  savedReturn = restored;
+  if (state.ready) await restoreSavedState(restored);
+  else initialize();
+});
 initialize();
-
-const suggestions = document.createElement("div");
-suggestions.hidden = true;
-suggestions.setAttribute("aria-label", "匹配企业");
-suggestions.style.cssText = "background:var(--bg,#fff);border:1px solid var(--line,#ddd);border-radius:8px;padding:8px;margin-bottom:12px;font-size:12px";
-document.querySelector("#rankingSearchForm").after(suggestions);
-function showSuggestions() {
-  if (!state.ready || !search.value.trim()) { suggestions.hidden = true; return; }
-  const matches = suggestCompanies(state.dataset.records, search.value, { searchIndex: state.searchIndex });
-  suggestions.innerHTML = matches.length ? matches.map(record => {
-    let label = escape(record.company_name);
-    for (const term of search.value.trim().split(/\s+/)) {
-      if (/^[\p{Script=Han}]+$/u.test(term)) label = label.split(escape(term)).join(`<mark>${escape(term)}</mark>`);
-    }
-    return `<a class="ranking-row" style="display:block;padding:8px" href="/yueqing-export-ranking/company/${record.company_id}/">${label}<small style="display:block;opacity:.6">${escape(boot.companyMeta[record.company_id]?.domain || "")}</small></a>`;
-  }).join("") : "未找到匹配企业";
-  suggestions.hidden = false;
-}
-suggestions.addEventListener("click", rememberList);
-search.addEventListener("input", showSuggestions);
-search.addEventListener("focus", showSuggestions);
-document.addEventListener("click", event => { if (!suggestions.contains(event.target) && event.target !== search) suggestions.hidden = true; });
-search.addEventListener("keydown", event => { if(event.key === "Escape") suggestions.hidden = true; });

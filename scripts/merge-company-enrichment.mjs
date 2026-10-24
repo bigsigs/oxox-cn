@@ -32,6 +32,7 @@ const genericProductionAddressIds = new Set([
   "YQ000366",
   "YQ000379",
   "YQ000384",
+  "YQ000253",
 ]);
 
 const readJson = (file) => JSON.parse(fs.readFileSync(file, "utf8"));
@@ -177,12 +178,37 @@ research.push(...top100Supplemental.map((row) => ({
   ...row,
   role: "top100_supplemental",
 })));
-const currentMarketingSites = [
-  ["YQ000018", "https://www.cncele.com/"],
-];
 const reviewedWebsiteOverrides = new Map([
+  ["YQ000018", "https://www.cncele.com/"],
   ["YQ000593", "https://www.chintelc.com/"],
   ["YQ000679", "https://www.chinaweipeng.cn/"],
+  ["YQ000175", "https://www.bjenclosure.com/"],
+  ["YQ001132", "http://www.yaweidq.cn/"],
+]);
+const reviewedCompanyOverrides = new Map([
+  ["YQ000175", {
+    website: "https://www.bjenclosure.com/",
+    websiteSource: "https://www.bjenclosure.com/",
+    contactAddress: "浙江省乐清市象阳镇路头石村",
+    registeredCapital: "500万元人民币",
+    mainProducts: "配电箱、壁挂箱、落地柜、不锈钢箱体、塑料箱体、高低压成套配电设备、断路器及电气配件",
+  }],
+  ["YQ000176", {
+    mainProducts: "金属易撕盖、易拉盖及罐头包装材料",
+    productSource: "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web1828/site/attach/0/041cf43a1a414c9e94acf7aaa0c0dd10.pdf",
+  }],
+  ["YQ000190", {
+    clearRegisteredCapital: true,
+  }],
+  ["YQ000205", {
+    website: "https://www.singi.com/",
+    websiteSource: "https://www.singi.com/",
+    contactAddress: "浙江省乐清经济开发区纬十二路148号东首",
+    addressSource: "https://www.singi.com/contactus/",
+    registeredCapital: "2288万元人民币",
+    mainProducts: "低压电器、智能转换开关、双电源自动转换开关、控制与保护开关电器及电气配件",
+    productSource: "https://www.singi.com/277.html",
+  }],
 ]);
 
 const byId = new Map();
@@ -314,7 +340,7 @@ const isGenericAddress = (value) => {
   const text = cleanText(value);
   return !text
     || /^(浙江省|浙江省温州市|浙江省乐清市|温州市|乐清市)[。.]?$/.test(text)
-    || /具体(?:门牌|地址).{0,6}(?:未|不详)/.test(text)
+    || /具体(?:门牌|地址).{0,10}(?:未|不详|待核实)/.test(text)
     || /未公开.{0,8}地址/.test(text);
 };
 const isSpeculativeProduct = (value) => {
@@ -538,11 +564,10 @@ for (const record of top3291) {
     delete details.alibaba_address;
     if (details.field_sources) delete details.field_sources.alibaba_address;
   }
-  for (const [id, url] of currentMarketingSites) {
-    if (id !== record.company_id) continue;
-    profile.links = profile.links.filter((link) =>
-      !(link.type === "official_website" && link.url === url)
-      && !(link.type === "alibaba_store" && /metomfg\.1688\.com/.test(link.url)));
+  const reviewedCompanyOverride = reviewedCompanyOverrides.get(record.company_id);
+  if (reviewedCompanyOverride?.clearRegisteredCapital) {
+    delete details.registered_capital;
+    if (details.field_sources) delete details.field_sources.registered_capital;
   }
   if (record.company_id === "YQ000008") {
     details.field_sources ??= {};
@@ -699,7 +724,8 @@ for (const record of top3291) {
         replace: isSupplementalTop100 || researchRow?.role === "rank1001_to_1500",
         clear: true,
       };
-    setDetails(details, "contact_address", address, addressSource ?? detailSource, "public_company_record", supplementalOptions);
+    const contactAddress = isGenericAddress(address) ? "" : address;
+    setDetails(details, "contact_address", contactAddress, addressSource ?? detailSource, "public_company_record", supplementalOptions);
     setDetails(details, "registered_address", registeredAddress, detailSource, "company_filing", supplementalOptions);
     setDetails(
       details,
@@ -714,6 +740,59 @@ for (const record of top3291) {
   }
 
   const replaceTop1500ResearchDetails = researchRow?.role === "rank1001_to_1500";
+  if (reviewedCompanyOverride) {
+    const obsoleteSourceDomain = reviewedCompanyOverride.website
+      && record.company_id === "YQ000175"
+      ? "p-dbox.com"
+      : null;
+    if (obsoleteSourceDomain && details.sources) {
+      details.sources = details.sources.filter(source => {
+        try {
+          return new URL(source.url).hostname.replace(/^www\./, "").toLowerCase() !== obsoleteSourceDomain;
+        } catch {
+          return true;
+        }
+      });
+    }
+    if (reviewedCompanyOverride.website) {
+      const websiteUrl = normalizeUrl(reviewedCompanyOverride.website);
+      profile.links = profile.links.filter(link =>
+        !["official_website", "official_website_alt"].includes(link.type)
+        || normalizeUrl(link.url) === websiteUrl);
+      addLink(profile, "official_website", "企业官网", websiteUrl, "user_provided");
+    }
+    if (reviewedCompanyOverride.clearRegisteredCapital) {
+      delete details.registered_capital;
+      if (details.field_sources) delete details.field_sources.registered_capital;
+    }
+    const overrideSource = reviewedCompanyOverride.websiteSource
+      || reviewedCompanyOverride.addressSource
+      || reviewedCompanyOverride.productSource
+      || null;
+    const setReviewedDetails = (field, value, sourceUrl, cleanupPattern) => {
+      if (!value) return;
+      details[field] = value;
+      details.field_sources ??= {};
+      details.field_sources[field] = {
+        url: sourceUrl || overrideSource,
+        checked_at: checkedAt,
+        source_type: "company_website_or_public_document",
+      };
+      if (cleanupPattern && details.sources) {
+        details.sources = details.sources.filter(source => !cleanupPattern.test(source.url));
+      }
+    };
+    setReviewedDetails("contact_address", reviewedCompanyOverride.contactAddress, reviewedCompanyOverride.addressSource, /p-dbox\.com/i);
+    setReviewedDetails("registered_capital", reviewedCompanyOverride.registeredCapital, overrideSource, /p-dbox\.com/i);
+    setReviewedDetails("main_products", reviewedCompanyOverride.mainProducts, reviewedCompanyOverride.productSource, /p-dbox\.com/i);
+    if (overrideSource) {
+      addSources(details, [{ label: "企业官网", url: overrideSource }]);
+    }
+    if (record.company_id === "YQ000175" && details.sources) {
+      details.sources = (details.sources ?? [])
+        .filter(source => !/p-dbox\.com/i.test(source.url));
+    }
+  }
   if (note && (!details.source_note || isSupplementalTop100 || replaceTop1500ResearchDetails)) {
     details.source_note = note;
   }
@@ -728,6 +807,9 @@ for (const record of top3291) {
     }
   } else if (sources.length) {
     addSources(details, sources);
+  }
+  if (record.company_id === "YQ000175" && details.sources) {
+    details.sources = details.sources.filter(source => !/p-dbox\.com/i.test(source.url));
   }
   const hasAny = Object.keys(profile.links).length > 0
     || details.sources?.length > 0
@@ -802,8 +884,17 @@ const sortedProfiles = Object.fromEntries(
           if (typeof profile.details[key] === "string") {
             profile.details[key] = profile.details[key]
               .replace(/[（(]\s*官网产品页[，,]\s*具体系列待核对\s*[）)]/g, "（官网产品页）")
-              .replace(/待核对/g, "未提供");
+              .replace(/\s*[（(][^（）()]*(?:待核实|需复核|可能已变更|公开资料不足|具体线需复核|具体商品需复核|子公司地址需复核|主体可能同名|可能为同名主体)[^（）()]*[）)]\s*$/u, "")
+              .replace(/待核对/g, "未提供")
+              .trim();
           }
+        }
+        if (
+          profile.details.contact_address
+          && /^(?:浙江省|浙江省温州市|温州市|乐清市|浙江省乐清市)[。.]?$/u.test(profile.details.contact_address)
+        ) {
+          delete profile.details.contact_address;
+          if (profile.details.field_sources) delete profile.details.field_sources.contact_address;
         }
       }
       if (profile.links?.length) {

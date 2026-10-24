@@ -174,7 +174,7 @@ const chartPoints = chartHistory.map((record, index) => ({
 const chartTicks = [...new Set([chartMin, Math.round((chartMin + chartMax) / 2), chartMax])];
 const facts = [
   ["企业名称", details?.legal_name],
-  ["企业自述成立时间", details?.founding_claim],
+  ["企业成立时间", details?.founding_claim],
   ["工商登记成立日期", details?.registered_on],
   ["法定代表人", details?.legal_representative],
   ["注册资本", details?.registered_capital],

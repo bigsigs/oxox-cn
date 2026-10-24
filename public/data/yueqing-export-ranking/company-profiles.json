@@ -1082,10 +1082,9 @@
     "links": [
       {
         "type": "official_website",
-        "label": "企业官网",
+        "label": "官方网站",
         "url": "https://www.cncele.com/",
         "domain": "cncele.com",
-        "source": "user_confirmed",
         "added_at": "2026-10-24"
       }
     ]
@@ -3703,8 +3702,8 @@
       ],
       "checked_at": "2026-10-24",
       "legal_name": "浙江三科新能源有限公司",
-      "contact_address": "浙江省温州市乐清市",
-      "website_product_note": "官网展示电动高尔夫球车、电动滑板车和电动自行车；主营产品资料按工商口径独立保留。"
+      "website_product_note": "官网展示电动高尔夫球车、电动滑板车和电动自行车；主营产品资料按工商口径独立保留。",
+      "contact_address": "浙江省温州市乐清市"
     },
     "links": [
       {
@@ -4881,9 +4880,9 @@
       "contact_address": "浙江省乐清市黄华工业区（康泰路5号）",
       "field_sources": {
         "contact_address": {
-          "url": "https://www.kangtai.com.cn/",
+          "url": "https://wzmsa.wenzhou.gov.cn/module/download/downfile.jsp?classid=0&filename=88cb6860db4c45b0a86c6ac57788f09d.pdf",
           "checked_at": "2026-10-24",
-          "source_type": "company_website"
+          "source_type": "public_company_record"
         },
         "main_products": {
           "url": "https://wzmsa.wenzhou.gov.cn/module/download/downfile.jsp?classid=0&filename=88cb6860db4c45b0a86c6ac57788f09d.pdf",
@@ -4975,13 +4974,13 @@
           "source_type": "company_website_or_filing"
         },
         "main_products": {
-          "url": "https://aierway.com/en-gb/information/delivery",
+          "url": "https://top.qcc.com/tc/ce6f69eea22a.html",
           "checked_at": "2026-10-24",
           "source_type": "company_website"
         }
       },
       "registered_capital": "1000万元人民币",
-      "main_products": "真空断路器、开关柜、变压器、负荷开关、隔离开关、接地开关、电气绝缘件及消防设备",
+      "main_products": "货物进出口、技术进出口",
       "sources": [
         {
           "label": "企业公开资料",
@@ -5069,7 +5068,7 @@
         }
       ],
       "checked_at": "2026-10-24",
-      "main_products": "金属材料、五金及相关进出口商品（商标申请覆盖0601/0602/0605/0606/0607/0608/0609/0616类别，具体商品需复核）",
+      "main_products": "金属材料、五金及相关进出口商品",
       "field_sources": {
         "main_products": {
           "url": "https://tm.aliyun.com/industry/06/0602/yi_chu_shen/34",
@@ -5790,20 +5789,20 @@
       }
     ],
     "details": {
-      "contact_address": "浙江省温州市乐清市柳市镇新光工业区新光大道115号（官网英文地址：Unit 10, No.115, Xinguang Avenue, Liushi, Wenzhou）",
+      "contact_address": "浙江省温州市乐清市柳市镇新光工业区新光大道115号",
       "field_sources": {
         "contact_address": {
-          "url": "https://www.wosomelec.com/",
+          "url": "https://m.qdyoucheng.com/wmjckgjmy/jck-837365.html",
           "checked_at": "2026-10-24",
-          "source_type": "company_website"
+          "source_type": "public_company_record"
         },
         "main_products": {
-          "url": "https://www.wosomelec.com/products",
+          "url": "https://m.qdyoucheng.com/wmjckgjmy/jck-837365.html",
           "checked_at": "2026-10-24",
           "source_type": "company_website"
         }
       },
-      "main_products": "小型断路器、漏电保护器、配电箱、熔断器、浪涌保护器、开关插座及直流电气产品",
+      "main_products": "电气相关商品进出口",
       "sources": [
         {
           "label": "企业公开资料",
@@ -6104,7 +6103,7 @@
         }
       ],
       "checked_at": "2026-10-24",
-      "contact_address": "浙江省温州市乐清市柳市镇新光工业区（好未来电器集团公开介绍，子公司地址需复核）",
+      "contact_address": "浙江省温州市乐清市柳市镇新光工业区",
       "field_sources": {
         "contact_address": {
           "url": "https://www.cinn.cn/2025xlppgstz/2025/12-02/9kwNgv5D.html",
@@ -6288,26 +6287,20 @@
       }
     ],
     "details": {
-      "contact_address": "浙江省乐清市经济开发区纬七路203号",
+      "contact_address": "浙江省温州市乐清市乐清经济开发区纬七路203号",
       "field_sources": {
         "contact_address": {
-          "url": "https://www.fato.cn/contact/",
+          "url": "https://www.tendata.com/en/buyer/wenzhou-fato-mechanical-electrical-import-export-co-ltd-CHN8d397d4f6b77a6807305bd692fe25df8.html",
           "checked_at": "2026-10-24",
-          "source_type": "company_website"
+          "source_type": "public_company_record"
         },
         "registered_capital": {
           "url": "https://www.tendata.com/en/buyer/wenzhou-fato-mechanical-electrical-import-export-co-ltd-CHN8d397d4f6b77a6807305bd692fe25df8.html",
           "checked_at": "2026-10-24",
           "source_type": "company_website_or_filing"
-        },
-        "main_products": {
-          "url": "https://www.fato.cn/product/",
-          "checked_at": "2026-10-24",
-          "source_type": "company_website"
         }
       },
       "registered_capital": "200万元人民币",
-      "main_products": "高低压电器、仪器仪表、电力变压器、智能电气及成套设备",
       "sources": [
         {
           "label": "企业公开资料",
@@ -7144,11 +7137,6 @@
           "url": "https://rank.reevol.com/company/yueqing-hongji-trade-co-ltd?lang=zh",
           "checked_at": "2026-10-24",
           "source_type": "company_website_or_directory"
-        },
-        "contact_address": {
-          "url": "https://rank.reevol.com/company/yueqing-hongji-trade-co-ltd?lang=zh",
-          "checked_at": "2026-10-24",
-          "source_type": "public_company_record"
         }
       },
       "sources": [
@@ -7162,8 +7150,7 @@
         }
       ],
       "checked_at": "2026-10-24",
-      "legal_name": "乐清市鸿基贸易有限公司",
-      "contact_address": "浙江省温州市乐清市（CNVerify仅显示乐清市，具体地址未公开）"
+      "legal_name": "乐清市鸿基贸易有限公司"
     }
   },
   "YQ000145": {
@@ -7415,7 +7402,7 @@
           "source_type": "company_website_or_directory"
         }
       },
-      "registered_capital": "5180万元人民币（2009年公开披露；当前资本可能已变更）",
+      "registered_capital": "5180万元人民币",
       "main_products": "汽车/摩托车主线束、开关、接插件；汽车高低压线束及电器配件",
       "sources": [
         {
@@ -7617,11 +7604,6 @@
           "url": "https://stock.quote.stockstar.com/corp/restructure_002897.shtml",
           "checked_at": "2026-10-24",
           "source_type": "company_website_or_directory"
-        },
-        "contact_address": {
-          "url": "https://stock.quote.stockstar.com/corp/restructure_002897.shtml",
-          "checked_at": "2026-10-24",
-          "source_type": "public_company_record"
         }
       },
       "main_products": "新能源/光伏及储能相关业务（意华股份对外投资主体）",
@@ -7636,8 +7618,7 @@
         }
       ],
       "checked_at": "2026-10-24",
-      "legal_name": "乐清海银新能源有限公司",
-      "contact_address": "浙江省温州市乐清市（意华股份投资披露，具体地址未公开）"
+      "legal_name": "乐清海银新能源有限公司"
     }
   },
   "YQ000158": {
@@ -8282,31 +8263,27 @@
       "contact_address": "浙江省乐清市象阳镇路头石村",
       "field_sources": {
         "contact_address": {
-          "url": "https://www.p-dbox.com/",
+          "url": "https://www.bjenclosure.com/",
           "checked_at": "2026-10-24",
-          "source_type": "public_company_record"
+          "source_type": "company_website_or_public_document"
         },
         "registered_capital": {
-          "url": "https://www.p-dbox.com/",
+          "url": "https://www.bjenclosure.com/",
           "checked_at": "2026-10-24",
-          "source_type": "public_company_record"
+          "source_type": "company_website_or_public_document"
         },
         "main_products": {
-          "url": "https://www.p-dbox.com/",
+          "url": "https://www.bjenclosure.com/",
           "checked_at": "2026-10-24",
-          "source_type": "company_website_or_directory"
+          "source_type": "company_website_or_public_document"
         }
       },
       "registered_capital": "500万元人民币",
       "main_products": "配电箱、壁挂箱、落地柜、不锈钢箱体、塑料箱体、高低压成套配电设备、断路器及电气配件",
       "sources": [
         {
-          "label": "企业公开资料",
-          "url": "https://www.p-dbox.com/"
-        },
-        {
-          "label": "企业公开资料",
-          "url": "https://www.p-dbox.com/wap/about.asp"
+          "label": "企业官网",
+          "url": "https://www.bjenclosure.com/"
         },
         {
           "label": "企业公开资料",
@@ -8324,9 +8301,9 @@
       {
         "type": "official_website",
         "label": "企业官网",
-        "url": "https://www.p-dbox.com/",
-        "domain": "p-dbox.com",
-        "source": "company_identity_verified",
+        "url": "https://www.bjenclosure.com/",
+        "domain": "bjenclosure.com",
+        "source": "user_provided",
         "added_at": "2026-10-24"
       }
     ]
@@ -8340,12 +8317,12 @@
         }
       ],
       "checked_at": "2026-10-24",
-      "main_products": "新材料技术/材料制品（公开资料不足）",
+      "main_products": "金属易撕盖、易拉盖及罐头包装材料",
       "field_sources": {
         "main_products": {
           "url": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web1828/site/attach/0/041cf43a1a414c9e94acf7aaa0c0dd10.pdf",
           "checked_at": "2026-10-24",
-          "source_type": "company_website"
+          "source_type": "company_website_or_public_document"
         }
       },
       "legal_name": "浙江博升新材料技术有限公司"
@@ -8584,7 +8561,7 @@
           "source_type": "public_company_record"
         }
       },
-      "main_products": "电气安全、智能家电/家居及电气机电设备（集团产品线，子公司具体线需复核）",
+      "main_products": "电气安全、智能家电/家居及电气机电设备",
       "sources": [
         {
           "label": "企业公开资料",
@@ -8871,11 +8848,6 @@
           "url": "https://www.tendata.com/en/supplier/b%D0%BEerstn-electric-c%D0%BE-ltd-CHNI8ffc22130277e14413f50123a9c16746.html",
           "checked_at": "2026-10-24",
           "source_type": "company_website_or_directory"
-        },
-        "registered_capital": {
-          "url": "https://www.tendata.com/en/supplier/b%D0%BEerstn-electric-c%D0%BE-ltd-CHNI8ffc22130277e14413f50123a9c16746.html",
-          "checked_at": "2026-10-24",
-          "source_type": "public_company_record"
         }
       },
       "main_products": "高低压成套配电设备、箱式变电站、中高压户内外真空断路器、液体介质电力变压器、气体开关",
@@ -8890,8 +8862,7 @@
         }
       ],
       "checked_at": "2026-10-24",
-      "legal_name": "博尔斯顿电气有限公司",
-      "registered_capital": "5000元人民币（MapMe显示授权资本，币种/金额可能不完整）"
+      "legal_name": "博尔斯顿电气有限公司"
     },
     "links": [
       {
@@ -9346,24 +9317,38 @@
         {
           "label": "Singi 产品资料",
           "url": "https://www.singi.com/277.html"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://tm.aliyun.com/detail/2a3b_11451344_36"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.enf.com.cn/featured-deals/component"
         }
       ],
       "checked_at": "2026-10-24",
-      "contact_address": "浙江省乐清市经济开发区纬十二路148号东首",
+      "contact_address": "浙江省乐清经济开发区纬十二路148号东首",
       "field_sources": {
         "contact_address": {
           "url": "https://www.singi.com/contactus/",
           "checked_at": "2026-10-24",
-          "source_type": "company_website"
+          "source_type": "company_website_or_public_document"
         },
         "main_products": {
           "url": "https://www.singi.com/277.html",
           "checked_at": "2026-10-24",
-          "source_type": "company_website"
+          "source_type": "company_website_or_public_document"
+        },
+        "registered_capital": {
+          "url": "https://www.singi.com/",
+          "checked_at": "2026-10-24",
+          "source_type": "company_website_or_public_document"
         }
       },
       "main_products": "低压电器、智能转换开关、双电源自动转换开关、控制与保护开关电器及电气配件",
-      "legal_name": "浙江信基电气股份有限公司"
+      "legal_name": "浙江信基电气股份有限公司",
+      "registered_capital": "2288万元人民币"
     },
     "links": [
       {
@@ -9371,7 +9356,7 @@
         "label": "企业官网",
         "url": "https://www.singi.com/",
         "domain": "singi.com",
-        "source": "company_identity_verified",
+        "source": "user_provided",
         "added_at": "2026-10-24"
       }
     ]
@@ -9605,7 +9590,7 @@
           "source_type": "company_website"
         }
       },
-      "main_products": "电气科技产品（公开资料不足）",
+      "main_products": "电气科技产品",
       "legal_name": "乐清市旺泰电气科技有限公司"
     }
   },
@@ -9631,7 +9616,7 @@
           "source_type": "company_website"
         }
       },
-      "main_products": "电器产品（公开资料不足）",
+      "main_products": "电器产品",
       "legal_name": "浙江奇诚电器有限公司"
     }
   },
@@ -10688,20 +10673,14 @@
         }
       ],
       "checked_at": "2026-10-24",
-      "contact_address": "浙江省乐清市（具体地址待核实）",
       "field_sources": {
-        "contact_address": {
-          "url": "https://cn.kompass.com/c/%E4%B9%90%E6%B8%85%E5%B8%82%E5%8D%8E%E7%91%9E%E7%94%B5%E5%AD%90%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/cn194790/",
-          "checked_at": "2026-10-24",
-          "source_type": "public_company_record"
-        },
         "main_products": {
           "url": "https://cn.kompass.com/c/%E4%B9%90%E6%B8%85%E5%B8%82%E5%8D%8E%E7%91%9E%E7%94%B5%E5%AD%90%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/cn194790/",
           "checked_at": "2026-10-24",
           "source_type": "company_website"
         }
       },
-      "main_products": "电子包装纸袋等（第三方目录分类，主体可能同名）",
+      "main_products": "电子包装纸袋等",
       "legal_name": "乐清市华瑞电子有限公司"
     }
   },
@@ -10711,6 +10690,10 @@
         {
           "label": "Haivo 企业官网",
           "url": "https://www.chinahaivo.com/"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.instrument.com.cn/company/397529.html"
         }
       ],
       "checked_at": "2026-10-24",
@@ -11401,7 +11384,7 @@
         }
       ],
       "checked_at": "2026-10-24",
-      "main_products": "工具类（电子样本页，可能为同名主体）",
+      "main_products": "工具类",
       "field_sources": {
         "main_products": {
           "url": "https://ycd.boyuan.com/index.php?file=dzyb&homepage=yingzhua&itemid=637",
@@ -12125,6 +12108,27 @@
       "legal_name": "温州迪克美电气科技有限公司"
     }
   },
+  "YQ000327": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "https://cnkuangya.com/",
+        "domain": "cnkuangya.com",
+        "source": "user_confirmed",
+        "added_at": "2026-10-24"
+      }
+    ],
+    "details": {
+      "sources": [
+        {
+          "label": "KUANGYA 官网",
+          "url": "https://cnkuangya.com/"
+        }
+      ],
+      "checked_at": "2026-10-24"
+    }
+  },
   "YQ000333": {
     "details": {
       "main_products": "家居装饰品（广交会展商分类）",
@@ -12631,6 +12635,28 @@
       "checked_at": "2026-10-24",
       "legal_name": "浙江臻博精密机械有限公司",
       "registered_capital": "1000万元人民币"
+    }
+  },
+  "YQ000355": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "https://www.hxdy.cn/",
+        "domain": "hxdy.cn",
+        "source": "company_identity_verified",
+        "added_at": "2026-10-24"
+      }
+    ],
+    "details": {
+      "sources": [
+        {
+          "label": "企业官网",
+          "url": "https://www.hxdy.cn/"
+        }
+      ],
+      "checked_at": "2026-10-24",
+      "legal_name": "浙江红星电业有限公司"
     }
   },
   "YQ000357": {
@@ -13976,15 +14002,9 @@
           "url": "https://www.cnverify.com/company/Yueqing-Aopi-Electric-Co-Ltd",
           "checked_at": "2026-10-24",
           "source_type": "company_website_or_directory"
-        },
-        "contact_address": {
-          "url": "https://www.cnverify.com/company/Yueqing-Aopi-Electric-Co-Ltd",
-          "checked_at": "2026-10-24",
-          "source_type": "public_company_record"
         }
       },
-      "legal_name": "乐清市奥匹电气有限公司",
-      "contact_address": "浙江省温州市乐清市（未公开详细地址）"
+      "legal_name": "乐清市奥匹电气有限公司"
     }
   },
   "YQ000425": {
@@ -15679,6 +15699,10 @@
         {
           "label": "东方气动企业官网",
           "url": "http://www.df-pneumatic.com/CH/"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://ycd.boyuan.com/com/dongfang/contact/"
         }
       ],
       "checked_at": "2026-10-24",
@@ -16742,6 +16766,35 @@
       ],
       "checked_at": "2026-10-24",
       "legal_name": "浙江达威电子股份有限公司"
+    }
+  },
+  "YQ000617": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "http://www.huajoinele.com/",
+        "domain": "huajoinele.com",
+        "source": "user_confirmed",
+        "added_at": "2026-10-24"
+      }
+    ],
+    "details": {
+      "sources": [
+        {
+          "label": "佑川官网",
+          "url": "http://www.huajoinele.com/"
+        }
+      ],
+      "checked_at": "2026-10-24",
+      "legal_name": "乐清市佑川电气有限公司",
+      "field_sources": {
+        "legal_name": {
+          "url": "http://www.huajoinele.com/",
+          "checked_at": "2026-10-24",
+          "source_type": "company_website"
+        }
+      }
     }
   },
   "YQ000622": {
@@ -20723,6 +20776,28 @@
       "legal_name": "温州汉德派克包装机械有限公司"
     }
   },
+  "YQ000897": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "https://www.tduec.com/",
+        "domain": "tduec.com",
+        "source": "company_identity_verified",
+        "added_at": "2026-10-24"
+      }
+    ],
+    "details": {
+      "sources": [
+        {
+          "label": "企业官网",
+          "url": "https://www.tduec.com/"
+        }
+      ],
+      "checked_at": "2026-10-24",
+      "legal_name": "兴达科技股份有限公司"
+    }
+  },
   "YQ000904": {
     "links": [
       {
@@ -21439,7 +21514,19 @@
     }
   },
   "YQ000996": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "https://www.chinahongtai.com/",
+        "domain": "chinahongtai.com",
+        "source": "company_identity_verified",
+        "added_at": "2026-10-24"
+      }
+    ],
     "details": {
+      "checked_at": "2026-10-24",
+      "legal_name": "浙江宏泰电子设备有限公司",
       "contact_address": "浙江省温州市乐清市经济开发区纬七路222号",
       "field_sources": {
         "contact_address": {
@@ -21469,9 +21556,7 @@
           "label": "企业公开资料",
           "url": "https://www.chinahongtai.com/"
         }
-      ],
-      "checked_at": "2026-10-24",
-      "legal_name": "浙江宏泰电子设备有限公司"
+      ]
     }
   },
   "YQ000997": {
@@ -22088,16 +22173,6 @@
     }
   },
   "YQ001042": {
-    "links": [
-      {
-        "type": "official_website",
-        "label": "企业官网",
-        "url": "https://www.chinwlconnector.com/",
-        "domain": "chinwlconnector.com",
-        "source": "company_identity_verified",
-        "added_at": "2026-10-24"
-      }
-    ],
     "details": {
       "contact_address": "浙江省温州市乐清市柳市镇象虹村（原上池头村）",
       "field_sources": {
@@ -22280,6 +22355,8 @@
   },
   "YQ001050": {
     "details": {
+      "checked_at": "2026-10-24",
+      "legal_name": "乐清市卓达金属制品有限公司",
       "contact_address": "浙江省乐清市北白象镇樟湾工业区",
       "field_sources": {
         "contact_address": {
@@ -22323,9 +22400,7 @@
           "label": "企业公开资料",
           "url": "http://www.zood.cn/products/productShow123.html"
         }
-      ],
-      "checked_at": "2026-10-24",
-      "legal_name": "乐清市卓达金属制品有限公司"
+      ]
     }
   },
   "YQ001055": {
@@ -22384,7 +22459,19 @@
     }
   },
   "YQ001056": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "http://www.zmelec.com/",
+        "domain": "zmelec.com",
+        "source": "company_identity_verified",
+        "added_at": "2026-10-24"
+      }
+    ],
     "details": {
+      "checked_at": "2026-10-24",
+      "legal_name": "乐清市中鸣电器有限公司",
       "contact_address": "浙江省乐清市柳市镇朝阳村",
       "field_sources": {
         "contact_address": {
@@ -22408,9 +22495,7 @@
           "label": "企业公开资料",
           "url": "https://company.dzsc.com/card/852186/"
         }
-      ],
-      "checked_at": "2026-10-24",
-      "legal_name": "乐清市中鸣电器有限公司"
+      ]
     }
   },
   "YQ001060": {
@@ -22528,16 +22613,6 @@
     }
   },
   "YQ001064": {
-    "links": [
-      {
-        "type": "official_website",
-        "label": "企业官网",
-        "url": "https://www.zjxci.cn/",
-        "domain": "zjxci.cn",
-        "source": "company_identity_verified",
-        "added_at": "2026-10-24"
-      }
-    ],
     "details": {
       "contact_address": "浙江省温州市乐清市柳市镇后街工业区昌盛路（兴乐电缆有限公司内）",
       "field_sources": {
@@ -22567,182 +22642,6 @@
       ],
       "checked_at": "2026-10-24",
       "legal_name": "浙江晓池电器有限公司"
-    }
-  },
-  "YQ001103": {
-    "links": [
-      {
-        "type": "official_website",
-        "label": "企业官网",
-        "url": "https://www.wanxie.cc/",
-        "domain": "wanxie.cc",
-        "source": "company_identity_verified",
-        "added_at": "2026-10-24"
-      }
-    ],
-    "details": {
-      "checked_at": "2026-10-24",
-      "legal_name": "万协电力科技有限公司",
-      "sources": [
-        {
-          "label": "企业官网",
-          "url": "https://www.wanxie.cc/"
-        }
-      ]
-    }
-  },
-  "YQ001119": {
-    "links": [
-      {
-        "type": "official_website",
-        "label": "企业官网",
-        "url": "https://www.kingnan.com/",
-        "domain": "kingnan.com",
-        "source": "company_identity_verified",
-        "added_at": "2026-10-24"
-      }
-    ],
-    "details": {
-      "checked_at": "2026-10-24",
-      "legal_name": "浙江南峰电气有限公司",
-      "sources": [
-        {
-          "label": "企业官网",
-          "url": "https://www.kingnan.com/"
-        }
-      ]
-    }
-  },
-  "YQ001282": {
-    "links": [
-      {
-        "type": "official_website",
-        "label": "企业官网",
-        "url": "https://www.xlcn6.com/",
-        "domain": "xlcn6.com",
-        "source": "company_identity_verified",
-        "added_at": "2026-10-24"
-      }
-    ],
-    "details": {
-      "checked_at": "2026-10-24",
-      "legal_name": "乐清旭联电子有限公司",
-      "sources": [
-        {
-          "label": "企业官网",
-          "url": "https://www.xlcn6.com/"
-        }
-      ]
-    }
-  },
-  "YQ001298": {
-    "links": [
-      {
-        "type": "official_website",
-        "label": "企业官网",
-        "url": "https://www.dianguang.com/",
-        "domain": "dianguang.com",
-        "source": "company_identity_verified",
-        "added_at": "2026-10-24"
-      }
-    ],
-    "details": {
-      "checked_at": "2026-10-24",
-      "legal_name": "电光防爆科技股份有限公司",
-      "sources": [
-        {
-          "label": "企业官网",
-          "url": "https://www.dianguang.com/"
-        }
-      ]
-    }
-  },
-  "YQ001274": {
-    "links": [
-      {
-        "type": "official_website",
-        "label": "企业官网",
-        "url": "https://www.frsidq.com/",
-        "domain": "frsidq.com",
-        "source": "company_identity_verified",
-        "added_at": "2026-10-24"
-      }
-    ],
-    "details": {
-      "checked_at": "2026-10-24",
-      "legal_name": "浙江弗而兹电气科技有限公司",
-      "sources": [
-        {
-          "label": "企业官网",
-          "url": "https://www.frsidq.com/"
-        }
-      ]
-    }
-  },
-  "YQ001371": {
-    "links": [
-      {
-        "type": "official_website",
-        "label": "企业官网",
-        "url": "https://www.bozzys.cn/",
-        "domain": "bozzys.cn",
-        "source": "company_identity_verified",
-        "added_at": "2026-10-24"
-      }
-    ],
-    "details": {
-      "checked_at": "2026-10-24",
-      "legal_name": "温州博士电气科技有限公司",
-      "sources": [
-        {
-          "label": "企业官网",
-          "url": "https://www.bozzys.cn/"
-        }
-      ]
-    }
-  },
-  "YQ001400": {
-    "links": [
-      {
-        "type": "official_website",
-        "label": "企业官网",
-        "url": "https://www.jxljq.com/",
-        "domain": "jxljq.com",
-        "source": "company_identity_verified",
-        "added_at": "2026-10-24"
-      }
-    ],
-    "details": {
-      "checked_at": "2026-10-24",
-      "legal_name": "乐清市吉祥连接器有限公司",
-      "sources": [
-        {
-          "label": "企业官网",
-          "url": "https://www.jxljq.com/"
-        }
-      ]
-    }
-  },
-  "YQ001419": {
-    "links": [
-      {
-        "type": "official_website",
-        "label": "企业官网",
-        "url": "https://www.wzydyq.com/",
-        "domain": "wzydyq.com",
-        "source": "company_identity_verified",
-        "added_at": "2026-10-24"
-      }
-    ],
-    "details": {
-      "checked_at": "2026-10-24",
-      "legal_name": "温州一鼎仪器制造有限公司",
-      "sources": [
-        {
-          "label": "企业官网",
-          "url": "https://www.wzydyq.com/"
-        }
-      ]
     }
   },
   "YQ001069": {
@@ -23352,16 +23251,6 @@
     }
   },
   "YQ001132": {
-    "links": [
-      {
-        "type": "official_website",
-        "label": "企业官网",
-        "url": "http://www.yaweidq.cn/",
-        "domain": "yaweidq.cn",
-        "source": "user_confirmed",
-        "added_at": "2026-10-24"
-      }
-    ],
     "details": {
       "registered_capital": "1000万元人民币",
       "field_sources": {
@@ -23401,7 +23290,16 @@
       ],
       "checked_at": "2026-10-24",
       "legal_name": "浙江亚威电气有限公司"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "http://www.yaweidq.cn/",
+        "domain": "yaweidq.cn",
+        "added_at": "2026-10-24"
+      }
+    ]
   },
   "YQ001135": {
     "details": {
@@ -24476,16 +24374,6 @@
     }
   },
   "YQ001198": {
-    "links": [
-      {
-        "type": "official_website",
-        "label": "企业官网",
-        "url": "http://www.heyielectrical.com/",
-        "domain": "heyielectrical.com",
-        "source": "company_identity_verified",
-        "added_at": "2026-10-24"
-      }
-    ],
     "details": {
       "contact_address": "浙江省乐清市柳市镇新光工业区振兴路6号",
       "field_sources": {
@@ -30222,6 +30110,8 @@
   },
   "YQ001619": {
     "details": {
+      "checked_at": "2026-10-24",
+      "legal_name": "浙江贝良风能电子科技有限公司",
       "contact_address": "浙江省乐清经济开发区纬十二路228号",
       "field_sources": {
         "contact_address": {
@@ -30257,9 +30147,7 @@
           "label": "企业公开资料",
           "url": "https://www.jobui.com/company/11614861/"
         }
-      ],
-      "checked_at": "2026-10-24",
-      "legal_name": "浙江贝良风能电子科技有限公司"
+      ]
     }
   },
   "YQ001620": {
@@ -30423,7 +30311,19 @@
     }
   },
   "YQ001626": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "https://www.cnriya.com/",
+        "domain": "cnriya.com",
+        "source": "company_identity_verified",
+        "added_at": "2026-10-24"
+      }
+    ],
     "details": {
+      "checked_at": "2026-10-24",
+      "legal_name": "乐清市瑞阳电子有限公司",
       "contact_address": "浙江省乐清市柳市镇七前村",
       "field_sources": {
         "contact_address": {
@@ -30449,9 +30349,7 @@
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-be3325bfec8bd28bdea45632213c47a1.html"
         }
-      ],
-      "checked_at": "2026-10-24",
-      "legal_name": "乐清市瑞阳电子有限公司"
+      ]
     }
   },
   "YQ001627": {
@@ -30615,7 +30513,19 @@
     }
   },
   "YQ001632": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "http://www.liteam.cn/",
+        "domain": "liteam.cn",
+        "source": "company_identity_verified",
+        "added_at": "2026-10-24"
+      }
+    ],
     "details": {
+      "checked_at": "2026-10-24",
+      "legal_name": "乐清市朗腾进出口有限公司",
       "contact_address": "浙江省乐清市柳市镇新光工业区繁安路30号",
       "field_sources": {
         "contact_address": {
@@ -30641,9 +30551,7 @@
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-5211ecfc2d1d160217c2119481437fbc.html"
         }
-      ],
-      "checked_at": "2026-10-24",
-      "legal_name": "乐清市朗腾进出口有限公司"
+      ]
     }
   },
   "YQ001633": {
@@ -31337,7 +31245,19 @@
     }
   },
   "YQ001656": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "http://www.chinamingwei.com/",
+        "domain": "chinamingwei.com",
+        "source": "company_identity_verified",
+        "added_at": "2026-10-24"
+      }
+    ],
     "details": {
+      "checked_at": "2026-10-24",
+      "legal_name": "温州乾翔电气科技有限公司",
       "contact_address": "浙江省乐清市柳市镇高后村",
       "field_sources": {
         "contact_address": {
@@ -31363,9 +31283,7 @@
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-3eda8aed3b685c426a59c20592799df7.html"
         }
-      ],
-      "checked_at": "2026-10-24",
-      "legal_name": "温州乾翔电气科技有限公司"
+      ]
     }
   },
   "YQ001657": {
@@ -34487,7 +34405,19 @@
     }
   },
   "YQ001767": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "http://www.renhemeter.com/",
+        "domain": "renhemeter.com",
+        "source": "company_identity_verified",
+        "added_at": "2026-10-24"
+      }
+    ],
     "details": {
+      "checked_at": "2026-10-24",
+      "legal_name": "乐清市仁禾电气有限公司",
       "contact_address": "浙江省温州市乐清市乐清经济开发区纬五路189号",
       "field_sources": {
         "contact_address": {
@@ -34513,9 +34443,7 @@
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-f0eb8e9d19a85f6304cf63db96bb4f01.html"
         }
-      ],
-      "checked_at": "2026-10-24",
-      "legal_name": "乐清市仁禾电气有限公司"
+      ]
     }
   },
   "YQ001768": {
@@ -51925,6 +51853,10 @@
         {
           "label": "亚大双金属企业官网",
           "url": "https://www.yada-china.com/"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.shuididp.cn/yp-02acac4daf160190492a716ea7b8d6ca.html"
         }
       ],
       "checked_at": "2026-10-24",
@@ -75270,6 +75202,10 @@
         {
           "label": "施泰德企业官网",
           "url": "https://www.stdele.cn/"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.shuididp.cn/yp-35d68cb145ecc6e4fc27cc9a9ef6d20e.html"
         }
       ],
       "checked_at": "2026-10-24",
@@ -79124,6 +79060,28 @@
       "legal_name": "乐清市启和电子科技有限公司"
     }
   },
+  "YQ003419": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "https://www.chinapeople.com/",
+        "domain": "chinapeople.com",
+        "source": "company_identity_verified",
+        "added_at": "2026-10-24"
+      }
+    ],
+    "details": {
+      "sources": [
+        {
+          "label": "企业官网",
+          "url": "https://www.chinapeople.com/"
+        }
+      ],
+      "checked_at": "2026-10-24",
+      "legal_name": "人民电器集团有限公司"
+    }
+  },
   "YQ003421": {
     "details": {
       "contact_address": "浙江省乐清市北白象镇中西漳村",
@@ -80925,266 +80883,6 @@
       "legal_name": "温州长远自动化设备有限公司"
     }
   },
-  "YQ001050": {
-    "links": [
-      {
-        "type": "official_website",
-        "label": "企业官网",
-        "url": "http://www.zood.com.cn/",
-        "domain": "zood.com.cn",
-        "source": "company_identity_verified",
-        "added_at": "2026-10-24"
-      }
-    ],
-    "details": {
-      "checked_at": "2026-10-24",
-      "legal_name": "乐清市卓达金属制品有限公司"
-    }
-  },
-  "YQ001056": {
-    "links": [
-      {
-        "type": "official_website",
-        "label": "企业官网",
-        "url": "http://www.zmelec.com/",
-        "domain": "zmelec.com",
-        "source": "company_identity_verified",
-        "added_at": "2026-10-24"
-      }
-    ],
-    "details": {
-      "checked_at": "2026-10-24",
-      "legal_name": "乐清市中鸣电器有限公司"
-    }
-  },
-  "YQ001619": {
-    "links": [
-      {
-        "type": "official_website",
-        "label": "企业官网",
-        "url": "http://www.beiliangdz.com/",
-        "domain": "beiliangdz.com",
-        "source": "company_identity_verified",
-        "added_at": "2026-10-24"
-      }
-    ],
-    "details": {
-      "checked_at": "2026-10-24",
-      "legal_name": "浙江贝良风能电子科技有限公司"
-    }
-  },
-  "YQ001626": {
-    "links": [
-      {
-        "type": "official_website",
-        "label": "企业官网",
-        "url": "https://www.cnriya.com/",
-        "domain": "cnriya.com",
-        "source": "company_identity_verified",
-        "added_at": "2026-10-24"
-      }
-    ],
-    "details": {
-      "checked_at": "2026-10-24",
-      "legal_name": "乐清市瑞阳电子有限公司"
-    }
-  },
-  "YQ001632": {
-    "links": [
-      {
-        "type": "official_website",
-        "label": "企业官网",
-        "url": "http://www.liteam.cn/",
-        "domain": "liteam.cn",
-        "source": "company_identity_verified",
-        "added_at": "2026-10-24"
-      }
-    ],
-    "details": {
-      "checked_at": "2026-10-24",
-      "legal_name": "乐清市朗腾进出口有限公司"
-    }
-  },
-  "YQ001656": {
-    "links": [
-      {
-        "type": "official_website",
-        "label": "企业官网",
-        "url": "http://www.chinamingwei.com/",
-        "domain": "chinamingwei.com",
-        "source": "company_identity_verified",
-        "added_at": "2026-10-24"
-      }
-    ],
-    "details": {
-      "checked_at": "2026-10-24",
-      "legal_name": "温州乾翔电气科技有限公司"
-    }
-  },
-  "YQ001767": {
-    "links": [
-      {
-        "type": "official_website",
-        "label": "企业官网",
-        "url": "http://www.renhemeter.com/",
-        "domain": "renhemeter.com",
-        "source": "company_identity_verified",
-        "added_at": "2026-10-24"
-      }
-    ],
-    "details": {
-      "checked_at": "2026-10-24",
-      "legal_name": "乐清市仁禾电气有限公司"
-    }
-  },
-  "YQ000996": {
-    "links": [
-      {
-        "type": "official_website",
-        "label": "企业官网",
-        "url": "https://www.chinahongtai.com/",
-        "domain": "chinahongtai.com",
-        "source": "company_identity_verified",
-        "added_at": "2026-10-24"
-      }
-    ],
-    "details": {
-      "checked_at": "2026-10-24",
-      "legal_name": "浙江宏泰电子设备有限公司"
-    }
-  },
-  "YQ000355": {
-    "links": [
-      {
-        "type": "official_website",
-        "label": "企业官网",
-        "url": "https://www.hxdy.cn/",
-        "domain": "hxdy.cn",
-        "source": "company_identity_verified",
-        "added_at": "2026-10-24"
-      }
-    ],
-    "details": {
-      "sources": [
-        {
-          "label": "企业官网",
-          "url": "https://www.hxdy.cn/"
-        }
-      ],
-      "checked_at": "2026-10-24",
-      "legal_name": "浙江红星电业有限公司"
-    }
-  },
-  "YQ000897": {
-    "links": [
-      {
-        "type": "official_website",
-        "label": "企业官网",
-        "url": "https://www.tduec.com/",
-        "domain": "tduec.com",
-        "source": "company_identity_verified",
-        "added_at": "2026-10-24"
-      }
-    ],
-    "details": {
-      "sources": [
-        {
-          "label": "企业官网",
-          "url": "https://www.tduec.com/"
-        }
-      ],
-      "checked_at": "2026-10-24",
-      "legal_name": "兴达科技股份有限公司"
-    }
-  },
-  "YQ001127": {
-    "links": [
-      {
-        "type": "official_website",
-        "label": "企业官网",
-        "url": "http://www.zhenhuachina.com/",
-        "domain": "zhenhuachina.com",
-        "source": "company_identity_verified",
-        "added_at": "2026-10-24"
-      }
-    ],
-    "details": {
-      "sources": [
-        {
-          "label": "企业官网",
-          "url": "http://www.zhenhuachina.com/"
-        }
-      ],
-      "checked_at": "2026-10-24",
-      "legal_name": "浙江振华电子有限公司"
-    }
-  },
-  "YQ001332": {
-    "links": [
-      {
-        "type": "alibaba_store",
-        "label": "Alibaba 国际站",
-        "url": "https://jiadecn.en.alibaba.com/zh_CN/",
-        "domain": "jiadecn.en.alibaba.com",
-        "source": "alibaba_store_verified",
-        "added_at": "2026-10-24"
-      }
-    ],
-    "details": {
-      "sources": [
-        {
-          "label": "Alibaba 国际站",
-          "url": "https://jiadecn.en.alibaba.com/zh_CN/"
-        }
-      ],
-      "checked_at": "2026-10-24",
-      "legal_name": "乐清市嘉得电子有限公司"
-    }
-  },
-  "YQ001333": {
-    "links": [
-      {
-        "type": "official_website",
-        "label": "企业官网",
-        "url": "https://www.china-huabang.com/",
-        "domain": "china-huabang.com",
-        "source": "company_identity_verified",
-        "added_at": "2026-10-24"
-      }
-    ],
-    "details": {
-      "sources": [
-        {
-          "label": "企业官网",
-          "url": "https://www.china-huabang.com/"
-        }
-      ],
-      "checked_at": "2026-10-24",
-      "legal_name": "华邦电力科技股份有限公司"
-    }
-  },
-  "YQ003419": {
-    "links": [
-      {
-        "type": "official_website",
-        "label": "企业官网",
-        "url": "https://www.chinapeople.com/",
-        "domain": "chinapeople.com",
-        "source": "company_identity_verified",
-        "added_at": "2026-10-24"
-      }
-    ],
-    "details": {
-      "sources": [
-        {
-          "label": "企业官网",
-          "url": "https://www.chinapeople.com/"
-        }
-      ],
-      "checked_at": "2026-10-24",
-      "legal_name": "人民电器集团有限公司"
-    }
-  },
   "YQ003798": {
     "links": [
       {
@@ -81205,68 +80903,6 @@
       ],
       "checked_at": "2026-10-24",
       "legal_name": "海燕接线盒有限公司"
-    }
-  },
-  "YQ000327": {
-    "links": [
-      {
-        "type": "official_website",
-        "label": "企业官网",
-        "url": "https://cnkuangya.com/",
-        "domain": "cnkuangya.com",
-        "source": "user_confirmed",
-        "added_at": "2026-10-24"
-      }
-    ],
-    "details": {
-      "sources": [
-        {
-          "label": "KUANGYA 官网",
-          "url": "https://cnkuangya.com/"
-        }
-      ],
-      "checked_at": "2026-10-24"
-    }
-  },
-  "YQ000617": {
-    "links": [
-      {
-        "type": "official_website",
-        "label": "企业官网",
-        "url": "http://www.huajoinele.com/",
-        "domain": "huajoinele.com",
-        "source": "user_confirmed",
-        "added_at": "2026-10-24"
-      }
-    ],
-    "details": {
-      "sources": [
-        {
-          "label": "佑川官网",
-          "url": "http://www.huajoinele.com/"
-        }
-      ],
-      "checked_at": "2026-10-24",
-      "legal_name": "乐清市佑川电气有限公司",
-      "contact_address": "浙江省温州市乐清市",
-      "main_products": "小型断路器（MCB）、漏电保护断路器（RCCB/RCBO）、浪涌保护器（SPD）、自动调压及电流保护器、隔离开关、转换开关",
-      "field_sources": {
-        "legal_name": {
-          "url": "http://www.huajoinele.com/",
-          "checked_at": "2026-10-24",
-          "source_type": "company_website"
-        },
-        "contact_address": {
-          "url": "http://www.huajoinele.com/",
-          "checked_at": "2026-10-24",
-          "source_type": "company_website"
-        },
-        "main_products": {
-          "url": "http://www.huajoinele.com/",
-          "checked_at": "2026-10-24",
-          "source_type": "company_website"
-        }
-      }
     }
   }
 }
