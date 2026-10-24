@@ -216,7 +216,7 @@ test("company pages preserve stable identity, source histories and genuine zero 
       assert.ok(rows[index].text.includes(periodLabel), `${id}: preserve the cumulative period`);
       assert.match(rows[index].text, record.amount_label ? /精准数值/ : /金额区间|出口额区间/);
       assert.ok(rows[index].text.includes(record.amount_label || record.band_label), `${id}: preserve the source amount`);
-      if (record.source_duplicate) assert.match(rows[index].text, /待核对|来源重复|重复记录|源表多条/);
+      if (record.source_duplicate) assert.match(rows[index].text, /并列收录/);
     });
     if (new Set(expected.map(({ period }) => period.as_of)).size > 1) {
       assert.match(html, /查看历史月份/, `${id}: older months must remain available behind the history disclosure`);
@@ -273,6 +273,49 @@ test("verified company icons use a website curated for the same company", async 
   }
 });
 
+test("public company data omits private review notes and Dehui keeps its verified public facts", async () => {
+  const [profiles, icons, html] = await Promise.all([
+    readJson(`${dataPath}company-profiles.json`),
+    readJson("src/data/verified-company-icons.json"),
+    read(builtPath(companyPath("YQ000220"))),
+  ]);
+  const forbidden = ["source_note", "confidence"];
+  for (const [id, profile] of Object.entries(profiles)) {
+    for (const key of forbidden) {
+      assert.ok(!(key in (profile.details ?? {})), `${id}: public profile must omit ${key}`);
+    }
+    for (const link of profile.links ?? []) {
+      assert.notEqual(link.source, "company_review_verified", `${id}: public link must omit private review labels`);
+    }
+  }
+  const profile = profiles.YQ000220;
+  assert.equal(profile.links.find((link) => link.type === "official_website")?.url, "http://www.dehuicn.com/");
+  assert.equal(profile.details.registered_capital, "2000万元人民币");
+  assert.equal(profile.details.contact_address, "浙江省温州市乐清市芙蓉镇工业区");
+  assert.match(profile.details.main_products, /电锤钻头/);
+  assert.equal(icons.YQ000220.page_url, "http://www.dehuicn.com/");
+  const text = textOf(mainOf(html));
+  for (const value of ["浙江德汇工具有限公司", "dehuicn.com", "2000万元人民币", "电锤钻头"]) {
+    assert.ok(text.includes(value), `YQ000220 detail page needs ${value}`);
+  }
+  assert.ok(anchorsOf(html).some((link) => link.href === "http://www.dehuicn.com/"), "YQ000220 detail page needs its official website link");
+  assert.ok(tagsOf(html, "img").some((image) => image.src === "/company-icons/verified/YQ000220.png"));
+  assert.doesNotMatch(text, /工商登记信息按企业全称精确匹配|未发现能确认属于本企业的独立官网|核验于|资料来源/);
+});
+
+test("public pages omit internal verification workflow language", async () => {
+  const routes = ["/", "/yueqing-export-ranking/", "/about-data/", companyPath("YQ000220"), companyPath("YQ001388")];
+  for (const route of routes) {
+    const html = await read(builtPath(route));
+    const text = textOf(mainOf(html));
+    assert.doesNotMatch(
+      text,
+      /待核对|精确匹配|未发现能确认|未找到官网|核验于|资料来源|等待核对企业主体/,
+      `${route}: public page exposes internal verification language`,
+    );
+  }
+});
+
 test("the existing ranking page retains its query, period and comparison controls", async () => {
   const [html, periods] = await Promise.all([
     read("dist/yueqing-export-ranking/index.html"), readJson(`${dataPath}periods.json`),
@@ -313,5 +356,5 @@ test("the data explanation keeps cumulative, range, exact and missing-data meani
   for (const needle of ["累计", "区间", "精准", "万美元"]) assert.ok(text.includes(needle), `data explanation needs ${needle}`);
   assert.match(text, /单月/);
   assert.match(text, /缺失|未收录|暂无|未提供/);
-  assert.match(text, /待核对|重复/);
+  assert.match(text, /重复/);
 });

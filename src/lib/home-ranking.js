@@ -1,7 +1,7 @@
 export function rankSignal(record, currentIndex, previousIndex, hasPrevious = true) {
   const current = currentIndex.get(record.company_id) || [];
   const previous = previousIndex.get(record.company_id) || [];
-  if (current.length > 1 || previous.length > 1 || current.some(r => r.source_duplicate) || previous.some(r => r.source_duplicate)) return { type: "review", label: "待核对", delta: null };
+  if (current.length > 1 || previous.length > 1 || current.some(r => r.source_duplicate) || previous.some(r => r.source_duplicate)) return { type: "review", label: "暂不可比较", delta: null };
   if (!hasPrevious) return { type: "pending", label: "暂无比较", delta: null };
   if (!previous.length) return { type: "new", label: "上期未收录", delta: null };
   const delta = previous[0].rank - record.rank;

@@ -14,7 +14,7 @@ test("an unflagged first record in a duplicated current period remains under rev
   const signal = rankSignal(first, indexOf(first, second), indexOf(record(100)));
   assert.equal(signal.type, "review");
   assert.equal(signal.delta, null);
-  assert.match(signal.label, /待核对/);
+  assert.match(signal.label, /暂不可比较/);
 });
 
 test("an ambiguous previous period cannot produce a numeric rank change", () => {

@@ -22,7 +22,7 @@ const { companyName, records, isAmbiguous } = Astro.props;
             <tbody>
               {records.map((record: HistoryRecord) => <tr data-period-id={record.periodId} data-source-duplicate={isAmbiguous(record) ? "true" : "false"}>
                 <th scope="row"><span class="history-period">{record.periodLabel.replace(/（精准数值）|（区间数据）/g, "")}</span><time datetime={record.asOf}>{record.asOf}</time></th>
-                <td><strong class="table-rank">#{record.rank}</strong>{isAmbiguous(record) && <small class="duplicate-note">源表多条</small>}</td>
+                <td><strong class="table-rank">#{record.rank}</strong>{isAmbiguous(record) && <small class="duplicate-note">并列收录</small>}</td>
                 <td class="history-amount">{record.amountLabel ?? record.bandLabel ?? "未提供"}</td>
                 <td><span class:list={["precision-tag", { "is-exact": record.amountLabel }]}>{record.amountLabel ? "精准数值" : "金额区间"}</span></td>
               </tr>)}

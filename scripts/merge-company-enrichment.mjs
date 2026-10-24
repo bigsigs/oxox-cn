@@ -792,7 +792,32 @@ for (const record of top3291) {
 }
 
 const sortedProfiles = Object.fromEntries(
-  Object.entries(profiles).sort(([a], [b]) => a.localeCompare(b)),
+  Object.entries(profiles)
+    .map(([id, profile]) => {
+      if (profile.details) {
+        for (const key of ["source_note", "confidence"]) {
+          delete profile.details[key];
+        }
+        for (const key of ["main_products", "industry", "company_type", "status"]) {
+          if (typeof profile.details[key] === "string") {
+            profile.details[key] = profile.details[key]
+              .replace(/[（(]\s*官网产品页[，,]\s*具体系列待核对\s*[）)]/g, "（官网产品页）")
+              .replace(/待核对/g, "未提供");
+          }
+        }
+      }
+      if (profile.links?.length) {
+        for (const link of profile.links) {
+          if (link.source === "company_review_verified") delete link.source;
+        }
+      } else if (profile.links) {
+        delete profile.links;
+      }
+      if (profile.details && Object.keys(profile.details).length === 0) delete profile.details;
+      return [id, profile];
+    })
+    .filter(([, profile]) => Object.keys(profile).length > 0)
+    .sort(([a], [b]) => a.localeCompare(b)),
 );
 writeJson(path.join(dataDir, "company-profiles.json"), sortedProfiles);
 
@@ -1162,6 +1187,34 @@ fs.writeFileSync(
     "2026 年 1–7 月累计出口榜全部 3,291 条排名记录。空白表示检索后仍没有可写入的可靠证据，“候选”资料不进入生产页面。",
   ),
 );
+const dehuiRow = standardRows.find((row) => row.company_id === "YQ000220");
+const dehuiReviewPath = path.join(reviewDir, "top500-review.html");
+const dehuiReviewHtml = fs.readFileSync(dehuiReviewPath, "utf8");
+const dehuiReviewStart = dehuiReviewHtml.indexOf("<code>YQ000220</code>");
+if (dehuiRow && dehuiReviewStart >= 0) {
+  const rowStart = dehuiReviewHtml.lastIndexOf("<tr", dehuiReviewStart);
+  const rowEnd = dehuiReviewHtml.indexOf("</tr>", dehuiReviewStart);
+  if (rowStart >= 0 && rowEnd >= 0) {
+    const rowHtml = `<tr data-status="${statusKey(dehuiRow)}">
+  <td>${dehuiRow.rank}</td>
+  <td><code>${escapeHtml(dehuiRow.company_id)}</code></td>
+  <td>${escapeHtml(dehuiRow.company_name)}</td>
+  <td>${escapeHtml(dehuiRow.status)}</td>
+  <td><a href="${escapeHtml(dehuiRow.website)}">${escapeHtml(domainOf(dehuiRow.website))}</a></td>
+  <td></td>
+  <td></td>
+  <td>${escapeHtml(dehuiRow.address)}</td>
+  <td>${escapeHtml(dehuiRow.registered_capital)}</td>
+  <td>${escapeHtml(dehuiRow.main_products)}</td>
+  <td></td>
+  <td>${escapeHtml(dehuiRow.note)}</td>
+</tr>`;
+    fs.writeFileSync(
+      dehuiReviewPath,
+      `${dehuiReviewHtml.slice(0, rowStart)}${rowHtml}${dehuiReviewHtml.slice(rowEnd + 5)}`,
+    );
+  }
+}
 fs.writeFileSync(
   path.join(ranks1501To2000Dir, "review-1501-2000.html"),
   htmlForRows(

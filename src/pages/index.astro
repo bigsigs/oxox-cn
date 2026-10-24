@@ -18,8 +18,10 @@ const mark = (name: string) => name.replace(/^(浙江|温州|乐清)(市)?/, "")
 const currentIndex = buildPeriodIndex(latestRanking.records);
 const previousIndex = buildPeriodIndex(previousRanking.records);
 const groups = amountGroups(latestRanking);
+type CompanyLink = { type: string; label: string; url: string; domain: string };
+type CompanyProfile = { links?: CompanyLink[]; details?: Record<string, unknown> };
 const companyMeta: Record<string, { domain: string; icon: string; darkIcon: boolean }> = Object.fromEntries(Object.entries(profiles).map(([id, profile]) => {
-  const website = profile.links?.find(link => link.type === "official_website");
+  const website = (profile as CompanyProfile).links?.find(link => link.type === "official_website");
   const domain = website?.domain || "";
   const icon = getCompanyIcon(domain, id) || "";
   return [id, { domain, icon, darkIcon: hasDarkCompanyIcon(id) }];
@@ -94,7 +96,7 @@ const boot = { periods: periods.periods, latest: periods.latest, companyMeta };
             return <a class="ranking-row" href={`/yueqing-export-ranking/company/${record.company_id}/`} data-rank={record.rank}>
               <span class:list={["row-rank", { "rank-top": record.rank <= 3 }]}>{record.rank}</span>
               <span class:list={["company-mark", { "dark-logo": meta?.icon && meta?.darkIcon }]} aria-hidden="true">{meta?.icon ? <img src={meta.icon} width="42" height="42" alt="" loading="lazy" /> : <span>{mark(record.company_name)}</span>}</span>
-              <span class="row-company"><b>{record.company_name}</b>{meta?.domain && <span class="company-badge">官网</span>}<span class="company-subline">{meta?.domain || record.company_id}{record.source_duplicate && <span> · 来源待核对</span>}</span></span>
+              <span class="row-company"><b>{record.company_name}</b>{meta?.domain && <span class="company-badge">官网</span>}<span class="company-subline">{meta?.domain || record.company_id}</span></span>
               <span class="row-amount">{record.band_label.replace("万美元", "")}<small>万美元</small></span>
               <span class:list={["row-change", signal.type]}><span class="mobile-change-label">名次 </span>{signal.label}</span>
             </a>;

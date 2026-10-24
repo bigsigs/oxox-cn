@@ -30,7 +30,6 @@ type SourceRecord = {
 };
 type RankingDataset = { records: SourceRecord[] };
 type CompanyLink = { type: string; label: string; url: string; domain: string };
-type CompanySource = { label: string; url: string };
 type CompanyDetails = {
   legal_name?: string;
   founding_claim?: string;
@@ -47,10 +46,6 @@ type CompanyDetails = {
   main_products?: string;
   registration_authority?: string;
   industry?: string;
-  source_note?: string;
-  checked_at?: string;
-  confidence?: string;
-  sources?: CompanySource[];
 };
 type CompanyProfile = { links?: CompanyLink[]; details?: CompanyDetails };
 type CompanyHistory = {
@@ -192,7 +187,6 @@ const facts = [
   ["登记机关", details?.registration_authority],
   ["行业分类", details?.industry],
 ].filter((fact) => fact[1] !== undefined && fact[1] !== null && fact[1] !== "");
-const validSources = (details?.sources ?? []).filter((source) => isHttpUrl(source.url));
 const companySchema = details ? {
   "@type": "Organization",
   "@id": `${canonical.href}#organization`,
@@ -278,7 +272,7 @@ const schema = {
             <div class="company-tags">
               <span class="company-tag">{company.company_id}</span>
               {details?.industry && <span class="company-tag industry-tag">{details.industry}</span>}
-              {isAmbiguous(latest) && <span class="company-tag">源表含多条记录</span>}
+              {isAmbiguous(latest) && <span class="company-tag">并列收录</span>}
             </div>
           </div>
         </div>
@@ -351,12 +345,10 @@ const schema = {
       </section>
 
       {facts.length > 0 && <section class="detail-panel facts-panel" aria-labelledby="facts-title">
-        <div class="detail-section-heading"><h2 id="facts-title">企业基本信息</h2>{details?.checked_at && <span>核验于 {details.checked_at}</span>}</div>
+        <div class="detail-section-heading"><h2 id="facts-title">企业基本信息</h2></div>
         <dl class="company-facts-list">
           {facts.map(([label, value]) => <div><dt>{label}</dt><dd>{value}</dd></div>)}
         </dl>
-        <p class="detail-table-note">{details?.source_note || "企业自述成立时间与工商登记日期分别列示。工商登记信息以登记机关最新记录为准。"}</p>
-        {validSources.length > 0 && <div class="detail-sources"><span>资料来源</span>{validSources.map((source) => <a href={source.url} target="_blank" rel="nofollow noopener noreferrer">{source.label} ↗</a>)}</div>}
       </section>}
 
       {validLinks.length > 0 && <section class="detail-panel links-panel" aria-labelledby="links-title">
