@@ -45,7 +45,7 @@ body.reference-page { background:var(--paper); font:13px/1.65 var(--mono); }
 .reference-page .period-card strong { font:600 18px/1.5 var(--mono); margin-top:5px; }
 .reference-page .period-card br { display:none; }
 .reference-page .period-card small { color:var(--muted); }
-.reference-page .reports { padding:8px 0 60px; }
+.reference-page .reports { padding:0 0 60px; }
 .reference-page .featured { display:block; min-height:0; background:var(--panel); color:var(--ink); border:1px solid var(--line); border-radius:10px; box-shadow:none; }
 .reference-page .featured:hover { transform:none; background:var(--panel2); box-shadow:none; }
 .reference-page .featured-copy { padding:24px; }

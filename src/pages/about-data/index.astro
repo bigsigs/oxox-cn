@@ -4,6 +4,7 @@ import SiteFooter from "../../components/SiteFooter.astro";
 import periodsData from "../../../public/data/yueqing-export-ranking/periods.json";
 import latestData from "../../../public/data/yueqing-export-ranking/2026-ytd-08.json";
 import "../../styles/reference.css";
+import "../../styles/page-hero.css";
 
 const latestPeriod = periodsData.periods.find((period) => period.id === periodsData.latest)!;
 const formatCount = (count: number) => new Intl.NumberFormat("zh-CN").format(count);
@@ -37,10 +38,9 @@ const aboutSchema = {
     <div class="reference-wrap">
       <SiteHeader active="about-data" />
       <main class="data-page">
-        <header class="page-intro">
-          <p class="page-kicker">OXOX / ABOUT THE DATA</p>
-          <h1>数据说明</h1>
-          <p>看懂每个数字的周期、范围与含义。</p>
+        <header class="ranking-hero" aria-labelledby="data-title">
+          <h1 id="data-title">数据说明</h1>
+          <p class="hero-subtitle">看懂每个数字的周期、范围与含义。</p>
         </header>
 
         <div class="data-summary" aria-label="最新出口数据概览">
@@ -108,11 +108,8 @@ const aboutSchema = {
 </html>
 
 <style>
-  .data-page { padding: 52px 0 64px; }
-  .page-kicker { margin: 0 0 12px; color: var(--ink3); font-size: 11px; letter-spacing: .08em; }
-  h1 { margin: 0; font-size: clamp(26px, 4vw, 32px); font-weight: 650; letter-spacing: -.04em; line-height: 1.2; }
-  .page-intro > p:last-child { margin: 16px 0 0; color: var(--ink2); }
-  .data-summary { display: grid; grid-template-columns: 1.3fr 1fr 1fr; margin: 30px 0 36px; border: 1px solid var(--line); border-radius: 9px; background: var(--panel); }
+  .data-page { padding: 0 0 64px; }
+  .data-summary { display: grid; grid-template-columns: 1.3fr 1fr 1fr; margin: 0 0 36px; border: 1px solid var(--line); border-radius: 9px; background: var(--panel); }
   .data-summary > div { padding: 21px 25px; }
   .data-summary > div + div { border-left: 1px solid var(--line); }
   .data-summary span { display: block; margin-bottom: 8px; color: var(--ink3); font-size: 11px; }
@@ -144,7 +141,6 @@ const aboutSchema = {
   .seo-note a, .return-link { color: var(--ink3); font-size: 12px; text-decoration: none; }
   .seo-note a:hover, .return-link:hover { color: var(--ink); }
   @media (max-width: 600px) {
-    .data-page { padding-top: 34px; }
     .data-summary { grid-template-columns: 1.2fr 1fr .8fr; }
     .data-summary > div { padding: 16px 12px; }
     .data-summary strong { font-size: 15px; }
