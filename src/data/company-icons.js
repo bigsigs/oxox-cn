@@ -59,8 +59,7 @@ const domains = new Set([
   "mg-cnsolar.com",
   "spds.global",
   "cnspd.com",
-  "projoy-electric.com",
-  "vioxsolar.com"
+  "projoy-electric.com"
 ]);
 export const getCompanyIcon = (domain, companyId = "") => verifiedIcons[companyId]?.path || (domains.has(domain) ? `/company-icons/${domain}.png` : null);
 export const hasDarkCompanyIcon = (companyId = "") => Boolean(verifiedIcons[companyId]?.dark_background);

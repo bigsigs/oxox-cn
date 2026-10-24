@@ -18,11 +18,12 @@ test("SEO page identifies the current Semrush snapshot", async () => {
 });
 
 test("SEO snapshot preserves every monitored domain exactly once", () => {
-  assert.equal(seoCompanies.length, 59);
-  assert.equal(new Set(seoCompanies.map((company) => company.domain)).size, 59);
+  assert.equal(seoCompanies.length, 58);
+  assert.equal(new Set(seoCompanies.map((company) => company.domain)).size, 58);
   assert.ok(!seoCompanies.some((company) => company.domain === "industrialmonitordirect.com"));
   assert.ok(!seoCompanies.some((company) => company.domain === "electricaltechnology.org"));
   assert.ok(!seoCompanies.some((company) => company.domain === "tools.viox.com"));
+  assert.ok(!seoCompanies.some((company) => company.domain === "vioxsolar.com"));
   assert.ok(!seoCompanies.some((company) => company.domain === "usfull.com"));
   assert.ok(seoCompanies.every((company) => company.traffic > 0));
   for (const domain of ["ohele.com", "cangopower.com", "yocl.com", "tormin.com", "cnsoltree.com", "ritoks.com", "talemod.com", "tpkele.com"]) {
