@@ -1,6 +1,7 @@
 ---
 import { getCompanyIcon, hasDarkCompanyIcon } from "../data/company-icons.js";
 import SiteHeader from "../components/SiteHeader.astro";
+import MenuSelect from "../components/MenuSelect.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import "../styles/reference.css";
 import "../styles/home-ranking.css";
@@ -83,7 +84,7 @@ const boot = { periods: periods.periods, latest: periods.latest, companyMeta };
           <button type="button" data-filter="down" aria-pressed="false">名次下降 <span class="tab-arrow down" aria-hidden="true">↘</span></button>
           {exactPeriod && <button type="button" id="exactPeriodShortcut" class="exact-period" data-period={exactPeriod.id} aria-pressed="false" disabled><span class="exact-dot" aria-hidden="true"></span>精确数值 <small>{exactPeriod.label.replace(/（.*）/, "")}</small></button>}
         </div>
-        <label class="period-control"><span class="ref-sr-only">选择数据周期</span><select id="periodSelect" disabled>{periods.periods.map(period => <option value={period.id} selected={period.id === periods.latest}>{period.label}{period.id === periods.latest ? "（最新）" : ""}</option>)}</select></label>
+        <MenuSelect id="periodSelect" label="选择数据周期" value={periods.latest} disabled options={periods.periods.map(period => ({ value: period.id, label: `${period.label}${period.id === periods.latest ? "（最新）" : ""}` }))} />
       </div>
         <div class="ranking-board">
         <div class="board-heading"><div><h2>按累计出口排名</h2><p class="ranking-period-line"><span id="rankingPeriod">{latestRanking.period.label} · 累计出口额区间，非单月数据。</span><span class="source-gap-note" id="sourceGapNote">源表未提供第 43 名，页面不补号。</span></p></div><button type="button" class="clear-filters" id="clearFilters" hidden>清除筛选 ×</button></div>

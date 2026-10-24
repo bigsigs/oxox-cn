@@ -1,0 +1,28 @@
+---
+import "../styles/dropdown.css";
+
+interface Props {
+  id: string;
+  label: string;
+  options: { value: string; label: string }[];
+  value: string;
+  disabled?: boolean;
+}
+
+const { id, label, options, value, disabled = false } = Astro.props;
+const selected = options.find(option => option.value === value) ?? options[0];
+---
+<div class="period-control ref-select" data-menu-select>
+  <select id={id} aria-label={label} disabled={disabled}>
+    {options.map(option => <option value={option.value} selected={option.value === value}>{option.label}</option>)}
+  </select>
+  <details class="ref-dropdown" data-select-details hidden>
+    <summary class="ref-dropdown-trigger" id={`${id}Trigger`} aria-label={`${label}：${selected?.label ?? ""}`} aria-controls={`${id}Options`} aria-haspopup="listbox" aria-expanded="false" aria-disabled={disabled ? "true" : "false"}>
+      <span data-select-label>{selected?.label}</span>
+      <span class="ref-dropdown-chevron" aria-hidden="true"></span>
+    </summary>
+    <div class="ref-dropdown-panel" id={`${id}Options`} role="listbox" aria-label={label}>
+      {options.map(option => <button class="ref-dropdown-option" type="button" role="option" tabindex="-1" data-select-value={option.value} aria-selected={option.value === value ? "true" : "false"}><span>{option.label}</span><span aria-hidden="true">●</span></button>)}
+    </div>
+  </details>
+</div>

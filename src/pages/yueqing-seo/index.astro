@@ -4,6 +4,7 @@ import "../../styles/reference-pages.css";
 import "../../styles/home-ranking.css";
 import Wordmark from "../../components/Wordmark.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
+import MenuSelect from "../../components/MenuSelect.astro";
 import seoCompanies from "../../data/seo-companies.js";
 import { filterSeoCompanies, summarizeSeoCompanies } from "../../lib/seo-ranking-core.js";
 
@@ -807,15 +808,13 @@ const datasetSchema = {
           <button type="button" data-filter="ai" aria-pressed="false">有 AI 提及</button>
         </div>
 
-        <label class="period-control">
-          <select id="seoSort" aria-label="选择排序指标">
-            <option value="traffic">按自然流量排序</option>
-            <option value="keywords">按自然关键词排序</option>
-            <option value="backlinks">按反向链接排序</option>
-            <option value="aiVisibility">按 AI 可见度排序</option>
-            <option value="mentions">按 AI 提及排序</option>
-          </select>
-        </label>
+        <MenuSelect id="seoSort" label="选择排序指标" value="traffic" options={[
+          { value: "traffic", label: "按自然流量排序" },
+          { value: "keywords", label: "按自然关键词排序" },
+          { value: "backlinks", label: "按反向链接排序" },
+          { value: "aiVisibility", label: "按 AI 可见度排序" },
+          { value: "mentions", label: "按 AI 提及排序" },
+        ]} />
       </div>
 
       <div class="ranking-board">
@@ -908,6 +907,8 @@ const datasetSchema = {
   </footer>
 
   <script>
+    import { initializeMenuSelect } from "../../scripts/menu-select";
+    initializeMenuSelect();
     import seoCompanies from "../../data/seo-companies.js";
     import {
       filterSeoCompanies,

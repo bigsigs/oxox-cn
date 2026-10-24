@@ -1,6 +1,8 @@
 // @ts-nocheck
 import { buildCompanySearchIndex, buildPeriodIndex, filterRanking, suggestCompanies } from "../lib/ranking-core.js";
 import { amountGroups, matchesAmountGroup, rankSignal } from "../lib/home-ranking.js";
+import { initializeMenuSelect } from "./menu-select";
+initializeMenuSelect();
 const boot = JSON.parse(document.querySelector("#rankingBoot").textContent);
 const search = document.querySelector("#rankingSearch");
 const suggestions = document.querySelector("#rankingSuggestions");
