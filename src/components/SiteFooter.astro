@@ -1,2 +1,45 @@
-<footer class="ref-footer"><span>OXOX.CN · 乐清出口数据</span><div><a href="/llms.txt">llms.txt</a><a href="/sitemap.xml">Sitemap</a><a href="/about-data/">数据说明</a><span aria-hidden="true">·</span><a href="https://si.gs/" target="_blank" rel="noopener noreferrer">Design by SIGS</a></div></footer>
-<style>.ref-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin:28px 0 0;padding:18px 0 0;border-top:1px solid var(--line,#e6e5e1);color:var(--ink3,#8a8984);font:11px/1.9 ui-monospace,SFMono-Regular,Menlo,"PingFang SC",sans-serif}.ref-footer div{display:flex;flex-wrap:wrap;gap:10px}.ref-footer a{color:inherit;text-decoration:none}.ref-footer a:hover{text-decoration:underline;text-underline-offset:3px}</style>
+<footer class="ref-footer">
+  <span>OXOX.CN · 乐清出口数据</span>
+  <nav aria-label="页脚链接">
+    <a href="/llms.txt">llms.txt</a>
+    <a href="/sitemap.xml">Sitemap</a>
+    <a href="/about-data/">数据说明</a>
+    <a href="https://si.gs/" target="_blank" rel="noopener noreferrer">Design by SIGS</a>
+  </nav>
+</footer>
+
+<style>
+  .ref-footer {
+    --footer-line: #e6e5e1;
+    --footer-muted: #8a8984;
+    --footer-hover: #52514e;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+    width: min(1040px, calc(100% - 40px));
+    margin: 28px auto 60px;
+    padding: 18px 0 0;
+    border-top: 1px solid var(--footer-line);
+    color: var(--footer-muted);
+    font: 400 11px/1.9 ui-monospace, SFMono-Regular, Menlo, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", monospace;
+    letter-spacing: 0;
+    text-align: left;
+  }
+  .ref-footer nav { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; }
+  .ref-footer a { color: inherit; text-decoration: none; }
+  .ref-footer a:hover { color: var(--footer-hover); text-decoration: underline; text-underline-offset: 3px; }
+  .ref-footer a:focus-visible { outline: 2px solid #2a78d6; outline-offset: 4px; }
+  :global(:root[data-theme="dark"]) .ref-footer {
+    --footer-line: #292929;
+    --footer-muted: #81817b;
+    --footer-hover: #a8a8a3;
+  }
+  @media (max-width: 760px) {
+    .ref-footer { width: calc(100% - 36px); }
+  }
+  @media (max-width: 640px) {
+    .ref-footer { align-items: flex-start; flex-direction: column; gap: 10px; }
+  }
+</style>

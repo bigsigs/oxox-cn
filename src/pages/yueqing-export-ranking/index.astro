@@ -2,6 +2,7 @@
 import "../../styles/reference.css";
 import "../../styles/reference-pages.css";
 import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
 import companies from "../../../public/data/yueqing-export-ranking/companies.json";
 
 const companyCount = new Intl.NumberFormat("en-US").format(companies.length);
@@ -555,16 +556,6 @@ const datasetSchema = {
       line-height: 1.7;
     }
 
-    footer {
-      display: flex;
-      justify-content: space-between;
-      gap: 30px;
-      padding: 42px 0;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 11px;
-    }
-
     @keyframes dotOrbitClockwise {
       0%,100% { transform: translate(0,0); }
       25% { transform: translate(var(--dot-travel),0); }
@@ -616,7 +607,6 @@ const datasetSchema = {
       .drawer { padding: 26px 22px; }
       .drawer-rank { grid-template-columns: 1fr; }
       .drawer-rank > div + div { border-top: 1px solid var(--ink); border-left: 0; }
-      footer { flex-direction: column; }
     }
   </style>
 </head>
@@ -713,10 +703,7 @@ const datasetSchema = {
     </section>
   </main>
 
-  <footer class="shell">
-    <span>OXOX.CN · 乐清出口排名</span>
-    <span id="footerPeriod">数据周期：2026年1—8月累计</span>
-  </footer>
+  <SiteFooter />
 
   <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
   <aside class="drawer" id="companyDrawer" aria-hidden="true" aria-labelledby="drawerCompanyName" role="dialog" inert>
@@ -935,7 +922,6 @@ const datasetSchema = {
       document.querySelector("#rankChangeHeading").textContent = previousPeriod
         ? `较 ${previousPeriod.shortLabel}`
         : "较更早期";
-      document.querySelector("#footerPeriod").textContent = `数据周期：${period.label}累计`;
       render();
     }
 

@@ -2,8 +2,8 @@
 import "../../styles/reference.css";
 import "../../styles/reference-pages.css";
 import "../../styles/home-ranking.css";
-import Wordmark from "../../components/Wordmark.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
 import MenuSelect from "../../components/MenuSelect.astro";
 import seoCompanies from "../../data/seo-companies.js";
 import { filterSeoCompanies, summarizeSeoCompanies } from "../../lib/seo-ranking-core.js";
@@ -137,22 +137,19 @@ const datasetSchema = {
       overflow: visible;
     }
 
-    .wordmark .logo-dot,
-    .footer-mark .logo-dot {
+    .wordmark .logo-dot {
       transform-box: fill-box;
       transform-origin: center;
       will-change: transform;
     }
 
     .brand:hover .dot-warm,
-    .brand:focus-visible .dot-warm,
-    .footer-mark:hover .dot-warm {
+    .brand:focus-visible .dot-warm {
       animation: dotOrbitClockwise .9s cubic-bezier(.45, 0, .2, 1);
     }
 
     .brand:hover .dot-green,
-    .brand:focus-visible .dot-green,
-    .footer-mark:hover .dot-green {
+    .brand:focus-visible .dot-green {
       animation: dotOrbitCounter .9s .06s cubic-bezier(.45, 0, .2, 1);
     }
 
@@ -275,7 +272,7 @@ const datasetSchema = {
 
     .hero-intro strong { color: var(--ink); }
 
-    .reference-page .ranking-section { padding: 0 0 60px; }
+    .reference-page .ranking-section { padding: 0; }
 
     .section-head {
       display: flex;
@@ -638,38 +635,6 @@ const datasetSchema = {
       line-height: 1.8;
     }
 
-    footer {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 30px;
-      align-items: end;
-      padding: 52px 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .footer-mark {
-      --dot-travel: 22px;
-      width: min(360px, 80vw);
-      overflow: visible;
-    }
-
-    .footer-copy {
-      max-width: 310px;
-      color: var(--muted);
-      text-align: right;
-      font-size: 11px;
-      line-height: 1.8;
-    }
-
-    .footer-copy a {
-      display: inline-block;
-      margin-top: 8px;
-      border-bottom: 1px solid currentColor;
-      color: var(--ink);
-      font-weight: 700;
-      letter-spacing: .08em;
-    }
-
     @keyframes dotOrbitClockwise {
       0%, 100% { transform: translate(0, 0) scale(1); }
       25% { transform: translate(var(--dot-travel), calc(var(--dot-travel) * -.65)) scale(.86); }
@@ -743,8 +708,6 @@ const datasetSchema = {
       }
       .pagination > button { grid-row: 2; }
       .methodology { grid-template-columns: 1fr; gap: 19px; padding: 25px; }
-      footer { grid-template-columns: 1fr; }
-      .footer-copy { text-align: left; }
     }
 
     @media (max-width: 640px) {
@@ -898,14 +861,7 @@ const datasetSchema = {
     </section>
   </main>
 
-  <footer class="shell">
-    <Wordmark class="footer-mark" />
-    <div class="footer-copy">
-      <strong>OXOX.CN · 乐清 SEO 榜单</strong><br>
-      企业搜索表现、AI 品牌曝光与增长信号。<br>
-      <a href="https://si.gs/" target="_blank" rel="noopener noreferrer">Design by SIGS</a>
-    </div>
-  </footer>
+  <SiteFooter />
 
   <script>
     import { initializeMenuSelect } from "../../scripts/menu-select";

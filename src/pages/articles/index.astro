@@ -4,6 +4,7 @@ import "../../styles/reference-pages.css";
 import "../../styles/page-hero.css";
 import { getCollection, type CollectionEntry } from "astro:content";
 import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
 
 const articles = (await getCollection("articles", ({ data }) => !data.draft))
   .sort((a: CollectionEntry<"articles">, b: CollectionEntry<"articles">) => b.data.periodEnd.valueOf() - a.data.periodEnd.valueOf());
@@ -113,7 +114,6 @@ const collectionSchema = {
     .archive-card span { color: currentColor; font-size: 11px; opacity: .72; }
     .archive-card i { font-size: 22px; font-style: normal; }
     .empty { padding: 50px; border: 1px solid var(--line); color: var(--muted); text-align: center; }
-    .site-footer { display: flex; justify-content: space-between; gap: 24px; padding: 30px 0 44px; border-top: 1px solid var(--line); color: var(--muted); font-size: 10px; letter-spacing: .1em; }
 
     @keyframes dotOrbitClockwise { 0%,100%{transform:translate(0) scale(1)}25%{transform:translate(var(--dot-travel),calc(var(--dot-travel)*-.55)) scale(.8)}50%{transform:translate(0,calc(var(--dot-travel)*-1)) scale(1.08)}75%{transform:translate(calc(var(--dot-travel)*-1),calc(var(--dot-travel)*-.45)) scale(.9)} }
     @keyframes dotOrbitCounter { 0%,100%{transform:translate(0) scale(1)}25%{transform:translate(calc(var(--dot-travel)*-1),calc(var(--dot-travel)*.55)) scale(.8)}50%{transform:translate(0,var(--dot-travel)) scale(1.08)}75%{transform:translate(var(--dot-travel),calc(var(--dot-travel)*.45)) scale(.9)} }
@@ -138,7 +138,6 @@ const collectionSchema = {
       .archive-card { grid-template-columns: 58px 1fr 35px; min-height: 130px; }
       .archive-card > * { padding: 13px; }
       .archive-card h3 { font-size: 21px; }
-      .site-footer { flex-direction: column; }
     }
     @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; } }
   </style>
@@ -194,9 +193,6 @@ const collectionSchema = {
     </section>
   </main>
 
-  <footer class="site-footer shell">
-    <span>OXOX.CN · 乐清出口数据</span>
-    <span>MONTHLY REPORT / 月报</span>
-  </footer>
+  <SiteFooter />
 </body>
 </html>

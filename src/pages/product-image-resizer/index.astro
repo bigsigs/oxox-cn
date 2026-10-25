@@ -2,6 +2,7 @@
 import "../../styles/reference.css";
 import "../../styles/reference-pages.css";
 import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
 
 const appSchema = {
   "@context": "https://schema.org",
@@ -62,7 +63,7 @@ const appSchema = {
       position: fixed; inset: 0; z-index: 20; opacity: .03; pointer-events: none;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
     }
-    .shell { width: min(1240px, calc(100% - 48px)); margin: 0 auto; padding: 0 0 50px; }
+    .shell { width: min(1240px, calc(100% - 48px)); margin: 0 auto; padding: 0; }
     .site-header {
       display: flex; justify-content: space-between; align-items: center;
       height: 92px; padding: 0; border-bottom: 1px solid var(--line);
@@ -354,6 +355,7 @@ const appSchema = {
     </main>
     <input id="fileInput" type="file" accept="image/jpeg,image/png,image/webp,image/avif" multiple>
   </div>
+  <SiteFooter />
 
   <div class="modal" id="editModal" role="dialog" aria-modal="true" aria-labelledby="editorTitle">
     <div class="editor">

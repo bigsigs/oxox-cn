@@ -111,8 +111,8 @@ const boot = { periods: periods.periods, latest: periods.latest, companyMeta };
     </section>
     <p class="home-data-note"><b>关于数据</b>：榜单按来源排名展示；金额区间不代表精确出口额，名次变化不等于金额增长。<a href="/about-data/">查看完整说明 ↗</a></p>
   </main>
-  <SiteFooter />
 </div>
+<SiteFooter />
 <script type="application/json" id="rankingBoot" is:inline set:html={JSON.stringify(boot).replace(/</g, "\\u003c")} />
 <script>import "../scripts/home-ranking";</script>
 </body>

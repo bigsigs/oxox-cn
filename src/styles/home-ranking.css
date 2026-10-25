@@ -84,7 +84,7 @@
 .ranking-empty .ref-button { font-size:11px; }
 .ranking-error { margin-top:13px; padding:13px 14px; border:1px solid var(--line); border-radius:10px; background:var(--panel2); color:var(--ink2); font-size:11px; line-height:1.8; }
 .ranking-error button { margin-left:10px; padding:0; border:0; background:transparent; color:var(--ink); font-size:11px; text-decoration:underline; text-underline-offset:3px; }
-.home-data-note { margin:18px 4px 42px; color:var(--ink3); font-size:11px; line-height:1.9; }
+.home-data-note { margin:18px 4px 0; color:var(--ink3); font-size:11px; line-height:1.9; }
 .home-data-note b { color:var(--ink2); font-weight:500; }
 .home-data-note a { color:var(--ink2); text-decoration:underline; text-underline-offset:3px; white-space:nowrap; }
 @media (max-width:1000px) {
@@ -153,7 +153,7 @@
   .ranking-empty { padding:34px 5px 28px; }
   .ranking-empty > b { font-size:13px; }
   .ranking-empty p { font-size:11px; }
-  .home-data-note { margin:16px 2px 32px; font-size:10px; line-height:1.9; }
+  .home-data-note { margin:16px 2px 0; font-size:10px; line-height:1.9; }
 }
 @media (max-width:380px) {
   .ranking-stats b { font-size:18px; }

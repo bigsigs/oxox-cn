@@ -100,15 +100,14 @@ const aboutSchema = {
         </section>
 
         <aside class="seo-note"><h2>关于 SEO 榜单</h2><p>SEO 榜单使用 Semrush 第三方估算数据，比较自然流量、关键词、反向链接与 AI 品牌曝光的相对表现，不代表企业真实流量。数据快照为 2026 年 10 月 25 日。</p><a href="/yueqing-seo/">查看 SEO 榜单 ↗</a></aside>
-        <a class="return-link" href="/">← 返回排行榜</a>
       </main>
-      <SiteFooter />
     </div>
+    <SiteFooter />
   </body>
 </html>
 
 <style>
-  .data-page { padding: 0 0 64px; }
+  .data-page { padding: 0; }
   .data-summary { display: grid; grid-template-columns: 1.3fr 1fr 1fr; margin: 0 0 36px; border: 1px solid var(--line); border-radius: 9px; background: var(--panel); }
   .data-summary > div { padding: 21px 25px; }
   .data-summary > div + div { border-left: 1px solid var(--line); }
@@ -136,10 +135,10 @@ const aboutSchema = {
   .latest-tag { display: inline-block; margin-left: 8px; padding: 1px 5px; border-radius: 4px; color: #6a8a43; background: #edf3e4; font-size: 10px; }
   .precision-tag { color: var(--ink3); font-size: 11px; }
   .precision-tag.exact { color: #ab8632; }
-  .seo-note { margin-bottom: 26px; padding: 21px 23px; border: 1px solid var(--line); border-radius: 9px; background: var(--panel2); }
+  .seo-note { margin-bottom: 0; padding: 21px 23px; border: 1px solid var(--line); border-radius: 9px; background: var(--panel2); }
   .seo-note p { margin: 10px 0; color: var(--ink2); font-size: 12px; line-height: 1.9; }
-  .seo-note a, .return-link { color: var(--ink3); font-size: 12px; text-decoration: none; }
-  .seo-note a:hover, .return-link:hover { color: var(--ink); }
+  .seo-note a { color: var(--ink3); font-size: 12px; text-decoration: none; }
+  .seo-note a:hover { color: var(--ink); }
   @media (max-width: 600px) {
     .data-summary { grid-template-columns: 1.2fr 1fr .8fr; }
     .data-summary > div { padding: 16px 12px; }
