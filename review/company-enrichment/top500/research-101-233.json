@@ -1166,7 +1166,7 @@
     "alibaba_source": "",
     "alibaba_address": "",
     "confidence": "low",
-    "note": "本轮公开检索未找到可确认官网、地址、产品或注册资本。",
+    "note": "2026-10-25 用户确认 yishengelec.com 需要核对，暂不登记；该站页脚主体为东莞公司，不能据此补充乐清市颐升电子科技有限公司的官网、地址或产品。",
     "sources": []
   },
   {
@@ -1249,18 +1249,19 @@
     "rank": 163,
     "id": "YQ000152",
     "name": "浙江威力特塑胶有限公司",
-    "website": "",
-    "website_source": "",
+    "website": "http://www.welet.cn/",
+    "website_source": "http://www.welet.cn/",
     "contact_address": "浙江省温州市乐清市城东产业功能区永兴一路23号",
-    "products": "摩托车头盔、防风帽、塑料件、胶木件、灯具灯饰、汽车配件、电子元器件、五金工具、低压电器配件",
+    "products": "摩托车头盔（全盔、半盔、越野盔、儿童盔）、安全帽",
     "capital": "",
     "capital_source": "",
     "alibaba_url": "",
     "alibaba_source": "",
     "alibaba_address": "",
-    "confidence": "medium",
-    "note": "企业B2B页及环评验收文件确认主体、地址和产品；未找到官网/注册资本。",
+    "confidence": "high",
+    "note": "用户确认官网；官网显示企业全称及乐清所在地，主营摩托车头盔、安全帽等安全用品。",
     "sources": [
+      "http://www.welet.cn/",
       "https://ycd.boyuan.com/com/weilite/news/",
       "https://img3.epanshi.com/12887/news/file/%E6%B5%99%E6%B1%98%E5%A8%81%E5%8A%9B%E7%89%B9%E5%A1%91%E8%83%B6%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E5%B9%B4%E4%BA%A76%E4%B8%87%E9%A1%B6%E6%91%A9%E托车头盔建设项目竣工环境保护自主验收意见.pdf"
     ]

@@ -1398,5 +1398,19 @@
     "page_url": "https://www.bjenclosure.com/",
     "checked_at": "2026-10-24",
     "dark_background": false
+  },
+  "YQ000292": {
+    "path": "/company-icons/verified/YQ000292.png",
+    "source_url": "http://www.tengpaitools.com/static/upload/image/20240915/1726378087485056.png",
+    "page_url": "http://www.tengpaitools.com/",
+    "checked_at": "2026-10-25",
+    "dark_background": false
+  },
+  "YQ000152": {
+    "path": "/company-icons/verified/YQ000152.png",
+    "source_url": "http://www.welet.cn/favicon.ico",
+    "page_url": "http://www.welet.cn/",
+    "checked_at": "2026-10-25",
+    "dark_background": false
   }
 }

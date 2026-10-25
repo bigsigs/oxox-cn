@@ -7468,12 +7468,12 @@
           "source_type": "public_company_record"
         },
         "main_products": {
-          "url": "https://ycd.boyuan.com/com/weilite/news/",
-          "checked_at": "2026-10-24",
-          "source_type": "company_website_or_directory"
+          "url": "http://www.welet.cn/",
+          "checked_at": "2026-10-25",
+          "source_type": "company_website"
         }
       },
-      "main_products": "摩托车头盔、防风帽、塑料件、胶木件、灯具灯饰、汽车配件、电子元器件、五金工具、低压电器配件",
+      "main_products": "摩托车头盔（全盔、半盔、越野盔、儿童盔）、安全帽",
       "sources": [
         {
           "label": "企业公开资料",
@@ -7482,11 +7482,25 @@
         {
           "label": "企业公开资料",
           "url": "https://img3.epanshi.com/12887/news/file/%E6%B5%99%E6%B1%98%E5%A8%81%E5%8A%9B%E7%89%B9%E5%A1%91%E8%83%B6%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E5%B9%B4%E4%BA%A76%E4%B8%87%E9%A1%B6%E6%91%A9%E%E6%89%98%E8%BD%A6%E5%A4%B4%E7%9B%94%E5%BB%BA%E8%AE%BE%E9%A1%B9%E7%9B%AE%E7%AB%A3%E5%B7%A5%E7%8E%AF%E5%A2%83%E4%BF%9D%E6%8A%A4%E8%87%AA%E4%B8%BB%E9%AA%8C%E6%94%B6%E6%84%8F%E8%A7%81.pdf"
+        },
+        {
+          "label": "企业官网",
+          "url": "http://www.welet.cn/"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-25",
       "legal_name": "浙江威力特塑胶有限公司"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "http://www.welet.cn/",
+        "domain": "welet.cn",
+        "source": "user_provided",
+        "added_at": "2026-10-25"
+      }
+    ]
   },
   "YQ000153": {
     "details": {
@@ -11381,19 +11395,33 @@
         {
           "label": "企业公开资料",
           "url": "https://ycd.boyuan.com/index.php?file=dzyb&homepage=yingzhua&itemid=637"
+        },
+        {
+          "label": "企业官网",
+          "url": "http://www.tengpaitools.com/"
         }
       ],
-      "checked_at": "2026-10-24",
-      "main_products": "工具类",
+      "checked_at": "2026-10-25",
+      "main_products": "硬质合金锯片",
       "field_sources": {
         "main_products": {
-          "url": "https://ycd.boyuan.com/index.php?file=dzyb&homepage=yingzhua&itemid=637",
-          "checked_at": "2026-10-24",
+          "url": "http://www.tengpaitools.com/",
+          "checked_at": "2026-10-25",
           "source_type": "company_website"
         }
       },
       "legal_name": "浙江腾牌工具有限公司"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "http://www.tengpaitools.com/",
+        "domain": "tengpaitools.com",
+        "source": "user_provided",
+        "added_at": "2026-10-25"
+      }
+    ]
   },
   "YQ000293": {
     "details": {
