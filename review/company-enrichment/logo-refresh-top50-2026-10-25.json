@@ -1,0 +1,533 @@
+{
+  "snapshot": "2026-ytd-08",
+  "checked_at": "2026-10-25",
+  "scope": "最新榜单前50条企业记录；源表第43名缺号，最后一条为第51名",
+  "reviewed": 50,
+  "refreshed": 41,
+  "text_fallback": 9,
+  "companies": [
+    {
+      "rank": 1,
+      "company_id": "YQ000001",
+      "company_name": "浙江正泰电器股份有限公司",
+      "status": "refreshed",
+      "website": "https://www.chint.net/",
+      "source_url": "https://www.chint.net/Public/Uploads/uploadfile/images/20250214/zhengtaidianqi24nianlogo-400.png",
+      "icon": "/company-icons/verified/top50-20261025/YQ000001.png",
+      "source_sha256": "e4289f8da0822c64fd3ca6c7fdfed3f2489c3fed60e515ddcee8cd2853337206",
+      "dark_background": false
+    },
+    {
+      "rank": 2,
+      "company_id": "YQ000002",
+      "company_name": "乐清意华新能源科技有限公司",
+      "status": "refreshed",
+      "website": "https://www.czt-energy.com/",
+      "source_url": "https://omo-oss-image.thefastimg.com/portal-saas/new2023033118300075790/cms/image/fd0d61b8-f6ca-40c2-98e9-91c0dff4d431.png",
+      "icon": "/company-icons/verified/top50-20261025/YQ000002.png",
+      "source_sha256": "cbea03835a0afe3fc5f47d82bc885ddf0840766d82fb3bf9d77d28bef6b8059f",
+      "dark_background": true
+    },
+    {
+      "rank": 3,
+      "company_id": "YQ000003",
+      "company_name": "德力西电气销售有限公司",
+      "status": "refreshed",
+      "website": "https://delixi.com/",
+      "source_url": "https://www.delixi.com/r/cms/delixi/zn/default/images/logo.png",
+      "icon": "/company-icons/verified/top50-20261025/YQ000003.png",
+      "source_sha256": "6b61f4ebe9a8a62b1c82c641de50512dc0615834287143c857817bb5c10b3edf",
+      "dark_background": false
+    },
+    {
+      "rank": 4,
+      "company_id": "YQ000004",
+      "company_name": "温州合盛电子有限公司",
+      "status": "refreshed",
+      "website": "http://www.heshengele.com/",
+      "source_url": "http://www.heshengele.com/other/img/logo.png",
+      "icon": "/company-icons/verified/top50-20261025/YQ000004.png",
+      "source_sha256": "35f43a58a236a5569cc70d249ebc33e3616d40766e1793294beff9192f7e15ad",
+      "dark_background": false
+    },
+    {
+      "rank": 5,
+      "company_id": "YQ000007",
+      "company_name": "温州宏丰电工合金股份有限公司",
+      "status": "refreshed",
+      "website": "https://www.wzhf.com/",
+      "source_url": "https://www.wzhf.com/bocstatic/web/img/logo2.png?v=v3",
+      "icon": "/company-icons/verified/top50-20261025/YQ000007.png",
+      "source_sha256": "7de910556856e5f32b1160ed39c2953e7c3ec964e2792187d2bf9b3f0c7ed05e",
+      "dark_background": false
+    },
+    {
+      "rank": 6,
+      "company_id": "YQ000006",
+      "company_name": "加西亚电子电器股份有限公司",
+      "status": "refreshed",
+      "website": "https://www.gacia.com.cn/",
+      "source_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2024110718470626435/cms/image/6607b76f-9eef-4cf5-b27b-ea50bfd5d4ab.png",
+      "icon": "/company-icons/verified/top50-20261025/YQ000006.png",
+      "source_sha256": "6f81e8d5c85b38c0c62855eb080edf1eb5609ca09b46861db1116fe9562c4133",
+      "dark_background": false
+    },
+    {
+      "rank": 7,
+      "company_id": "YQ000005",
+      "company_name": "浙江创奇电气股份有限公司",
+      "status": "refreshed",
+      "website": "https://www.chac-cn.com/",
+      "source_url": "https://www.chac-cn.com/upload/201911/1575090056.png",
+      "icon": "/company-icons/verified/top50-20261025/YQ000005.png",
+      "source_sha256": "459f601da0b7a0f654659de065122f75eccd3dd8af491f44acfb121f44b675ac",
+      "dark_background": false
+    },
+    {
+      "rank": 8,
+      "company_id": "YQ000008",
+      "company_name": "方大控股有限公司",
+      "status": "refreshed",
+      "website": "https://www.fangdatools.com/",
+      "source_url": "http://www.fangdatools.com/templates/main/images/logere.png",
+      "icon": "/company-icons/verified/top50-20261025/YQ000008.png",
+      "source_sha256": "903e7b8ab2e533ad41f42eb9cf8edb05db654a722ce48f679ca1d4ff060052ee",
+      "dark_background": true
+    },
+    {
+      "rank": 9,
+      "company_id": "YQ000009",
+      "company_name": "温州欣驰国际贸易有限公司",
+      "status": "refreshed",
+      "website": "https://www.chinasuntree.com/",
+      "source_url": "https://www.chinasuntree.com/theme/xinchinew-EN/images/logo.webp",
+      "icon": "/company-icons/verified/top50-20261025/YQ000009.png",
+      "source_sha256": "53a886e6f4db456c04a365ad111ec664ad929a22ccb2cb82546a456dc3ce1af5",
+      "dark_background": false
+    },
+    {
+      "rank": 10,
+      "company_id": "YQ000010",
+      "company_name": "温州意华接插件股份有限公司",
+      "status": "refreshed",
+      "website": "https://www.czt.com.cn/",
+      "source_url": "https://www.czt.com.cn/images/common/logo.png",
+      "icon": "/company-icons/verified/top50-20261025/YQ000010.png",
+      "source_sha256": "1c1f35afc9eaf718906b5fdc6a563c6a0e0d6d9818a6f050b7c6a4c49141e201",
+      "dark_background": false
+    },
+    {
+      "rank": 11,
+      "company_id": "YQ000011",
+      "company_name": "浙江奔一新能源有限公司",
+      "status": "refreshed",
+      "website": "https://www.beny.com/",
+      "source_url": "https://www.beny.com/wp-content/uploads/2020/12/logo.png",
+      "icon": "/company-icons/verified/top50-20261025/YQ000011.png",
+      "source_sha256": "1c7ffe11e7aab23798b55cc4e2e2e4c8f47ffa31e89d3cf4d3346a35acedd58a",
+      "dark_background": false
+    },
+    {
+      "rank": 12,
+      "company_id": "YQ000026",
+      "company_name": "金卡智能集团股份有限公司",
+      "status": "refreshed",
+      "website": "https://www.jinka.cn/",
+      "source_url": "https://www.jinka.cn/web/static/web/img/logo.png",
+      "icon": "/company-icons/verified/top50-20261025/YQ000026.png",
+      "source_sha256": "53d62f3084b80abdc7bc85cfd03c000cc454fecca98b295aec63a5e17b727380",
+      "dark_background": false
+    },
+    {
+      "rank": 13,
+      "company_id": "YQ000012",
+      "company_name": "温州龙华日用电子有限公司",
+      "status": "refreshed",
+      "website": "https://www.cn-cableties.com/Index.aspx?lan=Zh-Cn",
+      "source_url": "http://www.cn-cableties.com/Template/Default/Zh-Cn/images/logo.png",
+      "icon": "/company-icons/verified/top50-20261025/YQ000012.png",
+      "source_sha256": "f252471d4f3b6fb3c8d5954931e79fe5b35ab882903608894b897dda0928e413",
+      "dark_background": false
+    },
+    {
+      "rank": 14,
+      "company_id": "YQ000015",
+      "company_name": "乐清市八达光电科技股份有限公司",
+      "status": "text_fallback",
+      "reason": "官网头部图为合作宣传横幅，未取得适合独立展示的公司商标",
+      "website": "https://www.badagd.com/"
+    },
+    {
+      "rank": 15,
+      "company_id": "YQ002842",
+      "company_name": "温州奇诚配电电器有限公司",
+      "status": "refreshed",
+      "website": "https://www.cn-cqc.com/",
+      "source_url": "https://www.cn-cqc.com/Uploads//20200614/5ee5eb59c1d90.png",
+      "icon": "/company-icons/verified/top50-20261025/YQ002842.png",
+      "source_sha256": "298144c7df55968e57ee8a27e054c40dacd768a6c266e706238832ca331dced9",
+      "dark_background": false
+    },
+    {
+      "rank": 16,
+      "company_id": "YQ000013",
+      "company_name": "浙江正泰仪器仪表有限责任公司",
+      "status": "refreshed",
+      "website": "https://meter.chint.com/",
+      "source_url": "https://meter.chint.com/img/flogo.png",
+      "icon": "/company-icons/verified/top50-20261025/YQ000013.png",
+      "source_sha256": "8e1852f99d952f30cf59f94f8b416180261115f96f860cc648ecb2c9d6867802",
+      "dark_background": false
+    },
+    {
+      "rank": 17,
+      "company_id": "YQ000019",
+      "company_name": "浙江科瑞普电气有限公司",
+      "status": "refreshed",
+      "website": "https://www.kripal.net/",
+      "source_url": "https://www.kripal.net/wp-content/uploads/2025/08/logo.png",
+      "icon": "/company-icons/verified/top50-20261025/YQ000019.png",
+      "source_sha256": "ab229161183f8d99687c2fbe6821bf463cb0a470cb0fba3681ea7ddade480739",
+      "dark_background": false
+    },
+    {
+      "rank": 18,
+      "company_id": "YQ000014",
+      "company_name": "科都电气股份有限公司",
+      "status": "refreshed",
+      "website": "https://www.kedu.cn/",
+      "source_url": "https://www.kedu.cn/images/logo.svg",
+      "icon": "/company-icons/verified/top50-20261025/YQ000014.png",
+      "source_sha256": "5ff992bb9c9e8f9dd9cd31578885e7fa4d560279ab08bce3519813aff437d8a0",
+      "dark_background": false
+    },
+    {
+      "rank": 19,
+      "company_id": "YQ000020",
+      "company_name": "浙江德威硬质合金制造股份有限公司",
+      "status": "refreshed",
+      "website": "http://www.cn-dewei.com/",
+      "source_url": "http://www.cn-dewei.com/img/logo.png",
+      "icon": "/company-icons/verified/top50-20261025/YQ000020.png",
+      "source_sha256": "79069e9720a6a456f288b64c8ef7016d208ac793f1203f1ee0809e33cb869364",
+      "dark_background": true
+    },
+    {
+      "rank": 20,
+      "company_id": "YQ000018",
+      "company_name": "浙江长城贸易有限公司",
+      "status": "refreshed",
+      "website": "https://www.cncele.com/",
+      "source_url": "https://cdnus.globalso.com/cncele/LOGO.png",
+      "icon": "/company-icons/verified/top50-20261025/YQ000018.png",
+      "source_sha256": "3d97f2b83dfd13e2a8115cbae819c6002fce66a03e45f1eeaec0027149919228",
+      "dark_background": false
+    },
+    {
+      "rank": 21,
+      "company_id": "YQ000016",
+      "company_name": "合兴汽车电子股份有限公司",
+      "status": "refreshed",
+      "website": "https://www.cwb.com.cn/",
+      "source_url": "https://www.cwb.com.cn/wp-content/themes/cwb/img/cwb-logo-small.png",
+      "icon": "/company-icons/verified/top50-20261025/YQ000016.png",
+      "source_sha256": "14d0d636b4820dd7bc9a9a357884f67fd33e619765e7a03345b2b075b5a63a8e",
+      "dark_background": true
+    },
+    {
+      "rank": 22,
+      "company_id": "YQ000017",
+      "company_name": "乐清市九洲电子有限公司",
+      "status": "refreshed",
+      "website": "https://www.jiuzhouelec.com/",
+      "source_url": "https://www.jiuzhouelec.com/wp-content/themes/jz/img/logo.png",
+      "icon": "/company-icons/verified/top50-20261025/YQ000017.png",
+      "source_sha256": "690c3eb2779bdd034fac35c9a1d4be9a454102a1e9fa90ba5bbda27ebe5f01fa",
+      "dark_background": false
+    },
+    {
+      "rank": 23,
+      "company_id": "YQ000022",
+      "company_name": "浙江桥庆电气有限公司",
+      "status": "text_fallback",
+      "reason": "未登记可确认的独立官网",
+      "website": ""
+    },
+    {
+      "rank": 24,
+      "company_id": "YQ000024",
+      "company_name": "意华控股集团有限公司",
+      "status": "refreshed",
+      "website": "http://www.cztgroup.cn/",
+      "source_url": "http://www.cztgroup.cn/images/logo.png",
+      "icon": "/company-icons/verified/top50-20261025/YQ000024.png",
+      "source_sha256": "966615065b8ef5792b99c7cf688a61d6373c49383764f75cf65f6e42bce70203",
+      "dark_background": false
+    },
+    {
+      "rank": 25,
+      "company_id": "YQ000023",
+      "company_name": "安德利集团有限公司",
+      "status": "refreshed",
+      "website": "https://www.andeli.cn/",
+      "source_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2025081511305338467/cms/image/03c44790-1e0c-4281-b420-e9b38041f9a2.png",
+      "icon": "/company-icons/verified/top50-20261025/YQ000023.png",
+      "source_sha256": "fe0b911b1e7208078d27dd2bcdd463d2b7bed66878b6c4f329c47a2d8fe6e39e",
+      "dark_background": false
+    },
+    {
+      "rank": 26,
+      "company_id": "YQ000021",
+      "company_name": "浙江益而益智能科技有限公司",
+      "status": "refreshed",
+      "website": "https://www.elegrp.cn/",
+      "source_url": "https://www.elegrp.cn/Public/Uploads/uploadfile/images/20220702/logo1.svg",
+      "icon": "/company-icons/verified/top50-20261025/YQ000021.png",
+      "source_sha256": "12dd9b6805c945737b2c658bc80168a3b254e35ffcef6eb61926b59c81b1119c",
+      "dark_background": false
+    },
+    {
+      "rank": 27,
+      "company_id": "YQ000025",
+      "company_name": "温州华嘉电器有限公司",
+      "status": "refreshed",
+      "website": "https://www.vecas.cn/cn/index.html",
+      "source_url": "https://www.vecas.cn/index/logo.jpg",
+      "icon": "/company-icons/verified/top50-20261025/YQ000025.png",
+      "source_sha256": "2a24dd1c6f40d9971ada3f9d1fa1c5645aee7e959dfbea781c7ae851bfd5aef5",
+      "dark_background": false
+    },
+    {
+      "rank": 28,
+      "company_id": "YQ000027",
+      "company_name": "新亚电子股份有限公司",
+      "status": "refreshed",
+      "website": "https://www.xinya-cn.com/",
+      "source_url": "https://aosspic10001.websiteonline.cn/pro946cae/image/24241.png",
+      "icon": "/company-icons/verified/top50-20261025/YQ000027.png",
+      "source_sha256": "4c3e7c07fbd0059fbb2971b66559b688ecc2e837f8782fcbd478cbd072428cf1",
+      "dark_background": false
+    },
+    {
+      "rank": 29,
+      "company_id": "YQ000030",
+      "company_name": "温州奥来电器有限公司",
+      "status": "refreshed",
+      "website": "https://www.aoelec.com/",
+      "source_url": "https://www.aoelec.com/templets/aolai/assets/img/logo/logo.png",
+      "icon": "/company-icons/verified/top50-20261025/YQ000030.png",
+      "source_sha256": "ca1232f27b50d8c7d756b62d5bc87105b623805724df80c9fc3cf69a0572a0d9",
+      "dark_background": false
+    },
+    {
+      "rank": 30,
+      "company_id": "YQ000028",
+      "company_name": "温州市麦特力克电器有限公司",
+      "status": "refreshed",
+      "website": "http://www.mtlcelec.com/",
+      "source_url": "https://www.mtlcelec.com/static/upload/image/20241226/1735204194266219.png",
+      "icon": "/company-icons/verified/top50-20261025/YQ000028.png",
+      "source_sha256": "e2daed50de6602dc0e0ee0f0645a8abbd71d99a8525692e6aa9e93cf0233eda7",
+      "dark_background": true
+    },
+    {
+      "rank": 31,
+      "company_id": "YQ000044",
+      "company_name": "浙江法拉迪电气股份有限公司",
+      "status": "refreshed",
+      "website": "https://www.farady.cn/",
+      "source_url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2026033018061569476/cms/image/fa2c1e3a-88d5-4cf4-b3b6-7cb295382426.png",
+      "icon": "/company-icons/verified/top50-20261025/YQ000044.png",
+      "source_sha256": "8d763760204f59a88a888c61528143e604c75c604665c46b881ef4549f75bf9d",
+      "dark_background": false
+    },
+    {
+      "rank": 32,
+      "company_id": "YQ000031",
+      "company_name": "温州恩波利电气有限公司",
+      "status": "refreshed",
+      "website": "https://www.wzebl.com/",
+      "source_url": "https://www.wzebl.com/static/upload/image/20230310/1678413366603283.png",
+      "icon": "/company-icons/verified/top50-20261025/YQ000031.png",
+      "source_sha256": "45c15a78994a9710d5c0c00d0caf1e21e032456110fac31be27700626d9dbffd",
+      "dark_background": false
+    },
+    {
+      "rank": 33,
+      "company_id": "YQ000032",
+      "company_name": "浙江金鑫五金制造有限公司",
+      "status": "refreshed",
+      "website": "http://www.weilishi.cn/",
+      "source_url": "http://www.weilishi.cn/templates/main/images/logo.png",
+      "icon": "/company-icons/verified/top50-20261025/YQ000032.png",
+      "source_sha256": "9443331da4f75f8b7592f21479bda447e8da84f1c5a061283957d7b775a340bf",
+      "dark_background": false
+    },
+    {
+      "rank": 34,
+      "company_id": "YQ000029",
+      "company_name": "温州意泰科贸易有限公司",
+      "status": "text_fallback",
+      "reason": "未登记可确认的独立官网",
+      "website": ""
+    },
+    {
+      "rank": 35,
+      "company_id": "YQ000033",
+      "company_name": "温州市吉祥板业有限公司",
+      "status": "refreshed",
+      "website": "http://www.alusignpanel.com/",
+      "source_url": "https://www.alusignpanel.com/templates/en/images/logo-icon.jpg",
+      "icon": "/company-icons/verified/top50-20261025/YQ000033.png",
+      "source_sha256": "70a995bb11b599109895ad7b2e7e32a18d53748d8887a2bfb07d5603349d1870",
+      "dark_background": false
+    },
+    {
+      "rank": 36,
+      "company_id": "YQ000035",
+      "company_name": "乐清市罗拉斯进出口有限公司",
+      "status": "refreshed",
+      "website": "https://www.laurence.group/",
+      "source_url": "https://aosspic10001.websiteonline.cn/pmo61f215/image/logo.jpg",
+      "icon": "/company-icons/verified/top50-20261025/YQ000035.png",
+      "source_sha256": "a6bffb10b4bf4db550049223fd94128930ccdd973c9a3b08f5855be444018211",
+      "dark_background": false
+    },
+    {
+      "rank": 37,
+      "company_id": "YQ000036",
+      "company_name": "乐清市金龙电子实业有限公司",
+      "status": "refreshed",
+      "website": "http://www.cn-jinlong.cn/",
+      "source_url": "http://www.cn-jinlong.cn/Public/Home/img/logo1.png",
+      "icon": "/company-icons/verified/top50-20261025/YQ000036.png",
+      "source_sha256": "000120b757c82238134fddbd4ced68315e0799466c6e7677548d471eeaf003c7",
+      "dark_background": false
+    },
+    {
+      "rank": 38,
+      "company_id": "YQ000041",
+      "company_name": "浙江恒裕智能家具有限公司",
+      "status": "text_fallback",
+      "reason": "未登记可确认的独立官网",
+      "website": ""
+    },
+    {
+      "rank": 39,
+      "company_id": "YQ000037",
+      "company_name": "乐清市宏业电子元件有限公司",
+      "status": "refreshed",
+      "website": "http://www.yqhy.com/",
+      "source_url": "http://www.yqhy.com/static/upload/image/20230809/1691559435792395.png",
+      "icon": "/company-icons/verified/top50-20261025/YQ000037.png",
+      "source_sha256": "3e0e7dd74630c3efac80d948a1ce7bee5e0e9a4abbb9b3f6261e5b8e8e2a7534",
+      "dark_background": false
+    },
+    {
+      "rank": 40,
+      "company_id": "YQ000038",
+      "company_name": "浙江京红电器有限公司",
+      "status": "refreshed",
+      "website": "https://www.cnjhele.com/",
+      "source_url": "https://www.cnjhele.com/templates/default/images/logo.png",
+      "icon": "/company-icons/verified/top50-20261025/YQ000038.png",
+      "source_sha256": "4dafc9e0d57dcb41afd32ec97e98912517a53d8ede961b6f110614be95474aa6",
+      "dark_background": false
+    },
+    {
+      "rank": 41,
+      "company_id": "YQ000039",
+      "company_name": "浙江致威电子科技有限公司",
+      "status": "refreshed",
+      "website": "https://www.zwelec.com/",
+      "source_url": "https://www.zwelec.com/img/logo.png",
+      "icon": "/company-icons/verified/top50-20261025/YQ000039.png",
+      "source_sha256": "de99b441dc2ff62cdf226dd44d8cad61f55f5efd04ad6913279f99e22eda34d1",
+      "dark_background": false
+    },
+    {
+      "rank": 42,
+      "company_id": "YQ000034",
+      "company_name": "温州富卫德商贸有限公司",
+      "status": "text_fallback",
+      "reason": "未登记可确认的独立官网",
+      "website": ""
+    },
+    {
+      "rank": 44,
+      "company_id": "YQ000042",
+      "company_name": "浙江天正电气股份有限公司",
+      "status": "refreshed",
+      "website": "https://ck.tengen.com.cn/",
+      "source_url": "https://ck.tengen.com.cn/public/uploads/images/20230824/713cfa98c7e765c9a352eccdd2672431.png",
+      "icon": "/company-icons/verified/top50-20261025/YQ000042.png",
+      "source_sha256": "cadd30c7f54de6a894b2c2756ffd499bd7d73008e482366d95f0ba1e093c84c7",
+      "dark_background": false
+    },
+    {
+      "rank": 45,
+      "company_id": "YQ000043",
+      "company_name": "浙江高能格乐电气有限公司",
+      "status": "refreshed",
+      "website": "https://www.korlen.com/",
+      "source_url": "https://www.korlen.com/wp-content/uploads/2025/05/高能logo.png",
+      "icon": "/company-icons/verified/top50-20261025/YQ000043.png",
+      "source_sha256": "444b9e63c1e147169a5c1854d65455ae8fcaf739d82104c7cf1487e1dd43f3d5",
+      "dark_background": false
+    },
+    {
+      "rank": 46,
+      "company_id": "YQ000052",
+      "company_name": "浙江泰科天唯电气有限公司",
+      "status": "refreshed",
+      "website": "http://www.chtaike.com.cn/",
+      "source_url": "http://www.chtaike.com.cn/themes/default/images/logo.png",
+      "icon": "/company-icons/verified/top50-20261025/YQ000052.png",
+      "source_sha256": "75853067dfd47070bbbad2d7737423c48d2bd0443bd7af0e722ea0dcf1d5efab",
+      "dark_background": false
+    },
+    {
+      "rank": 47,
+      "company_id": "YQ000048",
+      "company_name": "浙江乾纳电气有限公司",
+      "status": "refreshed",
+      "website": "https://www.traner.net/",
+      "source_url": "https://www.traner.net/themes/default/images/logo_on.png",
+      "icon": "/company-icons/verified/top50-20261025/YQ000048.png",
+      "source_sha256": "772fbfaf5f6284f9ea741bc7e533cc0809f060f915c10c3ea80b1ba7ff0613ed",
+      "dark_background": false
+    },
+    {
+      "rank": 48,
+      "company_id": "YQ000073",
+      "company_name": "乐清市港翼跨境电子商务有限公司",
+      "status": "text_fallback",
+      "reason": "未登记可确认的独立官网",
+      "website": ""
+    },
+    {
+      "rank": 49,
+      "company_id": "YQ000047",
+      "company_name": "乐清劳恩斯电气有限公司",
+      "status": "text_fallback",
+      "reason": "未登记可确认的独立官网",
+      "website": ""
+    },
+    {
+      "rank": 50,
+      "company_id": "YQ000060",
+      "company_name": "浙江西米泰电器有限公司",
+      "status": "text_fallback",
+      "reason": "未登记可确认的独立官网",
+      "website": ""
+    },
+    {
+      "rank": 51,
+      "company_id": "YQ000045",
+      "company_name": "浙江伏尔特电器有限公司",
+      "status": "text_fallback",
+      "reason": "已登记官网本次连接失败，未取得可用商标",
+      "website": "https://www.chinafuerte.com/"
+    }
+  ]
+}
