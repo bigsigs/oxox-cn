@@ -954,8 +954,8 @@
     "rank": 148,
     "id": "YQ000158",
     "name": "温州西诺克进出口有限公司",
-    "website": "",
-    "website_source": "",
+    "website": "https://www.sinoamigo.com/",
+    "website_source": "https://www.sinoamigo.com/",
     "contact_address": "浙江省温州市乐清市柳市镇苏吕小微创业园（A5栋5层）",
     "products": "货物进出口、技术进出口、进出口代理、国内贸易代理",
     "capital": "100万元人民币",
@@ -964,8 +964,9 @@
     "alibaba_source": "",
     "alibaba_address": "",
     "confidence": "high",
-    "note": "BOSS直聘和温州大学招聘页主体、地址、注册资本一致；未找到官网/Alibaba。",
+    "note": "2026-10-25 用户提供并确认官网 sinoamigo.com；官网页脚显示 WENZHOU SINO-AMIGO IMPORT & EXPORT CORP.，苏吕工业区 A5 栋地址与现有企业资料一致。原有注册资本与产品信息保留各自来源。",
     "sources": [
+      "https://www.sinoamigo.com/",
       "https://m.zhipin.com/companys/b09843650f46dabc1nNz3du8EQ~~.html",
       "https://job.wzu.edu.cn/company/view/id/447667",
       "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web2074/site/attach/0/f43c43d71cdf49b2a40532274e026551.pdf"

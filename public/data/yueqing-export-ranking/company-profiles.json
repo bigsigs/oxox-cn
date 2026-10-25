@@ -7669,11 +7669,25 @@
         {
           "label": "监管或企业公告",
           "url": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web2074/site/attach/0/f43c43d71cdf49b2a40532274e026551.pdf"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.sinoamigo.com/"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-25",
       "legal_name": "温州西诺克进出口有限公司"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "https://www.sinoamigo.com/",
+        "domain": "sinoamigo.com",
+        "source": "user_provided",
+        "added_at": "2026-10-25"
+      }
+    ]
   },
   "YQ000159": {
     "details": {

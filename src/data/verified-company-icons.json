@@ -1454,5 +1454,12 @@
     "page_url": "https://www.cn-cqc.com/cn.php",
     "checked_at": "2026-10-25",
     "dark_background": false
+  },
+  "YQ000158": {
+    "path": "/company-icons/verified/YQ000158.svg",
+    "source_url": "https://www.sinoamigo.com/Template/Default/images/logo.svg",
+    "page_url": "https://www.sinoamigo.com/",
+    "checked_at": "2026-10-25",
+    "dark_background": false
   }
 }
