@@ -7699,11 +7699,25 @@
         {
           "label": "企业公开资料",
           "url": "https://www.9181.cn/orgt_list_138.htm"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.chsmico.com/"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-25",
       "legal_name": "乐清思美克进出口有限公司"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "https://www.chsmico.com/",
+        "domain": "chsmico.com",
+        "source": "user_provided",
+        "added_at": "2026-10-25"
+      }
+    ]
   },
   "YQ000160": {
     "details": {
@@ -8130,9 +8144,13 @@
         {
           "label": "企业公开资料",
           "url": "https://cospub.cantonfair.org.cn/461100754573217792/1741860957090-7bf2ca56-8890-4f85-9f91-5f6fa3084395.pdf"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.cejie-electric.com/"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-25",
       "main_products": "机电产品/电子电气产品（广交会参展）",
       "field_sources": {
         "main_products": {
@@ -8142,7 +8160,17 @@
         }
       },
       "legal_name": "温州策杰机电有限公司"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "https://www.cejie-electric.com/",
+        "domain": "cejie-electric.com",
+        "source": "user_provided",
+        "added_at": "2026-10-25"
+      }
+    ]
   },
   "YQ000172": {
     "links": [
@@ -8328,9 +8356,13 @@
         {
           "label": "监管或企业公告",
           "url": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web1828/site/attach/0/041cf43a1a414c9e94acf7aaa0c0dd10.pdf"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.zjbosun.com.cn/"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-25",
       "main_products": "金属易撕盖、易拉盖及罐头包装材料",
       "field_sources": {
         "main_products": {
@@ -8340,7 +8372,17 @@
         }
       },
       "legal_name": "浙江博升新材料技术有限公司"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "https://www.zjbosun.com.cn/",
+        "domain": "zjbosun.com.cn",
+        "source": "user_provided",
+        "added_at": "2026-10-25"
+      }
+    ]
   },
   "YQ000177": {
     "links": [
@@ -9128,11 +9170,25 @@
         {
           "label": "企业公开资料",
           "url": "https://tidenews.com.cn/news.html?id=2615678"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.amppal.cn/"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-25",
       "legal_name": "温州安富电器有限公司"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "https://www.amppal.cn/",
+        "domain": "amppal.cn",
+        "source": "user_provided",
+        "added_at": "2026-10-25"
+      }
+    ]
   },
   "YQ000199": {
     "links": [
@@ -9250,11 +9306,25 @@
         {
           "label": "企业公开资料",
           "url": "https://www.cnverify.com/company/Yueqing-Xianglang-Imp-Exp-Co-Ltd"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.worldsunlight.com/"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-25",
       "legal_name": "乐清市祥朗进出口有限公司"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "https://www.worldsunlight.com/",
+        "domain": "worldsunlight.com",
+        "source": "user_provided",
+        "added_at": "2026-10-25"
+      }
+    ]
   },
   "YQ000204": {
     "links": [
@@ -9519,9 +9589,13 @@
         {
           "label": "监管或企业公告",
           "url": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web1828/site/attach/0/9c02315711d84030a005bcd40bc063e1.pdf"
+        },
+        {
+          "label": "企业官网",
+          "url": "http://www.guoguang.com/"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-25",
       "contact_address": "浙江省温州市乐清市虹桥镇西工业区A-18号",
       "field_sources": {
         "contact_address": {
@@ -9537,7 +9611,17 @@
       },
       "main_products": "电子开关、连接器、插口、插座、墙壁开关、电子线缆、通信器材",
       "legal_name": "国光集团有限公司"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "http://www.guoguang.com/",
+        "domain": "guoguang.com",
+        "source": "user_provided",
+        "added_at": "2026-10-25"
+      }
+    ]
   },
   "YQ000211": {
     "links": [
@@ -9614,9 +9698,13 @@
         {
           "label": "监管或企业公告",
           "url": "https://custom.huzhou.gov.cn/DFS/file/2021/03/23/20210323163637926jdmzgl.pdf"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.cn-cqc.com/cn.php"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-25",
       "contact_address": "浙江省温州市乐清市（高新企业名单确认）",
       "field_sources": {
         "contact_address": {
@@ -9632,7 +9720,17 @@
       },
       "main_products": "电器产品",
       "legal_name": "浙江奇诚电器有限公司"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "https://www.cn-cqc.com/cn.php",
+        "domain": "cn-cqc.com",
+        "source": "user_provided",
+        "added_at": "2026-10-25"
+      }
+    ]
   },
   "YQ000214": {
     "details": {
@@ -9672,11 +9770,25 @@
         {
           "label": "监管或企业公告",
           "url": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web1828/site/attach/0/9aca4ee70bcf476890932fcc0564d82c.pdf"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://cntx.en.alibaba.com/"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-25",
       "legal_name": "乐清市天兴电器有限公司"
-    }
+    },
+    "links": [
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站",
+        "url": "https://cntx.en.alibaba.com/",
+        "domain": "cntx.en.alibaba.com",
+        "source": "user_provided",
+        "added_at": "2026-10-25"
+      }
+    ]
   },
   "YQ000215": {
     "details": {

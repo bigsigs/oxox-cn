@@ -1412,5 +1412,47 @@
     "page_url": "http://www.welet.cn/",
     "checked_at": "2026-10-25",
     "dark_background": false
+  },
+  "YQ000159": {
+    "path": "/company-icons/verified/YQ000159.jpg",
+    "source_url": "https://www.chsmico.com/images/logo.jpg",
+    "page_url": "https://www.chsmico.com/",
+    "checked_at": "2026-10-25",
+    "dark_background": false
+  },
+  "YQ000171": {
+    "path": "/company-icons/verified/YQ000171.png",
+    "source_url": "https://iirorwxhkkiilj5q.ldycdn.com/cloud/lkBpkKpiloSRmilpqklnip/cejieshangbiaoyuan.png",
+    "page_url": "https://www.cejie-electric.com/",
+    "checked_at": "2026-10-25",
+    "dark_background": false
+  },
+  "YQ000198": {
+    "path": "/company-icons/verified/YQ000198.png",
+    "source_url": "https://img.dq800.com/shop/anfuxny/images/other/logo_2.png",
+    "page_url": "https://www.amppal.cn/",
+    "checked_at": "2026-10-25",
+    "dark_background": true
+  },
+  "YQ000176": {
+    "path": "/company-icons/verified/YQ000176.png",
+    "source_url": "https://img.dq800.com/shop/boshengxcl/images/other/logo.png",
+    "page_url": "https://www.zjbosun.com.cn/",
+    "checked_at": "2026-10-25",
+    "dark_background": false
+  },
+  "YQ000203": {
+    "path": "/company-icons/verified/YQ000203.png",
+    "source_url": "https://www.worldsunlight.com/theme/EN/images/logo.png",
+    "page_url": "https://www.worldsunlight.com/",
+    "checked_at": "2026-10-25",
+    "dark_background": false
+  },
+  "YQ000213": {
+    "path": "/company-icons/verified/YQ002842.png",
+    "source_url": "https://www.cn-cqc.com/Uploads//20200614/5ee5eb59c1d90.png",
+    "page_url": "https://www.cn-cqc.com/cn.php",
+    "checked_at": "2026-10-25",
+    "dark_background": false
   }
 }
