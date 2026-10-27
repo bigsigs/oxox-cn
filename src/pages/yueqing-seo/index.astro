@@ -5,7 +5,7 @@ import "../../styles/home-ranking.css";
 import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 import MenuSelect from "../../components/MenuSelect.astro";
-import seoCompanies from "../../data/seo-companies.js";
+import seoCompanies, { getSeoCompanyIcon } from "../../data/seo-companies.js";
 import { filterSeoCompanies, summarizeSeoCompanies } from "../../lib/seo-ranking-core.js";
 
 const snapshotDate = "2026-10-25";
@@ -13,7 +13,7 @@ const palette = ["#ff5c35", "#f5d451", "#0b634b", "#5f94c9", "#c8789b", "#8588c7
 const companies = seoCompanies.map((company, index) => ({
   ...company,
   accent: palette[index % palette.length],
-  icon: `/company-icons/${company.domain}.png`,
+  icon: getSeoCompanyIcon(company.domain),
   initials: company.brand.replace(/[^A-Z0-9]/g, "").slice(0, 2) || "YQ",
 }));
 const summary = summarizeSeoCompanies(companies);
@@ -866,7 +866,7 @@ const datasetSchema = {
   <script>
     import { initializeMenuSelect } from "../../scripts/menu-select";
     initializeMenuSelect();
-    import seoCompanies from "../../data/seo-companies.js";
+    import seoCompanies, { getSeoCompanyIcon } from "../../data/seo-companies.js";
     import {
       filterSeoCompanies,
       paginateSeoCompanies,
@@ -876,7 +876,7 @@ const datasetSchema = {
     const companies = seoCompanies.map((company, index) => ({
       ...company,
       accent: palette[index % palette.length],
-      icon: `/company-icons/${company.domain}.png`,
+      icon: getSeoCompanyIcon(company.domain),
       initials: company.brand.replace(/[^A-Z0-9]/g, "").slice(0, 2) || "YQ",
     }));
     const search = document.querySelector<HTMLInputElement>("#seoSearch");
@@ -944,7 +944,7 @@ const datasetSchema = {
       const initials = document.createElement("span");
       initials.textContent = company.initials;
       const icon = document.createElement("img");
-      icon.src = `/company-icons/${company.domain}.png`;
+      icon.src = company.icon;
       icon.alt = "";
       icon.loading = "lazy";
       avatar.append(initials, icon);

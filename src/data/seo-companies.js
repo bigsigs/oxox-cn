@@ -45,4 +45,7 @@ const previousSeoCompanies = [
 ];
 
 export { previousSeoCompanies };
+export const getSeoCompanyIcon = (domain) => domain === "kaseey.com"
+  ? "/company-icons/verified/YQ000081-20261027.png"
+  : `/company-icons/${domain}.png`;
 export default currentSeoCompanies;

@@ -1,8 +1,8 @@
 import assert from "node:assert/strict";
-import { access } from "node:fs/promises";
+import { access, readFile } from "node:fs/promises";
 import test from "node:test";
 
-import seoCompanies from "../src/data/seo-companies.js";
+import seoCompanies, { getSeoCompanyIcon } from "../src/data/seo-companies.js";
 
 test("SEO page identifies the current Semrush snapshot", async () => {
   const page = await import("node:fs/promises").then(({ readFile }) =>
@@ -55,8 +55,10 @@ test("SEO snapshot uses the prepared company names and local icons", async () =>
   assert.equal(seoCompanies.find((company) => company.domain === "viox.com")?.traffic, 54000);
   assert.equal(seoCompanies.find((company) => company.domain === "wosomelec.com")?.backlinks, 1880);
   assert.equal(seoCompanies.find((company) => company.domain === "wosomelec.com")?.backlinksChange, 264.34);
+  const verifiedIcons = JSON.parse(await readFile(new URL("../src/data/verified-company-icons.json", import.meta.url), "utf8"));
+  assert.equal(getSeoCompanyIcon("kaseey.com"), verifiedIcons.YQ000081.path);
 
   for (const company of seoCompanies) {
-    await access(new URL(`../public/company-icons/${company.domain}.png`, import.meta.url));
+    await access(new URL(`../public${getSeoCompanyIcon(company.domain)}`, import.meta.url));
   }
 });
