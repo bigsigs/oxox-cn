@@ -4790,12 +4790,30 @@
         {
           "label": "企业公开资料",
           "url": "https://www.tendata.com/en/buyer/wenzhou-rhenes-electrical-co-ltd-CHNI27052e3cb70a264e9a2ede8051055ba7.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.rhenes.com/"
+        },
+        {
+          "label": "展会目录",
+          "url": "https://www.elektro-expo.ru/common/img/uploaded/exhibitions/elektro/doc_2025/elektro25cat.pdf"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "legal_name": "温州市瑞雷电子科技有限公司",
       "registered_capital": "100万元人民币"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "https://www.rhenes.com/",
+        "domain": "rhenes.com",
+        "source": "independent_search_verified",
+        "added_at": "2026-10-27"
+      }
+    ]
   },
   "YQ000089": {
     "links": [
@@ -5159,10 +5177,20 @@
           "url": "https://cospub.cantonfair.org.cn/461100754573217792/1726113372347-ba729826-5a1f-428e-aef2-88c7787646fd.pdf"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "legal_name": "温州一元供应链管理有限公司",
       "contact_address": "浙江省温州市乐清市"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "关联企业网站",
+        "url": "https://www.eleqtraess.com/",
+        "domain": "eleqtraess.com",
+        "source": "user_confirmed_related_company",
+        "added_at": "2026-10-27"
+      }
+    ]
   },
   "YQ000096": {
     "details": {
@@ -5190,11 +5218,25 @@
         {
           "label": "企业公开资料",
           "url": "https://www.scribd.com/document/1029120813/%E6%B5%99%E6%B1%9F%E7%9C%81%E5%87%BA%E5%8F%A3%E8%B4%A7%E7%89%A9%E8%B4%B8%E6%98%93%E4%BA%BA%E6%B0%91%E5%B8%81%E7%BB%93%E7%AE%97%E8%AF%95%E7%82%B9%E4%BC%81%E4%B8%9A%E5%90%8D%E5%8D%95"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.andelitools.com/"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "legal_name": "温州城电进出口有限公司"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "https://www.andelitools.com/",
+        "domain": "andelitools.com",
+        "source": "user_confirmed",
+        "added_at": "2026-10-27"
+      }
+    ]
   },
   "YQ000097": {
     "links": [
@@ -5457,9 +5499,21 @@
         {
           "label": "监管或企业公告",
           "url": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web1828/site/attach/0/5b8968effee7474391f4f54db15b4531.pdf"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.huayaele.com/"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://suppliers.alibaba.com/wenzhou-huaya-electric-co-ltd_17379871458"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://exhmultifairs.hktdc.com/pdf/2021/oct_fairs/PDF_EFAE.pdf"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "contact_address": "浙江省温州市乐清市北白象镇赖宅村中港路南",
       "field_sources": {
         "contact_address": {
@@ -5481,7 +5535,25 @@
       "main_products": "开关、插座、调光器、不锈钢/铁/塑料面板",
       "legal_name": "温州华亚电气有限公司",
       "registered_capital": "150万元人民币"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "https://www.huayaele.com/",
+        "domain": "huayaele.com",
+        "source": "independent_search_verified",
+        "added_at": "2026-10-27"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站",
+        "url": "https://suppliers.alibaba.com/wenzhou-huaya-electric-co-ltd_17379871458",
+        "domain": "suppliers.alibaba.com",
+        "source": "independent_search_verified",
+        "added_at": "2026-10-27"
+      }
+    ]
   },
   "YQ000102": {
     "links": [
@@ -5906,11 +5978,37 @@
         {
           "label": "企业公开资料",
           "url": "https://www.cnverify.com/company/Wenzhou-Daiertek-Electric-Co-Ltd"
+        },
+        {
+          "label": "企业产品网站",
+          "url": "https://starlinkaccs.com/pages/contactus"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://daiertek.en.alibaba.com/"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "legal_name": "温州戴科电气有限公司"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业产品网站",
+        "url": "https://starlinkaccs.com/",
+        "domain": "starlinkaccs.com",
+        "source": "independent_search_verified",
+        "added_at": "2026-10-27"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站",
+        "url": "https://daiertek.en.alibaba.com/",
+        "domain": "daiertek.en.alibaba.com",
+        "source": "independent_search_verified",
+        "added_at": "2026-10-27"
+      }
+    ]
   },
   "YQ000111": {
     "links": [
@@ -6028,6 +6126,22 @@
         "url": "https://www.hontcabletie.com/",
         "domain": "hontcabletie.com",
         "added_at": "2026-10-24"
+      },
+      {
+        "type": "official_website_alt",
+        "label": "企业官网",
+        "url": "https://www.hont.cc/",
+        "domain": "hont.cc",
+        "source": "independent_search_verified",
+        "added_at": "2026-10-27"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站",
+        "url": "https://suppliers.alibaba.com/hont-electrical-co-ltd_2213024042385",
+        "domain": "suppliers.alibaba.com",
+        "source": "independent_search_verified",
+        "added_at": "2026-10-27"
       }
     ],
     "details": {
@@ -6070,9 +6184,17 @@
         {
           "label": "企业公开资料",
           "url": "https://www.cnpp.cn/pinpai/list_9581.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.hont.cc/about/"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://suppliers.alibaba.com/hont-electrical-co-ltd_2213024042385"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "legal_name": "宏泰电器有限公司",
       "registered_capital": "5100万元人民币"
     }
@@ -6652,11 +6774,29 @@
         {
           "label": "企业公开资料",
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202504241661712377_1.pdf?1745522442000.pdf="
+        },
+        {
+          "label": "关联企业网站",
+          "url": "https://www.czt-energy.com/"
+        },
+        {
+          "label": "公司公告",
+          "url": "https://disc.static.szse.cn/download/disc/disk03/finalpage/2026-04-29/014fe14c-1c67-40c4-ad59-cfe28b8248fa.PDF"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "legal_name": "乐清意迈国际贸易有限公司"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "关联企业网站",
+        "url": "https://www.czt-energy.com/",
+        "domain": "czt-energy.com",
+        "source": "user_confirmed_related_company",
+        "added_at": "2026-10-27"
+      }
+    ]
   },
   "YQ000128": {
     "links": [
@@ -6851,11 +6991,25 @@
         {
           "label": "企业公开资料",
           "url": "https://www.tendata.com/en/buyer/yueqing-tianhan-import-and-export-co-ltd-CHN2127a8200fbb8c3ec92ed5a2fd101bfe.html"
+        },
+        {
+          "label": "关联企业网站",
+          "url": "https://www.yingselectric.com/"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "legal_name": "乐清市天函进出口有限公司"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "关联企业网站",
+        "url": "https://www.yingselectric.com/",
+        "domain": "yingselectric.com",
+        "source": "user_confirmed_related_company",
+        "added_at": "2026-10-27"
+      }
+    ]
   },
   "YQ000132": {
     "details": {

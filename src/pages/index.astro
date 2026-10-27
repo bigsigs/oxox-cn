@@ -20,11 +20,12 @@ const previousIndex = buildPeriodIndex(previousRanking.records);
 const groups = amountGroups(latestRanking);
 type CompanyLink = { type: string; label: string; url: string; domain: string };
 type CompanyProfile = { links?: CompanyLink[]; details?: Record<string, unknown> };
-const companyMeta: Record<string, { domain: string; icon: string; darkIcon: boolean; brand_name: string }> = Object.fromEntries(Object.entries(profiles).map(([id, profile]) => {
+const companyMeta: Record<string, { domain: string; icon: string; darkIcon: boolean; websiteBadge: string; brand_name: string }> = Object.fromEntries(Object.entries(profiles).map(([id, profile]) => {
   const website = (profile as CompanyProfile).links?.find(link => link.type === "official_website");
   const domain = website?.domain || "";
   const icon = getCompanyIcon(domain, id) || "";
-  return [id, { domain, icon, darkIcon: hasDarkCompanyIcon(id), brand_name: String((profile as CompanyProfile).details?.brand_name || "") }];
+  const websiteBadge = website?.label === "关联企业网站" ? "关联网站" : website?.label === "企业产品网站" ? "产品网站" : "官网";
+  return [id, { domain, icon, darkIcon: hasDarkCompanyIcon(id), websiteBadge, brand_name: String((profile as CompanyProfile).details?.brand_name || "") }];
 }));
 const siteSchema = {
   "@context": "https://schema.org",
@@ -96,7 +97,7 @@ const boot = { periods: periods.periods, latest: periods.latest, companyMeta };
             return <a class="ranking-row" href={`/yueqing-export-ranking/company/${record.company_id}/`} data-rank={record.rank}>
               <span class:list={["row-rank", { "rank-top": record.rank <= 3 }]}>{record.rank}</span>
               <span class:list={["company-mark", { "dark-logo": meta?.icon && meta?.darkIcon }]} aria-hidden="true">{meta?.icon ? <img src={meta.icon} width="42" height="42" alt="" loading="lazy" /> : <span>{mark(record.company_name)}</span>}</span>
-              <span class="row-company"><b>{record.company_name}</b>{meta?.domain && <span class="company-badge">官网</span>}<span class="company-subline">{meta?.domain || record.company_id}</span></span>
+              <span class="row-company"><b>{record.company_name}</b>{meta?.domain && <span class="company-badge">{meta.websiteBadge}</span>}<span class="company-subline">{meta?.domain || record.company_id}</span></span>
               <span class="row-amount">{record.band_label === "未提供" ? "未提供" : record.band_label.replace(/万(?:美元|美金)$/, "")}<small>{record.band_label === "未提供" ? "" : "万美元"}</small></span>
               <span class:list={["row-change", signal.type]}><span class="mobile-change-label">名次 </span>{signal.label}</span>
             </a>;

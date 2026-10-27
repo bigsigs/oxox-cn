@@ -122,7 +122,8 @@ const isHttpUrl = (value: string) => {
   catch { return false; }
 };
 const validLinks = (profile?.links ?? []).filter((link) => isHttpUrl(link.url));
-const primaryWebsite = validLinks.find((link) => link.type === "official_website")?.url;
+const primaryWebsiteLink = validLinks.find((link) => link.type === "official_website");
+const primaryWebsite = primaryWebsiteLink?.url;
 const alibabaStore = validLinks.find((link) => link.type === "alibaba_store")?.url;
 const primaryDomain = primaryWebsite ? new URL(primaryWebsite).hostname.replace(/^www\./, "") : null;
 const companyIcon = getCompanyIcon(primaryDomain, company.company_id);
@@ -205,7 +206,7 @@ const companySchema = details ? {
     streetAddress: details.registered_address,
     addressCountry: "CN",
   } : undefined,
-  url: primaryWebsite,
+  url: primaryWebsiteLink?.label === "关联企业网站" ? undefined : primaryWebsite,
 } : null;
 const schema = {
   "@context": "https://schema.org",
@@ -278,7 +279,7 @@ const schema = {
           </div>
         </div>
         <div class="company-actions">
-          {primaryWebsite && <a class="detail-button" href={primaryWebsite} target="_blank" rel="nofollow noopener noreferrer">访问官网 <span aria-hidden="true">↗</span></a>}
+          {primaryWebsite && <a class="detail-button" href={primaryWebsite} target="_blank" rel="nofollow noopener noreferrer">{primaryWebsiteLink?.label === "关联企业网站" ? "访问关联网站" : primaryWebsiteLink?.label === "企业产品网站" ? "访问产品网站" : "访问官网"} <span aria-hidden="true">↗</span></a>}
           {alibabaStore && <a class="detail-button" href={alibabaStore} target="_blank" rel="nofollow noopener noreferrer">Alibaba 国际站 <span aria-hidden="true">↗</span></a>}
           <a class="detail-button" href={`/?q=${encodeURIComponent(company.company_name)}`}>← 返回排行榜</a>
         </div>

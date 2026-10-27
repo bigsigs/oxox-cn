@@ -1,0 +1,328 @@
+{
+  "checked_at": "2026-10-27",
+  "period": "2026-ytd-08",
+  "companies": [
+    {
+      "rank": 101,
+      "id": "YQ000109",
+      "name": "温州沃森进出口有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "企业官网",
+          "url": "https://www.wosomelec.com/",
+          "domain": "wosomelec.com",
+          "source": "user_confirmed",
+          "added_at": "2026-10-24"
+        }
+      ],
+      "icon": "/company-icons/verified/YQ000109.png",
+      "note": "官网和标识此前确认；未找到可确认主体的可用 Alibaba 店铺。"
+    },
+    {
+      "rank": 102,
+      "id": "YQ000095",
+      "name": "温州一元供应链管理有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "关联企业网站",
+          "url": "https://www.eleqtraess.com/",
+          "domain": "eleqtraess.com",
+          "source": "user_confirmed_related_company",
+          "added_at": "2026-10-27"
+        }
+      ],
+      "icon": "/company-icons/verified/ranks101-120-20261027/YQ000095.png",
+      "note": "用户确认关联埃莱克特能源网站，官网企业架构列出温州一元；关联网站和集团标识。"
+    },
+    {
+      "rank": 103,
+      "id": "YQ000123",
+      "name": "浙江美拓电器有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "http://chinameto.com/",
+          "domain": "chinameto.com",
+          "added_at": "2026-10-24"
+        },
+        {
+          "type": "alibaba_store",
+          "label": "Alibaba 国际站",
+          "url": "https://suppliers.alibaba.com/zhejiang-meto-electrical-coltd_17380250387",
+          "domain": "suppliers.alibaba.com",
+          "source": "independent_search_verified",
+          "added_at": "2026-10-24"
+        }
+      ],
+      "icon": "/company-icons/verified/YQ000123.png",
+      "note": "官网、标识和 Alibaba 国际站此前已核对。"
+    },
+    {
+      "rank": 104,
+      "id": "YQ000096",
+      "name": "温州城电进出口有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "企业官网",
+          "url": "https://www.andelitools.com/",
+          "domain": "andelitools.com",
+          "source": "user_confirmed",
+          "added_at": "2026-10-27"
+        }
+      ],
+      "icon": "/company-icons/verified/ranks101-120-20261027/YQ000096.png",
+      "note": "用户确认关联；官网页脚列 Wenzhou Chengdian Import & Export Co., Ltd.。"
+    },
+    {
+      "rank": 105,
+      "id": "YQ000099",
+      "name": "温州旺科贸易有限公司",
+      "links": [],
+      "icon": null,
+      "note": "此前用户要求不采用候选网站，继续留空。"
+    },
+    {
+      "rank": 106,
+      "id": "YQ000074",
+      "name": "浙江景纳电气科技有限公司",
+      "links": [],
+      "icon": null,
+      "note": "未找到可靠的独立官网或 Alibaba 国际站。"
+    },
+    {
+      "rank": 107,
+      "id": "YQ000085",
+      "name": "人民电器集团浙江进出口有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "企业官网",
+          "url": "https://www.chinapeople.com/",
+          "domain": "chinapeople.com",
+          "source": "user_confirmed",
+          "added_at": "2026-10-24"
+        }
+      ],
+      "icon": "/company-icons/verified/YQ000085.png",
+      "note": "官网和标识此前由用户确认；未找到可确认主体的 Alibaba 国际站。"
+    },
+    {
+      "rank": 108,
+      "id": "YQ000101",
+      "name": "温州华亚电气有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "企业官网",
+          "url": "https://www.huayaele.com/",
+          "domain": "huayaele.com",
+          "source": "independent_search_verified",
+          "added_at": "2026-10-27"
+        },
+        {
+          "type": "alibaba_store",
+          "label": "Alibaba 国际站",
+          "url": "https://suppliers.alibaba.com/wenzhou-huaya-electric-co-ltd_17379871458",
+          "domain": "suppliers.alibaba.com",
+          "source": "independent_search_verified",
+          "added_at": "2026-10-27"
+        }
+      ],
+      "icon": "/company-icons/verified/ranks101-120-20261027/YQ000101.png",
+      "note": "官网名称、开关插座产品以及 HKTDC 参展目录中相同邮箱域名匹配；Alibaba 主体名称及成立日期与工商资料相符。"
+    },
+    {
+      "rank": 109,
+      "id": "YQ000107",
+      "name": "乐清市思高美进出口有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "企业官网",
+          "url": "https://www.socomepower.com/",
+          "domain": "socomepower.com",
+          "source": "user_provided",
+          "added_at": "2026-10-27"
+        },
+        {
+          "type": "alibaba_store",
+          "label": "Alibaba 国际站",
+          "url": "https://www.alibaba.co.uk/product-detail/Cable-Accessories-3-Core-Outdoor-and_60860101692.html",
+          "domain": "alibaba.co.uk",
+          "source": "user_confirmed_related_company",
+          "added_at": "2026-10-27"
+        }
+      ],
+      "icon": "/company-icons/verified/ranks101-120-20261027/YQ000107.png",
+      "note": "使用用户确认官网的 favicon；原有 Alibaba 关联页此前经用户确认。"
+    },
+    {
+      "rank": 110,
+      "id": "YQ000127",
+      "name": "乐清意迈国际贸易有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "关联企业网站",
+          "url": "https://www.czt-energy.com/",
+          "domain": "czt-energy.com",
+          "source": "user_confirmed_related_company",
+          "added_at": "2026-10-27"
+        }
+      ],
+      "icon": "/company-icons/verified/top50-20261025/YQ000002.png",
+      "note": "用户确认关联母公司网站；2026 年评估报告列明乐清意华新能源持股 100%。"
+    },
+    {
+      "rank": 111,
+      "id": "YQ000110",
+      "name": "温州戴科电气有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "企业产品网站",
+          "url": "https://starlinkaccs.com/",
+          "domain": "starlinkaccs.com",
+          "source": "independent_search_verified",
+          "added_at": "2026-10-27"
+        },
+        {
+          "type": "alibaba_store",
+          "label": "Alibaba 国际站",
+          "url": "https://daiertek.en.alibaba.com/",
+          "domain": "daiertek.en.alibaba.com",
+          "source": "independent_search_verified",
+          "added_at": "2026-10-27"
+        }
+      ],
+      "icon": "/company-icons/verified/ranks101-120-20261027/YQ000110.png",
+      "note": "产品网站联系页列 Wenzhou Daiertek Electric Co., Ltd. 及西仁宕地址；Alibaba 店铺主体名称一致。"
+    },
+    {
+      "rank": 112,
+      "id": "YQ000114",
+      "name": "浙江中威智能家具有限公司",
+      "links": [],
+      "icon": null,
+      "note": "未找到可靠的独立官网或 Alibaba 国际站。"
+    },
+    {
+      "rank": 113,
+      "id": "YQ000147",
+      "name": "浙江莱曼电器有限公司",
+      "links": [],
+      "icon": null,
+      "note": "未找到可访问且归属可靠的独立官网或 Alibaba 国际站。"
+    },
+    {
+      "rank": 114,
+      "id": "YQ000088",
+      "name": "温州市瑞雷电子科技有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "企业官网",
+          "url": "https://www.rhenes.com/",
+          "domain": "rhenes.com",
+          "source": "independent_search_verified",
+          "added_at": "2026-10-27"
+        }
+      ],
+      "icon": "/company-icons/verified/ranks101-120-20261027/YQ000088.png",
+      "note": "2025 年展会目录列 Wenzhou Rhenes Electrical Co. Ltd、网址及柳市地址，与企业公开登记资料相符。"
+    },
+    {
+      "rank": 115,
+      "id": "YQ000131",
+      "name": "乐清市天函进出口有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "关联企业网站",
+          "url": "https://www.yingselectric.com/",
+          "domain": "yingselectric.com",
+          "source": "user_confirmed_related_company",
+          "added_at": "2026-10-27"
+        }
+      ],
+      "icon": "/company-icons/verified/ranks101-120-20261027/YQ000131.png",
+      "note": "Tendata 企业资料列出 yingselectric.com；网站当前显示 YUMO，已向用户说明并获得确认关联，页面标示为关联网站。"
+    },
+    {
+      "rank": 116,
+      "id": "YQ000106",
+      "name": "浙江佳奔电子有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "https://www.jiaben.com/",
+          "domain": "jiaben.com",
+          "added_at": "2026-10-24"
+        }
+      ],
+      "icon": "/company-icons/verified/ranks101-120-20261027/YQ000106.png",
+      "note": "使用公司官网展示的佳奔标识；未找到主体匹配的 Alibaba 国际站。"
+    },
+    {
+      "rank": 117,
+      "id": "YQ000117",
+      "name": "乐清市好未来进出口有限公司",
+      "links": [],
+      "icon": null,
+      "note": "未找到可靠的独立官网或 Alibaba 国际站；母公司资料不能单独证明贸易主体的网站。"
+    },
+    {
+      "rank": 118,
+      "id": "YQ000113",
+      "name": "宏泰电器有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "https://www.hontcabletie.com/",
+          "domain": "hontcabletie.com",
+          "added_at": "2026-10-24"
+        },
+        {
+          "type": "official_website_alt",
+          "label": "企业官网",
+          "url": "https://www.hont.cc/",
+          "domain": "hont.cc",
+          "source": "independent_search_verified",
+          "added_at": "2026-10-27"
+        },
+        {
+          "type": "alibaba_store",
+          "label": "Alibaba 国际站",
+          "url": "https://suppliers.alibaba.com/hont-electrical-co-ltd_2213024042385",
+          "domain": "suppliers.alibaba.com",
+          "source": "independent_search_verified",
+          "added_at": "2026-10-27"
+        }
+      ],
+      "icon": "/company-icons/verified/ranks101-120-20261027/YQ000113.png",
+      "note": "hont.cc 展示同一名称及扎带业务；Alibaba 公司名称、成立日期与产品相符。"
+    },
+    {
+      "rank": 119,
+      "id": "YQ000122",
+      "name": "凯昆（温州）进出口有限公司",
+      "links": [],
+      "icon": null,
+      "note": "未找到可靠的独立官网或 Alibaba 国际站；联营参展不等于企业归属。"
+    },
+    {
+      "rank": 120,
+      "id": "YQ000116",
+      "name": "乐清市天虹进出口有限公司",
+      "links": [],
+      "icon": null,
+      "note": "未找到可靠的独立官网或 Alibaba 国际站。"
+    }
+  ]
+}

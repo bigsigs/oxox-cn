@@ -1628,7 +1628,7 @@
     "source_url": "https://www.cndongya.com/theme/dongya/images/logo.png",
     "page_url": "https://www.cndongya.com/",
     "checked_at": "2026-10-27",
-    "dark_background": false
+    "dark_background": true
   },
   "YQ000050": {
     "path": "/company-icons/verified/YQ000050.png",
@@ -1684,7 +1684,7 @@
     "source_url": "https://ecdn6.globalso.com/upload/m/image_other/2025-10/dndzgfyxgs-file01.png",
     "page_url": "https://www.switch-china.com/",
     "checked_at": "2026-10-27",
-    "dark_background": false
+    "dark_background": true
   },
   "YQ000102": {
     "path": "/company-icons/verified/YQ000102.png",
@@ -1711,6 +1711,76 @@
     "path": "/company-icons/verified/YQ000215.png",
     "source_url": "http://www.dixsen.cn/images/logo.png",
     "page_url": "https://www.dixsen.cn/",
+    "checked_at": "2026-10-27",
+    "dark_background": false
+  },
+  "YQ000095": {
+    "path": "/company-icons/verified/ranks101-120-20261027/YQ000095.png",
+    "source_url": "https://www.eleqtraess.com/wp-content/uploads/2026/09/LOGOYIYWEB.png",
+    "page_url": "https://www.eleqtraess.com/",
+    "checked_at": "2026-10-27",
+    "dark_background": false
+  },
+  "YQ000096": {
+    "path": "/company-icons/verified/ranks101-120-20261027/YQ000096.png",
+    "source_url": "https://ecdn6.globalso.com/upload/p/3441/image_other/2025-03/logo-2x.png",
+    "page_url": "https://www.andelitools.com/",
+    "checked_at": "2026-10-27",
+    "dark_background": false
+  },
+  "YQ000101": {
+    "path": "/company-icons/verified/ranks101-120-20261027/YQ000101.png",
+    "source_url": "https://ecdn6.globalso.com/upload/p/195/image_other/2024-08/huaya2.png",
+    "page_url": "https://www.huayaele.com/",
+    "checked_at": "2026-10-27",
+    "dark_background": false
+  },
+  "YQ000127": {
+    "path": "/company-icons/verified/top50-20261025/YQ000002.png",
+    "source_url": "https://omo-oss-image.thefastimg.com/portal-saas/new2023033118300075790/cms/image/fd0d61b8-f6ca-40c2-98e9-91c0dff4d431.png",
+    "page_url": "https://www.czt-energy.com/",
+    "checked_at": "2026-10-27",
+    "dark_background": true
+  },
+  "YQ000110": {
+    "path": "/company-icons/verified/ranks101-120-20261027/YQ000110.png",
+    "source_url": "https://starlinkaccs.com/cdn/shop/files/LOGO_BLACK.png?height=111&v=1763021858",
+    "page_url": "https://starlinkaccs.com/",
+    "checked_at": "2026-10-27",
+    "dark_background": false
+  },
+  "YQ000088": {
+    "path": "/company-icons/verified/ranks101-120-20261027/YQ000088.png",
+    "source_url": "https://www.rhenes.com/wp-content/uploads/2025/08/logo2.png",
+    "page_url": "https://www.rhenes.com/",
+    "checked_at": "2026-10-27",
+    "dark_background": false
+  },
+  "YQ000131": {
+    "path": "/company-icons/verified/ranks101-120-20261027/YQ000131.png",
+    "source_url": "https://iqrorwxhipiolr5q.ldycdn.com/cloud/lnBprKkrlrSRpkkmiilqko/LOGO.png",
+    "page_url": "https://www.yingselectric.com/",
+    "checked_at": "2026-10-27",
+    "dark_background": false
+  },
+  "YQ000106": {
+    "path": "/company-icons/verified/ranks101-120-20261027/YQ000106.png",
+    "source_url": "https://www.jiaben.com/upload/2020-11-19/46f8571cf6eb9321eceb8e6d31a48c06.png",
+    "page_url": "https://www.jiaben.com/",
+    "checked_at": "2026-10-27",
+    "dark_background": false
+  },
+  "YQ000107": {
+    "path": "/company-icons/verified/ranks101-120-20261027/YQ000107.png",
+    "source_url": "https://www.google.com/s2/favicons?domain=socomepower.com&sz=128",
+    "page_url": "https://www.socomepower.com/",
+    "checked_at": "2026-10-27",
+    "dark_background": false
+  },
+  "YQ000113": {
+    "path": "/company-icons/verified/ranks101-120-20261027/YQ000113.png",
+    "source_url": "https://www.hont.cc/images/logo.png",
+    "page_url": "https://www.hont.cc/",
     "checked_at": "2026-10-27",
     "dark_background": false
   }

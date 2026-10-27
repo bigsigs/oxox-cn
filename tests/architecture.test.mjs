@@ -314,6 +314,23 @@ test("curated company links and verified company facts survive the redesign", as
   }
 });
 
+test("related and product websites are described accurately in company profiles", async () => {
+  for (const [id, url] of [
+    ["YQ000095", "https://www.eleqtraess.com/"],
+    ["YQ000127", "https://www.czt-energy.com/"],
+    ["YQ000131", "https://www.yingselectric.com/"],
+  ]) {
+    const html = await read(builtPath(companyPath(id)));
+    const action = anchorsOf(mainOf(html)).find((link) => link.class === "detail-button" && link.href === url);
+    assert.match(action?.text ?? "", /访问关联网站/, `${id}: explain that the site is associated`);
+    const organization = schemaNodes(html).find((node) => node["@type"] === "Organization");
+    assert.notEqual(organization?.url, url, `${id}: do not describe an associated company's site as its own URL`);
+  }
+  const productHtml = await read(builtPath(companyPath("YQ000110")));
+  const productAction = anchorsOf(mainOf(productHtml)).find((link) => link.class === "detail-button" && link.href === "https://starlinkaccs.com/");
+  assert.match(productAction?.text ?? "", /访问产品网站/);
+});
+
 test("verified company icons use a website curated for the same company", async () => {
   const [icons, profiles] = await Promise.all([
     readJson("src/data/verified-company-icons.json"),
