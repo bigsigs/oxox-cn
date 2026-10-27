@@ -2552,10 +2552,11 @@
     "links": [
       {
         "type": "official_website",
-        "label": "官方网站",
-        "url": "https://www.chinafuerte.com/",
-        "domain": "chinafuerte.com",
-        "added_at": "2026-10-24"
+        "label": "企业官网",
+        "url": "https://cnfuerte.com/",
+        "domain": "cnfuerte.com",
+        "source": "user_provided",
+        "added_at": "2026-10-27"
       }
     ],
     "details": {
@@ -2586,9 +2587,13 @@
         {
           "label": "企业公开资料",
           "url": "https://www.shuidi.cn/company-49c36ae5e9a89f6c9b3ad1b5652d1740.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://cnfuerte.com/"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "legal_name": "浙江伏尔特电器有限公司",
       "registered_capital": "11000万元人民币"
     }
@@ -2661,10 +2666,24 @@
         {
           "label": "企业公开资料",
           "url": "https://www.sohu.com/a/1090296212_123753"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://lrelectric.cn/"
         }
       ],
-      "checked_at": "2026-10-24"
-    }
+      "checked_at": "2026-10-27"
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "https://lrelectric.cn/",
+        "domain": "lrelectric.cn",
+        "source": "user_provided",
+        "added_at": "2026-10-27"
+      }
+    ]
   },
   "YQ000048": {
     "details": {
@@ -5717,12 +5736,26 @@
         {
           "label": "企业公开资料",
           "url": "https://www.instrument.com.cn/company/392494.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.socomepower.com/"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "legal_name": "乐清市思高美进出口有限公司",
       "registered_capital": "30万元人民币"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "https://www.socomepower.com/",
+        "domain": "socomepower.com",
+        "source": "user_provided",
+        "added_at": "2026-10-27"
+      }
+    ]
   },
   "YQ000108": {
     "links": [
@@ -6822,11 +6855,25 @@
         {
           "label": "监管或企业公告",
           "url": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web1828/site/attach/0/e77759559f624df0b787ab382cfa0570.pdf"
+        },
+        {
+          "label": "企业官网",
+          "url": "http://chinahtcn.com/"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "legal_name": "乐清市恒通电气有限公司"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "http://chinahtcn.com/",
+        "domain": "chinahtcn.com",
+        "source": "user_provided",
+        "added_at": "2026-10-27"
+      }
+    ]
   },
   "YQ000133": {
     "links": [

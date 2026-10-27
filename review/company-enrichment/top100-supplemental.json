@@ -776,8 +776,8 @@
     "rank": 44,
     "id": "YQ000045",
     "name": "浙江伏尔特电器有限公司",
-    "website": "https://www.chinafuerte.com/",
-    "website_source": "企业官网关于我们及联系页",
+    "website": "https://cnfuerte.com/",
+    "website_source": "https://cnfuerte.com/",
     "contact_address": "浙江省乐清市经济开发区纬十二路162号",
     "products": "高压熔断器、避雷器、隔离开关及配电控制电器",
     "capital": "11000万元人民币",
@@ -786,8 +786,9 @@
     "alibaba_source": "",
     "alibaba_address": "",
     "confidence": "high",
-    "note": "官网明确主体、地址、主营产品和原温州市伏尔特电器有限公司沿革；注册资本采用公开登记摘要，Alibaba国际站未找到可核验页面。",
+    "note": "2026-10-27 用户已核对并确认新版官网 cnfuerte.com；官网列示 Zhejiang Fuerte Electrical Apparatus Co., Ltd.，与原企业及地址一致，取代原 chinafuerte.com 主官网链接。",
     "sources": [
+      "https://cnfuerte.com/",
       "https://www.chinafuerte.com/",
       "https://www.shuidi.cn/company-49c36ae5e9a89f6c9b3ad1b5652d1740.html"
     ]
@@ -940,8 +941,8 @@
     "rank": 54,
     "id": "YQ000047",
     "name": "乐清劳恩斯电气有限公司",
-    "website": "",
-    "website_source": "",
+    "website": "https://lrelectric.cn/",
+    "website_source": "https://lrelectric.cn/",
     "contact_address": "",
     "products": "",
     "capital": "",
@@ -949,9 +950,10 @@
     "alibaba_url": "",
     "alibaba_source": "",
     "alibaba_address": "",
-    "confidence": "low",
-    "note": "公开报道确认该法定主体存在并从事电气产品出口；乐清劳恩斯新能源有限公司是不同主体，“劳伦斯电气有限公司”和lrelectric.cn也不能替代本公司数据。官网、地址、资本和主营产品继续留空，进入人工核对。",
+    "confidence": "high",
+    "note": "2026-10-27 用户明确确认 lrelectric.cn 与榜单中的乐清劳恩斯电气有限公司对应，要求关联现有企业档案；保留榜单企业名称，不合并其他法定主体资料。",
     "sources": [
+      "https://lrelectric.cn/",
       "https://www.sohu.com/a/1090296212_123753"
     ]
   },

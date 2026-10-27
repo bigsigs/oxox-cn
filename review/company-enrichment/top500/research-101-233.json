@@ -111,8 +111,8 @@
     "rank": 106,
     "id": "YQ000107",
     "name": "乐清市思高美进出口有限公司",
-    "website": "",
-    "website_source": "",
+    "website": "https://www.socomepower.com/",
+    "website_source": "https://www.socomepower.com/",
     "contact_address": "浙江省温州市乐清市乐清经济开发区纬十九路307号A幢二楼",
     "products": "配电开关控制设备、新能源及太阳能光伏设备、无功补偿设备、直流屏、发电机、电源及照明设备、互感器、断路器、熔断器、继电器、逆变器、高低压电器及配件、成套设备、配电箱及柜、电缆分支箱、仪器仪表、电线电缆等",
     "capital": "30万元人民币",
@@ -121,8 +121,9 @@
     "alibaba_source": "",
     "alibaba_address": "",
     "confidence": "high",
-    "note": "Tendata与CNVerify均匹配乐清市思高美进出口有限公司；工商地址与早期办公地址苏岙村分别保留，页面使用当前开发区地址。",
+    "note": "2026-10-27 用户再次明确确认 socomepower.com 为乐清市思高美进出口有限公司官网。原有地址、注册资本与产品资料继续保留各自来源。",
     "sources": [
+      "https://www.socomepower.com/",
       "https://www.cnverify.com/company/Yueqing-Socome-Import-Export-Co-Ltd",
       "https://www.tendata.com/en/buyer/yueqing-socome-import-export-co-ltd-CHN09ae9944428d62756a6b0fbf708ea06f.html",
       "https://www.instrument.com.cn/company/392494.html"
@@ -654,8 +655,8 @@
     "rank": 133,
     "id": "YQ000132",
     "name": "乐清市恒通电气有限公司",
-    "website": "",
-    "website_source": "",
+    "website": "http://chinahtcn.com/",
+    "website_source": "http://chinahtcn.com/",
     "contact_address": "浙江省乐清市北白象镇坂塘工业区",
     "products": "工业插头、工业插座、开关箱、配电箱、连接器、面板插座、组合箱、转换插座",
     "capital": "",
@@ -663,9 +664,10 @@
     "alibaba_url": "",
     "alibaba_source": "",
     "alibaba_address": "",
-    "confidence": "medium",
-    "note": "电工网库企业页明确主体、地址及产品；未找到官网和注册资本。",
+    "confidence": "high",
+    "note": "2026-10-27 用户明确确认 chinahtcn.com 为乐清市恒通电气有限公司官网；官网展示 HTCN 标识及工业插头、工业插座产品。",
     "sources": [
+      "http://chinahtcn.com/",
       "https://dg.hc23.com/company/174163.html",
       "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web1828/site/attach/0/e77759559f624df0b787ab382cfa0570.pdf"
     ]

@@ -1601,5 +1601,26 @@
     "page_url": "https://ck.tengen.com.cn/",
     "checked_at": "2026-10-25",
     "dark_background": false
+  },
+  "YQ000047": {
+    "path": "/company-icons/verified/confirmed-20261027/YQ000047.png",
+    "source_url": "https://lrelectric.cn/template/lrelectric-cnguide/assets/images/logo-h100-guide.png",
+    "page_url": "https://lrelectric.cn/",
+    "checked_at": "2026-10-27",
+    "dark_background": false
+  },
+  "YQ000045": {
+    "path": "/company-icons/verified/confirmed-20261027/YQ000045.webp",
+    "source_url": "https://cnfuerte.com/wp-content/uploads/2026/04/1773799219487680.webp",
+    "page_url": "https://cnfuerte.com/",
+    "checked_at": "2026-10-27",
+    "dark_background": false
+  },
+  "YQ000132": {
+    "path": "/company-icons/verified/confirmed-20261027/YQ000132.jpg",
+    "source_url": "http://chinahtcn.com/images/top-logo.jpg",
+    "page_url": "http://chinahtcn.com/",
+    "checked_at": "2026-10-27",
+    "dark_background": false
   }
 }
