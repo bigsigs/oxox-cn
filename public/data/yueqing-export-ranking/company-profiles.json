@@ -6602,9 +6602,18 @@
       {
         "type": "official_website",
         "label": "官方网站",
-        "url": "https://www.cokingmed.cn/",
-        "domain": "cokingmed.cn",
-        "added_at": "2026-10-24"
+        "url": "https://www.cokingmed.com/",
+        "domain": "cokingmed.com",
+        "added_at": "2026-10-24",
+        "source": "company_identity_verified"
+      },
+      {
+        "type": "official_website_alt",
+        "label": "企业官网（其他域名）",
+        "url": "https://www.kkmed.cn/",
+        "domain": "kkmed.cn",
+        "source": "company_identity_verified",
+        "added_at": "2026-10-27"
       }
     ],
     "details": {
@@ -6643,9 +6652,17 @@
         {
           "label": "企业公开资料",
           "url": "https://www.qiyeku.cn/tag/company8d2474-7.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.cokingmed.com/"
+        },
+        {
+          "label": "企业官网（其他域名）",
+          "url": "https://www.kkmed.cn/"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "legal_name": "浙江可康医疗科技有限公司",
       "registered_capital": "1000万元人民币"
     }
@@ -7315,9 +7332,10 @@
       {
         "type": "official_website",
         "label": "官方网站",
-        "url": "https://www.cnchaohog.com/",
+        "url": "http://www.cnchaohog.com/",
         "domain": "cnchaohog.com",
-        "added_at": "2026-10-24"
+        "added_at": "2026-10-24",
+        "source": "company_identity_verified"
       }
     ],
     "details": {
@@ -7339,9 +7357,17 @@
         {
           "label": "企业公开资料",
           "url": "https://www.cnchaohog.com/cn/products.asp?cateID=45"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.cnchaohog.com/"
+        },
+        {
+          "label": "企业官网",
+          "url": "http://www.cnchaohog.com/"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "legal_name": "浙江朝鸿机械有限公司"
     }
   },
@@ -7430,6 +7456,16 @@
           "url": "https://rank.reevol.com/company/yueqing-hongji-trade-co-ltd?lang=zh",
           "checked_at": "2026-10-24",
           "source_type": "company_website_or_directory"
+        },
+        "contact_address": {
+          "url": "https://www.hkcontrol.cc/contact-us.html",
+          "checked_at": "2026-10-27",
+          "source_type": "company_website"
+        },
+        "alibaba_address": {
+          "url": "https://hjfloorbox.en.alibaba.com/company_profile.html",
+          "checked_at": "2026-10-27",
+          "source_type": "alibaba_company_profile"
         }
       },
       "sources": [
@@ -7440,11 +7476,51 @@
         {
           "label": "企业公开资料",
           "url": "https://www.cnverify.com/company/Yueqing-Hongji-Trade-Co-Ltd"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.hkcontrol.cc/"
+        },
+        {
+          "label": "企业介绍",
+          "url": "https://www.hkcontrol.cc/company-profile.html"
+        },
+        {
+          "label": "企业联系地址",
+          "url": "https://www.hkcontrol.cc/contact-us.html"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://hjfloorbox.en.alibaba.com/"
+        },
+        {
+          "label": "Alibaba 企业介绍",
+          "url": "https://hjfloorbox.en.alibaba.com/company_profile.html"
         }
       ],
-      "checked_at": "2026-10-24",
-      "legal_name": "乐清市鸿基贸易有限公司"
-    }
+      "checked_at": "2026-10-27",
+      "legal_name": "乐清市鸿基贸易有限公司",
+      "contact_address": "浙江省温州市乐清市经济开发区滨海南四路66号博通慧谷小微园20-2幢",
+      "alibaba_address": "Building 20-2, Botong Huigu Small And Micro Park, No. 66 Binhai South Fourth Road, Economic Development Zone, Wenzhou, Zhejiang, China"
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "https://www.hkcontrol.cc/",
+        "domain": "hkcontrol.cc",
+        "source": "company_identity_verified",
+        "added_at": "2026-10-27"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站",
+        "url": "https://hjfloorbox.en.alibaba.com/",
+        "domain": "hjfloorbox.en.alibaba.com",
+        "source": "alibaba_exact_company",
+        "added_at": "2026-10-27"
+      }
+    ]
   },
   "YQ000145": {
     "details": {
@@ -7779,9 +7855,17 @@
         {
           "label": "企业官网",
           "url": "http://www.welet.cn/"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://welet.en.alibaba.com/"
+        },
+        {
+          "label": "Alibaba 企业介绍",
+          "url": "https://welet.en.alibaba.com/company_profile.html"
         }
       ],
-      "checked_at": "2026-10-25",
+      "checked_at": "2026-10-27",
       "legal_name": "浙江威力特塑胶有限公司"
     },
     "links": [
@@ -7792,6 +7876,14 @@
         "domain": "welet.cn",
         "source": "user_provided",
         "added_at": "2026-10-25"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站",
+        "url": "https://welet.en.alibaba.com/",
+        "domain": "welet.en.alibaba.com",
+        "source": "alibaba_exact_company",
+        "added_at": "2026-10-27"
       }
     ]
   },
@@ -7801,19 +7893,47 @@
         {
           "label": "监管或企业公告",
           "url": "https://swt.gansu.gov.cn/swt/c115436/202508/174195032/files/e5b24b1aa3e84bbe83b996d578435b7d.pdf"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.legymeter.com/"
+        },
+        {
+          "label": "企业联系地址",
+          "url": "https://www.legymeter.com/contact.html"
+        },
+        {
+          "label": "行业协会企业目录",
+          "url": "https://novgorod.tpprf.ru/ru/foreign_offers/China/Chinese%20suppliers-6_2.pdf"
         }
       ],
-      "checked_at": "2026-10-24",
-      "main_products": "仪器仪表（广交会联营参展资料确认电子电气产品方向）",
+      "checked_at": "2026-10-27",
+      "main_products": "电子式电能表、智能电能表、预付费电能表、多功能电能表、导轨式电能表、机电式电能表及开关插座",
       "field_sources": {
         "main_products": {
-          "url": "https://swt.gansu.gov.cn/swt/c115436/202508/174195032/files/e5b24b1aa3e84bbe83b996d578435b7d.pdf",
-          "checked_at": "2026-10-24",
+          "url": "https://www.legymeter.com/",
+          "checked_at": "2026-10-27",
+          "source_type": "company_website"
+        },
+        "contact_address": {
+          "url": "https://www.legymeter.com/contact.html",
+          "checked_at": "2026-10-27",
           "source_type": "company_website"
         }
       },
-      "legal_name": "温州联众仪表科技有限公司"
-    }
+      "legal_name": "温州联众仪表科技有限公司",
+      "contact_address": "浙江省温州市乐清市经济开发区纬十二路199号"
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "https://www.legymeter.com/",
+        "domain": "legymeter.com",
+        "source": "company_identity_verified",
+        "added_at": "2026-10-27"
+      }
+    ]
   },
   "YQ000155": {
     "links": [
@@ -7823,6 +7943,22 @@
         "url": "https://www.tscn.com.cn/",
         "domain": "tscn.com.cn",
         "added_at": "2026-10-24"
+      },
+      {
+        "type": "official_website_alt",
+        "label": "连接器官网",
+        "url": "http://www.lianjieqi.cn/",
+        "domain": "lianjieqi.cn",
+        "source": "company_identity_verified",
+        "added_at": "2026-10-27"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站",
+        "url": "https://tscn.en.alibaba.com/",
+        "domain": "tscn.en.alibaba.com",
+        "source": "alibaba_exact_company",
+        "added_at": "2026-10-27"
       }
     ],
     "details": {
@@ -7842,6 +7978,11 @@
           "url": "https://www.tscn.com.cn/",
           "checked_at": "2026-10-24",
           "source_type": "public_company_record"
+        },
+        "alibaba_address": {
+          "url": "https://tscn.en.alibaba.com/company_profile.html",
+          "checked_at": "2026-10-27",
+          "source_type": "alibaba_company_profile"
         }
       },
       "main_products": "车用连接器、端子、线束、模具及音频/射频/USB等电子连接器",
@@ -7861,11 +8002,24 @@
         {
           "label": "企业公开资料",
           "url": "https://www.tianxiagongchang.com/detail/1123670_zhe-jiang-tong-sheng-dian-zi-you-xian-gong-si"
+        },
+        {
+          "label": "连接器官网",
+          "url": "http://www.lianjieqi.cn/"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://tscn.en.alibaba.com/"
+        },
+        {
+          "label": "Alibaba 企业介绍",
+          "url": "https://tscn.en.alibaba.com/company_profile.html"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "legal_name": "浙江通升电子有限公司",
-      "registered_capital": "2568万元人民币"
+      "registered_capital": "2568万元人民币",
+      "alibaba_address": "No. 2 Industrial Zone, Danxi, Wenzhou, Zhejiang, China"
     }
   },
   "YQ000156": {
@@ -7922,11 +8076,29 @@
         {
           "label": "企业公开资料",
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202504241661712377_1.pdf?1745522442000.pdf="
+        },
+        {
+          "label": "关联企业网站",
+          "url": "https://www.czt-energy.com/"
+        },
+        {
+          "label": "关联企业工厂分布",
+          "url": "https://www.czt-energy.com/gcfb.html"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "legal_name": "乐清海银新能源有限公司"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "关联企业网站",
+        "url": "https://www.czt-energy.com/",
+        "domain": "czt-energy.com",
+        "source": "user_confirmed_related_company",
+        "added_at": "2026-10-27"
+      }
+    ]
   },
   "YQ000158": {
     "details": {
@@ -7946,6 +8118,11 @@
           "url": "https://m.zhipin.com/companys/b09843650f46dabc1nNz3du8EQ~~.html",
           "checked_at": "2026-10-24",
           "source_type": "company_website_or_directory"
+        },
+        "alibaba_address": {
+          "url": "https://cnsinoamigo.en.alibaba.com/company_profile.html",
+          "checked_at": "2026-10-27",
+          "source_type": "alibaba_company_profile"
         }
       },
       "registered_capital": "100万元人民币",
@@ -7966,10 +8143,19 @@
         {
           "label": "企业官网",
           "url": "https://www.sinoamigo.com/"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://cnsinoamigo.en.alibaba.com/"
+        },
+        {
+          "label": "Alibaba 企业介绍",
+          "url": "https://cnsinoamigo.en.alibaba.com/company_profile.html"
         }
       ],
-      "checked_at": "2026-10-25",
-      "legal_name": "温州西诺克进出口有限公司"
+      "checked_at": "2026-10-27",
+      "legal_name": "温州西诺克进出口有限公司",
+      "alibaba_address": "Sulv Industrial Zone, A5 Building, Yueqing, Zhejiang, China"
     },
     "links": [
       {
@@ -7979,6 +8165,14 @@
         "domain": "sinoamigo.com",
         "source": "user_provided",
         "added_at": "2026-10-25"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站",
+        "url": "https://cnsinoamigo.en.alibaba.com/",
+        "domain": "cnsinoamigo.en.alibaba.com",
+        "source": "alibaba_exact_company",
+        "added_at": "2026-10-27"
       }
     ]
   },
@@ -8141,6 +8335,14 @@
         "url": "https://www.yinhefuse.com/",
         "domain": "yinhefuse.com",
         "added_at": "2026-10-24"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站",
+        "url": "https://galaxyfuse.en.alibaba.com/",
+        "domain": "galaxyfuse.en.alibaba.com",
+        "source": "alibaba_exact_company",
+        "added_at": "2026-10-27"
       }
     ],
     "details": {
@@ -8160,6 +8362,11 @@
           "url": "https://www.yinhefuse.com/",
           "checked_at": "2026-10-24",
           "source_type": "public_company_record"
+        },
+        "alibaba_address": {
+          "url": "https://galaxyfuse.en.alibaba.com/company_profile.html",
+          "checked_at": "2026-10-27",
+          "source_type": "alibaba_company_profile"
         }
       },
       "main_products": "光伏PV熔断器、储能ESS熔断器、新能源EV/锂电池熔断器、高低压/半导体保护熔断器、熔断器式隔离开关",
@@ -8179,11 +8386,20 @@
         {
           "label": "企业公开资料",
           "url": "https://www.cnverify.com/company/Zhejiang-Galaxy-Fuse-Co-Ltd"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://galaxyfuse.en.alibaba.com/"
+        },
+        {
+          "label": "Alibaba 企业介绍",
+          "url": "https://galaxyfuse.en.alibaba.com/company_profile.html"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "legal_name": "浙江银河熔断器有限公司",
-      "registered_capital": "1180万元人民币"
+      "registered_capital": "1180万元人民币",
+      "alibaba_address": "No. 68 Zhongguang Road, Liushi Town, Wenzhou, Zhejiang, China"
     }
   },
   "YQ000163": {
@@ -8313,9 +8529,18 @@
       {
         "type": "official_website",
         "label": "官方网站",
-        "url": "https://www.dntfit.cn/",
-        "domain": "dntfit.cn",
-        "added_at": "2026-10-24"
+        "url": "https://www.dntfit.com/",
+        "domain": "dntfit.com",
+        "added_at": "2026-10-24",
+        "source": "company_identity_verified"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站",
+        "url": "https://dntfit.en.alibaba.com/",
+        "domain": "dntfit.en.alibaba.com",
+        "source": "alibaba_exact_company",
+        "added_at": "2026-10-27"
       }
     ],
     "details": {
@@ -8347,9 +8572,33 @@
         {
           "label": "企业公开资料",
           "url": "https://www.tianxiagongchang.com/detail/2782581_yue-qing-shi-di-en-te-jing-shui-ke-ji-you-xian-gong-si"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.dntfit.cn/"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.dntfit.com/"
+        },
+        {
+          "label": "企业介绍",
+          "url": "https://www.dntfit.com/about-us.html"
+        },
+        {
+          "label": "企业联系地址",
+          "url": "https://www.dntfit.com/contact-us.html"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://dntfit.en.alibaba.com/"
+        },
+        {
+          "label": "Alibaba 企业介绍",
+          "url": "https://dntfit.en.alibaba.com/company_profile.html"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "legal_name": "乐清市迪恩特净水科技有限公司"
     }
   },
@@ -81430,6 +81679,40 @@
       ],
       "checked_at": "2026-10-24",
       "legal_name": "海燕接线盒有限公司"
+    }
+  },
+  "YQ000138": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "https://yscabinet.com/",
+        "domain": "yscabinet.com",
+        "source": "user_confirmed",
+        "added_at": "2026-10-27"
+      }
+    ],
+    "details": {
+      "legal_name": "乐清市颐升电子科技有限公司",
+      "checked_at": "2026-10-27",
+      "sources": [
+        {
+          "label": "企业官网",
+          "url": "https://yscabinet.com/"
+        },
+        {
+          "label": "企业联系页面",
+          "url": "https://yscabinet.com/contact-us"
+        }
+      ],
+      "main_products": "配电箱、钢制及不锈钢电气箱柜、聚碳酸酯箱体、聚酯玻璃钢箱体、铝制接线盒",
+      "field_sources": {
+        "main_products": {
+          "url": "https://yscabinet.com/",
+          "checked_at": "2026-10-27",
+          "source_type": "company_website"
+        }
+      }
     }
   }
 }

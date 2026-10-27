@@ -311,8 +311,8 @@
     "path": "/company-icons/verified/YQ000128.png",
     "source_url": "http://www.helmeths.com/images/logo.png",
     "page_url": "http://www.helmeths.com",
-    "checked_at": "2026-10-24",
-    "dark_background": false
+    "checked_at": "2026-10-27",
+    "dark_background": true
   },
   "YQ000130": {
     "path": "/company-icons/verified/YQ000130.png",
@@ -325,8 +325,8 @@
     "path": "/company-icons/verified/YQ000135.svg",
     "source_url": "https://www.cwb.com.cn/wp-content/themes/cwb/img/cwb-logo.svg",
     "page_url": "https://www.cwb.com.cn/",
-    "checked_at": "2026-10-24",
-    "dark_background": false
+    "checked_at": "2026-10-27",
+    "dark_background": true
   },
   "YQ000161": {
     "path": "/company-icons/verified/YQ000161.png",
@@ -1846,5 +1846,84 @@
     "page_url": "https://www.yushengtools.com/",
     "checked_at": "2026-10-27",
     "dark_background": false
+  },
+  "YQ000124": {
+    "path": "/company-icons/verified/ranks141-160-20261027/YQ000124.png",
+    "source_url": "https://www.cokingmed.com/theme/kekang-EN/favicon.ico",
+    "page_url": "https://www.cokingmed.com/",
+    "checked_at": "2026-10-27",
+    "dark_background": false
+  },
+  "YQ000133": {
+    "path": "/company-icons/verified/ranks141-160-20261027/YQ000133.png",
+    "source_url": "https://www.helonex.com/favicon.ico",
+    "page_url": "https://www.helonex.com/",
+    "checked_at": "2026-10-27",
+    "dark_background": false
+  },
+  "YQ000138": {
+    "path": "/company-icons/verified/ranks141-160-20261027/YQ000138.png",
+    "source_url": "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,fit=crop/AE0pP73G08HnOgeG/logo-YD0pl12y4lHrkl66.png",
+    "page_url": "https://yscabinet.com/",
+    "checked_at": "2026-10-27",
+    "dark_background": false
+  },
+  "YQ000140": {
+    "path": "/company-icons/verified/ranks141-160-20261027/YQ000140.png",
+    "source_url": "http://www.cnchaohog.com/index/20180806140072807280.png",
+    "page_url": "http://www.cnchaohog.com/",
+    "checked_at": "2026-10-27",
+    "dark_background": false
+  },
+  "YQ000144": {
+    "path": "/company-icons/verified/ranks141-160-20261027/YQ000144.png",
+    "source_url": "https://sc02.alicdn.com/kf/H7d2e7e589047498d98b43789a36b13dfu.png",
+    "page_url": "https://www.hkcontrol.cc/",
+    "checked_at": "2026-10-27",
+    "dark_background": false,
+    "source_page_url": "https://hjfloorbox.en.alibaba.com/"
+  },
+  "YQ000146": {
+    "path": "/company-icons/verified/ranks141-160-20261027/YQ000146.png",
+    "source_url": "https://cn.zjrctools.com/template/cn/images/logo_m.png",
+    "page_url": "https://cn.zjrctools.com/",
+    "checked_at": "2026-10-27",
+    "dark_background": false
+  },
+  "YQ000153": {
+    "path": "/company-icons/verified/ranks141-160-20261027/YQ000153.png",
+    "source_url": "https://www.legymeter.com/upload/8998/20260622154237863618.webp",
+    "page_url": "https://www.legymeter.com/",
+    "checked_at": "2026-10-27",
+    "dark_background": false
+  },
+  "YQ000155": {
+    "path": "/company-icons/verified/ranks141-160-20261027/YQ000155.png",
+    "source_url": "https://sc04.alicdn.com/kf/HTB1KOh5LXXXXXa6XFXX5jXXFXXXh.gif",
+    "page_url": "https://www.tscn.com.cn/",
+    "checked_at": "2026-10-27",
+    "dark_background": false,
+    "source_page_url": "https://tscn.en.alibaba.com/"
+  },
+  "YQ000162": {
+    "path": "/company-icons/verified/ranks141-160-20261027/YQ000162.png",
+    "source_url": "https://img.dq800.com/shop/yniherdq/favicon.ico",
+    "page_url": "https://www.yinhefuse.com/",
+    "checked_at": "2026-10-27",
+    "dark_background": false
+  },
+  "YQ000168": {
+    "path": "/company-icons/verified/ranks141-160-20261027/YQ000168.png",
+    "source_url": "https://www.dntfit.com/templates/en/images/logopreset2.png",
+    "page_url": "https://www.dntfit.com/",
+    "checked_at": "2026-10-27",
+    "dark_background": false
+  },
+  "YQ000157": {
+    "path": "/company-icons/verified/top50-20261025/YQ000002.png",
+    "source_url": "https://omo-oss-image.thefastimg.com/portal-saas/new2023033118300075790/cms/image/fd0d61b8-f6ca-40c2-98e9-91c0dff4d431.png",
+    "page_url": "https://www.czt-energy.com/",
+    "checked_at": "2026-10-27",
+    "dark_background": true
   }
 }
