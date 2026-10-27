@@ -1,0 +1,188 @@
+{
+  "checked_at": "2026-10-28",
+  "scope": "all-company-list",
+  "summary": {
+    "total_companies": 3814,
+    "ranking_files_unchanged": true,
+    "profiles_only": true,
+    "high_confidence_website_additions": 305,
+    "confirmed_281_300_updates": [
+      "YQ000219",
+      "YQ000235",
+      "YQ000243",
+      "YQ000258",
+      "YQ000272",
+      "YQ000274",
+      "YQ000275",
+      "YQ000285",
+      "YQ000286",
+      "YQ000287",
+      "YQ000293",
+      "YQ000295",
+      "YQ000302",
+      "YQ000304",
+      "YQ000307",
+      "YQ000308",
+      "YQ000314",
+      "YQ000321",
+      "YQ000339"
+    ],
+    "uncertain_count": 25
+  },
+  "uncertain": [
+    {
+      "id": "YQ002860",
+      "name": "浙江侨亨实业有限公司",
+      "url": "https://www.qiaoh.com/news.htmlpages/2/",
+      "note": "官网页面包含企业名称，建议用户复核主体关系"
+    },
+    {
+      "id": "YQ002883",
+      "name": "君易电力科技有限公司",
+      "url": "https://www.leadsoft.com.cn/index.php?id=1577",
+      "note": "官网页面包含企业名称，建议用户复核主体关系"
+    },
+    {
+      "id": "YQ003395",
+      "name": "温州嘉讯电器有限公司",
+      "url": "https://www.cabletiecompany.com/zh/",
+      "note": "官网页面包含企业名称，建议用户复核主体关系"
+    },
+    {
+      "id": "YQ003286",
+      "name": "红旗集团温州变压器有限公司",
+      "url": "https://hongqi-china.com/index.php/about/19",
+      "note": "官网页面包含企业名称，建议用户复核主体关系"
+    },
+    {
+      "id": "YQ001881",
+      "name": "温州韦度电子有限公司",
+      "url": "https://cn.shahemeasuring.com/",
+      "note": "官网页面包含企业名称，建议用户复核主体关系"
+    },
+    {
+      "id": "YQ001920",
+      "name": "乐清煌荣模具有限公司",
+      "url": "https://cn.automobiletiemould.com/about/",
+      "note": "官网页面包含企业名称，建议用户复核主体关系"
+    },
+    {
+      "id": "YQ000356",
+      "name": "寺崎科技有限公司",
+      "url": "https://shwxexpo.com/xinwenzhongxin/qiyetuijian/843.html",
+      "note": "官网页面包含企业名称，建议用户复核主体关系"
+    },
+    {
+      "id": "YQ000421",
+      "name": "浙江斯派克电器有限公司",
+      "url": "https://www.ygtgjp.com/case.asp",
+      "note": "官网页面包含企业名称，建议用户复核主体关系"
+    },
+    {
+      "id": "YQ002026",
+      "name": "普尔特电气科技(温州)有限公司",
+      "url": "https://cn.cnpulte.net/",
+      "note": "官网页面包含企业名称，建议用户复核主体关系"
+    },
+    {
+      "id": "YQ001757",
+      "name": "温州普尔特国际贸易有限公司",
+      "url": "https://cn.cnpulte.net/",
+      "note": "官网页面包含企业名称，建议用户复核主体关系"
+    },
+    {
+      "id": "YQ001948",
+      "name": "温州光语生物科技有限公司",
+      "url": "https://www.leadingtec.cn/contact",
+      "note": "官网页面包含企业名称，建议用户复核主体关系"
+    },
+    {
+      "id": "YQ002064",
+      "name": "乐清市成阳电气有限公司",
+      "url": "https://www.chanzn.com/",
+      "note": "官网页面包含企业名称，建议用户复核主体关系"
+    },
+    {
+      "id": "YQ002059",
+      "name": "乐清市富普士工具有限公司",
+      "url": "https://www.swjchina.com/?product=%E4%B9%90%E6%B8%85%E5%B8%82%E5%AF%8C%E6%99%AE%E5%A3%AB%E5%B7%A5%E5%85%B7",
+      "note": "官网页面包含企业名称，建议用户复核主体关系"
+    },
+    {
+      "id": "YQ002175",
+      "name": "红旗电缆电器仪表集团有限公司",
+      "url": "https://www.hongqi-china.com/",
+      "note": "官网页面包含企业名称，建议用户复核主体关系"
+    },
+    {
+      "id": "YQ002198",
+      "name": "浙江向宏电气科技有限公司",
+      "url": "https://www.cncico.com/content/33391",
+      "note": "官网页面包含企业名称，建议用户复核主体关系"
+    },
+    {
+      "id": "YQ002404",
+      "name": "温州全一电气有限公司",
+      "url": "https://www.zgqnyi.com/",
+      "note": "官网页面包含企业名称，建议用户复核主体关系"
+    },
+    {
+      "id": "YQ003116",
+      "name": "雅絮智能科技有限公司",
+      "url": "https://www.yaxuzg.com/zh-CN/",
+      "note": "官网页面包含企业名称，建议用户复核主体关系"
+    },
+    {
+      "id": "YQ003221",
+      "name": "乐清市七星进出口有限公司",
+      "url": "https://company.solarbe.com/7starstrade/",
+      "note": "官网页面包含企业名称，建议用户复核主体关系"
+    },
+    {
+      "id": "YQ003455",
+      "name": "长江电气集团股份有限公司",
+      "url": "http://www.chko.cn/",
+      "note": "官网页面包含企业名称，建议用户复核主体关系"
+    },
+    {
+      "id": "YQ003462",
+      "name": "温州飞龙电器有限公司",
+      "url": "https://www.haiyang8.cn/dqwzjs/6000/leqing/2020/0518/11807.html",
+      "note": "官网页面包含企业名称，建议用户复核主体关系"
+    },
+    {
+      "id": "YQ001539",
+      "name": "乐清博胜气动元件有限公司",
+      "url": "https://www.cnbsch.com/",
+      "note": "官网页面包含企业名称，建议用户复核主体关系"
+    },
+    {
+      "id": "YQ001306",
+      "name": "浙江万哲电子科技有限公司",
+      "url": "https://www.qinainai.com/com/detail/9cedvznj.html",
+      "note": "官网页面包含企业名称，建议用户复核主体关系"
+    },
+    {
+      "id": "YQ000526",
+      "name": "浙江安富新能源科技股份有限公司",
+      "url": "https://www.amppal.cn/",
+      "note": "官网页面包含企业名称，建议用户复核主体关系"
+    },
+    {
+      "id": "YQ001416",
+      "name": "温州天诚电力设备有限公司",
+      "url": "https://www.enochgroup.cn/about/",
+      "note": "官网页面包含企业名称，建议用户复核主体关系"
+    },
+    {
+      "id": "YQ002446",
+      "name": "浙江中环工具有限公司",
+      "url": "https://www.chenghuaex.com/exhibitor/details/2905",
+      "note": "官网页面包含企业名称，建议用户复核主体关系"
+    }
+  ],
+  "notes": [
+    "只修改 company-profiles.json、verified-company-icons.json 和本次 review 清单，不修改 companies.json 或任何 period ranking 文件。",
+    "疑问候选已撤回公开档案，等待用户逐项确认。"
+  ]
+}
