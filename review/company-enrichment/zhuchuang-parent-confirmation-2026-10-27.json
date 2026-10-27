@@ -1,0 +1,19 @@
+{
+  "checked_at": "2026-10-27",
+  "company_id": "YQ000064",
+  "company_name": "温州珠创进出口有限公司",
+  "parent_company": "浙江珠城科技股份有限公司",
+  "parent_company_id": "YQ002914",
+  "website": "https://www.zuch.cn/",
+  "website_label": "关联企业网站",
+  "decision": "user_confirmed_related_company",
+  "icon": {
+    "path": "/company-icons/verified/YQ002914.png",
+    "source_url": "https://www.zuch.cn/wp-content/themes/Zhucheng/assets/images/1761030715257966.png",
+    "page_url": "https://www.zuch.cn/",
+    "checked_at": "2026-10-27",
+    "dark_background": false
+  },
+  "logo_sha256": "3996bc2686ce9a35cf84b9f605c3279b7be539b1b715f7f01f252daf6fd304be",
+  "note": "用户确认温州珠创的母公司为浙江珠城科技股份有限公司、域名 zuch.cn。保留两家企业独立档案及原名称；珠创关联母公司网站并复用已核实 Logo，明确展示母公司关系，不将关联网站宣称为本企业独立官网，不复制母公司注册资本或覆盖珠创地址。"
+}

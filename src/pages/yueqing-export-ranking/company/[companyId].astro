@@ -32,6 +32,7 @@ type RankingDataset = { records: SourceRecord[] };
 type CompanyLink = { type: string; label: string; url: string; domain: string };
 type CompanyDetails = {
   legal_name?: string;
+  parent_company?: string;
   founding_claim?: string;
   registered_on?: string;
   unified_social_credit_code?: string;
@@ -177,6 +178,7 @@ const chartPoints = chartHistory.map((record, index) => ({
 const chartTicks = [...new Set([chartMin, Math.round((chartMin + chartMax) / 2), chartMax])];
 const facts = [
   ["企业名称", details?.legal_name],
+  ["母公司", details?.parent_company],
   ["企业成立时间", details?.founding_claim],
   ["工商登记成立日期", details?.registered_on],
   ["法定代表人", details?.legal_representative],

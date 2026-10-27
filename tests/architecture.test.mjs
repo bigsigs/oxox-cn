@@ -316,6 +316,7 @@ test("curated company links and verified company facts survive the redesign", as
 
 test("related and product websites are described accurately in company profiles", async () => {
   for (const [id, url] of [
+    ["YQ000064", "https://www.zuch.cn/"],
     ["YQ000095", "https://www.eleqtraess.com/"],
     ["YQ000127", "https://www.czt-energy.com/"],
     ["YQ000131", "https://www.yingselectric.com/"],
@@ -326,6 +327,9 @@ test("related and product websites are described accurately in company profiles"
     const organization = schemaNodes(html).find((node) => node["@type"] === "Organization");
     assert.notEqual(organization?.url, url, `${id}: do not describe an associated company's site as its own URL`);
   }
+  const zhuchuangHtml = await read(builtPath(companyPath("YQ000064")));
+  assert.match(textOf(mainOf(zhuchuangHtml)), /母公司 浙江珠城科技股份有限公司/);
+  assert.ok(textOf(mainOf(zhuchuangHtml)).includes("温州珠创进出口有限公司"));
   const productHtml = await read(builtPath(companyPath("YQ000110")));
   const productAction = anchorsOf(mainOf(productHtml)).find((link) => link.class === "detail-button" && link.href === "https://starlinkaccs.com/");
   assert.match(productAction?.text ?? "", /访问产品网站/);
@@ -429,9 +433,9 @@ test("newly confirmed official websites publish on the exact matched companies",
   }
 
   assert.equal(
-    profiles.YQ000064?.links?.some((link) => link.type === "official_website") ?? false,
-    false,
-    "Zhuchuang trading company must not inherit the Zhucheng listed company website",
+    profiles.YQ000064?.links?.find((link) => link.type === "official_website")?.label,
+    "关联企业网站",
+    "Zhuchuang must label its user-confirmed parent company website as associated",
   );
   assert.equal(
     profiles.YQ000411?.links?.find((link) => link.type === "official_website")?.url,

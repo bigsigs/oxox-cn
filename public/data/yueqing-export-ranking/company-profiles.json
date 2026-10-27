@@ -3547,6 +3547,11 @@
           "url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12533685&stockid=301280",
           "checked_at": "2026-10-24",
           "source_type": "company_website"
+        },
+        "parent_company": {
+          "url": "https://disc.static.szse.cn/disc/disk03/finalpage/2026-08-26/9052b0cf-172b-4c9c-99ff-90c9b464514b.PDF",
+          "checked_at": "2026-10-27",
+          "source_type": "user_confirmed_company_relationship"
         }
       },
       "registered_capital": "100万元人民币",
@@ -3563,11 +3568,30 @@
         {
           "label": "监管或企业公告",
           "url": "https://disc.static.szse.cn/disc/disk03/finalpage/2026-08-26/9052b0cf-172b-4c9c-99ff-90c9b464514b.PDF"
+        },
+        {
+          "label": "关联母公司网站",
+          "url": "https://www.zuch.cn/"
+        },
+        {
+          "label": "关联母公司联系页面",
+          "url": "https://www.zuch.cn/contact-us/"
         }
       ],
-      "checked_at": "2026-10-24",
-      "legal_name": "温州珠创进出口有限公司"
-    }
+      "checked_at": "2026-10-27",
+      "legal_name": "温州珠创进出口有限公司",
+      "parent_company": "浙江珠城科技股份有限公司"
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "关联企业网站",
+        "url": "https://www.zuch.cn/",
+        "domain": "zuch.cn",
+        "source": "user_confirmed_related_company",
+        "added_at": "2026-10-27"
+      }
+    ]
   },
   "YQ000065": {
     "links": [
