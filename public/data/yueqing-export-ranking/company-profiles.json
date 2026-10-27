@@ -11277,6 +11277,14 @@
         "url": "https://tomzn.com/zh-CN/about-us/",
         "domain": "tomzn.com",
         "added_at": "2026-10-24"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站",
+        "url": "https://tomzn.en.alibaba.com/",
+        "domain": "tomzn.en.alibaba.com",
+        "source": "company_identity_verified",
+        "added_at": "2026-10-28"
       }
     ],
     "details": {
@@ -11286,16 +11294,36 @@
           "url": "https://tomzn.com/zh-CN/about-us/",
           "checked_at": "2026-10-24",
           "source_type": "company_website_or_directory"
+        },
+        "alibaba_address": {
+          "url": "https://tomzn.en.alibaba.com/",
+          "checked_at": "2026-10-28",
+          "source_type": "alibaba_company_profile"
+        },
+        "contact_address": {
+          "url": "https://tomzn.com/zh-CN/contact/",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website"
         }
       },
       "sources": [
         {
           "label": "企业公开资料",
           "url": "https://tomzn.com/zh-CN/about-us/"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://tomzn.en.alibaba.com/"
+        },
+        {
+          "label": "企业公开联系资料",
+          "url": "https://tomzn.com/zh-CN/contact/"
         }
       ],
-      "checked_at": "2026-10-24",
-      "legal_name": "浙江同正电气有限公司"
+      "checked_at": "2026-10-28",
+      "legal_name": "浙江同正电气有限公司",
+      "alibaba_address": "Huabei Village, Liushi Town, Wenzhou, Zhejiang, China",
+      "contact_address": "浙江省乐清市柳市镇华北村新河路11号"
     }
   },
   "YQ000225": {
@@ -11624,6 +11652,14 @@
         "url": "https://www.chncit.com.cn/",
         "domain": "chncit.com.cn",
         "added_at": "2026-10-24"
+      },
+      {
+        "type": "official_website_alt",
+        "label": "其他官网",
+        "url": "https://www.chncit.com/",
+        "domain": "chncit.com",
+        "source": "company_identity_verified",
+        "added_at": "2026-10-28"
       }
     ],
     "details": {
@@ -11655,9 +11691,13 @@
         {
           "label": "企业公开资料",
           "url": "https://www.chncit.com.cn/product/cnc-lathe/"
+        },
+        {
+          "label": "其他官网",
+          "url": "https://www.chncit.com/"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-28",
       "legal_name": "江南数控机床有限公司"
     }
   },
@@ -11930,12 +11970,12 @@
   },
   "YQ000244": {
     "details": {
-      "contact_address": "浙江省温州市乐清市乐清湾港区乐商创业园",
+      "contact_address": "浙江省温州市乐清市乐清湾港区红旗路17号",
       "field_sources": {
         "contact_address": {
-          "url": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web1828/site/attach/0/3798da5c88a346a3b6342de2a29b7f4c.pdf",
-          "checked_at": "2026-10-24",
-          "source_type": "public_company_record"
+          "url": "https://www.yqrc.com/comabout_e5043c33836.html",
+          "checked_at": "2026-10-28",
+          "source_type": "company_recruitment_profile"
         },
         "main_products": {
           "url": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web1828/site/attach/0/3798da5c88a346a3b6342de2a29b7f4c.pdf",
@@ -11948,11 +11988,20 @@
         {
           "label": "监管或企业公告",
           "url": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web1828/site/attach/0/3798da5c88a346a3b6342de2a29b7f4c.pdf"
+        },
+        {
+          "label": "企业公开联系资料",
+          "url": "https://www.yqrc.com/comabout_e5043c33836.html"
+        },
+        {
+          "label": "政府公开企业资料",
+          "url": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web1828/site/attach/0/59e5cde2ad1f44af902433f9f771aca2.pdf"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-28",
       "legal_name": "浙江小牛运动用品有限公司"
-    }
+    },
+    "links": []
   },
   "YQ000247": {
     "details": {
@@ -12050,10 +12099,10 @@
     "links": [
       {
         "type": "official_website",
-        "label": "企业官网",
+        "label": "关联企业网站",
         "url": "https://www.radin.cn/",
         "domain": "radin.cn",
-        "source": "user_confirmed",
+        "source": "user_confirmed_related_company",
         "added_at": "2026-10-24"
       }
     ],
@@ -12085,7 +12134,7 @@
           "url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12567214&stockid=301388"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-28",
       "legal_name": "乐清雷顿进出口有限公司",
       "registered_capital": "50万元人民币",
       "contact_address": "浙江省温州市乐清市乐清经济开发区纬十九路328号",
@@ -12203,19 +12252,24 @@
         {
           "label": "企业公开资料",
           "url": "https://cn.kompass.com/c/%E4%B9%90%E6%B8%85%E5%B8%82%E5%8D%8E%E7%91%9E%E7%94%B5%E5%AD%90%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/cn194790/"
+        },
+        {
+          "label": "政府公开项目资料",
+          "url": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web1828/site/attach/0/ad42922ff13a496dabc138287833d2ac.pdf"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-28",
       "field_sources": {
         "main_products": {
-          "url": "https://cn.kompass.com/c/%E4%B9%90%E6%B8%85%E5%B8%82%E5%8D%8E%E7%91%9E%E7%94%B5%E5%AD%90%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/cn194790/",
-          "checked_at": "2026-10-24",
-          "source_type": "company_website"
+          "url": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web1828/site/attach/0/ad42922ff13a496dabc138287833d2ac.pdf",
+          "checked_at": "2026-10-28",
+          "source_type": "government_project_record"
         }
       },
-      "main_products": "电子包装纸袋等",
+      "main_products": "新能源汽车开关总成",
       "legal_name": "乐清市华瑞电子有限公司"
-    }
+    },
+    "links": []
   },
   "YQ000255": {
     "details": {
@@ -12761,15 +12815,23 @@
         "url": "https://www.aisoelectric.com/",
         "domain": "aisoelectric.com",
         "added_at": "2026-10-24"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站",
+        "url": "https://aiso.en.alibaba.com/",
+        "domain": "aiso.en.alibaba.com",
+        "source": "company_identity_verified",
+        "added_at": "2026-10-28"
       }
     ],
     "details": {
-      "contact_address": "浙江省温州市乐清市柳市镇苏吕村",
+      "contact_address": "浙江省温州市乐清市柳市镇新光工业区新光大道22号",
       "field_sources": {
         "contact_address": {
-          "url": "https://www.aisoelectric.com/certificate/",
-          "checked_at": "2026-10-24",
-          "source_type": "public_company_record"
+          "url": "https://www.aisoelectric.com/contact-us/",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website"
         },
         "registered_capital": {
           "url": "https://www.aisoelectric.com/certificate/",
@@ -12780,6 +12842,11 @@
           "url": "https://www.aisoelectric.com/certificate/",
           "checked_at": "2026-10-24",
           "source_type": "company_website_or_directory"
+        },
+        "alibaba_address": {
+          "url": "https://aiso.en.alibaba.com/",
+          "checked_at": "2026-10-28",
+          "source_type": "alibaba_company_profile"
         }
       },
       "registered_capital": "50万元",
@@ -12792,10 +12859,19 @@
         {
           "label": "企业公开资料",
           "url": "https://www.tendata.com/en/buyer/yueqing-aiso-electric-co-ltd-CHNad9eb4ebda0ff4f12d07b8f1d4e4f94e.html"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://aiso.en.alibaba.com/"
+        },
+        {
+          "label": "企业公开联系资料",
+          "url": "https://www.aisoelectric.com/contact-us/"
         }
       ],
-      "checked_at": "2026-10-24",
-      "legal_name": "乐清市爱硕电气有限公司"
+      "checked_at": "2026-10-28",
+      "legal_name": "乐清市爱硕电气有限公司",
+      "alibaba_address": "4 / F, 157 Jianxing Road, Xinwu Village, Liushi Town, Wenzhou, Zhejiang, China"
     }
   },
   "YQ000281": {
@@ -12866,6 +12942,22 @@
         "url": "https://www.msrelay.cn/",
         "domain": "msrelay.cn",
         "added_at": "2026-10-24"
+      },
+      {
+        "type": "official_website_alt",
+        "label": "其他官网",
+        "url": "https://www.msrelay.com/",
+        "domain": "msrelay.com",
+        "source": "company_identity_verified",
+        "added_at": "2026-10-28"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站",
+        "url": "https://meisuo.en.alibaba.com/",
+        "domain": "meisuo.en.alibaba.com",
+        "source": "company_identity_verified",
+        "added_at": "2026-10-28"
       }
     ],
     "details": {
@@ -12885,6 +12977,11 @@
           "url": "https://www.msrelay.cn/about_12.html",
           "checked_at": "2026-10-24",
           "source_type": "company_website_or_directory"
+        },
+        "alibaba_address": {
+          "url": "https://meisuo.en.alibaba.com/",
+          "checked_at": "2026-10-28",
+          "source_type": "alibaba_company_profile"
         }
       },
       "registered_capital": "5100万元",
@@ -12901,10 +12998,19 @@
         {
           "label": "企业公开资料",
           "url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=6119967&stockid=301295"
+        },
+        {
+          "label": "其他官网",
+          "url": "https://www.msrelay.com/"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://meisuo.en.alibaba.com/"
         }
       ],
-      "checked_at": "2026-10-24",
-      "legal_name": "浙江美硕电气科技股份有限公司"
+      "checked_at": "2026-10-28",
+      "legal_name": "浙江美硕电气科技股份有限公司",
+      "alibaba_address": "No. 158, Weishier Road, Yueqing Economic Development Zone, Wenzhou, Zhejiang, China"
     }
   },
   "YQ000283": {
@@ -12943,10 +13049,19 @@
     "links": [
       {
         "type": "official_website",
-        "label": "官方网站",
+        "label": "关联企业网站",
         "url": "https://www.andeli.cn/",
         "domain": "andeli.cn",
-        "added_at": "2026-10-24"
+        "source": "user_confirmed_related_company",
+        "added_at": "2026-10-28"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站（关联企业）",
+        "url": "https://andeligroup.en.alibaba.com/",
+        "domain": "andeligroup.en.alibaba.com",
+        "source": "user_confirmed_related_company",
+        "added_at": "2026-10-28"
       }
     ],
     "details": {
@@ -12961,6 +13076,11 @@
           "url": "https://www.andeli.cn/ABOUT.html",
           "checked_at": "2026-10-24",
           "source_type": "company_website_or_directory"
+        },
+        "alibaba_address": {
+          "url": "https://andeligroup.en.alibaba.com/",
+          "checked_at": "2026-10-28",
+          "source_type": "alibaba_company_profile"
         }
       },
       "main_products": "低压电器、配电设备及电气产品（集团进出口业务）",
@@ -12972,20 +13092,29 @@
         {
           "label": "企业公开资料",
           "url": "https://www.andeli.cn/contactus.html"
+        },
+        {
+          "label": "关联企业网站",
+          "url": "https://www.andeli.cn/"
+        },
+        {
+          "label": "Alibaba 国际站（关联企业）",
+          "url": "https://andeligroup.en.alibaba.com/"
         }
       ],
-      "checked_at": "2026-10-24",
-      "legal_name": "安德利集团温州进出口有限公司"
+      "checked_at": "2026-10-28",
+      "legal_name": "安德利集团温州进出口有限公司",
+      "alibaba_address": "No. 208, Weiqi Road, Yueqing Economic Development Zone, Wenzhou, Zhejiang, China"
     }
   },
   "YQ000289": {
     "details": {
-      "contact_address": "中国温州柳市柳川大厦34号",
+      "contact_address": "浙江省乐清市柳市镇柳川大厦34号（经营部）",
       "field_sources": {
         "contact_address": {
-          "url": "https://www.chinaomp.com/index.php/info/807",
-          "checked_at": "2026-10-24",
-          "source_type": "public_company_record"
+          "url": "http://www.tianyiswitch.com/联系我们/index.html",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website"
         },
         "main_products": {
           "url": "https://www.chinaomp.com/index.php/info/807",
@@ -12998,11 +13127,29 @@
         {
           "label": "企业公开资料",
           "url": "https://www.chinaomp.com/index.php/info/807"
+        },
+        {
+          "label": "官方网站",
+          "url": "http://www.tianyiswitch.com/"
+        },
+        {
+          "label": "企业公开联系资料",
+          "url": "http://www.tianyiswitch.com/联系我们/index.html"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-28",
       "legal_name": "乐清市天逸电器有限公司"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "http://www.tianyiswitch.com/",
+        "domain": "tianyiswitch.com",
+        "source": "company_identity_verified",
+        "added_at": "2026-10-28"
+      }
+    ]
   },
   "YQ000291": {
     "links": [
@@ -13162,6 +13309,14 @@
         "url": "https://www.cnsug.com/",
         "domain": "cnsug.com",
         "added_at": "2026-10-24"
+      },
+      {
+        "type": "official_website_alt",
+        "label": "其他官网",
+        "url": "https://www.sugpower.com/",
+        "domain": "sugpower.com",
+        "source": "company_identity_verified",
+        "added_at": "2026-10-28"
       }
     ],
     "details": {
@@ -13183,9 +13338,13 @@
         {
           "label": "企业公开资料",
           "url": "https://www.cnsug.com/"
+        },
+        {
+          "label": "其他官网",
+          "url": "https://www.sugpower.com/"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-28",
       "legal_name": "浙江尚高新能源科技有限公司"
     }
   },
@@ -13233,6 +13392,22 @@
         "url": "https://www.china-utl.com/",
         "domain": "china-utl.com",
         "added_at": "2026-10-24"
+      },
+      {
+        "type": "official_website_alt",
+        "label": "其他官网",
+        "url": "https://www.utl-electric.com/",
+        "domain": "utl-electric.com",
+        "source": "company_identity_verified",
+        "added_at": "2026-10-28"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站",
+        "url": "https://chinautl.en.alibaba.com/",
+        "domain": "chinautl.en.alibaba.com",
+        "source": "company_identity_verified",
+        "added_at": "2026-10-28"
       }
     ],
     "details": {
@@ -13247,6 +13422,16 @@
           "url": "https://www.china-utl.com/",
           "checked_at": "2026-10-24",
           "source_type": "company_website_or_directory"
+        },
+        "alibaba_address": {
+          "url": "https://chinautl.en.alibaba.com/",
+          "checked_at": "2026-10-28",
+          "source_type": "alibaba_company_profile"
+        },
+        "operating_address": {
+          "url": "https://www.utl-electric.com/",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website"
         }
       },
       "main_products": "工业接线端子、接地端子、螺钉/直插式端子，工业连接产品",
@@ -13258,10 +13443,20 @@
         {
           "label": "企业公开资料",
           "url": "https://www.utl-electric.com/uploads/PRODUCT-CATALOGUE-TOTAL.pdf"
+        },
+        {
+          "label": "其他官网",
+          "url": "https://www.utl-electric.com/"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://chinautl.en.alibaba.com/"
         }
       ],
-      "checked_at": "2026-10-24",
-      "legal_name": "尤提乐电气有限公司"
+      "checked_at": "2026-10-28",
+      "legal_name": "尤提乐电气有限公司",
+      "alibaba_address": "Shangyanhou Village, Liushi Town, Wenzhou, Zhejiang, China",
+      "operating_address": "Taishang Industrial Zone, Huanghua, Yueqing, Zhejiang, China"
     }
   },
   "YQ000302": {
@@ -13510,18 +13705,19 @@
       {
         "type": "official_website",
         "label": "官方网站",
-        "url": "https://hcb.com.cn/",
+        "url": "http://hcb.com.cn/",
         "domain": "hcb.com.cn",
-        "added_at": "2026-10-24"
+        "source": "company_identity_verified",
+        "added_at": "2026-10-28"
       }
     ],
     "details": {
-      "contact_address": "浙江省乐清市虹桥镇东工业区",
+      "contact_address": "浙江省乐清市乐清湾港区创新路4号",
       "field_sources": {
         "contact_address": {
-          "url": "https://hcb.com.cn/zwabout",
-          "checked_at": "2026-10-24",
-          "source_type": "public_company_record"
+          "url": "http://hcb.com.cn/#/contact",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website"
         },
         "registered_capital": {
           "url": "https://hcb.com.cn/zwabout",
@@ -13544,9 +13740,17 @@
         {
           "label": "企业公开资料",
           "url": "https://www.zhaopin.com/companydetail/CZ886387710.htm"
+        },
+        {
+          "label": "官方网站",
+          "url": "http://hcb.com.cn/"
+        },
+        {
+          "label": "企业公开联系资料",
+          "url": "http://hcb.com.cn/#/contact"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-28",
       "legal_name": "乐清昌德成电子有限公司"
     }
   },
@@ -83060,6 +83264,63 @@
         }
       },
       "checked_at": "2026-10-28"
+    }
+  },
+  "YQ000232": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.gotoelectrical.com/",
+        "domain": "gotoelectrical.com",
+        "source": "user_confirmed",
+        "added_at": "2026-10-28"
+      }
+    ],
+    "details": {
+      "field_sources": {
+        "operating_address": {
+          "url": "https://www.gotoelectrical.com/contactus.html",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website"
+        }
+      },
+      "sources": [
+        {
+          "label": "官方网站",
+          "url": "https://www.gotoelectrical.com/"
+        },
+        {
+          "label": "企业公开联系资料",
+          "url": "https://www.gotoelectrical.com/contactus.html"
+        },
+        {
+          "label": "企业产品手册",
+          "url": "https://www.gotoelectrical.com/wp-content/uploads/2024/10/Goto-Electrical.pdf"
+        }
+      ],
+      "checked_at": "2026-10-28",
+      "operating_address": "101-2, Building 8, Robot Industrial Park, No. 176 Yanyun Road, Lingkun Street, Wenzhou, Zhejiang, China"
+    }
+  },
+  "YQ000266": {
+    "links": [],
+    "details": {
+      "field_sources": {
+        "contact_address": {
+          "url": "https://www.tendata.com/en/buyer/wenzhou-maoli-trading-co-ltd-CHNN66400cb6a2712cbb969568febcf3565d.html",
+          "checked_at": "2026-10-28",
+          "source_type": "public_company_record"
+        }
+      },
+      "sources": [
+        {
+          "label": "企业公开联系资料",
+          "url": "https://www.tendata.com/en/buyer/wenzhou-maoli-trading-co-ltd-CHNN66400cb6a2712cbb969568febcf3565d.html"
+        }
+      ],
+      "checked_at": "2026-10-28",
+      "contact_address": "浙江省温州市乐清市城东街道千帆东路555号蝴蝶广场2幢342室"
     }
   }
 }

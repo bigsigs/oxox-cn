@@ -1,0 +1,688 @@
+{
+  "checked_at": "2026-10-28",
+  "period": "2026-ytd-08",
+  "summary": {
+    "reviewed": 20,
+    "new_company_websites": 2,
+    "new_alternate_websites": 4,
+    "new_company_icons": 9,
+    "new_alibaba_stores": 5,
+    "new_alibaba_addresses": 5,
+    "updated_contact_addresses": 6,
+    "new_operating_addresses": 2
+  },
+  "pending_confirmations": [],
+  "user_decisions": [
+    {
+      "id": "YQ000284",
+      "decision": "confirmed_related_website_logo_alibaba"
+    },
+    {
+      "id": "YQ000232",
+      "decision": "confirmed_website_logo"
+    },
+    {
+      "id": "YQ000253",
+      "url": "http://www.surox.com/",
+      "decision": "do_not_register"
+    }
+  ],
+  "companies": [
+    {
+      "rank": 261,
+      "id": "YQ000276",
+      "name": "温州朗顺电气有限公司",
+      "canonical_name": "温州朗顺电气有限公司",
+      "links": [],
+      "icon": null,
+      "note": "中文全称与 Wenzhou Langshun 检索仅找到往来企业公告；未找到可确认官网、Logo、Alibaba 或公开地址，留空。",
+      "sources": []
+    },
+    {
+      "rank": 262,
+      "id": "YQ000249",
+      "name": "乐清雷顿进出口有限公司",
+      "canonical_name": "乐清雷顿进出口有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "关联企业网站",
+          "url": "https://www.radin.cn/",
+          "domain": "radin.cn",
+          "source": "user_confirmed_related_company",
+          "added_at": "2026-10-24"
+        }
+      ],
+      "icon": {
+        "path": "/company-icons/verified/YQ000249.png",
+        "source_url": "https://www.radin.cn/index/logo.png",
+        "page_url": "https://www.radin.cn/",
+        "checked_at": "2026-10-24",
+        "dark_background": false
+      },
+      "note": "保留用户此前确认的 RADIN 官网与 Logo，准确标为关联企业网站；不将雷顿电气浦南五路55号的地址覆盖进出口公司纬十九路328号地址。未找到可确认 Alibaba。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=7572894&stockid=301388"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12567214&stockid=301388"
+        }
+      ],
+      "logo_sha256": "05de146996596350fc6f0d63f4cb56cd907da73d81ce8c1df83375e90078e830"
+    },
+    {
+      "rank": 263,
+      "id": "YQ000282",
+      "name": "浙江美硕电气科技股份有限公司",
+      "canonical_name": "浙江美硕电气科技股份有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "https://www.msrelay.cn/",
+          "domain": "msrelay.cn",
+          "added_at": "2026-10-24"
+        },
+        {
+          "type": "official_website_alt",
+          "label": "其他官网",
+          "url": "https://www.msrelay.com/",
+          "domain": "msrelay.com",
+          "source": "company_identity_verified",
+          "added_at": "2026-10-28"
+        },
+        {
+          "type": "alibaba_store",
+          "label": "Alibaba 国际站",
+          "url": "https://meisuo.en.alibaba.com/",
+          "domain": "meisuo.en.alibaba.com",
+          "source": "company_identity_verified",
+          "added_at": "2026-10-28"
+        }
+      ],
+      "icon": {
+        "path": "/company-icons/verified/ranks261-280-20261028/YQ000282.png",
+        "source_url": "https://oss.aliyun.325604.net/meishuo/static/upload/image/20230221/1676940162680149.png",
+        "page_url": "https://www.msrelay.cn/",
+        "checked_at": "2026-10-28",
+        "dark_background": true
+      },
+      "note": "官网中文全称一致，官网直链英文站；Alibaba 供应商资料直接链接 meisuo 店铺，主体及纬十二路158号一致。补 Logo、英文站、店铺及地址。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://www.msrelay.cn/about_12.html"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://msrelay.cn/list_29.html"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=6119967&stockid=301295"
+        },
+        {
+          "label": "其他官网",
+          "url": "https://www.msrelay.com/"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://meisuo.en.alibaba.com/"
+        }
+      ],
+      "logo_sha256": "c77cf57fd0011cf7b25409c39dec17ab7676afb9c62c5a1a4b627c05abdbca27"
+    },
+    {
+      "rank": 264,
+      "id": "YQ000232",
+      "name": "浙江固拓电气有限公司",
+      "canonical_name": "浙江固拓电气有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "https://www.gotoelectrical.com/",
+          "domain": "gotoelectrical.com",
+          "source": "user_confirmed",
+          "added_at": "2026-10-28"
+        }
+      ],
+      "icon": {
+        "path": "/company-icons/verified/ranks261-280-20261028/YQ000232.png",
+        "source_url": "https://i0.wp.com/www.gotoelectrical.com/wp-content/uploads/2024/10/GOTO-LOGO2-1.png?quality=85&strip=all",
+        "page_url": "https://www.gotoelectrical.com/",
+        "checked_at": "2026-10-28",
+        "dark_background": false
+      },
+      "note": "用户确认 GOTO 网站和 Logo。产品册有 Zhejiang Gutuo、乐清翁垟、避雷器绝缘子。另附旧 ISO 证书信用代码与政府资料不一致，仅作核查冲突记录，不以该证书证明当前认证或登记信息。补官网、Logo和官网生产经营地址。",
+      "sources": [
+        {
+          "label": "官方网站",
+          "url": "https://www.gotoelectrical.com/"
+        },
+        {
+          "label": "企业公开联系资料",
+          "url": "https://www.gotoelectrical.com/contactus.html"
+        },
+        {
+          "label": "企业产品手册",
+          "url": "https://www.gotoelectrical.com/wp-content/uploads/2024/10/Goto-Electrical.pdf"
+        }
+      ],
+      "logo_sha256": "4a352f524e2d7fb74b0c8e5442c3329344dd17cc5f90c17a678a26eb289739ee"
+    },
+    {
+      "rank": 265,
+      "id": "YQ000266",
+      "name": "温州茂励贸易有限公司",
+      "canonical_name": "温州茂励贸易有限公司",
+      "links": [],
+      "icon": null,
+      "note": "Tendata 精确中文全称及信用代码对应蝴蝶广场2幢342室；补公开地址，未找到可确认官网、Logo或Alibaba。",
+      "sources": [
+        {
+          "label": "企业公开联系资料",
+          "url": "https://www.tendata.com/en/buyer/wenzhou-maoli-trading-co-ltd-CHNN66400cb6a2712cbb969568febcf3565d.html"
+        }
+      ]
+    },
+    {
+      "rank": 266,
+      "id": "YQ000242",
+      "name": "浙江托尔电气有限公司",
+      "canonical_name": "浙江托尔电气有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "https://www.chthor.com/",
+          "domain": "chthor.com",
+          "added_at": "2026-10-24"
+        }
+      ],
+      "icon": {
+        "path": "/company-icons/verified/ranks261-280-20261028/YQ000242.png",
+        "source_url": "https://www.chthor.com/Uploads/image/6a6e0966415d6.png",
+        "page_url": "https://www.chthor.com/",
+        "checked_at": "2026-10-28",
+        "dark_background": false
+      },
+      "note": "官网中文主体、地址和THOR标志一致，补官网Logo。目录旧店铺 tuoer 已返回404，chthor也404，不登记失效或猜测店铺。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://www.chthor.com/about.html"
+        }
+      ],
+      "logo_sha256": "31c4ceec579224bff6a618375beedc816144518d99ba3fc12071caf5a9bc31a1"
+    },
+    {
+      "rank": 267,
+      "id": "YQ000284",
+      "name": "安德利集团温州进出口有限公司",
+      "canonical_name": "安德利集团温州进出口有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "关联企业网站",
+          "url": "https://www.andeli.cn/",
+          "domain": "andeli.cn",
+          "source": "user_confirmed_related_company",
+          "added_at": "2026-10-28"
+        },
+        {
+          "type": "alibaba_store",
+          "label": "Alibaba 国际站（关联企业）",
+          "url": "https://andeligroup.en.alibaba.com/",
+          "domain": "andeligroup.en.alibaba.com",
+          "source": "user_confirmed_related_company",
+          "added_at": "2026-10-28"
+        }
+      ],
+      "icon": {
+        "path": "/company-icons/verified/ranks261-280-20261028/YQ000284.png",
+        "source_url": "https://sc04.alicdn.com/kf/HTB1gKzgLXXXXXaFXpXXq6xXFXXXH.jpg",
+        "page_url": "https://www.andeli.cn/",
+        "checked_at": "2026-10-28",
+        "dark_background": false,
+        "source_page_url": "https://andeligroup.en.alibaba.com/"
+      },
+      "note": "用户确认采用集团官网、Logo和Alibaba；两个链接均标注关联企业，店铺地址单独记录。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://www.andeli.cn/ABOUT.html"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.andeli.cn/contactus.html"
+        },
+        {
+          "label": "关联企业网站",
+          "url": "https://www.andeli.cn/"
+        },
+        {
+          "label": "Alibaba 国际站（关联企业）",
+          "url": "https://andeligroup.en.alibaba.com/"
+        }
+      ],
+      "logo_sha256": "d46a2cd7b921ec10eaa3a226ea34b02a64f511ef413f85dfb504405a4066fed0"
+    },
+    {
+      "rank": 268,
+      "id": "YQ000297",
+      "name": "浙江尚高新能源科技有限公司",
+      "canonical_name": "浙江尚高新能源科技有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "https://www.cnsug.com/",
+          "domain": "cnsug.com",
+          "added_at": "2026-10-24"
+        },
+        {
+          "type": "official_website_alt",
+          "label": "其他官网",
+          "url": "https://www.sugpower.com/",
+          "domain": "sugpower.com",
+          "source": "company_identity_verified",
+          "added_at": "2026-10-28"
+        }
+      ],
+      "icon": {
+        "path": "/company-icons/verified/ranks261-280-20261028/YQ000297.png",
+        "source_url": "https://www.sugpower.com/theme/shanggao-EN/images/logo.webp",
+        "page_url": "https://www.sugpower.com/",
+        "checked_at": "2026-10-28",
+        "dark_background": false
+      },
+      "note": "中文官网邮箱sugpower.com、品牌和中心大道281号与英文站一致；补英文站和SUG Logo。未找到可确认 Alibaba。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://www.cnsug.com/"
+        },
+        {
+          "label": "其他官网",
+          "url": "https://www.sugpower.com/"
+        }
+      ],
+      "logo_sha256": "e5f61771d07b83e710796ba73368862e8046b8651c439bc977118ec5388dfd12"
+    },
+    {
+      "rank": 269,
+      "id": "YQ003743",
+      "name": "温州隆迪士尼进出口贸易有限公司",
+      "canonical_name": "温州隆迪士尼进出口贸易有限公司",
+      "links": [],
+      "icon": null,
+      "note": "按中文全称和 Longdisini 检索，未找到可确认官网、Logo、Alibaba及完整公开地址，留空。",
+      "sources": []
+    },
+    {
+      "rank": 270,
+      "id": "YQ000303",
+      "name": "乐清欣广进出口有限公司",
+      "canonical_name": "乐清欣广进出口有限公司",
+      "links": [],
+      "icon": null,
+      "note": "未找到可确认独立官网、Logo或Alibaba，保留原已核实地址；不采用同音新光塑料等品牌。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://www.tendata.com/en/buyer/yueqing-xinguang-import-export-co-ltd-CHNb8fdfd0aa51b92ed61014e4dfdb9d5b5.html"
+        }
+      ]
+    },
+    {
+      "rank": 271,
+      "id": "YQ000236",
+      "name": "江南数控机床有限公司",
+      "canonical_name": "江南数控机床有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "https://www.chncit.com.cn/",
+          "domain": "chncit.com.cn",
+          "added_at": "2026-10-24"
+        },
+        {
+          "type": "official_website_alt",
+          "label": "其他官网",
+          "url": "https://www.chncit.com/",
+          "domain": "chncit.com",
+          "source": "company_identity_verified",
+          "added_at": "2026-10-28"
+        }
+      ],
+      "icon": {
+        "path": "/company-icons/verified/YQ000236.png",
+        "source_url": "https://www.chncit.com.cn/template/cn/images/logo.png",
+        "page_url": "https://www.chncit.com.cn/",
+        "checked_at": "2026-10-24",
+        "dark_background": false
+      },
+      "note": "官网中英文企业名称、成立时间、江南科技园地址一致，补英文官网；保留既有Logo。未找到可确认Alibaba。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://www.chncit.com.cn/about/"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.chncit.com.cn/product/cnc-lathe/"
+        },
+        {
+          "label": "其他官网",
+          "url": "https://www.chncit.com/"
+        }
+      ],
+      "logo_sha256": "fcade046f27072295a2fc4a4b2438bc801ca9f4e3814163b73d31dba6c49a64b"
+    },
+    {
+      "rank": 272,
+      "id": "YQ000299",
+      "name": "尤提乐电气有限公司",
+      "canonical_name": "尤提乐电气有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "https://www.china-utl.com/",
+          "domain": "china-utl.com",
+          "added_at": "2026-10-24"
+        },
+        {
+          "type": "official_website_alt",
+          "label": "其他官网",
+          "url": "https://www.utl-electric.com/",
+          "domain": "utl-electric.com",
+          "source": "company_identity_verified",
+          "added_at": "2026-10-28"
+        },
+        {
+          "type": "alibaba_store",
+          "label": "Alibaba 国际站",
+          "url": "https://chinautl.en.alibaba.com/",
+          "domain": "chinautl.en.alibaba.com",
+          "source": "company_identity_verified",
+          "added_at": "2026-10-28"
+        }
+      ],
+      "icon": {
+        "path": "/company-icons/verified/ranks261-280-20261028/YQ000299.png",
+        "source_url": "https://www.china-utl.com/images/logo.png",
+        "page_url": "https://www.china-utl.com/",
+        "checked_at": "2026-10-28",
+        "dark_background": false
+      },
+      "note": "官网产品目录中英文名称直接对应尤提乐/UTILITY，英文站沿用china-utl邮箱。补UTL Logo、英文官网、同主体Alibaba及店铺地址，上海营销地址与乐清生产经营地址分别保留。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://www.china-utl.com/"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.utl-electric.com/uploads/PRODUCT-CATALOGUE-TOTAL.pdf"
+        },
+        {
+          "label": "其他官网",
+          "url": "https://www.utl-electric.com/"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://chinautl.en.alibaba.com/"
+        }
+      ],
+      "logo_sha256": "f8ba5e180493b96403fbdfa8df547595736f082f537b54a4464f58c9145e4b73"
+    },
+    {
+      "rank": 273,
+      "id": "YQ000244",
+      "name": "浙江小牛运动用品有限公司",
+      "canonical_name": "浙江小牛运动用品有限公司",
+      "links": [],
+      "icon": null,
+      "note": "政府名单、招聘主页及企业记录均对应乐清湾港区红旗路17号，补完整地址。未找到可靠官网、Logo或Alibaba，不误用其他小牛品牌。",
+      "sources": [
+        {
+          "label": "监管或企业公告",
+          "url": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web1828/site/attach/0/3798da5c88a346a3b6342de2a29b7f4c.pdf"
+        },
+        {
+          "label": "企业公开联系资料",
+          "url": "https://www.yqrc.com/comabout_e5043c33836.html"
+        },
+        {
+          "label": "政府公开企业资料",
+          "url": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web1828/site/attach/0/59e5cde2ad1f44af902433f9f771aca2.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 274,
+      "id": "YQ000256",
+      "name": "乐清继跃进出口有限公司",
+      "canonical_name": "乐清继跃进出口有限公司",
+      "links": [],
+      "icon": null,
+      "note": "未找到可确认网站、Logo或Alibaba。英文贸易资料Yueqing Jiyue的地址尚缺中文主体对应证据，未采用。",
+      "sources": []
+    },
+    {
+      "rank": 275,
+      "id": "YQ000309",
+      "name": "乐清昌德成电子有限公司",
+      "canonical_name": "乐清昌德成电子有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "http://hcb.com.cn/",
+          "domain": "hcb.com.cn",
+          "source": "company_identity_verified",
+          "added_at": "2026-10-28"
+        }
+      ],
+      "icon": {
+        "path": "/company-icons/verified/ranks261-280-20261028/YQ000309.png",
+        "source_url": "http://hcb.com.cn/",
+        "page_url": "http://hcb.com.cn/",
+        "checked_at": "2026-10-28",
+        "dark_background": true,
+        "source_type": "official_website_embedded_image"
+      },
+      "note": "HTTP官网真实渲染显示精确中文全称和乐清湾港区创新路4号，补HCB官网内嵌PNG Logo、更新地址和可工作协议；没有登记另一家浙江昌得成电器的店铺。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://hcb.com.cn/zwabout"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.zhaopin.com/companydetail/CZ886387710.htm"
+        },
+        {
+          "label": "官方网站",
+          "url": "http://hcb.com.cn/"
+        },
+        {
+          "label": "企业公开联系资料",
+          "url": "http://hcb.com.cn/#/contact"
+        }
+      ],
+      "logo_sha256": "fdc3955a5474f4b17a790d9a9726686f2d58ca3f9ac7f77915c46fc3cb9b423a"
+    },
+    {
+      "rank": 276,
+      "id": "YQ000289",
+      "name": "乐清市天逸电器有限公司",
+      "canonical_name": "乐清市天逸电器有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "http://www.tianyiswitch.com/",
+          "domain": "tianyiswitch.com",
+          "source": "company_identity_verified",
+          "added_at": "2026-10-28"
+        }
+      ],
+      "icon": {
+        "path": "/company-icons/verified/ranks261-280-20261028/YQ000289.png",
+        "source_url": "http://www.tianyiswitch.com/images/3_031.jpg",
+        "page_url": "http://www.tianyiswitch.com/",
+        "checked_at": "2026-10-28",
+        "dark_background": false
+      },
+      "note": "官网首页和联系页明确中文全称、按钮及信号灯产品、柳川大厦经营部地址；补官网和TIANYI Logo。猜测店铺返回404，不采用。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://www.chinaomp.com/index.php/info/807"
+        },
+        {
+          "label": "官方网站",
+          "url": "http://www.tianyiswitch.com/"
+        },
+        {
+          "label": "企业公开联系资料",
+          "url": "http://www.tianyiswitch.com/联系我们/index.html"
+        }
+      ],
+      "logo_sha256": "f6efa87f1ae05967b402921a0ec4d6da586cccee7f49337225586167d87baaac"
+    },
+    {
+      "rank": 277,
+      "id": "YQ000253",
+      "name": "乐清市华瑞电子有限公司",
+      "canonical_name": "乐清市华瑞电子有限公司",
+      "links": [],
+      "icon": null,
+      "note": "用户明确不采用surox.com，未登记。政府原始项目标题显示新能源汽车开关总成，替换原目录明显错误的纸袋分类；未找到可确认Logo或Alibaba，不混用Hairui或其他华瑞主体。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://cn.kompass.com/c/%E4%B9%90%E6%B8%85%E5%B8%82%E5%8D%8E%E7%91%9E%E7%94%B5%E5%AD%90%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/cn194790/"
+        },
+        {
+          "label": "政府公开项目资料",
+          "url": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web1828/site/attach/0/ad42922ff13a496dabc138287833d2ac.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 278,
+      "id": "YQ000288",
+      "name": "温州添展贸易有限公司",
+      "canonical_name": "温州添展贸易有限公司",
+      "links": [],
+      "icon": null,
+      "note": "按中文全称和 Wenzhou Tianzhan 检索，未找到可确认官网、Logo、Alibaba及完整公开地址，留空。",
+      "sources": []
+    },
+    {
+      "rank": 279,
+      "id": "YQ000278",
+      "name": "乐清市爱硕电气有限公司",
+      "canonical_name": "乐清市爱硕电气有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "https://www.aisoelectric.com/",
+          "domain": "aisoelectric.com",
+          "added_at": "2026-10-24"
+        },
+        {
+          "type": "alibaba_store",
+          "label": "Alibaba 国际站",
+          "url": "https://aiso.en.alibaba.com/",
+          "domain": "aiso.en.alibaba.com",
+          "source": "company_identity_verified",
+          "added_at": "2026-10-28"
+        }
+      ],
+      "icon": {
+        "path": "/company-icons/verified/ranks261-280-20261028/YQ000278.png",
+        "source_url": "https://sc04.alicdn.com/kf/HTB1NwZTNpXXXXa9XFXX760XFXXXg.png",
+        "page_url": "https://www.aisoelectric.com/",
+        "checked_at": "2026-10-28",
+        "dark_background": false,
+        "source_page_url": "https://aiso.en.alibaba.com/"
+      },
+      "note": "英文官网全称与中文登记资料对应，店铺主体Yueqing Aiso和品牌一致，补Alibaba本企业Logo、店铺及地址；官网新光大道22号与店铺建兴路157号分别记录。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://www.aisoelectric.com/certificate/"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.tendata.com/en/buyer/yueqing-aiso-electric-co-ltd-CHNad9eb4ebda0ff4f12d07b8f1d4e4f94e.html"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://aiso.en.alibaba.com/"
+        },
+        {
+          "label": "企业公开联系资料",
+          "url": "https://www.aisoelectric.com/contact-us/"
+        }
+      ],
+      "logo_sha256": "5c3ea801017963588751a998138d776172004c3ea3c2563287aa6983e4edbde8"
+    },
+    {
+      "rank": 280,
+      "id": "YQ000224",
+      "name": "浙江同正电气有限公司",
+      "canonical_name": "浙江同正电气有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "https://tomzn.com/zh-CN/about-us/",
+          "domain": "tomzn.com",
+          "added_at": "2026-10-24"
+        },
+        {
+          "type": "alibaba_store",
+          "label": "Alibaba 国际站",
+          "url": "https://tomzn.en.alibaba.com/",
+          "domain": "tomzn.en.alibaba.com",
+          "source": "company_identity_verified",
+          "added_at": "2026-10-28"
+        }
+      ],
+      "icon": {
+        "path": "/company-icons/verified/YQ000224.png",
+        "source_url": "https://tomzn.com/wp-content/uploads/2025/08/TOMZN-logo-scaled.webp",
+        "page_url": "https://tomzn.com/zh-CN/about-us/",
+        "checked_at": "2026-10-24",
+        "dark_background": false
+      },
+      "note": "官网TOMZN与店铺同品牌，主体Zhejiang Tongzheng Electric对应浙江同正；补店铺、店铺地址和官网华北村新河路11号，保留原Logo。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://tomzn.com/zh-CN/about-us/"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://tomzn.en.alibaba.com/"
+        },
+        {
+          "label": "企业公开联系资料",
+          "url": "https://tomzn.com/zh-CN/contact/"
+        }
+      ],
+      "logo_sha256": "aba6f9fa4c37ff70edd5d13db3a1d67dc9149fafd6338dc914c215f525a45d33"
+    }
+  ]
+}
