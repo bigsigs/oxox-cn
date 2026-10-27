@@ -6309,6 +6309,14 @@
         "url": "https://chhpgroup.com/zh/",
         "domain": "chhpgroup.com",
         "added_at": "2026-10-24"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站",
+        "url": "https://chhp.en.alibaba.com/",
+        "domain": "chhp.en.alibaba.com",
+        "source": "alibaba_exact_company",
+        "added_at": "2026-10-27"
       }
     ],
     "details": {
@@ -6328,6 +6336,11 @@
           "url": "https://www.cnverify.com/company/Haibian-Power-Equipment-Co-Ltd",
           "checked_at": "2026-10-24",
           "source_type": "public_company_record"
+        },
+        "alibaba_address": {
+          "url": "https://chhp.en.alibaba.com/",
+          "checked_at": "2026-10-27",
+          "source_type": "alibaba_company_profile"
         }
       },
       "main_products": "气体绝缘环网柜、开关设备、储能系统、光伏并网变电站、变压器及高低压成套设备",
@@ -6347,11 +6360,20 @@
         {
           "label": "企业公开资料",
           "url": "https://www.maituobao.com/company/523e1df1ba997466"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://chhp.en.alibaba.com/"
+        },
+        {
+          "label": "Alibaba 已核实供应商页面",
+          "url": "https://suppliers.alibaba.com/haibian-power-equipment-co-ltd_2201470835028"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "legal_name": "海变电力设备有限公司",
-      "registered_capital": "6000万元人民币"
+      "registered_capital": "6000万元人民币",
+      "alibaba_address": "No. 222, Punan Sixth Road, Economic Development Zone, Wenzhou, Zhejiang, China"
     }
   },
   "YQ000119": {
@@ -7234,15 +7256,23 @@
         "url": "https://mingch.cn/",
         "domain": "mingch.cn",
         "added_at": "2026-10-24"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站",
+        "url": "https://mingch.en.alibaba.com/",
+        "domain": "mingch.en.alibaba.com",
+        "source": "alibaba_exact_company",
+        "added_at": "2026-10-27"
       }
     ],
     "details": {
-      "contact_address": "浙江省温州市乐清市柳市镇腾飞路（招聘页另列东风工业区腾飞路36号）",
+      "contact_address": "浙江省乐清市柳市镇腾飞路",
       "field_sources": {
         "contact_address": {
-          "url": "https://mingch.cn/",
-          "checked_at": "2026-10-24",
-          "source_type": "public_company_record"
+          "url": "https://mingch.cn/contact.html",
+          "checked_at": "2026-10-27",
+          "source_type": "company_website"
         },
         "main_products": {
           "url": "https://mingch.cn/",
@@ -7253,6 +7283,11 @@
           "url": "https://mingch.cn/",
           "checked_at": "2026-10-24",
           "source_type": "public_company_record"
+        },
+        "alibaba_address": {
+          "url": "https://mingch.en.alibaba.com/",
+          "checked_at": "2026-10-27",
+          "source_type": "alibaba_company_profile"
         }
       },
       "main_products": "交流稳压器、变频器、逆变器、配电变压器、不间断电源、软启动器、接触式调压器、开关电源",
@@ -7268,11 +7303,20 @@
         {
           "label": "企业公开资料",
           "url": "https://www.tendata.com/en/buyer/zhejiang-mingch-electrical-co-ltd-CHN1fbe6f347f53107be72d0a95e6d91de1.html"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://mingch.en.alibaba.com/"
+        },
+        {
+          "label": "企业联系地址",
+          "url": "https://mingch.cn/contact.html"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "legal_name": "浙江鸣川电气有限公司",
-      "registered_capital": "1000万元人民币"
+      "registered_capital": "1000万元人民币",
+      "alibaba_address": "No. 36, Tengfei Road, Wenzhou, Zhejiang, China"
     }
   },
   "YQ000139": {
@@ -7651,6 +7695,14 @@
         "url": "https://www.pomanique.com/cn/",
         "domain": "pomanique.com",
         "added_at": "2026-10-24"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站",
+        "url": "https://pomanique.en.alibaba.com/",
+        "domain": "pomanique.en.alibaba.com",
+        "source": "alibaba_exact_company",
+        "added_at": "2026-10-27"
       }
     ],
     "details": {
@@ -7670,6 +7722,11 @@
           "url": "https://www.pomanique.com/cn/",
           "checked_at": "2026-10-24",
           "source_type": "public_company_record"
+        },
+        "alibaba_address": {
+          "url": "https://pomanique.en.alibaba.com/",
+          "checked_at": "2026-10-27",
+          "source_type": "alibaba_company_profile"
         }
       },
       "main_products": "重合器、避雷器、熔断器、高压开关、中压断路器、绝缘子、智能控制器、互感器及配电网附件",
@@ -7689,11 +7746,16 @@
         {
           "label": "企业公开资料",
           "url": "https://www.tendata.com/en/buyer/yueqing-pomanique-electric-co-ltd-CHNIb5d49a15df203c582559123e260b837a.html"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://pomanique.en.alibaba.com/"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "legal_name": "乐清柏安科电气有限公司",
-      "registered_capital": "30万元人民币"
+      "registered_capital": "30万元人民币",
+      "alibaba_address": "Headquarter Economic Park, No. 6688, Xuyang Road, Wenzhou, Zhejiang, China"
     }
   },
   "YQ000149": {
@@ -7791,7 +7853,7 @@
           "url": "https://www.shuididp.cn/yp-0747c01992aefd8a85c4d2670cb42cda.html"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "legal_name": "浙江力达电器股份有限公司"
     }
   },
@@ -8206,7 +8268,7 @@
           "url": "https://www.chsmico.com/"
         }
       ],
-      "checked_at": "2026-10-25",
+      "checked_at": "2026-10-27",
       "legal_name": "乐清思美克进出口有限公司"
     },
     "links": [
@@ -8254,11 +8316,25 @@
         {
           "label": "企业公开资料",
           "url": "https://tm.aliyun.com/detail/daa4_92855814_7"
+        },
+        {
+          "label": "企业官网",
+          "url": "http://yqhjd.com/"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "legal_name": "乐清市宏嘉达工贸有限公司"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "http://yqhjd.com/",
+        "domain": "yqhjd.com",
+        "source": "company_identity_verified",
+        "added_at": "2026-10-27"
+      }
+    ]
   },
   "YQ000161": {
     "links": [
@@ -8272,19 +8348,19 @@
       {
         "type": "alibaba_store",
         "label": "Alibaba 国际站",
-        "url": "https://www.lhe.en.alibaba.com/",
+        "url": "https://lhe.en.alibaba.com/",
         "domain": "lhe.en.alibaba.com",
-        "source": "alibaba_company_profile_verified",
-        "added_at": "2026-10-24"
+        "source": "alibaba_exact_company",
+        "added_at": "2026-10-27"
       }
     ],
     "details": {
-      "contact_address": "浙江省温州市乐清市乐清湾港区创新路（部分资料列石帆街道后屿村）",
+      "contact_address": "No 8 Hongqi Road Yueqing Bay Port area Yueqing City Zhejiang China 325600",
       "field_sources": {
         "contact_address": {
-          "url": "https://www.lhecn.com/wp-content/uploads/2020/07/A2508XHQ.pdf",
-          "checked_at": "2026-10-24",
-          "source_type": "public_company_record"
+          "url": "https://www.lhecn.com/contact-us/",
+          "checked_at": "2026-10-27",
+          "source_type": "company_website"
         },
         "registered_capital": {
           "url": "https://www.lhecn.com/wp-content/uploads/2020/07/A2508XHQ.pdf",
@@ -8297,8 +8373,8 @@
           "source_type": "company_website_or_directory"
         },
         "alibaba_address": {
-          "url": "https://www.lhe.en.alibaba.com/",
-          "checked_at": "2026-10-24",
+          "url": "https://lhe.en.alibaba.com/",
+          "checked_at": "2026-10-27",
           "source_type": "alibaba_company_profile"
         }
       },
@@ -8320,11 +8396,19 @@
         {
           "label": "企业公开资料",
           "url": "https://case.eastdigi.com/lhecn/"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://lhe.en.alibaba.com/"
+        },
+        {
+          "label": "企业联系地址",
+          "url": "https://www.lhecn.com/contact-us/"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "legal_name": "浙江联和电子有限公司",
-      "alibaba_address": "浙江省乐清市乐清湾港区创新路"
+      "alibaba_address": "Yueshang Entrepreneurship Park, Yueqing Bay Port Area, Wenzhou, Zhejiang, China"
     }
   },
   "YQ000162": {
@@ -8486,11 +8570,29 @@
         {
           "label": "企业公开资料",
           "url": "https://en.cegaomeng.com/NewsDetail.aspx?id=257"
+        },
+        {
+          "label": "企业官网",
+          "url": "http://www.jng-china.com/"
+        },
+        {
+          "label": "企业 LinkedIn 页面",
+          "url": "https://www.linkedin.com/company/zhejiang-jinchang-electric-co.-ltd"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "legal_name": "浙江锦昌电器有限公司"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "http://www.jng-china.com/",
+        "domain": "jng-china.com",
+        "source": "user_confirmed",
+        "added_at": "2026-10-27"
+      }
+    ]
   },
   "YQ000167": {
     "details": {
@@ -8603,15 +8705,7 @@
     }
   },
   "YQ000169": {
-    "links": [
-      {
-        "type": "official_website",
-        "label": "官方网站",
-        "url": "https://www.hossonilighting.com/",
-        "domain": "hossonilighting.com",
-        "added_at": "2026-10-24"
-      }
-    ],
+    "links": [],
     "details": {
       "main_products": "LED照明灯具、吸顶灯、灯具生产设备及配电开关控制设备",
       "field_sources": {
@@ -8633,10 +8727,6 @@
       },
       "sources": [
         {
-          "label": "企业公开资料",
-          "url": "https://www.hossonilighting.com/h-col-106.html"
-        },
-        {
           "label": "监管或企业公告",
           "url": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web1828/site/attach/0/c0a6ed4cff4a4e9fb66f0be12d2d2e51.pdf"
         },
@@ -8645,7 +8735,7 @@
           "url": "https://www.gongkong.com/news/202607/451250.html"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "legal_name": "浙江鸿宝照明有限公司",
       "contact_address": "浙江省温州市乐清市柳市镇象阳工业区（乐清世纪光电照明有限公司内）",
       "registered_capital": "588万元人民币"
@@ -8809,6 +8899,11 @@
           "url": "https://www.cnverify.com/company/Zhejiang-Sunj-Electric-Co-Ltd",
           "checked_at": "2026-10-24",
           "source_type": "company_website_or_directory"
+        },
+        "alibaba_address": {
+          "url": "https://sunj.en.alibaba.com/",
+          "checked_at": "2026-10-27",
+          "source_type": "alibaba_company_profile"
         }
       },
       "registered_capital": "1000万元人民币",
@@ -8829,10 +8924,15 @@
         {
           "label": "Alibaba 国际站企业资料",
           "url": "https://suppliers.alibaba.com/zhejiang-sunj-electric-co-ltd_2214602317003"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://sunj.en.alibaba.com/"
         }
       ],
       "checked_at": "2026-10-27",
-      "legal_name": "浙江双久电气有限公司"
+      "legal_name": "浙江双久电气有限公司",
+      "alibaba_address": "Dianhou Village, Liushi Town (delixi Industrial Park), Wenzhou, Zhejiang, China"
     },
     "links": [
       {
@@ -8846,8 +8946,8 @@
       {
         "type": "alibaba_store",
         "label": "Alibaba 国际站",
-        "url": "https://suppliers.alibaba.com/zhejiang-sunj-electric-co-ltd_2214602317003",
-        "domain": "suppliers.alibaba.com",
+        "url": "https://sunj.en.alibaba.com/",
+        "domain": "sunj.en.alibaba.com",
         "source": "alibaba_exact_company",
         "added_at": "2026-10-27"
       }
@@ -9013,7 +9113,7 @@
         },
         "alibaba_address": {
           "url": "https://yoyatech.en.alibaba.com/",
-          "checked_at": "2026-10-24",
+          "checked_at": "2026-10-27",
           "source_type": "alibaba_company_profile"
         }
       },
@@ -9030,11 +9130,15 @@
         {
           "label": "企业公开资料",
           "url": "https://www.zifisense.com/news/270.html"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://yoyatech.en.alibaba.com/"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "legal_name": "浙江永阳科技有限公司",
-      "alibaba_address": "浙江省乐清经济开发区纬六路190号"
+      "alibaba_address": "No. 190, Weiliu Road, Economic Development Zone, Yueqing, Zhejiang, China"
     }
   },
   "YQ000178": {
@@ -9048,12 +9152,12 @@
       }
     ],
     "details": {
-      "contact_address": "浙江省温州市乐清市芙蓉镇工业区",
+      "contact_address": "中国 · 浙江 乐清市芙蓉镇工业区104号",
       "field_sources": {
         "contact_address": {
-          "url": "https://m.chinapp.com/company/6557",
-          "checked_at": "2026-10-24",
-          "source_type": "public_company_record"
+          "url": "http://www.chysgj.com/",
+          "checked_at": "2026-10-27",
+          "source_type": "company_website"
         },
         "main_products": {
           "url": "https://m.chinapp.com/company/6557",
@@ -9074,9 +9178,13 @@
         {
           "label": "企业公开资料",
           "url": "https://ycd.boyuan.com/com/wzyongsheng/"
+        },
+        {
+          "label": "企业联系地址",
+          "url": "http://www.chysgj.com/"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "legal_name": "浙江永盛工具有限公司"
     }
   },
@@ -9088,20 +9196,33 @@
         "url": "https://www.chinakebo.com/",
         "domain": "chinakebo.com",
         "added_at": "2026-10-24"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站",
+        "url": "https://cnkb.en.alibaba.com/",
+        "domain": "cnkb.en.alibaba.com",
+        "source": "alibaba_exact_company",
+        "added_at": "2026-10-27"
       }
     ],
     "details": {
-      "contact_address": "浙江省温州市乐清市虹桥镇幸福东路2216-2218号（东电子信息产业园）",
+      "contact_address": "浙江省温州市乐清市虹桥镇幸福东路2216-2218号（虹桥镇东电子信息产业园）",
       "field_sources": {
         "contact_address": {
-          "url": "https://www.chinakebo.com/",
-          "checked_at": "2026-10-24",
-          "source_type": "public_company_record"
+          "url": "https://www.chinakebo.com/contact.html",
+          "checked_at": "2026-10-27",
+          "source_type": "company_website"
         },
         "main_products": {
           "url": "https://www.chinakebo.com/",
           "checked_at": "2026-10-24",
           "source_type": "company_website_or_directory"
+        },
+        "alibaba_address": {
+          "url": "https://cnkb.en.alibaba.com/",
+          "checked_at": "2026-10-27",
+          "source_type": "alibaba_company_profile"
         }
       },
       "main_products": "智能家电进水电磁阀、精密微型泵及相关家电流体控制部件",
@@ -9133,10 +9254,19 @@
         {
           "label": "企业公开资料",
           "url": "https://top.qcc.com/tc/522a33b7675b.html"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://cnkb.en.alibaba.com/"
+        },
+        {
+          "label": "企业联系地址",
+          "url": "https://www.chinakebo.com/contact.html"
         }
       ],
-      "checked_at": "2026-10-24",
-      "legal_name": "浙江科博电器有限公司"
+      "checked_at": "2026-10-27",
+      "legal_name": "浙江科博电器有限公司",
+      "alibaba_address": "2216, 2218, Xingfu East Road, Hongqiao Town, Wenzhou, Zhejiang, China"
     }
   },
   "YQ000181": {
@@ -9245,6 +9375,14 @@
         "url": "http://www.reletek.cn/",
         "domain": "reletek.cn",
         "added_at": "2026-10-24"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站",
+        "url": "https://reletek.en.alibaba.com/",
+        "domain": "reletek.en.alibaba.com",
+        "source": "alibaba_exact_company",
+        "added_at": "2026-10-27"
       }
     ],
     "details": {
@@ -9264,6 +9402,11 @@
           "url": "https://www.cnverify.com/company/Yueqing-Reletek-Electric-Co-Ltd",
           "checked_at": "2026-10-24",
           "source_type": "company_website_or_directory"
+        },
+        "alibaba_address": {
+          "url": "https://reletek.en.alibaba.com/",
+          "checked_at": "2026-10-27",
+          "source_type": "alibaba_company_profile"
         }
       },
       "registered_capital": "100万元人民币",
@@ -9276,10 +9419,15 @@
         {
           "label": "企业公开资料",
           "url": "https://play.google.com/store/apps/details?id=com.st.reletek"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://reletek.en.alibaba.com/"
         }
       ],
-      "checked_at": "2026-10-24",
-      "legal_name": "乐清科盾电气有限公司"
+      "checked_at": "2026-10-27",
+      "legal_name": "乐清科盾电气有限公司",
+      "alibaba_address": "Building 5, No. 187 Jingwu Road, Yueqing Economic Development Zone, Wenzhou, Zhejiang, China"
     }
   },
   "YQ000186": {
@@ -9500,6 +9648,11 @@
           "url": "https://www.tendata.com/en/supplier/b%D0%BEerstn-electric-c%D0%BE-ltd-CHNI8ffc22130277e14413f50123a9c16746.html",
           "checked_at": "2026-10-24",
           "source_type": "company_website_or_directory"
+        },
+        "alibaba_address": {
+          "url": "https://boerstn.en.alibaba.com/",
+          "checked_at": "2026-10-27",
+          "source_type": "alibaba_company_profile"
         }
       },
       "main_products": "高低压成套配电设备、箱式变电站、中高压户内外真空断路器、液体介质电力变压器、气体开关",
@@ -9511,10 +9664,15 @@
         {
           "label": "企业公开资料",
           "url": "https://mapmebusiness.com/cn/boerstn-electric-co-ltd-CN91330382350079994Q"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://boerstn.en.alibaba.com/"
         }
       ],
-      "checked_at": "2026-10-24",
-      "legal_name": "博尔斯顿电气有限公司"
+      "checked_at": "2026-10-27",
+      "legal_name": "博尔斯顿电气有限公司",
+      "alibaba_address": "No. 218, Weishiqi Road, Economic Development Zone, Wenzhou, Zhejiang, China"
     },
     "links": [
       {
@@ -9524,6 +9682,14 @@
         "domain": "boerstn.com",
         "source": "official_page_identity_verified",
         "added_at": "2026-10-24"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站",
+        "url": "https://boerstn.en.alibaba.com/",
+        "domain": "boerstn.en.alibaba.com",
+        "source": "alibaba_exact_company",
+        "added_at": "2026-10-27"
       }
     ]
   },
@@ -10005,9 +10171,13 @@
         {
           "label": "企业公开资料",
           "url": "https://www.enf.com.cn/featured-deals/component"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://singi.en.alibaba.com/"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "contact_address": "浙江省乐清经济开发区纬十二路148号东首",
       "field_sources": {
         "contact_address": {
@@ -10024,11 +10194,17 @@
           "url": "https://www.singi.com/",
           "checked_at": "2026-10-24",
           "source_type": "company_website_or_public_document"
+        },
+        "alibaba_address": {
+          "url": "https://singi.en.alibaba.com/",
+          "checked_at": "2026-10-27",
+          "source_type": "alibaba_company_profile"
         }
       },
       "main_products": "低压电器、智能转换开关、双电源自动转换开关、控制与保护开关电器及电气配件",
       "legal_name": "浙江信基电气股份有限公司",
-      "registered_capital": "2288万元人民币"
+      "registered_capital": "2288万元人民币",
+      "alibaba_address": "No.148, Wei 12 Road, Wenzhou, Zhejiang, China"
     },
     "links": [
       {
@@ -10038,6 +10214,14 @@
         "domain": "singi.com",
         "source": "user_provided",
         "added_at": "2026-10-24"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站",
+        "url": "https://singi.en.alibaba.com/",
+        "domain": "singi.en.alibaba.com",
+        "source": "alibaba_exact_company",
+        "added_at": "2026-10-27"
       }
     ]
   },
@@ -81713,6 +81897,83 @@
           "source_type": "company_website"
         }
       }
+    }
+  },
+  "YQ000143": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "http://www.fdtrade.com/",
+        "domain": "fdtrade.com",
+        "source": "user_confirmed",
+        "added_at": "2026-10-27"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站",
+        "url": "https://fdtrade.en.alibaba.com/",
+        "domain": "fdtrade.en.alibaba.com",
+        "source": "user_confirmed",
+        "added_at": "2026-10-27"
+      }
+    ],
+    "details": {
+      "legal_name": "乐清市枫达贸易有限公司",
+      "checked_at": "2026-10-27",
+      "sources": [
+        {
+          "label": "企业官网",
+          "url": "http://www.fdtrade.com/"
+        },
+        {
+          "label": "企业介绍",
+          "url": "http://www.fdtrade.com/about.asp"
+        },
+        {
+          "label": "企业联系地址",
+          "url": "http://www.fdtrade.com/contact.asp"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://fdtrade.en.alibaba.com/"
+        }
+      ],
+      "contact_address": "No.238, Lateral Road 16, Yueqing Economic Development Zone, Zhejiang, China 325600",
+      "field_sources": {
+        "contact_address": {
+          "url": "http://www.fdtrade.com/contact.asp",
+          "checked_at": "2026-10-27",
+          "source_type": "company_website"
+        },
+        "alibaba_address": {
+          "url": "https://fdtrade.en.alibaba.com/",
+          "checked_at": "2026-10-27",
+          "source_type": "alibaba_company_profile"
+        }
+      },
+      "alibaba_address": "270 Wei 20th Road, Economic development Zone, Wenzhou, Zhejiang, China"
+    }
+  },
+  "YQ000166": {
+    "links": [],
+    "details": {
+      "legal_name": "乐清锦昌进出口有限公司",
+      "checked_at": "2026-10-27"
+    }
+  },
+  "YQ000197": {
+    "links": [],
+    "details": {
+      "legal_name": "温州善格电气有限公司",
+      "checked_at": "2026-10-27"
+    }
+  },
+  "YQ000137": {
+    "links": [],
+    "details": {
+      "legal_name": "乐清禾励进出口贸易有限公司",
+      "checked_at": "2026-10-27"
     }
   }
 }

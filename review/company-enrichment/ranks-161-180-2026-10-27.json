@@ -1,0 +1,892 @@
+{
+  "checked_at": "2026-10-27",
+  "period": "2026-ytd-08",
+  "summary": {
+    "reviewed": 20,
+    "new_company_websites": 3,
+    "removed_unconfirmed_websites": 1,
+    "new_company_icons": 8,
+    "new_alibaba_stores": 8,
+    "updated_alibaba_links": 2,
+    "new_alibaba_addresses": 9,
+    "updated_contact_addresses": 5
+  },
+  "companies": [
+    {
+      "rank": 161,
+      "id": "YQ000143",
+      "name": "乐清市枫达贸易有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "企业官网",
+          "url": "http://www.fdtrade.com/",
+          "domain": "fdtrade.com",
+          "source": "user_confirmed",
+          "added_at": "2026-10-27"
+        },
+        {
+          "type": "alibaba_store",
+          "label": "Alibaba 国际站",
+          "url": "https://fdtrade.en.alibaba.com/",
+          "domain": "fdtrade.en.alibaba.com",
+          "source": "user_confirmed",
+          "added_at": "2026-10-27"
+        }
+      ],
+      "icon": "/company-icons/verified/ranks161-180-20261027/YQ000143.png",
+      "note": "用户确认 fdtrade.com 及 fdtrade Alibaba 对应枫达。官网链接该店铺，店铺主体为 Yueqing Fengda Trade Co., Ltd.；补官网 FND Logo，官网与 Alibaba 联系地址分别记录。",
+      "sources": [
+        {
+          "label": "企业官网",
+          "url": "http://www.fdtrade.com/"
+        },
+        {
+          "label": "企业介绍",
+          "url": "http://www.fdtrade.com/about.asp"
+        },
+        {
+          "label": "企业联系地址",
+          "url": "http://www.fdtrade.com/contact.asp"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://fdtrade.en.alibaba.com/"
+        }
+      ],
+      "website_decisions": [
+        {
+          "url": "http://www.fdtrade.com/",
+          "decision": "user_confirmed"
+        },
+        {
+          "url": "https://fdtrade.en.alibaba.com/",
+          "decision": "user_confirmed"
+        }
+      ],
+      "logo": {
+        "path": "/company-icons/verified/ranks161-180-20261027/YQ000143.png",
+        "source_url": "http://www.fdtrade.com/index/logo.jpg",
+        "page_url": "http://www.fdtrade.com/",
+        "checked_at": "2026-10-27",
+        "dark_background": false
+      },
+      "logo_sha256": "7c45cac8e679e069cc98e3f393f8ebc7a0e76004211cc830c30c904a8e0678d4"
+    },
+    {
+      "rank": 162,
+      "id": "YQ000161",
+      "name": "浙江联和电子有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "https://www.lhecn.com/",
+          "domain": "lhecn.com",
+          "added_at": "2026-10-24"
+        },
+        {
+          "type": "alibaba_store",
+          "label": "Alibaba 国际站",
+          "url": "https://lhe.en.alibaba.com/",
+          "domain": "lhe.en.alibaba.com",
+          "source": "alibaba_exact_company",
+          "added_at": "2026-10-27"
+        }
+      ],
+      "icon": "/company-icons/verified/YQ000161.png",
+      "note": "官网明确 Zhejiang Lianhe Electronics 及乐清港区红旗路8号；修正原 Alibaba 域名 www.lhe.en.alibaba.com 为 lhe.en.alibaba.com，补店铺公开地址，保留原 LHE Logo。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://www.lhecn.com/wp-content/uploads/2020/07/A2508XHQ.pdf"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.aichangjia.com/factory/91629.html"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.unikeyic.com/media/datasheet/d1/62/a9b0/d162a9b082f676c9bd592a176ea71a59.pdf"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://case.eastdigi.com/lhecn/"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://lhe.en.alibaba.com/"
+        },
+        {
+          "label": "企业联系地址",
+          "url": "https://www.lhecn.com/contact-us/"
+        }
+      ],
+      "logo": {
+        "path": "/company-icons/verified/YQ000161.png",
+        "source_url": "https://www.lhecn.com/wp-content/uploads/2024/05/logo.png",
+        "page_url": "https://www.lhecn.com/",
+        "checked_at": "2026-10-24",
+        "dark_background": false
+      },
+      "logo_sha256": "ff5260a7290b60f30b7d613fdffec4724b3b3e77cb6ad627ee4f1c2500cedf4e"
+    },
+    {
+      "rank": 163,
+      "id": "YQ000136",
+      "name": "浙江鸣川电气有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "https://mingch.cn/",
+          "domain": "mingch.cn",
+          "added_at": "2026-10-24"
+        },
+        {
+          "type": "alibaba_store",
+          "label": "Alibaba 国际站",
+          "url": "https://mingch.en.alibaba.com/",
+          "domain": "mingch.en.alibaba.com",
+          "source": "alibaba_exact_company",
+          "added_at": "2026-10-27"
+        }
+      ],
+      "icon": "/company-icons/verified/ranks161-180-20261027/YQ000136.png",
+      "note": "官网明确浙江鸣川电气及柳市腾飞路，补 MINGCH Logo、主体一致的 Alibaba 店铺和其腾飞路36号地址。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://mingch.cn/"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.liushirc.com/recruit/972696.html"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.tendata.com/en/buyer/zhejiang-mingch-electrical-co-ltd-CHN1fbe6f347f53107be72d0a95e6d91de1.html"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://mingch.en.alibaba.com/"
+        },
+        {
+          "label": "企业联系地址",
+          "url": "https://mingch.cn/contact.html"
+        }
+      ],
+      "logo": {
+        "path": "/company-icons/verified/ranks161-180-20261027/YQ000136.png",
+        "source_url": "https://oss.aiwebagent.cn/1001/uploads/134918/20260929/4467ef1c7ad7d2476468c0109418bc3b.png",
+        "page_url": "https://mingch.cn/",
+        "checked_at": "2026-10-27",
+        "dark_background": false
+      },
+      "logo_sha256": "ac74add044740ca763aa9c0a2cf01b827a192ab8044100ffd9553c6871a79501"
+    },
+    {
+      "rank": 164,
+      "id": "YQ000118",
+      "name": "海变电力设备有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "https://chhpgroup.com/zh/",
+          "domain": "chhpgroup.com",
+          "added_at": "2026-10-24"
+        },
+        {
+          "type": "alibaba_store",
+          "label": "Alibaba 国际站",
+          "url": "https://chhp.en.alibaba.com/",
+          "domain": "chhp.en.alibaba.com",
+          "source": "alibaba_exact_company",
+          "added_at": "2026-10-27"
+        }
+      ],
+      "icon": "/company-icons/verified/YQ000118.png",
+      "note": "保留官网和 CHP Logo。Alibaba 已核实供应商页面直接链接 chhp.en.alibaba.com，店铺主体及浦南六路222号地址与企业一致，补店铺及地址。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://chhpgroup.com/zh/"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.cnverify.com/company/Haibian-Power-Equipment-Co-Ltd"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://chhpgroup.com/zh/about"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.maituobao.com/company/523e1df1ba997466"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://chhp.en.alibaba.com/"
+        },
+        {
+          "label": "Alibaba 已核实供应商页面",
+          "url": "https://suppliers.alibaba.com/haibian-power-equipment-co-ltd_2201470835028"
+        }
+      ],
+      "logo": {
+        "path": "/company-icons/verified/YQ000118.png",
+        "source_url": "https://chhpgroup.com/uploads/login/logo.png",
+        "page_url": "https://chhpgroup.com/zh/",
+        "checked_at": "2026-10-24",
+        "dark_background": false
+      },
+      "logo_sha256": "5a142ab4a5599594a285338ac1287f75057ee6b46063926e08f159c27913e782"
+    },
+    {
+      "rank": 165,
+      "id": "YQ000184",
+      "name": "乐清科盾电气有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "http://www.reletek.cn/",
+          "domain": "reletek.cn",
+          "added_at": "2026-10-24"
+        },
+        {
+          "type": "alibaba_store",
+          "label": "Alibaba 国际站",
+          "url": "https://reletek.en.alibaba.com/",
+          "domain": "reletek.en.alibaba.com",
+          "source": "alibaba_exact_company",
+          "added_at": "2026-10-27"
+        }
+      ],
+      "icon": "/company-icons/verified/YQ000184.png",
+      "note": "官网和 Alibaba 主体为 Yueqing Reletek Electric，乐清经五路187号5栋一致；保留 RELETEK Logo，补店铺和店铺地址。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://www.cnverify.com/company/Yueqing-Reletek-Electric-Co-Ltd"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://play.google.com/store/apps/details?id=com.st.reletek"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://reletek.en.alibaba.com/"
+        }
+      ],
+      "logo": {
+        "path": "/company-icons/verified/YQ000184.png",
+        "source_url": "http://www.reletek.cn/img/logo.png",
+        "page_url": "http://www.reletek.cn",
+        "checked_at": "2026-10-24",
+        "dark_background": false
+      },
+      "logo_sha256": "1cfec75264b10d9ddd2f16042fa06da884c0579b1213f155b676704cf815a439"
+    },
+    {
+      "rank": 166,
+      "id": "YQ000205",
+      "name": "浙江信基电气股份有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "企业官网",
+          "url": "https://www.singi.com/",
+          "domain": "singi.com",
+          "source": "user_provided",
+          "added_at": "2026-10-24"
+        },
+        {
+          "type": "alibaba_store",
+          "label": "Alibaba 国际站",
+          "url": "https://singi.en.alibaba.com/",
+          "domain": "singi.en.alibaba.com",
+          "source": "alibaba_exact_company",
+          "added_at": "2026-10-27"
+        }
+      ],
+      "icon": "/company-icons/verified/ranks161-180-20261027/YQ000205.png",
+      "note": "保留用户指定的 singi.com 和企业中文名称；补官网 SINGI Logo、主体为 ZHEJIANG SINGI ELECTRICAL LLC 的店铺，纬十二路148号地址与官网一致。",
+      "sources": [
+        {
+          "label": "Singi 企业官网",
+          "url": "https://www.singi.com/"
+        },
+        {
+          "label": "Singi 联系方式",
+          "url": "https://www.singi.com/contactus/"
+        },
+        {
+          "label": "Singi 产品资料",
+          "url": "https://www.singi.com/277.html"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://tm.aliyun.com/detail/2a3b_11451344_36"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.enf.com.cn/featured-deals/component"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://singi.en.alibaba.com/"
+        }
+      ],
+      "logo": {
+        "path": "/company-icons/verified/ranks161-180-20261027/YQ000205.png",
+        "source_url": "https://www.singi.com/static/picture/xinjiweiyelogo.webp",
+        "page_url": "https://www.singi.com/",
+        "checked_at": "2026-10-27",
+        "dark_background": false
+      },
+      "logo_sha256": "a64e8aafef31acab078c9e58996b29c7bd92165d894f6bbc0338c26d0af4927c"
+    },
+    {
+      "rank": 167,
+      "id": "YQ000160",
+      "name": "乐清市宏嘉达工贸有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "企业官网",
+          "url": "http://yqhjd.com/",
+          "domain": "yqhjd.com",
+          "source": "company_identity_verified",
+          "added_at": "2026-10-27"
+        }
+      ],
+      "icon": null,
+      "note": "官网全称 Yueqing Hongjiada Trading Co., Ltd.，0577-62290689 电话及芙蓉前垟溪滨路29号与企业公开资料对应，补官网。网站头部使用文字公司名，下载到的装饰蓝线不作 Logo；未找到可确认 Alibaba。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://www.cnverify.com/company/Yueqing-Hongjiada-Trading-Co-Ltd"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://cospub.cantonfair.org.cn/461100754573217792/1726135959545-7cf6b919-5442-4d51-b33e-42cb209c7bd8.pdf"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://tm.aliyun.com/detail/daa4_92855814_7"
+        },
+        {
+          "label": "企业官网",
+          "url": "http://yqhjd.com/"
+        }
+      ]
+    },
+    {
+      "rank": 168,
+      "id": "YQ000166",
+      "name": "乐清锦昌进出口有限公司",
+      "links": [],
+      "icon": null,
+      "note": "检索企业全称及英文名，未找到可确认官网或 Alibaba。未将共同股东相关的锦昌电器网站直接用于锦昌进出口。",
+      "sources": []
+    },
+    {
+      "rank": 169,
+      "id": "YQ000190",
+      "name": "博尔斯顿电气有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "企业官网",
+          "url": "https://boerstn.com/",
+          "domain": "boerstn.com",
+          "source": "official_page_identity_verified",
+          "added_at": "2026-10-24"
+        },
+        {
+          "type": "alibaba_store",
+          "label": "Alibaba 国际站",
+          "url": "https://boerstn.en.alibaba.com/",
+          "domain": "boerstn.en.alibaba.com",
+          "source": "alibaba_exact_company",
+          "added_at": "2026-10-27"
+        }
+      ],
+      "icon": "/company-icons/verified/ranks161-180-20261027/YQ000190.png",
+      "note": "保留原官网，官网当前访问异常；主体一致的 Alibaba 店铺展示 BOERSTN Logo，地址纬十七路218号一致，补 Logo、店铺及地址。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://www.tendata.com/en/supplier/b%D0%BEerstn-electric-c%D0%BE-ltd-CHNI8ffc22130277e14413f50123a9c16746.html"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://mapmebusiness.com/cn/boerstn-electric-co-ltd-CN91330382350079994Q"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://boerstn.en.alibaba.com/"
+        }
+      ],
+      "logo": {
+        "path": "/company-icons/verified/ranks161-180-20261027/YQ000190.png",
+        "source_url": "https://sc02.alicdn.com/kf/H4ab2b9681ce74eea98a789d55fbedab9q.jpg",
+        "page_url": "https://boerstn.com/",
+        "checked_at": "2026-10-27",
+        "dark_background": false,
+        "source_page_url": "https://boerstn.en.alibaba.com/"
+      },
+      "logo_sha256": "c118beb89bf6bb26604ea721e19a8b634fba2d139acfa850ea06d2d2c509035d"
+    },
+    {
+      "rank": 170,
+      "id": "YQ000150",
+      "name": "浙江力达电器股份有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "http://www.lidastock.com/",
+          "domain": "lidastock.com",
+          "added_at": "2026-10-24"
+        }
+      ],
+      "icon": "/company-icons/verified/ranks161-180-20261027/YQ000150.png",
+      "note": "浏览器可读官网内容，页头 CNLID 力达电器 Logo 与企业中文全称一致，补 Logo。未找到可确认的实际 Alibaba 店铺。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://www.boyuan.com/com/lida/contact/"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://qccdata.qichacha.com/ReportData/PDF/2ef06a6ff7be00d9fb3a0b5e764898d8.pdf"
+        },
+        {
+          "label": "监管或企业公告",
+          "url": "https://wzszsh.wenzhou.gov.cn/art/2023/5/10/art_1229457169_26234.html"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.shuididp.cn/yp-0747c01992aefd8a85c4d2670cb42cda.html"
+        }
+      ],
+      "logo": {
+        "path": "/company-icons/verified/ranks161-180-20261027/YQ000150.png",
+        "source_url": "http://www.lidastock.com/img/logo.png",
+        "page_url": "http://www.lidastock.com/",
+        "checked_at": "2026-10-27",
+        "dark_background": false
+      },
+      "logo_sha256": "cc89f81302a37f4ce9f4699b99baeb32d2437a32868efe92dc79502e56838330"
+    },
+    {
+      "rank": 171,
+      "id": "YQ000165",
+      "name": "浙江锦昌电器有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "企业官网",
+          "url": "http://www.jng-china.com/",
+          "domain": "jng-china.com",
+          "source": "user_confirmed",
+          "added_at": "2026-10-27"
+        }
+      ],
+      "icon": null,
+      "note": "企业自述 LinkedIn 明确列出 jng-china.com，低压电器产品和乐清地址匹配；用户确认即使当前无法访问仍登记官网。本次未找到可核实 Logo 或 Alibaba 店铺。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://www.cnverify.com/company/Zhejiang-Jinchang-Electric-Co-Ltd"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.instrument.com.cn/company/494878.html"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://en.cegaomeng.com/NewsDetail.aspx?id=257"
+        },
+        {
+          "label": "企业官网",
+          "url": "http://www.jng-china.com/"
+        },
+        {
+          "label": "企业 LinkedIn 页面",
+          "url": "https://www.linkedin.com/company/zhejiang-jinchang-electric-co.-ltd"
+        }
+      ],
+      "website_decisions": [
+        {
+          "url": "http://www.jng-china.com/",
+          "decision": "user_confirmed_website_currently_unreachable"
+        }
+      ]
+    },
+    {
+      "rank": 172,
+      "id": "YQ000169",
+      "name": "浙江鸿宝照明有限公司",
+      "links": [],
+      "icon": null,
+      "note": "用户要求暂不采用 hossonilighting.com 及其 Logo，移除旧官网链接，不补该品牌 Logo 或相关 Alibaba。原有其他来源支持的产品、地址与注册资金保留。",
+      "sources": [
+        {
+          "label": "监管或企业公告",
+          "url": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web1828/site/attach/0/c0a6ed4cff4a4e9fb66f0be12d2d2e51.pdf"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.gongkong.com/news/202607/451250.html"
+        }
+      ],
+      "website_decisions": [
+        {
+          "url": "https://www.hossonilighting.com/",
+          "decision": "user_deferred_website_and_logo"
+        }
+      ]
+    },
+    {
+      "rank": 173,
+      "id": "YQ000177",
+      "name": "浙江永阳科技有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "http://www.yoyatech.com/",
+          "domain": "yoyatech.com",
+          "added_at": "2026-10-24"
+        },
+        {
+          "type": "alibaba_store",
+          "label": "Alibaba 国际站",
+          "url": "https://yoyatech.en.alibaba.com/",
+          "domain": "yoyatech.en.alibaba.com",
+          "source": "alibaba_company_profile_verified",
+          "added_at": "2026-10-24"
+        }
+      ],
+      "icon": "/company-icons/verified/ranks161-180-20261027/YQ000177.png",
+      "note": "原 yoyatech Alibaba 主体为 Zhejiang Yongyang Technology Co., Ltd.，纬六路190号地址一致；补店铺 YONY Logo，保留既有官网与店铺。官网当前提示服务到期，未更换网址。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://imrorwxhmkoilm5p-static.micyjz.com/%E6%A0%B7%E5%86%8C%2Bcatalog-aidljBpnKkklrSRijnrjqqkio.pdf"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.ybw.cn/sample/1298"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.zifisense.com/news/270.html"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://yoyatech.en.alibaba.com/"
+        }
+      ],
+      "logo": {
+        "path": "/company-icons/verified/ranks161-180-20261027/YQ000177.png",
+        "source_url": "https://sc04.alicdn.com/kf/HTB1Ds9cLXXXXXapXpXX760XFXXX6.png",
+        "page_url": "http://www.yoyatech.com/",
+        "checked_at": "2026-10-27",
+        "dark_background": false,
+        "source_page_url": "https://yoyatech.en.alibaba.com/"
+      },
+      "logo_sha256": "1f541cc2b2d236e73e7217e32f2bc61c24261db8976cf297a08e6b5d54e1bbf7"
+    },
+    {
+      "rank": 174,
+      "id": "YQ000173",
+      "name": "浙江双久电气有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "企业官网",
+          "url": "https://www.sunjelec.com/",
+          "domain": "sunjelec.com",
+          "source": "official_verified",
+          "added_at": "2026-10-27"
+        },
+        {
+          "type": "alibaba_store",
+          "label": "Alibaba 国际站",
+          "url": "https://sunj.en.alibaba.com/",
+          "domain": "sunj.en.alibaba.com",
+          "source": "alibaba_exact_company",
+          "added_at": "2026-10-27"
+        }
+      ],
+      "icon": "/company-icons/verified/YQ000173.png",
+      "note": "保留官网和 SUNJ Logo；把原 Alibaba 供应商介绍链接更新为主体一致的 sunj 店铺，补店铺柳市殿后村地址，独立于本企业现有联系地址。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://www.cnverify.com/company/Zhejiang-Sunj-Electric-Co-Ltd"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://morstar.vn/wp-content/uploads/2024/10/SUNJ.pdf"
+        },
+        {
+          "label": "企业官网公开资料",
+          "url": "https://www.sunjelec.com/"
+        },
+        {
+          "label": "Alibaba 国际站企业资料",
+          "url": "https://suppliers.alibaba.com/zhejiang-sunj-electric-co-ltd_2214602317003"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://sunj.en.alibaba.com/"
+        }
+      ],
+      "logo": {
+        "path": "/company-icons/verified/YQ000173.png",
+        "source_url": "https://www.sunjelec.com/wp-content/uploads/2024/04/logo-SJ.png",
+        "page_url": "https://www.sunjelec.com/",
+        "checked_at": "2026-10-27",
+        "dark_background": false
+      },
+      "logo_sha256": "b93adb0bce51885fab30e9db8f1cf7a36b0214fff5d9a6701d916d4f742c5ddd"
+    },
+    {
+      "rank": 175,
+      "id": "YQ000148",
+      "name": "乐清柏安科电气有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "https://www.pomanique.com/cn/",
+          "domain": "pomanique.com",
+          "added_at": "2026-10-24"
+        },
+        {
+          "type": "alibaba_store",
+          "label": "Alibaba 国际站",
+          "url": "https://pomanique.en.alibaba.com/",
+          "domain": "pomanique.en.alibaba.com",
+          "source": "alibaba_exact_company",
+          "added_at": "2026-10-27"
+        }
+      ],
+      "icon": "/company-icons/verified/ranks161-180-20261027/YQ000148.png",
+      "note": "原官网访问异常，Alibaba 店铺主体 Yueqing Pomanique Electric Co., Ltd.，旭阳路6688号地址一致；补本企业店铺 Logo、店铺及地址。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://www.pomanique.com/cn/"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.pomanique.com/cn/about.html"
+        },
+        {
+          "label": "监管或企业公告",
+          "url": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web1828/site/attach/0/e77759559f624df0b787ab382cfa0570.pdf"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.tendata.com/en/buyer/yueqing-pomanique-electric-co-ltd-CHNIb5d49a15df203c582559123e260b837a.html"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://pomanique.en.alibaba.com/"
+        }
+      ],
+      "logo": {
+        "path": "/company-icons/verified/ranks161-180-20261027/YQ000148.png",
+        "source_url": "https://sc04.alicdn.com/kf/HTB1bIFULXXXXXcNXVXX5jXXFXXXF.gif",
+        "page_url": "https://www.pomanique.com/cn/",
+        "checked_at": "2026-10-27",
+        "dark_background": false,
+        "source_page_url": "https://pomanique.en.alibaba.com/"
+      },
+      "logo_sha256": "9b84adefd5cf1307cc03ac915aa35e5d93f06ac0d92bc5078f010aae7f9ba187"
+    },
+    {
+      "rank": 176,
+      "id": "YQ000197",
+      "name": "温州善格电气有限公司",
+      "links": [],
+      "icon": null,
+      "note": "检索中文全称及英文变体，未找到可确认官网、Logo 或 Alibaba。不采用名称相近的三格电气资料。",
+      "sources": []
+    },
+    {
+      "rank": 177,
+      "id": "YQ000179",
+      "name": "浙江科博电器有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "https://www.chinakebo.com/",
+          "domain": "chinakebo.com",
+          "added_at": "2026-10-24"
+        },
+        {
+          "type": "alibaba_store",
+          "label": "Alibaba 国际站",
+          "url": "https://cnkb.en.alibaba.com/",
+          "domain": "cnkb.en.alibaba.com",
+          "source": "alibaba_exact_company",
+          "added_at": "2026-10-27"
+        }
+      ],
+      "icon": "/company-icons/verified/ranks161-180-20261027/YQ000179.png",
+      "note": "官网及店铺均为 Zhejiang Kebo Electrical Appliances Co., Ltd.，虹桥幸福东路2216-2218号及电磁阀产品一致；补 CNKB Logo、店铺和地址。官网图片请求被拦截，Logo 来自该公司店铺。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://www.chinakebo.com/"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://chinakebo.com/productimage/download/big/20240523171808_6055.pdf"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.wzrc.net/index.php?a=com_show&c=jobs&id=c846a591294a99bf439b2dee03049214&m=home"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.cnkb.cc/about.html"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.zhaopin.com/jobdetail/CC202121580J40542154409.htm"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.cnpp.cn/pinpai/4166456.html"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://top.qcc.com/tc/522a33b7675b.html"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://cnkb.en.alibaba.com/"
+        },
+        {
+          "label": "企业联系地址",
+          "url": "https://www.chinakebo.com/contact.html"
+        }
+      ],
+      "logo": {
+        "path": "/company-icons/verified/ranks161-180-20261027/YQ000179.png",
+        "source_url": "https://sc04.alicdn.com/kf/Hbbc9faa45e3b4cd8be85abaadee46f4c5.png",
+        "page_url": "https://www.chinakebo.com/",
+        "checked_at": "2026-10-27",
+        "dark_background": false,
+        "source_page_url": "https://cnkb.en.alibaba.com/"
+      },
+      "logo_sha256": "94f16230d7c2af24dd6d6222c2349dcb4e6da5a1bc706fd91b4a9f9bb1ef15ef"
+    },
+    {
+      "rank": 178,
+      "id": "YQ000159",
+      "name": "乐清思美克进出口有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "企业官网",
+          "url": "https://www.chsmico.com/",
+          "domain": "chsmico.com",
+          "source": "user_provided",
+          "added_at": "2026-10-25"
+        }
+      ],
+      "icon": "/company-icons/verified/YQ000159.jpg",
+      "note": "保留用户确认的 chsmico.com 及 SMICO Logo；用户要求暂不关联主体为 Zhejiang Smico Electric Power Equipment 的 smico Alibaba，不将其浦南六路88号覆盖现有贸易企业地址。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://www.mof.go.tz/uploads/text-editor/files/ENERGY%203_1659528763.pdf"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.9181.cn/orgt_list_138.htm"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.chsmico.com/"
+        }
+      ],
+      "website_decisions": [
+        {
+          "url": "https://smico.en.alibaba.com/",
+          "decision": "user_deferred_related_alibaba"
+        }
+      ],
+      "logo": {
+        "path": "/company-icons/verified/YQ000159.jpg",
+        "source_url": "https://www.chsmico.com/images/logo.jpg",
+        "page_url": "https://www.chsmico.com/",
+        "checked_at": "2026-10-25",
+        "dark_background": false
+      },
+      "logo_sha256": "fedf96f5e4f21a38aa7e9d4fe51c65f8d33d578ecb215a496f1f9d5ec0132405"
+    },
+    {
+      "rank": 179,
+      "id": "YQ000137",
+      "name": "乐清禾励进出口贸易有限公司",
+      "links": [],
+      "icon": null,
+      "note": "未找到能确认归属的官网或 Alibaba；英文 Yueqing Heli 的 KORETECH 商标尚未证实对应中文禾励，不采用同音企业资料或 Logo。",
+      "sources": []
+    },
+    {
+      "rank": 180,
+      "id": "YQ000178",
+      "name": "浙江永盛工具有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "http://www.chysgj.com/",
+          "domain": "chysgj.com",
+          "added_at": "2026-10-24"
+        }
+      ],
+      "icon": "/company-icons/verified/YQ000178.png",
+      "note": "官网明确浙江永盛工具及芙蓉工业区104号；补全官网联系地址，保留原 YOSIGHT Logo，未找到可确认 Alibaba 店铺。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://m.chinapp.com/company/6557"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://patentimages.storage.googleapis.com/7d/0f/1c/200eed649e6458/CN118641174A.pdf"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://ycd.boyuan.com/com/wzyongsheng/"
+        },
+        {
+          "label": "企业联系地址",
+          "url": "http://www.chysgj.com/"
+        }
+      ],
+      "logo": {
+        "path": "/company-icons/verified/YQ000178.png",
+        "source_url": "http://www.chysgj.com/template/default/images/logo/logo2.png",
+        "page_url": "http://www.chysgj.com",
+        "checked_at": "2026-10-24",
+        "dark_background": false
+      },
+      "logo_sha256": "b10f99e363935db6e25e62b97303f38c4863accc061f33211c554a8234f967de"
+    }
+  ]
+}

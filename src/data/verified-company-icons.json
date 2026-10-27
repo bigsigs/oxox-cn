@@ -1925,5 +1925,65 @@
     "page_url": "https://www.czt-energy.com/",
     "checked_at": "2026-10-27",
     "dark_background": true
+  },
+  "YQ000143": {
+    "path": "/company-icons/verified/ranks161-180-20261027/YQ000143.png",
+    "source_url": "http://www.fdtrade.com/index/logo.jpg",
+    "page_url": "http://www.fdtrade.com/",
+    "checked_at": "2026-10-27",
+    "dark_background": false
+  },
+  "YQ000136": {
+    "path": "/company-icons/verified/ranks161-180-20261027/YQ000136.png",
+    "source_url": "https://oss.aiwebagent.cn/1001/uploads/134918/20260929/4467ef1c7ad7d2476468c0109418bc3b.png",
+    "page_url": "https://mingch.cn/",
+    "checked_at": "2026-10-27",
+    "dark_background": false
+  },
+  "YQ000205": {
+    "path": "/company-icons/verified/ranks161-180-20261027/YQ000205.png",
+    "source_url": "https://www.singi.com/static/picture/xinjiweiyelogo.webp",
+    "page_url": "https://www.singi.com/",
+    "checked_at": "2026-10-27",
+    "dark_background": false
+  },
+  "YQ000190": {
+    "path": "/company-icons/verified/ranks161-180-20261027/YQ000190.png",
+    "source_url": "https://sc02.alicdn.com/kf/H4ab2b9681ce74eea98a789d55fbedab9q.jpg",
+    "page_url": "https://boerstn.com/",
+    "checked_at": "2026-10-27",
+    "dark_background": false,
+    "source_page_url": "https://boerstn.en.alibaba.com/"
+  },
+  "YQ000150": {
+    "path": "/company-icons/verified/ranks161-180-20261027/YQ000150.png",
+    "source_url": "http://www.lidastock.com/img/logo.png",
+    "page_url": "http://www.lidastock.com/",
+    "checked_at": "2026-10-27",
+    "dark_background": false
+  },
+  "YQ000177": {
+    "path": "/company-icons/verified/ranks161-180-20261027/YQ000177.png",
+    "source_url": "https://sc04.alicdn.com/kf/HTB1Ds9cLXXXXXapXpXX760XFXXX6.png",
+    "page_url": "http://www.yoyatech.com/",
+    "checked_at": "2026-10-27",
+    "dark_background": false,
+    "source_page_url": "https://yoyatech.en.alibaba.com/"
+  },
+  "YQ000148": {
+    "path": "/company-icons/verified/ranks161-180-20261027/YQ000148.png",
+    "source_url": "https://sc04.alicdn.com/kf/HTB1bIFULXXXXXcNXVXX5jXXFXXXF.gif",
+    "page_url": "https://www.pomanique.com/cn/",
+    "checked_at": "2026-10-27",
+    "dark_background": false,
+    "source_page_url": "https://pomanique.en.alibaba.com/"
+  },
+  "YQ000179": {
+    "path": "/company-icons/verified/ranks161-180-20261027/YQ000179.png",
+    "source_url": "https://sc04.alicdn.com/kf/Hbbc9faa45e3b4cd8be85abaadee46f4c5.png",
+    "page_url": "https://www.chinakebo.com/",
+    "checked_at": "2026-10-27",
+    "dark_background": false,
+    "source_page_url": "https://cnkb.en.alibaba.com/"
   }
 }
