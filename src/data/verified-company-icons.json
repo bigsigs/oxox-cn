@@ -449,10 +449,11 @@
     "dark_background": false
   },
   "YQ000250": {
-    "path": "/company-icons/verified/YQ000250.png",
-    "source_url": "https://iororwxhiqopjn5p.ldycdn.com/cloud/jnBpoKprjpSRjkmpjmjqjp/logo-icon.jpg",
+    "path": "/company-icons/verified/ranks241-260-20261028/YQ000250.png",
+    "source_url": "https://sc04.alicdn.com/kf/Hafc984715a594ec2bd762cb10c9c98c4F.jpg",
     "page_url": "https://www.chnt.com/",
-    "checked_at": "2026-10-24",
+    "source_page_url": "https://yuanky.en.alibaba.com/",
+    "checked_at": "2026-10-28",
     "dark_background": false
   },
   "YQ000259": {
@@ -2136,6 +2137,56 @@
     "source_url": "https://www.zhengkemotors.com/source/4a202f9be5d958609be283ae95bbf924/logo.png",
     "page_url": "https://www.zhengkemotors.com/",
     "checked_at": "2026-10-27",
+    "dark_background": false
+  },
+  "YQ000265": {
+    "path": "/company-icons/verified/ranks241-260-20261028/YQ000265.png",
+    "source_url": "https://www.cddqlj.com/template/en/images/logo.png",
+    "page_url": "https://www.cddqlj.com/",
+    "checked_at": "2026-10-28",
+    "dark_background": false
+  },
+  "YQ000267": {
+    "path": "/company-icons/verified/ranks241-260-20261028/YQ000267.png",
+    "source_url": "http://www.wzszhj.com/template/default/image/szlogo2.png",
+    "page_url": "http://www.wzszhj.com/",
+    "checked_at": "2026-10-28",
+    "dark_background": false
+  },
+  "YQ000281": {
+    "path": "/company-icons/verified/ranks241-260-20261028/YQ000281.png",
+    "source_url": "https://www.suvell.com/uploads/42741/logo.png",
+    "page_url": "https://www.suvell.com/",
+    "checked_at": "2026-10-28",
+    "dark_background": false
+  },
+  "YQ000273": {
+    "path": "/company-icons/verified/ranks241-260-20261028/YQ000273.png",
+    "source_url": "https://dihool.com/assets/img/logo.png",
+    "page_url": "https://dihool.com/",
+    "checked_at": "2026-10-28",
+    "dark_background": false
+  },
+  "YQ000257": {
+    "path": "/company-icons/verified/ranks241-260-20261028/YQ000257.png",
+    "source_url": "https://nwzimg.wezhan.cn/contents/sitefiles2068/10341788/images/51135295.png",
+    "page_url": "https://www.chzms.com/",
+    "checked_at": "2026-10-28",
+    "dark_background": false
+  },
+  "YQ000261": {
+    "path": "/company-icons/verified/ranks241-260-20261028/YQ000261.png",
+    "source_url": "https://sc04.alicdn.com/kf/HTB1FUV9LXXXXXcLXpXXq6xXFXXXV.jpg",
+    "page_url": "http://www.chinaxjy.com/",
+    "checked_at": "2026-10-28",
+    "dark_background": false,
+    "source_page_url": "https://chinaxjy.en.alibaba.com/"
+  },
+  "YQ000238": {
+    "path": "/company-icons/verified/ranks241-260-20261028/YQ000238.png",
+    "source_url": "http://www.wzchanglong.com/images/index_02.jpg",
+    "page_url": "http://www.wzchanglong.com/",
+    "checked_at": "2026-10-28",
     "dark_background": false
   }
 }

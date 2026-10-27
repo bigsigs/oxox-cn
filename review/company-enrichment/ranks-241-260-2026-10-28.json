@@ -1,0 +1,682 @@
+{
+  "checked_at": "2026-10-28",
+  "period": "2026-ytd-08",
+  "summary": {
+    "reviewed": 20,
+    "new_company_websites": 7,
+    "new_alternate_websites": 1,
+    "new_company_icons": 7,
+    "new_alibaba_stores": 4,
+    "updated_alibaba_links": 1,
+    "new_alibaba_addresses": 4,
+    "updated_contact_addresses": 7,
+    "refreshed_company_icons": 1
+  },
+  "pending_confirmations": [
+    {
+      "id": "YQ000227",
+      "url": "https://www.daqcn.com/",
+      "status": "awaiting_user_confirmation_related_website_and_logo"
+    }
+  ],
+  "companies": [
+    {
+      "rank": 241,
+      "id": "YQ000247",
+      "name": "乐清市永耀彩灯有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "https://www.yo-yo.cc/",
+          "domain": "yo-yo.cc",
+          "source": "company_identity_verified",
+          "added_at": "2026-10-28"
+        }
+      ],
+      "icon": null,
+      "note": "英文官网明确 Yueqing Yongyao Light，巨光工业区和灯饰产品与政府名单相符，补官网及地址。独立站本机 HTTP 404、HTTPS证书错误，搜索引擎近期仍能读取主体和联系页；保留文字图标，不采用同名灯具公司。未找到可确认当前 Alibaba 店铺。",
+      "sources": [
+        {
+          "label": "监管或企业公告",
+          "url": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web2678/site/attach/0/37fdeabfc7374259937e456bb4cd9d91.pdf"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.yqzpw.com/companyList.html"
+        },
+        {
+          "label": "官方网站",
+          "url": "https://www.yo-yo.cc/"
+        },
+        {
+          "label": "企业公开联系资料",
+          "url": "https://www.yo-yo.cc/contact/"
+        },
+        {
+          "label": "企业公开联系资料",
+          "url": "https://www.yo-yo.cc/product/"
+        }
+      ],
+      "canonical_name": "乐清市永耀彩灯有限公司"
+    },
+    {
+      "rank": 242,
+      "id": "YQ000238",
+      "name": "温州长龙加油机制造有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "http://www.wzchanglong.com/",
+          "domain": "wzchanglong.com",
+          "source": "company_identity_verified",
+          "added_at": "2026-10-28"
+        }
+      ],
+      "icon": "/company-icons/verified/ranks241-260-20261028/YQ000238.png",
+      "note": "官网与生产企业公开资料同为 Wenzhou Changlong Fuel Dispenser Manufacture，虹桥河淇路6号和加油机产品匹配，补 HTTP 官网和其 CHANGLONG 标识；源图为官网948×90页头，仅截取左侧品牌区域，去掉右侧搜索框。原完整地址保留。历史 Alibaba 子域跳404，不填失效店铺。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://www.cnverify.com/company/Wenzhou-Changlong-Fuel-Dispenser-Manufacture-Co-Ltd"
+        },
+        {
+          "label": "监管或企业公告",
+          "url": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web2074/site/attach/0/eb91b30c2c35476fba6af96019097625.pdf"
+        },
+        {
+          "label": "官方网站",
+          "url": "http://www.wzchanglong.com/"
+        },
+        {
+          "label": "企业公开介绍及官网",
+          "url": "https://www.go4worldbusiness.com/member/view/601349/wenzhou-changlong-fuel-dispenser-manufacture-co-ltd-.html"
+        }
+      ],
+      "logo": {
+        "path": "/company-icons/verified/ranks241-260-20261028/YQ000238.png",
+        "source_url": "http://www.wzchanglong.com/images/index_02.jpg",
+        "page_url": "http://www.wzchanglong.com/",
+        "checked_at": "2026-10-28",
+        "dark_background": false
+      },
+      "logo_sha256": "70e59f21c711c20c9b2d9a7ecda34cefe77813ad599cdb45e313d042e083b658",
+      "canonical_name": "温州长龙加油机制造有限公司"
+    },
+    {
+      "rank": 243,
+      "id": "YQ000233",
+      "name": "温州保贝物流仓储管理有限公司",
+      "links": [],
+      "icon": null,
+      "note": "按中文全称及 Wenzhou Baobei Logistics/Warehouse Management 检索，未找到可确认的官网、Logo、Alibaba 或完整公开地址，不采用无关保贝品牌和外地物流企业。",
+      "sources": [],
+      "canonical_name": "温州保贝物流仓储管理有限公司"
+    },
+    {
+      "rank": 244,
+      "id": "YQ000221",
+      "name": "浙江锋强工具制造有限公司",
+      "links": [],
+      "icon": null,
+      "note": "公开企业画册明确锋强工具、双截棍/越五剑品牌、芙蓉工业区与螺丝批产品，更新产品信息并移除旧内部待核查文字；未找到可确认独立官网及当前 Alibaba 店铺，未使用锋华工具或广州同名电子企业。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://ycd.boyuan.com/com/fengqiang/contact/"
+        },
+        {
+          "label": "监管或企业公告",
+          "url": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web2074/site/attach/0/f43c43d71cdf49b2a40532274e026551.pdf"
+        },
+        {
+          "label": "监管或企业公告",
+          "url": "https://www.ctp.gov.cn/zxqyfw/c101153/202206/148fcf85ed55407ba4381bbd1fc49356/files/2a851427e1eb4e52b02b9f70642f2041.pdf"
+        },
+        {
+          "label": "企业公开联系资料",
+          "url": "https://www.yunzhan365.com/basic/50673626.html"
+        }
+      ],
+      "canonical_name": "浙江锋强工具制造有限公司"
+    },
+    {
+      "rank": 245,
+      "id": "YQ000180",
+      "name": "浙江拓际贸易有限公司",
+      "links": [],
+      "icon": null,
+      "note": "按浙江拓际贸易中文及 Zhejiang Tuoji Trading 变体检索，未找到可确认官网、Logo、Alibaba 或完整公开地址；不采用义乌拓几贸易及郑州拓基机械资料。",
+      "sources": [],
+      "canonical_name": "浙江拓际贸易有限公司"
+    },
+    {
+      "rank": 246,
+      "id": "YQ000273",
+      "name": "迪昊电气浙江有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "https://www.dihool.cn/",
+          "domain": "dihool.cn",
+          "added_at": "2026-10-24"
+        },
+        {
+          "type": "official_website_alt",
+          "label": "企业官网（其他域名）",
+          "url": "https://dihool.com/",
+          "domain": "dihool.com",
+          "source": "company_identity_verified",
+          "added_at": "2026-10-28"
+        }
+      ],
+      "icon": "/company-icons/verified/ranks241-260-20261028/YQ000273.png",
+      "note": "中文官网明确迪昊，英文官网 dihool.com 明确 DIHAO Electric Zhejiang，补该其他域名和官方 DIHOOL Logo。地址按中文官网更正为尚宅工业区，不使用上寨误写；官网购买页未找到可确认 Alibaba。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://www.dihool.cn/"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.dihool.net/view_address"
+        },
+        {
+          "label": "企业官网（其他域名）",
+          "url": "https://dihool.com/"
+        },
+        {
+          "label": "企业公开联系资料",
+          "url": "https://www.dihool.cn/view_address/Contact"
+        }
+      ],
+      "logo": {
+        "path": "/company-icons/verified/ranks241-260-20261028/YQ000273.png",
+        "source_url": "https://dihool.com/assets/img/logo.png",
+        "page_url": "https://dihool.com/",
+        "checked_at": "2026-10-28",
+        "dark_background": false
+      },
+      "logo_sha256": "480b8a9ebf0c29b8460e8dcdd750316b9f2f84415a60354ea4c8e5cee5bc8191",
+      "canonical_name": "迪昊电气浙江有限公司"
+    },
+    {
+      "rank": 247,
+      "id": "YQ000252",
+      "name": "乐清市首发进出口有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "http://www.cnvks.com/e_index.asp",
+          "domain": "cnvks.com",
+          "source": "user_confirmed_historical_website",
+          "added_at": "2026-10-28"
+        }
+      ],
+      "icon": null,
+      "note": "D&B企业资料列出 cnvks.com/e_index.asp，柳市捷达路飞跃大厦地址匹配；独立站现无法打开，用户确认登记该历史官网，保留文字图标。未找到可确认Alibaba。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://www.scribd.com/document/1049273065/%E7%AC%AC123%E5%B1%8A%E4%B8%AD%E5%9B%BD%E8%BF%9B%E5%87%BA%E5%8F%A3%E5%95%86%E5%93%81%E4%BA%A4%E6%98%93%E4%BC%9A-10-12"
+        },
+        {
+          "label": "监管或企业公告",
+          "url": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web1828/site/attach/0/e77759559f624df0b787ab382cfa0570.pdf"
+        },
+        {
+          "label": "企业历史官网",
+          "url": "http://www.cnvks.com/e_index.asp"
+        }
+      ],
+      "website_decisions": [
+        {
+          "url": "http://www.cnvks.com/e_index.asp",
+          "decision": "user_confirmed_historical_website"
+        }
+      ],
+      "canonical_name": "乐清市首发进出口有限公司"
+    },
+    {
+      "rank": 248,
+      "id": "YQ000259",
+      "name": "温州丽尔威电气有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "https://lvwele.com/",
+          "domain": "lvwele.com",
+          "added_at": "2026-10-24"
+        },
+        {
+          "type": "alibaba_store",
+          "label": "Alibaba 国际站",
+          "url": "https://lvwele.en.alibaba.com/",
+          "domain": "lvwele.en.alibaba.com",
+          "source": "alibaba_exact_company",
+          "added_at": "2026-10-28"
+        }
+      ],
+      "icon": "/company-icons/verified/YQ000259.png",
+      "note": "官网及店铺主体均为 Wenzhou Lierwei Electrical。旧供应商简介直接链接 lvwele 实际店铺，替换店铺链接并补其地址。官网新雷路50号与店铺新光大道122号分别保留；Logo复查保留。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://lvwele.com/"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://lvwele.com/products/"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://hs.bianmachaxun.com/qcc_company/details/67680"
+        },
+        {
+          "label": "Alibaba 国际站公开资料",
+          "url": "https://suppliers.alibaba.com/wenzhou-lierwei-electrical-co-ltd_3969969079"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://lvwele.en.alibaba.com/"
+        }
+      ],
+      "logo": {
+        "path": "/company-icons/verified/YQ000259.png",
+        "source_url": "https://lvwele.com/wp-content/uploads/2025/07/LOGO.png",
+        "page_url": "https://lvwele.com/",
+        "checked_at": "2026-10-24",
+        "dark_background": false
+      },
+      "logo_sha256": "66573fc15cccf07a04285b9ace5bebf470f9746cd0962ce89e0f021353564bb3",
+      "canonical_name": "温州丽尔威电气有限公司"
+    },
+    {
+      "rank": 249,
+      "id": "YQ000250",
+      "name": "温州好惠电子电器制造有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "https://www.chnt.com/",
+          "domain": "chnt.com",
+          "added_at": "2026-10-24"
+        },
+        {
+          "type": "alibaba_store",
+          "label": "Alibaba 国际站",
+          "url": "https://yuanky.en.alibaba.com/",
+          "domain": "yuanky.en.alibaba.com",
+          "source": "alibaba_exact_company",
+          "added_at": "2026-10-28"
+        }
+      ],
+      "icon": "/company-icons/verified/ranks241-260-20261028/YQ000250.png",
+      "note": "官网为温州好惠的 YUANKY 品牌，yuanky 店铺主体 Wenzhou Hawai Electron & Electric Manufacture，与官网及纬十九路298号一致，补店铺及公开地址，原Logo留白过多，改用同主体Alibaba店铺的YUANKY品牌图，并去除外围白色留白，不误用正泰Logo。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://www.chnt.com/"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.chnt.com/faqlist.html"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.cnverify.com/company/Wenzhou-Hawai-Electron-Electric-Manufacture-Co-Ltd"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://yuanky.en.alibaba.com/"
+        }
+      ],
+      "logo": {
+        "path": "/company-icons/verified/ranks241-260-20261028/YQ000250.png",
+        "source_url": "https://sc04.alicdn.com/kf/Hafc984715a594ec2bd762cb10c9c98c4F.jpg",
+        "page_url": "https://www.chnt.com/",
+        "source_page_url": "https://yuanky.en.alibaba.com/",
+        "checked_at": "2026-10-28",
+        "dark_background": false
+      },
+      "logo_sha256": "645f91e27e7da4182d62e6ee1763c0d3a18e120ed67d440e7d9ce2df3ad4803d",
+      "canonical_name": "温州好惠电子电器制造有限公司"
+    },
+    {
+      "rank": 250,
+      "id": "YQ000281",
+      "name": "温州硕为电气有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "https://www.suvell.com/",
+          "domain": "suvell.com",
+          "source": "company_identity_verified",
+          "added_at": "2026-10-28"
+        }
+      ],
+      "icon": "/company-icons/verified/ranks241-260-20261028/YQ000281.png",
+      "note": "suvell.com 的 Wenzhou Shuowei Electric、纬十二路208号及SUVELL品牌商标与本企业匹配，补官网和官方Logo。另从同主体 suvellelec 网站补经七路171号经营地址，不覆盖原地址；未找到可确认 Alibaba 店铺。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://m.zhipin.com/companys/615aca7bdeb02ed6031739u4EVM~.html"
+        },
+        {
+          "label": "官方网站",
+          "url": "https://www.suvell.com/"
+        },
+        {
+          "label": "企业公开联系资料",
+          "url": "https://ar.suvellelec.com/"
+        },
+        {
+          "label": "企业品牌商标资料",
+          "url": "https://tm.aliyun.com/detail/eba6_94013744_9"
+        }
+      ],
+      "logo": {
+        "path": "/company-icons/verified/ranks241-260-20261028/YQ000281.png",
+        "source_url": "https://www.suvell.com/uploads/42741/logo.png",
+        "page_url": "https://www.suvell.com/",
+        "checked_at": "2026-10-28",
+        "dark_background": false
+      },
+      "logo_sha256": "4bffd7c0d549d23925ea1256fce02fc5e29a4ff22dc2cd19c97f39d469f44772",
+      "canonical_name": "温州硕为电气有限公司"
+    },
+    {
+      "rank": 251,
+      "id": "YQ000267",
+      "name": "温州山钻合金材料有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "http://www.wzszhj.com/",
+          "domain": "wzszhj.com",
+          "source": "company_identity_verified",
+          "added_at": "2026-10-28"
+        }
+      ],
+      "icon": "/company-icons/verified/ranks241-260-20261028/YQ000267.png",
+      "note": "新找到的 wzszhj.com 直接写温州山钻全称，正德路7号与原档案匹配；补官网和 SAZAC 山钻Logo，产品和地址改用官网明确原文，去除待核查括号。未确认 Alibaba。 历史企业主名称为山钴，山钻为已有别名；本批不改动主企业名称。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://www.boyuan.com/com/shanzuan/contact/"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://top.qcc.com/tc/e1ca169533f5.html"
+        },
+        {
+          "label": "官方网站",
+          "url": "http://www.wzszhj.com/"
+        },
+        {
+          "label": "企业公开联系资料",
+          "url": "http://www.wzszhj.com/contact/"
+        }
+      ],
+      "logo": {
+        "path": "/company-icons/verified/ranks241-260-20261028/YQ000267.png",
+        "source_url": "http://www.wzszhj.com/template/default/image/szlogo2.png",
+        "page_url": "http://www.wzszhj.com/",
+        "checked_at": "2026-10-28",
+        "dark_background": false
+      },
+      "logo_sha256": "ecb6953af53ffcad65ebd623396a7643f22c88cfa22633a54759a6867bfca776",
+      "canonical_name": "温州山钴合金材料有限公司"
+    },
+    {
+      "rank": 252,
+      "id": "YQ000227",
+      "name": "温州泰邦贸易有限公司",
+      "links": [],
+      "icon": null,
+      "note": "daqcn.com 官网页脚和企业产品手册同时列温州大全电气与温州泰邦贸易，主营低压电器。已请用户确认可否作为关联企业网站及采用DAQCN标识；确认前不公开添加。",
+      "sources": [],
+      "canonical_name": "温州泰邦贸易有限公司"
+    },
+    {
+      "rank": 253,
+      "id": "YQ000261",
+      "name": "浙江新纪元通讯设备有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "http://www.chinaxjy.com/",
+          "domain": "chinaxjy.com",
+          "source": "user_confirmed_historical_website",
+          "added_at": "2026-10-28"
+        },
+        {
+          "type": "alibaba_store",
+          "label": "Alibaba 国际站",
+          "url": "https://chinaxjy.en.alibaba.com/",
+          "domain": "chinaxjy.en.alibaba.com",
+          "source": "alibaba_exact_company",
+          "added_at": "2026-10-28"
+        }
+      ],
+      "icon": "/company-icons/verified/ranks241-260-20261028/YQ000261.png",
+      "note": "chinaxjy 店铺主体 Zhejiang New Epoch Communication Industry，与全称映射、1999年成立、翁垟发展路和通讯插座产品吻合，补实际店铺、NEPCI标识及地址。历史官网 chinaxjy.com 及展会资料列的新域 chinaxjy.com.cn 当前访问超时，用户确认登记 chinaxjy.com 历史官网，已加入。Logo来源为该企业自身店铺，不使用认证标识。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://www.tanzhi.cn/companies/06feeafb-dd0b-4f7c-b714-a5787b087282/"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://chinaxjy.en.alibaba.com/"
+        },
+        {
+          "label": "企业历史官网",
+          "url": "http://www.chinaxjy.com/"
+        }
+      ],
+      "logo": {
+        "path": "/company-icons/verified/ranks241-260-20261028/YQ000261.png",
+        "source_url": "https://sc04.alicdn.com/kf/HTB1FUV9LXXXXXcLXpXXq6xXFXXXV.jpg",
+        "page_url": "http://www.chinaxjy.com/",
+        "checked_at": "2026-10-28",
+        "dark_background": false,
+        "source_page_url": "https://chinaxjy.en.alibaba.com/"
+      },
+      "logo_sha256": "c492eb5775b319984e1fa1f25957b51e2e782351a86addf16547beaf5b551a9c",
+      "canonical_name": "浙江新纪元通讯设备有限公司",
+      "website_decisions": [
+        {
+          "url": "http://www.chinaxjy.com/",
+          "decision": "user_confirmed_historical_website_and_alibaba"
+        }
+      ]
+    },
+    {
+      "rank": 254,
+      "id": "YQ000251",
+      "name": "乐清市森姆罗电气有限公司",
+      "links": [],
+      "icon": null,
+      "note": "中文全称企业记录与 Yueqing Senmuluo 对应，补完整晨曦路办公地址。未找到可确认独立官网、Logo或 Alibaba；不采用近似名称公司。",
+      "sources": [
+        {
+          "label": "企业公开联系资料",
+          "url": "https://www.tendata.com/en/buyer/yueqing-senmuluo-electric-co-ltd-CHN8e6b639bb575c8e987453170cc746d30.html"
+        }
+      ],
+      "canonical_name": "乐清市森姆罗电气有限公司"
+    },
+    {
+      "rank": 255,
+      "id": "YQ000270",
+      "name": "乐清博冠进出口有限公司",
+      "links": [],
+      "icon": null,
+      "note": "按乐清博冠及 Yueqing Boguan Import & Export 查到贸易记录，但未取得可确认官网、Logo、Alibaba或完整现行地址；不自动关联同类排气管制造企业。",
+      "sources": [],
+      "canonical_name": "乐清博冠进出口有限公司"
+    },
+    {
+      "rank": 256,
+      "id": "YQ000265",
+      "name": "乐清市超导电器联接有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "企业官网",
+          "url": "https://www.cddqlj.com/",
+          "domain": "cddqlj.com",
+          "source": "official_page_identity_verified",
+          "added_at": "2026-10-24"
+        }
+      ],
+      "icon": "/company-icons/verified/ranks241-260-20261028/YQ000265.png",
+      "note": "官网 Chaodao 与原超导电器主体、纬十六路198号及端子产品一致，使用当前 HTTPS 入口，补 CDDQLJ 官网Logo。历史 chaodao Alibaba 店铺已跳404，不填失效店铺。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://cn.linkedin.com/company/%E4%B9%90%E6%B8%85%E5%B8%82%E8%B6%85%E5%AF%BC%E7%94%B5%E5%99%A8%E8%81%94%E6%8E%A5%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://m.zhipin.com/companys/6726a2d10a9b5efc0HBz3dq9Fg~~.html"
+        },
+        {
+          "label": "企业官网及联系地址",
+          "url": "https://www.cddqlj.com/contact/"
+        }
+      ],
+      "logo": {
+        "path": "/company-icons/verified/ranks241-260-20261028/YQ000265.png",
+        "source_url": "https://www.cddqlj.com/template/en/images/logo.png",
+        "page_url": "https://www.cddqlj.com/",
+        "checked_at": "2026-10-28",
+        "dark_background": false
+      },
+      "logo_sha256": "963c822f3b4716c09e70e361195431900399d1c6d6bde9cebc3cd2f5a0f83df1",
+      "canonical_name": "乐清市超导电器联接有限公司"
+    },
+    {
+      "rank": 257,
+      "id": "YQ000257",
+      "name": "温州和泰电子有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "https://www.chzms.com/",
+          "domain": "chzms.com",
+          "source": "company_identity_verified",
+          "added_at": "2026-10-28"
+        }
+      ],
+      "icon": "/company-icons/verified/ranks241-260-20261028/YQ000257.png",
+      "note": "chzms.com 动态官网公开页脚直接写温州和泰电子、昌盛路5号，与线束产品及62326788电话匹配。读取其公开页面资源后确认 CHZMS 和泰Logo；补官网和地址。历史 chzms Alibaba 主域404、简介空白，不填失效店铺。",
+      "sources": [
+        {
+          "label": "官方网站",
+          "url": "https://www.chzms.com/"
+        }
+      ],
+      "logo": {
+        "path": "/company-icons/verified/ranks241-260-20261028/YQ000257.png",
+        "source_url": "https://nwzimg.wezhan.cn/contents/sitefiles2068/10341788/images/51135295.png",
+        "page_url": "https://www.chzms.com/",
+        "checked_at": "2026-10-28",
+        "dark_background": false
+      },
+      "logo_sha256": "20d4254165dac1960f572c0b2785f3a769afd42c63316757624affa0e76cd26d",
+      "canonical_name": "温州和泰电子有限公司"
+    },
+    {
+      "rank": 258,
+      "id": "YQ000254",
+      "name": "乐清锟源贸易有限公司",
+      "links": [],
+      "icon": null,
+      "note": "中文全称及 Yueqing Kunyuan Trading 检索未找到可确认独立官网、Logo或Alibaba。公开来源有Hilinego/Joinfworld电商线索但缺少可确认独立站，不采用另一家Kunyuan Electrical电器制造厂资料。",
+      "sources": [],
+      "canonical_name": "乐清锟源贸易有限公司"
+    },
+    {
+      "rank": 259,
+      "id": "YQ000246",
+      "name": "乐清市杰卡斯电气有限公司",
+      "links": [
+        {
+          "type": "alibaba_store",
+          "label": "Alibaba 国际站",
+          "url": "https://jksdq.en.alibaba.com/",
+          "domain": "jksdq.en.alibaba.com",
+          "source": "alibaba_exact_company",
+          "added_at": "2026-10-28"
+        }
+      ],
+      "icon": null,
+      "note": "从 Alibaba 供应商列表直接定位 jksdq，店铺主体 Yueqing Jiekasi Electirc、乐清柳江路1166号和电气开关产品相符，补店铺与原文地址；不采用香港同名企业地址。店铺公司图写TJELC天佳电气，归属未确认，不填该Logo，保留文字。未找到独立官网。",
+      "sources": [
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://jksdq.en.alibaba.com/"
+        }
+      ],
+      "canonical_name": "乐清市杰卡斯电气有限公司"
+    },
+    {
+      "rank": 260,
+      "id": "YQ000341",
+      "name": "温州浙驰电气有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "https://www.zhechielec.com/",
+          "domain": "zhechielec.com",
+          "added_at": "2026-10-24"
+        },
+        {
+          "type": "alibaba_store",
+          "label": "Alibaba 国际站",
+          "url": "https://zhechi.en.alibaba.com/",
+          "domain": "zhechi.en.alibaba.com",
+          "source": "alibaba_exact_company",
+          "added_at": "2026-10-28"
+        }
+      ],
+      "icon": "/company-icons/verified/YQ000341.png",
+      "note": "保留已核实 zhechielec 官网和Logo，zhechi 店铺主体 Wenzhou Zhechi Electric、乐清柳市及电气配件匹配，补店铺与其办公地址，原新光工业区工厂地址保留。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://www.zhechielec.com/about-234169.html"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://zhechi.en.alibaba.com/"
+        },
+        {
+          "label": "企业公开联系资料",
+          "url": "https://www.zhechielec.com/"
+        }
+      ],
+      "logo": {
+        "path": "/company-icons/verified/YQ000341.png",
+        "source_url": "https://www.zhechielec.com/upload/6560/20250808105541490666.ico",
+        "page_url": "https://www.zhechielec.com/",
+        "checked_at": "2026-10-24",
+        "dark_background": false
+      },
+      "logo_sha256": "68c69e43fae5a122fbc2c132aec8ca1bfee375fac8351642010d2053fd62d30b",
+      "canonical_name": "温州浙驰电气有限公司"
+    }
+  ]
+}
