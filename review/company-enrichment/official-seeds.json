@@ -394,5 +394,32 @@
     "contact_address": "浙江省温州市乐清市北白象镇温州大桥工业区",
     "main_products": "时间继电器、智能断路器、双电源自动转换开关、过欠压保护器",
     "registered_capital": ""
+  },
+  {
+    "id": "YQ000163",
+    "name": "乐清市高科环保电子有限公司",
+    "rank": 125,
+    "url": "https://www.cn-gaokeelectric.com/",
+    "contact_address": "浙江省温州市乐清市柳市镇沙湖工业区乐湖路801-811号",
+    "main_products": "环保电子元件、低压电器配件及模具制造销售；货物/技术进出口",
+    "registered_capital": "500万元人民币"
+  },
+  {
+    "id": "YQ000173",
+    "name": "浙江双久电气有限公司",
+    "rank": 174,
+    "url": "https://www.sunjelec.com/",
+    "contact_address": "浙江省温州市乐清市柳市镇六柏路1965号",
+    "main_products": "电力线夹、电力金具、配电开关控制设备及配件、电力电子元件、高低压电器及配件、电线电缆、电源设备、机械设备、电动工具、塑料件及模具",
+    "registered_capital": "1000万元人民币"
+  },
+  {
+    "id": "YQ000215",
+    "name": "浙江迪克森电器有限公司",
+    "rank": 235,
+    "url": "https://www.dixsen.com/",
+    "contact_address": "浙江省温州市乐清市温州大桥工业园区长江路",
+    "main_products": "高低压互感器、电工仪表、智能数显表、断路器、空调交流接触器、交直流接触器、电源变压器、熔断开关及电器附件",
+    "registered_capital": "1006万元人民币"
   }
 ]

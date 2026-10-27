@@ -5740,6 +5740,10 @@
         {
           "label": "企业官网",
           "url": "https://www.socomepower.com/"
+        },
+        {
+          "label": "Alibaba 国际站关联企业页面",
+          "url": "https://www.alibaba.co.uk/product-detail/Cable-Accessories-3-Core-Outdoor-and_60860101692.html"
         }
       ],
       "checked_at": "2026-10-27",
@@ -5753,6 +5757,14 @@
         "url": "https://www.socomepower.com/",
         "domain": "socomepower.com",
         "source": "user_provided",
+        "added_at": "2026-10-27"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站",
+        "url": "https://www.alibaba.co.uk/product-detail/Cable-Accessories-3-Core-Outdoor-and_60860101692.html",
+        "domain": "alibaba.co.uk",
+        "source": "user_confirmed_related_company",
         "added_at": "2026-10-27"
       }
     ]
@@ -7970,11 +7982,25 @@
         {
           "label": "监管或企业公告",
           "url": "https://www.yueqing.gov.cn/module/download/downfile.jsp?classid=0&filename=c3a8e6a5684e4063a913e3deb54bb042.pdf"
+        },
+        {
+          "label": "企业官网公开资料",
+          "url": "https://www.cn-gaokeelectric.com/"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "legal_name": "乐清市高科环保电子有限公司"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "https://www.cn-gaokeelectric.com/",
+        "domain": "cn-gaokeelectric.com",
+        "source": "official_verified",
+        "added_at": "2026-10-27"
+      }
+    ]
   },
   "YQ000165": {
     "details": {
@@ -8312,11 +8338,37 @@
         {
           "label": "企业公开资料",
           "url": "https://morstar.vn/wp-content/uploads/2024/10/SUNJ.pdf"
+        },
+        {
+          "label": "企业官网公开资料",
+          "url": "https://www.sunjelec.com/"
+        },
+        {
+          "label": "Alibaba 国际站企业资料",
+          "url": "https://suppliers.alibaba.com/zhejiang-sunj-electric-co-ltd_2214602317003"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "legal_name": "浙江双久电气有限公司"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "https://www.sunjelec.com/",
+        "domain": "sunjelec.com",
+        "source": "official_verified",
+        "added_at": "2026-10-27"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站",
+        "url": "https://suppliers.alibaba.com/zhejiang-sunj-electric-co-ltd_2214602317003",
+        "domain": "suppliers.alibaba.com",
+        "source": "alibaba_exact_company",
+        "added_at": "2026-10-27"
+      }
+    ]
   },
   "YQ000174": {
     "links": [
@@ -9864,6 +9916,11 @@
           "url": "https://zjdksdqyxgs.lzzcloud.net/",
           "checked_at": "2026-10-24",
           "source_type": "company_website_or_directory"
+        },
+        "registered_capital": {
+          "url": "https://www.maigoo.com/brand/52404.html",
+          "checked_at": "2026-10-27",
+          "source_type": "public_company_record"
         }
       },
       "main_products": "高低压互感器、电工仪表、智能数显表、断路器、空调交流接触器、交直流接触器、电源变压器、熔断开关及电器附件",
@@ -9883,11 +9940,46 @@
         {
           "label": "企业公开资料",
           "url": "https://cnqqmm.changjiaku.com/"
+        },
+        {
+          "label": "企业官网公开资料",
+          "url": "https://www.dixsen.com/"
+        },
+        {
+          "label": "Alibaba 国际站企业资料",
+          "url": "https://suppliers.alibaba.com/zhejiang-dixsen-electrical-co-ltd_17379971835"
         }
       ],
-      "checked_at": "2026-10-24",
-      "legal_name": "浙江迪克森电器有限公司"
-    }
+      "checked_at": "2026-10-27",
+      "legal_name": "浙江迪克森电器有限公司",
+      "registered_capital": "1006万元人民币"
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "https://www.dixsen.com/",
+        "domain": "dixsen.com",
+        "source": "official_verified",
+        "added_at": "2026-10-27"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站",
+        "url": "https://suppliers.alibaba.com/zhejiang-dixsen-electrical-co-ltd_17379971835",
+        "domain": "suppliers.alibaba.com",
+        "source": "alibaba_exact_company",
+        "added_at": "2026-10-27"
+      },
+      {
+        "type": "official_website_alt",
+        "label": "企业官网（其他域名）",
+        "url": "https://www.dixsen.cn/",
+        "domain": "dixsen.cn",
+        "source": "official_verified",
+        "added_at": "2026-10-27"
+      }
+    ]
   },
   "YQ000216": {
     "links": [
