@@ -1,0 +1,812 @@
+{
+  "checked_at": "2026-10-27",
+  "period": "2026-ytd-08",
+  "summary": {
+    "reviewed": 20,
+    "new_company_websites": 2,
+    "new_alternate_websites": 1,
+    "corrected_website_protocols": 3,
+    "new_company_icons": 6,
+    "corrected_company_icons": 1,
+    "new_alibaba_stores": 6,
+    "new_alibaba_addresses": 6,
+    "updated_contact_addresses": 6,
+    "new_operating_addresses": 1
+  },
+  "companies": [
+    {
+      "rank": 201,
+      "id": "YQ000228",
+      "name": "乐清市环科进出口有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "https://vancol.cn/",
+          "domain": "vancol.cn",
+          "added_at": "2026-10-24"
+        }
+      ],
+      "icon": "/company-icons/verified/YQ000228.png",
+      "note": "原 Vancol 官网及 Logo 保留。本次官网多种域名形式暂无法连接；VANCOL 商标对应 Yueqing Huanke Import and Export。未找到可确认且可用的实际 Alibaba 店铺，未采用其他 Weco 企业。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://www.tendata.com/en/buyer/yueqing-vancol-import-export-co-ltd-CHN1ffb037e261f1ac5fcfbff52bf4fc7c2.html"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.scribd.com/document/1049273065/%E7%AC%AC123%E5%B1%8A%E4%B8%AD%E5%9B%BD%E8%BF%9B%E5%87%BA%E5%8F%A3%E5%95%86%E5%93%81%E4%BA%A4%E6%98%93%E4%BC%9A-10-12"
+        }
+      ],
+      "logo": {
+        "path": "/company-icons/verified/YQ000228.png",
+        "source_url": "https://vancol.cn/images/other/logo.png",
+        "page_url": "https://vancol.cn/",
+        "checked_at": "2026-10-24",
+        "dark_background": false
+      },
+      "logo_sha256": "69494aae75c04ed88cd64d39648795ff73e6ad51074bcc734f0b51d5f16c5bc7"
+    },
+    {
+      "rank": 202,
+      "id": "YQ000207",
+      "name": "乐清多贝特贸易有限公司",
+      "links": [],
+      "icon": null,
+      "note": "中文全称、Yueqing Dobetter Trading 和已知柳市翔垟路8号检索；公开2024产品认证支持原有地址，但未找到可确认官网、Logo 或 Alibaba，不采用其他省市同名品牌。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://www.tendata.com/en/buyer/yueqing-dobetter-trading-co-ltd-no-8-xiangyang-road-liushi-town-yueqing-zhejiang-325604-china-CHNN7d1a0362a58a669323f319944a910ce0.html"
+        }
+      ],
+      "research_sources": [
+        "https://www.owenkomplekt.ru/assets/files/OKATEC/%D0%9D%D0%B0%D0%B3%D1%80%D0%B5%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%20%D1%89%D0%B8%D1%82%D0%BE%D0%B2%D0%BE%D0%B9%20%D0%9E%D0%9A%D0%90%D0%A2%D0%95%D0%A1.pdf"
+      ]
+    },
+    {
+      "rank": 203,
+      "id": "YQ000170",
+      "name": "鸿宝电源有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "https://www.hossoni.com/",
+          "domain": "hossoni.com",
+          "added_at": "2026-10-24"
+        },
+        {
+          "type": "alibaba_store",
+          "label": "Alibaba 国际站（关联企业）",
+          "url": "https://hossoni.en.alibaba.com/",
+          "domain": "hossoni.en.alibaba.com",
+          "source": "user_confirmed_related_company",
+          "added_at": "2026-10-27"
+        }
+      ],
+      "icon": "/company-icons/verified/ranks201-220-20261027/YQ000170.png",
+      "note": "官网明确鸿宝电源有限公司、HOSSONI 品牌和象阳鸿宝工业园；补官网 Logo。用户确认可以关联主体 Hongbao Electric Group 的 hossoni Alibaba，明确标为关联企业，不与此前用户放弃的鸿宝照明混用。店铺实际浏览器可加载稳压器产品，未编造未披露地址。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://www.hossoni.com/"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.cpss.org.cn/Home/NewsDetail?categoryName=&colId=035802ed-35c1-4002-9deb-4262a338bb0e&newsid=a90d3fc0-4bd2-4e5c-b919-a88be1029c03"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.hossoni.com/about.html"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.gongkong.com/news/202607/451250.html"
+        },
+        {
+          "label": "Alibaba 国际站（关联企业）",
+          "url": "https://hossoni.en.alibaba.com/"
+        },
+        {
+          "label": "企业联系地址",
+          "url": "https://www.hossoni.com/contact.html"
+        }
+      ],
+      "website_decisions": [
+        {
+          "url": "https://hossoni.en.alibaba.com/",
+          "decision": "user_confirmed_related_alibaba"
+        }
+      ],
+      "logo": {
+        "path": "/company-icons/verified/ranks201-220-20261027/YQ000170.png",
+        "source_url": "https://www.hossoni.com/img/logo.png",
+        "page_url": "https://www.hossoni.com/",
+        "checked_at": "2026-10-27",
+        "dark_background": false
+      },
+      "logo_sha256": "17b007da1f472316ed0d161c2b82802d6ddfd31bb2fc6af30a7c2ccb6c724e95"
+    },
+    {
+      "rank": 204,
+      "id": "YQ000181",
+      "name": "浙江创汇运动用品有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "http://www.chuanghuisports.com/",
+          "domain": "chuanghuisports.com",
+          "added_at": "2026-10-24",
+          "source": "company_identity_verified"
+        },
+        {
+          "type": "alibaba_store",
+          "label": "Alibaba 国际站",
+          "url": "https://chuanghuisports.en.alibaba.com/",
+          "domain": "chuanghuisports.en.alibaba.com",
+          "source": "alibaba_exact_company",
+          "added_at": "2026-10-27"
+        }
+      ],
+      "icon": "/company-icons/verified/ranks201-220-20261027/YQ000181.png",
+      "note": "官网明确 Zhejiang Chuanghui Sports Co., Ltd. 及乐清湾开发路9号，补官网 Logo、主体一致的 chuanghuisports 店铺及地址。HTTPS 证书不匹配，官网入口改为能读取的 HTTP 地址。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://www.chuanghuisports.com/col.jsp?id=102"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.cnverify.com/company/Zhejiang-Chuanghui-Sports-Co-Ltd"
+        },
+        {
+          "label": "企业官网",
+          "url": "http://www.chuanghuisports.com/"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://chuanghuisports.en.alibaba.com/"
+        }
+      ],
+      "logo": {
+        "path": "/company-icons/verified/ranks201-220-20261027/YQ000181.png",
+        "source_url": "http://26714239.s21i.faiusr.com/4/ABUIABAEGAAg4e_avgYomfralgQw2AQ4pAI.png.webp",
+        "page_url": "http://www.chuanghuisports.com/",
+        "checked_at": "2026-10-27",
+        "dark_background": false
+      },
+      "logo_sha256": "4545e13563b73f022bbbc2e892c8e34effb8f23c16db0db3ee976b38f8712a73"
+    },
+    {
+      "rank": 205,
+      "id": "YQ000218",
+      "name": "乐清市莱洋电气有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "https://www.liyond.com.cn/",
+          "domain": "liyond.com.cn",
+          "added_at": "2026-10-24"
+        },
+        {
+          "type": "alibaba_store",
+          "label": "Alibaba 国际站",
+          "url": "https://liyond.en.alibaba.com/",
+          "domain": "liyond.en.alibaba.com",
+          "source": "alibaba_exact_company",
+          "added_at": "2026-10-27"
+        }
+      ],
+      "icon": "/company-icons/verified/ranks201-220-20261027/YQ000218.png",
+      "note": "官网明确莱洋及旭阳路6688号总部经济园1801室；补主体一致的 liyond 店铺及地址。旧图标来源 eton.png 实为合作伙伴 EATON，替换为本企业 Alibaba 的 LIYOND Logo，官网页头图片返回色块，不采用。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://www.liyond.com.cn/"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.liyond.com.cn/about-us/"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.liyond.com.cn/blog/%E5%85%B3%E4%BA%8E-2026-%E5%B9%B4%E4%B8%AD%E7%A7%8B%E8%8A%82%E6%94%BE%E5%81%87%E5%AE%89%E6%8E%92%E5%8F%8A%E6%B8%A9%E9%A6%A8%E6%8F%90%E7%A4%BA/"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.zhaopin.com/companydetail/CC509185921.htm"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://liyond.en.alibaba.com/"
+        },
+        {
+          "label": "企业联系地址",
+          "url": "https://www.liyond.com.cn/contact-us/"
+        }
+      ],
+      "logo": {
+        "path": "/company-icons/verified/ranks201-220-20261027/YQ000218.png",
+        "source_url": "https://sc04.alicdn.com/kf/HTB1wIVgbvWG3KVjSZFgq6zTspXaN.jpg",
+        "page_url": "https://www.liyond.com.cn/",
+        "checked_at": "2026-10-27",
+        "dark_background": false,
+        "source_page_url": "https://liyond.en.alibaba.com/"
+      },
+      "logo_sha256": "d0df01758ea8078e654c98e4d37acf250af36445edc7ad6ee594329a29dae165"
+    },
+    {
+      "rank": 206,
+      "id": "YQ000209",
+      "name": "国光集团有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "企业官网",
+          "url": "http://www.guoguang.com/",
+          "domain": "guoguang.com",
+          "source": "user_provided",
+          "added_at": "2026-10-25"
+        }
+      ],
+      "icon": null,
+      "note": "保留用户已核对的 guoguang.com。官网主体为国光集团，当前列上海集团联系地址，与乐清登记地址分开，未覆盖本企业原地址。官方 Logo CDN 返回567，favicon 空白，未用无关同名国光品牌，也未找到可靠 Alibaba，继续文字占位。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://ycd.boyuan.com/com/guoguangjituan/link/"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.shuididp.cn/yp-395649b7e4a3238b8241128a3f408b01.html"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://guoguang1.jdzj.com/aboutus.html"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://top.qcc.com/tc/2e051aae4f83.html"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.tanzhi.cn/companies/8673bf89-7fd7-494c-a273-c40abf4d7030/"
+        },
+        {
+          "label": "监管或企业公告",
+          "url": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web1828/site/attach/0/9c02315711d84030a005bcd40bc063e1.pdf"
+        },
+        {
+          "label": "企业官网",
+          "url": "http://www.guoguang.com/"
+        }
+      ]
+    },
+    {
+      "rank": 207,
+      "id": "YQ000203",
+      "name": "乐清市祥朗进出口有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "企业官网",
+          "url": "https://www.worldsunlight.com/",
+          "domain": "worldsunlight.com",
+          "source": "user_provided",
+          "added_at": "2026-10-25"
+        },
+        {
+          "type": "alibaba_store",
+          "label": "Alibaba 国际站（关联企业）",
+          "url": "https://worldsunlight.en.alibaba.com/",
+          "domain": "worldsunlight.en.alibaba.com",
+          "source": "user_confirmed_related_company",
+          "added_at": "2026-10-27"
+        }
+      ],
+      "icon": "/company-icons/verified/YQ000203.png",
+      "note": "保留用户确认的 worldsunlight.com 和原官方 Logo；用户确认关联主体 Yueqing Xianglang Electric 的 worldsunlight Alibaba，明确关联企业，补其尚浦二路55号地址而不覆盖进出口公司原地址。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://www.cnverify.com/company/Yueqing-Xianglang-Imp-Exp-Co-Ltd"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.worldsunlight.com/"
+        },
+        {
+          "label": "Alibaba 国际站（关联企业）",
+          "url": "https://worldsunlight.en.alibaba.com/"
+        }
+      ],
+      "website_decisions": [
+        {
+          "url": "https://worldsunlight.en.alibaba.com/",
+          "decision": "user_confirmed_related_alibaba"
+        }
+      ],
+      "logo": {
+        "path": "/company-icons/verified/YQ000203.png",
+        "source_url": "https://www.worldsunlight.com/theme/EN/images/logo.png",
+        "page_url": "https://www.worldsunlight.com/",
+        "checked_at": "2026-10-25",
+        "dark_background": false
+      },
+      "logo_sha256": "b36357ceff6893f5b2ecd674f1e0421685a2eb679ffca16566add4bbb3ce0ea2"
+    },
+    {
+      "rank": 208,
+      "id": "YQ000200",
+      "name": "新光塑料有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "http://www.chnxg.com/",
+          "domain": "chnxg.com",
+          "added_at": "2026-10-24",
+          "source": "company_identity_verified"
+        }
+      ],
+      "icon": "/company-icons/verified/ranks201-220-20261027/YQ000200.png",
+      "note": "官网明确新光塑料及 XINGO 品牌、纬19路317号，补官网 Logo，HTTPS 证书异常改用可访问 HTTP。目录列出的 plasticcabletie 店铺当前已404，不发布。旧站列出的 xingo.cc 已转为无关内容，不采用该域名，不将其内容用于企业档案。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://www.chnxg.com/wap/about.asp"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://pdf.dfcfw.com/pdf/H2_AN201607010016352626_1.pdf"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.b2b168.org/huangye/12253991/"
+        },
+        {
+          "label": "企业官网",
+          "url": "http://www.chnxg.com/"
+        },
+        {
+          "label": "企业联系地址",
+          "url": "http://www.chnxg.com/contact.asp"
+        }
+      ],
+      "logo": {
+        "path": "/company-icons/verified/ranks201-220-20261027/YQ000200.png",
+        "source_url": "http://www.chnxg.com/index_files/logo.png",
+        "page_url": "http://www.chnxg.com/",
+        "checked_at": "2026-10-27",
+        "dark_background": false
+      },
+      "logo_sha256": "50a5fb67c1d295ecdb42508ac600fc6318a09544bcb0440e75faa9443527f058"
+    },
+    {
+      "rank": 209,
+      "id": "YQ000191",
+      "name": "乐清市惠华电子有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "https://www.huihuaplastic.com/",
+          "domain": "huihuaplastic.com",
+          "added_at": "2026-10-24"
+        },
+        {
+          "type": "alibaba_store",
+          "label": "Alibaba 国际站",
+          "url": "https://cnhuihua.en.alibaba.com/",
+          "domain": "cnhuihua.en.alibaba.com",
+          "source": "alibaba_exact_company",
+          "added_at": "2026-10-27"
+        }
+      ],
+      "icon": "/company-icons/verified/ranks201-220-20261027/YQ000191.png",
+      "note": "官网中文全称、HUASU 华塑品牌与纬十二路177号一致，补官网 Logo；cnhuihua 店铺主体 Yueqing Huihua Electronic Co., Ltd.、同地址及扎带产品一致，补店铺及公开地址。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://www.huihuaplastic.com/"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.huihuaplastic.com/abouts"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://huihuaplastic.com/cultures"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12252438&stockid=002897"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://cnhuihua.en.alibaba.com/"
+        },
+        {
+          "label": "企业联系地址",
+          "url": "https://www.huihuaplastic.com/contact.html"
+        }
+      ],
+      "logo": {
+        "path": "/company-icons/verified/ranks201-220-20261027/YQ000191.png",
+        "source_url": "https://www.huihuaplastic.com/public/uploads/20220624/b559ca1e3b6c921e8b9fdc4fadef45a8.png",
+        "page_url": "https://www.huihuaplastic.com/",
+        "checked_at": "2026-10-27",
+        "dark_background": false
+      },
+      "logo_sha256": "68a843b13ad06c6df30ccb347423a1513d3a70c2727cc4dd856146f827f917c2"
+    },
+    {
+      "rank": 210,
+      "id": "YQ000223",
+      "name": "温州暹丽贸易有限公司",
+      "links": [],
+      "icon": null,
+      "note": "检索中文全称、Xianli/Siamli 英文和已申请 SIAMLI 商标；只取得遮盖地址的商标资料，未找到能核实官网、Logo、Alibaba 或完整地址，未猜填品牌域名。",
+      "sources": [],
+      "research_sources": [
+        "https://tm.aliyun.com/detail/01cf_93846660_9"
+      ]
+    },
+    {
+      "rank": 211,
+      "id": "YQ000213",
+      "name": "浙江奇诚电器有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "企业官网",
+          "url": "https://www.cn-cqc.com/cn.php",
+          "domain": "cn-cqc.com",
+          "source": "user_provided",
+          "added_at": "2026-10-25"
+        }
+      ],
+      "icon": "/company-icons/verified/YQ002842.png",
+      "note": "保留用户确认的 cn-cqc.com/cn.php 和 CQC Logo；官网联系信息明确柳乐路57号，替换原不完整的高新名单地点说明。未找到可确认的实际 Alibaba 店铺，不使用仅同名供应商。",
+      "sources": [
+        {
+          "label": "监管或企业公告",
+          "url": "https://custom.huzhou.gov.cn/DFS/file/2021/03/23/20210323163637926jdmzgl.pdf"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.cn-cqc.com/cn.php"
+        }
+      ],
+      "logo": {
+        "path": "/company-icons/verified/YQ002842.png",
+        "source_url": "https://www.cn-cqc.com/Uploads//20200614/5ee5eb59c1d90.png",
+        "page_url": "https://www.cn-cqc.com/cn.php",
+        "checked_at": "2026-10-25",
+        "dark_background": false
+      },
+      "logo_sha256": "b65b2decf156b014329c565afc157e7e6cd7fdab30eb03ffbc3e806ffa4797bb"
+    },
+    {
+      "rank": 212,
+      "id": "YQ000194",
+      "name": "温州川井国际贸易有限公司",
+      "links": [],
+      "icon": null,
+      "note": "未找到可确认独立官网、Logo 或 Alibaba。品牌方公开的产品认证文件以 Wenzhou Chuanjing International Trade Co., Ltd. 列明柳市新光工业区生产地点，补生产经营地址，未用杭州川井除湿机企业资料。",
+      "sources": [
+        {
+          "label": "产品认证公开文件",
+          "url": "https://www.elcomspb.ru/upload/iblock/1a9/3ipqcvjy3sf8uoaxl66ad46bsembtssa.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 213,
+      "id": "YQ000210",
+      "name": "乐清市麦腾进出口有限公司",
+      "links": [],
+      "icon": null,
+      "note": "2024广州国际建筑电气展官方名录确有乐清市麦腾进出口及 Leqing Maiteng 名称，但未提供可确认域名；本次未找到可确认官网、Logo、Alibaba 或完整地址，不关联山东迈腾工具等同名企业。",
+      "sources": [],
+      "research_sources": [
+        "https://guangzhou-electrical-building-technology.hk.messefrankfurt.com/content/dam/messefrankfurt-redaktion/gz_electrical_building_technology/download/2024/GEBT24_VG_compressed.pdf"
+      ]
+    },
+    {
+      "rank": 214,
+      "id": "YQ000234",
+      "name": "温州格立特进出口有限公司",
+      "links": [],
+      "icon": null,
+      "note": "中文全称及 Gelite/Glitter/Great 等英文变体检索后，未找到可确认官网、Logo、Alibaba 或完整地址；不采用温州格立特机械或其他无关企业资料。",
+      "sources": [],
+      "research_sources": [
+        "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web1828/site/attach/0/e77759559f624df0b787ab382cfa0570.pdf"
+      ]
+    },
+    {
+      "rank": 215,
+      "id": "YQ000240",
+      "name": "乐清市威康电气有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "http://reaconelectric.com/",
+          "domain": "reaconelectric.com",
+          "added_at": "2026-10-24",
+          "source": "company_identity_verified"
+        }
+      ],
+      "icon": null,
+      "note": "原官网 Reacon Electric 的产品、柳市地址保留；HTTP 可访问而 HTTPS 证书异常，入口改 HTTP，并补官网长江路330号联系地址。名为 logos.jpg 的图实际只是渐变背景，不作为 Logo；未找到可确认 Alibaba。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://www.tendata.com/en/buyer/yueqing-reacon-electric-co-CHNNbf2e22a5abb3593d3fad4567241158de.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "http://reaconelectric.com/"
+        },
+        {
+          "label": "企业联系地址",
+          "url": "http://reaconelectric.com/contact.asp"
+        }
+      ]
+    },
+    {
+      "rank": 216,
+      "id": "YQ000214",
+      "name": "乐清市天兴电器有限公司",
+      "links": [
+        {
+          "type": "alibaba_store",
+          "label": "Alibaba 国际站",
+          "url": "https://cntx.en.alibaba.com/",
+          "domain": "cntx.en.alibaba.com",
+          "source": "user_provided",
+          "added_at": "2026-10-25"
+        },
+        {
+          "type": "official_website",
+          "label": "企业官网",
+          "url": "http://www.ab-elec.com.cn/",
+          "domain": "ab-elec.com.cn",
+          "source": "user_confirmed",
+          "added_at": "2026-10-27"
+        }
+      ],
+      "icon": "/company-icons/verified/ranks201-220-20261027/YQ000214.png",
+      "note": "保留用户原确认的 cntx Alibaba；补店铺 A&B Logo 和公开珠城西路地址。企业自述 LinkedIn 列 ab-elec.com.cn，名称、2005年成立、磐石地址和产品匹配，用户确认登记该历史官网，网站当前返回未配置错误。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://jy.wzvtc.cn/company/view/id/374504"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.wzrc.net/index.php?a=com_show&c=jobs&id=596a99e94548227e564cbc69d6258e80&m=home"
+        },
+        {
+          "label": "监管或企业公告",
+          "url": "https://wzmsa.wenzhou.gov.cn/module/download/downfile.jsp?classid=0&filename=88cb6860db4c45b0a86c6ac57788f09d.pdf"
+        },
+        {
+          "label": "监管或企业公告",
+          "url": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web1828/site/attach/0/9aca4ee70bcf476890932fcc0564d82c.pdf"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://cntx.en.alibaba.com/"
+        },
+        {
+          "label": "企业官网",
+          "url": "http://www.ab-elec.com.cn/"
+        },
+        {
+          "label": "企业 LinkedIn 页面",
+          "url": "https://pk.linkedin.com/company/yueqing-tianxing-electrical-co.-ltd."
+        }
+      ],
+      "website_decisions": [
+        {
+          "url": "http://www.ab-elec.com.cn/",
+          "decision": "user_confirmed_historical_website"
+        }
+      ],
+      "logo": {
+        "path": "/company-icons/verified/ranks201-220-20261027/YQ000214.png",
+        "source_url": "https://sc02.alicdn.com/kf/H39fc06b652ab42e88b13bbf065744d818.png",
+        "page_url": "http://www.ab-elec.com.cn/",
+        "checked_at": "2026-10-27",
+        "dark_background": false,
+        "source_page_url": "https://cntx.en.alibaba.com/"
+      },
+      "logo_sha256": "8edb5a30d309eec76289de32b2ca29467a3122d1f180bc62d296bb889939cc02"
+    },
+    {
+      "rank": 217,
+      "id": "YQ000201",
+      "name": "乐清市侨一电器有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "企业官网",
+          "url": "https://www.joyelec.com/",
+          "domain": "joyelec.com",
+          "source": "user_confirmed",
+          "added_at": "2026-10-27"
+        },
+        {
+          "type": "alibaba_store",
+          "label": "Alibaba 国际站",
+          "url": "https://joyelec.en.alibaba.com/",
+          "domain": "joyelec.en.alibaba.com",
+          "source": "user_confirmed",
+          "added_at": "2026-10-27"
+        }
+      ],
+      "icon": "/company-icons/verified/ranks201-220-20261027/YQ000201.png",
+      "note": "用户确认 JOYELEC 官网、Logo 和 joyelec Alibaba 均对应侨一。补官网及官网标识、实际店铺；官网北白象后岸工业区与 Alibaba 柳市站站路558号办公室地址分别记录。保留企业中文名称。",
+      "sources": [
+        {
+          "label": "企业官网",
+          "url": "https://www.joyelec.com/"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://joyelec.en.alibaba.com/"
+        }
+      ],
+      "website_decisions": [
+        {
+          "url": "https://www.joyelec.com/",
+          "decision": "user_confirmed"
+        },
+        {
+          "url": "https://joyelec.en.alibaba.com/",
+          "decision": "user_confirmed"
+        }
+      ],
+      "logo": {
+        "path": "/company-icons/verified/ranks201-220-20261027/YQ000201.png",
+        "source_url": "https://yizhantongimage.oss-accelerate.aliyuncs.com/Upload/20231122134246424635.png!compress.webp",
+        "page_url": "https://www.joyelec.com/",
+        "checked_at": "2026-10-27",
+        "dark_background": false
+      },
+      "logo_sha256": "289a6a02d97fc2d694d05ec8824b2f84023c3a3322322f77ae88c837a3a1e199"
+    },
+    {
+      "rank": 218,
+      "id": "YQ000217",
+      "name": "温州永久进出口有限公司",
+      "links": [],
+      "icon": null,
+      "note": "现有柳江路18号A幢21层2101室地址获官方放心消费名单支持，保留；未找到可确认独立官网、Logo 或 Alibaba。未把永久电力金具 yojiu.com 等仅名字相近的企业自动关联。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://www.cnverify.com/company/Wenzhou-Yongjiu-Import-And-Export-Co-Ltd"
+        },
+        {
+          "label": "监管或企业公告",
+          "url": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web2074/site/attach/0/3c408380c24c4138a805c8990c2b8bc0.pdf"
+        }
+      ],
+      "research_sources": [
+        "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web2074/site/attach/0/d3cdd05bd5a9436d8bd4090eb480343f.pdf"
+      ]
+    },
+    {
+      "rank": 219,
+      "id": "YQ000220",
+      "name": "浙江德汇工具有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "http://www.dehuicn.com/",
+          "domain": "dehuicn.com",
+          "added_at": "2026-10-24"
+        }
+      ],
+      "icon": "/company-icons/verified/YQ000220.png",
+      "note": "保留用户已确认 dehuicn.com 及德汇 Logo；找到历史目录对应 dehuitools Alibaba，但实际店铺已404，未发布失效店铺。原芙蓉工业区地址保留。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://np-snotice.eastmoney.com/pdf/H2_AN202002191375273760_1.PDF"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://ycd.boyuan.com/com/dehui/dzyb/itemid-648.html"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.cqn.com.cn/ms/content/2021-01/20/content_8661484.htm"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "http://www.dehuicn.com/"
+        }
+      ],
+      "logo": {
+        "path": "/company-icons/verified/YQ000220.png",
+        "source_url": "http://www.dehuicn.com/upLoad/slide/month_2412/202412101106262438.png",
+        "page_url": "http://www.dehuicn.com/",
+        "checked_at": "2026-10-24",
+        "dark_background": false
+      },
+      "logo_sha256": "d75dc5fea7ebaf60abb7e63e7748f34563a34e3a637ab62f9a1e5b0d68687305"
+    },
+    {
+      "rank": 220,
+      "id": "YQ000186",
+      "name": "乐清市达利尔电器厂",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "https://www.dalier.cn/",
+          "domain": "dalier.cn",
+          "added_at": "2026-10-24"
+        },
+        {
+          "type": "official_website_alt",
+          "label": "企业官网（其他域名）",
+          "url": "https://www.cndalier.com/",
+          "domain": "cndalier.com",
+          "source": "company_identity_verified",
+          "added_at": "2026-10-27"
+        }
+      ],
+      "icon": "/company-icons/verified/YQ000186.png",
+      "note": "原 dalier.cn 和 DALIER Logo 保留；新找到 cndalier.com 中文主体、13757750709 电话、端子产品与原站一致，补为其他官网及柳乐路23号联系地址。cndalier Alibaba 仅元数据列相同主体，实际浏览器只加载导航，未发布可用性未确认的店铺。",
+      "sources": [
+        {
+          "label": "企业公开资料",
+          "url": "https://www.dalier.cn/"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.dalier.cn/lxwm"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://www.cqn.com.cn/ms/content/2024-05/15/content_9050724.htm"
+        },
+        {
+          "label": "企业公开资料",
+          "url": "https://m.cqn.com.cn/ms/content/2025-07/03/content_9112875.htm"
+        },
+        {
+          "label": "企业官网（其他域名）",
+          "url": "https://www.cndalier.com/"
+        },
+        {
+          "label": "企业介绍",
+          "url": "https://www.cndalier.com/about-us/"
+        },
+        {
+          "label": "企业联系地址",
+          "url": "https://www.cndalier.com/contact/"
+        }
+      ],
+      "logo": {
+        "path": "/company-icons/verified/YQ000186.png",
+        "source_url": "https://www.dalier.cn/theme/cn/images/logo.png",
+        "page_url": "https://www.dalier.cn/",
+        "checked_at": "2026-10-24",
+        "dark_background": false
+      },
+      "logo_sha256": "36ad2b7309ff1a4a733d38ebb03313f84679e0afa3d5b05f7e9eaf137382bc22"
+    }
+  ]
+}

@@ -8774,6 +8774,14 @@
         "url": "https://www.hossoni.com/",
         "domain": "hossoni.com",
         "added_at": "2026-10-24"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站（关联企业）",
+        "url": "https://hossoni.en.alibaba.com/",
+        "domain": "hossoni.en.alibaba.com",
+        "source": "user_confirmed_related_company",
+        "added_at": "2026-10-27"
       }
     ],
     "details": {
@@ -8812,9 +8820,17 @@
         {
           "label": "企业公开资料",
           "url": "https://www.gongkong.com/news/202607/451250.html"
+        },
+        {
+          "label": "Alibaba 国际站（关联企业）",
+          "url": "https://hossoni.en.alibaba.com/"
+        },
+        {
+          "label": "企业联系地址",
+          "url": "https://www.hossoni.com/contact.html"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "legal_name": "鸿宝电源有限公司",
       "registered_capital": "1.036亿元人民币"
     }
@@ -9337,18 +9353,27 @@
       {
         "type": "official_website",
         "label": "官方网站",
-        "url": "https://www.chuanghuisports.com/",
+        "url": "http://www.chuanghuisports.com/",
         "domain": "chuanghuisports.com",
-        "added_at": "2026-10-24"
+        "added_at": "2026-10-24",
+        "source": "company_identity_verified"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站",
+        "url": "https://chuanghuisports.en.alibaba.com/",
+        "domain": "chuanghuisports.en.alibaba.com",
+        "source": "alibaba_exact_company",
+        "added_at": "2026-10-27"
       }
     ],
     "details": {
-      "contact_address": "浙江省温州市乐清市乐清湾港区乐商创业园（浙江福泉电子有限公司内）",
+      "contact_address": "No.9, Development Road, Yueqing Bay Area, Yueqing City, Zhejiang, China",
       "field_sources": {
         "contact_address": {
-          "url": "https://www.chuanghuisports.com/col.jsp?id=102",
-          "checked_at": "2026-10-24",
-          "source_type": "public_company_record"
+          "url": "http://www.chuanghuisports.com/",
+          "checked_at": "2026-10-27",
+          "source_type": "company_website"
         },
         "registered_capital": {
           "url": "https://www.chuanghuisports.com/col.jsp?id=102",
@@ -9359,6 +9384,11 @@
           "url": "https://www.chuanghuisports.com/col.jsp?id=102",
           "checked_at": "2026-10-24",
           "source_type": "company_website_or_directory"
+        },
+        "alibaba_address": {
+          "url": "https://chuanghuisports.en.alibaba.com/",
+          "checked_at": "2026-10-27",
+          "source_type": "alibaba_company_profile"
         }
       },
       "registered_capital": "1000万元人民币",
@@ -9371,10 +9401,19 @@
         {
           "label": "企业公开资料",
           "url": "https://www.cnverify.com/company/Zhejiang-Chuanghui-Sports-Co-Ltd"
+        },
+        {
+          "label": "企业官网",
+          "url": "http://www.chuanghuisports.com/"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://chuanghuisports.en.alibaba.com/"
         }
       ],
-      "checked_at": "2026-10-24",
-      "legal_name": "浙江创汇运动用品有限公司"
+      "checked_at": "2026-10-27",
+      "legal_name": "浙江创汇运动用品有限公司",
+      "alibaba_address": "Yueqing Bay Industrial Park, Yueqing, Wenzhou, Zhejiang, China"
     }
   },
   "YQ000183": {
@@ -9519,15 +9558,23 @@
         "url": "https://www.dalier.cn/",
         "domain": "dalier.cn",
         "added_at": "2026-10-24"
+      },
+      {
+        "type": "official_website_alt",
+        "label": "企业官网（其他域名）",
+        "url": "https://www.cndalier.com/",
+        "domain": "cndalier.com",
+        "source": "company_identity_verified",
+        "added_at": "2026-10-27"
       }
     ],
     "details": {
-      "contact_address": "浙江省温州市乐清市柳市镇后洋公路桥东首（上峰村）",
+      "contact_address": "No. 23, Liule Road, Liushi Town, Yueqing City, Zhejiang Province, China",
       "field_sources": {
         "contact_address": {
-          "url": "https://www.dalier.cn/",
-          "checked_at": "2026-10-24",
-          "source_type": "public_company_record"
+          "url": "https://www.cndalier.com/contact/",
+          "checked_at": "2026-10-27",
+          "source_type": "company_website"
         },
         "main_products": {
           "url": "https://www.dalier.cn/",
@@ -9552,9 +9599,21 @@
         {
           "label": "企业公开资料",
           "url": "https://m.cqn.com.cn/ms/content/2025-07/03/content_9112875.htm"
+        },
+        {
+          "label": "企业官网（其他域名）",
+          "url": "https://www.cndalier.com/"
+        },
+        {
+          "label": "企业介绍",
+          "url": "https://www.cndalier.com/about-us/"
+        },
+        {
+          "label": "企业联系地址",
+          "url": "https://www.cndalier.com/contact/"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "legal_name": "乐清市达利尔电器厂"
     }
   },
@@ -9793,6 +9852,14 @@
         "url": "https://www.huihuaplastic.com/",
         "domain": "huihuaplastic.com",
         "added_at": "2026-10-24"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站",
+        "url": "https://cnhuihua.en.alibaba.com/",
+        "domain": "cnhuihua.en.alibaba.com",
+        "source": "alibaba_exact_company",
+        "added_at": "2026-10-27"
       }
     ],
     "details": {
@@ -9807,6 +9874,11 @@
           "url": "https://www.huihuaplastic.com/",
           "checked_at": "2026-10-24",
           "source_type": "company_website_or_directory"
+        },
+        "alibaba_address": {
+          "url": "https://cnhuihua.en.alibaba.com/",
+          "checked_at": "2026-10-27",
+          "source_type": "alibaba_company_profile"
         }
       },
       "main_products": "尼龙扎带、固线夹、压线帽、冷压端子、汽车线束固定配件及相关配线零部件",
@@ -9826,10 +9898,19 @@
         {
           "label": "企业公开资料",
           "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12252438&stockid=002897"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://cnhuihua.en.alibaba.com/"
+        },
+        {
+          "label": "企业联系地址",
+          "url": "https://www.huihuaplastic.com/contact.html"
         }
       ],
-      "checked_at": "2026-10-24",
-      "legal_name": "乐清市惠华电子有限公司"
+      "checked_at": "2026-10-27",
+      "legal_name": "乐清市惠华电子有限公司",
+      "alibaba_address": "No. 177 Wei 12th Road, Economic Development Zone, Wenzhou, Zhejiang, China"
     }
   },
   "YQ000192": {
@@ -10140,9 +10221,10 @@
       {
         "type": "official_website",
         "label": "官方网站",
-        "url": "https://www.chnxg.com/",
+        "url": "http://www.chnxg.com/",
         "domain": "chnxg.com",
-        "added_at": "2026-10-24"
+        "added_at": "2026-10-24",
+        "source": "company_identity_verified"
       }
     ],
     "details": {
@@ -10178,9 +10260,17 @@
         {
           "label": "企业公开资料",
           "url": "https://www.b2b168.org/huangye/12253991/"
+        },
+        {
+          "label": "企业官网",
+          "url": "http://www.chnxg.com/"
+        },
+        {
+          "label": "企业联系地址",
+          "url": "http://www.chnxg.com/contact.asp"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "legal_name": "新光塑料有限公司"
     }
   },
@@ -10202,6 +10292,11 @@
           "url": "https://www.cnverify.com/company/Yueqing-Xianglang-Imp-Exp-Co-Ltd",
           "checked_at": "2026-10-24",
           "source_type": "company_website_or_directory"
+        },
+        "alibaba_address": {
+          "url": "https://worldsunlight.en.alibaba.com/",
+          "checked_at": "2026-10-27",
+          "source_type": "alibaba_company_profile"
         }
       },
       "registered_capital": "50万元人民币",
@@ -10214,10 +10309,15 @@
         {
           "label": "企业官网",
           "url": "https://www.worldsunlight.com/"
+        },
+        {
+          "label": "Alibaba 国际站（关联企业）",
+          "url": "https://worldsunlight.en.alibaba.com/"
         }
       ],
-      "checked_at": "2026-10-25",
-      "legal_name": "乐清市祥朗进出口有限公司"
+      "checked_at": "2026-10-27",
+      "legal_name": "乐清市祥朗进出口有限公司",
+      "alibaba_address": "No. 55, Shangpu 2nd Road, Qiligang Electrical Industrial Park, Liushi Town, Wenzhou, Zhejiang, China"
     },
     "links": [
       {
@@ -10227,6 +10327,14 @@
         "domain": "worldsunlight.com",
         "source": "user_provided",
         "added_at": "2026-10-25"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站（关联企业）",
+        "url": "https://worldsunlight.en.alibaba.com/",
+        "domain": "worldsunlight.en.alibaba.com",
+        "source": "user_confirmed_related_company",
+        "added_at": "2026-10-27"
       }
     ]
   },
@@ -10442,9 +10550,10 @@
           "url": "https://www.tendata.com/en/buyer/yueqing-dobetter-trading-co-ltd-no-8-xiangyang-road-liushi-town-yueqing-zhejiang-325604-china-CHNN7d1a0362a58a669323f319944a910ce0.html"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "legal_name": "乐清多贝特贸易有限公司"
-    }
+    },
+    "links": []
   },
   "YQ000208": {
     "links": [
@@ -10521,7 +10630,7 @@
           "url": "http://www.guoguang.com/"
         }
       ],
-      "checked_at": "2026-10-25",
+      "checked_at": "2026-10-27",
       "contact_address": "浙江省温州市乐清市虹桥镇西工业区A-18号",
       "field_sources": {
         "contact_address": {
@@ -10630,13 +10739,13 @@
           "url": "https://www.cn-cqc.com/cn.php"
         }
       ],
-      "checked_at": "2026-10-25",
-      "contact_address": "浙江省温州市乐清市（高新企业名单确认）",
+      "checked_at": "2026-10-27",
+      "contact_address": "中国浙江省温州市柳市镇柳乐路57号，邮编325604",
       "field_sources": {
         "contact_address": {
-          "url": "https://custom.huzhou.gov.cn/DFS/file/2021/03/23/20210323163637926jdmzgl.pdf",
-          "checked_at": "2026-10-24",
-          "source_type": "public_company_record"
+          "url": "https://www.cn-cqc.com/cn.php",
+          "checked_at": "2026-10-27",
+          "source_type": "company_website"
         },
         "main_products": {
           "url": "https://custom.huzhou.gov.cn/DFS/file/2021/03/23/20210323163637926jdmzgl.pdf",
@@ -10676,6 +10785,11 @@
           "url": "https://jy.wzvtc.cn/company/view/id/374504",
           "checked_at": "2026-10-24",
           "source_type": "company_website"
+        },
+        "alibaba_address": {
+          "url": "https://cntx.en.alibaba.com/",
+          "checked_at": "2026-10-27",
+          "source_type": "alibaba_company_profile"
         }
       },
       "registered_capital": "2000万元人民币",
@@ -10700,10 +10814,19 @@
         {
           "label": "Alibaba 国际站",
           "url": "https://cntx.en.alibaba.com/"
+        },
+        {
+          "label": "企业官网",
+          "url": "http://www.ab-elec.com.cn/"
+        },
+        {
+          "label": "企业 LinkedIn 页面",
+          "url": "https://pk.linkedin.com/company/yueqing-tianxing-electrical-co.-ltd."
         }
       ],
-      "checked_at": "2026-10-25",
-      "legal_name": "乐清市天兴电器有限公司"
+      "checked_at": "2026-10-27",
+      "legal_name": "乐清市天兴电器有限公司",
+      "alibaba_address": "Zhucheng West Road, Panshi Town, Yueqing, Wenzhou, Zhejiang, China"
     },
     "links": [
       {
@@ -10713,6 +10836,14 @@
         "domain": "cntx.en.alibaba.com",
         "source": "user_provided",
         "added_at": "2026-10-25"
+      },
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "http://www.ab-elec.com.cn/",
+        "domain": "ab-elec.com.cn",
+        "source": "user_confirmed",
+        "added_at": "2026-10-27"
       }
     ]
   },
@@ -10871,9 +11002,10 @@
           "url": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web2074/site/attach/0/3c408380c24c4138a805c8990c2b8bc0.pdf"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "legal_name": "温州永久进出口有限公司"
-    }
+    },
+    "links": []
   },
   "YQ000218": {
     "links": [
@@ -10883,6 +11015,14 @@
         "url": "https://www.liyond.com.cn/",
         "domain": "liyond.com.cn",
         "added_at": "2026-10-24"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站",
+        "url": "https://liyond.en.alibaba.com/",
+        "domain": "liyond.en.alibaba.com",
+        "source": "alibaba_exact_company",
+        "added_at": "2026-10-27"
       }
     ],
     "details": {
@@ -10896,6 +11036,16 @@
         "main_products": {
           "url": "https://www.liyond.com.cn/",
           "checked_at": "2026-10-24",
+          "source_type": "company_website"
+        },
+        "alibaba_address": {
+          "url": "https://liyond.en.alibaba.com/",
+          "checked_at": "2026-10-27",
+          "source_type": "alibaba_company_profile"
+        },
+        "contact_address": {
+          "url": "https://www.liyond.com.cn/contact-us/",
+          "checked_at": "2026-10-27",
           "source_type": "company_website"
         }
       },
@@ -10916,10 +11066,20 @@
         {
           "label": "企业公开资料",
           "url": "https://www.zhaopin.com/companydetail/CC509185921.htm"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://liyond.en.alibaba.com/"
+        },
+        {
+          "label": "企业联系地址",
+          "url": "https://www.liyond.com.cn/contact-us/"
         }
       ],
-      "checked_at": "2026-10-24",
-      "legal_name": "乐清市莱洋电气有限公司"
+      "checked_at": "2026-10-27",
+      "legal_name": "乐清市莱洋电气有限公司",
+      "alibaba_address": "Room 1801, Building 2, 3, 4, Headquarters Economy Park, No. 6688, Xuyang Road, Chengdong Street, Yueqing, Zhejiang, China",
+      "contact_address": "浙江省乐清市城东街道旭阳路6688号总部经济园2、3、4幢1801室"
     }
   },
   "YQ000220": {
@@ -10971,7 +11131,7 @@
           "url": "http://www.dehuicn.com/"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "legal_name": "浙江德汇工具有限公司"
     }
   },
@@ -11175,7 +11335,7 @@
           "url": "https://www.scribd.com/document/1049273065/%E7%AC%AC123%E5%B1%8A%E4%B8%AD%E5%9B%BD%E8%BF%9B%E5%87%BA%E5%8F%A3%E5%95%86%E5%93%81%E4%BA%A4%E6%98%93%E4%BC%9A-10-12"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "legal_name": "乐清市环科进出口有限公司"
     }
   },
@@ -11490,18 +11650,19 @@
       {
         "type": "official_website",
         "label": "官方网站",
-        "url": "https://reaconelectric.com/",
+        "url": "http://reaconelectric.com/",
         "domain": "reaconelectric.com",
-        "added_at": "2026-10-24"
+        "added_at": "2026-10-24",
+        "source": "company_identity_verified"
       }
     ],
     "details": {
-      "contact_address": "浙江省温州市乐清市柳市镇上池村",
+      "contact_address": "NO.330, Changjiang Road, Liushi, Yueqing, Zhejiang, China",
       "field_sources": {
         "contact_address": {
-          "url": "https://www.tendata.com/en/buyer/yueqing-reacon-electric-co-CHNNbf2e22a5abb3593d3fad4567241158de.html",
-          "checked_at": "2026-10-24",
-          "source_type": "public_company_record"
+          "url": "http://reaconelectric.com/contact.asp",
+          "checked_at": "2026-10-27",
+          "source_type": "company_website"
         },
         "registered_capital": {
           "url": "https://www.tendata.com/en/buyer/yueqing-reacon-electric-co-CHNNbf2e22a5abb3593d3fad4567241158de.html",
@@ -11520,9 +11681,17 @@
         {
           "label": "企业公开资料",
           "url": "https://www.tendata.com/en/buyer/yueqing-reacon-electric-co-CHNNbf2e22a5abb3593d3fad4567241158de.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "http://reaconelectric.com/"
+        },
+        {
+          "label": "企业联系地址",
+          "url": "http://reaconelectric.com/contact.asp"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "legal_name": "乐清市威康电气有限公司"
     }
   },
@@ -82218,6 +82387,96 @@
     "details": {
       "legal_name": "温州道程贸易有限公司",
       "checked_at": "2026-10-27"
+    }
+  },
+  "YQ000223": {
+    "links": [],
+    "details": {
+      "legal_name": "温州暹丽贸易有限公司",
+      "checked_at": "2026-10-27"
+    }
+  },
+  "YQ000194": {
+    "links": [],
+    "details": {
+      "legal_name": "温州川井国际贸易有限公司",
+      "checked_at": "2026-10-27",
+      "operating_address": "中国浙江省乐清市柳市镇新光工业区",
+      "field_sources": {
+        "operating_address": {
+          "url": "https://www.elcomspb.ru/upload/iblock/1a9/3ipqcvjy3sf8uoaxl66ad46bsembtssa.pdf",
+          "checked_at": "2026-10-27",
+          "source_type": "public_product_certification"
+        }
+      },
+      "sources": [
+        {
+          "label": "产品认证公开文件",
+          "url": "https://www.elcomspb.ru/upload/iblock/1a9/3ipqcvjy3sf8uoaxl66ad46bsembtssa.pdf"
+        }
+      ]
+    }
+  },
+  "YQ000210": {
+    "links": [],
+    "details": {
+      "legal_name": "乐清市麦腾进出口有限公司",
+      "checked_at": "2026-10-27"
+    }
+  },
+  "YQ000234": {
+    "links": [],
+    "details": {
+      "legal_name": "温州格立特进出口有限公司",
+      "checked_at": "2026-10-27"
+    }
+  },
+  "YQ000201": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "https://www.joyelec.com/",
+        "domain": "joyelec.com",
+        "source": "user_confirmed",
+        "added_at": "2026-10-27"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站",
+        "url": "https://joyelec.en.alibaba.com/",
+        "domain": "joyelec.en.alibaba.com",
+        "source": "user_confirmed",
+        "added_at": "2026-10-27"
+      }
+    ],
+    "details": {
+      "legal_name": "乐清市侨一电器有限公司",
+      "checked_at": "2026-10-27",
+      "sources": [
+        {
+          "label": "企业官网",
+          "url": "https://www.joyelec.com/"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://joyelec.en.alibaba.com/"
+        }
+      ],
+      "alibaba_address": "Room 1401, Building C, Luzhuang Building, No. 558 Zhanzhan Road, Liushi Town, Wenzhou, Zhejiang, China",
+      "field_sources": {
+        "alibaba_address": {
+          "url": "https://joyelec.en.alibaba.com/",
+          "checked_at": "2026-10-27",
+          "source_type": "alibaba_company_profile"
+        },
+        "contact_address": {
+          "url": "https://www.joyelec.com/",
+          "checked_at": "2026-10-27",
+          "source_type": "company_website"
+        }
+      },
+      "contact_address": "Houan industry area, North Baixiang town, Yueqing city, Zhejiang province, China"
     }
   }
 }

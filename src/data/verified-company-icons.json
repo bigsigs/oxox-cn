@@ -392,11 +392,12 @@
     "dark_background": false
   },
   "YQ000218": {
-    "path": "/company-icons/verified/YQ000218.png",
-    "source_url": "https://www.liyond.com.cn/wp-content/uploads/2025/02/eton.png",
+    "path": "/company-icons/verified/ranks201-220-20261027/YQ000218.png",
+    "source_url": "https://sc04.alicdn.com/kf/HTB1wIVgbvWG3KVjSZFgq6zTspXaN.jpg",
     "page_url": "https://www.liyond.com.cn/",
-    "checked_at": "2026-10-24",
-    "dark_background": false
+    "checked_at": "2026-10-27",
+    "dark_background": false,
+    "source_page_url": "https://liyond.en.alibaba.com/"
   },
   "YQ000220": {
     "path": "/company-icons/verified/YQ000220.png",
@@ -2034,6 +2035,49 @@
     "path": "/company-icons/verified/YQ002914.png",
     "source_url": "https://www.zuch.cn/wp-content/themes/Zhucheng/assets/images/1761030715257966.png",
     "page_url": "https://www.zuch.cn/",
+    "checked_at": "2026-10-27",
+    "dark_background": false
+  },
+  "YQ000170": {
+    "path": "/company-icons/verified/ranks201-220-20261027/YQ000170.png",
+    "source_url": "https://www.hossoni.com/img/logo.png",
+    "page_url": "https://www.hossoni.com/",
+    "checked_at": "2026-10-27",
+    "dark_background": false
+  },
+  "YQ000181": {
+    "path": "/company-icons/verified/ranks201-220-20261027/YQ000181.png",
+    "source_url": "http://26714239.s21i.faiusr.com/4/ABUIABAEGAAg4e_avgYomfralgQw2AQ4pAI.png.webp",
+    "page_url": "http://www.chuanghuisports.com/",
+    "checked_at": "2026-10-27",
+    "dark_background": false
+  },
+  "YQ000200": {
+    "path": "/company-icons/verified/ranks201-220-20261027/YQ000200.png",
+    "source_url": "http://www.chnxg.com/index_files/logo.png",
+    "page_url": "http://www.chnxg.com/",
+    "checked_at": "2026-10-27",
+    "dark_background": false
+  },
+  "YQ000191": {
+    "path": "/company-icons/verified/ranks201-220-20261027/YQ000191.png",
+    "source_url": "https://www.huihuaplastic.com/public/uploads/20220624/b559ca1e3b6c921e8b9fdc4fadef45a8.png",
+    "page_url": "https://www.huihuaplastic.com/",
+    "checked_at": "2026-10-27",
+    "dark_background": false
+  },
+  "YQ000214": {
+    "path": "/company-icons/verified/ranks201-220-20261027/YQ000214.png",
+    "source_url": "https://sc02.alicdn.com/kf/H39fc06b652ab42e88b13bbf065744d818.png",
+    "page_url": "http://www.ab-elec.com.cn/",
+    "checked_at": "2026-10-27",
+    "dark_background": false,
+    "source_page_url": "https://cntx.en.alibaba.com/"
+  },
+  "YQ000201": {
+    "path": "/company-icons/verified/ranks201-220-20261027/YQ000201.png",
+    "source_url": "https://yizhantongimage.oss-accelerate.aliyuncs.com/Upload/20231122134246424635.png!compress.webp",
+    "page_url": "https://www.joyelec.com/",
     "checked_at": "2026-10-27",
     "dark_background": false
   }

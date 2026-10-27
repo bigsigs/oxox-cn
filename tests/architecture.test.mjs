@@ -377,6 +377,16 @@ test("verified company icons use a website curated for the same company", async 
   }
 });
 
+test("Liyond displays its own brand instead of a partner's logo", async () => {
+  const icons = await readJson("src/data/verified-company-icons.json");
+  const icon = icons.YQ000218;
+  assert.doesNotMatch(icon.source_url, /(?:eaton|eton|abb)\./i);
+  assert.equal(icon.source_page_url, "https://liyond.en.alibaba.com/");
+  const html = await read(builtPath(companyPath("YQ000218")));
+  assert.ok(tagsOf(mainOf(html), "img").some((image) => image.src === icon.path));
+  assert.ok(!tagsOf(mainOf(html), "img").some((image) => image.src === "/company-icons/verified/YQ000218.png"));
+});
+
 test("newly confirmed official websites publish on the exact matched companies", async () => {
   const [profiles, icons, companies, periods] = await Promise.all([
     readJson(`${dataPath}company-profiles.json`),
