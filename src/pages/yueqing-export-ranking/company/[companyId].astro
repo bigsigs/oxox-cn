@@ -124,7 +124,9 @@ const isHttpUrl = (value: string) => {
 const validLinks = (profile?.links ?? []).filter((link) => isHttpUrl(link.url));
 const primaryWebsiteLink = validLinks.find((link) => link.type === "official_website");
 const primaryWebsite = primaryWebsiteLink?.url;
-const alibabaStore = validLinks.find((link) => link.type === "alibaba_store")?.url;
+const alibabaStoreLink = validLinks.find((link) => link.type === "alibaba_store");
+const alibabaStore = alibabaStoreLink?.url;
+const isRelatedAlibabaStore = alibabaStoreLink?.label.includes("关联") ?? false;
 const primaryDomain = primaryWebsite ? new URL(primaryWebsite).hostname.replace(/^www\./, "") : null;
 const companyIcon = getCompanyIcon(primaryDomain, company.company_id);
 const companyInitials = company.company_name.replace(/^(?:浙江省?|温州市?|乐清市?)/, "").slice(0, 2);
@@ -185,7 +187,7 @@ const facts = [
   ["注册地址", details?.registered_address],
   ["生产经营地址", details?.operating_address],
   ["官网联系地址", details?.contact_address],
-  ["Alibaba 店铺地址", details?.alibaba_address],
+  [isRelatedAlibabaStore ? "Alibaba 关联店铺地址" : "Alibaba 店铺地址", details?.alibaba_address],
   ["主营产品", details?.main_products],
   ["登记机关", details?.registration_authority],
   ["行业分类", details?.industry],
@@ -280,7 +282,7 @@ const schema = {
         </div>
         <div class="company-actions">
           {primaryWebsite && <a class="detail-button" href={primaryWebsite} target="_blank" rel="nofollow noopener noreferrer">{primaryWebsiteLink?.label === "关联企业网站" ? "访问关联网站" : ["企业产品网站", "关联产品网站"].includes(primaryWebsiteLink?.label || "") ? "访问产品网站" : "访问官网"} <span aria-hidden="true">↗</span></a>}
-          {alibabaStore && <a class="detail-button" href={alibabaStore} target="_blank" rel="nofollow noopener noreferrer">Alibaba 国际站 <span aria-hidden="true">↗</span></a>}
+          {alibabaStore && <a class="detail-button" href={alibabaStore} target="_blank" rel="nofollow noopener noreferrer">{isRelatedAlibabaStore ? "Alibaba 国际站（关联企业）" : "Alibaba 国际站"} <span aria-hidden="true">↗</span></a>}
           <a class="detail-button" href={`/?q=${encodeURIComponent(company.company_name)}`}>← 返回排行榜</a>
         </div>
       </section>

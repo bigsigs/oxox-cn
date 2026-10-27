@@ -336,6 +336,25 @@ test("related and product websites are described accurately in company profiles"
   assert.notEqual(associatedProductOrganization?.url, "https://www.ecopointcharger.com/");
 });
 
+test("related Alibaba stores distinguish their identity and address from the ranked company", async () => {
+  const id = "YQ000183";
+  const profiles = await readJson(`${dataPath}company-profiles.json`);
+  const profile = profiles[id];
+  const store = profile.links.find((link) => link.type === "alibaba_store");
+  assert.equal(store.url, "https://elegrp.en.alibaba.com/");
+  const html = await read(builtPath(companyPath(id)));
+  const main = mainOf(html);
+  const action = anchorsOf(main).find((link) => link.class === "detail-button" && link.href === store.url);
+  assert.match(action?.text ?? "", /Alibaba 国际站（关联企业）/);
+  const text = textOf(main);
+  assert.ok(text.includes("Alibaba 关联店铺地址"));
+  assert.ok(text.includes("浙江省温州市乐清市北白象镇南园四路7号"));
+  assert.ok(text.includes(profile.details.alibaba_address));
+  const organization = schemaNodes(html).find((node) => node["@type"] === "Organization");
+  assert.notEqual(organization?.url, store.url);
+  assert.notEqual(organization?.url, "https://www.elegrp.cn/");
+});
+
 test("verified company icons use a website curated for the same company", async () => {
   const [icons, profiles] = await Promise.all([
     readJson("src/data/verified-company-icons.json"),
