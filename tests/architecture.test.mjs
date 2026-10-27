@@ -329,6 +329,11 @@ test("related and product websites are described accurately in company profiles"
   const productHtml = await read(builtPath(companyPath("YQ000110")));
   const productAction = anchorsOf(mainOf(productHtml)).find((link) => link.class === "detail-button" && link.href === "https://starlinkaccs.com/");
   assert.match(productAction?.text ?? "", /访问产品网站/);
+  const associatedProductHtml = await read(builtPath(companyPath("YQ000139")));
+  const associatedProductAction = anchorsOf(mainOf(associatedProductHtml)).find((link) => link.class === "detail-button" && link.href === "https://www.ecopointcharger.com/");
+  assert.match(associatedProductAction?.text ?? "", /访问产品网站/);
+  const associatedProductOrganization = schemaNodes(associatedProductHtml).find((node) => node["@type"] === "Organization");
+  assert.notEqual(associatedProductOrganization?.url, "https://www.ecopointcharger.com/");
 });
 
 test("verified company icons use a website curated for the same company", async () => {

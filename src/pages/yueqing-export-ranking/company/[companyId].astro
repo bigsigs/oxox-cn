@@ -206,7 +206,7 @@ const companySchema = details ? {
     streetAddress: details.registered_address,
     addressCountry: "CN",
   } : undefined,
-  url: primaryWebsiteLink?.label === "关联企业网站" ? undefined : primaryWebsite,
+  url: ["关联企业网站", "关联产品网站", "企业产品网站"].includes(primaryWebsiteLink?.label || "") ? undefined : primaryWebsite,
 } : null;
 const schema = {
   "@context": "https://schema.org",
@@ -279,7 +279,7 @@ const schema = {
           </div>
         </div>
         <div class="company-actions">
-          {primaryWebsite && <a class="detail-button" href={primaryWebsite} target="_blank" rel="nofollow noopener noreferrer">{primaryWebsiteLink?.label === "关联企业网站" ? "访问关联网站" : primaryWebsiteLink?.label === "企业产品网站" ? "访问产品网站" : "访问官网"} <span aria-hidden="true">↗</span></a>}
+          {primaryWebsite && <a class="detail-button" href={primaryWebsite} target="_blank" rel="nofollow noopener noreferrer">{primaryWebsiteLink?.label === "关联企业网站" ? "访问关联网站" : ["企业产品网站", "关联产品网站"].includes(primaryWebsiteLink?.label || "") ? "访问产品网站" : "访问官网"} <span aria-hidden="true">↗</span></a>}
           {alibabaStore && <a class="detail-button" href={alibabaStore} target="_blank" rel="nofollow noopener noreferrer">Alibaba 国际站 <span aria-hidden="true">↗</span></a>}
           <a class="detail-button" href={`/?q=${encodeURIComponent(company.company_name)}`}>← 返回排行榜</a>
         </div>

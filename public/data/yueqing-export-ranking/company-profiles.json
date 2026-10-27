@@ -6658,6 +6658,22 @@
         "url": "https://wincoco.cn/",
         "domain": "wincoco.cn",
         "added_at": "2026-10-24"
+      },
+      {
+        "type": "official_website_alt",
+        "label": "关联产品网站",
+        "url": "https://www.beltwin.com/",
+        "domain": "beltwin.com",
+        "source": "user_confirmed_related_company",
+        "added_at": "2026-10-27"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站",
+        "url": "https://winco.en.alibaba.com/",
+        "domain": "winco.en.alibaba.com",
+        "source": "independent_search_verified",
+        "added_at": "2026-10-27"
       }
     ],
     "details": {
@@ -6689,9 +6705,17 @@
         {
           "label": "企业公开资料",
           "url": "https://cn.linkedin.com/in/%E5%BB%BA%E4%B8%9A-%E5%88%98-a3169210a"
+        },
+        {
+          "label": "关联产品网站",
+          "url": "https://www.beltwin.com/"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://winco.en.alibaba.com/"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "legal_name": "温州盈控进出口有限公司"
     }
   },
@@ -6703,6 +6727,14 @@
         "url": "http://newjieli.com/",
         "domain": "newjieli.com",
         "added_at": "2026-10-24"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站",
+        "url": "https://newjieli.en.alibaba.com/",
+        "domain": "newjieli.en.alibaba.com",
+        "source": "independent_search_verified",
+        "added_at": "2026-10-27"
       }
     ],
     "details": {
@@ -6737,9 +6769,13 @@
         {
           "label": "企业公开资料",
           "url": "https://www.cnverify.com/company/Yueqing-Jieli-Electrical-Co-Ltd"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://newjieli.en.alibaba.com/"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "legal_name": "乐清捷利电器有限公司",
       "registered_capital": "200万元人民币"
     }
@@ -6912,6 +6948,14 @@
         "url": "https://www.kinkong-connector.com/ch",
         "domain": "kinkong-connector.com",
         "added_at": "2026-10-24"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站",
+        "url": "https://kinkong.en.alibaba.com/",
+        "domain": "kinkong.en.alibaba.com",
+        "source": "independent_search_verified",
+        "added_at": "2026-10-27"
       }
     ],
     "details": {
@@ -6959,9 +7003,13 @@
         {
           "label": "企业公开资料",
           "url": "https://www.tendata.com/en/buyer/yueqing-kinkong-electric-co-ltd-CHN28ba6f8eb4192086a2eebe8f1a6b529e.html"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://kinkong.en.alibaba.com/"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "legal_name": "乐清市千工电器有限公司"
     }
   },
@@ -7238,11 +7286,29 @@
         {
           "label": "监管或企业公告",
           "url": "https://custom.huzhou.gov.cn/DFS/file/2021/03/23/20210323163637926jdmzgl.pdf"
+        },
+        {
+          "label": "关联产品网站",
+          "url": "https://www.ecopointcharger.com/contact/"
+        },
+        {
+          "label": "关联产品网站",
+          "url": "https://www.ecopointcharger.com/"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "legal_name": "浙江诺威斯科技有限公司"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "关联产品网站",
+        "url": "https://www.ecopointcharger.com/",
+        "domain": "ecopointcharger.com",
+        "source": "user_confirmed_related_company",
+        "added_at": "2026-10-27"
+      }
+    ]
   },
   "YQ000140": {
     "links": [

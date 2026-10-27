@@ -1,0 +1,347 @@
+{
+  "checked_at": "2026-10-27",
+  "period": "2026-ytd-08",
+  "companies": [
+    {
+      "rank": 121,
+      "id": "YQ000104",
+      "name": "环宇高科有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "https://huyu.com.cn/",
+          "domain": "huyu.com.cn",
+          "added_at": "2026-10-24"
+        }
+      ],
+      "icon": "/company-icons/verified/ranks121-140-20261027/YQ000104.png",
+      "note": "官网显示环宇高科有限公司、环宇集团与伊顿合作信息；已补官网 Logo。"
+    },
+    {
+      "rank": 122,
+      "id": "YQ000103",
+      "name": "红光电气集团有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "https://www.hogn.com.cn/",
+          "domain": "hogn.com.cn",
+          "added_at": "2026-10-24"
+        }
+      ],
+      "icon": "/company-icons/verified/ranks121-140-20261027/YQ000103.png",
+      "note": "官网直接展示红光电气集团名称、地址和电力产品；已补官网 Logo。"
+    },
+    {
+      "rank": 123,
+      "id": "YQ000111",
+      "name": "温州美德摩配有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "http://www.cnmeide.cn/",
+          "domain": "cnmeide.cn",
+          "added_at": "2026-10-24"
+        }
+      ],
+      "icon": "/company-icons/verified/ranks121-140-20261027/YQ000111.png",
+      "note": "官网标题和产品页对应温州美德摩配有限公司，主营摩托车头盔和配件；已补官网 Logo。"
+    },
+    {
+      "rank": 124,
+      "id": "YQ000120",
+      "name": "乐清市联合贸易有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "https://unionele.com/",
+          "domain": "unionele.com",
+          "added_at": "2026-10-24"
+        }
+      ],
+      "icon": "/company-icons/verified/ranks121-140-20261027/YQ000120.png",
+      "note": "官网内容为 Union Electric，并使用 unionele.com 邮箱；已补网站图标。"
+    },
+    {
+      "rank": 125,
+      "id": "YQ000163",
+      "name": "乐清市高科环保电子有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "企业官网",
+          "url": "https://www.cn-gaokeelectric.com/",
+          "domain": "cn-gaokeelectric.com",
+          "source": "official_verified",
+          "added_at": "2026-10-27"
+        }
+      ],
+      "icon": "/company-icons/verified/YQ000163.png",
+      "note": ""
+    },
+    {
+      "rank": 126,
+      "id": "YQ000142",
+      "name": "乐清祝望供应链有限公司",
+      "links": [],
+      "icon": null,
+      "note": "广交会资料确认鞋类供应链参展，未找到可确认官网、Logo 或 Alibaba 国际站。"
+    },
+    {
+      "rank": 127,
+      "id": "YQ000108",
+      "name": "乐清市鑫众摩配有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "http://www.motorcyclefittings.com/",
+          "domain": "motorcyclefittings.com",
+          "added_at": "2026-10-24"
+        },
+        {
+          "type": "alibaba_store",
+          "label": "Alibaba 国际站",
+          "url": "https://helmo.en.alibaba.com/",
+          "domain": "helmo.en.alibaba.com",
+          "source": "alibaba_company_profile_verified",
+          "added_at": "2026-10-24"
+        }
+      ],
+      "icon": "/company-icons/verified/ranks121-140-20261027/YQ000108.png",
+      "note": "官网显示乐清市鑫众摩配有限公司及 HELMO 品牌；Alibaba 店铺此前已确认，已补 HELMO Logo。"
+    },
+    {
+      "rank": 128,
+      "id": "YQ000132",
+      "name": "乐清市恒通电气有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "企业官网",
+          "url": "http://chinahtcn.com/",
+          "domain": "chinahtcn.com",
+          "source": "user_provided",
+          "added_at": "2026-10-27"
+        }
+      ],
+      "icon": "/company-icons/verified/confirmed-20261027/YQ000132.jpg",
+      "note": "官网和 Logo 已由用户确认。"
+    },
+    {
+      "rank": 129,
+      "id": "YQ000126",
+      "name": "乐清捷利电器有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "http://newjieli.com/",
+          "domain": "newjieli.com",
+          "added_at": "2026-10-24"
+        },
+        {
+          "type": "alibaba_store",
+          "label": "Alibaba 国际站",
+          "url": "https://newjieli.en.alibaba.com/",
+          "domain": "newjieli.en.alibaba.com",
+          "source": "independent_search_verified",
+          "added_at": "2026-10-27"
+        }
+      ],
+      "icon": "/company-icons/verified/ranks121-140-20261027/YQ000126.png",
+      "note": "用户确认 newjieli.com 与榜单中的乐清捷利电器有关；官网当前显示 NEWJIELI，Alibaba 店铺主体为 Yueqing Jieli Electric Appliance Co., Ltd.。"
+    },
+    {
+      "rank": 130,
+      "id": "YQ000192",
+      "name": "温州中川控股集团有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "企业官网",
+          "url": "https://www.jonchan.com/",
+          "domain": "jonchan.com",
+          "source": "company_identity_verified",
+          "added_at": "2026-10-24"
+        }
+      ],
+      "icon": null,
+      "note": "JONCHN 官网展示柳市总部地址和输配电产品；未采用不可靠的缓存图标，页面使用文字占位。"
+    },
+    {
+      "rank": 131,
+      "id": "YQ000283",
+      "name": "温州旭拓贸易有限公司",
+      "links": [],
+      "icon": null,
+      "note": "公开工商资料确认主体和服装贸易范围，未找到可确认官网、Logo 或 Alibaba 国际站。"
+    },
+    {
+      "rank": 132,
+      "id": "YQ000125",
+      "name": "温州盈控进出口有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "https://wincoco.cn/",
+          "domain": "wincoco.cn",
+          "added_at": "2026-10-24"
+        },
+        {
+          "type": "official_website_alt",
+          "label": "关联产品网站",
+          "url": "https://www.beltwin.com/",
+          "domain": "beltwin.com",
+          "source": "user_confirmed_related_company",
+          "added_at": "2026-10-27"
+        },
+        {
+          "type": "alibaba_store",
+          "label": "Alibaba 国际站",
+          "url": "https://winco.en.alibaba.com/",
+          "domain": "winco.en.alibaba.com",
+          "source": "independent_search_verified",
+          "added_at": "2026-10-27"
+        }
+      ],
+      "icon": null,
+      "note": "用户确认 Beltwin 为盈控关联产品网站；Alibaba 店铺主体为 Wenzhou Winco Imp&Exp Co., Ltd.。"
+    },
+    {
+      "rank": 133,
+      "id": "YQ000129",
+      "name": "乐清市千诺变压器进出口有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "https://chnjsm.com/",
+          "domain": "chnjsm.com",
+          "added_at": "2026-10-24"
+        }
+      ],
+      "icon": null,
+      "note": "官网列出 YueQing JSM Transformer Co., Ltd.；未找到可确认主体匹配的 Alibaba 国际站。"
+    },
+    {
+      "rank": 134,
+      "id": "YQ000119",
+      "name": "乐清市鹏程摩配有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "http://www.yqpcmp.com/",
+          "domain": "yqpcmp.com",
+          "added_at": "2026-10-24"
+        }
+      ],
+      "icon": "/company-icons/verified/ranks121-140-20261027/YQ000119.png",
+      "note": "官网标题、地址和产品与乐清市鹏程摩配有限公司匹配；Logo 为其网站展示的万里豪品牌标识。"
+    },
+    {
+      "rank": 135,
+      "id": "YQ000115",
+      "name": "温州杰普国际贸易有限公司",
+      "links": [],
+      "icon": null,
+      "note": "公开报道确认其外贸方向，未找到可确认官网、Logo 或 Alibaba 国际站。"
+    },
+    {
+      "rank": 136,
+      "id": "YQ000094",
+      "name": "乐清斯赫丹进出口有限公司",
+      "links": [],
+      "icon": null,
+      "note": "公开商标资料确认申请主体，未找到可确认官网、Logo 或 Alibaba 国际站。"
+    },
+    {
+      "rank": 137,
+      "id": "YQ000149",
+      "name": "浙江宇盛工具有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "企业官网",
+          "url": "https://www.yushengtools.com/",
+          "domain": "yushengtools.com",
+          "source": "company_identity_verified",
+          "added_at": "2026-10-24"
+        }
+      ],
+      "icon": "/company-icons/verified/ranks121-140-20261027/YQ000149.png",
+      "note": "官网显示 YuSun/浙江宇盛工具有限公司及木工铣刀产品；已补官网 Logo。"
+    },
+    {
+      "rank": 138,
+      "id": "YQ000141",
+      "name": "浙江正纳科技有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "https://www.zhengnatech.com/",
+          "domain": "zhengnatech.com",
+          "added_at": "2026-10-24"
+        }
+      ],
+      "icon": null,
+      "note": "官网和乐清虹桥地址与企业资料匹配；暂未找到可确认 Alibaba 店铺或可稳定下载的 Logo。"
+    },
+    {
+      "rank": 139,
+      "id": "YQ000139",
+      "name": "浙江诺威斯科技有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "关联产品网站",
+          "url": "https://www.ecopointcharger.com/",
+          "domain": "ecopointcharger.com",
+          "source": "user_confirmed_related_company",
+          "added_at": "2026-10-27"
+        }
+      ],
+      "icon": "/company-icons/verified/ranks121-140-20261027/YQ000139.svg",
+      "note": "用户确认采用 ECOPOINT 充电产品网站；网站联系页和产品说明书使用与诺威斯相同的乐清地址并列出 INOVUS。"
+    },
+    {
+      "rank": 140,
+      "id": "YQ000130",
+      "name": "乐清市千工电器有限公司",
+      "links": [
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "https://www.kinkong.com/",
+          "domain": "kinkong.com",
+          "source": "user_provided",
+          "added_at": "2026-07-30"
+        },
+        {
+          "type": "official_website",
+          "label": "官方网站",
+          "url": "https://www.kinkong-connector.com/ch",
+          "domain": "kinkong-connector.com",
+          "added_at": "2026-10-24"
+        },
+        {
+          "type": "alibaba_store",
+          "label": "Alibaba 国际站",
+          "url": "https://kinkong.en.alibaba.com/",
+          "domain": "kinkong.en.alibaba.com",
+          "source": "independent_search_verified",
+          "added_at": "2026-10-27"
+        }
+      ],
+      "icon": "/company-icons/verified/YQ000130.png",
+      "note": "现有两个官网均保留；Alibaba 店铺主体为 Yueqing Kinkong Electric Co., Ltd.。"
+    }
+  ]
+}
