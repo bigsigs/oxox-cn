@@ -1517,8 +1517,8 @@
     "rank": 89,
     "id": "YQ000090",
     "name": "温州佳居电气有限公司",
-    "website": "",
-    "website_source": "",
+    "website": "http://www.jiajuele.cn/",
+    "website_source": "用户确认对应官网",
     "contact_address": "浙江省乐清经济开发区纬20路271号",
     "products": "墙壁开关、墙壁插座、吊灯插头与插座、接线端子、TV/FM/SAT 插座等建筑电气产品",
     "capital": "5000万元人民币",
@@ -1526,12 +1526,13 @@
     "alibaba_url": "",
     "alibaba_source": "",
     "alibaba_address": "",
-    "confidence": "medium",
-    "note": "招聘企业资料与电气人才网均以法定主体列示地址和产品；注册资本5000万元由同主体公开招聘资料和工商摘要交叉核对；未确认独立官网。",
+    "confidence": "high",
+    "note": "用户已确认 jiajuele.cn 与温州佳居电气有限公司对应；站点当前无法访问，暂不补 Logo。",
     "sources": [
       "https://www.diancai.com/comabout_05ecfb15804.html",
       "https://jxxy.qzc.edu.cn/2011/0110/c1358a32371/page.htm",
-      "https://www.job5156.com/comp/797177"
+      "https://www.job5156.com/comp/797177",
+      "http://www.jiajuele.cn/"
     ]
   },
   {

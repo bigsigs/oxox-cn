@@ -4887,12 +4887,26 @@
         {
           "label": "监管或企业公告",
           "url": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web1828/site/attach/0/fdceef3924a04aee88d54c086cf06186.pdf"
+        },
+        {
+          "label": "用户确认官网",
+          "url": "http://www.jiajuele.cn/"
         }
       ],
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-27",
       "legal_name": "温州佳居电气有限公司",
       "registered_capital": "5000万元人民币"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "企业官网",
+        "url": "http://www.jiajuele.cn/",
+        "domain": "jiajuele.cn",
+        "source": "user_confirmed",
+        "added_at": "2026-10-27"
+      }
+    ]
   },
   "YQ000091": {
     "details": {

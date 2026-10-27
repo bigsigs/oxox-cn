@@ -2010,21 +2010,22 @@
     "company_id": "YQ000090",
     "company_name": "温州佳居电气有限公司",
     "status": "部分字段待复核",
-    "website": "",
+    "website": "http://www.jiajuele.cn/",
     "alibaba_url": "",
     "alibaba_address": "",
     "address": "浙江省乐清经济开发区纬20路271号",
     "registered_capital": "5000万元人民币",
     "main_products": "墙壁开关、墙壁插座、吊灯插头与插座、接线端子、TV/FM/SAT 插座等建筑电气产品",
     "logo": "",
-    "checked_at": "2026-10-24",
-    "confidence": "medium",
-    "note": "招聘企业资料与电气人才网均以法定主体列示地址和产品；注册资本5000万元由同主体公开招聘资料和工商摘要交叉核对；未确认独立官网。",
+    "checked_at": "2026-10-27",
+    "confidence": "high",
+    "note": "用户已确认 jiajuele.cn 与温州佳居电气有限公司对应；站点当前无法访问，暂不补 Logo。",
     "source_urls": [
       "https://www.diancai.com/comabout_05ecfb15804.html",
       "https://jxxy.qzc.edu.cn/2011/0110/c1358a32371/page.htm",
       "https://www.job5156.com/comp/797177",
-      "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web1828/site/attach/0/fdceef3924a04aee88d54c086cf06186.pdf"
+      "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web1828/site/attach/0/fdceef3924a04aee88d54c086cf06186.pdf",
+      "http://www.jiajuele.cn/"
     ]
   },
   {
