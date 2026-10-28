@@ -1,0 +1,65 @@
+[
+  {
+    "id": "YQ001415",
+    "name": "浙江天成精密工具有限公司",
+    "source_url": "http://www.tccntools.com/static/images/logo.png",
+    "page_url": "http://www.tccntools.com/",
+    "dark_background": false,
+    "sha256": "13ef5e961307744fda196ed041f8986d80e4340654b170505f7293e745210a3f",
+    "visually_checked": true
+  },
+  {
+    "id": "YQ001328",
+    "name": "浙江新航电气有限公司",
+    "source_url": "https://xnhang.com/wp-content/uploads/2026/07/1780646002697948.webp",
+    "page_url": "https://xnhang.com/",
+    "dark_background": false,
+    "sha256": "95eb1b96364f8e5fdabf3c147e0ac2aa2d7e518424db988d6e46595fb66a9bc2",
+    "visually_checked": true
+  },
+  {
+    "id": "YQ001357",
+    "name": "乐清市华东仪表厂",
+    "source_url": "https://www.china-h.com/template/en/images/logo.png",
+    "page_url": "https://www.china-h.com/",
+    "dark_background": false,
+    "sha256": "6554c18b962ac9f57ba3dd5fb1b0ab7821cb83561fedd29399639d6f5933a9d6",
+    "visually_checked": true
+  },
+  {
+    "id": "YQ001260",
+    "name": "浙江兰普进出口有限公司",
+    "source_url": "http://www.chinalanp.com/statics/images/logo.png",
+    "page_url": "http://www.chinalanp.com/",
+    "dark_background": false,
+    "sha256": "be1eb9e7a207754014db2c7c183a160cac9935b7c61ee6cfe587a7c4d495127a",
+    "visually_checked": true
+  },
+  {
+    "id": "YQ003614",
+    "name": "浙江远欧电器有限公司",
+    "source_url": "http://www.m-c-c-b.com/newsimage/imgs/20251024165944_5287.png",
+    "page_url": "http://www.m-c-c-b.com/",
+    "dark_background": false,
+    "sha256": "3925bb73e010700e61ca28c20b489bea37f360321c251026afc39d971dd11831",
+    "visually_checked": true
+  },
+  {
+    "id": "YQ001383",
+    "name": "浙江快利电子有限公司",
+    "source_url": "https://www.yqkl.com/img/logo.png",
+    "page_url": "https://www.yqkl.com/",
+    "dark_background": false,
+    "sha256": "88c22c5f4d38e4302af0a9250d4857133ea7650f2bfa109a9fd302080cecc52d",
+    "visually_checked": true
+  },
+  {
+    "id": "YQ001312",
+    "name": "乐清市腾飞电子有限公司",
+    "source_url": "http://www.yqtengfei.com/static/img/BD9FA43C.png",
+    "page_url": "http://www.yqtengfei.com/",
+    "dark_background": false,
+    "sha256": "cf511fde8787dd9c1d7b035dd1a8b5f09a599649af66f12f838aaac3d19475db",
+    "visually_checked": true
+  }
+]

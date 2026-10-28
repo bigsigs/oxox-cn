@@ -87892,11 +87892,60 @@
     }
   },
   "YQ001357": {
-    "links": [],
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.china-h.com/",
+        "domain": "china-h.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站",
+        "url": "https://china-h.en.alibaba.com/",
+        "domain": "china-h.en.alibaba.com",
+        "source": "exact_company_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ],
     "details": {
-      "sources": [],
-      "field_sources": {},
-      "checked_at": "2026-10-28"
+      "sources": [
+        {
+          "label": "企业官网",
+          "url": "https://www.china-h.com/"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://china-h.en.alibaba.com/"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.china-h.com/contact/"
+        }
+      ],
+      "field_sources": {
+        "alibaba_address": {
+          "url": "https://china-h.en.alibaba.com/",
+          "checked_at": "2026-10-28",
+          "source_type": "alibaba_company_profile"
+        },
+        "operating_address": {
+          "url": "https://www.china-h.com/contact/",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website_contact"
+        },
+        "main_products": {
+          "url": "https://www.china-h.com/",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website"
+        }
+      },
+      "checked_at": "2026-10-28",
+      "alibaba_address": "Shifan Township Industrial Zone, Wenzhou, Zhejiang, China",
+      "operating_address": "Hongqiao Shifan Industrial Zone, Yueqing City, Zhejiang, China",
+      "main_products": "温度传感器、铠装热电偶电缆、热流道模具电加热器、铠装加热电缆、热电偶补偿导线、温度仪表行业专用设备"
     }
   },
   "YQ001189": {
@@ -92221,7 +92270,16 @@
     }
   },
   "YQ001415": {
-    "links": [],
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "http://www.tccntools.com/",
+        "domain": "tccntools.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ],
     "details": {
       "contact_address": "浙江省温州市乐清市南塘镇通港路2号",
       "field_sources": {
@@ -92229,6 +92287,11 @@
           "url": "https://tianchengtools.boyuan.com/",
           "checked_at": "2026-10-28",
           "source_type": "public_company_record"
+        },
+        "main_products": {
+          "url": "http://www.tccntools.com/",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website"
         }
       },
       "checked_at": "2026-10-28",
@@ -92236,12 +92299,26 @@
         {
           "label": "公开企业资料",
           "url": "https://tianchengtools.boyuan.com/"
+        },
+        {
+          "label": "企业官网",
+          "url": "http://www.tccntools.com/"
         }
-      ]
+      ],
+      "main_products": "T.C.T合金开孔器、H.S.S高速钢开孔器、M42双金属开孔器、电锤钻"
     }
   },
   "YQ001312": {
-    "links": [],
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "http://www.yqtengfei.com/",
+        "domain": "yqtengfei.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ],
     "details": {
       "contact_address": "乐清市淡溪镇淡溪工业区A幢",
       "field_sources": {
@@ -92249,6 +92326,11 @@
           "url": "https://ycd.boyuan.com/com/tengfei/contact/",
           "checked_at": "2026-10-28",
           "source_type": "public_company_record"
+        },
+        "main_products": {
+          "url": "http://www.yqtengfei.com/",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website"
         }
       },
       "checked_at": "2026-10-28",
@@ -92256,8 +92338,13 @@
         {
           "label": "公开企业资料",
           "url": "https://ycd.boyuan.com/com/tengfei/contact/"
+        },
+        {
+          "label": "企业官网",
+          "url": "http://www.yqtengfei.com/"
         }
-      ]
+      ],
+      "main_products": "HUANO微动开关、键盘开关、编码器、轻触开关、拨动开关及连接器"
     }
   },
   "YQ001310": {
@@ -92366,7 +92453,16 @@
     }
   },
   "YQ001383": {
-    "links": [],
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.yqkl.com/",
+        "domain": "yqkl.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ],
     "details": {
       "contact_address": "浙江省温州市乐清市天成街道天成工业区天勤路15号",
       "field_sources": {
@@ -92374,6 +92470,11 @@
           "url": "https://kuaili.boyuan.com/company/sell/index.php?itemid=45357",
           "checked_at": "2026-10-28",
           "source_type": "public_company_record"
+        },
+        "main_products": {
+          "url": "https://www.yqkl.com/",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website"
         }
       },
       "checked_at": "2026-10-28",
@@ -92381,8 +92482,13 @@
         {
           "label": "公开企业资料",
           "url": "https://kuaili.boyuan.com/company/sell/index.php?itemid=45357"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.yqkl.com/"
         }
-      ]
+      ],
+      "main_products": "FPC条形连接器、RAST5.0连接器、电池座、端子、线束、板对线连接器及中继带锁连接器"
     }
   },
   "YQ003400": {
@@ -94951,6 +95057,123 @@
       },
       "checked_at": "2026-10-28",
       "main_products": "行程开关、限位开关、微动开关、密封开关、防水开关、押扣开关、钮子开关与脚踏开关"
+    }
+  },
+  "YQ001328": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://xnhang.com/",
+        "domain": "xnhang.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ],
+    "details": {
+      "sources": [
+        {
+          "label": "企业官网",
+          "url": "https://xnhang.com/"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://xnhang.com/contact-us/"
+        }
+      ],
+      "operating_address": "23 Huaping Road, Shuguang Industrial Zone, Wengyang Street, Yueqing City, Wenzhou City, Zhejiang Province, China",
+      "field_sources": {
+        "operating_address": {
+          "url": "https://xnhang.com/contact-us/",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website_contact"
+        },
+        "main_products": {
+          "url": "https://xnhang.com/",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website"
+        }
+      },
+      "checked_at": "2026-10-28",
+      "main_products": "软启动器、变频器、软启动柜、自耦减压起动柜、水泵控制箱、高低压配电设备及仪表"
+    }
+  },
+  "YQ001260": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "关联企业网站",
+        "url": "http://www.chinalanp.com/",
+        "domain": "chinalanp.com",
+        "source": "official_explicit_related_company",
+        "added_at": "2026-10-28"
+      }
+    ],
+    "details": {
+      "sources": [
+        {
+          "label": "企业官网",
+          "url": "http://www.chinalanp.com/"
+        },
+        {
+          "label": "企业官网",
+          "url": "http://www.chinalanp.com/gyjt/jtcy/2023/08/07/305570.html"
+        }
+      ],
+      "operating_address": "浙江省温州乐清市经济开发区中心大道222号（兰普集团园区内A幢二楼）",
+      "field_sources": {
+        "operating_address": {
+          "url": "http://www.chinalanp.com/gyjt/jtcy/2023/08/07/305570.html",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website_contact"
+        },
+        "main_products": {
+          "url": "http://www.chinalanp.com/gyjt/jtcy/2023/08/07/305570.html",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website"
+        }
+      },
+      "checked_at": "2026-10-28",
+      "main_products": "电池储能系统、太阳能系统、电动车充电系统及轨道交通配套产品进出口业务"
+    }
+  },
+  "YQ003614": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "http://www.m-c-c-b.com/",
+        "domain": "m-c-c-b.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ],
+    "details": {
+      "sources": [
+        {
+          "label": "企业官网",
+          "url": "http://www.m-c-c-b.com/"
+        },
+        {
+          "label": "企业官网",
+          "url": "http://www.m-c-c-b.com/contact.html"
+        }
+      ],
+      "operating_address": "No.207,Xinguang Rd,Xinguang Industrial Zone,Liushi Town, Yueqing City,Zhejiang,China.",
+      "field_sources": {
+        "operating_address": {
+          "url": "http://www.m-c-c-b.com/contact.html",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website_contact"
+        },
+        "main_products": {
+          "url": "http://www.m-c-c-b.com/",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website"
+        }
+      },
+      "checked_at": "2026-10-28",
+      "main_products": "断路器及附件、双电源自动转换开关、开关电源、工业插头插座、配电箱"
     }
   }
 }

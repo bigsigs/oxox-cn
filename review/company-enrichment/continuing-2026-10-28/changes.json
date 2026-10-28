@@ -1,0 +1,183 @@
+[
+  {
+    "id": "YQ001415",
+    "name": "浙江天成精密工具有限公司",
+    "kind": "add_official_website",
+    "url": "http://www.tccntools.com/"
+  },
+  {
+    "id": "YQ001328",
+    "name": "浙江新航电气有限公司",
+    "kind": "add_official_website",
+    "url": "https://xnhang.com/"
+  },
+  {
+    "id": "YQ001357",
+    "name": "乐清市华东仪表厂",
+    "kind": "add_official_website",
+    "url": "https://www.china-h.com/"
+  },
+  {
+    "id": "YQ001260",
+    "name": "浙江兰普进出口有限公司",
+    "kind": "add_official_website",
+    "url": "http://www.chinalanp.com/"
+  },
+  {
+    "id": "YQ003614",
+    "name": "浙江远欧电器有限公司",
+    "kind": "add_official_website",
+    "url": "http://www.m-c-c-b.com/"
+  },
+  {
+    "id": "YQ001383",
+    "name": "浙江快利电子有限公司",
+    "kind": "add_official_website",
+    "url": "https://www.yqkl.com/"
+  },
+  {
+    "id": "YQ001312",
+    "name": "乐清市腾飞电子有限公司",
+    "kind": "add_official_website",
+    "url": "http://www.yqtengfei.com/"
+  },
+  {
+    "id": "YQ001357",
+    "name": "乐清市华东仪表厂",
+    "kind": "add_alibaba_store",
+    "url": "https://china-h.en.alibaba.com/"
+  },
+  {
+    "id": "YQ001357",
+    "name": "乐清市华东仪表厂",
+    "kind": "add_alibaba_address",
+    "value": "Shifan Township Industrial Zone, Wenzhou, Zhejiang, China",
+    "url": "https://china-h.en.alibaba.com/"
+  },
+  {
+    "id": "YQ001328",
+    "name": "浙江新航电气有限公司",
+    "kind": "add_operating_address",
+    "value": "23 Huaping Road, Shuguang Industrial Zone, Wengyang Street, Yueqing City, Wenzhou City, Zhejiang Province, China",
+    "url": "https://xnhang.com/contact-us/"
+  },
+  {
+    "id": "YQ001357",
+    "name": "乐清市华东仪表厂",
+    "kind": "add_operating_address",
+    "value": "Hongqiao Shifan Industrial Zone, Yueqing City, Zhejiang, China",
+    "url": "https://www.china-h.com/contact/"
+  },
+  {
+    "id": "YQ003614",
+    "name": "浙江远欧电器有限公司",
+    "kind": "add_operating_address",
+    "value": "No.207,Xinguang Rd,Xinguang Industrial Zone,Liushi Town, Yueqing City,Zhejiang,China.",
+    "url": "http://www.m-c-c-b.com/contact.html"
+  },
+  {
+    "id": "YQ001260",
+    "name": "浙江兰普进出口有限公司",
+    "kind": "add_operating_address",
+    "value": "浙江省温州乐清市经济开发区中心大道222号（兰普集团园区内A幢二楼）",
+    "url": "http://www.chinalanp.com/gyjt/jtcy/2023/08/07/305570.html"
+  },
+  {
+    "id": "YQ001415",
+    "name": "浙江天成精密工具有限公司",
+    "kind": "add_main_products",
+    "value": "T.C.T合金开孔器、H.S.S高速钢开孔器、M42双金属开孔器、电锤钻",
+    "url": "http://www.tccntools.com/"
+  },
+  {
+    "id": "YQ001328",
+    "name": "浙江新航电气有限公司",
+    "kind": "add_main_products",
+    "value": "软启动器、变频器、软启动柜、自耦减压起动柜、水泵控制箱、高低压配电设备及仪表",
+    "url": "https://xnhang.com/"
+  },
+  {
+    "id": "YQ001357",
+    "name": "乐清市华东仪表厂",
+    "kind": "add_main_products",
+    "value": "温度传感器、铠装热电偶电缆、热流道模具电加热器、铠装加热电缆、热电偶补偿导线、温度仪表行业专用设备",
+    "url": "https://www.china-h.com/"
+  },
+  {
+    "id": "YQ001260",
+    "name": "浙江兰普进出口有限公司",
+    "kind": "add_main_products",
+    "value": "电池储能系统、太阳能系统、电动车充电系统及轨道交通配套产品进出口业务",
+    "url": "http://www.chinalanp.com/gyjt/jtcy/2023/08/07/305570.html"
+  },
+  {
+    "id": "YQ003614",
+    "name": "浙江远欧电器有限公司",
+    "kind": "add_main_products",
+    "value": "断路器及附件、双电源自动转换开关、开关电源、工业插头插座、配电箱",
+    "url": "http://www.m-c-c-b.com/"
+  },
+  {
+    "id": "YQ001383",
+    "name": "浙江快利电子有限公司",
+    "kind": "add_main_products",
+    "value": "FPC条形连接器、RAST5.0连接器、电池座、端子、线束、板对线连接器及中继带锁连接器",
+    "url": "https://www.yqkl.com/"
+  },
+  {
+    "id": "YQ001312",
+    "name": "乐清市腾飞电子有限公司",
+    "kind": "add_main_products",
+    "value": "HUANO微动开关、键盘开关、编码器、轻触开关、拨动开关及连接器",
+    "url": "http://www.yqtengfei.com/"
+  },
+  {
+    "id": "YQ001415",
+    "name": "浙江天成精密工具有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/continuing-20261028/YQ001415.png",
+    "source_url": "http://www.tccntools.com/static/images/logo.png"
+  },
+  {
+    "id": "YQ001328",
+    "name": "浙江新航电气有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/continuing-20261028/YQ001328.png",
+    "source_url": "https://xnhang.com/wp-content/uploads/2026/07/1780646002697948.webp"
+  },
+  {
+    "id": "YQ001357",
+    "name": "乐清市华东仪表厂",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/continuing-20261028/YQ001357.png",
+    "source_url": "https://www.china-h.com/template/en/images/logo.png"
+  },
+  {
+    "id": "YQ001260",
+    "name": "浙江兰普进出口有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/continuing-20261028/YQ001260.png",
+    "source_url": "http://www.chinalanp.com/statics/images/logo.png"
+  },
+  {
+    "id": "YQ003614",
+    "name": "浙江远欧电器有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/continuing-20261028/YQ003614.png",
+    "source_url": "http://www.m-c-c-b.com/newsimage/imgs/20251024165944_5287.png"
+  },
+  {
+    "id": "YQ001383",
+    "name": "浙江快利电子有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/continuing-20261028/YQ001383.png",
+    "source_url": "https://www.yqkl.com/img/logo.png"
+  },
+  {
+    "id": "YQ001312",
+    "name": "乐清市腾飞电子有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/continuing-20261028/YQ001312.png",
+    "source_url": "http://www.yqtengfei.com/static/img/BD9FA43C.png"
+  }
+]

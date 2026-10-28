@@ -1,0 +1,33 @@
+{
+  "checked_at": "2026-10-28",
+  "npm_test": {
+    "passed": 82,
+    "failed": 0,
+    "astro_check_and_build": "passed"
+  },
+  "built_pages": {
+    "changed_company_pages_checked": 7,
+    "registry_count": 3814,
+    "ranking_files_unchanged": true,
+    "errors": []
+  },
+  "browser_local": {
+    "widths": [
+      320,
+      1280
+    ],
+    "companies_per_width": 7,
+    "company_name_and_links": "passed",
+    "logo_decode": "passed",
+    "related_website_label": "passed",
+    "alibaba_link": "passed",
+    "home_search": "passed",
+    "no_horizontal_overflow": "passed"
+  },
+  "logo_visual_review": {
+    "checked": 7,
+    "passed": true
+  },
+  "old_profiles_links_fields_icons_preserved": true,
+  "all_company_and_ranking_files_unchanged": true
+}
