@@ -1,0 +1,151 @@
+{
+  "websites": [
+    {
+      "id": "YQ002491",
+      "name": "浙江凯隆精密电子有限公司",
+      "url": "https://www.hcnhk.com/index_cn.html",
+      "source_url": "https://www.hcnhk.com/index_cn.html",
+      "evidence": {
+        "type": "direct",
+        "note": "官网中文全称、电子开关产品及蒲岐地址匹配"
+      },
+      "page_title": "欢迎来到浙江凯隆精密电子有限公司官网 - 按键开关，微动开关，带灯开关， 轻触开关",
+      "page_sha256": "3aca475c73138c370e3ca44f51bf47b53edc1124c40b8cf38c5d13a3b57a8568"
+    },
+    {
+      "id": "YQ003007",
+      "name": "浙江三科电子有限公司",
+      "url": "https://www.sanke.com/",
+      "source_url": "https://www.sanke.com/",
+      "evidence": {
+        "type": "direct",
+        "note": "中文版权全称、产品和纬十二路205-5号地址匹配"
+      },
+      "page_title": "大功率电力稳压器_UPS不间断电源_EPS应急电源-浙江三科电子有限公司",
+      "page_sha256": "3223762bf2fd15f035cc5cf5a2083eacc679cb3d7e1a8e8b1a00af707dbbec8f"
+    },
+    {
+      "id": "YQ003028",
+      "name": "浙江银岸电气科技有限公司",
+      "url": "https://www.zjyakj.cn/",
+      "source_url": "https://www.zjyakj.cn/",
+      "evidence": {
+        "type": "direct",
+        "note": "官网中文版权全称及变频器产品匹配；不采纳网页错字地址"
+      },
+      "page_title": "变频器 软启动器 水泵控制箱",
+      "page_sha256": "ee6fb146709ecd331c15f4e5e72aecb6d61983b040b492889481642cff5010c6"
+    },
+    {
+      "id": "YQ002389",
+      "name": "温州元璋电气有限公司",
+      "url": "https://www.enjue.cc/",
+      "source_url": "https://www.enjue.cc/",
+      "evidence": {
+        "type": "direct",
+        "note": "官网英文页及联系页列温州元璋电气有限公司；柳江路3788号与档案一致"
+      },
+      "page_title": "恩爵ENMG-工业控制器件与机柜环境系统",
+      "page_sha256": "fe565bcda931724d9701caa66bea478520a1612d9d25d8ca611536b89ce2b3c7"
+    },
+    {
+      "id": "YQ003276",
+      "name": "浙江法拉迪电力科技有限公司",
+      "url": "https://www.farady.com.cn/",
+      "source_url": "https://www.farady.com.cn/",
+      "evidence": {
+        "type": "direct",
+        "note": "搜索引擎当日索引官网中文全称、乐清地址和产品一致；直接访问证书过期，保留文字图标，不绕过TLS"
+      },
+      "page_title": "浙江法拉迪电力科技有限公司",
+      "page_sha256": "da587ee677d59f7307a6b101ef7494eed1d0e3538a645cb90e735236b7e9b663"
+    }
+  ],
+  "alibaba_stores": [],
+  "fields": [
+    {
+      "id": "YQ003353",
+      "field": "contact_address",
+      "value": "浙江省温州市乐清市柳市镇三里一路25号",
+      "source_url": "https://www.shuididp.cn/yp-a3f896b8240e9d8720a46453dd34ca01.html",
+      "source_type": "public_company_record"
+    },
+    {
+      "id": "YQ003367",
+      "field": "contact_address",
+      "value": "乐清市黄华镇黄华村",
+      "source_url": "https://www.shuididp.cn/yp-831d5d9d604b49493b628a8f014ced8e.html",
+      "source_type": "public_company_record"
+    },
+    {
+      "id": "YQ003306",
+      "field": "contact_address",
+      "value": "浙江省温州市乐清市柳市镇长荣路94号",
+      "source_url": "https://www.shuididp.cn/yp-4a74e7199fe35825fc267f1347b15201.html",
+      "source_type": "public_company_record"
+    },
+    {
+      "id": "YQ002951",
+      "field": "contact_address",
+      "value": "浙江省温州市乐清市柳市镇七里村",
+      "source_url": "https://m.zhipin.com/companys/4f018b44cbb831541Hd_3NW9ElU~.html",
+      "source_type": "public_company_record"
+    },
+    {
+      "id": "YQ003484",
+      "field": "contact_address",
+      "value": "乐清市大荆镇湖口村",
+      "source_url": "https://m.zhipin.com/gongsis/e257cda806664ab9i3V53Nm6EVRUyg~~.html",
+      "source_type": "public_company_record"
+    },
+    {
+      "id": "YQ003516",
+      "field": "contact_address",
+      "value": "乐清市北白象镇重石工业区（乐清市吉星标准件有限公司内）",
+      "source_url": "https://m.zhipin.com/companys/a307ccf58c46ecc31nZ_09y-ElU~.html",
+      "source_type": "public_company_record"
+    },
+    {
+      "id": "YQ003287",
+      "field": "contact_address",
+      "value": "浙江省温州市乐清市柳市镇泮垟前横村",
+      "source_url": "https://m.zhipin.com/companys/7bfb8423687fefa91nx-2N67FVY~.html",
+      "source_type": "public_company_record"
+    },
+    {
+      "id": "YQ003198",
+      "field": "operating_address",
+      "value": "浙江省乐清市柳市镇象阳工业区（浙江泰开高压电气有限公司内）",
+      "source_url": "https://www.instrument.com.cn/company/516706.html",
+      "source_type": "public_company_profile"
+    },
+    {
+      "id": "YQ003260",
+      "field": "operating_address",
+      "value": "浙江省乐清市北白象交通东路932号",
+      "source_url": "https://c357503.hi1718.com/message.html",
+      "source_type": "public_company_profile"
+    },
+    {
+      "id": "YQ003559",
+      "field": "operating_address",
+      "value": "浙江省温州市乐清市石帆街道大林村融合路168号",
+      "source_url": "https://deshunjixie.cnal.com/",
+      "source_type": "public_company_profile"
+    },
+    {
+      "id": "YQ003595",
+      "field": "operating_address",
+      "value": "浙江省温州市乐清市柳市镇后街工业区（温州乐通电信设备有限公司内）",
+      "source_url": "https://m.zhipin.com/companys/f28e2222200f55e21XJ62tu9FlY~.html",
+      "source_type": "public_company_profile"
+    },
+    {
+      "id": "YQ003276",
+      "field": "contact_address",
+      "value": "浙江省乐清市经济开发区纬七路278号",
+      "source_url": "https://www.farady.com.cn/",
+      "source_type": "company_website_search_index"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "YQ002491",
+    "name": "浙江凯隆精密电子有限公司",
+    "page_url": "https://www.hcnhk.com/index_cn.html",
+    "source_url": "http://www.hcnhk.com/pic/logo/logocn.jpg",
+    "dark_background": false,
+    "sha256": "bdbbc59d8f0a96a5a40953c3a9f286e4cc956c9bd91ab0db5ac856efaf3126b8",
+    "visually_checked": true
+  },
+  {
+    "id": "YQ003007",
+    "name": "浙江三科电子有限公司",
+    "page_url": "https://www.sanke.com/",
+    "source_url": "https://www.sanke.com/uploads/image/20260228/f654ed3d3ba45dbe12e5ee8f03f1f400.png",
+    "dark_background": true,
+    "sha256": "adfce7c3c0259ab4b1d80637e47f73ce3cdab929bc697ada4e4cae209cf2ec70",
+    "visually_checked": true
+  },
+  {
+    "id": "YQ003028",
+    "name": "浙江银岸电气科技有限公司",
+    "page_url": "https://www.zjyakj.cn/",
+    "source_url": "https://cdn.fuwucms.com/a/370175224921/files/cb62d7729f6d3d6ae08d6349d1d2c242.png?image_process=format,webp",
+    "dark_background": false,
+    "sha256": "295bde0aabc3e36d676cefe1437ec9c7ba29bc9385b3bc298a09448d2887c79c",
+    "visually_checked": true
+  },
+  {
+    "id": "YQ002389",
+    "name": "温州元璋电气有限公司",
+    "page_url": "https://www.enjue.cc/",
+    "source_url": "https://3394472.s21i.faiusr.com/2/1/ABUIABACGAAg-NyboAYo5PqyvQYwkE44sQs.jpg.webp",
+    "dark_background": false,
+    "sha256": "226a806ffc86a35b990f078f1f19fe9ae909d713d669a4fcff9ad14ea45e6080",
+    "visually_checked": true
+  }
+]

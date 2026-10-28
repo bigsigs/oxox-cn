@@ -58502,11 +58502,25 @@
         {
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-f1162b130f5c7801f80a45f077ef33eb.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.enjue.cc/"
         }
       ],
       "checked_at": "2026-10-24",
       "legal_name": "温州元璋电气有限公司"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.enjue.cc/",
+        "domain": "enjue.cc",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-29"
+      }
+    ]
   },
   "YQ002390": {
     "details": {
@@ -61897,11 +61911,25 @@
         {
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-57e441d6046c0e8c5a7b1166ecd7749b.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.hcnhk.com/index_cn.html"
         }
       ],
       "checked_at": "2026-10-24",
       "legal_name": "浙江凯隆精密电子有限公司"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.hcnhk.com/index_cn.html",
+        "domain": "hcnhk.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-29"
+      }
+    ]
   },
   "YQ002492": {
     "details": {
@@ -78486,11 +78514,25 @@
         {
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-29f12f21c426355d5ea4958d65da2c01.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.sanke.com/"
         }
       ],
       "checked_at": "2026-10-24",
       "legal_name": "浙江三科电子有限公司"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.sanke.com/",
+        "domain": "sanke.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-29"
+      }
+    ]
   },
   "YQ003008": {
     "details": {
@@ -79095,11 +79137,25 @@
         {
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-4fc7a51f2f15b1fe2f7eed5a06aa7501.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.zjyakj.cn/"
         }
       ],
       "checked_at": "2026-10-24",
       "legal_name": "浙江银岸电气科技有限公司"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.zjyakj.cn/",
+        "domain": "zjyakj.cn",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-29"
+      }
+    ]
   },
   "YQ003029": {
     "details": {
@@ -88160,9 +88216,21 @@
   "YQ002951": {
     "links": [],
     "details": {
-      "sources": [],
-      "field_sources": {},
-      "checked_at": "2026-10-28"
+      "sources": [
+        {
+          "label": "公开企业资料",
+          "url": "https://m.zhipin.com/companys/4f018b44cbb831541Hd_3NW9ElU~.html"
+        }
+      ],
+      "field_sources": {
+        "contact_address": {
+          "url": "https://m.zhipin.com/companys/4f018b44cbb831541Hd_3NW9ElU~.html",
+          "checked_at": "2026-10-29",
+          "source_type": "public_company_record"
+        }
+      },
+      "checked_at": "2026-10-28",
+      "contact_address": "浙江省温州市乐清市柳市镇七里村"
     }
   },
   "YQ001357": {
@@ -88796,9 +88864,21 @@
   "YQ003287": {
     "links": [],
     "details": {
-      "sources": [],
-      "field_sources": {},
-      "checked_at": "2026-10-28"
+      "sources": [
+        {
+          "label": "公开企业资料",
+          "url": "https://m.zhipin.com/companys/7bfb8423687fefa91nx-2N67FVY~.html"
+        }
+      ],
+      "field_sources": {
+        "contact_address": {
+          "url": "https://m.zhipin.com/companys/7bfb8423687fefa91nx-2N67FVY~.html",
+          "checked_at": "2026-10-29",
+          "source_type": "public_company_record"
+        }
+      },
+      "checked_at": "2026-10-28",
+      "contact_address": "浙江省温州市乐清市柳市镇泮垟前横村"
     }
   },
   "YQ003399": {
@@ -95609,6 +95689,215 @@
         {
           "label": "公开企业资料",
           "url": "https://www.cqc.com.cn/www/upload/files/upload/resources/file/2025/06/03/63268.pdf"
+        }
+      ]
+    }
+  },
+  "YQ003276": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.farady.com.cn/",
+        "domain": "farady.com.cn",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-29"
+      }
+    ],
+    "details": {
+      "sources": [
+        {
+          "label": "企业官网",
+          "url": "https://www.farady.com.cn/"
+        }
+      ],
+      "contact_address": "浙江省乐清市经济开发区纬七路278号",
+      "field_sources": {
+        "contact_address": {
+          "url": "https://www.farady.com.cn/",
+          "checked_at": "2026-10-29",
+          "source_type": "company_website_search_index"
+        }
+      },
+      "checked_at": "2026-10-29"
+    }
+  },
+  "YQ003353": {
+    "links": [],
+    "details": {
+      "contact_address": "浙江省温州市乐清市柳市镇三里一路25号",
+      "field_sources": {
+        "contact_address": {
+          "url": "https://www.shuididp.cn/yp-a3f896b8240e9d8720a46453dd34ca01.html",
+          "checked_at": "2026-10-29",
+          "source_type": "public_company_record"
+        }
+      },
+      "checked_at": "2026-10-29",
+      "sources": [
+        {
+          "label": "公开企业资料",
+          "url": "https://www.shuididp.cn/yp-a3f896b8240e9d8720a46453dd34ca01.html"
+        }
+      ]
+    }
+  },
+  "YQ003367": {
+    "links": [],
+    "details": {
+      "contact_address": "乐清市黄华镇黄华村",
+      "field_sources": {
+        "contact_address": {
+          "url": "https://www.shuididp.cn/yp-831d5d9d604b49493b628a8f014ced8e.html",
+          "checked_at": "2026-10-29",
+          "source_type": "public_company_record"
+        }
+      },
+      "checked_at": "2026-10-29",
+      "sources": [
+        {
+          "label": "公开企业资料",
+          "url": "https://www.shuididp.cn/yp-831d5d9d604b49493b628a8f014ced8e.html"
+        }
+      ]
+    }
+  },
+  "YQ003306": {
+    "links": [],
+    "details": {
+      "contact_address": "浙江省温州市乐清市柳市镇长荣路94号",
+      "field_sources": {
+        "contact_address": {
+          "url": "https://www.shuididp.cn/yp-4a74e7199fe35825fc267f1347b15201.html",
+          "checked_at": "2026-10-29",
+          "source_type": "public_company_record"
+        }
+      },
+      "checked_at": "2026-10-29",
+      "sources": [
+        {
+          "label": "公开企业资料",
+          "url": "https://www.shuididp.cn/yp-4a74e7199fe35825fc267f1347b15201.html"
+        }
+      ]
+    }
+  },
+  "YQ003484": {
+    "links": [],
+    "details": {
+      "contact_address": "乐清市大荆镇湖口村",
+      "field_sources": {
+        "contact_address": {
+          "url": "https://m.zhipin.com/gongsis/e257cda806664ab9i3V53Nm6EVRUyg~~.html",
+          "checked_at": "2026-10-29",
+          "source_type": "public_company_record"
+        }
+      },
+      "checked_at": "2026-10-29",
+      "sources": [
+        {
+          "label": "公开企业资料",
+          "url": "https://m.zhipin.com/gongsis/e257cda806664ab9i3V53Nm6EVRUyg~~.html"
+        }
+      ]
+    }
+  },
+  "YQ003516": {
+    "links": [],
+    "details": {
+      "contact_address": "乐清市北白象镇重石工业区（乐清市吉星标准件有限公司内）",
+      "field_sources": {
+        "contact_address": {
+          "url": "https://m.zhipin.com/companys/a307ccf58c46ecc31nZ_09y-ElU~.html",
+          "checked_at": "2026-10-29",
+          "source_type": "public_company_record"
+        }
+      },
+      "checked_at": "2026-10-29",
+      "sources": [
+        {
+          "label": "公开企业资料",
+          "url": "https://m.zhipin.com/companys/a307ccf58c46ecc31nZ_09y-ElU~.html"
+        }
+      ]
+    }
+  },
+  "YQ003198": {
+    "links": [],
+    "details": {
+      "operating_address": "浙江省乐清市柳市镇象阳工业区（浙江泰开高压电气有限公司内）",
+      "field_sources": {
+        "operating_address": {
+          "url": "https://www.instrument.com.cn/company/516706.html",
+          "checked_at": "2026-10-29",
+          "source_type": "public_company_profile"
+        }
+      },
+      "checked_at": "2026-10-29",
+      "sources": [
+        {
+          "label": "公开企业资料",
+          "url": "https://www.instrument.com.cn/company/516706.html"
+        }
+      ]
+    }
+  },
+  "YQ003260": {
+    "links": [],
+    "details": {
+      "operating_address": "浙江省乐清市北白象交通东路932号",
+      "field_sources": {
+        "operating_address": {
+          "url": "https://c357503.hi1718.com/message.html",
+          "checked_at": "2026-10-29",
+          "source_type": "public_company_profile"
+        }
+      },
+      "checked_at": "2026-10-29",
+      "sources": [
+        {
+          "label": "公开企业资料",
+          "url": "https://c357503.hi1718.com/message.html"
+        }
+      ]
+    }
+  },
+  "YQ003559": {
+    "links": [],
+    "details": {
+      "operating_address": "浙江省温州市乐清市石帆街道大林村融合路168号",
+      "field_sources": {
+        "operating_address": {
+          "url": "https://deshunjixie.cnal.com/",
+          "checked_at": "2026-10-29",
+          "source_type": "public_company_profile"
+        }
+      },
+      "checked_at": "2026-10-29",
+      "sources": [
+        {
+          "label": "公开企业资料",
+          "url": "https://deshunjixie.cnal.com/"
+        }
+      ]
+    }
+  },
+  "YQ003595": {
+    "links": [],
+    "details": {
+      "operating_address": "浙江省温州市乐清市柳市镇后街工业区（温州乐通电信设备有限公司内）",
+      "field_sources": {
+        "operating_address": {
+          "url": "https://m.zhipin.com/companys/f28e2222200f55e21XJ62tu9FlY~.html",
+          "checked_at": "2026-10-29",
+          "source_type": "public_company_profile"
+        }
+      },
+      "checked_at": "2026-10-29",
+      "sources": [
+        {
+          "label": "公开企业资料",
+          "url": "https://m.zhipin.com/companys/f28e2222200f55e21XJ62tu9FlY~.html"
         }
       ]
     }

@@ -1,0 +1,18 @@
+{
+  "registry_count": 3814,
+  "without_confirmed_website": 2887,
+  "reviewed_company_ids": 2897,
+  "unreviewed_remaining_ids": [],
+  "unreviewed_remaining_count": 0,
+  "review_batches": {
+    "further-2026-10-28": 280,
+    "continuing-2026-10-28": 280,
+    "remaining-2026-10-29": 280,
+    "more-2026-10-28": 194,
+    "next-2026-10-28": 280,
+    "remainder-2026-10-29": 1023,
+    "following-2026-10-28": 280,
+    "progressing-2026-10-28": 280
+  },
+  "meaning": "完成一轮逐家公开检索，不代表所有企业都有官网；无可靠资料保留原档案。"
+}
