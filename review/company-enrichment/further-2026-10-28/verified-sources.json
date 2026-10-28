@@ -1,0 +1,128 @@
+{
+  "websites": [
+    {
+      "id": "YQ001553",
+      "name": "国光集团乐清宏发电子有限公司",
+      "url": "http://www.hongfa-ele.com/",
+      "source_url": "http://www.hongfa-ele.com/",
+      "evidence": {
+        "type": "direct",
+        "page_sha256": "4eb6750cecdad496f0362abe81b2d06fb9fd4940589bde9cebee71473502dd10",
+        "reason": "官网公司介绍与项目公告直接列出档案中文全称。"
+      },
+      "page_title": "乐清宏发电子有限公司-专业生产各类线束、开关、插座、连接器等电子元器件及相关塑胶件和五金件",
+      "identity_excerpt": "Copyright © 2021 乐清市宏发电子有限公司 All Rights Reserved | 浙ICP备2021017537号"
+    },
+    {
+      "id": "YQ001698",
+      "name": "乐清市百益工具有限公司",
+      "url": "https://www.baiyitool.com/",
+      "source_url": "https://www.baiyitool.com/",
+      "evidence": {
+        "type": "direct",
+        "page_sha256": "39c275e98bc43a4d904ce6119b32928b09822d8dcc74b77003a97d120d259ada",
+        "reason": "企业中英文名称对应，官网电话0577-62262122及清江地址与企业资料一致。"
+      },
+      "page_title": "Top-quality Saw Blades  Manufacturer and Supplier |Yueqing Baiyi Tool",
+      "identity_excerpt": "United States (USD $) | Chile (USD $)"
+    },
+    {
+      "id": "YQ002238",
+      "name": "乐清市生源气动有限公司",
+      "url": "https://syqdcn.cn/",
+      "source_url": "https://syqdcn.cn/",
+      "evidence": {
+        "type": "direct",
+        "page_sha256": "06563d86d8c34c11744d83fa187680837ea37dcd24dfc4d07a68180a0bf72b10",
+        "reason": "企业中英文名称对应，官网主营气动元件，联系地址在乐清柳市。"
+      },
+      "page_title": "Air Source Treatment,Valve,Pneumatic Cylinder,Pneumatic Fitting,Pneumatic AccessoryHome-YUEQING SHENGYUAN PNEUMATIC CO.,LTD.",
+      "identity_excerpt": "Subscribe To Receive Practical \nInformation ShengYuan | We uphold “the reputation first,customer first principle to serve every customer”.We sincerely look forward to working with you for your cooperation,Thanks! | Products | Air Source Treatment | Valve | Pneumatic Cylinder | Pneumatic Fitting | Pneumatic Accessory | Vacuum | Email: | gloriazhengcn@foxmail.com | Contact: | +86-15258001222 | Whatsapp: | +86-15258001222 | Copyright © YUEQING SHENGYUAN PNEUMATIC CO.,LTD.  All Rights Reserved. | Powered by:Otree | | | Sitemap | | | Privacy policy"
+    },
+    {
+      "id": "YQ001601",
+      "name": "乐清市美拜电气有限公司",
+      "url": "https://www.meba.net/about-us/",
+      "source_url": "https://www.meba.net/about-us/",
+      "evidence": {
+        "type": "direct",
+        "page_sha256": "b56391bc18d018642982302bc4efeeb6875e0ac317913bff0c83e7ddf55ba247",
+        "reason": "广交会资料将中文主体对应YUEQING MEBA ELECTRIC，0577-27866868电话与官网一致，柳市环城路地址和电气产品对应。"
+      },
+      "page_title": "About Us | Meba Electric Co., Ltd",
+      "identity_excerpt": "Contact Us | Email: | sales@meba.net | Tel:+86-577-27866868 | Fax:+86-577-2786676 | Add:Huancheng Rd, Liushi,Wenzhou,China. | About Us | About Us | Why Meba | Company History | Certificate | News | Events | Industry News | Service | Related Services | Download | Copyright ©2026 Meba Electric Co.,Ltd"
+    }
+  ],
+  "alibaba_stores": [],
+  "fields": [
+    {
+      "id": "YQ001553",
+      "name": "国光集团乐清宏发电子有限公司",
+      "field": "operating_address",
+      "value": "浙江省乐清市虹桥镇南阳工业区",
+      "source_url": "http://www.hongfa-ele.com/",
+      "source_type": "company_website"
+    },
+    {
+      "id": "YQ001698",
+      "name": "乐清市百益工具有限公司",
+      "field": "operating_address",
+      "value": "Qingjiang Industrial Zone, Qingjiang Town, Yueqing City, Zhejiang Province",
+      "source_url": "https://www.baiyitool.com/",
+      "source_type": "company_website"
+    },
+    {
+      "id": "YQ002238",
+      "name": "乐清市生源气动有限公司",
+      "field": "operating_address",
+      "value": "No.77, Yuedu North Road, Hongxi Lane, Liushi Town, Yueqing City, Zhejiang Province, China 325604",
+      "source_url": "https://syqdcn.cn/contactus",
+      "source_type": "company_website"
+    },
+    {
+      "id": "YQ001601",
+      "name": "乐清市美拜电气有限公司",
+      "field": "operating_address",
+      "value": "Huancheng Road, Liushi, Wenzhou, China",
+      "source_url": "https://www.meba.net/about-us/",
+      "source_type": "company_website"
+    }
+  ],
+  "english_identity_sources": {
+    "YQ002238": [
+      {
+        "name": "Yueqing Shengyuan Pneumatic Co., Ltd.",
+        "source": "previous_verified_exact_chinese_record",
+        "source_url": "https://www.cnverify.com/company/Yueqing-Shengyuan-Pneumatic-Co-Ltd",
+        "source_excerpt": "Yueqing Shengyuan Pneumatic Co., Ltd. (https://www.cnverify.com/company/Yueqing-Shengyuan-Pneumatic-Co-Ltd)\nciteturn11830search0 [wordlim: 200] Crawled: 3 weeks ago; Chinese company name: 乐清市生源气动有限公司\n\n#### Company Registration Information\n\nEnglish company name: Yueqing Shengyuan Pneumatic Co., Ltd.\n\nChinese company name: 乐清市生源气动有限公司\n\nCountry: China\n\nBusiness status: ***\n\nLegal Representative: Zheng Sheng\n\nCompany type: Limited liability company (investment or holding by natural persons)\n\nFounding date: 2021-11-12\n\nPhone: 150577762** ,\n\nEmail: **057776222@163.com ,\n\nView Full Contacts\n\n#### Industry Classification\n\nInternational Industry Category: Manufacturing\n\nInternational Industry Major Class: General equipment manufacturing industry\n\nInternational Industry Middle Class: Pumps, valves, compressors and similar machinery manufacturing\n\nInternational Industry Sub Class: Hydraulic power machinery and components manufacturing\n\n#### Company's business scope\n\nGeneral Projects： Sales of ",
+        "chinese_name": "乐清市生源气动有限公司"
+      }
+    ],
+    "YQ001698": [
+      {
+        "name": "Yueqing Baiyi Tools Co., Ltd.",
+        "source": "previous_verified_exact_chinese_record",
+        "source_url": "https://www.cnverify.com/company/Yueqing-Baiyi-Tools-Co-Ltd",
+        "source_excerpt": "Yueqing Baiyi Tools Co., Ltd. (https://www.cnverify.com/company/Yueqing-Baiyi-Tools-Co-Ltd)\nciteturn3886search0 [wordlim: 200] Crawled: 5 months ago; English company name: Yueqing Baiyi Tools Co., Ltd. ... #### location of Yueqing Baiyi Tools Co., Ltd. ... Chinese: http://www.baiyitool.cn\n\n#### Company Registration Information\n\nEnglish company name: Yueqing Baiyi Tools Co., Ltd.\n\nChinese company name: 乐清市百益工具有限公司\n\nCountry: China\n\nBusiness status: Active\n\nLegal Representative: Wu Xiujun\n\nCompany type: Limited liability company (investment or holding by natural persons)\n\nFounding date: 2021-01-25\n\nPhone: 150889572** , 180662611** , 0577-622621** ,\n\nEmail: **3@qq.com ,\n\n\n#### Industry Classification\n\nInternational Industry Category: Manufacturing\n\nInternational Industry Major Class: Metal products industry\n\nInternational Industry Middle Class: Metal tool manufacturing\n\nInternational Industry Sub Class: Other metal tool manufacturing\n\n#### Company basic data\n\nEmployees  | 0-100 Detail  ",
+        "chinese_name": "乐清市百益工具有限公司"
+      }
+    ],
+    "YQ001553": [
+      {
+        "name": "Guoguang Group Yueqing Hongfa Electronic Co., Ltd.",
+        "source": "previous_verified_exact_chinese_record",
+        "source_url": "https://www.cnverify.com/company/Guoguang-Group-Yueqing-Hongfa-Electronic-Co-Ltd",
+        "source_excerpt": "Guoguang Group Yueqing Hongfa Electronic Co., Ltd. (https://www.cnverify.com/company/Guoguang-Group-Yueqing-Hongfa-Electronic-Co-Ltd)\nciteturn14577search0 [wordlim: 200] Crawled: 5 months ago; General Projects： Electronic component manufacturing； Power electronic components manufacturing； Auto parts and accessories manufacturing； Auto parts wholesale； Plastic product manufacturing； Hardware product manufacturing； Manufacturing of forgings and powder metallurgy products； Electronics sales； Sales of power electronic components； Plastic product sales； Sales of forgings and powder metallurgy products； Import and export of goods； Technology import and export（ Except for projects that require approval according to law， Carry out business activities independently in accordance with the law with a business license）。 ... City  | Wenzhou ... [Button: What is the email and phone number of Guoguang Group Yueqing Hongfa Electronic Co., Ltd.?\nImage: Company registration information: from China Na",
+        "chinese_name": "国光集团乐清宏发电子有限公司"
+      }
+    ],
+    "YQ001601": [
+      {
+        "name": "Yueqing Meba Import Export Co.,Ltd.",
+        "source_url": "https://www.tendata.com/en/buyer/yueqing-meba-import-export-co-ltd-CHNc270c49eaf0672b5d05681310f987057.html",
+        "chinese_name": "乐清市美拜电气有限公司",
+        "source_excerpt": "Yueqing Meba Import Export Co.,Ltd. | Supplier & Buyer Insights | Tendata (https://www.tendata.com/en/buyer/yueqing-meba-import-export-co-ltd-CHNc270c49eaf0672b5d05681310f987057.html)\nciteturn3407search0 [wordlim: 200] Crawled: last month; Introduction:乐清市美拜电气有限公司成立于2008-04-30，法定代表人为郑建丽，注册资本为30万元，统一社会信用代码为91330382674775435D，企业注册地址位于乐清市柳市镇黄七甲村，所属行业为批发业，经营范围包含：配电开关控制设备、高低压电器及配件、智能电器、电子元件、机械五金、电线电缆、新能源设备、光伏太阳能设备、灯具、照明器材、化工设备、通用设备、自动化控制系统设备、安防监控系统设备、机电设备（除特种）、机械设备、照明设备、电子产品、五金交电、蓄电池、仪器仪表、建筑材料、文化办公用品、电动工具、金属材料批发、零售；货物进出口、技术进出口。\n\n# Yueqing Meba Import Export Co.,Ltd.\n\nCompanyImage: country flagChina\n\nWebsite:yingselectric.com\n\nAddress:乐清市柳市镇黄七甲村\n\nMain Products:PC**MP EL*******OX ST***ER HA************RY CO***********CH\n\nIntroduction:乐清市美拜电气有限公司成立于2008-04-30，法定代表人为郑建丽，注册资本为30万元，统一社会信用代码为91330382674775435D，企业注册地址位于乐清市柳市镇黄七甲村，所属行业为批发业，经营范围包含：配电开关控制设备、高低压电器及配件、智能电器、电子元件、机械五金、电线电缆、新能源设备、光伏太阳能设备、灯具、照明器材、化工设备、通用设备、自动化控制系统设备、安防监控系统设备、机电设备（除特种）、机械设备、照明设备、电子产品、五金交电、蓄电池、仪器仪表、建筑材料、文化办公用品、电动工具、金属材料批发、"
+      }
+    ]
+  }
+}

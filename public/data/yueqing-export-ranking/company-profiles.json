@@ -31417,6 +31417,11 @@
           "url": "https://www.shuididp.cn/yp-0078f268b25d486e7c7dfa3d0003ca91.html",
           "checked_at": "2026-10-24",
           "source_type": "company_website"
+        },
+        "operating_address": {
+          "url": "http://www.hongfa-ele.com/",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website"
         }
       },
       "registered_capital": "500.000000万人民币",
@@ -31425,11 +31430,26 @@
         {
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-0078f268b25d486e7c7dfa3d0003ca91.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "http://www.hongfa-ele.com/"
         }
       ],
       "checked_at": "2026-10-24",
-      "legal_name": "国光集团乐清宏发电子有限公司"
-    }
+      "legal_name": "国光集团乐清宏发电子有限公司",
+      "operating_address": "浙江省乐清市虹桥镇南阳工业区"
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "http://www.hongfa-ele.com/",
+        "domain": "hongfa-ele.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ]
   },
   "YQ001554": {
     "details": {
@@ -32656,6 +32676,11 @@
           "url": "https://www.shuididp.cn/yp-06540e12355c08d52db61e0b4afafdc2.html",
           "checked_at": "2026-10-24",
           "source_type": "company_website"
+        },
+        "operating_address": {
+          "url": "https://www.meba.net/about-us/",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website"
         }
       },
       "registered_capital": "30.000000万人民币",
@@ -32664,11 +32689,26 @@
         {
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-06540e12355c08d52db61e0b4afafdc2.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.meba.net/about-us/"
         }
       ],
       "checked_at": "2026-10-24",
-      "legal_name": "乐清市美拜电气有限公司"
-    }
+      "legal_name": "乐清市美拜电气有限公司",
+      "operating_address": "Huancheng Road, Liushi, Wenzhou, China"
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.meba.net/about-us/",
+        "domain": "meba.net",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ]
   },
   "YQ001602": {
     "links": [
@@ -35870,6 +35910,11 @@
           "url": "https://www.shuididp.cn/yp-074e5e0e91d2eff26457f2ef23788f01.html",
           "checked_at": "2026-10-24",
           "source_type": "company_website"
+        },
+        "operating_address": {
+          "url": "https://www.baiyitool.com/",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website"
         }
       },
       "registered_capital": "500.000000万人民币",
@@ -35878,11 +35923,26 @@
         {
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-074e5e0e91d2eff26457f2ef23788f01.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.baiyitool.com/"
         }
       ],
       "checked_at": "2026-10-24",
-      "legal_name": "乐清市百益工具有限公司"
-    }
+      "legal_name": "乐清市百益工具有限公司",
+      "operating_address": "Qingjiang Industrial Zone, Qingjiang Town, Yueqing City, Zhejiang Province"
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.baiyitool.com/",
+        "domain": "baiyitool.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ]
   },
   "YQ001699": {
     "details": {
@@ -53349,6 +53409,11 @@
           "url": "https://www.shuididp.cn/yp-be1f696919a534db7e47f59b49e71401.html",
           "checked_at": "2026-10-24",
           "source_type": "company_website"
+        },
+        "operating_address": {
+          "url": "https://syqdcn.cn/contactus",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website"
         }
       },
       "registered_capital": "10.000000万人民币",
@@ -53357,11 +53422,30 @@
         {
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-be1f696919a534db7e47f59b49e71401.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://syqdcn.cn/"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://syqdcn.cn/contactus"
         }
       ],
       "checked_at": "2026-10-24",
-      "legal_name": "乐清市生源气动有限公司"
-    }
+      "legal_name": "乐清市生源气动有限公司",
+      "operating_address": "No.77, Yuedu North Road, Hongxi Lane, Liushi Town, Yueqing City, Zhejiang Province, China 325604"
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://syqdcn.cn/",
+        "domain": "syqdcn.cn",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ]
   },
   "YQ002239": {
     "details": {

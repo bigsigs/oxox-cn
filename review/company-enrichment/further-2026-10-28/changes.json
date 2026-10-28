@@ -1,0 +1,82 @@
+[
+  {
+    "id": "YQ001553",
+    "name": "国光集团乐清宏发电子有限公司",
+    "kind": "add_official_website",
+    "url": "http://www.hongfa-ele.com/"
+  },
+  {
+    "id": "YQ001698",
+    "name": "乐清市百益工具有限公司",
+    "kind": "add_official_website",
+    "url": "https://www.baiyitool.com/"
+  },
+  {
+    "id": "YQ002238",
+    "name": "乐清市生源气动有限公司",
+    "kind": "add_official_website",
+    "url": "https://syqdcn.cn/"
+  },
+  {
+    "id": "YQ001601",
+    "name": "乐清市美拜电气有限公司",
+    "kind": "add_official_website",
+    "url": "https://www.meba.net/about-us/"
+  },
+  {
+    "id": "YQ001553",
+    "name": "国光集团乐清宏发电子有限公司",
+    "kind": "add_operating_address",
+    "value": "浙江省乐清市虹桥镇南阳工业区",
+    "url": "http://www.hongfa-ele.com/"
+  },
+  {
+    "id": "YQ001698",
+    "name": "乐清市百益工具有限公司",
+    "kind": "add_operating_address",
+    "value": "Qingjiang Industrial Zone, Qingjiang Town, Yueqing City, Zhejiang Province",
+    "url": "https://www.baiyitool.com/"
+  },
+  {
+    "id": "YQ002238",
+    "name": "乐清市生源气动有限公司",
+    "kind": "add_operating_address",
+    "value": "No.77, Yuedu North Road, Hongxi Lane, Liushi Town, Yueqing City, Zhejiang Province, China 325604",
+    "url": "https://syqdcn.cn/contactus"
+  },
+  {
+    "id": "YQ001601",
+    "name": "乐清市美拜电气有限公司",
+    "kind": "add_operating_address",
+    "value": "Huancheng Road, Liushi, Wenzhou, China",
+    "url": "https://www.meba.net/about-us/"
+  },
+  {
+    "id": "YQ001553",
+    "name": "国光集团乐清宏发电子有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/further-20261028/YQ001553.png",
+    "source_url": "http://www.hongfa-ele.com/public/images/footer_logo.png"
+  },
+  {
+    "id": "YQ001698",
+    "name": "乐清市百益工具有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/further-20261028/YQ001698.png",
+    "source_url": "https://www.baiyitool.com/static/picture/导航栏LOGO.png"
+  },
+  {
+    "id": "YQ002238",
+    "name": "乐清市生源气动有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/further-20261028/YQ002238.png",
+    "source_url": "https://syqdcn.cn/dist/images/logo2.png"
+  },
+  {
+    "id": "YQ001601",
+    "name": "乐清市美拜电气有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/further-20261028/YQ001601.png",
+    "source_url": "https://www.meba.net/wp-content/uploads/2020/07/logo.png"
+  }
+]

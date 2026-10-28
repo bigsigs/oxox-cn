@@ -4592,5 +4592,33 @@
     "page_url": "https://sanhuiex.net/",
     "checked_at": "2026-10-28",
     "dark_background": false
+  },
+  "YQ001553": {
+    "path": "/company-icons/verified/further-20261028/YQ001553.png",
+    "source_url": "http://www.hongfa-ele.com/public/images/footer_logo.png",
+    "page_url": "http://www.hongfa-ele.com/",
+    "checked_at": "2026-10-28",
+    "dark_background": false
+  },
+  "YQ001698": {
+    "path": "/company-icons/verified/further-20261028/YQ001698.png",
+    "source_url": "https://www.baiyitool.com/static/picture/导航栏LOGO.png",
+    "page_url": "https://www.baiyitool.com/",
+    "checked_at": "2026-10-28",
+    "dark_background": true
+  },
+  "YQ002238": {
+    "path": "/company-icons/verified/further-20261028/YQ002238.png",
+    "source_url": "https://syqdcn.cn/dist/images/logo2.png",
+    "page_url": "https://syqdcn.cn/",
+    "checked_at": "2026-10-28",
+    "dark_background": false
+  },
+  "YQ001601": {
+    "path": "/company-icons/verified/further-20261028/YQ001601.png",
+    "source_url": "https://www.meba.net/wp-content/uploads/2020/07/logo.png",
+    "page_url": "https://www.meba.net/about-us/",
+    "checked_at": "2026-10-28",
+    "dark_background": false
   }
 }
