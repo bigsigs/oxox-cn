@@ -1,0 +1,34 @@
+[
+  {
+    "candidate_url": "https://www.onesto-ep.com/",
+    "reason": "当前品牌SENTOP Electrical；尚未确认与浙江沃斯托电气或ONESTO应用开发者的对应关系，不自动移用"
+  },
+  {
+    "candidate_url": "https://www.qmxmall.com/",
+    "reason": "出现的OPOYO欧友电子工业股份有限公司位于台湾/东莞，不能移用给浙江欧友电子"
+  },
+  {
+    "candidate_url": "https://ae01.alicdn.com/kf/S22e61f67bbcd45ccb6dee1b328ebd6d7h.pdf",
+    "reason": "产品手册源返回429，本轮无法从原文件核实进一步网址或Logo，不凭同名平台结果登记"
+  },
+  {
+    "candidate_url": "https://www.zjbaiyan.com/",
+    "reason": "本轮无法正常读取原域名，已核实采用同企业可访问的burnersupplier.com，不增加未访问成功的旧网址"
+  },
+  {
+    "candidate_url": "https://chrh.com/",
+    "reason": "名称线索明确，但当前多个访问地址均失败，放入统一待确认清单"
+  },
+  {
+    "candidate_url": "https://www.ldgcn.com/",
+    "reason": "名称及同域名厂家手册线索明确，但当前无法正常访问，放入待确认清单"
+  },
+  {
+    "candidate_url": "https://oxox.cn/",
+    "reason": "本项目自身的已发布资料不是独立验证来源，避免搜索结果形成循环引用"
+  },
+  {
+    "candidate_url": "https://www.cqc.com.cn/www/upload/files/upload/resources/file/2025/06/03/63268.pdf",
+    "reason": "名录仅用于核实联盈产品，未提供地址；不推断地址、官网、Logo或证书当前状态"
+  }
+]

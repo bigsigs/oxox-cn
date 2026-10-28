@@ -1,0 +1,173 @@
+{
+  "websites": [
+    {
+      "id": "YQ002175",
+      "name": "红旗电缆电器仪表集团有限公司",
+      "url": "https://www.hongqi-china.com/",
+      "source_url": "https://www.hongqi-china.com/index.php/about/10",
+      "evidence": {
+        "type": "direct",
+        "note": "首页和集团介绍明确红旗电缆电器仪表集团有限公司，乐清经五路268号与登记地址一致"
+      },
+      "page_title": "红旗集团-用芯连接世界",
+      "page_sha256": "466adf2aa6a55063435e37e8ddcae9c58139547270dafcb47834486c49acc4d8"
+    },
+    {
+      "id": "YQ002171",
+      "name": "麦卡森电气(浙江)有限公司",
+      "url": "http://www.maikasen.cn/",
+      "source_url": "http://www.maikasen.cn/index.php/guanyuwomen/",
+      "evidence": {
+        "type": "direct",
+        "note": "公司介绍直接列麦卡森电气(浙江)有限公司、原乐清凯森名称和冷压端子连接器业务"
+      },
+      "page_title": "接线端子—冷压端子-金属防水接头-格兰头-麦卡森",
+      "page_sha256": "4cb88e31b72315904bb80dc22ef9db0280e766c4f056ab3349def312d9633203"
+    },
+    {
+      "id": "YQ002114",
+      "name": "浙江德川气动科技有限公司",
+      "url": "https://www.chdlt.com/",
+      "source_url": "https://www.chdlt.com/aboutus.html",
+      "evidence": {
+        "type": "direct",
+        "note": "英文全称Zhejiang Dechuan Pneumatic Technology Co., Ltd.与气动产品、白石凤凰村地址对应；店铺同主体同地址"
+      },
+      "page_title": "Professional Manufacturer with a Complete Variety of Domestic | Dechuan Pneumatic",
+      "page_sha256": "331511cb4dc3f12155d3885502017495972c572446fc5f891f565c583f3951c6"
+    },
+    {
+      "id": "YQ002230",
+      "name": "浙江穆迪光电科技有限公司",
+      "url": "https://www.cnmdgd.com/",
+      "source_url": "https://www.cnmdgd.com/",
+      "evidence": {
+        "type": "direct",
+        "note": "公司介绍及版权中文全称精确，柳市及安全光幕光栅传感器业务与档案对应"
+      },
+      "page_title": "浙江穆迪光电科技有限公司",
+      "page_sha256": "51eebf756d58449b1c4688e532724fadc076505e601ddf9ce77dc5b5ae405bcb"
+    },
+    {
+      "id": "YQ002581",
+      "name": "乐清市伊斯特电气有限公司",
+      "url": "http://www.yister.com.cn/",
+      "source_url": "http://www.yister.com.cn/",
+      "evidence": {
+        "type": "direct",
+        "note": "页面中文全称和版权精确，柳市地址及气动阀产品与档案对应"
+      },
+      "page_title": "乐清市伊斯特电气有限公司_电磁阀_脚踏阀_机械阀_气源处理件",
+      "page_sha256": "29c53c0c0696306f3fac68c606a36c93af329b084e2f2eea2327ff99f24d7824"
+    },
+    {
+      "id": "YQ002101",
+      "name": "乐清市诚祥塑料有限公司",
+      "url": "https://www.cxnyloncabletie.com/",
+      "source_url": "https://cxplastic.en.alibaba.com/",
+      "evidence": {
+        "type": "direct",
+        "note": "Yueqing Chengxiang Plastic主体、白石坭岙村创业路1号与档案完全对应，店铺同主体同地址"
+      },
+      "page_title": "Yueqing Chengxiang Plastic Co., Ltd. - Professional Cable Accessories Manufacturer",
+      "page_sha256": "aff79254157bf0e29e473366d6f01adac934785e9e9da08e174c37375f7eeb63"
+    },
+    {
+      "id": "YQ002046",
+      "name": "浙江百焰热能设备有限公司",
+      "url": "https://www.burnersupplier.com/",
+      "source_url": "https://www.burnersupplier.com/about.html",
+      "evidence": {
+        "type": "direct",
+        "note": "介绍明确Zhejiang Baiyan Burner Equipment Co., Ltd.及Baiyan，汤岙余村西侧地址与登记和百焰制造商店铺一致"
+      },
+      "page_title": "Professional Industrial Gas Burners, Oil Burners and Dural Feul Burners | Burnersupplier.com",
+      "page_sha256": "6e2344724f230d64e105e64259c22598d7f1c33c8579e49c3c386de2107d4572"
+    },
+    {
+      "id": "YQ001948",
+      "name": "温州光语生物科技有限公司",
+      "url": "https://en.leadingtec.cn/",
+      "source_url": "https://www.leadingtec.cn/guangyu-bio-showcases-innovative-microalgae-reactors-at-the-tokyo-international-exhibition.html",
+      "evidence": {
+        "type": "related",
+        "note": "中文站版权主体上海光语，官方文章明确介绍温州光语生物科技有限公司并以我们描述其产品，电话62356695同英文站；英文站温州应急产业园生产基地与登记地点对应。标关联企业网站，不宣称为温州单独网站或推断控股关系"
+      },
+      "related": true,
+      "page_title": "Guangyu Biotech (Leadingtec) Photobioreactor Manufacturer China",
+      "page_sha256": "d6f9147b61827b91b14ab2a2dc2701e4a1f473b7e5cb4625fbb21f244dcfaa64"
+    }
+  ],
+  "alibaba_stores": [
+    {
+      "id": "YQ002114",
+      "name": "浙江德川气动科技有限公司",
+      "url": "https://dchdlt.en.alibaba.com/",
+      "actual_company": "Zhejiang Dechuan Pneumatic Technology Co., Ltd.",
+      "address": "Fenghuang Village, Baishi Town, Wenzhou, Zhejiang, China",
+      "logo_url": "https://sc04.alicdn.com/kf/H90cfc2c9c9054fe59466c367e7908bf4Z.png",
+      "source_url": "https://suppliers.alibaba.com/zhejiang-dechuan-pneumatic-technology-co-ltd_2216568802893",
+      "evidence": "店铺主体完整对应，产品与官网一致；原地址或官网生产经营地点能对应，店铺地址单独保留"
+    },
+    {
+      "id": "YQ002101",
+      "name": "乐清市诚祥塑料有限公司",
+      "url": "https://cxplastic.en.alibaba.com/",
+      "actual_company": "Yueqing Chengxiang Plastic Co., Ltd.",
+      "address": "No. 1, Chuangye Road, Niao Village, Baishi Street, Yueqing, Zhejiang, China",
+      "logo_url": "https://sc04.alicdn.com/kf/H263bca0a7a0f4bf699d83b5fe3cc3a5be.jpg",
+      "source_url": "https://electronics.alibaba.com/supplier/self-locking-cable-ties-distributor",
+      "evidence": "店铺主体完整对应，产品与官网一致；原地址或官网生产经营地点能对应，店铺地址单独保留"
+    },
+    {
+      "id": "YQ002046",
+      "name": "浙江百焰热能设备有限公司",
+      "url": "https://baiyanburner.en.alibaba.com/",
+      "actual_company": "Zhejiang Baiyan Themeral Heating Equipment Co., Ltd.",
+      "address": "West Of Tangao Yu Village, Liushi Town, Yueqing, Zhejiang, China",
+      "logo_url": "https://sc04.alicdn.com/kf/H46e063d6995e4f1eb8af8e1ecaa82fefm.jpg",
+      "source_url": "https://baiyanburner.m.en.alibaba.com/",
+      "evidence": "店铺主体完整对应，产品与官网一致；原地址或官网生产经营地点能对应，店铺地址单独保留"
+    },
+    {
+      "id": "YQ002171",
+      "name": "麦卡森电气(浙江)有限公司",
+      "url": "https://mks.en.alibaba.com/",
+      "actual_company": "Maikasen Electric (Zhejiang) Co., Ltd",
+      "address": "Building 13, Robot Industrial Park, 176 Yanyun Road, Kunpeng Sub-District, Wenzhou Marine Economic Development Demonstration Zone, Wenzhou, Zhejiang, China",
+      "logo_url": "https://sc04.alicdn.com/kf/HTB1JPRZLXXXXXX5XVXXq6xXFXXXg.jpg",
+      "source_url": "https://japanese.alibaba.com/f/%E3%83%95%E3%82%A1%E3%82%B9%E3%83%88%E3%83%B3.html",
+      "evidence": "店铺主体完整对应，产品与官网一致；原地址或官网生产经营地点能对应，店铺地址单独保留"
+    }
+  ],
+  "fields": [
+    {
+      "id": "YQ002171",
+      "field": "operating_address",
+      "value": "浙江省乐清市柳市镇大茅岭工业区",
+      "source_url": "http://www.maikasen.cn/",
+      "source_type": "company_website_contact"
+    },
+    {
+      "id": "YQ002581",
+      "field": "operating_address",
+      "value": "浙江省温州市乐清市柳市镇柳青北路",
+      "source_url": "http://www.yister.com.cn/",
+      "source_type": "company_website_contact"
+    },
+    {
+      "id": "YQ002171",
+      "field": "main_products",
+      "value": "冷压端子、接线端子、压接工具、防水接头及连接器",
+      "source_url": "http://www.maikasen.cn/index.php/guanyuwomen/",
+      "source_type": "company_website"
+    },
+    {
+      "id": "YQ003764",
+      "field": "main_products",
+      "value": "课桌椅、学习桌椅、升降课桌椅、手摇课桌椅及午休课桌椅",
+      "source_url": "https://www.cqc.com.cn/www/upload/files/upload/resources/file/2025/06/03/63268.pdf",
+      "source_type": "official_product_certification"
+    }
+  ]
+}

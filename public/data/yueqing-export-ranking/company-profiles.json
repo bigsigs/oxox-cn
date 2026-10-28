@@ -44052,11 +44052,25 @@
         {
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-0ebe2059f18b4c71f803483223ab7a4a.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://en.leadingtec.cn/"
         }
       ],
       "checked_at": "2026-10-24",
       "legal_name": "温州光语生物科技有限公司"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "关联企业网站",
+        "url": "https://en.leadingtec.cn/",
+        "domain": "en.leadingtec.cn",
+        "source": "official_explicit_related_company",
+        "added_at": "2026-10-29"
+      }
+    ]
   },
   "YQ001949": {
     "details": {
@@ -47295,6 +47309,11 @@
           "url": "https://www.shuididp.cn/yp-70481afdd8cb022a0978afa324703001.html",
           "checked_at": "2026-10-24",
           "source_type": "company_website"
+        },
+        "alibaba_address": {
+          "url": "https://baiyanburner.en.alibaba.com/",
+          "checked_at": "2026-10-29",
+          "source_type": "alibaba_company_profile"
         }
       },
       "registered_capital": "1000.000000万人民币",
@@ -47303,11 +47322,38 @@
         {
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-70481afdd8cb022a0978afa324703001.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.burnersupplier.com/"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://baiyanburner.en.alibaba.com/"
         }
       ],
       "checked_at": "2026-10-24",
-      "legal_name": "浙江百焰热能设备有限公司"
-    }
+      "legal_name": "浙江百焰热能设备有限公司",
+      "alibaba_address": "West Of Tangao Yu Village, Liushi Town, Yueqing, Zhejiang, China"
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.burnersupplier.com/",
+        "domain": "burnersupplier.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-29"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站",
+        "url": "https://baiyanburner.en.alibaba.com/",
+        "domain": "baiyanburner.en.alibaba.com",
+        "source": "exact_company_and_location_verified",
+        "added_at": "2026-10-29"
+      }
+    ]
   },
   "YQ002047": {
     "details": {
@@ -49065,6 +49111,11 @@
           "url": "https://www.shuididp.cn/yp-defc82afd5fab498a467d817146fee01.html",
           "checked_at": "2026-10-24",
           "source_type": "company_website"
+        },
+        "alibaba_address": {
+          "url": "https://cxplastic.en.alibaba.com/",
+          "checked_at": "2026-10-29",
+          "source_type": "alibaba_company_profile"
         }
       },
       "registered_capital": "100.000000万人民币",
@@ -49073,11 +49124,38 @@
         {
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-defc82afd5fab498a467d817146fee01.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.cxnyloncabletie.com/"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://cxplastic.en.alibaba.com/"
         }
       ],
       "checked_at": "2026-10-24",
-      "legal_name": "乐清市诚祥塑料有限公司"
-    }
+      "legal_name": "乐清市诚祥塑料有限公司",
+      "alibaba_address": "No. 1, Chuangye Road, Niao Village, Baishi Street, Yueqing, Zhejiang, China"
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.cxnyloncabletie.com/",
+        "domain": "cxnyloncabletie.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-29"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站",
+        "url": "https://cxplastic.en.alibaba.com/",
+        "domain": "cxplastic.en.alibaba.com",
+        "source": "exact_company_and_location_verified",
+        "added_at": "2026-10-29"
+      }
+    ]
   },
   "YQ002102": {
     "details": {
@@ -49466,6 +49544,11 @@
           "url": "https://www.shuididp.cn/yp-78f5ebd84a37799896d03bdfa5873584.html",
           "checked_at": "2026-10-24",
           "source_type": "company_website"
+        },
+        "alibaba_address": {
+          "url": "https://dchdlt.en.alibaba.com/",
+          "checked_at": "2026-10-29",
+          "source_type": "alibaba_company_profile"
         }
       },
       "registered_capital": "1000.000000万人民币",
@@ -49474,11 +49557,38 @@
         {
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-78f5ebd84a37799896d03bdfa5873584.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.chdlt.com/"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://dchdlt.en.alibaba.com/"
         }
       ],
       "checked_at": "2026-10-24",
-      "legal_name": "浙江德川气动科技有限公司"
-    }
+      "legal_name": "浙江德川气动科技有限公司",
+      "alibaba_address": "Fenghuang Village, Baishi Town, Wenzhou, Zhejiang, China"
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.chdlt.com/",
+        "domain": "chdlt.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-29"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站",
+        "url": "https://dchdlt.en.alibaba.com/",
+        "domain": "dchdlt.en.alibaba.com",
+        "source": "exact_company_and_location_verified",
+        "added_at": "2026-10-29"
+      }
+    ]
   },
   "YQ002115": {
     "details": {
@@ -51542,11 +51652,25 @@
         {
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-b520aa72a6b4bb6c25f0936ecf95eba2.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.hongqi-china.com/"
         }
       ],
       "checked_at": "2026-10-24",
       "legal_name": "红旗电缆电器仪表集团有限公司"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.hongqi-china.com/",
+        "domain": "hongqi-china.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-29"
+      }
+    ]
   },
   "YQ002176": {
     "details": {
@@ -53331,11 +53455,25 @@
         {
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-90d68e3dcab301b1a360505e651ab901.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.cnmdgd.com/"
         }
       ],
       "checked_at": "2026-10-24",
       "legal_name": "浙江穆迪光电科技有限公司"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.cnmdgd.com/",
+        "domain": "cnmdgd.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-29"
+      }
+    ]
   },
   "YQ002231": {
     "links": [
@@ -64595,6 +64733,11 @@
           "url": "https://www.shuididp.cn/yp-148f0dac33e459d6e535fd22e6072792.html",
           "checked_at": "2026-10-24",
           "source_type": "company_website"
+        },
+        "operating_address": {
+          "url": "http://www.yister.com.cn/",
+          "checked_at": "2026-10-29",
+          "source_type": "company_website_contact"
         }
       },
       "registered_capital": "100.000000万人民币",
@@ -64603,11 +64746,26 @@
         {
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-148f0dac33e459d6e535fd22e6072792.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "http://www.yister.com.cn/"
         }
       ],
       "checked_at": "2026-10-24",
-      "legal_name": "乐清市伊斯特电气有限公司"
-    }
+      "legal_name": "乐清市伊斯特电气有限公司",
+      "operating_address": "浙江省温州市乐清市柳市镇柳青北路"
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "http://www.yister.com.cn/",
+        "domain": "yister.com.cn",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-29"
+      }
+    ]
   },
   "YQ002582": {
     "details": {
@@ -95376,6 +95534,83 @@
       "checked_at": "2026-10-28",
       "operating_address": "No.307,Wei 19 Road,Yueqing Economic Development Zone, Yueqing,Wenzhou City, Zhejiang Province, China",
       "main_products": "电缆附件、接线端子、接地棒、避雷及接地系统、电力金具、绝缘穿刺连接器"
+    }
+  },
+  "YQ002171": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "http://www.maikasen.cn/",
+        "domain": "maikasen.cn",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-29"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站",
+        "url": "https://mks.en.alibaba.com/",
+        "domain": "mks.en.alibaba.com",
+        "source": "exact_company_and_location_verified",
+        "added_at": "2026-10-29"
+      }
+    ],
+    "details": {
+      "sources": [
+        {
+          "label": "企业官网",
+          "url": "http://www.maikasen.cn/"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://mks.en.alibaba.com/"
+        },
+        {
+          "label": "企业官网",
+          "url": "http://www.maikasen.cn/index.php/guanyuwomen/"
+        }
+      ],
+      "alibaba_address": "Building 13, Robot Industrial Park, 176 Yanyun Road, Kunpeng Sub-District, Wenzhou Marine Economic Development Demonstration Zone, Wenzhou, Zhejiang, China",
+      "field_sources": {
+        "alibaba_address": {
+          "url": "https://mks.en.alibaba.com/",
+          "checked_at": "2026-10-29",
+          "source_type": "alibaba_company_profile"
+        },
+        "operating_address": {
+          "url": "http://www.maikasen.cn/",
+          "checked_at": "2026-10-29",
+          "source_type": "company_website_contact"
+        },
+        "main_products": {
+          "url": "http://www.maikasen.cn/index.php/guanyuwomen/",
+          "checked_at": "2026-10-29",
+          "source_type": "company_website"
+        }
+      },
+      "checked_at": "2026-10-29",
+      "operating_address": "浙江省乐清市柳市镇大茅岭工业区",
+      "main_products": "冷压端子、接线端子、压接工具、防水接头及连接器"
+    }
+  },
+  "YQ003764": {
+    "links": [],
+    "details": {
+      "main_products": "课桌椅、学习桌椅、升降课桌椅、手摇课桌椅及午休课桌椅",
+      "field_sources": {
+        "main_products": {
+          "url": "https://www.cqc.com.cn/www/upload/files/upload/resources/file/2025/06/03/63268.pdf",
+          "checked_at": "2026-10-29",
+          "source_type": "official_product_certification"
+        }
+      },
+      "checked_at": "2026-10-29",
+      "sources": [
+        {
+          "label": "公开企业资料",
+          "url": "https://www.cqc.com.cn/www/upload/files/upload/resources/file/2025/06/03/63268.pdf"
+        }
+      ]
     }
   }
 }
