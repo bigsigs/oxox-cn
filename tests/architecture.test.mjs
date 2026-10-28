@@ -171,7 +171,7 @@ test("homepage controls expose search, every source period, categories and furth
   }
   assert.equal((options.find((option) => "selected" in option) ?? options[0]).value, periods.latest);
   assert.ok(tagsOf(elementById(html, "rankTabs"), "button").length > 1, "ranking categories need usable controls");
-  assert.ok(tagsOf(html, "button").some((button) => button.id === "loadMore"), "further results need an explicit button");
+  assert.ok(tagsOf(html, "nav").some((nav) => nav.id === "loadMore" && nav["aria-label"] === "排行榜分页"), "further results need accessible pagination navigation");
   const modules = tagsOf(html, "script").filter((script) => script.type === "module" && script.src?.startsWith("/_astro/"));
   assert.ok(modules.length, "ranking controls need their built client module");
   await Promise.all(modules.map((script) => access(new URL(`dist${script.src}`, root))));

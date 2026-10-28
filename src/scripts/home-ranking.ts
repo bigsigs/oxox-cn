@@ -19,7 +19,7 @@ if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 const format = value => new Intl.NumberFormat("zh-CN").format(value);
 const escape = value => String(value ?? "").replace(/[&<>"']/g, c => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" })[c]);
 const cache = new Map();
-const state = { periodId: boot.latest, dataset: null, previousIndex: new Map(), currentIndex: new Map(), hasPrevious: true, searchIndex: new Map(), groups: [], group: "all", filter: "all", limit: 30, ready: false, activeSuggestion: -1, pageUrl: "" };
+const state = { periodId: boot.latest, dataset: null, previousIndex: new Map(), currentIndex: new Map(), hasPrevious: true, searchIndex: new Map(), groups: [], group: "all", filter: "all", page: 1, pageSize: 30, ready: false, activeSuggestion: -1, pageUrl: "" };
 let cleanCanvasUrl = "";
 
 function normalizedUrl(value = location.href) {
@@ -55,7 +55,7 @@ function saveRestorePoint(extra = {}) {
       query: search.value,
       filter: state.filter,
       group: state.group,
-      limit: state.limit,
+      page: state.page,
       scrollY: window.scrollY,
       savedAt: Date.now(),
       ...extra,
@@ -71,7 +71,7 @@ function restoreScroll(saved) {
 }
 async function restoreSavedState(saved) {
   if (!saved || !state.ready) return;
-  state.limit = Math.max(30, Number(saved.limit) || 30);
+  state.page = Math.max(1, Math.floor(Number(saved.page)) || 1);
   state.group = state.groups.some(group => group.id === saved.group) ? saved.group : "all";
   state.filter = ["top100", "top500", "up", "down"].includes(saved.filter) ? saved.filter : "all";
   if (typeof saved.query === "string" && saved.query !== search.value) search.value = saved.query;
@@ -120,6 +120,7 @@ function canvasUrl() {
     ["period", state.periodId === boot.latest ? "" : state.periodId],
     ["filter", state.filter === "all" ? "" : state.filter],
     ["band", state.group === "all" ? "" : state.group],
+    ["page", state.page > 1 ? String(state.page) : ""],
   ]) value ? url.searchParams.set(key, value) : url.searchParams.delete(key);
   url.searchParams.delete("restore");
   return url;
@@ -138,7 +139,7 @@ function closeSuggestions() {
 }
 function selectSuggestion(record) {
   search.value = record.company_name;
-  state.limit = 30;
+  state.page = 1;
   closeSuggestions();
   render();
   saveRestorePoint({ focus: "search" });
@@ -160,12 +161,20 @@ function render() {
     if (group) records = records.filter(record => matchesAmountGroup(record, group));
   }
   if (["up", "down"].includes(state.filter)) records = records.filter(record => rankSignal(record, state.currentIndex, state.previousIndex, state.hasPrevious).type === state.filter);
-  rows.innerHTML = records.slice(0, state.limit).map(rowMarkup).join("");
-  more.hidden = records.length <= state.limit;
-  more.disabled = false;
-  more.textContent = `显示更多（还有 ${format(Math.max(0, records.length - state.limit))} 条）`;
+  const pages = Math.max(1, Math.ceil(records.length / state.pageSize));
+  state.page = Math.min(state.page, pages);
+  const start = (state.page - 1) * state.pageSize;
+  rows.innerHTML = records.slice(start, start + state.pageSize).map(rowMarkup).join("");
+  more.hidden = records.length <= state.pageSize;
+  const visiblePages = [...new Set([1, pages, state.page - 1, state.page, state.page + 1,
+    ...(state.page === 1 ? [2, 3] : []), ...(state.page === pages ? [pages - 2, pages - 1] : [])])]
+    .filter(page => page >= 1 && page <= pages).sort((a, b) => a - b);
+  const pageButton = (page, label = String(page), extra = "") => `<button type="button" class="ranking-page${page === state.page && !extra ? " is-active" : ""}" data-page="${page}" aria-label="${extra || `第 ${page} 页`}"${page === state.page && !extra ? ' aria-current="page"' : ""}${extra && (page < 1 || page > pages) ? " disabled" : ""}>${label}</button>`;
+  more.innerHTML = pageButton(state.page - 1, "‹", "上一页") + visiblePages.map((page, index) =>
+    `${index && page - visiblePages[index - 1] > 1 ? '<span class="ranking-page-gap" aria-hidden="true">…</span>' : ""}${pageButton(page)}`
+  ).join("") + pageButton(state.page + 1, "›", "下一页");
   document.querySelector("#rankingEmpty").hidden = records.length > 0;
-  status.textContent = records.length ? `共 ${format(records.length)} 条记录，已显示 ${format(Math.min(records.length, state.limit))} 条` : "没有匹配的记录";
+  status.textContent = records.length ? `共 ${format(records.length)} 条记录，第 ${format(state.page)} / ${format(pages)} 页` : "没有匹配的记录";
   document.querySelector("#clearFilters").hidden = !search.value && state.group === "all" && state.filter === "all";
   document.querySelectorAll("#rankTabs [data-filter]").forEach(button => button.setAttribute("aria-pressed", String(button.dataset.filter === state.filter)));
   document.querySelectorAll("#distributionLegend button").forEach(button => button.setAttribute("aria-pressed", String(button.dataset.group === state.group)));
@@ -177,7 +186,7 @@ function reset() {
   search.value = "";
   state.group = "all";
   state.filter = "all";
-  state.limit = 30;
+  state.page = 1;
   render();
 }
 async function setPeriod(id, options = {}) {
@@ -186,7 +195,7 @@ async function setPeriod(id, options = {}) {
   const previous = previousPeriod(period);
   periodSelect.disabled = true;
   if (exactShortcut) exactShortcut.disabled = true;
-  more.disabled = true;
+  more.setAttribute("aria-busy", "true");
   status.textContent = "正在载入所选周期…";
   error.hidden = true;
   try {
@@ -198,7 +207,7 @@ async function setPeriod(id, options = {}) {
     state.previousIndex = buildPeriodIndex(previousData?.records || []);
     state.groups = amountGroups(dataset);
     state.group = state.groups.some(group => group.id === options.group) ? options.group : "all";
-    state.limit = Math.max(30, Number(options.limit) || 30);
+    state.page = Math.max(1, Math.floor(Number(options.page)) || 1);
     state.ready = true;
     periodSelect.value = id;
     document.querySelector("#statRecords").textContent = format(dataset.records.length);
@@ -218,7 +227,7 @@ async function setPeriod(id, options = {}) {
     periodSelect.value = state.periodId;
   } finally {
     periodSelect.disabled = false;
-    more.disabled = !state.ready;
+    more.removeAttribute("aria-busy");
     if (exactShortcut) exactShortcut.disabled = !state.ready;
   }
 }
@@ -236,7 +245,7 @@ async function initialize() {
       : boot.periods.some(period => period.id === requestedPeriod) ? requestedPeriod : boot.latest;
     await setPeriod(periodId, {
       group: params.get("band") || restore?.group,
-      limit: restore?.limit,
+      page: restore?.page || params.get("page"),
     });
     if (restore) {
       await restoreSavedState(restore);
@@ -248,7 +257,7 @@ async function initialize() {
 }
 
 search.addEventListener("input", () => {
-  state.limit = 30;
+  state.page = 1;
   state.activeSuggestion = -1;
   render();
 });
@@ -271,7 +280,7 @@ search.addEventListener("keydown", event => {
 });
 document.querySelector("#rankingSearchForm").addEventListener("submit", event => {
   event.preventDefault();
-  state.limit = 30;
+  state.page = 1;
   closeSuggestions();
   render();
   document.querySelector(".ranking-section").scrollIntoView({ block: "start" });
@@ -280,26 +289,28 @@ document.querySelector("#rankTabs").addEventListener("click", event => {
   const button = event.target.closest("[data-filter]");
   if (!button) return;
   state.filter = button.dataset.filter;
-  state.limit = 30;
+  state.page = 1;
   render();
 });
 document.querySelector(".distribution").addEventListener("click", event => {
   const button = event.target.closest("[data-group]");
   if (!button || !state.ready) return;
   state.group = state.group === button.dataset.group ? "all" : button.dataset.group;
-  state.limit = 30;
+  state.page = 1;
   render();
 });
 exactShortcut?.addEventListener("click", () => {
   if (!periodSelect.disabled) setPeriod(exactShortcut.dataset.period);
 });
 periodSelect.addEventListener("change", () => setPeriod(periodSelect.value));
-more.addEventListener("click", () => {
-  const offset = rows.children.length;
-  state.limit += 30;
+more.addEventListener("click", event => {
+  const button = event.target.closest("[data-page]");
+  if (!button || button.disabled || periodSelect.disabled) return;
+  state.page = Number(button.dataset.page) || 1;
   render();
+  document.querySelector(".ranking-board").scrollIntoView({ block: "start" });
   saveRestorePoint();
-  rows.children[offset]?.focus({ preventScroll: true });
+  rows.querySelector("a")?.focus({ preventScroll: true });
 });
 document.querySelector("#clearFilters").addEventListener("click", reset);
 document.querySelector("[data-reset]").addEventListener("click", reset);

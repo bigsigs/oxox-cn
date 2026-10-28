@@ -75,9 +75,10 @@
 .row-change.new, .row-change.pending { font-size:11px; font-weight:400; }
 .mobile-change-label { display:none; }
 .ranking-status { margin:18px 0 11px; color:var(--ink3); font-size:11px; line-height:1.7; text-align:center; }
-.ranking-more { display:block; width:auto; margin:10px auto 0; min-height:43px; padding:10px 18px; border:1px solid var(--line); border-radius:10px; background:var(--panel); color:var(--ink2); font-size:12px; line-height:1.7; text-align:center; }
-.ranking-more:hover { background:var(--panel2); border-color:#c5c4be; }
-.ranking-more:disabled { cursor:wait; }
+.ranking-more { display:flex; justify-content:center; gap:6px; width:auto; margin:18px auto 0; min-height:43px; padding:4px; color:var(--ink2); font-size:12px; line-height:1.7; text-align:center; }
+.ranking-page { min-width:34px; height:34px; padding:0 8px; border:1px solid var(--line); border-radius:8px; background:var(--panel); color:var(--ink2); cursor:pointer; }
+.ranking-page:not(:disabled):hover { background:var(--panel2); }
+.ranking-page.is-active, .ranking-page.is-active:hover { background:var(--ink); border-color:var(--ink); color:var(--paper); }
 .ranking-empty { padding:43px 18px 35px; text-align:center; }
 .ranking-empty > b { color:var(--ink); font-size:15px; font-weight:600; }
 .ranking-empty p { max-width:440px; margin:10px auto 17px; color:var(--ink3); font-size:12px; line-height:1.8; }
@@ -149,7 +150,8 @@
   .row-change.review, .row-change.new, .row-change.pending { font-size:9px; }
   .mobile-change-label { display:inline; color:var(--ink3); font-size:8px; font-weight:400; }
   .ranking-status { margin:15px 0 10px; font-size:10px; }
-  .ranking-more { min-height:39px; padding:8px 12px; font-size:11px; }
+  .ranking-more { gap:4px; min-height:39px; padding:4px 0; font-size:11px; overflow-x:auto; justify-content:center; }
+  .ranking-page { min-width:31px; height:31px; padding:0 6px; }
   .ranking-empty { padding:34px 5px 28px; }
   .ranking-empty > b { font-size:13px; }
   .ranking-empty p { font-size:11px; }
@@ -183,3 +185,6 @@
 
 /* Verified brand artwork keeps its original aspect ratio. */
 .company-mark.dark-logo, .company-mark.dark-logo img { background:#24334a; }
+
+.ranking-page:disabled { opacity:.35; cursor:default; }
+.ranking-page-gap { align-self:center; padding:0 2px; }

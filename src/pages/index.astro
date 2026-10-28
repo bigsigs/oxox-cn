@@ -105,7 +105,7 @@ const boot = { periods: periods.periods, latest: periods.latest, companyMeta };
         </div>
         <div class="ranking-empty" id="rankingEmpty" hidden><b>没有找到匹配的企业</b><p>试试企业简称、拼音或编号，也可以清除筛选后重新查找。</p><button class="ref-button" type="button" data-reset>清除筛选</button></div>
         <p class="ranking-status" id="rankingStatus" role="status" aria-live="polite">当前显示前 30 条排名记录</p>
-        <button class="ranking-more" id="loadMore" type="button" disabled>显示更多（还有 {format(latestRanking.records.length - 30)} 条）</button>
+        <nav class="ranking-more ranking-pagination" id="loadMore" aria-label="排行榜分页"></nav>
         <div class="ranking-error" id="rankingError" role="alert" hidden>筛选数据暂时无法载入，当前仍可查看已显示的企业。<button type="button" id="retryLoad">重新载入</button></div>
         <noscript><p class="ranking-status">当前展示前 30 条记录。请启用 JavaScript 使用搜索与筛选，或直接点击企业查看档案。</p></noscript>
       </div>
