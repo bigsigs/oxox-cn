@@ -1,0 +1,142 @@
+{
+  "websites": [
+    {
+      "id": "YQ000412",
+      "name": "温州金旭电气有限公司",
+      "url": "https://www.jinxu.cc/contact-us",
+      "source_url": "https://www.jinxu.cc/contact-us",
+      "discovery": "name_matched_search_result",
+      "discovered_url": "https://www.jinxu.cc/contact-us",
+      "evidence": {
+        "type": "direct",
+        "chinese_title": false,
+        "chinese_copyright": false,
+        "english_identity": "Wenzhou Jinxu Electric Co., Ltd.",
+        "locality_match": true,
+        "page_title": "Contact Us - Wenzhou JinXu Electric Co.,Ltd.",
+        "url": "https://www.jinxu.cc/contact-us",
+        "page_sha256": "0ead4599587e665ca1498fec61b7ea52882ec7a7f3f843f1875b6fec7cbafa77"
+      },
+      "page_title": "Contact Us - Wenzhou JinXu Electric Co.,Ltd.",
+      "identity_excerpt": "Wenzhou JinXu Electric Co.,Ltd. | Add: No.98 Zhangzhai Road,Zhangqu Village,Liushi Town,Yueqing City, Zhejiang,China. | Mr Forest | Mobile No.: | 0086-13706600620 | E-mail: | jxele@jinxu.cc | Wechat ID: forest1978cheng | Ms Lidia | Mobile No.: | 0086-15167484596 | E-mail: | jinxu@jinxu.cc | Wechat ID: T463088961 | Mr. Dinos | Mobile No.: | 0086-13777723205 | E-mail: | dinos@jinxu.cc | Whatsapp: | 13777723205 | Mr.Mark | Mobile No.: | 0086-19805872818 | E-mail: | mark.zhang@jinxu.cc | Whatsapp: | 19805872818 | Mr.Felix | Mobile No.: | 0086-19805872858 | E-mail: | felix.wang@jinxu.cc | Whatsapp: | 19805872858 | URL: | www.jinxu.cc | Products | Low Voltage Circuit Breaker | Switch | Surge Protective Device | Digital Display Socket Tester | Electromagnetic Tripping Device | Circuit Breaker Accessories | Signal Lamp | AC Contactor | Modular Bell | Time Relay | Company | About JinXu | Products | FAQ | Blog | Support | Contact Us"
+    },
+    {
+      "id": "YQ000538",
+      "name": "乐清市科洛贸易有限公司",
+      "url": "https://www.cropgroup.cn/en/inquiry.html",
+      "source_url": "https://www.cropgroup.cn/en/inquiry.html",
+      "discovery": "name_matched_search_result",
+      "discovered_url": "https://www.cropgroup.cn/en/inquiry.html",
+      "evidence": {
+        "type": "direct",
+        "chinese_title": false,
+        "chinese_copyright": false,
+        "english_identity": "Yueqing Crop Trading Co., Ltd.",
+        "locality_match": true,
+        "page_title": "Send Inquiry -   ,    Manufacturer -  CROP TECHNOLOGY GROUP LTD, YUEQING CROP TRADING CO LTD",
+        "url": "https://www.cropgroup.cn/en/inquiry.html",
+        "page_sha256": "52b22fae05eadecaa316fcd10fecb2e66a7ae9c286ed9034e990bb7757f58616"
+      },
+      "page_title": "Send Inquiry -   ,    Manufacturer -  CROP TECHNOLOGY GROUP LTD, YUEQING CROP TRADING CO LTD",
+      "identity_excerpt": "Share | Address | No.77,Zhongji Rd, Yuecheng Town,Yueqing City, Zhejiang, China | TEL | 0086 13186810986 | E-Mail | ada@cropgroupcn.com | Copy | Home | Products | Solution | About Us | Download | Contact Us | Send Inquiry | Sitemap | (9571)"
+    },
+    {
+      "id": "YQ000628",
+      "name": "乐清斑马工具有限公司",
+      "url": "https://zebratiling.com/",
+      "source_url": "https://zebratiling.com/",
+      "evidence": {
+        "type": "direct",
+        "page_sha256": "586137fd40d0a51368a77180c99a5d24d80d7a46820c007939096f67949723a9",
+        "reason": "斑马官网列示信用代码91330382MA7K80LEXK，与企业公开登记一致。",
+        "document_url": ""
+      },
+      "page_title": "Tile Leveling System Manufacturer | ZEBRA TOOLS",
+      "identity_excerpt": "ZEBRA | TOOLS | Professional tile leveling system manufacturer. Factory-direct wholesale since 2019. | Products | Tile Leveling Clips | Tile Leveling Wedges | Tile Leveling Pliers | Tile Spacers & Shims | Cross Tile Spacers | T-Shaped Tile Spacers | Reusable Tile Leveling System | Horseshoe Shims | Spin Doctor Tile Leveling System | Tile Leveling System Kit | Electric Suction Cup | Tile Mallet Hammer | Y-Shaped Tile Spacers | Quick Links | Home | Contact | About Us | Blog | FAQ | Calculator | Industry Data | Resources | Manufacturing | Quality control | Case studies | Privacy Policy | Terms & Conditions | Company Profile (PDF) | Contact Us | Wenzhou, Zhejiang, China | +86 183 2445 1402 | [email protected] | WhatsApp | Facebook | © 2026 | Yueqing Zebra Tools Co., Ltd. | |  Unified Social Credit Code: 91330382MA7K80LEXK | Sitemap"
+    },
+    {
+      "id": "YQ003084",
+      "name": "乐清市沃玛工具有限公司",
+      "url": "https://www.womatools.com/about-us",
+      "source_url": "https://www.womatools.com/about-us",
+      "evidence": {
+        "type": "direct",
+        "page_sha256": "c51adb9ba3ebec15e7a0400fd0473a45ad48eeeec638835cca5d0191fe5f21ed",
+        "reason": "官网产品册中英文全称对应，东康路68号地址及0577-62667880电话一致。",
+        "document_url": "https://www.womatools.com/js/21482/Sample-of-woma-tools1-2020.pdf"
+      },
+      "page_title": "About Us - Yueqing Woma Tools Co., Ltd",
+      "identity_excerpt": "Please enter what you want to search | Search | WOMA tools is advancing toward the world! | Quick Navigation | Home | About Us | Product | News | Knowledge | Contact Us | Download | Feedback | Sitemap | Contact Us | Tel: +86-577-62667880 | Mob: +86 13588998230 | Email: admin@womatools.com | Add: No.68 Dongkang Road, Chengdong Street, | Yueqing City, Zhejiang Province | QR Code | Copyright © Yueqing Woma Tools Co., Ltd. All Rights Reserved. | whatsapp | Phone | E-mail | Inquiry"
+    }
+  ],
+  "alibaba_stores": [],
+  "fields": [
+    {
+      "id": "YQ000412",
+      "name": "温州金旭电气有限公司",
+      "field": "operating_address",
+      "value": "No.98 Zhangzhai Road, Zhangqu Village, Liushi Town, Yueqing City, Zhejiang, China",
+      "source_url": "https://www.jinxu.cc/contact-us",
+      "source_type": "company_website"
+    },
+    {
+      "id": "YQ000538",
+      "name": "乐清市科洛贸易有限公司",
+      "field": "operating_address",
+      "value": "No.77, Zhongji Road, Yuecheng Town, Yueqing City, Zhejiang, China",
+      "source_url": "https://www.cropgroup.cn/en/inquiry.html",
+      "source_type": "company_website"
+    },
+    {
+      "id": "YQ003084",
+      "name": "乐清市沃玛工具有限公司",
+      "field": "operating_address",
+      "value": "浙江省乐清市城东街道东康路68号",
+      "source_url": "https://www.womatools.com/about-us",
+      "source_type": "company_website"
+    },
+    {
+      "id": "YQ000319",
+      "name": "新明丽灯饰有限公司",
+      "field": "operating_address",
+      "value": "No.10 Hongqi Road, Yueqing Bay Harbor Area, Yueqing City, Zhejiang, China",
+      "source_url": "https://xml-lighting.com/",
+      "source_type": "company_website"
+    },
+    {
+      "id": "YQ000335",
+      "name": "温州安良电气有限公司",
+      "field": "operating_address",
+      "value": "No.221 Weiershi Road, Yueqing Economic Development Zone, Wenzhou, Zhejiang, China",
+      "source_url": "https://www.aliontimer.com/",
+      "source_type": "company_website"
+    }
+  ],
+  "english_identity_sources": {
+    "YQ000412": [
+      {
+        "name": "Wenzhou Jinxu Electric Co., Ltd.",
+        "source": "previous_verified_exact_chinese_record",
+        "source_url": "https://www.cnverify.com/company/Wenzhou-Jinxu-Electric-Co-Ltd",
+        "source_excerpt": "Wenzhou Jinxu Electric Co., Ltd. (https://www.cnverify.com/company/Wenzhou-Jinxu-Electric-Co-Ltd)\nciteturn1250search0 [wordlim: 200] Crawled: 3 weeks ago; English company name: Wenzhou Jinxu Electric Co., Ltd. ... Wenzhou Jinxu Electric Co., Ltd.\n\n#### Company Registration Information\n\nEnglish company name: Wenzhou Jinxu Electric Co., Ltd.\n\nChinese company name: 温州金旭电气有限公司\n\nCountry: China\n\nBusiness status: ***\n\nLegal Representative: Dang Jianrong\n\nCompany type: Limited liability company (investment or holding by natural persons)\n\nFounding date: 2008-06-18\n\nPhone: 138687832** , 627789** , 1386878320** , 0577-627789** , 0577-627789** ,\n\nEmail: **4688790@qq.com ,\n\nView Full Contacts\n\n#### Industry Classification\n\nInternational Industry Category: Manufacturing\n\nInternational Industry Major Class: Electrical machinery and equipment manufacturing industry\n\nInternational Industry Middle Class: Power transmission and distribution and control equipment manufacturing\n\nInternational Industry S",
+        "chinese_name": "温州金旭电气有限公司"
+      }
+    ],
+    "YQ000538": [
+      {
+        "name": "Yueqing Crop Trading Co., Ltd.",
+        "source_url": "https://www.tendata.com/en/buyer/yueqing-crop-trading-co-ltd-CHN429fe273703f7caec325a07a1ce2b4a2.html",
+        "chinese_name": "乐清市科洛贸易有限公司",
+        "source_excerpt": "Yueqing Crop Trading Co., Ltd. | Supplier & Buyer Insights | Tendata (https://www.tendata.com/en/buyer/yueqing-crop-trading-co-ltd-CHN429fe273703f7caec325a07a1ce2b4a2.html)\nciteturn9036search0 [wordlim: 200] Crawled: last week; Introduction:乐清市科洛贸易有限公司成立于2010-06-25，法定代表人为吴旭玲，注册资本为100万元，统一社会信用代码为9133038255861452XD，企业注册地址位于浙江省乐清市乐成镇马车河村，所属行业为批发业，经营范围包含：配电箱、断路器、熔断器、变压器、电线电缆、电缆连接器及配件、五金交电、家用电器、高低压成套设备、工艺品销售；货物进出口、技术进出口。\n\n# Yueqing Crop Trading Co., Ltd.\n\nCompanyImage: country flagChina\n\nWebsite:crop-group.cn\n\nAddress:浙江省温州市乐清市城东街道浙江省温州市乐清市盐盘经济开发区经六路236号6楼\n\nMain Products:CO****************ON PO*******ET PV********OR AN**********MP BI***************OR\n\nIntroduction:乐清市科洛贸易有限公司成立于2010-06-25，法定代表人为吴旭玲，注册资本为100万元，统一社会信用代码为9133038255861452XD，企业注册地址位于浙江省乐清市乐成镇马车河村，所属行业为批发业，经营范围包含：配电箱、断路器、熔断器、变压器、电线电缆、电缆连接器及配件、五金交电、家用电器、高低压成套设备、工艺品销售；货物进出口、技术进出口。企业当前经营状态为存续。\n\nContacts 5\n\nImports\n\nExports\n\nCompetitors 39\n\nProducts 36\n\nNews\n\nIntellectual Property\n\n## Contacts 5 Co.Yueqing Crop Trading Co., Ltd.\n\n"
+      }
+    ],
+    "YQ000628": [
+      {
+        "name": "Yueqing Zebra Tools Co., Ltd.",
+        "source_url": "https://www.tendata.com/en/buyer/yueqing-zebra-tools-co-ltd-CHN953c38e56a752ab2a4f2f2f472212f6c.html",
+        "chinese_name": "乐清斑马工具有限公司",
+        "source_excerpt": "Yueqing Zebra Tools Co., Ltd. | Verified Exporters/Suppliers | Tendata Export Data (https://www.tendata.com/en/buyer/yueqing-zebra-tools-co-ltd-CHN953c38e56a752ab2a4f2f2f472212f6c.html)\nciteturn9320search0 [wordlim: 200] Crawled: 2 months ago; Introduction:乐清斑马工具有限公司成立于2022-03-01，法定代表人为胡小芳，注册资本为100万元，统一社会信用代码为91330382MA7K80LEXK，企业注册地址位于浙江省温州市乐清市北白象镇新皇岙村，所属行业为金属制品业，经营范围包含：一般项目：金属工具制造；金属工具销售；风动和电动工具制造；五金产品零售；五金产品制造；塑料制品销售；塑料制品制造；模具销售；模具制造；配电开关控制设备销售；配电开关控制设备制造；消防器材销售；仪器仪表销售；仪器仪表制造；货物进出口；技术进出口（除依法须经批准的项目外，凭营业执照依法自主开展经营活动）。\n\n# Yueqing Zebra Tools Co., Ltd.\n\nCompanyImage: country flagChina\n\nWebsite:-\n\nAddress:浙江省温州市乐清市北白象镇新皇岙村\n\nMain Products:PL**********LE PL***IC TI**************EM IN******VE TO********ON\n\nIntroduction:乐清斑马工具有限公司成立于2022-03-01，法定代表人为胡小芳，注册资本为100万元，统一社会信用代码为91330382MA7K80LEXK，企业注册地址位于浙江省温州市乐清市北白象镇新皇岙村，所属行业为金属制品业，经营范围包含：一般项目：金属工具制造；金属工具销售；风动和电动工具制造；五金产品零售；五金产品制造；塑料制品销售；塑料制品制造；模具销售；模具制造；配电开关控制设备销售；配电开关控制设备制造；消防器材销售；仪器仪表销售；仪器仪表制造；货物进出口；技术进出口（除依法须经批准的项目外，凭营业执照依法自主开展经营活动）。企业当前"
+      }
+    ]
+  }
+}

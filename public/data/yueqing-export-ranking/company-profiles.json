@@ -14116,6 +14116,11 @@
           "url": "https://www.hrvatski-izvoznici.hr/Cms_Data/Contents/hiz/Folders/dokumenti/~contents/7C4JJG2NJ7C34VTS/zhejiang---tvrtke.pdf",
           "checked_at": "2026-10-24",
           "source_type": "company_website_or_directory"
+        },
+        "operating_address": {
+          "url": "https://xml-lighting.com/",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website"
         }
       },
       "registered_capital": "5000万元人民币",
@@ -14132,10 +14137,15 @@
         {
           "label": "监管或企业公告",
           "url": "https://static.cninfo.com.cn/finalpage/2016-02-16/1201984940.PDF"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://xml-lighting.com/"
         }
       ],
       "checked_at": "2026-10-24",
-      "legal_name": "新明丽灯饰有限公司"
+      "legal_name": "新明丽灯饰有限公司",
+      "operating_address": "No.10 Hongqi Road, Yueqing Bay Harbor Area, Yueqing City, Zhejiang, China"
     }
   },
   "YQ000320": {
@@ -14295,6 +14305,11 @@
           "url": "https://www.tianxiagongchang.com/detail/3652547_wen-zhou-an-liang-dian-qi-you-xian-gong-si",
           "checked_at": "2026-10-24",
           "source_type": "company_website_or_directory"
+        },
+        "operating_address": {
+          "url": "https://www.aliontimer.com/",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website"
         }
       },
       "registered_capital": "2046.4291万元",
@@ -14318,7 +14333,8 @@
         }
       ],
       "checked_at": "2026-10-24",
-      "legal_name": "温州安良电气有限公司"
+      "legal_name": "温州安良电气有限公司",
+      "operating_address": "No.221 Weiershi Road, Yueqing Economic Development Zone, Wenzhou, Zhejiang, China"
     }
   },
   "YQ000336": {
@@ -15974,6 +15990,11 @@
           "url": "https://www.tianxiagongchang.com/detail/1600699_wen-zhou-jin-xu-dian-qi-you-xian-gong-si",
           "checked_at": "2026-10-24",
           "source_type": "company_website_or_directory"
+        },
+        "operating_address": {
+          "url": "https://www.jinxu.cc/contact-us",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website"
         }
       },
       "registered_capital": "1118万元人民币（实缴618万元）",
@@ -15982,11 +16003,26 @@
         {
           "label": "企业公开资料",
           "url": "https://www.tianxiagongchang.com/detail/1600699_wen-zhou-jin-xu-dian-qi-you-xian-gong-si"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.jinxu.cc/contact-us"
         }
       ],
       "checked_at": "2026-10-24",
-      "legal_name": "温州金旭电气有限公司"
-    }
+      "legal_name": "温州金旭电气有限公司",
+      "operating_address": "No.98 Zhangzhai Road, Zhangqu Village, Liushi Town, Yueqing City, Zhejiang, China"
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.jinxu.cc/contact-us",
+        "domain": "jinxu.cc",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ]
   },
   "YQ000413": {
     "details": {
@@ -18464,6 +18500,11 @@
           "url": "https://wenzhou.11467.com/leqing/lechengzhen/",
           "checked_at": "2026-10-24",
           "source_type": "company_website_or_filing"
+        },
+        "operating_address": {
+          "url": "https://www.cropgroup.cn/en/inquiry.html",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website"
         }
       },
       "main_products": "配电箱、断路器、熔断器、变压器、电线电缆、电缆连接器及配件、五金交电、家用电器、高低压成套设备、工艺品",
@@ -18475,13 +18516,27 @@
         {
           "label": "企业公开资料",
           "url": "https://wenzhou.11467.com/leqing/lechengzhen/"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.cropgroup.cn/en/inquiry.html"
         }
       ],
       "checked_at": "2026-10-28",
       "legal_name": "乐清市科洛贸易有限公司",
-      "registered_capital": "100万元人民币"
+      "registered_capital": "100万元人民币",
+      "operating_address": "No.77, Zhongji Road, Yuecheng Town, Yueqing City, Zhejiang, China"
     },
-    "links": []
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.cropgroup.cn/en/inquiry.html",
+        "domain": "cropgroup.cn",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ]
   },
   "YQ000540": {
     "links": [
@@ -80331,6 +80386,11 @@
           "url": "https://www.shuididp.cn/yp-f768c8df5ff7278d7f294f79cbb535fd.html",
           "checked_at": "2026-10-24",
           "source_type": "company_website"
+        },
+        "operating_address": {
+          "url": "https://www.womatools.com/about-us",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website"
         }
       },
       "registered_capital": "200.000000万人民币",
@@ -80339,11 +80399,26 @@
         {
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-f768c8df5ff7278d7f294f79cbb535fd.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.womatools.com/about-us"
         }
       ],
       "checked_at": "2026-10-24",
-      "legal_name": "乐清市沃玛工具有限公司"
-    }
+      "legal_name": "乐清市沃玛工具有限公司",
+      "operating_address": "浙江省乐清市城东街道东康路68号"
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.womatools.com/about-us",
+        "domain": "womatools.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ]
   },
   "YQ003085": {
     "details": {
@@ -93857,6 +93932,14 @@
         "domain": "cnbanma.en.alibaba.com",
         "source": "exact_company_and_location_verified",
         "added_at": "2026-10-28"
+      },
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://zebratiling.com/",
+        "domain": "zebratiling.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
       }
     ],
     "details": {
@@ -93887,6 +93970,10 @@
         {
           "label": "Alibaba 国际站",
           "url": "https://cnbanma.en.alibaba.com/"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://zebratiling.com/"
         }
       ],
       "registered_capital": "100万元",

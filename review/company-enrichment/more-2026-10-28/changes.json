@@ -1,0 +1,103 @@
+[
+  {
+    "id": "YQ000412",
+    "name": "温州金旭电气有限公司",
+    "kind": "add_official_website",
+    "url": "https://www.jinxu.cc/contact-us"
+  },
+  {
+    "id": "YQ000538",
+    "name": "乐清市科洛贸易有限公司",
+    "kind": "add_official_website",
+    "url": "https://www.cropgroup.cn/en/inquiry.html"
+  },
+  {
+    "id": "YQ000628",
+    "name": "乐清斑马工具有限公司",
+    "kind": "add_official_website",
+    "url": "https://zebratiling.com/"
+  },
+  {
+    "id": "YQ003084",
+    "name": "乐清市沃玛工具有限公司",
+    "kind": "add_official_website",
+    "url": "https://www.womatools.com/about-us"
+  },
+  {
+    "id": "YQ000412",
+    "name": "温州金旭电气有限公司",
+    "kind": "add_operating_address",
+    "value": "No.98 Zhangzhai Road, Zhangqu Village, Liushi Town, Yueqing City, Zhejiang, China",
+    "url": "https://www.jinxu.cc/contact-us"
+  },
+  {
+    "id": "YQ000538",
+    "name": "乐清市科洛贸易有限公司",
+    "kind": "add_operating_address",
+    "value": "No.77, Zhongji Road, Yuecheng Town, Yueqing City, Zhejiang, China",
+    "url": "https://www.cropgroup.cn/en/inquiry.html"
+  },
+  {
+    "id": "YQ003084",
+    "name": "乐清市沃玛工具有限公司",
+    "kind": "add_operating_address",
+    "value": "浙江省乐清市城东街道东康路68号",
+    "url": "https://www.womatools.com/about-us"
+  },
+  {
+    "id": "YQ000319",
+    "name": "新明丽灯饰有限公司",
+    "kind": "add_operating_address",
+    "value": "No.10 Hongqi Road, Yueqing Bay Harbor Area, Yueqing City, Zhejiang, China",
+    "url": "https://xml-lighting.com/"
+  },
+  {
+    "id": "YQ000335",
+    "name": "温州安良电气有限公司",
+    "kind": "add_operating_address",
+    "value": "No.221 Weiershi Road, Yueqing Economic Development Zone, Wenzhou, Zhejiang, China",
+    "url": "https://www.aliontimer.com/"
+  },
+  {
+    "id": "YQ000412",
+    "name": "温州金旭电气有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/more-20261028/YQ000412.png",
+    "source_url": "https://www.jinxu.cc/theme/jinxu-EN/images/logo.jpg"
+  },
+  {
+    "id": "YQ000538",
+    "name": "乐清市科洛贸易有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/more-20261028/YQ000538.png",
+    "source_url": "https://yunpan.cdn.site.joinf.com/2584960745899008/2019/05/e82943aac364ce47e2cd8c012215e8ef.?imageMogr2/format/webp/strip/ignore-error/1/auto-orient"
+  },
+  {
+    "id": "YQ003084",
+    "name": "乐清市沃玛工具有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/more-20261028/YQ003084.png",
+    "source_url": "https://www.womatools.com/uploads/202021482/logo202012071158071608798.png"
+  },
+  {
+    "id": "YQ000319",
+    "name": "新明丽灯饰有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/more-20261028/YQ000319.png",
+    "source_url": "https://xml-lighting.com/wp-content/uploads/2024/07/cropped-logo_-2-100x100.png"
+  },
+  {
+    "id": "YQ000314",
+    "name": "浙江索特电气有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/more-20261028/YQ000314.png",
+    "source_url": "https://cdn.globalso.com/soot-electric/logo1.png"
+  },
+  {
+    "id": "YQ000335",
+    "name": "温州安良电气有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/more-20261028/YQ000335.png",
+    "source_url": "https://www.aliontimer.com/wp-content/uploads/2021/06/alion-logo-1.6-113x30.png"
+  }
+]
