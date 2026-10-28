@@ -4578,5 +4578,19 @@
     "page_url": "https://www.aliontimer.com/",
     "checked_at": "2026-10-28",
     "dark_background": true
+  },
+  "YQ000344": {
+    "path": "/company-icons/verified/next-20261028/YQ000344.png",
+    "source_url": "http://www.znmeter.com/template/default/image/wlogo.png",
+    "page_url": "http://www.znmeter.com/",
+    "checked_at": "2026-10-28",
+    "dark_background": true
+  },
+  "YQ001245": {
+    "path": "/company-icons/verified/next-20261028/YQ001245.png",
+    "source_url": "https://sanhuiex.net/wp-content/uploads/2022/04/cropped-logo-2-243x81.png",
+    "page_url": "https://sanhuiex.net/",
+    "checked_at": "2026-10-28",
+    "dark_background": false
   }
 }

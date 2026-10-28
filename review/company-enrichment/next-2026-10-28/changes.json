@@ -1,0 +1,48 @@
+[
+  {
+    "id": "YQ000344",
+    "name": "中南仪表有限公司",
+    "kind": "add_official_website",
+    "url": "http://www.znmeter.com/"
+  },
+  {
+    "id": "YQ001245",
+    "name": "乐清市三辉防爆电气有限公司",
+    "kind": "add_official_website",
+    "url": "https://sanhuiex.net/"
+  },
+  {
+    "id": "YQ000975",
+    "name": "乐清伟豪科技有限公司",
+    "kind": "add_official_website",
+    "url": "https://werlaho.com/"
+  },
+  {
+    "id": "YQ000344",
+    "name": "中南仪表有限公司",
+    "kind": "add_contact_address",
+    "value": "浙江省乐清市经济开发区纬十一路181号",
+    "url": "http://www.znmeter.com/"
+  },
+  {
+    "id": "YQ001245",
+    "name": "乐清市三辉防爆电气有限公司",
+    "kind": "add_contact_address",
+    "value": "Xiangyang Industrial Zone, Liushi Town, Yueqing City, Zhejiang Province, China 325604",
+    "url": "https://sanhuiex.net/"
+  },
+  {
+    "id": "YQ000344",
+    "name": "中南仪表有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/next-20261028/YQ000344.png",
+    "source_url": "http://www.znmeter.com/template/default/image/wlogo.png"
+  },
+  {
+    "id": "YQ001245",
+    "name": "乐清市三辉防爆电气有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/next-20261028/YQ001245.png",
+    "source_url": "https://sanhuiex.net/wp-content/uploads/2022/04/cropped-logo-2-243x81.png"
+  }
+]

@@ -87851,11 +87851,32 @@
     }
   },
   "YQ000344": {
-    "links": [],
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "http://www.znmeter.com/",
+        "domain": "znmeter.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ],
     "details": {
-      "sources": [],
-      "field_sources": {},
-      "checked_at": "2026-10-28"
+      "sources": [
+        {
+          "label": "企业官网",
+          "url": "http://www.znmeter.com/"
+        }
+      ],
+      "field_sources": {
+        "contact_address": {
+          "url": "http://www.znmeter.com/",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website"
+        }
+      },
+      "checked_at": "2026-10-28",
+      "contact_address": "浙江省乐清市经济开发区纬十一路181号"
     }
   },
   "YQ000512": {
@@ -93266,7 +93287,16 @@
     }
   },
   "YQ000975": {
-    "links": [],
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://werlaho.com/",
+        "domain": "werlaho.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ],
     "details": {
       "contact_address": "浙江省温州市乐清市城南街道翔云西路777号新湖海德花园3幢303室（仅限办公使用）",
       "field_sources": {
@@ -93286,6 +93316,10 @@
         {
           "label": "公开企业资料",
           "url": "https://www.tendata.com/en/buyer/yueqing-weihao-technology-co-ltd-CHNc832915588b00280954ee7b44f0f2b89.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://werlaho.com/"
         }
       ],
       "registered_capital": "100万元"
@@ -94607,6 +94641,35 @@
       "field_sources": {
         "contact_address": {
           "url": "http://www.hxtelec.com/",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website"
+        }
+      },
+      "checked_at": "2026-10-28"
+    }
+  },
+  "YQ001245": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://sanhuiex.net/",
+        "domain": "sanhuiex.net",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ],
+    "details": {
+      "sources": [
+        {
+          "label": "企业官网",
+          "url": "https://sanhuiex.net/"
+        }
+      ],
+      "contact_address": "Xiangyang Industrial Zone, Liushi Town, Yueqing City, Zhejiang Province, China 325604",
+      "field_sources": {
+        "contact_address": {
+          "url": "https://sanhuiex.net/",
           "checked_at": "2026-10-28",
           "source_type": "company_website"
         }

@@ -1,0 +1,89 @@
+{
+  "websites": [
+    {
+      "id": "YQ000344",
+      "name": "中南仪表有限公司",
+      "url": "http://www.znmeter.com/",
+      "source_url": "https://www.growsmilingly.cn/bl/latest/cantonfair/dtl/d98ea297550e49876c46bfcf539a1b27.html",
+      "discovery": "explicit_company_website_field",
+      "discovered_url": "http://www.znmeter.com",
+      "evidence": {
+        "type": "direct",
+        "chinese_title": true,
+        "chinese_copyright": true,
+        "english_identity": "",
+        "locality_match": true,
+        "page_title": "中南仪表有限公司-电能计量产品生产商",
+        "url": "http://www.znmeter.com/",
+        "page_sha256": "00653dfc06a002bdcb66a6347035cc276f5d6aa61024a1fc771ce1bfb250e340"
+      },
+      "page_title": "中南仪表有限公司-电能计量产品生产商",
+      "identity_excerpt": "关于我们 | 公司简介 | 企业文化 | 公司环境 | 新闻中心 | 公司动态 | 行业动态 | 产品中心 | 电能表系列 | 模拟指针仪表系列 | 数字显示仪表系列 | 行业解决方案 | 联系我们 | 地址：浙江省乐清市经济开发区纬十一路181号 | 电话：0577-6288 2777 | 传真：0577-6288 9377 | 邮箱：zone@zone.zj.cn | 网址：www.znmeter.com | Copyright© 2021 中南仪表有限公司 All Rights Reserved. | 浙ICP备17021124号-5"
+    },
+    {
+      "id": "YQ001245",
+      "name": "乐清市三辉防爆电气有限公司",
+      "url": "https://sanhuiex.net/",
+      "source_url": "https://sanhuiex.net/",
+      "evidence": {
+        "type": "direct",
+        "page_sha256": "36ada9a4d6733e770162178037af7aa111fdd35434293dbe089ce1488886190e",
+        "reason": "企业英文全称与中文登记对应，官网品牌、乐清地址、产品吻合。",
+        "identity_source": "https://bo.linkedin.com/company/sanhuiexplosion-proofelectric"
+      },
+      "page_title": "The Most Professional Cable Glands Manufacturer in China",
+      "identity_excerpt": "About Sanhui | If you are looking for reliable cable gland manufacturer,find Sanhui | Products | Explosion Proof Cable Gland | Industrial Cable Gland | Waterproof Cable Gland | IECEx /ATEX Cable Gland | Cable Gland Accessories | Support | Certificate Center | Exhibition | FAQs Page | Blog | Contact | sh1@sanhuiex.com | +86 577 61812293 | +86 15906770864 | Xiangyang Industrial Zone,Liushi Town,Yueqing City,Zhejiang Province,China 325604 | Copyright © 2026 | Sanhui Cable Gland | | All Rights Reserved."
+    },
+    {
+      "id": "YQ000975",
+      "name": "乐清伟豪科技有限公司",
+      "url": "https://werlaho.com/",
+      "source_url": "https://werlaho.com/",
+      "evidence": {
+        "type": "direct",
+        "page_sha256": "d69a09bdfa8904bc09511b92595e51f55106fe4e8cfd80b608638ab8fd8ed018",
+        "reason": "企业英文全称与中文登记对应，官网品牌、乐清地址、产品吻合。",
+        "identity_source": "https://www.tendata.com/en/buyer/yueqing-weihao-technology-co-ltd-CHNc832915588b00280954ee7b44f0f2b89.html"
+      },
+      "page_title": "Yueqing Weihao Technology Co., Ltd.",
+      "identity_excerpt": "Email address for subscriptions: | Monthly email updates from Weihao Technology instantly. | I agree to receive product news and commercial advertisements from Weihao Technology and its affiliates by email, text message,telephone,etc...Communication performance will be measured and improved by opening emails and clicking messages. I understand that Weihao Technology will provide my personal information to its overseas affiliates and service providers for this purpose. For more details,please refer to the Statement on Cross-border Data Transfer. | ABOUT US | Introduction | CEO Message | Company News | PRODUCT | Temperature controllers | Power strip | Circuit Breaker | Transformer | Control device | Terminal blocks | Metal Box | Distribution box | Industrial plug and socket | SERVICE | After Sales | Download | FAQ | Copyright © 2022 Weihao | SUPPORT BY : | SSCMWL"
+    }
+  ],
+  "alibaba_stores": [],
+  "fields": [
+    {
+      "id": "YQ000344",
+      "name": "中南仪表有限公司",
+      "field": "contact_address",
+      "value": "浙江省乐清市经济开发区纬十一路181号",
+      "source_url": "http://www.znmeter.com/",
+      "source_type": "company_website"
+    },
+    {
+      "id": "YQ001245",
+      "name": "乐清市三辉防爆电气有限公司",
+      "field": "contact_address",
+      "value": "Xiangyang Industrial Zone, Liushi Town, Yueqing City, Zhejiang Province, China 325604",
+      "source_url": "https://sanhuiex.net/",
+      "source_type": "company_website"
+    }
+  ],
+  "english_identity_sources": {
+    "YQ000975": [
+      {
+        "name": "Yueqing Weihao Technology Co., Ltd.",
+        "source_url": "https://www.tendata.com/en/buyer/yueqing-weihao-technology-co-ltd-CHNc832915588b00280954ee7b44f0f2b89.html",
+        "chinese_name": "乐清伟豪科技有限公司",
+        "source_excerpt": "Yueqing Weihao Technology Co., Ltd. | Trade Analytics & Market Trends | Tendata (https://www.tendata.com/en/buyer/yueqing-weihao-technology-co-ltd-CHNc832915588b00280954ee7b44f0f2b89.html)\nciteturn2071search0 [wordlim: 200] Crawled: 4 months ago; Introduction:乐清伟豪科技有限公司成立于2020-06-02，法定代表人为谢阿斌，注册资本为100万元，统一社会信用代码为91330382MA2J81E706，企业注册地址位于浙江省温州市乐清市城南街道翔云西路777号新湖海德花园3幢303室（仅限办公使用），所属行业为科技推广和应用服务业，经营范围包含：一般项目：技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广；五金产品批发；电气机械设备销售；电气设备销售；电子元器件批发；仪器仪表销售；智能仪器仪表销售；电力电子元器件销售；配电开关控制设备销售；安全系统监控服务；安防设备销售；消防器材销售；照明器具销售；计算机软硬件及辅助设备批发；软件开发；配电开关控制设备研发；物联网应用服务（除依法须经批准的项目外，凭营业执照依法自主开展经营活动）。\n\n# Yueqing Weihao Technology Co., Ltd.\n\nCompanyImage: country flagChina\n\nWebsite:-\n\nAddress:浙江省温州市乐清市城南街道翔云西路777号新湖海德花园3幢303室（仅限办公使用）\n\nMain Products:CONSTRUCTION PLASTIC METER CABLE CLIP GRINDER\n\nIntroduction:乐清伟豪科技有限公司成立于2020-06-02，法定代表人为谢阿斌，注册资本为100万元，统一社会信用代码为91330382MA2J81E706，企业注册地址位于浙江省温州市乐清市城南街道翔云西路777号新湖海德花园3幢303室（仅限办公使用），所属行业为科技推广和应用服务业，经营范围包含：一般项目：技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广；"
+      }
+    ],
+    "YQ001245": [
+      {
+        "name": "Yueqing Sanhui Explosion-Proof Electrical Co., Ltd.",
+        "source_url": "https://www.cnverify.com/company/Yueqing-Sanhui-Explosion-Proof-Electrical-Co-Ltd",
+        "chinese_name": "乐清市三辉防爆电气有限公司",
+        "source_excerpt": "Yueqing Sanhui Explosion-Proof Electrical Co., Ltd. (https://www.cnverify.com/company/Yueqing-Sanhui-Explosion-Proof-Electrical-Co-Ltd)\nciteturn2860search2 [wordlim: 200] Crawled: 4 weeks ago; Chinese company name: 乐清市三辉防爆电气有限公司"
+      }
+    ]
+  }
+}

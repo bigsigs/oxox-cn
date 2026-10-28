@@ -1,0 +1,12 @@
+{
+  "npm_test_passed": 82,
+  "built_pages": {
+    "changed_company_pages_checked": 3,
+    "registry_count": 3814,
+    "ranking_files_unchanged": true,
+    "errors": []
+  },
+  "mobile_desktop_browser_passed": true,
+  "new_logos_visually_reviewed": 2,
+  "weihao_text_fallback_verified": true
+}
