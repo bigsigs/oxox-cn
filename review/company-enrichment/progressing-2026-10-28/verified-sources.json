@@ -1,0 +1,160 @@
+{
+  "websites": [
+    {
+      "id": "YQ001920",
+      "name": "乐清煌荣模具有限公司",
+      "url": "https://cn.automobiletiemould.com/",
+      "source_url": "https://cn.automobiletiemould.com/",
+      "evidence": {
+        "type": "direct",
+        "note": "官网明确煌荣模具中文主体，柳市地址及模具产品吻合，保留榜单原名称"
+      },
+      "page_title": "乐清市煌荣模具有限公司",
+      "page_sha256": "ba61f3c4b46941517da69bfe8f52b8fe263720ef36a9b81e669883f090bc67a8"
+    },
+    {
+      "id": "YQ001813",
+      "name": "温州九洲进出口有限公司",
+      "url": "https://holidpneumatics.com/",
+      "source_url": "https://holidpneumatics.com/privacy",
+      "evidence": {
+        "type": "direct",
+        "note": "官网隐私页明确温州九洲进出口有限公司及北白象后西村登记地址，与原档案对应"
+      },
+      "page_title": "HOLID | Pneumatic Tubing & Push-in Fittings",
+      "page_sha256": "37ae2255f445bb692fdc6f0e3aa9a83f930781f48dabd8350f23977579f1f2c6"
+    },
+    {
+      "id": "YQ002663",
+      "name": "安煌电力科技有限公司",
+      "url": "https://www.anhelec.com/",
+      "source_url": "https://www.anhelec.com/",
+      "evidence": {
+        "type": "direct",
+        "note": "官网版权中文全称及滨海南三路27号地址与原档案精确对应"
+      },
+      "page_title": "电缆分支箱_热缩电缆附件_冷缩电缆头_欧式插拔头_美式电缆插头-安煌电力科技有限公司",
+      "page_sha256": "12b6fac2f10aa067073730b311c0e2d7e892bfc281f5dcac487824cc58e930d0"
+    },
+    {
+      "id": "YQ001827",
+      "name": "浙江乐穗电子股份有限公司",
+      "url": "http://www.yuesui.cn/",
+      "source_url": "http://www.yuesui.cn/",
+      "evidence": {
+        "type": "direct",
+        "note": "官网版权中文全称及虹桥西工业区G2与原档案对应"
+      },
+      "page_title": "浙江乐穗电子股份有限公司",
+      "page_sha256": "370af2e4d3a321851697da1b0f41fa750ae36e5ceec8d29e7b276e7c0df410c3"
+    },
+    {
+      "id": "YQ001605",
+      "name": "宇光科技有限公司",
+      "url": "https://www.cnzge.com/",
+      "source_url": "https://www.cnzge.com/",
+      "evidence": {
+        "type": "direct",
+        "note": "公司介绍明确宇光科技有限公司，纬十九路261号及电真空器件业务与原档案对应"
+      },
+      "page_title": "高压直流接触器-陶瓷高压直流接触器-新能源高压直流接触器-高压直流接触器品牌-高压直流接触器厂家-高压直流接触器公司",
+      "page_sha256": "1f88e5c2bf8a68e246828f5075a46c9e4c8aee6145627b293cb14a061f2e54bd"
+    },
+    {
+      "id": "YQ002023",
+      "name": "温州金三原工具有限公司",
+      "url": "http://jsygj.com/",
+      "source_url": "http://jsygj.com/",
+      "evidence": {
+        "type": "direct",
+        "note": "官网中文全称、清江地址及螺丝批工具业务对应，公开项目介绍直接列该域名"
+      },
+      "page_title": "温州金三原工具有限公司_工业级螺丝起子_气动螺丝批咀_气动起子套筒",
+      "page_sha256": "97d98574a88c305c262c967e24d5024adcfb28b865a4bf5bcd3ffbddc9d9c3d4"
+    },
+    {
+      "id": "YQ001865",
+      "name": "温州南铁铁路信号设备有限公司",
+      "url": "http://www.ntxhgs.com/",
+      "source_url": "http://www.ntxhgs.com/",
+      "evidence": {
+        "type": "direct",
+        "note": "官网正文明确温州南铁铁路信号设备有限公司，七里港大道618号与登记地址对应"
+      },
+      "page_title": "温州南铁信号设备有限公司",
+      "page_sha256": "2d0c5cc0b2b8f85e337ad3ad99c7f17d7d9fe286de15517bd995d37ac64e062e"
+    },
+    {
+      "id": "YQ001726",
+      "name": "柯耐弗智能科技(乐清)有限公司",
+      "url": "https://www.okonoffworld.com/",
+      "source_url": "https://www.okonoffworld.com/about-us.html",
+      "evidence": {
+        "type": "direct",
+        "note": "首页中文全称精确，关于页明确Okonoff SmartTechnology (Yueqing) Co., LTD.及建筑智能业务；模板页脚非企业标志不采用"
+      },
+      "page_title": "柯耐弗智能科技（乐清）有限公司",
+      "page_sha256": "cbee7e49497cf82a8b925c397e21de4ac8c5bed8a99286d5e43e442dc8d0e255"
+    },
+    {
+      "id": "YQ002345",
+      "name": "思高美电力科技(浙江)有限公司",
+      "url": "https://www.socomepower.com/",
+      "source_url": "https://socome.en.alibaba.com/",
+      "evidence": {
+        "type": "direct",
+        "note": "展会索引列思高美电力科技（浙江）有限公司及防雷电力产品，已知SOCOME品牌；店铺主体SOCOME POWER TECHNOLOGY (ZHEJIANG) CO., LTD.与官网均为乐清经济开发区纬十九路307号"
+      },
+      "page_title": "Cable Lugs, Earth Rods, Power Line Fittings, Insulated Piercing Connector Products Manufacturer - Socome",
+      "page_sha256": "171f5c99748dfaea6b8ce6bad9842b7ea72e56f0b9df8b0ec0ecae5d7b1c1c79"
+    }
+  ],
+  "alibaba_stores": [
+    {
+      "id": "YQ002345",
+      "name": "思高美电力科技(浙江)有限公司",
+      "url": "https://socome.en.alibaba.com/",
+      "actual_company": "SOCOME POWER TECHNOLOGY (ZHEJIANG) CO., LTD.",
+      "address": "1st, 2nd, And 3rd Floors Of Building A, 307 Wei 19th Road, Yueqing Economic Development Zone, Wenzhou, Zhejiang, China",
+      "source_url": "https://www.alibaba.co.uk/product-detail/Cable-Accessories-3-Core-Outdoor-and_60860101692.html",
+      "evidence": "原已确认的SOCOME产品资料对应制造主体；实际店铺主体完整对应，公开经营地址与官网联系页纬十九路307号一致"
+    }
+  ],
+  "fields": [
+    {
+      "id": "YQ001920",
+      "field": "operating_address",
+      "value": "浙江省温州市乐清市柳市镇大桥路172号",
+      "source_url": "https://cn.automobiletiemould.com/contact/",
+      "source_type": "company_website_contact"
+    },
+    {
+      "id": "YQ001813",
+      "field": "operating_address",
+      "value": "Tashan Industrial Zone, Hehu Village, Baishi Subdistrict, Yueqing, Wenzhou, Zhejiang, China",
+      "source_url": "https://holidpneumatics.com/contact",
+      "source_type": "company_website_contact"
+    },
+    {
+      "id": "YQ002345",
+      "field": "operating_address",
+      "value": "No.307,Wei 19 Road,Yueqing Economic Development Zone, Yueqing,Wenzhou City, Zhejiang Province, China",
+      "source_url": "https://www.socomepower.com/contact.html",
+      "source_type": "company_website_contact"
+    },
+    {
+      "id": "YQ001726",
+      "field": "main_products",
+      "value": "建筑智能硬件、暖通空调控制器、温控器、电动阀、DDC控制器及智能家居系统",
+      "source_url": "https://www.okonoffworld.com/",
+      "source_type": "company_website"
+    },
+    {
+      "id": "YQ002345",
+      "field": "main_products",
+      "value": "电缆附件、接线端子、接地棒、避雷及接地系统、电力金具、绝缘穿刺连接器",
+      "source_url": "https://www.socomepower.com/",
+      "source_type": "company_website"
+    }
+  ]
+}

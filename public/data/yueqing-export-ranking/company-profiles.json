@@ -32855,12 +32855,25 @@
         {
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-45506f4d773164d55e68a3b4f016eaca.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.cnzge.com/"
         }
       ],
       "checked_at": "2026-10-28",
       "legal_name": "宇光科技有限公司"
     },
-    "links": []
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.cnzge.com/",
+        "domain": "cnzge.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ]
   },
   "YQ001606": {
     "links": [
@@ -39455,6 +39468,11 @@
           "url": "https://www.shuididp.cn/yp-ce8db3a3b91b14b639b89f1e7b394b0d.html",
           "checked_at": "2026-10-24",
           "source_type": "company_website"
+        },
+        "operating_address": {
+          "url": "https://holidpneumatics.com/contact",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website_contact"
         }
       },
       "registered_capital": "100.000000万人民币",
@@ -39463,11 +39481,30 @@
         {
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-ce8db3a3b91b14b639b89f1e7b394b0d.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://holidpneumatics.com/"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://holidpneumatics.com/contact"
         }
       ],
       "checked_at": "2026-10-24",
-      "legal_name": "温州九洲进出口有限公司"
-    }
+      "legal_name": "温州九洲进出口有限公司",
+      "operating_address": "Tashan Industrial Zone, Hehu Village, Baishi Subdistrict, Yueqing, Wenzhou, Zhejiang, China"
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://holidpneumatics.com/",
+        "domain": "holidpneumatics.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ]
   },
   "YQ001814": {
     "details": {
@@ -39857,11 +39894,25 @@
         {
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-3a8ac97a64e30d3a19d6b1b528a3891a.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "http://www.yuesui.cn/"
         }
       ],
       "checked_at": "2026-10-24",
       "legal_name": "浙江乐穗电子股份有限公司"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "http://www.yuesui.cn/",
+        "domain": "yuesui.cn",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ]
   },
   "YQ001828": {
     "details": {
@@ -41153,12 +41204,25 @@
         {
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-8a35b29a69f814e1163878cac7bdab25.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "http://www.ntxhgs.com/"
         }
       ],
       "checked_at": "2026-10-28",
       "legal_name": "温州南铁铁路信号设备有限公司"
     },
-    "links": []
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "http://www.ntxhgs.com/",
+        "domain": "ntxhgs.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ]
   },
   "YQ001866": {
     "details": {
@@ -43074,6 +43138,11 @@
           "url": "https://www.shuididp.cn/yp-62b70284d5b8da0565bcfee363ac9001.html",
           "checked_at": "2026-10-24",
           "source_type": "company_website"
+        },
+        "operating_address": {
+          "url": "https://cn.automobiletiemould.com/contact/",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website_contact"
         }
       },
       "registered_capital": "50.000000万人民币",
@@ -43082,11 +43151,30 @@
         {
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-62b70284d5b8da0565bcfee363ac9001.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://cn.automobiletiemould.com/"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://cn.automobiletiemould.com/contact/"
         }
       ],
       "checked_at": "2026-10-24",
-      "legal_name": "乐清煌荣模具有限公司"
-    }
+      "legal_name": "乐清煌荣模具有限公司",
+      "operating_address": "浙江省温州市乐清市柳市镇大桥路172号"
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://cn.automobiletiemould.com/",
+        "domain": "cn.automobiletiemould.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ]
   },
   "YQ001921": {
     "links": [
@@ -46495,11 +46583,25 @@
         {
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-6e0042d303436c9a9894592f01168dee.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "http://jsygj.com/"
         }
       ],
       "checked_at": "2026-10-24",
       "legal_name": "温州金三原工具有限公司"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "http://jsygj.com/",
+        "domain": "jsygj.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ]
   },
   "YQ002024": {
     "details": {
@@ -67300,11 +67402,25 @@
         {
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-c6bd379b5b9a56aa890ca0495be05d01.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.anhelec.com/"
         }
       ],
       "checked_at": "2026-10-24",
       "legal_name": "安煌电力科技有限公司"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.anhelec.com/",
+        "domain": "anhelec.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ]
   },
   "YQ002664": {
     "details": {
@@ -95174,6 +95290,92 @@
       },
       "checked_at": "2026-10-28",
       "main_products": "断路器及附件、双电源自动转换开关、开关电源、工业插头插座、配电箱"
+    }
+  },
+  "YQ001726": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.okonoffworld.com/",
+        "domain": "okonoffworld.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ],
+    "details": {
+      "sources": [
+        {
+          "label": "企业官网",
+          "url": "https://www.okonoffworld.com/"
+        }
+      ],
+      "main_products": "建筑智能硬件、暖通空调控制器、温控器、电动阀、DDC控制器及智能家居系统",
+      "field_sources": {
+        "main_products": {
+          "url": "https://www.okonoffworld.com/",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website"
+        }
+      },
+      "checked_at": "2026-10-28"
+    }
+  },
+  "YQ002345": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.socomepower.com/",
+        "domain": "socomepower.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站",
+        "url": "https://socome.en.alibaba.com/",
+        "domain": "socome.en.alibaba.com",
+        "source": "exact_company_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ],
+    "details": {
+      "sources": [
+        {
+          "label": "企业官网",
+          "url": "https://www.socomepower.com/"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://socome.en.alibaba.com/"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.socomepower.com/contact.html"
+        }
+      ],
+      "alibaba_address": "1st, 2nd, And 3rd Floors Of Building A, 307 Wei 19th Road, Yueqing Economic Development Zone, Wenzhou, Zhejiang, China",
+      "field_sources": {
+        "alibaba_address": {
+          "url": "https://socome.en.alibaba.com/",
+          "checked_at": "2026-10-28",
+          "source_type": "alibaba_company_profile"
+        },
+        "operating_address": {
+          "url": "https://www.socomepower.com/contact.html",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website_contact"
+        },
+        "main_products": {
+          "url": "https://www.socomepower.com/",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website"
+        }
+      },
+      "checked_at": "2026-10-28",
+      "operating_address": "No.307,Wei 19 Road,Yueqing Economic Development Zone, Yueqing,Wenzhou City, Zhejiang Province, China",
+      "main_products": "电缆附件、接线端子、接地棒、避雷及接地系统、电力金具、绝缘穿刺连接器"
     }
   }
 }

@@ -1,0 +1,75 @@
+[
+  {
+    "id": "YQ001920",
+    "name": "乐清煌荣模具有限公司",
+    "page_url": "https://cn.automobiletiemould.com/",
+    "source_url": "https://cn.automobiletiemould.com/template/cn/images/logo.png",
+    "dark_background": false,
+    "sha256": "fa64d333b7fa1fc968bdf67da7a55fffb35baba1a9e493ffff929a8599cc540c",
+    "visually_checked": true
+  },
+  {
+    "id": "YQ001813",
+    "name": "温州九洲进出口有限公司",
+    "page_url": "https://holidpneumatics.com/",
+    "source_url": "https://holidpneumatics.com/favicon.png",
+    "dark_background": false,
+    "sha256": "b746378b07654beeed14694ba55542471e656c9d216676d8df8126cf2773d6dc",
+    "visually_checked": true
+  },
+  {
+    "id": "YQ002663",
+    "name": "安煌电力科技有限公司",
+    "page_url": "https://www.anhelec.com/",
+    "source_url": "https://www.anhelec.com/template/default/images/logo_1.png",
+    "dark_background": true,
+    "sha256": "cf7dd8d7af26fee69699fa0de09d7cff36c44162c5da9673585e7e0c413191bd",
+    "visually_checked": true
+  },
+  {
+    "id": "YQ001827",
+    "name": "浙江乐穗电子股份有限公司",
+    "page_url": "http://www.yuesui.cn/",
+    "source_url": "http://www.yuesui.cn/static/new/logo.png",
+    "dark_background": false,
+    "sha256": "8051b4857398b4a7985b80180ab32078cac46e96c8860a0556552dedb0d9fbd0",
+    "visually_checked": true
+  },
+  {
+    "id": "YQ002023",
+    "name": "温州金三原工具有限公司",
+    "page_url": "http://jsygj.com/",
+    "source_url": "http://jsygj.com/img/logoTp.png",
+    "dark_background": false,
+    "sha256": "bf98cc0d180bd8dd941d60ce71e3099070e40ecf2b02d4a626449654a60244e5",
+    "visually_checked": true
+  },
+  {
+    "id": "YQ001865",
+    "name": "温州南铁铁路信号设备有限公司",
+    "page_url": "http://www.ntxhgs.com/",
+    "source_url": "http://www.ntxhgs.com/template/web/images/logo.png",
+    "dark_background": false,
+    "sha256": "5c2b17a6b4a18e37085887e0ef3f784106ec445434db8c8a893f241196be97b4",
+    "visually_checked": true
+  },
+  {
+    "id": "YQ001726",
+    "name": "柯耐弗智能科技(乐清)有限公司",
+    "page_url": "https://www.okonoffworld.com/",
+    "source_url": "https://waimao.office.163.com/site/api/pub/resource/downloadFile?fileId=727453582340730961&cL=s",
+    "dark_background": false,
+    "sha256": "7683f7b42d1d099e058b98b220ccc7abe0cefae12086d7532be4a585850ba212",
+    "visually_checked": true
+  },
+  {
+    "id": "YQ002345",
+    "name": "思高美电力科技(浙江)有限公司",
+    "page_url": "https://www.socomepower.com/",
+    "source_url": "https://sc04.alicdn.com/kf/HTB1dIUDmXkoBKNjSZFEq6zrEVXaw.jpg",
+    "source_page_url": "https://socome.en.alibaba.com/",
+    "dark_background": false,
+    "sha256": "b29ea56447fa3db80ddbb3421a70d65db9f6216f040dfc2472b6418e9fe42116",
+    "visually_checked": true
+  }
+]

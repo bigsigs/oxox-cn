@@ -1,0 +1,160 @@
+[
+  {
+    "id": "YQ001920",
+    "name": "乐清煌荣模具有限公司",
+    "kind": "add_official_website",
+    "url": "https://cn.automobiletiemould.com/"
+  },
+  {
+    "id": "YQ001813",
+    "name": "温州九洲进出口有限公司",
+    "kind": "add_official_website",
+    "url": "https://holidpneumatics.com/"
+  },
+  {
+    "id": "YQ002663",
+    "name": "安煌电力科技有限公司",
+    "kind": "add_official_website",
+    "url": "https://www.anhelec.com/"
+  },
+  {
+    "id": "YQ001827",
+    "name": "浙江乐穗电子股份有限公司",
+    "kind": "add_official_website",
+    "url": "http://www.yuesui.cn/"
+  },
+  {
+    "id": "YQ001605",
+    "name": "宇光科技有限公司",
+    "kind": "add_official_website",
+    "url": "https://www.cnzge.com/"
+  },
+  {
+    "id": "YQ002023",
+    "name": "温州金三原工具有限公司",
+    "kind": "add_official_website",
+    "url": "http://jsygj.com/"
+  },
+  {
+    "id": "YQ001865",
+    "name": "温州南铁铁路信号设备有限公司",
+    "kind": "add_official_website",
+    "url": "http://www.ntxhgs.com/"
+  },
+  {
+    "id": "YQ001726",
+    "name": "柯耐弗智能科技(乐清)有限公司",
+    "kind": "add_official_website",
+    "url": "https://www.okonoffworld.com/"
+  },
+  {
+    "id": "YQ002345",
+    "name": "思高美电力科技(浙江)有限公司",
+    "kind": "add_official_website",
+    "url": "https://www.socomepower.com/"
+  },
+  {
+    "id": "YQ002345",
+    "name": "思高美电力科技(浙江)有限公司",
+    "kind": "add_alibaba_store",
+    "url": "https://socome.en.alibaba.com/"
+  },
+  {
+    "id": "YQ002345",
+    "name": "思高美电力科技(浙江)有限公司",
+    "kind": "add_alibaba_address",
+    "value": "1st, 2nd, And 3rd Floors Of Building A, 307 Wei 19th Road, Yueqing Economic Development Zone, Wenzhou, Zhejiang, China",
+    "url": "https://socome.en.alibaba.com/"
+  },
+  {
+    "id": "YQ001920",
+    "name": "乐清煌荣模具有限公司",
+    "kind": "add_operating_address",
+    "value": "浙江省温州市乐清市柳市镇大桥路172号",
+    "url": "https://cn.automobiletiemould.com/contact/"
+  },
+  {
+    "id": "YQ001813",
+    "name": "温州九洲进出口有限公司",
+    "kind": "add_operating_address",
+    "value": "Tashan Industrial Zone, Hehu Village, Baishi Subdistrict, Yueqing, Wenzhou, Zhejiang, China",
+    "url": "https://holidpneumatics.com/contact"
+  },
+  {
+    "id": "YQ002345",
+    "name": "思高美电力科技(浙江)有限公司",
+    "kind": "add_operating_address",
+    "value": "No.307,Wei 19 Road,Yueqing Economic Development Zone, Yueqing,Wenzhou City, Zhejiang Province, China",
+    "url": "https://www.socomepower.com/contact.html"
+  },
+  {
+    "id": "YQ001726",
+    "name": "柯耐弗智能科技(乐清)有限公司",
+    "kind": "add_main_products",
+    "value": "建筑智能硬件、暖通空调控制器、温控器、电动阀、DDC控制器及智能家居系统",
+    "url": "https://www.okonoffworld.com/"
+  },
+  {
+    "id": "YQ002345",
+    "name": "思高美电力科技(浙江)有限公司",
+    "kind": "add_main_products",
+    "value": "电缆附件、接线端子、接地棒、避雷及接地系统、电力金具、绝缘穿刺连接器",
+    "url": "https://www.socomepower.com/"
+  },
+  {
+    "id": "YQ001920",
+    "name": "乐清煌荣模具有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/progressing-20261028/YQ001920.png",
+    "source_url": "https://cn.automobiletiemould.com/template/cn/images/logo.png"
+  },
+  {
+    "id": "YQ001813",
+    "name": "温州九洲进出口有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/progressing-20261028/YQ001813.png",
+    "source_url": "https://holidpneumatics.com/favicon.png"
+  },
+  {
+    "id": "YQ002663",
+    "name": "安煌电力科技有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/progressing-20261028/YQ002663.png",
+    "source_url": "https://www.anhelec.com/template/default/images/logo_1.png"
+  },
+  {
+    "id": "YQ001827",
+    "name": "浙江乐穗电子股份有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/progressing-20261028/YQ001827.png",
+    "source_url": "http://www.yuesui.cn/static/new/logo.png"
+  },
+  {
+    "id": "YQ002023",
+    "name": "温州金三原工具有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/progressing-20261028/YQ002023.png",
+    "source_url": "http://jsygj.com/img/logoTp.png"
+  },
+  {
+    "id": "YQ001865",
+    "name": "温州南铁铁路信号设备有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/progressing-20261028/YQ001865.png",
+    "source_url": "http://www.ntxhgs.com/template/web/images/logo.png"
+  },
+  {
+    "id": "YQ001726",
+    "name": "柯耐弗智能科技(乐清)有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/progressing-20261028/YQ001726.png",
+    "source_url": "https://waimao.office.163.com/site/api/pub/resource/downloadFile?fileId=727453582340730961&cL=s"
+  },
+  {
+    "id": "YQ002345",
+    "name": "思高美电力科技(浙江)有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/progressing-20261028/YQ002345.png",
+    "source_url": "https://sc04.alicdn.com/kf/HTB1dIUDmXkoBKNjSZFEq6zrEVXaw.jpg"
+  }
+]
