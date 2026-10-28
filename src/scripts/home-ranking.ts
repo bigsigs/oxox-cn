@@ -19,7 +19,7 @@ if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 const format = value => new Intl.NumberFormat("zh-CN").format(value);
 const escape = value => String(value ?? "").replace(/[&<>"']/g, c => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" })[c]);
 const cache = new Map();
-const state = { periodId: boot.latest, dataset: null, previousIndex: new Map(), currentIndex: new Map(), hasPrevious: true, searchIndex: new Map(), groups: [], group: "all", filter: "all", page: 1, pageSize: 30, ready: false, activeSuggestion: -1, pageUrl: "" };
+const state = { periodId: boot.latest, dataset: null, previousIndex: new Map(), currentIndex: new Map(), hasPrevious: true, searchIndex: new Map(), groups: [], group: "all", filter: "all", page: 1, pageSize: 50, ready: false, activeSuggestion: -1, pageUrl: "" };
 let cleanCanvasUrl = "";
 
 function normalizedUrl(value = location.href) {
@@ -153,8 +153,9 @@ function renderSuggestions() {
   suggestions.hidden = false;
   search.setAttribute("aria-expanded", "true");
 }
-function render() {
+function render({ preservePosition = false } = {}) {
   if (!state.ready) return;
+  rows.style.minHeight = preservePosition ? `${rows.getBoundingClientRect().height}px` : "";
   let records = filterRanking(state.dataset.records, { query: search.value, searchIndex: state.searchIndex, top: state.filter === "top100" ? 100 : state.filter === "top500" ? 500 : 0 });
   if (state.group !== "all") {
     const group = state.groups.find(item => item.id === state.group);
@@ -223,7 +224,7 @@ async function setPeriod(id, options = {}) {
     render();
   } catch {
     error.hidden = false;
-    status.textContent = state.ready ? "未能切换周期，仍显示上次载入的数据。" : "当前显示前 30 条排名记录";
+    status.textContent = state.ready ? "未能切换周期，仍显示上次载入的数据。" : "当前显示前 50 条排名记录";
     periodSelect.value = state.periodId;
   } finally {
     periodSelect.disabled = false;
@@ -306,11 +307,15 @@ periodSelect.addEventListener("change", () => setPeriod(periodSelect.value));
 more.addEventListener("click", event => {
   const button = event.target.closest("[data-page]");
   if (!button || button.disabled || periodSelect.disabled) return;
+  const position = { left: window.scrollX, top: window.scrollY, behavior: "instant" };
+  const label = button.getAttribute("aria-label");
   state.page = Number(button.dataset.page) || 1;
-  render();
-  document.querySelector(".ranking-board").scrollIntoView({ block: "start" });
+  render({ preservePosition: true });
+  const focusTarget = [...more.querySelectorAll("button")].find(item => item.getAttribute("aria-label") === label && !item.disabled)
+    || more.querySelector('[aria-current="page"]');
+  focusTarget?.focus({ preventScroll: true });
+  window.scrollTo(position);
   saveRestorePoint();
-  rows.querySelector("a")?.focus({ preventScroll: true });
 });
 document.querySelector("#clearFilters").addEventListener("click", reset);
 document.querySelector("[data-reset]").addEventListener("click", reset);

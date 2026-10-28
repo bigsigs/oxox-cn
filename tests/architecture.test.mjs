@@ -138,8 +138,8 @@ test("the homepage publishes the real first thirty companies before JavaScript r
   const dataset = await readJson(`${dataPath}${period.file}`);
   const links = anchorsOf(elementById(html, "rankingRows"))
     .filter((link) => /^\/yueqing-export-ranking\/company\/YQ\d+\/$/.test(link.href));
-  assert.ok(links.length >= 30, "initial HTML must expose at least thirty real company links");
-  dataset.records.slice(0, 30).forEach((record, index) => {
+  assert.ok(links.length >= 50, "initial HTML must expose at least fifty real company links");
+  dataset.records.slice(0, 50).forEach((record, index) => {
     assert.equal(links[index].href, companyPath(record.company_id));
     assert.ok(links[index].text.includes(record.company_name), `row ${index + 1} needs the source company name`);
     assert.ok(compactText(links[index].text).includes(compactText(record.amount_label || record.band_label)), `row ${index + 1} needs its source amount label`);

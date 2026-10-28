@@ -32,7 +32,7 @@ const siteSchema = {
   "@graph": [
     { "@type": "WebSite", name: "OXOX 乐清出口排行榜", url: "https://oxox.cn/", inLanguage: "zh-CN" },
     { "@type": "Dataset", name: `${latestRanking.period.label}乐清企业累计出口排名`, description: latestRanking.source_note, temporalCoverage: "2026-01-01/2026-08-31", url: "https://oxox.cn/", variableMeasured: ["累计出口排名", "累计出口额区间"] },
-    { "@type": "ItemList", name: "乐清企业出口排名", numberOfItems: latestRanking.records.length, itemListElement: latestRanking.records.slice(0, 30).map(record => ({ "@type": "ListItem", position: record.rank, name: record.company_name, url: `https://oxox.cn/yueqing-export-ranking/company/${record.company_id}/` })) },
+    { "@type": "ItemList", name: "乐清企业出口排名", numberOfItems: latestRanking.records.length, itemListElement: latestRanking.records.slice(0, 50).map(record => ({ "@type": "ListItem", position: record.rank, name: record.company_name, url: `https://oxox.cn/yueqing-export-ranking/company/${record.company_id}/` })) },
   ],
 };
 const boot = { periods: periods.periods, latest: periods.latest, companyMeta };
@@ -91,7 +91,7 @@ const boot = { periods: periods.periods, latest: periods.latest, companyMeta };
         <div class="board-heading"><div><h2>按累计出口排名</h2><p class="ranking-period-line"><span id="rankingPeriod">{latestRanking.period.label} · 累计出口额区间，非单月数据。</span><span class="source-gap-note" id="sourceGapNote">源表未提供第 43 名，页面不补号。</span></p></div><button type="button" class="clear-filters" id="clearFilters" hidden>清除筛选 ×</button></div>
         <div class="ranking-columns" aria-hidden="true"><span>#</span><span></span><span>企业</span><span id="amountHeading">累计出口额区间</span><span id="changeHeading">较 1—7 月</span></div>
         <div id="rankingRows">
-          {latestRanking.records.slice(0, 30).map(record => {
+          {latestRanking.records.slice(0, 50).map(record => {
             const meta = companyMeta[record.company_id];
             const signal = rankSignal(record, currentIndex, previousIndex);
             return <a class="ranking-row" href={`/yueqing-export-ranking/company/${record.company_id}/`} data-rank={record.rank}>
@@ -104,10 +104,10 @@ const boot = { periods: periods.periods, latest: periods.latest, companyMeta };
           })}
         </div>
         <div class="ranking-empty" id="rankingEmpty" hidden><b>没有找到匹配的企业</b><p>试试企业简称、拼音或编号，也可以清除筛选后重新查找。</p><button class="ref-button" type="button" data-reset>清除筛选</button></div>
-        <p class="ranking-status" id="rankingStatus" role="status" aria-live="polite">当前显示前 30 条排名记录</p>
+        <p class="ranking-status" id="rankingStatus" role="status" aria-live="polite">当前显示前 50 条排名记录</p>
         <nav class="ranking-more ranking-pagination" id="loadMore" aria-label="排行榜分页"></nav>
         <div class="ranking-error" id="rankingError" role="alert" hidden>筛选数据暂时无法载入，当前仍可查看已显示的企业。<button type="button" id="retryLoad">重新载入</button></div>
-        <noscript><p class="ranking-status">当前展示前 30 条记录。请启用 JavaScript 使用搜索与筛选，或直接点击企业查看档案。</p></noscript>
+        <noscript><p class="ranking-status">当前展示前 50 条记录。请启用 JavaScript 使用搜索与筛选，或直接点击企业查看档案。</p></noscript>
       </div>
     </section>
     <p class="home-data-note"><b>关于数据</b>：榜单按来源排名展示；金额区间不代表精确出口额，名次变化不等于金额增长。<a href="/about-data/">查看完整说明 ↗</a></p>
