@@ -1,0 +1,324 @@
+[
+  {
+    "id": "YQ001994",
+    "name": "浙江铭拓电气科技有限公司",
+    "kind": "add_official_website",
+    "url": "https://www.mingtuoelectric.com/"
+  },
+  {
+    "id": "YQ001966",
+    "name": "浙江世隆电气科技有限公司",
+    "kind": "add_official_website",
+    "url": "https://cn.slongele.com/"
+  },
+  {
+    "id": "YQ002371",
+    "name": "浙江欧迪龙电子科技有限公司",
+    "kind": "add_official_website",
+    "url": "http://www.aotoro.com/"
+  },
+  {
+    "id": "YQ003435",
+    "name": "浙江益瑞新能源有限公司",
+    "kind": "add_official_website",
+    "url": "https://www.yroenergy.com/"
+  },
+  {
+    "id": "YQ002264",
+    "name": "温州友尚医疗科技有限公司",
+    "kind": "add_official_website",
+    "url": "https://www.yoisungroup.com/"
+  },
+  {
+    "id": "YQ002891",
+    "name": "温州宁玥电气科技有限公司",
+    "kind": "add_official_website",
+    "url": "https://www.earelay.com/"
+  },
+  {
+    "id": "YQ000534",
+    "name": "浙江大互贸易有限公司",
+    "kind": "add_official_website",
+    "url": "https://www.dahutransformer.com/"
+  },
+  {
+    "id": "YQ000513",
+    "name": "乐清市奇骏电气有限公司",
+    "kind": "add_official_website",
+    "url": "https://www.chinaqijun.com/about-us/"
+  },
+  {
+    "id": "YQ001714",
+    "name": "涞伊尔科技(浙江)股份有限公司",
+    "kind": "add_official_website",
+    "url": "https://www.cnlye.com/english/about.html"
+  },
+  {
+    "id": "YQ002922",
+    "name": "乐清市欧姆特尔电子科技有限公司",
+    "kind": "add_official_website",
+    "url": "https://www.knob-joystick.com/"
+  },
+  {
+    "id": "YQ002922",
+    "name": "乐清市欧姆特尔电子科技有限公司",
+    "kind": "add_official_website_alt",
+    "url": "https://www.joystick-knob.com/"
+  },
+  {
+    "id": "YQ001981",
+    "name": "乐清市乐宇自动化电气有限公司",
+    "kind": "add_official_website",
+    "url": "https://www.leyuelec.com/"
+  },
+  {
+    "id": "YQ000907",
+    "name": "浙江盛邦安防有限公司",
+    "kind": "add_official_website",
+    "url": "http://www.cnsob.com/"
+  },
+  {
+    "id": "YQ000907",
+    "name": "浙江盛邦安防有限公司",
+    "kind": "add_official_website_alt",
+    "url": "http://www.chinasob.com/"
+  },
+  {
+    "id": "YQ001688",
+    "name": "浙江正科电机有限公司",
+    "kind": "add_official_website",
+    "url": "https://www.zhengkemotor.com/"
+  },
+  {
+    "id": "YQ001184",
+    "name": "乐清市红星辰电子有限公司",
+    "kind": "add_official_website",
+    "url": "http://www.hxtelec.com/"
+  },
+  {
+    "id": "YQ001047",
+    "name": "温州市思富威尔电工有限公司",
+    "kind": "add_official_website",
+    "url": "https://www.safewirele.com/"
+  },
+  {
+    "id": "YQ000448",
+    "name": "乐清市朗齐尔电器有限公司",
+    "kind": "add_official_website",
+    "url": "https://www.langir.com/"
+  },
+  {
+    "id": "YQ000628",
+    "name": "乐清斑马工具有限公司",
+    "kind": "add_alibaba_store",
+    "url": "https://cnbanma.en.alibaba.com/"
+  },
+  {
+    "id": "YQ000628",
+    "name": "乐清斑马工具有限公司",
+    "kind": "add_alibaba_address",
+    "value": "Xinhuang Ao Village, Beibaixiang Town, Wenzhou, Zhejiang, China",
+    "url": "https://cnbanma.en.alibaba.com/"
+  },
+  {
+    "id": "YQ000448",
+    "name": "乐清市朗齐尔电器有限公司",
+    "kind": "add_alibaba_store",
+    "url": "https://langir.en.alibaba.com/"
+  },
+  {
+    "id": "YQ000448",
+    "name": "乐清市朗齐尔电器有限公司",
+    "kind": "add_alibaba_address",
+    "value": "No.16, Lane 79, Xixing Road, Liushi Town, Wenzhou, Zhejiang, China",
+    "url": "https://langir.en.alibaba.com/"
+  },
+  {
+    "id": "YQ001209",
+    "name": "乐清市乐顺进出口有限公司",
+    "kind": "add_alibaba_store",
+    "url": "https://yqyueshun.en.alibaba.com/"
+  },
+  {
+    "id": "YQ001994",
+    "name": "浙江铭拓电气科技有限公司",
+    "kind": "add_operating_address",
+    "value": "Tantou Village, Liushi Town, Yueqing, Wenzhou, Zhejiang, China",
+    "url": "https://www.mingtuoelectric.com/"
+  },
+  {
+    "id": "YQ002264",
+    "name": "温州友尚医疗科技有限公司",
+    "kind": "add_operating_address",
+    "value": "No. 9 Qianyi Road, Yanjiang Industrial Park, Beibaixiang, Yueqing, Zhejiang, China",
+    "url": "https://www.yoisungroup.com/"
+  },
+  {
+    "id": "YQ002371",
+    "name": "浙江欧迪龙电子科技有限公司",
+    "kind": "add_operating_address",
+    "value": "中国浙江省乐清市柳市镇柳黄路2188号",
+    "url": "http://www.aotoro.com/"
+  },
+  {
+    "id": "YQ000534",
+    "name": "浙江大互贸易有限公司",
+    "kind": "add_operating_address",
+    "value": "Xiangyang Industrial Zone, Yueqing, Zhejiang, China",
+    "url": "https://www.dahutransformer.com/"
+  },
+  {
+    "id": "YQ000513",
+    "name": "乐清市奇骏电气有限公司",
+    "kind": "add_contact_address",
+    "value": "Weiwu Road, Yanpan Economic Development Zone, Yueqing City, Zhejiang Province",
+    "url": "https://www.chinaqijun.com/about-us/"
+  },
+  {
+    "id": "YQ001981",
+    "name": "乐清市乐宇自动化电气有限公司",
+    "kind": "add_operating_address",
+    "value": "No. 34, Huarong Rd., Chanxi Village, Liushi Town, Yueqing, Wenzhou, Zhejiang, China",
+    "url": "https://www.leyuelec.com/"
+  },
+  {
+    "id": "YQ000907",
+    "name": "浙江盛邦安防有限公司",
+    "kind": "add_contact_address",
+    "value": "浙江省乐清市北白象镇金炉工业区盛邦工业园",
+    "url": "https://m.media-amazon.com/images/I/A1l7ZngtJOL.pdf"
+  },
+  {
+    "id": "YQ001688",
+    "name": "浙江正科电机有限公司",
+    "kind": "add_operating_address",
+    "value": "No. 221, Shahong Road, Bantang Industrial Zone, Beibaixiang, Yueqing, Zhejiang, China",
+    "url": "https://www.zhengkemotor.com/"
+  },
+  {
+    "id": "YQ001184",
+    "name": "乐清市红星辰电子有限公司",
+    "kind": "add_contact_address",
+    "value": "浙江省乐清市虹桥镇科技创新园B-7",
+    "url": "http://www.hxtelec.com/"
+  },
+  {
+    "id": "YQ001047",
+    "name": "温州市思富威尔电工有限公司",
+    "kind": "add_operating_address",
+    "value": "浙江省温州市乐清市柳市沿江大道财富花园2楼",
+    "url": "https://www.safewirele.com/uploads/Safewire-Splash-waterproof-box-datasheet-of-SF-HM03-F-H201221.pdf"
+  },
+  {
+    "id": "YQ000448",
+    "name": "乐清市朗齐尔电器有限公司",
+    "kind": "add_contact_address",
+    "value": "2F, No. 10 Longhe East Road, Liushi, Yueqing, Zhejiang, China 325604",
+    "url": "https://pub-mediabox-storage.rxweb-prd.com/exhibitor/products/exh-0a780468-84e4-4926-bdce-31423f6e5ace/product-documents/pro-c4215319-2c46-4a98-aa02-39dabb2c0db1/893722a6-ad08-45aa-82f2-62b990fcf28c.pdf"
+  },
+  {
+    "id": "YQ003435",
+    "name": "浙江益瑞新能源有限公司",
+    "kind": "add_contact_address",
+    "value": "No. 463, Guang’an Road, Wuniu Street, Yongjia County, Wenzhou City, Zhejiang Province",
+    "url": "https://www.yroenergy.com/"
+  },
+  {
+    "id": "YQ001714",
+    "name": "涞伊尔科技(浙江)股份有限公司",
+    "kind": "add_contact_address",
+    "value": "No. 1188, Nisheng Road, Dongtou District, Wenzhou City, Zhejiang Province",
+    "url": "https://www.cnlye.com/english/about.html"
+  },
+  {
+    "id": "YQ001994",
+    "name": "浙江铭拓电气科技有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/docsearch-20261028/YQ001994.png",
+    "source_url": "https://www.mingtuoelectric.com/template/en/images/logo.png"
+  },
+  {
+    "id": "YQ003435",
+    "name": "浙江益瑞新能源有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/docsearch-20261028/YQ003435.png",
+    "source_url": "https://www.yroenergy.com/wp-content/uploads/2023/10/20231012203255276.jpg"
+  },
+  {
+    "id": "YQ002264",
+    "name": "温州友尚医疗科技有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/docsearch-20261028/YQ002264.png",
+    "source_url": "https://www.yoisungroup.com/style2/logo.png"
+  },
+  {
+    "id": "YQ002891",
+    "name": "温州宁玥电气科技有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/docsearch-20261028/YQ002891.png",
+    "source_url": "https://www.earelay.com/wp-content/uploads/2020/07/cropped-EA-1.png"
+  },
+  {
+    "id": "YQ000534",
+    "name": "浙江大互贸易有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/docsearch-20261028/YQ000534.png",
+    "source_url": "https://style.dahutransformer.com/logo.gif"
+  },
+  {
+    "id": "YQ000513",
+    "name": "乐清市奇骏电气有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/docsearch-20261028/YQ000513.png",
+    "source_url": "https://www.chinaqijun.com/wp-content/uploads/2019/11/logo.png"
+  },
+  {
+    "id": "YQ002922",
+    "name": "乐清市欧姆特尔电子科技有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/docsearch-20261028/YQ002922.png",
+    "source_url": "https://yunpan.cdn.site.joinf.com/5158610402300643/2021/12/F6HRkHEpwM.jpg?imageMogr2/format/webp/strip/ignore-error/1/auto-orient"
+  },
+  {
+    "id": "YQ001981",
+    "name": "乐清市乐宇自动化电气有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/docsearch-20261028/YQ001981.png",
+    "source_url": "https://www.leyuelec.com/Upload/2018-01-19/logo-183645-160659.png"
+  },
+  {
+    "id": "YQ000907",
+    "name": "浙江盛邦安防有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/docsearch-20261028/YQ000907.png",
+    "source_url": "http://www.cnsob.com/images/logo.png"
+  },
+  {
+    "id": "YQ001688",
+    "name": "浙江正科电机有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/docsearch-20261028/YQ001688.png",
+    "source_url": "https://www.zhengkemotor.com/wp-content/themes/zhengke/assets/images/1604052701.png"
+  },
+  {
+    "id": "YQ001047",
+    "name": "温州市思富威尔电工有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/docsearch-20261028/YQ001047.png",
+    "source_url": "https://www.safewirele.com/uploads/logo3.png"
+  },
+  {
+    "id": "YQ000448",
+    "name": "乐清市朗齐尔电器有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/docsearch-20261028/YQ000448.png",
+    "source_url": "https://ehpruexzv8r.exactdn.com/wp-content/uploads/2026/06/logo.png?strip=all"
+  },
+  {
+    "id": "YQ000628",
+    "name": "乐清斑马工具有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/docsearch-20261028/YQ000628.png",
+    "source_url": "https://sc04.alicdn.com/kf/H9cfeecebf67a4c798fab914642e932b2N.png"
+  }
+]

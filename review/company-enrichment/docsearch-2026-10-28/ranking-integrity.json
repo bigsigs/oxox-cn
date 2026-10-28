@@ -1,0 +1,78 @@
+{
+  "all_unchanged": true,
+  "company_registry_count": 3814,
+  "original_profiles_preserved": 2626,
+  "old_business_fields_and_links_preserved": true,
+  "files": [
+    {
+      "file": "public/data/yueqing-export-ranking/2026-ytd-03.json",
+      "sha256": "fc0c51ba65834ecdcb26f32a661a43a6d9cf61c3b833472ff802dcd382888444",
+      "unchanged": true
+    },
+    {
+      "file": "public/data/yueqing-export-ranking/2025-ytd-12.json",
+      "sha256": "b1e58fd1bbfa844edbbe9a0d5a93ddd2a665b6b06ecbc0eda4323d23964c999f",
+      "unchanged": true
+    },
+    {
+      "file": "public/data/yueqing-export-ranking/periods.json",
+      "sha256": "819f6e09ac13df648a20666a4786b7a0474d7e1d18a8adafee2bfb381cb35663",
+      "unchanged": true
+    },
+    {
+      "file": "public/data/yueqing-export-ranking/2026-ytd-02.json",
+      "sha256": "506cf3ddb8b74adbb626656a4388ba8471dba6706248bf95901d548960a12b70",
+      "unchanged": true
+    },
+    {
+      "file": "public/data/yueqing-export-ranking/2026-ytd-05.json",
+      "sha256": "12a0f179c5c35467da11ccc2ad6f0f01dac8d53f350e33d6cd643e95536c43c7",
+      "unchanged": true
+    },
+    {
+      "file": "public/data/yueqing-export-ranking/2026-ytd-04.json",
+      "sha256": "d1aa07b569a1032e98cf60e6fc6f2303ef6d6f47b41c4f0b395844ed9737dea5",
+      "unchanged": true
+    },
+    {
+      "file": "public/data/yueqing-export-ranking/2026-ytd-08.json",
+      "sha256": "5d11b44bdaf9b2665ddcb71b634ae41fc8e0ce7f270a9d5201bb5eaf20bcd083",
+      "unchanged": true
+    },
+    {
+      "file": "public/data/yueqing-export-ranking/2026-ytd-07.json",
+      "sha256": "17aef90f49f644d28978cb29c3d1023b71731f8990ead4aef5f871d76c795cf7",
+      "unchanged": true
+    },
+    {
+      "file": "public/data/yueqing-export-ranking/2026-ytd-06-exact.json",
+      "sha256": "1d2835b3197bef025331a3190aec2e6d9e8ffdd362f3c680d73160be79f5235c",
+      "unchanged": true
+    },
+    {
+      "file": "public/data/yueqing-export-ranking/2026-ytd-06.json",
+      "sha256": "21f551ce1b5394d8330d70e34ed6c035f688ec859bb326d26b0a9070d73f240d",
+      "unchanged": true
+    },
+    {
+      "file": "public/data/yueqing-export-ranking/companies.json",
+      "sha256": "95391b946bde55fb6934a0ef0e561aea690f13ea8d5682f5e8f2871db6b6b032",
+      "unchanged": true
+    },
+    {
+      "file": "public/data/yueqing-export-ranking/2025-ytd-06.json",
+      "sha256": "1b73a2d09cf296f15843067ead10fff324a9a85e8db38ad1440cbf76b7f06173",
+      "unchanged": true
+    },
+    {
+      "file": "public/data/yueqing-export-ranking/2025-ytd-10.json",
+      "sha256": "9e2a6a72c8be4a27c21d99c5cf31a3589ec71cc60d608a782697c0136c269e86",
+      "unchanged": true
+    },
+    {
+      "file": "public/data/yueqing-export-ranking/2025-ytd-11.json",
+      "sha256": "c528cd57cee83486918c0e03de05a3ca6f73c77c0b01e2bec5139a972ca19da1",
+      "unchanged": true
+    }
+  ]
+}

@@ -16718,6 +16718,16 @@
           "url": "https://sourcing.hktdc.com/zh-Hans/Supplier-Store/Home/%E4%B9%90%E6%B8%85%E5%B8%82%E6%9C%97%E9%BD%90%E5%B0%94%E7%94%B5%E5%99%A8%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/1X05YOJH",
           "checked_at": "2026-10-24",
           "source_type": "company_website_or_directory"
+        },
+        "alibaba_address": {
+          "url": "https://langir.en.alibaba.com/",
+          "checked_at": "2026-10-28",
+          "source_type": "alibaba_company_profile"
+        },
+        "contact_address": {
+          "url": "https://pub-mediabox-storage.rxweb-prd.com/exhibitor/products/exh-0a780468-84e4-4926-bdce-31423f6e5ace/product-documents/pro-c4215319-2c46-4a98-aa02-39dabb2c0db1/893722a6-ad08-45aa-82f2-62b990fcf28c.pdf",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website_document"
         }
       },
       "sources": [
@@ -16728,11 +16738,39 @@
         {
           "label": "企业公开资料",
           "url": "https://pub-mediabox-storage.rxweb-prd.com/exhibitor/products/exh-0a780468-84e4-4926-bdce-31423f6e5ace/product-documents/pro-c4215319-2c46-4a98-aa02-39dabb2c0db1/893722a6-ad08-45aa-82f2-62b990fcf28c.pdf"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.langir.com/"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://langir.en.alibaba.com/"
         }
       ],
       "checked_at": "2026-10-24",
-      "legal_name": "乐清市朗齐尔电器有限公司"
-    }
+      "legal_name": "乐清市朗齐尔电器有限公司",
+      "alibaba_address": "No.16, Lane 79, Xixing Road, Liushi Town, Wenzhou, Zhejiang, China",
+      "contact_address": "2F, No. 10 Longhe East Road, Liushi, Yueqing, Zhejiang, China 325604"
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.langir.com/",
+        "domain": "langir.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站",
+        "url": "https://langir.en.alibaba.com/",
+        "domain": "langir.en.alibaba.com",
+        "source": "exact_company_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ]
   },
   "YQ000449": {
     "details": {
@@ -18343,6 +18381,11 @@
           "url": "https://www.tendata.com/en/supplier/zhejiang-dahu-trade-co-ltd-add-x-CHNN237a1afdd3692c30643cb400377f2838.html",
           "checked_at": "2026-10-24",
           "source_type": "company_website_or_filing"
+        },
+        "operating_address": {
+          "url": "https://www.dahutransformer.com/",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website"
         }
       },
       "main_products": "配电开关控制设备、电气设备、电线电缆、五金产品、电力电子元器件、仪器仪表、灯具、医疗用品及日用百货",
@@ -18350,13 +18393,28 @@
         {
           "label": "企业公开资料",
           "url": "https://www.tendata.com/en/supplier/zhejiang-dahu-trade-co-ltd-add-x-CHNN237a1afdd3692c30643cb400377f2838.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.dahutransformer.com/"
         }
       ],
       "checked_at": "2026-10-24",
       "legal_name": "浙江大互贸易有限公司",
       "contact_address": "浙江省温州市乐清市柳市镇象阳工业区（乐清市中部电气有限公司内）",
-      "registered_capital": "1000万元人民币"
-    }
+      "registered_capital": "1000万元人民币",
+      "operating_address": "Xiangyang Industrial Zone, Yueqing, Zhejiang, China"
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.dahutransformer.com/",
+        "domain": "dahutransformer.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ]
   },
   "YQ000536": {
     "details": {
@@ -27166,6 +27224,10 @@
         {
           "label": "Alibaba 国际站",
           "url": "https://yqyueshun.m.en.alibaba.com/"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://yqyueshun.en.alibaba.com/"
         }
       ],
       "checked_at": "2026-10-28",
@@ -27178,6 +27240,14 @@
         "label": "Alibaba 国际站",
         "url": "https://yqyueshun.m.en.alibaba.com/",
         "domain": "yqyueshun.m.en.alibaba.com",
+        "source": "exact_company_and_location_verified",
+        "added_at": "2026-10-28"
+      },
+      {
+        "type": "alibaba_store",
+        "label": "其他 Alibaba 国际站",
+        "url": "https://yqyueshun.en.alibaba.com/",
+        "domain": "yqyueshun.en.alibaba.com",
         "source": "exact_company_and_location_verified",
         "added_at": "2026-10-28"
       }
@@ -35429,6 +35499,11 @@
           "url": "https://www.shuididp.cn/yp-d895ce5664d34c2cab0a12715974f2e6.html",
           "checked_at": "2026-10-24",
           "source_type": "company_website"
+        },
+        "operating_address": {
+          "url": "https://www.zhengkemotor.com/",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website"
         }
       },
       "registered_capital": "1100.000000万人民币",
@@ -35437,11 +35512,26 @@
         {
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-d895ce5664d34c2cab0a12715974f2e6.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.zhengkemotor.com/"
         }
       ],
       "checked_at": "2026-10-24",
-      "legal_name": "浙江正科电机有限公司"
-    }
+      "legal_name": "浙江正科电机有限公司",
+      "operating_address": "No. 221, Shahong Road, Bantang Industrial Zone, Beibaixiang, Yueqing, Zhejiang, China"
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.zhengkemotor.com/",
+        "domain": "zhengkemotor.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ]
   },
   "YQ001689": {
     "details": {
@@ -44314,11 +44404,25 @@
         {
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-31a7442be56fe1315b562a9a3e7f9f71.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://cn.slongele.com/"
         }
       ],
       "checked_at": "2026-10-24",
       "legal_name": "浙江世隆电气科技有限公司"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://cn.slongele.com/",
+        "domain": "cn.slongele.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ]
   },
   "YQ001967": {
     "details": {
@@ -44825,6 +44929,11 @@
           "url": "https://www.shuididp.cn/yp-1915fb79b73fefb4b7f4e5e0388fd05b.html",
           "checked_at": "2026-10-24",
           "source_type": "company_website"
+        },
+        "operating_address": {
+          "url": "https://www.leyuelec.com/",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website"
         }
       },
       "registered_capital": "50.000000万人民币",
@@ -44833,11 +44942,26 @@
         {
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-1915fb79b73fefb4b7f4e5e0388fd05b.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.leyuelec.com/"
         }
       ],
       "checked_at": "2026-10-24",
-      "legal_name": "乐清市乐宇自动化电气有限公司"
-    }
+      "legal_name": "乐清市乐宇自动化电气有限公司",
+      "operating_address": "No. 34, Huarong Rd., Chanxi Village, Liushi Town, Yueqing, Wenzhou, Zhejiang, China"
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.leyuelec.com/",
+        "domain": "leyuelec.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ]
   },
   "YQ001982": {
     "details": {
@@ -45264,6 +45388,11 @@
           "url": "https://www.shuididp.cn/yp-f4d788ce49bc6a9134bc323fed362d30.html",
           "checked_at": "2026-10-24",
           "source_type": "company_website"
+        },
+        "operating_address": {
+          "url": "https://www.mingtuoelectric.com/",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website"
         }
       },
       "registered_capital": "5188.000000万人民币",
@@ -45272,11 +45401,26 @@
         {
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-f4d788ce49bc6a9134bc323fed362d30.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.mingtuoelectric.com/"
         }
       ],
       "checked_at": "2026-10-24",
-      "legal_name": "浙江铭拓电气科技有限公司"
-    }
+      "legal_name": "浙江铭拓电气科技有限公司",
+      "operating_address": "Tantou Village, Liushi Town, Yueqing, Wenzhou, Zhejiang, China"
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.mingtuoelectric.com/",
+        "domain": "mingtuoelectric.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ]
   },
   "YQ001995": {
     "details": {
@@ -53972,6 +54116,11 @@
           "url": "https://www.shuididp.cn/yp-54833a93331e91e55496eec3ade84429.html",
           "checked_at": "2026-10-24",
           "source_type": "company_website"
+        },
+        "operating_address": {
+          "url": "https://www.yoisungroup.com/",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website"
         }
       },
       "registered_capital": "688.000000万人民币",
@@ -53980,11 +54129,26 @@
         {
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-54833a93331e91e55496eec3ade84429.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.yoisungroup.com/"
         }
       ],
       "checked_at": "2026-10-24",
-      "legal_name": "温州友尚医疗科技有限公司"
-    }
+      "legal_name": "温州友尚医疗科技有限公司",
+      "operating_address": "No. 9 Qianyi Road, Yanjiang Industrial Park, Beibaixiang, Yueqing, Zhejiang, China"
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.yoisungroup.com/",
+        "domain": "yoisungroup.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ]
   },
   "YQ002265": {
     "details": {
@@ -57318,6 +57482,11 @@
           "url": "https://www.shuididp.cn/yp-aad539571780c3ae5d8eae2f65135db6.html",
           "checked_at": "2026-10-24",
           "source_type": "company_website"
+        },
+        "operating_address": {
+          "url": "http://www.aotoro.com/",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website"
         }
       },
       "registered_capital": "1000.000000万人民币",
@@ -57326,11 +57495,26 @@
         {
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-aad539571780c3ae5d8eae2f65135db6.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "http://www.aotoro.com/"
         }
       ],
       "checked_at": "2026-10-24",
-      "legal_name": "浙江欧迪龙电子科技有限公司"
-    }
+      "legal_name": "浙江欧迪龙电子科技有限公司",
+      "operating_address": "中国浙江省乐清市柳市镇柳黄路2188号"
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "http://www.aotoro.com/",
+        "domain": "aotoro.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ]
   },
   "YQ002372": {
     "details": {
@@ -73992,11 +74176,25 @@
         {
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-43b78500fa6215fee5125acae0dbc701.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.earelay.com/"
         }
       ],
       "checked_at": "2026-10-24",
       "legal_name": "温州宁玥电气科技有限公司"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.earelay.com/",
+        "domain": "earelay.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ]
   },
   "YQ002892": {
     "details": {
@@ -75127,11 +75325,37 @@
         {
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-5e1331de86621f50ca16d54a1a532387.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.knob-joystick.com/"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.joystick-knob.com/"
         }
       ],
       "checked_at": "2026-10-24",
       "legal_name": "乐清市欧姆特尔电子科技有限公司"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.knob-joystick.com/",
+        "domain": "knob-joystick.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      },
+      {
+        "type": "official_website_alt",
+        "label": "其他官网",
+        "url": "https://www.joystick-knob.com/",
+        "domain": "joystick-knob.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ]
   },
   "YQ002923": {
     "details": {
@@ -89727,12 +89951,29 @@
     }
   },
   "YQ001047": {
-    "links": [],
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.safewirele.com/",
+        "domain": "safewirele.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ],
     "details": {
       "sources": [
         {
           "label": "企业公开资料",
           "url": "https://www.tianxiagongchang.com/detail/1853390_wen-zhou-shi-si-fu-wei-er-dian-gong-you-xian-gong-si"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.safewirele.com/"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.safewirele.com/uploads/Safewire-Splash-waterproof-box-datasheet-of-SF-HM03-F-H201221.pdf"
         }
       ],
       "field_sources": {
@@ -89745,11 +89986,17 @@
           "url": "https://www.tianxiagongchang.com/detail/1853390_wen-zhou-shi-si-fu-wei-er-dian-gong-you-xian-gong-si",
           "checked_at": "2026-10-28",
           "source_type": "public_company_record"
+        },
+        "operating_address": {
+          "url": "https://www.safewirele.com/uploads/Safewire-Splash-waterproof-box-datasheet-of-SF-HM03-F-H201221.pdf",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website_document"
         }
       },
       "checked_at": "2026-10-28",
       "contact_address": "位于 浙江省温州市乐清市柳市镇新光工业区(浙江恒泰电工有限公司内)，于2017年11月08日在工商局注册成立",
-      "registered_capital": "100万人民币"
+      "registered_capital": "100万人民币",
+      "operating_address": "浙江省温州市乐清市柳市沿江大道财富花园2楼"
     }
   },
   "YQ001389": {
@@ -92801,6 +93048,14 @@
         "domain": "cnlye.en.alibaba.com",
         "source": "exact_company_and_location_verified",
         "added_at": "2026-10-28"
+      },
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.cnlye.com/english/about.html",
+        "domain": "cnlye.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
       }
     ],
     "details": {
@@ -92808,6 +93063,10 @@
         {
           "label": "Alibaba 国际站",
           "url": "https://cnlye.en.alibaba.com/"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.cnlye.com/english/about.html"
         }
       ],
       "alibaba_address": "No. 1190 Nisheng Road, Niyu Subdistrict, Wenzhou, Zhejiang, China",
@@ -92816,9 +93075,15 @@
           "url": "https://cnlye.en.alibaba.com/",
           "checked_at": "2026-10-28",
           "source_type": "alibaba_company_profile"
+        },
+        "contact_address": {
+          "url": "https://www.cnlye.com/english/about.html",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website"
         }
       },
-      "checked_at": "2026-10-28"
+      "checked_at": "2026-10-28",
+      "contact_address": "No. 1188, Nisheng Road, Dongtou District, Wenzhou City, Zhejiang Province"
     }
   },
   "YQ003613": {
@@ -93584,7 +93849,16 @@
     }
   },
   "YQ000628": {
-    "links": [],
+    "links": [
+      {
+        "type": "alibaba_store",
+        "label": "Alibaba 国际站",
+        "url": "https://cnbanma.en.alibaba.com/",
+        "domain": "cnbanma.en.alibaba.com",
+        "source": "exact_company_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ],
     "details": {
       "contact_address": "浙江省温州市乐清市北白象镇新皇岙村",
       "field_sources": {
@@ -93597,6 +93871,11 @@
           "url": "https://www.tendata.com/en/buyer/yueqing-zebra-tools-co-ltd-CHN953c38e56a752ab2a4f2f2f472212f6c.html",
           "checked_at": "2026-10-28",
           "source_type": "public_company_record"
+        },
+        "alibaba_address": {
+          "url": "https://cnbanma.en.alibaba.com/",
+          "checked_at": "2026-10-28",
+          "source_type": "alibaba_company_profile"
         }
       },
       "checked_at": "2026-10-28",
@@ -93604,9 +93883,14 @@
         {
           "label": "公开企业资料",
           "url": "https://www.tendata.com/en/buyer/yueqing-zebra-tools-co-ltd-CHN953c38e56a752ab2a4f2f2f472212f6c.html"
+        },
+        {
+          "label": "Alibaba 国际站",
+          "url": "https://cnbanma.en.alibaba.com/"
         }
       ],
-      "registered_capital": "100万元"
+      "registered_capital": "100万元",
+      "alibaba_address": "Xinhuang Ao Village, Beibaixiang Town, Wenzhou, Zhejiang, China"
     }
   },
   "YQ000844": {
@@ -94109,6 +94393,138 @@
           "url": "https://www.cnverify.com/company/Wenzhou-Baoshide-Technology-Co-Ltd"
         }
       ]
+    }
+  },
+  "YQ003435": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.yroenergy.com/",
+        "domain": "yroenergy.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ],
+    "details": {
+      "sources": [
+        {
+          "label": "企业官网",
+          "url": "https://www.yroenergy.com/"
+        }
+      ],
+      "contact_address": "No. 463, Guang’an Road, Wuniu Street, Yongjia County, Wenzhou City, Zhejiang Province",
+      "field_sources": {
+        "contact_address": {
+          "url": "https://www.yroenergy.com/",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website"
+        }
+      },
+      "checked_at": "2026-10-28"
+    }
+  },
+  "YQ000513": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.chinaqijun.com/about-us/",
+        "domain": "chinaqijun.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ],
+    "details": {
+      "sources": [
+        {
+          "label": "企业官网",
+          "url": "https://www.chinaqijun.com/about-us/"
+        }
+      ],
+      "contact_address": "Weiwu Road, Yanpan Economic Development Zone, Yueqing City, Zhejiang Province",
+      "field_sources": {
+        "contact_address": {
+          "url": "https://www.chinaqijun.com/about-us/",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website"
+        }
+      },
+      "checked_at": "2026-10-28"
+    }
+  },
+  "YQ000907": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "http://www.cnsob.com/",
+        "domain": "cnsob.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      },
+      {
+        "type": "official_website_alt",
+        "label": "其他官网",
+        "url": "http://www.chinasob.com/",
+        "domain": "chinasob.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ],
+    "details": {
+      "sources": [
+        {
+          "label": "企业官网",
+          "url": "http://www.cnsob.com/"
+        },
+        {
+          "label": "企业官网",
+          "url": "http://www.chinasob.com/"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://m.media-amazon.com/images/I/A1l7ZngtJOL.pdf"
+        }
+      ],
+      "contact_address": "浙江省乐清市北白象镇金炉工业区盛邦工业园",
+      "field_sources": {
+        "contact_address": {
+          "url": "https://m.media-amazon.com/images/I/A1l7ZngtJOL.pdf",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website_document"
+        }
+      },
+      "checked_at": "2026-10-28"
+    }
+  },
+  "YQ001184": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "http://www.hxtelec.com/",
+        "domain": "hxtelec.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ],
+    "details": {
+      "sources": [
+        {
+          "label": "企业官网",
+          "url": "http://www.hxtelec.com/"
+        }
+      ],
+      "contact_address": "浙江省乐清市虹桥镇科技创新园B-7",
+      "field_sources": {
+        "contact_address": {
+          "url": "http://www.hxtelec.com/",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website"
+        }
+      },
+      "checked_at": "2026-10-28"
     }
   }
 }

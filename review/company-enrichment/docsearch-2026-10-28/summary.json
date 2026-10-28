@@ -1,0 +1,24 @@
+{
+  "checked_at": "2026-10-28",
+  "base_commit": "0239826a3d663c70ad8753ef27da2e4c4d8a5bb6",
+  "reviewed_unregistered_companies": 2951,
+  "successful_search_queries": 5875,
+  "search_queries_total": 5875,
+  "search_queries_failed": 0,
+  "changed_companies": 18,
+  "changes": {
+    "add_official_website": 16,
+    "add_official_website_alt": 2,
+    "add_alibaba_store": 3,
+    "add_alibaba_address": 2,
+    "add_operating_address": 7,
+    "add_contact_address": 6,
+    "add_icon": 13
+  },
+  "pending_confirmation_items": 59,
+  "company_registry_count": 3814,
+  "companies_with_website": 879,
+  "companies_without_confirmed_website": 2935,
+  "companies_with_logo": 646,
+  "companies_with_alibaba": 131
+}
