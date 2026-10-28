@@ -359,7 +359,7 @@ test("related Alibaba stores distinguish their identity and address from the ran
   assert.notEqual(organization?.url, "https://www.elegrp.cn/");
 });
 
-test("verified company icons use a website curated for the same company", async () => {
+test("verified company icons use a website or store curated for the same company", async () => {
   const [icons, profiles] = await Promise.all([
     readJson("src/data/verified-company-icons.json"),
     readJson(`${dataPath}company-profiles.json`),
@@ -369,10 +369,10 @@ test("verified company icons use a website curated for the same company", async 
     const profile = profiles[id];
     assert.ok(profile, `${id}: icon has no company profile`);
     const officialHosts = new Set((profile.links ?? [])
-      .filter((link) => ["official_website", "official_website_alt"].includes(link.type))
+      .filter((link) => ["official_website", "official_website_alt", "alibaba_store"].includes(link.type))
       .map((link) => normalizedHost(link.url)));
-    assert.ok(officialHosts.size, `${id}: icon has no curated official website`);
-    assert.ok(officialHosts.has(normalizedHost(icon.page_url)), `${id}: icon page ${icon.page_url} is not its curated official website`);
+    assert.ok(officialHosts.size, `${id}: icon has no curated website or store`);
+    assert.ok(officialHosts.has(normalizedHost(icon.page_url)), `${id}: icon page ${icon.page_url} is not its curated website or store`);
     await access(new URL(`public${icon.path}`, root));
   }
 });

@@ -1,0 +1,27 @@
+{
+  "checked_at": "2026-10-28",
+  "company_registry_count": 3814,
+  "ranking_and_registry_unchanged": true,
+  "changed_companies": 422,
+  "changes": {
+    "remove_incorrect_link": 127,
+    "clarify_related_website": 3,
+    "add_official_website": 126,
+    "add_official_website_alt": 10,
+    "add_alibaba_store": 32,
+    "add_alibaba_address": 32,
+    "add_contact_address": 83,
+    "add_main_products": 8,
+    "add_registered_capital": 22,
+    "remove_incorrect_icon": 17,
+    "add_icon": 220
+  },
+  "successful_search_queries": 7790,
+  "search_queries_total": 7790,
+  "search_failures_remaining": 0,
+  "pending_confirmations": 51,
+  "companies_with_website": 802,
+  "companies_with_logo": 577,
+  "companies_with_alibaba": 116,
+  "companies_with_missing_fields": 3759
+}

@@ -1,0 +1,891 @@
+[
+  {
+    "id": "YQ000169",
+    "name": "浙江鸿宝照明有限公司",
+    "url": "https://www.hossonilighting.com/",
+    "reason": "用户已明确不采用，旧清单误恢复",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ000293",
+    "name": "金谷汽车部件有限公司",
+    "url": "https://gvei.en.alibaba.com/",
+    "reason": "店铺返回404且无核实依据",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ000295",
+    "name": "新缆集团有限公司",
+    "url": "https://xlgroup.en.alibaba.com/",
+    "reason": "店铺返回404且无核实依据",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ000353",
+    "name": "乐清中信进出口有限公司",
+    "url": "https://front-sci.com/journal/article?doi=10.12238%2Fems.v6i8.8809",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ000368",
+    "name": "浙江凯朗锁业有限公司",
+    "url": "https://www.tz1288.com/chanye/CompanyList/71/93.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ000378",
+    "name": "温州市梦宸进出口有限公司",
+    "url": "https://play.google.com/store/apps/details?hl=en&id=uni.UNI2FF7C15",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ000393",
+    "name": "温州腾恩进出口有限公司",
+    "url": "https://item.wusiku.top/E/al/la/df.htm",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ000467",
+    "name": "温州市臻达包装机械有限公司",
+    "url": "https://www.landepacking.com/news/content-88-162-1.html",
+    "reason": "页面属于另一法定主体，尚无关联证据",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ000499",
+    "name": "浙江威利坚进出口有限公司",
+    "url": "https://www.nbd.com.cn/articles/2022-06-21/2332419.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ000538",
+    "name": "乐清市科洛贸易有限公司",
+    "url": "https://kitairu.net/cn/rubber-and-plastics/machinery-and-parts/metal-processing-machinery-parts/841261.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ000598",
+    "name": "温州中正工具有限公司",
+    "url": "https://www.sourcingfairs.com/online/exhibitions_info.html?id=1949",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ000729",
+    "name": "浙江华晶整流器有限公司",
+    "url": "https://pv.snec.org.cn/hallCompanyDetail/99009924-bd78-4e37-808b-16df757742c2",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ000855",
+    "name": "浙江飞龙电气有限公司",
+    "url": "https://chinakong.com/qiye/jianjie.asp?id=32297",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ000964",
+    "name": "乐清意众物流有限公司",
+    "url": "https://stcn.com/article/detail/2332473.html?u_asig=ffbfd&u_atoken=35ab4b303ecb7d9e214d3569184f1582",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ001440",
+    "name": "北陆电气有限公司",
+    "url": "https://www.hdk.co.jp/cn/company/overseas/",
+    "reason": "页面属于另一法定主体，尚无关联证据",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ001487",
+    "name": "浙江沃控电器有限公司",
+    "url": "https://silink.ai/e/91330382323490382L?lang=zh",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ001605",
+    "name": "宇光科技有限公司",
+    "url": "https://www.ugodisk.cn/zh/",
+    "reason": "页面属于另一法定主体，尚无关联证据",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ001662",
+    "name": "浙江捷仕泰电子有限公司",
+    "url": "https://www.zmia.org.cn/1767/31415",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ001746",
+    "name": "浙江埃柯镁克自动化有限公司",
+    "url": "https://www.nongjx.com/st143757/",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ001750",
+    "name": "温州市亿点零光伏设备有限公司",
+    "url": "https://www.liushirc.com/mobile/recruit/972575.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ001761",
+    "name": "乐清市联众进出口有限公司",
+    "url": "https://www.haoshunjia.com/szgszc/3452099.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ001806",
+    "name": "乐清俊雄进出口有限公司",
+    "url": "https://www.haoshunjia.com/szgszc/3452099.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ001832",
+    "name": "温州英索工具有限公司",
+    "url": "https://www.dz360.cn/?id=1563",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ001846",
+    "name": "浙江乐工缝制设备有限公司",
+    "url": "https://www.fieldarray.com/product/1016364.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ001847",
+    "name": "乐清竹升电子有限公司",
+    "url": "https://www.10100.com/article/5309206",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ001865",
+    "name": "温州南铁铁路信号设备有限公司",
+    "url": "https://www.iyvonne.com/",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ001880",
+    "name": "乐清程和汽车销售服务有限公司",
+    "url": "https://dealer.autohome.com.cn/2055884/info.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ001904",
+    "name": "温州成大电气科技有限公司",
+    "url": "https://www.chahaoba.com/telephone/number/057762720090",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ001949",
+    "name": "浙江广合智能科技有限公司",
+    "url": "https://www.cwb.com.cn/zh-hans/%E5%85%B3%E4%BA%8E%E5%90%88%E5%85%B4/%E5%8F%91%E5%B1%95%E5%8E%86%E7%A8%8B/",
+    "reason": "页面属于另一法定主体，尚无关联证据",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ001958",
+    "name": "浙江公久科技有限公司",
+    "url": "https://www.460.net.cn/news/show-451864.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ001985",
+    "name": "浙江锂翔科技有限公司",
+    "url": "https://www.soufair.com/news/13048.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ002014",
+    "name": "乐清市顺天电气有限公司",
+    "url": "https://www.cnzcn.net/company/search-htm-orderby-dhits-catid-8-areaid-0-page-74.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ002041",
+    "name": "温州中炫电气科技有限公司",
+    "url": "https://m.elecfans.com/d/c5618523",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ002044",
+    "name": "浙江泰然电器有限公司",
+    "url": "https://shebei.51lmjcy.com/index.php?homepage=13587762163a",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ002045",
+    "name": "乐清贝曼电气有限公司",
+    "url": "https://lei.info/836800ICFYNRD97EC054",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ002055",
+    "name": "浙江宝泰电子有限公司",
+    "url": "https://www.asianev.com/com/baotai/introduce/",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ002082",
+    "name": "乐清市诺达包装机械有限公司",
+    "url": "https://m.300.cn/anliku/kunzhajianli_452943.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ002134",
+    "name": "浙江罗舸智能科技有限公司",
+    "url": "https://www.jzking.com/wiki/bxqqwowe8b/5-19094545.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ002136",
+    "name": "浙江日虹变频器有限公司",
+    "url": "https://dqwhj.com/company/345.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ002141",
+    "name": "浙江品誉电气科技有限公司",
+    "url": "https://www.yqgssh.com/members_5/",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ002176",
+    "name": "温州禾韩光电科技有限公司",
+    "url": "https://gile.gymf.com.cn/newslist/exponews/68991",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ002221",
+    "name": "乐清市北方青鸟电气有限公司",
+    "url": "https://www.tpy119.com/news/show-2978.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ002339",
+    "name": "浙江广顺防爆电气有限公司",
+    "url": "https://shop.jc001.cn/1720217/",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ002359",
+    "name": "浙江中泰熔断器股份有限公司",
+    "url": "https://shop.chinabuilding.com.cn/zshop/goodsInfo/goodsDetail?SiteID=26&goodsID=625691",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ002383",
+    "name": "浙江普高电力有限公司",
+    "url": "https://www.chinagoods.com/store/goodsdetail/1924350174129774593",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ002452",
+    "name": "浙江力泰塑料有限公司",
+    "url": "https://www.cn86.cn/brand/1307641.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ002511",
+    "name": "沈海防爆科技有限公司",
+    "url": "https://www.djwpt.cn/index.php?homepage=tpodap",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ002586",
+    "name": "乐清市柯拉尼电器科技有限公司",
+    "url": "https://www.meiawards.com/showcase/product/inmEfdQxtJIP.htm",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ002598",
+    "name": "乐清市鑫伟电子有限公司",
+    "url": "https://sur.ly/i/cnxwdz.com/",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ002610",
+    "name": "浙江稳马电气有限公司",
+    "url": "https://www.echinagov.com/news/guotao/Article-24ydwI-357.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ002696",
+    "name": "温州佐佑医疗科技有限公司",
+    "url": "https://www.33899555.com/a2811/art_1366268_58929324.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ002718",
+    "name": "浙江沃斯托电气有限公司",
+    "url": "https://www.cnpp.cn/pinpai/4169281.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ002757",
+    "name": "乐清宏鼎工具有限公司",
+    "url": "https://m.kuangku.cn/sell/search.php?areaid=0&catid=3562&orderby=dmessages&page=2",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ002843",
+    "name": "温州市基安机械有限公司",
+    "url": "https://www.zhaomeiji.com/article/96995.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ002853",
+    "name": "浙江卡贝士机械有限公司",
+    "url": "https://www.nyjxzj.com/mobile/company/search.php?areaid=12&catid=312&job=ajax",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ002867",
+    "name": "浙江中煤液压机械有限公司",
+    "url": "https://dqcm.net/wenan/zlyyjx-669970.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ002882",
+    "name": "乐清市庆鑫工程塑料有限公司",
+    "url": "https://www.jitinfo.net/Service/Detail?detail=6883badd-2a27-a778-0091-424b792a316b",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ002893",
+    "name": "浙江轩轩塑料集团有限公司",
+    "url": "https://xuanxuansuliao.zhuansushijie.com/",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ002902",
+    "name": "温州宝灵电器有限公司",
+    "url": "https://www.sfy188.com/company/search.php?areaid=120&catid=0&page=24",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ002912",
+    "name": "黄河汽配集团有限公司",
+    "url": "https://cn.govopendata.com/caipanwenshu/2012/09/24/8bf65941-2ea5-484a-b86d-0a296b7dcbb5/",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ002921",
+    "name": "浙江方崎机器人自动化有限公司",
+    "url": "https://max.book118.com/html/2023/1125/8024134114006010.shtm",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ002930",
+    "name": "温州正凯电器有限公司",
+    "url": "https://www.wenjuan.com/s/rau2Arm/",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ002937",
+    "name": "乐清市登峰摩配有限公司",
+    "url": "https://www.mopei8.com/coinfo/mopei/dengfeng.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ002979",
+    "name": "温州市瑞力自动化设备厂",
+    "url": "https://www.bilibili.com/video/BV16t421j7gP/",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ002990",
+    "name": "浙江洛克电力科技有限公司",
+    "url": "https://api.mty360.com/resources/enterpriseDetail.html?id=1014297",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ002995",
+    "name": "浙江韦杰电子科技有限公司",
+    "url": "https://www.wedoany.com/company/44686.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ003023",
+    "name": "迪盾控股集团有限公司",
+    "url": "https://www.ttbz.org.cn/standardDetail.html?id=2fa81f51ef0c4f9eb8e39300157cfc10",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ003029",
+    "name": "浙江联扬塑料有限公司",
+    "url": "https://www.yqhqsh.com/introduce/?id=15",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ003042",
+    "name": "浙江墨工互感器有限公司",
+    "url": "https://www.ndls.org.cn/standard/index?a209=%E6%B5%99%E6%B1%9F%E5%A2%A8%E5%B7%A5%E4%BA%92%E6%84%9F%E5%99%A8%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ003046",
+    "name": "温州正泰智能家居科技有限公司",
+    "url": "https://dazhaoming.com/index.php?article_id=632&s=%2Fcms%2Farticleclassinfo",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ003054",
+    "name": "浙江秉泽商贸有限公司",
+    "url": "https://cn.69gl.com/shop69339972/productseries_1101115.htm",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ003083",
+    "name": "温州埃森安防科技有限公司",
+    "url": "https://cn.ec21.com/companies/viewCompanies.jsp?category=C040810&pageNum=810",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ003085",
+    "name": "乐清市红西电气有限公司",
+    "url": "https://www.yangben.cc/",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ003087",
+    "name": "裕丰电气有限公司",
+    "url": "https://chyf.net.cn/cn/",
+    "reason": "页面属于另一法定主体，尚无关联证据",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ003091",
+    "name": "浙江永成电子有限公司",
+    "url": "https://www.yqhqsh.com/introduce/?id=15",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ003108",
+    "name": "浙江中煤机械科技有限公司",
+    "url": "https://www.chinabyte.com/eclub/3771.shtml",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ003119",
+    "name": "温州婷杰礼品有限公司",
+    "url": "https://www.jinhanfair.com/cn/Exhibitors-Products/index?hall=Hall+1%2CHall+2%2CHall+3%2CHall+4%2CHall+5%2CHall+6%2CFloral+Gallery&page=42",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ003121",
+    "name": "乐清市跃宇合金材料有限公司",
+    "url": "https://yueyualloy.aseanbizs.com/",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ003159",
+    "name": "浙江佳博科技股份有限公司",
+    "url": "https://www.cnebuyer.com/com/2607.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ003160",
+    "name": "乐清市惠普照明有限公司",
+    "url": "https://www.sczw.com/brand-64121/",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ003176",
+    "name": "乐清乐遥创业服务有限公司",
+    "url": "https://gjsm.zjitc.net/zsjy.htm",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ003364",
+    "name": "乐清市泰利塑料有限公司",
+    "url": "https://product.dzsc.com/product/732487-20140808062508225.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ003401",
+    "name": "倍福宁自动化电器有限公司",
+    "url": "https://www.cnele88.com/index.php?file=introduce&homepage=beifuning",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ003405",
+    "name": "浙江华波互感器有限公司",
+    "url": "https://c.chuandong.com/13600/productlist.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ003421",
+    "name": "温州振翔自动化设备有限公司",
+    "url": "https://www.lbrcsc.com/mobile/recruit/2740.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ003701",
+    "name": "温州欣大绿能电气有限公司",
+    "url": "https://webf10.gw.com.cn/SZ/B7/SZ301388_B7.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ003714",
+    "name": "温州星普工业机器人有限公司",
+    "url": "https://www.ljcwmte.com/index.php?s=%2FIndex%2Fcompany%2Fexhid%2F339%2Fcompany_id%2F410595.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ003320",
+    "name": "浙江亿玮新能源科技有限公司",
+    "url": "https://www.cititic.com/qiye/co/19935-zhe-jiang-yi-wei-xin-neng-yuan-ke-ji-you-xian-gong-si.htm",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ003388",
+    "name": "浙江豫开电力科技有限公司",
+    "url": "https://m.jc001.cn/ushop-1863922/goods/classid-1518721",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ002951",
+    "name": "浙江国开工具集团有限公司",
+    "url": "https://www.hardwareexpo.cn/electric/01/t46501.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ001357",
+    "name": "乐清市华东仪表厂",
+    "url": "https://www.yqhqsh.com/introduce/?id=15",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ001189",
+    "name": "乐清市飞宏电子有限公司",
+    "url": "https://www.yqhqsh.com/introduce/?id=15",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ003811",
+    "name": "浙江宏江物联网技术有限公司",
+    "url": "https://www.taibo.cn/company/100722",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ000290",
+    "name": "温州远达电器有限公司",
+    "url": "https://www.chahaoba.com/telephone/number/057762720090",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ000407",
+    "name": "乐清市麒麟摩配有限公司",
+    "url": "https://www.growsmilingly.cn/bl/latest/cantonfair/dtl/6a1b9bbef188bae09043e82c96d4658c.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ000344",
+    "name": "中南仪表有限公司",
+    "url": "https://www.3k8c.com/company/",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ000512",
+    "name": "乐清市亚洲美甲用品有限公司",
+    "url": "https://xs.66wz.com/xs/system/2025/02/24/015231881.shtml",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ000498",
+    "name": "浙江亿士通科技有限公司",
+    "url": "https://www.biaozhuns.com/archives/20230702/show-345988-108-1.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ000562",
+    "name": "乐清市皮卡丘进出口贸易有限公司",
+    "url": "https://en.yiwufair.com/EProducts/EPro2/?dpg=8",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ000530",
+    "name": "浙江精固控股有限公司",
+    "url": "https://www.chinafastenerinfo.com/company/14128/",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ003189",
+    "name": "浙江俊威电气有限公司",
+    "url": "https://gjsm.zjitc.net/zsjy.htm",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ000322",
+    "name": "浙江同舟汽车配件有限公司",
+    "url": "https://www.autohome.com.cn/ask/26569912.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ003194",
+    "name": "长佑科技（浙江）有限公司",
+    "url": "https://www.coopaa.com/project-1171838.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ003202",
+    "name": "浙江精固标准件有限公司",
+    "url": "https://www.fastenerexpo.cn/case/61521?ref_domain_alias=www.fastenerexpo.cn",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ003224",
+    "name": "乐清合益电气有限公司",
+    "url": "https://m.ybzhan.cn/st163008/intro.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ003270",
+    "name": "温州科奈通电子有限公司",
+    "url": "https://m.bmlink.com/company/search/p1-ct1366.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ003273",
+    "name": "中邦（温州）磨料磨具有限责任公司",
+    "url": "https://www.ohmyliss.fr/7388/hemei/%E4%B8%8A%E6%B5%B7%E4%B8%AD%E9%82%A6%E7%9F%BF%E7%9F%B3%E7%AB%8B%E7%A3%A8--.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ003287",
+    "name": "温州市正尚电子有限公司",
+    "url": "https://www.aiznhw.com/index.php?homepage=17705876555a",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ003452",
+    "name": "中川电气科技有限公司",
+    "url": "https://fs.m2.com.cn/homePage/218401",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ001285",
+    "name": "赛德电气有限公司",
+    "url": "https://www.ureliainternational.com/industry_view/id%3D3.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ001355",
+    "name": "乐清市贝尔电气有限公司",
+    "url": "https://www.114best.com/gs33/533439076.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ001305",
+    "name": "浙江裕丰气动有限公司",
+    "url": "https://www.chyf.net.cn/cn/list-About-us.html",
+    "reason": "页面当前显示无关博彩内容，撤销失效关联",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ001234",
+    "name": "乐清市大众电子有限公司",
+    "url": "https://www.wzlawyers.com/show-2112.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ001229",
+    "name": "浙江昊达气动科技有限公司",
+    "url": "https://www.zhaotoubiaowang.com/project/detail_for_1022407.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ001497",
+    "name": "乐清三佳户外用品有限公司",
+    "url": "https://www.znjjgc.cn/com/13605822270z/",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ001352",
+    "name": "乐清乐腾电子科技有限公司",
+    "url": "https://bidxun.com/entity/787460",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ001288",
+    "name": "浙江萨飞电气有限公司",
+    "url": "https://www.seo628.com/case/safei",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ001582",
+    "name": "浙江亚鼎电气有限公司",
+    "url": "https://www.hbsztv.com/news/20260422/1497258.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ001280",
+    "name": "浙江延泰电气有限公司",
+    "url": "https://www.sx-jdsbpt.com/index.php?homepage=13372337777a",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ001297",
+    "name": "温州永凯电子科技有限公司",
+    "url": "https://digi7972.114ic.com/news/",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ000939",
+    "name": "浙江超越五金化工有限公司",
+    "url": "https://www.cnfa.com.cn/memberdetails1935.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ000908",
+    "name": "温州吕尚进出口有限公司",
+    "url": "https://www.jianhuadaily.com/20190726/59050",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ000849",
+    "name": "乐清市亲一特汽车配件有限公司",
+    "url": "https://wtmchina.com/customers/lqqy/",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ000979",
+    "name": "乐清市西屋进出口有限公司",
+    "url": "https://cs.zjol.com.cn/zjbd/wz16505/201812/t20181203_8892128.shtml",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ001108",
+    "name": "浙江长风电子有限公司",
+    "url": "https://www.haibo.com.cn/chinapage-suplist/%E6%B5%99%E6%B1%9F%E9%95%BF%E9%A3%8E%E7%94%B5%E5%AD%90%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_company89671.html",
+    "reason": "第三方新闻、目录、查询或展会页面，不能登记为企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ000155",
+    "name": "浙江通升电子有限公司",
+    "url": "http://www.lianjieqi.cn/",
+    "reason": "网址当前展示或跳转至第三方电气采购网，不能作为本企业官网",
+    "action": "remove_incorrect_link_only"
+  },
+  {
+    "id": "YQ000825",
+    "name": "浙江新力熔断器有限公司",
+    "url": "https://www.cnele88.com/",
+    "reason": "网址当前展示或跳转至第三方电气采购网，不能作为本企业官网",
+    "action": "remove_incorrect_link_only"
+  }
+]

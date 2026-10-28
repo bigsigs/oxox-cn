@@ -1,0 +1,24 @@
+{
+  "changed_company_pages_checked": 422,
+  "registry_count": 3814,
+  "ranking_files_unchanged": true,
+  "errors": [],
+  "automated_tests_passed": 82,
+  "local_browser": [
+    {
+      "width": 320,
+      "companyPages": 15,
+      "search": true,
+      "noOverflow": true,
+      "logosDecoded": true
+    },
+    {
+      "width": 1280,
+      "companyPages": 15,
+      "search": true,
+      "noOverflow": true,
+      "logosDecoded": true
+    }
+  ],
+  "new_logo_files_decoded": 220
+}
