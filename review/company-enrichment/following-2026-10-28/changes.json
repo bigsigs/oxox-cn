@@ -1,0 +1,169 @@
+[
+  {
+    "id": "YQ002165",
+    "name": "浙江统用工具有限公司",
+    "kind": "add_official_website",
+    "url": "https://www.allusetool.net/"
+  },
+  {
+    "id": "YQ002115",
+    "name": "温州浩恩气动液压有限公司",
+    "kind": "add_official_website",
+    "url": "https://www.hoenauto.com/"
+  },
+  {
+    "id": "YQ002146",
+    "name": "温州兆宏塑料有限公司",
+    "kind": "add_official_website",
+    "url": "https://www.zhaohongleveler.com/"
+  },
+  {
+    "id": "YQ001170",
+    "name": "乐清市永得电器有限公司",
+    "kind": "add_official_website",
+    "url": "https://www.tmaztz.com/"
+  },
+  {
+    "id": "YQ002624",
+    "name": "乐清金海汽配有限公司",
+    "kind": "add_official_website",
+    "url": "https://www.cnconnector.com/"
+  },
+  {
+    "id": "YQ003320",
+    "name": "浙江亿玮新能源科技有限公司",
+    "kind": "add_official_website",
+    "url": "https://www.ev-inc.cn/"
+  },
+  {
+    "id": "YQ002493",
+    "name": "浙江汇聚自动化设备有限公司",
+    "kind": "add_official_website",
+    "url": "https://www.huiju-group.com/"
+  },
+  {
+    "id": "YQ002329",
+    "name": "浙江纳雷电气有限公司",
+    "kind": "add_official_website",
+    "url": "http://www.zjnalei.com/"
+  },
+  {
+    "id": "YQ002165",
+    "name": "浙江统用工具有限公司",
+    "kind": "add_operating_address",
+    "value": "No.1, Furong Industrial Zone, Yueqing, Wenzhou, Zhejiang",
+    "url": "https://www.allusetool.net/"
+  },
+  {
+    "id": "YQ002115",
+    "name": "温州浩恩气动液压有限公司",
+    "kind": "add_operating_address",
+    "value": "Yueqing Industrial Zone Jing 8 Road",
+    "url": "https://www.hoenauto.com/"
+  },
+  {
+    "id": "YQ002146",
+    "name": "温州兆宏塑料有限公司",
+    "kind": "add_operating_address",
+    "value": "No. 221 Weishi Road, Yanpan Economic Development Zone, Yueqing City, Wenzhou, Zhejiang, China",
+    "url": "https://www.zhaohongleveler.com/"
+  },
+  {
+    "id": "YQ001170",
+    "name": "乐清市永得电器有限公司",
+    "kind": "add_operating_address",
+    "value": "浙江省乐清市北白象镇沙洪工业区",
+    "url": "https://www.tmaztz.com/Contact-us"
+  },
+  {
+    "id": "YQ002624",
+    "name": "乐清金海汽配有限公司",
+    "kind": "add_operating_address",
+    "value": "Jinhai Science & Technology Park, Huangqijia Industrial Zone, Liushi-Yueqing City-325604, Zhejiang, China",
+    "url": "https://www.cnconnector.com/"
+  },
+  {
+    "id": "YQ003320",
+    "name": "浙江亿玮新能源科技有限公司",
+    "kind": "add_operating_address",
+    "value": "222 5th Road, Yueqing Economic Development Zone, Zhejiang Province.",
+    "url": "https://www.ev-inc.cn/contact-us.html"
+  },
+  {
+    "id": "YQ002493",
+    "name": "浙江汇聚自动化设备有限公司",
+    "kind": "add_operating_address",
+    "value": "No.298,11 Road,Yueging Economic Development Zone, yueqing City,Zhejiang Province",
+    "url": "https://www.huiju-group.com/contact-us/"
+  },
+  {
+    "id": "YQ001170",
+    "name": "乐清市永得电器有限公司",
+    "kind": "add_main_products",
+    "value": "行程开关、限位开关、微动开关、密封开关、防水开关、押扣开关、钮子开关与脚踏开关",
+    "url": "https://www.tmaztz.com/about-us"
+  },
+  {
+    "id": "YQ003320",
+    "name": "浙江亿玮新能源科技有限公司",
+    "kind": "add_main_products",
+    "value": "燃料电池DC-DC转换器、燃料电池控制器、通信中继器、配电单元、车载充电机及车载DC/DC辅助电源模块",
+    "url": "https://www.ev-inc.cn/"
+  },
+  {
+    "id": "YQ002165",
+    "name": "浙江统用工具有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/following-20261028/YQ002165.png",
+    "source_url": "https://www.allusetool.net/uploads/202325696/logo202308161413083917839.png"
+  },
+  {
+    "id": "YQ002115",
+    "name": "温州浩恩气动液压有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/following-20261028/YQ002115.png",
+    "source_url": "https://www.hoenauto.com/zb_users/upload/2026/03/202603231774311294856504.png"
+  },
+  {
+    "id": "YQ002146",
+    "name": "温州兆宏塑料有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/following-20261028/YQ002146.png",
+    "source_url": "https://bsg-i.nbxc.com/company/91/70833dfca4ea30c8a4339353cf0459.jpg@95Q.webp"
+  },
+  {
+    "id": "YQ001170",
+    "name": "乐清市永得电器有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/following-20261028/YQ001170.png",
+    "source_url": "https://aosspic10001.websiteonline.cn/pro6671d6/image/u21i22.png"
+  },
+  {
+    "id": "YQ002624",
+    "name": "乐清金海汽配有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/following-20261028/YQ002624.png",
+    "source_url": "https://www.cnconnector.com/uploads/2308/logos.png"
+  },
+  {
+    "id": "YQ003320",
+    "name": "浙江亿玮新能源科技有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/following-20261028/YQ003320.png",
+    "source_url": "https://www.ev-inc.cn/templates/en/images/logo.png"
+  },
+  {
+    "id": "YQ002493",
+    "name": "浙江汇聚自动化设备有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/following-20261028/YQ002493.png",
+    "source_url": "https://ecdn6.globalso.com/upload/p/4758/image_other/2025-12/logo.png"
+  },
+  {
+    "id": "YQ002329",
+    "name": "浙江纳雷电气有限公司",
+    "kind": "add_icon",
+    "path": "/company-icons/verified/following-20261028/YQ002329.png",
+    "source_url": "http://31970483.s21i.faiusr.com/4/ABUIABAEGAAgucG5rAYok4rf6Qcw2wI4XQ.png"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "candidate_url": "https://marketelectro.ru/company/",
+    "reason": "行业门户的企业目录，不是企业独立官网"
+  },
+  {
+    "candidate_url": "https://qiaoh.com/",
+    "reason": "前台主体上海侨亨，与浙江侨亨的关联尚未确认"
+  },
+  {
+    "candidate_url": "https://c-lin.cn/",
+    "reason": "网站主体为欣灵电气，不直接移用给温州欣意"
+  },
+  {
+    "candidate_url": "https://cnehdq.com/",
+    "reason": "网站主体为益豪，不直接移用给浙江锦豪"
+  },
+  {
+    "candidate_url": "https://annelectric.com/",
+    "reason": "与温州市安孚主体未对应，不凭相似拼音登记"
+  },
+  {
+    "candidate_url": "https://fangdatools.com/",
+    "reason": "展示方大控股，未取得浙江方大工具对应关系的充分证据"
+  },
+  {
+    "candidate_url": "https://haitongele.cn/",
+    "reason": "展示浙江海通股份，未确认与乐清海通通讯电子的对应关系"
+  },
+  {
+    "candidate_url": "https://cnrmtool.com/",
+    "reason": "主体为仁铭，不直接移用给浙江沃顿工具"
+  },
+  {
+    "candidate_url": "https://cnheteng.com/",
+    "reason": "主体为合腾，不直接移用给乐清合扬"
+  }
+]

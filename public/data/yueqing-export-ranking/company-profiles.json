@@ -49396,6 +49396,11 @@
           "url": "https://www.shuididp.cn/yp-4220e46666ebf910da1ab6b6dd442c0f.html",
           "checked_at": "2026-10-24",
           "source_type": "company_website"
+        },
+        "operating_address": {
+          "url": "https://www.hoenauto.com/",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website_contact"
         }
       },
       "registered_capital": "200.000000万人民币",
@@ -49404,11 +49409,26 @@
         {
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-4220e46666ebf910da1ab6b6dd442c0f.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.hoenauto.com/"
         }
       ],
       "checked_at": "2026-10-24",
-      "legal_name": "温州浩恩气动液压有限公司"
-    }
+      "legal_name": "温州浩恩气动液压有限公司",
+      "operating_address": "Yueqing Industrial Zone Jing 8 Road"
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.hoenauto.com/",
+        "domain": "hoenauto.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ]
   },
   "YQ002116": {
     "details": {
@@ -50435,6 +50455,11 @@
           "url": "https://www.shuididp.cn/yp-b920ddb7ee77341b13cc609729e05c01.html",
           "checked_at": "2026-10-24",
           "source_type": "company_website"
+        },
+        "operating_address": {
+          "url": "https://www.zhaohongleveler.com/",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website_contact"
         }
       },
       "registered_capital": "588.000000万人民币",
@@ -50443,11 +50468,26 @@
         {
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-b920ddb7ee77341b13cc609729e05c01.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.zhaohongleveler.com/"
         }
       ],
       "checked_at": "2026-10-24",
-      "legal_name": "温州兆宏塑料有限公司"
-    }
+      "legal_name": "温州兆宏塑料有限公司",
+      "operating_address": "No. 221 Weishi Road, Yanpan Economic Development Zone, Yueqing City, Wenzhou, Zhejiang, China"
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.zhaohongleveler.com/",
+        "domain": "zhaohongleveler.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ]
   },
   "YQ002147": {
     "details": {
@@ -51084,6 +51124,11 @@
           "url": "https://www.shuididp.cn/yp-57a2aa5d5b8981bceb5857805692e8ae.html",
           "checked_at": "2026-10-24",
           "source_type": "company_website"
+        },
+        "operating_address": {
+          "url": "https://www.allusetool.net/",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website_contact"
         }
       },
       "registered_capital": "500.000000万人民币",
@@ -51092,11 +51137,26 @@
         {
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-57a2aa5d5b8981bceb5857805692e8ae.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.allusetool.net/"
         }
       ],
       "checked_at": "2026-10-24",
-      "legal_name": "浙江统用工具有限公司"
-    }
+      "legal_name": "浙江统用工具有限公司",
+      "operating_address": "No.1, Furong Industrial Zone, Yueqing, Wenzhou, Zhejiang"
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.allusetool.net/",
+        "domain": "allusetool.net",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ]
   },
   "YQ002166": {
     "details": {
@@ -56294,11 +56354,25 @@
         {
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-1418c913951d296a0952d0ceb83392f8.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "http://www.zjnalei.com/"
         }
       ],
       "checked_at": "2026-10-24",
       "legal_name": "浙江纳雷电气有限公司"
-    }
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "http://www.zjnalei.com/",
+        "domain": "zjnalei.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ]
   },
   "YQ002330": {
     "details": {
@@ -61639,6 +61713,11 @@
           "url": "https://www.shuididp.cn/yp-f1ce5b9d360df2649719c8d7995d7c01.html",
           "checked_at": "2026-10-24",
           "source_type": "company_website"
+        },
+        "operating_address": {
+          "url": "https://www.huiju-group.com/contact-us/",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website_contact"
         }
       },
       "registered_capital": "1000.000000万人民币",
@@ -61647,11 +61726,30 @@
         {
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-f1ce5b9d360df2649719c8d7995d7c01.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.huiju-group.com/"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.huiju-group.com/contact-us/"
         }
       ],
       "checked_at": "2026-10-24",
-      "legal_name": "浙江汇聚自动化设备有限公司"
-    }
+      "legal_name": "浙江汇聚自动化设备有限公司",
+      "operating_address": "No.298,11 Road,Yueging Economic Development Zone, yueqing City,Zhejiang Province"
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.huiju-group.com/",
+        "domain": "huiju-group.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ]
   },
   "YQ002494": {
     "details": {
@@ -65884,6 +65982,11 @@
           "url": "https://www.shuididp.cn/yp-c53b96c49520ab2c340bcbb871238a0c.html",
           "checked_at": "2026-10-24",
           "source_type": "company_website"
+        },
+        "operating_address": {
+          "url": "https://www.cnconnector.com/",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website_contact"
         }
       },
       "registered_capital": "50.000000万人民币",
@@ -65892,11 +65995,26 @@
         {
           "label": "企业公开资料",
           "url": "https://www.shuididp.cn/yp-c53b96c49520ab2c340bcbb871238a0c.html"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.cnconnector.com/"
         }
       ],
       "checked_at": "2026-10-24",
-      "legal_name": "乐清金海汽配有限公司"
-    }
+      "legal_name": "乐清金海汽配有限公司",
+      "operating_address": "Jinhai Science & Technology Park, Huangqijia Industrial Zone, Liushi-Yueqing City-325604, Zhejiang, China"
+    },
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.cnconnector.com/",
+        "domain": "cnconnector.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ]
   },
   "YQ002625": {
     "details": {
@@ -87719,11 +87837,42 @@
     }
   },
   "YQ003320": {
-    "links": [],
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.ev-inc.cn/",
+        "domain": "ev-inc.cn",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ],
     "details": {
-      "sources": [],
-      "field_sources": {},
-      "checked_at": "2026-10-28"
+      "sources": [
+        {
+          "label": "企业官网",
+          "url": "https://www.ev-inc.cn/"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.ev-inc.cn/contact-us.html"
+        }
+      ],
+      "field_sources": {
+        "operating_address": {
+          "url": "https://www.ev-inc.cn/contact-us.html",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website_contact"
+        },
+        "main_products": {
+          "url": "https://www.ev-inc.cn/",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website"
+        }
+      },
+      "checked_at": "2026-10-28",
+      "operating_address": "222 5th Road, Yueqing Economic Development Zone, Zhejiang Province.",
+      "main_products": "燃料电池DC-DC转换器、燃料电池控制器、通信中继器、配电单元、车载充电机及车载DC/DC辅助电源模块"
     }
   },
   "YQ003388": {
@@ -94759,6 +94908,49 @@
         }
       },
       "checked_at": "2026-10-28"
+    }
+  },
+  "YQ001170": {
+    "links": [
+      {
+        "type": "official_website",
+        "label": "官方网站",
+        "url": "https://www.tmaztz.com/",
+        "domain": "tmaztz.com",
+        "source": "official_identity_and_location_verified",
+        "added_at": "2026-10-28"
+      }
+    ],
+    "details": {
+      "sources": [
+        {
+          "label": "企业官网",
+          "url": "https://www.tmaztz.com/"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.tmaztz.com/Contact-us"
+        },
+        {
+          "label": "企业官网",
+          "url": "https://www.tmaztz.com/about-us"
+        }
+      ],
+      "operating_address": "浙江省乐清市北白象镇沙洪工业区",
+      "field_sources": {
+        "operating_address": {
+          "url": "https://www.tmaztz.com/Contact-us",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website_contact"
+        },
+        "main_products": {
+          "url": "https://www.tmaztz.com/about-us",
+          "checked_at": "2026-10-28",
+          "source_type": "company_website"
+        }
+      },
+      "checked_at": "2026-10-28",
+      "main_products": "行程开关、限位开关、微动开关、密封开关、防水开关、押扣开关、钮子开关与脚踏开关"
     }
   }
 }
