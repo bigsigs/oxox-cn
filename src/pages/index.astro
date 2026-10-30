@@ -25,8 +25,8 @@ const companyMeta: Record<string, { domain: string; icon: string; darkIcon: bool
   const domain = website?.domain || "";
   const icon = getCompanyIcon(domain, id) || "";
   const websiteBadge = website?.label === "关联企业网站" ? "关联网站" : ["企业产品网站", "关联产品网站"].includes(website?.label || "") ? "产品网站" : "官网";
-  return [id, { domain, icon, darkIcon: hasDarkCompanyIcon(id), websiteBadge, brand_name: String((profile as CompanyProfile).details?.brand_name || "") }];
-}));
+  return [id, { domain, icon, darkIcon: hasDarkCompanyIcon(id), websiteBadge, brand_name: String((profile as CompanyProfile).details?.brand_name || "") }] as const;
+}).filter(([, meta]) => Boolean(meta.domain || meta.icon || meta.brand_name)));
 const siteSchema = {
   "@context": "https://schema.org",
   "@graph": [

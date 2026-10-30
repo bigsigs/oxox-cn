@@ -235,15 +235,20 @@ async function setPeriod(id, options = {}) {
 async function initialize() {
   error.hidden = true;
   try {
-    const response = await fetch("/data/yueqing-export-ranking/companies.json");
-    if (!response.ok) throw new Error("load");
-    state.searchIndex = buildCompanySearchIndex((await response.json()).map(company => ({ ...company, ...boot.companyMeta[company.company_id] })));
     const restore = readRestorePoint();
     const filter = params.get("filter") || restore?.filter;
     state.filter = ["top100", "top500", "up", "down"].includes(filter) ? filter : "all";
     const periodId = restore?.periodId && boot.periods.some(period => period.id === restore.periodId)
       ? restore.periodId
       : boot.periods.some(period => period.id === requestedPeriod) ? requestedPeriod : boot.latest;
+    // Start independent requests together instead of waiting for search setup.
+    const previous = previousPeriod(boot.periods.find(period => period.id === periodId));
+    const datasetsReady = Promise.all([getDataset(periodId), previous ? getDataset(previous.id) : null]);
+    // Handle rejection immediately; setPeriod owns the visible retry state.
+    datasetsReady.catch(() => {});
+    const response = await fetch("/data/yueqing-export-ranking/companies.json");
+    if (!response.ok) throw new Error("load");
+    state.searchIndex = buildCompanySearchIndex((await response.json()).map(company => ({ ...company, ...boot.companyMeta[company.company_id] })));
     await setPeriod(periodId, {
       group: params.get("band") || restore?.group,
       page: restore?.page || params.get("page"),
